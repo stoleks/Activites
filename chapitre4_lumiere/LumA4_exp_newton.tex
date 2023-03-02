@@ -1,0 +1,112 @@
+%%%%
+\sndEnTeteQuatre
+\vspace*{-40pt}
+
+%%%% titre
+\numeroActivite{4}
+\titreActivite{Formation d'un arc-en-ciel}
+
+
+%%%% Objectifs
+\vspace*{-12pt}
+\begin{objectifs}
+  \item Expliquer la formation d'un arc-en-ciel à l'aide de la loi de Snell-Descartes
+  \item Comprendre que l'indice de réfraction dépend de la longueur d'onde
+\end{objectifs}
+
+\begin{contexte}
+  Quand le soleil brille pendant la pluie, on peut observer un arc-en-ciel.
+  C'est aussi le cas quand de la lumière blanche traverse un prisme.
+  
+  \problematique{
+    Quel phénomène physique est à l'origine de la formation d'un arc-en-ciel ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{L'expérience de Newton}
+  \label{doc:exp_newton}
+  %\og Au début de l’année 1666, je me procurai un prisme de verre pour réaliser la célèbre expérience des couleurs.
+  %Ayant à cet effet obscurci ma chambre, et fait un petit trou dans les volets, pour laisser entrer une quantité convenable de rayons de soleil, je plaçai mon prisme contre ce trou, pour réfracter les rayons sur le mur opposé.
+  %Ce fut d’abord très plaisant de contempler les couleurs vives et intenses ainsi produites. \fg
+  
+  \vspace*{-16pt}
+  En 1666, Newton étudie la lumière.
+  Au cours d'une expérience, il parvient à former un arc-en-ciel à partir d'une source de lumière blanche et d'un prisme de verre.
+ 
+  Pour enrichir son étude, Newton réalise une autre expérience : il isole la partie bleue de la lumière formée par son prisme et éclaire un second prisme avec.
+  \textbf{La lumière bleue est déviée, mais pas étalée et ne change pas de couleur !}
+  Newton en déduit que la lumière \og blanche \fg\, du soleil est une superposition de lumière de toutes les couleurs et le prisme dévie différemment ces lumières.
+  
+  \vspace*{-8pt}
+  \begin{center}
+    \separationDeuxBlocs{
+      \begin{center}
+        \image{0.45}{images/lumière/prisme_blanc} \\
+        \small{Lumière blanche}
+      \end{center}
+    }{
+      \begin{center}
+        \image{0.45}{images/lumière/prisme_bleu} \\
+        \small{Lumière bleue}
+      \end{center}
+    }
+  \end{center}
+\end{doc}
+
+\begin{doc}{Évolution de l'indice de réfraction $n$ d'un verre}
+  \label{doc:indice_verre}
+  \vspace*{-24pt}
+  \begin{center}
+    \image{0.75}{images/lumière/indice_refraction_verre} \\
+    Évolution de $n$ en fonction de la longueur d'onde $\lambda$ pour le verre \og Flint \fg
+  \end{center}
+\end{doc}
+
+\newpage
+\vspace*{-36pt}
+\begin{doc}{Rappel sur la réfraction}
+  \label{doc:rappel_refraction}
+  \vspace*{-16pt}
+  
+  \begin{wrapfigure}{r}{0.45\linewidth}
+    \vspace*{-14pt}
+    \centering
+    \image{1}{images/lumière/angles_refraction.png}
+  \end{wrapfigure}
+  D'après la loi de Snell-Descartes, on a 
+  \begin{equation*}
+       n_2 \sin (i_2) = n_1 \sin (i_1)
+  \end{equation*}
+  Si on veut calculer la valeur de l’angle de réfraction $i_2$, on commence par isoler
+  $\sin(i_2)$ dans l’équation, puis on inverse la fonction sinus pour obtenir l'expression de $i_2$
+  \begin{equation*}
+    \sin(i_2) = \frac{n_1}{n_2} \sin (i_1)
+    \quad \Rightarrow \quad
+    i_2 = \arcsin \left(\Frac{n_1}{n_2} \sin(i_2) \right)
+  \end{equation*}
+\end{doc}
+
+
+%%%%
+\exo{
+  Quel phénomène subit la lumière en passant de l'air (milieu 1) au verre du prisme  (milieu 2) ?
+  Et en passant du verre à l'air ?
+}{1}
+
+\exo{
+  Les couleurs composant la lumière blanche sont-elles déviées de la même façon en traversant le prisme ?
+}{2}
+
+\exo{
+  En utilisant le document~\ref{doc:indice_verre}, indiquer l'indice de réfraction $n_\text{rouge}$ pour le rouge ($\lambda \approx 650 \unit{nm}$) et $n_\text{bleu}$ pour le bleu ($\lambda \approx 450 \unit{nm}$).
+}{1}
+
+\exo{
+  En supposant que l'angle d'incidence de la lumière soit $i_1 = 35^\circ$, calculer l'angle de réfraction $i_2$ \textbf{pour le passage du verre à l'air} pour la lumière bleu $i_{2,\text{bleu}}$ et la lumière rouge $i_{2,\text{rouge}}$ à la sortie du prisme. \textbf{Rappel:} $n_2 = n_\text{air} = 1,\!00$.
+}{2}
+
+\exo{
+  En comparant ces deux déviations, conclure sur la formation d'un arc-en-ciel par un prisme.
+}{4}

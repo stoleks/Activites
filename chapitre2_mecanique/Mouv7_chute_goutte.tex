@@ -1,0 +1,130 @@
+%%%% début de la page
+\sndEnTeteDeux
+
+%%
+\nomPrenomClasse
+
+
+%%%% titre
+\numeroActivite{7}
+\titreActivite{Chute d'une goutte d'encre}
+
+
+%%%% evaluation
+\begin{tableauCompetences}
+  %
+  \centering APP &
+  Analyser un programme python.
+  & & & &
+  \\ \hline
+  %
+  \centering REA &
+  Mesurer des positions avec un logiciel de pointage.
+  & & & &
+  \\ \hline
+  %
+  \centering COM &
+  Travailler en groupe.
+  & & & &
+\end{tableauCompetences}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Utiliser des outils numériques pour analyser un mouvement.
+\end{objectifs}
+
+
+%%%%
+\begin{doc}{Mesurer les positions avec Cineris}
+  \label{doc:cineris}
+  Pour mesurer les positions d'un objet, dans Cineris il faut cliquer sur :
+  \begin{enumeration}
+    \item \texttt{Montage} (1), puis \texttt{choix du fichier} et ouvrir \url{chute_goutte.avi}.
+    \item Cliquer sur \texttt{Traitement manuel} (2) puis sur \texttt{étalonnage} (3)
+    \begin{listePoints}
+      \item maintenir appuyé le clic-gauche de la souris sur la vidéo
+      \item glisser verticalement le long d'un objet de référence et relâcher pour régler l'échelle verticale.
+    \end{listePoints}
+    \item Cliquer sur le bouton vert dans \texttt{traitement} (4), puis 
+    \begin{listePoints}
+      \item cliquer sur le centre de l'objet pour mesurer sa position ;
+      \item répéter pour chaque instants de la vidéo ;
+      \item appuyer sur le bouton rouge pour arrêter le traitement.
+    \end{listePoints}
+    \item Cliquer sur \texttt{Tableau} (5) pour accéder aux positions mesurée.
+  \end{enumeration}
+  
+  \centering
+  \image{0.6}{images/logiciel_cineris.jpg}
+\end{doc}
+
+
+%%%%
+\newpage
+\phantom{b}
+\vspace*{-44pt}
+\begin{doc}{Programme python pour tracer la trajectoire}
+  \label{doc:code_python}
+  \vspace*{-20pt}
+  \lstset{style=codePython, language=python}
+  \begin{lstlisting}
+    import numpy as np # bibliotheque de calcul
+    import matplotlib.pyplot as plt # bibliotheque d'affichage
+    
+    # dessine une fleche partant du point 'depart' et allant au point 'fin'
+    def traceFleche (depart, fin) :
+        taille = 0.1 # taille de la pointe de la fleche
+        plt.arrow (depart[0], depart[1], fin[0], fin[1], # coordonnees
+                   head_length=taille, head_width=taille) # apparence
+    
+    # calcul et trace le vecteur vitesse
+    def traceVitesses (x, y, Dt) :
+        for i in range (1, len (x) - 1) :
+            vx = (x[i + 1] - x[i - 1]) / (2*Dt)
+            vy = (y[i + 1] - y[i - 1]) / (2*Dt)
+            traceFleche ((x[i], y[i]), (vx, vy))
+    
+    # reglage du graphique
+    plt.axis('equal') # pour avoir des vecteurs symetriques
+    plt.xlabel (r'$x$ (en cm)') # legende de l'abscisse
+    plt.ylabel (r'$y$ (en cm)') # legende de l'ordonnee
+    plt.title ("Trajectoire d'une goutte d'encre") # titre du graphique
+    
+    # definition de la trajectoire
+    Dt = 1
+    x = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    y = []
+    
+    # trace les positions et les vecteurs vitesses
+    plt.plot (x, y, 'go') # g : vert (green), o : cercle
+    traceVitesses (x, y, Dt) # trace les vitesses
+    plt.show () # affiche le graphique\end{lstlisting}
+  \vspace*{-8pt}
+\end{doc}
+
+
+%%%%
+\exo{
+  À l'aide du document~\ref{doc:cineris}, mesurer les positions de la goutte d'encre avec Cineris.
+}{0}
+
+%%
+\exo{
+  Dans le programme python du document~\ref{doc:code_python}, repérer la ligne qui indique les positions successives de la goutte d'encre. Compléter cette ligne avec les positions que vous avez mesuré-es sur Cineris, puis exécuter le programme.
+}{0}
+
+%%
+\exo{
+  Décrire le mouvement de la goutte d'encre.
+}{1}
+
+%%
+\exo{
+  Que pouvez-vous en déduire sur les forces qui s'exercent sur la goutte d'encre ?
+}{2}
+
+%%
+\exo{
+  Expliquer pourquoi le programme ne peut pas calculer la vitesse initiale et finale.
+}{2}

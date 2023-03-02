@@ -1,0 +1,195 @@
+%%%% début de la page
+\sndEnTeteDeux
+
+%%
+\nomPrenomClasse
+
+
+%%%% titre
+\numeroActivite{2}
+\titreActivite{Chute d'une balle}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre la notion de vecteur vitesse.
+  \item Tracer des vecteurs vitesses.
+\end{objectifs}
+
+
+%%%% evaluation
+\begin{tableauCompetences}
+  \centering S'Approprier (APP) &
+  Représenter la situation par un schéma.
+  & & & &
+  \\ \hline
+  \centering Communication (COM) &
+  Travailler en groupe, échanger entre élèves.
+  & & & &
+\end{tableauCompetences}
+
+
+%%
+\vspace*{6pt}
+\problematique{Quelle est l'influence d'une translation sur la description du mouvement d'un objet ?}
+
+
+%%%% documents
+\begin{doc}{Chronophotographie de la chute d'une balle}
+  \label{doc:chrono}
+  \vspace*{-20pt}
+  \begin{center}
+    \image{0.9}{images/mouvements/chronophotographie_balle.png}
+  \end{center}
+  Une chronophotographie est une superposition de plusieurs images prises les unes après les autres avec un intervalle de temps régulier.
+  Pour réaliser cette chronophotographie, \textbf{on a pris une image toutes les} $\mathbf{40} \unit{\mathbf{ms}}$.
+  \bigskip
+  
+  Réaliser une chronophotographie permet de repérer des positions par lesquelles passent la balle, ce qui est impossible à l'oeil nu.
+  Les ronds indiquent les positions de la balle, les carrés indiquent les positions du centre de masse de l'homme sur la trottinette.
+\end{doc}
+
+%%
+\begin{doc}{Vecteur}
+  \label{doc:vecteur}
+  \vspace*{-24pt}
+  \begin{encart}
+    \important{Vecteur} : objet mathématique représenté par un segment fléché $\longrightarrow$ et noté avec une lettre surmontée d'une flèche $\vv{v}$.
+    
+    Un vecteur contient quatre information : une \important{direction}, un \important{sens}, une \important{norme,} et un \important{point d'application} (ou origine).
+  
+    Un vecteur est \important{constant} si sa direction, son sens et sa norme ne varie pas le long du mouvement.
+  \end{encart}
+\end{doc}
+
+%%
+\begin{doc}{Vecteur déplacement et vecteur vitesse d'un point}
+  \label{doc:vitesse}
+  Soient $P_1$ la position d'un point à l'instant $t_1$ et $P_3$ la position de ce même point à l'instant $t_3$.
+  Le déplacement du point matériel entre les dates $t_1$ et $t_3$ est défini par le vecteur déplacement $\vv{P_1 P_3}$.
+  Graphiquement, c'est la flèche qui relie $P_1$ à $P_3$. 
+  \bigskip
+  
+  Le vecteur $\vv{P_1 P_3}$ est caractérisé par
+  \begin{listePoints}
+    \item une direction : celle de la droite $P_1 P_3$.
+    \item Un sens : de $P_1$ vers $P_2$.
+    \item Une norme : égale à la distance $P_1 P_3$ en mètre (m).
+    \item Une origine : le point $P_1$
+  \end{listePoints}
+  
+  \begin{encart}
+    Le \important{vecteur vitesse} $\vv{v_2}$ d'un système au point $P_2$ entre les instants $t_1$ et $t_3$ a pour expression
+    \begin{equation}
+      \vv{v_2} = \frac{\vv{P_1 P_3}}{t_3 - t_1}
+    \end{equation}
+  \end{encart}
+  
+  Le vecteur $\vv{v_2}$ est caractérisé par :
+  \begin{listePoints}
+    \item une direction : parallèle au segment $P_1 P_3$ et tangent à la trajectoire.
+    \item Un sens : le sens du mouvement.
+    \item Une norme : $v_2 
+    = \norm{\vv{v_2}}
+    = \displaystyle \norm{\frac{\vv{P_1 P_3}}{t_3 - t_1}}
+    = \displaystyle \frac{P_1 P_3}{t_3 - t_1}$.
+    \item Une origine : $P_2$.
+  \end{listePoints}
+  $P_1 P_3$ est la distance entre les points $P_1$ et $P_3$ en mètre (m). $t_3 - t_1$ est la durée séparant les instants $t_1$ et $t_3$ en seconde (s). $v_2$ est la norme de la vitesse en mètre par seconde (m/s).
+\end{doc}
+
+
+
+%%%%
+\newpage
+\titreSection{Mouvement dans le référentiel de \lignePointillee{0.2}}
+
+%
+\exo{
+  Quel est le référentiel utilisé pour décrire le mouvement de la balle et de l'homme sur la trottinette ici ?
+}{1}
+
+
+%%
+\titreSousSection{Mouvement de l'homme sur la trottinette}
+
+%
+\exo{
+  Quelle est la trajectoire de l'homme sur la trottinette ?
+}{1}
+
+%
+\exo{
+  Comment évolue la vitesse de l'homme sur la trottinette ? Indiquer la nature de son mouvement.
+}{2}
+
+
+%%%%
+\titreSousSection{Mouvement de la balle}
+
+%
+\exo{
+  Repérer sur la chronophotographie du document~\ref{doc:chrono}, le point de départ de la balle.
+  On notera $P_1$ cette position.
+  Numéroter les positions successives de la balle, que l'on notera $P_2, P_3, \ldots P_8$
+}{0}
+
+%
+\exo{
+  Tracer sur la photo du document~\ref{doc:chrono} le vecteur $\vv{P_2 P_3}$ et le vecteur $\vv{P_5 P_7}$.
+}{0}
+
+%
+\exo{
+  En utilisant l'échelle sur la photo, déterminer les normes en mètre de ces deux vecteurs.
+  Indiquer si ces normes sont identiques.
+}{2}
+
+%
+\exo{
+  Calculer la norme en mètre par seconde de ces deux vecteurs, en vous aidant du document~\ref{doc:vitesse}.
+}{2}
+
+%
+\exo{
+  Schématiser le vecteur vitesse $\vv{v_2}$ entre les points $P_2$ et $P_3$ et le vecteur vitesse $\vv{v_6}$ entre les points $P_5$ et $P_7$, en vous aidant du document~\ref{doc:vitesse}.
+}{0}
+
+\feuilleBlanche
+
+%%%%
+% \newpage
+% \titreSection{Mouvement dans le référentiel de la trottinette}
+% 
+% %
+% \exo{
+%   Ouvrir la vidéo de la de chute balle dans le logiciel Tracker.
+% }{0}
+% 
+% %
+% \exo{
+%   Repérer dans la vidéo le moment où la balle commence à tomber. 
+% }{0}
+% 
+% %
+% \exo{
+%   Sur la vidéo, réaliser le pointage de la balle.
+% }{0}
+% 
+% %
+% \exo{
+%   Tracer la norme de la vitesse, la vitesse selon l'axe $x$ et la vitesse selon l'axe $y$.
+%   Que remarquez vous pour la vitesse selon l'axe $x$ ?
+% }{2}
+% 
+% %
+% \exo{
+%   Que pouvez-vous en déduire sur la nature du mouvement de la balle dans le référentiel de la trottinette ?
+%   Représenter avec un schéma sa trajectoire.
+% }{2}
+% \vspace{200pt}
+% 
+% %
+% \exo{
+%   Conclure sur la position de la balle au moment où elle touche le sol par rapport à la trottinette.
+% }{2}

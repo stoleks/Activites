@@ -1,0 +1,114 @@
+%%%%
+\sndEnTeteQuatre
+
+%%%% titre
+\vspace*{-36pt}
+\numeroActivite{3}
+\titreTP{Formation d'une image}
+
+
+%%%% Objectifs
+\begin{objectifs}
+  \item Utiliser une lentille convergente pour former une image.
+  \item Vérifier la modélisation d'une lentille convergente.
+\end{objectifs}
+
+\begin{contexte}
+  Une lentille mince convergente est un objet en verre, plus épais au centre qu'au niveau de sa bordure.
+  Ce système à la propriété de faire converger les rayons lumineux qui le traverse.
+  
+  \problematique{
+    Comment utiliser une lentille convergente pour former l'image d'un objet ?
+  }
+\end{contexte}
+\bigskip
+
+
+%%%%
+\begin{doc}{Rappel sur la détermination graphique d'une image}
+  \label{doc:formation image}
+  \vspace*{-24pt}
+  
+  \begin{encart}
+    Une lentille convergente possède un \important{centre optique} O, un \important{foyer image} $F'$ et un \important{foyer objet} $F$.
+  \end{encart}
+  La droite perpendiculaire à la lentille passant par le centre optique $O$ est appelée \important{l'axe optique}.
+  L'image d'un objet $AB$ est notée $A'B'$.
+  
+  \begin{center}
+    \image{0.8}{images/lumière/image_lentille_convergente.png}
+  \end{center}
+  
+  \begin{encart}
+    Trois rayons ont des propriétés particulières pour une lentille convergente :
+    \begin{listePoints}
+      \item un rayon passant par le centre optique $O$ n'est pas dévié ;
+      \item un rayon qui arrive parallèle à l'axe optique sort de la lentille en passant par le foyer image $F'$ ;
+      \item un rayon qui arrive en passant par le foyer objet $F$ sort de la lentille parallèlement à l'axe optique.
+    \end{listePoints}
+  \end{encart}
+\end{doc}
+
+%%
+\begin{doc}{Rappel sur le grandissement}
+  \label{doc:grandissement}
+  \vspace*{-24pt}
+  \begin{encart}
+    Le \important{grandissement} noté $\gamma$ (gamma) est le rapport entre la hauteur algébrique de l'image par celle de l'objet
+    $\gamma = \Frac{\algebrique{A'B'}}{\algebrique{AB}}$
+  \end{encart}
+  Si $\gamma < 0$ l'image est renversée.
+  Si $\gamma > 1$ l'image est plus grande que l'objet. 
+  Si $\gamma < 1$ l'image est plus petite que l'objet.
+  
+  \begin{encart}
+    En optique les longueurs sont \important{algébriques}, c'est-à-dire qu'elles sont positives ou négatives en fonction de leur sens, on les note avec une barre $\algebrique{AB}$.
+  \end{encart}
+  \exemple $\algebrique{AB} > 0$ si B est au dessus de A (ou si B est à droite de A) et $\algebrique{AB} < 0$ si B est en dessous de A (ou si B est à gauche de A).
+\end{doc}
+\bigskip
+
+
+%%%%
+\mesure
+Fixer la bague représentant le \og d \fg\, à la lampe, placer l’écran le plus loin possible et placer la lentille convergente entre la lampe et l’écran.
+
+Sans toucher à la lampe ou l'écran, trouver les deux positions de la lentille pour former l’image du \og d \fg\, la plus nette possible sur l’écran.
+  
+Choisir la position nette pour laquelle la lentille est proche de l’écran et \textbf{ne plus bouger la lentille}.
+
+\exo{
+  \label{exo:grandissement_definition}
+  Mesurer avec le mètre la taille de l’image $\algebrique{A'B'}$ sur l’écran et la taille $\algebrique{AB}$ de l’objet (lettre d) sur la lampe.
+  Calculer $\gamma$ à l'aide de ces mesures.
+}{0}
+\vspace*{-8pt}
+\begin{equation*}
+  \algebrique{A'B'} = \ldots \ldots \ldots
+  \qq{}
+  \algebrique{AB} = \ldots \ldots \ldots
+  \qq{}
+  \gamma = \ldots \ldots \ldots
+\end{equation*}
+
+\exo{
+  En utilisant le théorème de Thalès dans le document~\ref{doc:formation image}, montrer que 
+  $\gamma = \Frac{\algebrique{OA'}}{\algebrique{OA}}$
+}{3}
+
+\exo{
+  \label{exo:grandissement_thales}
+  Mesurer les distance $\algebrique{OA'}$ et $\algebrique{OA}$ et calculer de nouveau $\gamma$.
+}{0}
+\vspace*{-8pt}
+\begin{equation*}
+  \algebrique{OA'} = \ldots \ldots \ldots
+  \qq{}
+  \algebrique{OA} = \ldots \ldots \ldots
+  \qq{}
+  \gamma = \ldots \ldots \ldots
+\end{equation*}
+
+\exo{
+  En comparant les valeurs de $\gamma$ calculées question~\ref{exo:grandissement_definition} et~\ref{exo:grandissement_thales}, est-ce que la modélisation proposée dans le document~\ref{doc:formation image} vous semble valide ?
+}{2}

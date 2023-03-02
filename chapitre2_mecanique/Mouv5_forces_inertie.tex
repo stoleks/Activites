@@ -1,0 +1,209 @@
+%%%% début de la page
+\sndEnTeteDeux
+
+
+%%%% titre
+\numeroActivite{5}
+\titreActivite{Mouvement et forces}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre la notion de force, connaître des exemples de forces
+  \item Comprendre le lien entre mouvement et force
+  \item Comprendre le principe d'inertie
+\end{objectifs}
+\bigskip
+
+
+%%%%
+\begin{doc}{Force et action mécanique}
+  \label{doc:action_force_comp}
+  \chevron Un corps exerce une \important{action mécanique} sur le système étudié s’il est capable d’en modifier le mouvement.
+  Une action mécanique est modélisée par une \important{force.}
+
+  \begin{encart}
+    La force exercée par un corps $A$ sur un corps $B$ est représentée par un vecteur $\vvFAsurB$.
+    Ce vecteur possède les caractéristiques suivantes :
+    \begin{listePoints}
+      \item Une \important{norme} notée $\FAsurB$, qui s'exprime en newton (N).
+      \item Une \important{direction} et un \important{sens} qui dépendent de la situation.
+      \item Un \important{point d'application} : le centre du système $B$.
+    \end{listePoints}
+  \end{encart}
+\end{doc}
+\bigskip
+
+%%
+\begin{doc}{Exemples de forces}
+  \label{doc:exemples_forces}
+  On distingue 2 types d'actions : les \important{actions de contact} (contact entre l’objet qui donne la force et l’objet qui la reçoit), et les \important{actions à distance} (pas de contact).
+  \smallskip
+  
+  \begin{tabularx}{\linewidth}{| m{0.3\linewidth} | m{0.275\linewidth} | m{0.35\linewidth} |}
+    \hline
+    \rowcolor{gray!20}
+    \centering Force &
+    \centering Norme &
+    Direction, sens 
+    \\ \hline
+    %
+    \centering poids $\vv{P}$ &
+    \centering $P = m \times g$ &
+    verticale, vers le bas
+    \\ \hline
+    %
+    \centering réaction du support $\vv{R}$ &
+    \centering égale à celle du poids : \newline $R = P$ &
+    perpendiculaire au support, vers le haut
+    \\ \hline
+    %
+    \centering frottements $\vv{f}$ &
+    dépend du cas étudié &
+    $\vv{f}$ est opposée à la vitesse $\vv{v}$ (opposée au mouvement)
+    \\ \hline
+  \end{tabularx}
+  \smallskip
+  
+  \begin{listePoints}
+    \item Le poids $\vv{P}$ représente l'interaction gravitationnelle de la Terre.
+    \item La réaction du support $\vv{R}$ représente l'action exercée par le support sur un objet posé dessus.
+    \item Les frottements $\vv{f}$ représentent l'action d'un milieu (gaz, liquide, support solide) sur un objet qui s'y déplace.
+  \end{listePoints}
+\end{doc}
+
+%%%%
+\begin{tabularx}{\linewidth}
+{| m{0.2\linewidth} | m{0.37\linewidth} | m{0.36\linewidth} |}
+  \hline
+  %
+  \rowcolor{gray!20}
+  \centering
+  Système &
+  Ballon &
+  Curling
+  \\ \hline
+  %
+  Forces appliquées &
+  \phantom{\small b} \newline
+  \image{1}{images/mouvements/ballon_football} &
+  \phantom{\small b} \newline
+  \image{1}{images/mouvements/curling}
+  \\ \hline
+  %
+  \centering Mouvement &
+  \centering Immobile &
+  \phantom{b} \newline
+  \\ \hline
+  %
+  \rowcolor{gray!20}
+  \centering
+  Système &
+  Parachutiste &
+  Skieuse
+  \\ \hline
+  %
+  Forces appliquées &
+  \phantom{\small b} \newline
+  \image{1}{images/mouvements/parachutiste} &
+  \phantom{\small b} \newline
+  \image{1}{images/mouvements/skieur}
+  \\ \hline
+  %
+  \centering Mouvement &
+  &
+  \phantom{b} \newline
+  \\ \hline
+\end{tabularx}
+
+\begin{figure}[!ht]
+  \caption{Représentation des forces pour quelques situations sportives}
+  \label{tab:situations_sportives}
+\end{figure}
+
+
+%%%%
+\newpage
+\vspace*{-36pt}
+\titreSection{Forces et mouvement}
+
+%%
+\exo{
+  Parmi les forces $\vv{P}$, $\vv{R}$ et $\vv{f}$, indiquer celles qui sont des forces de contact et celles qui sont des forces à distance.
+}{3}
+
+\exo{
+  En vous aidant des documents~\ref{doc:action_force_comp} et~\ref{doc:exemples_forces}, compléter la figure~\ref{tab:situations_sportives} :
+}{0}
+
+\vspace*{-6pt}
+\sousQuestion{Sur chaque système étudié, schématiser avec des flèches la ou les forces entrant en jeu, en faisant attention à son point d'application.}{0}
+
+\vspace*{-6pt}
+\sousQuestion{Pour chaque système, indiquer son mouvement pour un ou une observatrice extérieure (trajectoire + évolution de la vitesse).}{0}
+
+
+%%%%
+\titreSection{Principe d'inertie}
+
+\exo{
+  Répondre par vrai ou faux en justifiant à l'aide d'exemples ou de contre exemples.
+}{0}
+
+\vspace*{-6pt}
+\sousQuestion{Si un objet est en mouvement, alors il est forcément accéléré.}{2}
+
+\sousQuestion{Si un objet est en mouvement, alors il subit une force dans le sens du mouvement.}{2}
+
+\sousQuestion{Si deux objets sont animés par les mêmes forces, alors ils suivent la même trajectoire.}{2}
+
+\exo{
+  On dit que deux forces se compensent si leur sommes vectorielle est nulle.
+  Pour quels systèmes de la figure~\ref{tab:situations_sportives} les forces se compensent-elles ?
+}{2}
+
+\exo{
+  Quel est le mouvement du système dans chaque cas où les forces se compensent ?
+}{2}
+
+
+
+\begin{doc}{Conclusion : Le principe d'inertie}
+  \phantom{b}
+  \vspace*{-12pt}
+  
+  \chevron Le \important{principe d'inertie} a été formulé pour la première fois par Newton en 1687.
+  Newton s'appuyait sur les travaux de Descartes et de Galilée, et parfois on appelle ce principe la \important{première loi de Newton}.
+  Sa formulation moderne est la suivante :
+  
+  \begin{encart}
+    Si les forces qui s'exercent sur un système se compensent, alors ce système est \\[6pt]
+    soit \lignePointillee{0.2}, 
+    soit en mouvement \dotfill
+  \end{encart}
+  
+  \begin{encart}
+    Réciproquement, si un système est \dotfill \\[6pt]
+    .\dotfill, alors les forces\\[6pt]
+    . \dotfill
+  \end{encart}
+\end{doc}
+
+
+%%%%
+\titreSection{Variation du vecteur vitesse}
+
+\exo{
+  Comment varie $\vv{v}$ pour un système qui a un mouvement rectiligne uniforme ?
+  En déduire la variation de $\vv{v}$ pour un système soumis à des forces qui se compensent.
+}{3}
+
+\begin{doc}{Principe d'inertie et vitesse}
+  \vspace*{-24pt}
+  \begin{encart}
+    Le principe d'inertie dit que si le vecteur vitesse \dotfill \\[6pt]
+    au cours de la trajectoire, alors \dotfill \\[6pt]
+    \reponse{1}
+    %les forces exercées sur le système se compensent.
+  \end{encart}
+\end{doc}

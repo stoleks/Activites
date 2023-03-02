@@ -1,0 +1,153 @@
+%%%% début de la page
+\sndEnTeteDeux
+
+
+%%%% titre
+\numeroActivite{8}
+\titreActivite{Vol d'oie et saut en parachute}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Remobiliser les notions de référentiel, forces, vitesses
+  \item Utiliser le principe d'inertie pour calculer des forces
+\end{objectifs}
+
+
+%%%%
+\begin{doc}{Référentiel terrestre}
+  \vspace*{-24pt}
+  \begin{encart}
+   % Pour étudier des mouvements, sur Terre on va généralement utiliser le \important{référentiel terrestre}. Ce référentiel est lié à la surface de la Terre.
+     Sur Terre on utilise souvent le \important{référentiel terrestre} pour étudier des mouvements. Ce référentiel est lié à la surface de la Terre.
+  \end{encart}
+\end{doc}
+
+
+%%%%
+\vspace*{-12pt}
+\titreSection{Vol d'une oie}
+
+%%
+\vspace{-12pt}
+\begin{doc}{Énoncé}
+  \vspace*{-20pt}
+  \begin{center}
+    \image{0.5}{images/mouvements/oie.png}
+  \end{center}
+  
+  
+  On considère que deux forces s'exercent sur une oie qui plane avec un mouvement rectiligne uniforme : son poids et la portance de l'air.
+  L'étude se fait dans le référentiel terrestre et on néglige les forces de frottements ($\vv{f} \approx \vv{0})$.
+
+  \textbf{Données :}
+  \begin{listePoints}
+    \item Masse de l'oie $m = 400 \unit{g}$.
+    \item Accélération de la pesanteur terrestre $g = 9,\!81 \unit{N/kg}$.
+  \end{listePoints}
+\end{doc}
+
+\exo{
+  Les forces exercées sur l'oie se compensent-elles ? Justifier.
+}{0}
+
+\exo{
+  En déduire une relation entre les valeurs de ces deux forces.
+}{0}
+
+\exo{
+  Calculer la norme du poids P de l'oie.
+}{0}
+
+\exo{
+  En déduire la norme de la force de portance $F_\text{air}$.
+}{0}
+
+\exo{
+  Représenter la situation sur un schéma, en modélisant l'oie par un point matériel et en représentant les forces qui s'exercent sur elle, sans souci d'échelle.
+}{0}
+
+
+%%%%
+\newpage
+\vspace*{-36pt}
+\titreSection{Saut en parachute}
+
+%%
+\vspace{-12pt}
+\begin{doc}{Énoncé}
+  Une parachutiste saute sans vitesse initiale d'un hélicoptère en vol stationnaire.
+  Après quelques secondes en chute libre, elle ouvre son parachute.
+  Les frottements dus à l'air sur la toile s'expriment par une force opposée au mouvement. 
+
+  \begin{wrapfigure}{r}{0.45\linewidth}
+    \vspace*{-34pt}
+    \begin{center}
+      \image{1}{images/mouvements/norme_vitesse_parachute.png}
+      \small{
+        Vitesse du système en fonction du temps.
+      }
+    \end{center}
+  \end{wrapfigure}
+  
+  Dans ce cas la norme de cette force est proportionnelle au carré de la vitesse
+  \begin{equation*}
+    f = k \times v^2
+  \end{equation*}
+  avec $f$ la force de frottements, $k$ le coefficient de frottements et $v$ la vitesse du système.
+
+  \textbf{Données :}
+  \begin{listePoints}
+    \item Masse du système (parachutiste + parachute) $m = 90\unit{kg}$.
+    \item Accélération de la pesanteur terrestre $g = 9,\!81 \unit{N \cdot kg^{-1}}$.
+  \end{listePoints}
+\end{doc}
+
+
+%%
+\exo{
+  Décrire les différentes phases du mouvement, la trajectoire étant tout le temps rectiligne.
+}{0}
+
+%%
+\exo{
+  Comment varie la norme du vecteur vitesse entre 0 et 15 s ? Commenter.
+}{0}
+
+%%
+\exo{
+  À quelle(s) force(s) est soumis le système entre 0 et 12 s ?
+}{0}
+
+%%
+\exo{
+  Lorsque le parachute est ouvert, $k = 10 \unit{N\cdot s^2\cdot m^{-2}}$.
+  Calculer l'intensité (la norme) de la force de frottements à l'instant où la parachutiste ouvre son parachute.
+}{0}
+
+%%
+\exo{
+  Expliquer le mouvement à partir de l'instant $t = 16 \unit{s}$.
+}{0}
+
+%%
+\exo{
+  Calculer la valeur du coefficient de frottements $k$ à l'instant $t = 20 \unit{s}$.
+}{0}
+
+\begin{doc}{Vitesse de chute libre}
+  Pour un objet tombant dans le vide sans vitesse initiale, sa vitesse au moment de toucher le sol vaut
+  \begin{equation*}
+    v = \sqrt{2\cdot g \cdot h}
+    \qq{ou}
+    h = \Frac{v^2}{2 \cdot g}
+  \end{equation*}
+  où $g$ est l'accélération de pesanteur terrestre et $h$ la hauteur du point de chute.
+\end{doc}
+
+%%
+\exo{
+  En utilisant la relation entre $h$ et la vitesse $v$, calculer de quelle hauteur tomberait la parachutiste avec sa vitesse à l'instant $t = 20\unit{s}$.
+  Calculer la hauteur pour la vitesse à l'instant $t = 12\unit{s}$.
+  Conclure sur l'intérêt du parachute.
+}{0}
