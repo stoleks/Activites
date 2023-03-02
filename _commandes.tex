@@ -101,6 +101,7 @@
   \setcounter{figure}{0}
   \setcounter{document}{0}
   \setcounter{exercice}{0}
+  \setcounter{QCM}{0}
   \setcounter{acti}{#1 - 1}
   \setcounter{page}{1}
 }
@@ -221,9 +222,11 @@
 }
 
 % question QCM
+\newcounter{QCM}
 \newcommand{\QCM}[2]{
-  \question{#1}{0}
-  \vspace*{-8pt}
+  \refstepcounter{QCM}
+  \vspace*{2pt}
+  \textcolor{darkcyan!75!black}{\textbf{\arabic{QCM}} {\small\faMinus}} #1
   
   \begin{qcm}
     #2
@@ -333,7 +336,7 @@
 \newcommand{\appreciation}[1]{
   \vspace*{8pt}
   \sousTitre{Appréciation et remarques}
-  \vspace*{-4pt}
+  \vspace*{-8pt}
   \begin{boite}
     \vspace{#1 pt}
     \phantom{b}
@@ -739,7 +742,23 @@
        \setlength{\@tempdima}{\@tempdimc}%
    \fi%
   \begingroup%
-  \ensuremath{^{\makebox[\@tempdima][r]{\ensuremath{\scriptstyle#1}}}_{\makebox[\@tempdima][r]{\ensuremath{\scriptstyle#2}}}\chemfig{#3}}%
+  \ensuremath{
+    ^{\makebox[\@tempdima][r]{\ensuremath{\scriptstyle#1}}}
+    _{\makebox[\@tempdima][r]{\ensuremath{\scriptstyle#2}}}
+    \chemfig{#3}
+  }%
+  \endgroup%
+}%
+\makeatother
+%% element chimique
+\makeatletter
+\newcommand{\element}[2]{%
+   \settowidth\@tempdimb{\ensuremath{\footnotesize #1}}%
+  \begingroup%
+  \ensuremath{
+    ^{\makebox[\@tempdimb][r]{\ensuremath{\small #1}}} 
+    \chemfig[atom style={scale=1.3}]{#2}
+  }%
   \endgroup%
 }%
 \makeatother
