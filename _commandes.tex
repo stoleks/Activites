@@ -221,12 +221,13 @@
 }
 
 % question QCM
-\newenvironment{\QCM}{
-  \question{}
+\newcommand{\QCM}[2]{
+  \question{#1}{0}
+  \vspace*{-8pt}
   
-}
-{
-  \end{tcolorbox}
+  \begin{qcm}
+    #2
+  \end{qcm}
 }
 
 
