@@ -520,7 +520,12 @@
 
 %%%% liste d'objectif
 \newlist{listeObjectifs}{itemize}{2}
-\setlist[listeObjectifs]{label=\chevron}
+\setlist[listeObjectifs]{label = \chevron}
+
+
+%%%% protocole
+\newlist{protocole}{itemize}{2}
+\setlist[protocole]{label = {\footnotesize \fleche}}
 
 
 %%%% liste de points
@@ -699,13 +704,16 @@
   ^\circ\!
 }
 \newcommand{\degreCelsius}{
-  ^\circ\!\unit{C}
+  \degree \unit{C}
 }
 \newcommand{\Frac}[2]{
   \displaystyle \frac{#1}{#2}
 }
 \newcommand{\algebrique}[1]{
   \overline{\mathrm{#1}}
+}
+\newcommand{\reaction}{
+  \!\!\schemestart \arrow(.mid east--.mid west){->}[, 0.9, ultra thick] \schemestop\!\!
 }
 %% grandeurs
 \newcommand{\gISS}{g_\text{ISS}}
