@@ -1,10 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% couleurs
-\definecolor{darkgreen}{rgb}{0.0, 0.40, 0.10}
-\definecolor{darkcyan}{rgb}{0.0, 0.55, 0.50}
-\definecolor{darkred}{RGB}{148, 31, 0}
-\definecolor{brightyellow}{RGB}{238, 193, 0}
-\definecolor{brightred}{RGB}{224, 39, 34}
+%%%% quelque couleurs
+\definecolor{vertSombre} {RGB}{  0, 102,  26}
+\definecolor{cyanSombre} {RGB}{  0, 140, 128}
+\definecolor{jauneSombre}{RGB}{208, 173,   0}
+\definecolor{jauneClair} {RGB}{238, 193,   0}
+\definecolor{rougeSombre}{RGB}{148,  31,   0}
+\definecolor{rougeClair} {RGB}{224,  39,  34}
 
 %%%% rectangle coloré
 \newcommand\rectangle[3]{%
@@ -14,7 +15,7 @@
               minimum height=#3] {};
   \shorthandon{;}
 }
-\newcommand\rectangleCyan[2]{\rectangle{darkcyan}{#1}{#2}}
+\newcommand\rectangleCyan[2]{\rectangle{couleurPrincipale}{#1}{#2}}
 
 %%%% simple boite
 \newenvironment{boite}{
@@ -213,7 +214,7 @@
   \refstepcounter{exercice}
   \vspace*{2pt}
   \hspace{15pt}
-  \textcolor{darkcyan!75!black}{
+  \textcolor{couleurPrincipale!75!black}{
     \textbf{\arabic{exercice}} {\small\faMinus}
   }
 }
@@ -222,7 +223,7 @@
 \newcommand{\correction}[1]{
   \vspace*{2pt}
   \hspace{16pt}
-  \textcolor{darkcyan!60!black}{
+  \textcolor{couleurPrincipale!60!black}{
     \faCaretRight \hspace{2pt} #1
   }
 }
@@ -244,7 +245,7 @@
 % sous questions
 \newcommand{\sousQuestion}[2]{
   \hspace{15pt}
-  \textcolor{darkcyan!75!black}{\textbullet} #1
+  \textcolor{couleurPrincipale!75!black}{\textbullet} #1
   
   \vspace*{8pt}
   \reponse{#2}
@@ -257,7 +258,7 @@
 \newcommand{\QCM}[2]{
   \refstepcounter{QCM}
   \vspace*{2pt}
-  \textcolor{darkcyan!75!black}{\textbf{\arabic{QCM}} {\small\faMinus}} #1
+  \textcolor{couleurPrincipale!75!black}{\textbf{\arabic{QCM}} {\small\faMinus}} #1
   
   \begin{qcm}
     #2
@@ -348,10 +349,10 @@
   [boxrule = 0pt,
   frame hidden, sharp corners,
   colback = white, enhanced,
-  borderline north={2pt}{0pt}{darkcyan},
-  borderline south={2pt}{0pt}{darkcyan},
-  borderline west={4pt}{0pt}{darkcyan},
-  borderline east={4pt}{0pt}{darkcyan}
+  borderline north={2pt}{0pt}{couleurPrincipale},
+  borderline south={2pt}{0pt}{couleurPrincipale},
+  borderline west={4pt}{0pt}{couleurPrincipale},
+  borderline east={4pt}{0pt}{couleurPrincipale}
   ]
   
 }
@@ -375,11 +376,11 @@
   \vspace*{-12pt}
   \begin{boite}
     \begin{flushright}
-      \textcolor{darkcyan}{\faSquareO}
+      \textcolor{couleurPrincipale}{\faSquareO}
     \end{flushright}
     
     \vspace*{-30pt}
-    \textcolor{darkcyan}{\faThumbsUp}
+    \textcolor{couleurPrincipale}{\faThumbsUp}
     \textbf{Coup de pouce} :\\[4pt]
 }
 {
@@ -471,36 +472,36 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% symboles : chevron, flèche, attention, etc.
 \newcommand{\chevron}{
-  \textcolor{darkcyan}{\small \faChevronRight}
+  \textcolor{couleurPrincipale}{\small \faChevronRight}
 }
 %
 \newcommand{\fleche}{
-  \textcolor{darkcyan}{\faCaretRight}
+  \textcolor{couleurPrincipale}{\faCaretRight}
 }
 %
 \newcommand{\attention}{
-  \textcolor{darkcyan}{\faExclamationTriangle}
+  \textcolor{couleurPrincipale}{\faExclamationTriangle}
 }
 %
 \newcommand{\flecheLongue}{
-  \textcolor{darkcyan}{\faLongArrowRight}
+  \textcolor{couleurPrincipale}{\faLongArrowRight}
 }
 %
 \newcommand{\ok}{
-  \textcolor{darkcyan}{\faCheckCircle}
+  \textcolor{couleurPrincipale}{\faCheckCircle}
 }
 %
 \newcommand{\pasOk}{
-  \textcolor{darkcyan}{\faTimesCircle}
+  \textcolor{couleurPrincipale}{\faTimesCircle}
 }
 %
 \newcommand{\pointCyan}{
-  \textcolor{darkcyan}{\textbullet}
+  \textcolor{couleurPrincipale}{\textbullet}
 }
 %
 \newcommand{\mesure}{
   \hspace{15pt}
-  \textcolor{darkcyan!75!black}{\faWrench\faFlask}
+  \textcolor{couleurPrincipale!75!black}{\faWrench\faFlask}
 }
 
 
@@ -510,9 +511,9 @@
   \begin{tcolorbox}
   [boxrule = 0pt,
   frame hidden, sharp corners,
-  colback = white!95!darkcyan, % background color
+  colback = white!95!couleurPrincipale, % background color
   breakable, enhanced jigsaw, % to break box over page
-  borderline west={4pt}{0pt}{darkcyan}] % left bar
+  borderline west={4pt}{0pt}{couleurPrincipale}] % left bar
   
 }
 {
@@ -523,8 +524,8 @@
 \newenvironment{contexte}{
   \begin{tcolorbox}
   [boxrule = 4pt, sharp corners,
-  colframe = darkcyan,
-  colback = white!95!darkcyan, % background color
+  colframe = couleurPrincipale,
+  colback = white!95!couleurPrincipale, % background color
   breakable, enhanced jigsaw] % to break box over page
   
 }
@@ -535,11 +536,11 @@
 
 %%%% emphase
 \newcommand{\emphase}[1]{
-  \textcolor{darkcyan}{\textsf{\bfseries \large #1}}
+  \textcolor{couleurPrincipale}{\textsf{\bfseries \large #1}}
 }
 %
 \newcommand{\important}[1]{
-  \!\textcolor{darkgreen}{\textsf{\bfseries #1}}\!\!
+  \!\textcolor{couleurImportant}{\textsf{\bfseries #1}}\!\!
 }
 %
 \newcommand{\exemple}{
@@ -599,7 +600,7 @@
 
 %%%% liste avec chiffre
 \newlist{enumeration}{enumerate}{2}
-\setlist[enumeration]{label = \textcolor{darkcyan!75!black}{\textbf{\arabic*.}} }
+\setlist[enumeration]{label = \textcolor{couleurPrincipale!75!black}{\textbf{\arabic*.}} }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
