@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% quelque couleurs
-\definecolor{vertSombre} {RGB}{  0, 102,  26}
+\definecolor{vertSombre} {RGB}{  0, 92,  46}
 \definecolor{cyanSombre} {RGB}{  0, 140, 128}
-\definecolor{jauneSombre}{RGB}{208, 173,   0}
-\definecolor{jauneClair} {RGB}{238, 193,   0}
+\definecolor{jauneSombre}{RGB}{138, 103,   0}
+\definecolor{jauneClair} {RGB}{218, 173,   0}
 \definecolor{rougeSombre}{RGB}{148,  31,   0}
 \definecolor{rougeClair} {RGB}{224,  39,  34}
 
@@ -289,6 +289,15 @@
   }{% élève
     \espaceReponse
     \lignePointillee{#2}
+  }
+}
+
+% texte à trou sur plusieurs lignes
+\newcommand{\texteTrouLigneComplete}[1]{
+  \ifthenelse {\boolean{modeProf}} {% prof
+    \textcolor{darkcyan!60!black}{ \textbf{#1} }
+  }{% élève
+    \espaceReponse \dotfill
   }
 }
 
