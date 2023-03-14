@@ -283,9 +283,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % texte à trou dans une ligne
 \newcommand{\texteTrou}[2]{
-  \ifthenelse {\boolean{modeProf}} { % prof
-    #1
-  }{ % élève
+  \ifthenelse {\boolean{modeProf}} {% prof
+    \textcolor{darkcyan!60!black}{ \textbf{#1} }
+  }{% élève
     \espaceReponse
     \lignePointillee{#2}
   }
@@ -293,9 +293,9 @@
 
 % texte à trou sur plusieurs lignes
 \newcommand{\texteTrouMultiLignes}[2]{
-  \ifthenelse {\boolean{modeProf}} { % prof
-    #1
-  }{ % élève
+  \ifthenelse {\boolean{modeProf}} {% prof
+    \textcolor{darkcyan!60!black}{ \textbf{#1} }
+  }{% élève
     \reponseLigne
     \lignesReponse{#2}
   }
