@@ -114,6 +114,7 @@
 
 
 %%%%
+\vspace*{-12pt}
 \titreSection{Premier système étudié : l'eau liquide}
 
 \mesure
@@ -121,6 +122,8 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
 
 \question{
   L'eau liquide a-t-elle gagné ou perdu de l'énergie par transfert thermique ?
+}{
+  La température de l'eau a diminué, l'eau liquide a donc perdu de l'énergie par transfert thermique.
 }{1}
 
 \question{
@@ -128,10 +131,21 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
   \begin{equation*}
     Q = m_\text{eau} \times c_\text{eau} \times (T_f - T_i)
   \end{equation*}
-  où $c_\text{eau} = 4,\!180 \unit{J \cdot g^{-1} \cdot \degree C^{-1}}$ est la capacité calorifique de l'eau.
+  où $c_\text{eau} = 4,\!180 \unit{J \cdot g^{-1} \cdot \degreCelsius^{-1}}$ est la capacité calorifique de l'eau.
   Cette constante mesure la quantité d'énergie nécessaire pour augmenter la température de $1 \degreCelsius$ pour $1\unit{g}$ d'eau.
   
   Calculer la valeur de $Q$ avec vos mesures.
+}{
+  \vspace*{-18pt}
+  \begin{align*}
+    Q
+    & = c_\text{eau} \times m_\text{eau} \times (T_f - T_i) \\
+    & = 4,\!180 \unit{J \cdot g^{-1} \cdot \degreCelsius^{-1}} 
+      \times 199 \unit{g}
+      \times (6,\!3 - 17,\!4) \unit{\degreCelsius} \\
+    & = -9233 \unit{J}
+  \end{align*}
+  \vspace*{-24pt}
 }{2}
 
 
@@ -141,24 +155,44 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
   \label{exo:energie_L_fusion}
   Comme on utilise un calorimètre, on va considérer que tous le transfert thermique $Q$ fourni par l'eau liquide a servi à faire fondre les glaçons.
   Donner la valeur de $L$ l'énergie de changement d'état de fusion de la glace.
+}{
+  Toute l'énergie perdue par l'eau est transférée aux glaçons, qui gagne donc une énergie $- Q$.
+  Toute cette énergie fait fondre les glaçons, on a donc
+  \begin{equation*}
+    L = -Q
+  \end{equation*}
+  \vspace*{-12pt}
 }{2}
 
 \question{
   En vous aidant du document~\ref{doc:energie_changement_etat}, calculer la valeur $L_m$ de l'énergie de changement d'état massique de fusion de la glace.
+}{
+  \vspace*{-18pt}
+  \begin{align*}
+    L_m 
+    = \Frac{L}{m_\text{glaçon}}
+    = \Frac{9233  \unit{J}}{27,\!92 \unit{g}}
+    = 330,\!7 \unit{J \cdot g^{-1}}
+  \end{align*}
+  \vspace*{-12pt}
 }{2}
 
 \question{
   Comparer avec la valeur de référence $L_{m, \text{référence}} = 334\unit{J \cdot g^{-1}}$.
   L'hypothèse de la question~\ref{exo:energie_L_fusion} vous semble-t-elle valide ?
+}{
+  On trouve une énergie de changement d'état massique plus petite que la valeur de référence.
+  On peut expliquer cette différence par le fait que le glaçon commence à fondre avant d'être placé dans le calorimètre.
 }{2}
 
 
+%%%%
+\newpage
+\vspace*{-12pt}
 \titreSection{Bilan}
 
-On voit que pour fondre, les glaçons ont dû recevoir de l'énergie sous forme de transfert \\[8pt]
-thermique par l'eau liquide autour d'eux. 
-On parle de \reponseLigne
-\reponse{1}
+On voit que pour fondre, les glaçons ont dû recevoir de l'énergie sous forme de transfert thermique par l'eau liquide autour d'eux.
+On parle de \texteTrouMultiLignes{transformation endothermique}{1}
 
 %%
 \begin{doc}{Transformations endothermique et exothermique}

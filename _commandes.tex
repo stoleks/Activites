@@ -184,17 +184,63 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% exercice
+% définit un booléen pour entrer ou sortir du mode correction
+\newboolean{modeProf}
+\setboolean{modeProf}{false}
+\newcommand{\modeCorrection}{
+  \setboolean{modeProf}{true}
+}
+
+% définit une commande pour afficher une question 
+% #1 : question
+% #2 : réponse
+% #3 : nombres de lignes pour répondre
+\newcommand{\question}[3]{
+  \numeroQuestion #1
+  
+  % pointille ou correction
+  \ifthenelse {\boolean{modeProf}} { % prof
+    \correction{#2}
+  }{ % eleve
+    \vspace*{8pt}
+    \lignesReponse{#3}
+  }
+}
+
+%
 \newcounter{exercice}
-\newcommand{\question}[2]{
+\newcommand{\numeroQuestion}{
   \refstepcounter{exercice}
   \vspace*{2pt}
   \hspace{15pt}
-  \textcolor{darkcyan!75!black}{\textbf{\arabic{exercice}} {\small\faMinus}} #1
-  
-  
-  \vspace*{8pt}
-  \reponse{#2}
+  \textcolor{darkcyan!75!black}{
+    \textbf{\arabic{exercice}} {\small\faMinus}
+  }
 }
+
+% correction
+\newcommand{\correction}[1]{
+  \vspace*{2pt}
+  \hspace{16pt}
+  \textcolor{darkcyan!60!black}{
+    \faCaretRight \hspace{2pt} #1
+  }
+}
+
+% trace des lignes pour répondre
+\newcounter{int}
+\newcommand{\lignesReponse}[1]{
+  \setcounter{int}{-1}
+  \loop
+    \stepcounter{int}
+    \ifnum \value{int} < #1
+    \lignePointillee{0.99} \\[8pt]
+  \repeat
+  \ifnum #1 > 0
+    \vspace*{-12pt}
+  \fi
+}
+
 % sous questions
 \newcommand{\sousQuestion}[2]{
   \hspace{15pt}
@@ -203,24 +249,9 @@
   \vspace*{8pt}
   \reponse{#2}
 }
-% reponse
-\newcounter{int}
-\newcommand{\reponse}[1]{
-  \setcounter{int}{-1}
-  \loop
-  \stepcounter{int}
-  \ifnum \value{int} < #1
-  \lignePointillee{0.99} \\[8pt]
-  \repeat
-  \ifnum #1 > 0
-    \vspace*{-12pt}
-  \fi
-}
-% reponse en fin de ligne
-\newcommand{\reponseLigne}{
-  \dotfill \\[8pt]
-}
 
+
+%%%% QCM
 % question QCM
 \newcounter{QCM}
 \newcommand{\QCM}[2]{
@@ -234,19 +265,9 @@
 }
 
 
-%%%% correction
-\newcommand{\correction}[1]{
-  \vspace*{-6pt}
-  \hspace{24pt} \fleche \textit{#1}
-  \vspace*{8pt}
-}
-
-
-%%%%
+%%%% Pour afficher les compétences
 \newcommand{\competence}[1]{
-  {\footnotesize
-    \textit{(#1)}
-  }
+  { \footnotesize \textit{(#1)} }
 }
 
 
@@ -256,6 +277,40 @@
   Nom : \lignePointillee{0.3}
   Prénom : \lignePointillee{0.3}
   Classe : \dotfill
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% texte à trou dans une ligne
+\newcommand{\texteTrou}[2]{
+  \ifthenelse {\boolean{modeProf}} { % prof
+    #1
+  }{ % élève
+    \espaceReponse
+    \lignePointillee{#2}
+  }
+}
+
+% texte à trou sur plusieurs lignes
+\newcommand{\texteTrouMultiLignes}[2]{
+  \ifthenelse {\boolean{modeProf}} { % prof
+    #1
+  }{ % élève
+    \reponseLigne
+    \lignesReponse{#2}
+  }
+}
+
+% reponse en fin de ligne
+\newcommand{\reponseLigne}{
+  \espaceReponse
+  \dotfill \\[8pt]
+}
+
+% espace vertical pour la réponse
+\newcommand{\espaceReponse}{
+  \phantom{$\Frac{1}{1}$} % espace vertical
+  \hspace*{-40pt} \phantom{b} % ajuste l'espace horizontal
 }
 
 
@@ -704,7 +759,7 @@
   ^\circ\!
 }
 \newcommand{\degreCelsius}{
-  \degree \unit{C}
+  \degree\, \mathrm{C}
 }
 \newcommand{\Frac}[2]{
   \displaystyle \frac{#1}{#2}
@@ -739,6 +794,7 @@
 \newcommand{\vvFBsurA}{
   \vv{F}_{B/A}
 }
+
 %% atome et isotope
 \makeatletter
 \newcommand{\isotope}[3]{%
@@ -764,12 +820,13 @@
    \settowidth\@tempdimb{\ensuremath{\footnotesize #1}}%
   \begingroup%
   \ensuremath{
-    ^{\makebox[\@tempdimb][r]{\ensuremath{\small #1}}} 
+    _{\makebox[\@tempdimb][r]{\ensuremath{\small #1}}} 
     \chemfig[atom style={scale=1.3}]{#2}
   }%
   \endgroup%
 }%
 \makeatother
+
 %% siècle
 \newcommand{\siecle}[1]{
   \textsc{\romannumeral #1}\textsuperscript{e}~siècle
@@ -806,3 +863,6 @@
     tabsize=2
 }
 \def\inline{\lstinline[style=codePython,language=python]}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
