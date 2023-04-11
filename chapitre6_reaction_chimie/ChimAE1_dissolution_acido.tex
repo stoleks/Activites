@@ -1,0 +1,134 @@
+%%%%
+\sndEnTeteSix
+
+%%%% titre
+\vspace*{-28pt}
+\numeroActivite{1}
+\titreTP{Dissolution et transfert d'énergie}
+
+%%%% Objectifs
+\begin{objectifs}
+  \item Comprendre la notion de réaction endothermique et exothermique.
+  \item Réaliser des dissolutions en respectant les consignes de sécurité.
+\end{objectifs}
+
+\begin{contexte}
+  Quand on ajoute de l'acide chlorhydrique dans de la soude, une réaction chimique a lieu et la température de la solution augmente.
+  On dit que la réaction est \important{exothermique} : de l'énergie a été libérée.
+  
+  \problematique{
+    Peut-on contrôler la température à la fin de la réaction en changeant les conditions initiales ?
+  }
+\end{contexte}
+\bigskip
+
+
+%%%% docs
+\begin{doc}{Réaction endothermique et exothermique}
+  Une transformation endothermique nécessite d'absorber de l'énergie pour avoir lieu.
+  Cette perte d'énergie sous forme de transfert thermique implique un abaissement de la température du milieu extérieur.
+  
+  \begin{encart}
+    Pour une réaction chimique en solution, la solution va donc voir sa \important{température diminuer} si la réaction est \important{endothermique.}
+  \end{encart}
+  
+  Il est ainsi possible de faire baisser la température chimiquement, par exemple si on dissout dans de l'eau une espèce chimique dont la dissolution est endothermique.
+  \attention Toutes les transformations de dissolution ne sont pas endothermique !
+  
+  \begin{encart}
+    Inversement, la solution va voir sa \important{température augmenter} si la réaction chimique est \important{exothermique.}
+  \end{encart}
+\end{doc}
+\bigskip
+
+%%
+\begin{doc}{Le chlorure d'ammonium}
+  \label{doc:chlorure_ammonium}
+  Le chlorure d'ammonium \chemfig{NH_4Cl}, est un solide blanc à température ambiante.
+  Il est irritant pour les yeux et nocif en cas d'ingestion.
+  \textbf{On portera donc des lunettes de protection pendant toute les manipulations}.
+  
+  Le chlorure d'ammonium est soluble dans l'eau jusqu'à une certaine limite : on ne pourra dissoudre que $37,\!2 \unit{g}$ dans $100 \unit{mL}$ d'eau à $20 \degreCelsius$.
+
+  Lors de la dissolution du chlorure d'ammonium dans l'eau, il se dissocie en ses ions constitutifs : les ions ammonium \chemfig{NH_4^+}, et les ions chlorure \chemfig{Cl^{-}}.
+
+  \smallskip
+  \attention Danger du \chemfig{NH_4Cl} : H302 (toxicité aiguë) ; H319 (irritation des yeux).
+\end{doc}
+\newpage
+
+%%
+\vspace*{-36pt}
+\begin{doc}{Dissolution à réaliser}
+  \label{doc:dissolution_protocole}
+  Pour réaliser la réaction de dissolution décrite dans le document~\ref{doc:chlorure_ammonium}, prendre 2 béchers et verser dans chacun $50 \unit{mL}$ d’eau distillée.
+  
+  Mesurer la masse d'eau distillée versée $m_\text{eau} =$ \texteTrou{$50,0\unit{g}$}{0.1}
+  
+  Ajouter les masses suivantes de chlorure d'ammoniun \chemfig{NH_4 Cl} :
+  \begin{listePoints}
+    \item bécher 1 : $m = 5,\!0 \unit{g}$
+    \item bécher 2 : $m = 10,\!0 \unit{g}$
+    % \item bécher 3 : $10,0 \unit{g}$
+  \end{listePoints}
+\end{doc}
+
+
+%%%% Questions
+\question{
+  Écrire la réaction de dissolution du chlorure d'ammonium dans l'eau.
+}{
+  \chemfig{NH_4 Cl}(s) \reaction \chemfig{NH_4^+} + \chemfig{Cl^{-}}
+}{1}
+
+%%
+\mesure
+Réaliser les dissolutions demandées dans le document~\ref{doc:dissolution_protocole}. 
+Mesurer la température initiale $T_i$ avant l’ajout du solide, puis la température finale $T_f$ lorsque celle-ci ne varie plus.
+Noter les résultats dans le tableau suivant :
+\begin{center}
+  \begin{tabularx}{\linewidth}{| c | c | c | X |}
+    \hline \rowcolor{gray!20} 
+    & Température initiale $T_i$
+    & Température finale $T_f$
+    & Variation de température \phantom{b}\hspace*{14pt} $\Delta T = T_f - T_i$
+    \\ \hline
+    Bécher 1 & \correction{$20,0 \unit{\degreCelsius}$} & \correction{$15,8 \unit{\degreCelsius}$} & \correction{$-4,2 (\degreCelsius)$}
+    \\ \hline
+    Bécher 2 & \correction{$20,0 \unit{\degreCelsius}$} & \correction{$7,4 \unit{\degreCelsius}$} & \correction{$-12,6 \unit{\degreCelsius}$}
+    \\ \hline
+    % Bécher 3 & & &
+    % \\ \hline
+  \end{tabularx}
+\end{center}
+
+%%
+\question{
+  La réaction de dissolution est-elle endothermique ou exothermique ? Justifier.
+}{
+  La réaction est endothermique, car la température de la solution baisse pendant la dissolution.
+}{2}
+
+%%
+\question{
+  Quel est l'impact de la masse de \chemfig{NH_4Cl} sur la variation de la température ?
+}{
+  La variation de température augmente avec la masse : plus la masse est élevée et plus la température diminue.
+}{1}
+
+%%
+\question{
+  Calculer l’énergie absorbée par la réaction de dissolution $E = m_\text{eau} \times c_\text{eau} \times \Delta T$. \textbf{Donnée :} La capacité thermique de l’eau vaut $c_\text{eau} = 4,\!180 \unit{J\cdot g^{-1}\cdot \degreCelsius^{-1}}$
+}{
+  $E_1 = 875 \unit{J}$,
+  %$E_2 = 1750 \unit{J}$,
+  $E_2 = 2625 \unit{J}$
+}{3}
+
+%%
+\question{
+  Calculer l'énergie de dissolution massique $E_m = - E / m$, avec $m$ la masse de chlorure d'ammonium dissoute.
+  Comparer avec la valeur de référence $E_m = 276,\!3 \unit{J \cdot g^{-1}}$.
+}{
+  ...
+}{2}

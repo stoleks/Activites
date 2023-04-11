@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 
 %%%% useful packages
-\usepackage[a4paper, left=1.25cm, right=1.25cm, top=2.2cm, bottom=2.3cm]{geometry}
+\usepackage[a4paper, left=1.3cm, right=1.3cm, top=2.2cm, bottom=2.3cm]{geometry}
 \usepackage{subcaption} % for figure caption
 \usepackage{graphicx} % image
 \usepackage{tabularx} % table
@@ -29,6 +29,7 @@
 \usepackage{physics} % for derivatives, braket, etc.
 \usepackage{esvect} % for large vectors
 \usepackage{listings} % for code
+\usepackage{dashundergaps} % for automatic text to fill
 % dyslexia friendly font (need to be compiled in xetex)
 %\usepackage{fontspec}
 %\setmainfont{OpenDyslexic}
@@ -61,4 +62,13 @@
   atom sep=20pt,
   bond style={line width=1pt},
   angle increment=30
+}
+
+
+%%%% dashundergaps configuration
+\dashundergapssetup{
+  gap-numbers = false,
+  gap-format = dot,
+  gap-widen,
+  gap-extend-percent
 }
