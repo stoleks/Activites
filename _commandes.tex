@@ -108,6 +108,7 @@
   \setcounter{document}{0}
   \setcounter{exercice}{0}
   \setcounter{QCM}{0}
+  \setcounter{countCoupDePouce}{0}
   \setcounter{acti}{#1 - 1}
   \setcounter{page}{1}
 }
@@ -420,7 +421,9 @@
 }
 
 %%%% Espace pour un coup de pouce
+\newcounter{countCoupDePouce}
 \newenvironment{coupDePouce}{
+  \refstepcounter{countCoupDePouce}
   \vspace*{-12pt}
   \begin{boite}
     \begin{flushright}
@@ -429,7 +432,7 @@
     
     \vspace*{-30pt}
     \textcolor{couleurPrincipale}{\faThumbsUp}
-    \textbf{Coup de pouce} :\\[4pt]
+    \textbf{Coup de pouce \arabic{countCoupDePouce}} :\\[4pt]
 }
 {
   \end{boite}
@@ -449,6 +452,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Définit un nouveau type de colonne : taille fixée par une fraction
+%%%% de la largeur de la ligne, avec un texte centré
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1\linewidth}}
+
 %%%% Tableau de competence
 \newenvironment{tableauCompetences}{
   \centering
@@ -468,7 +475,7 @@
 \newenvironment{tableauConnaissances}{
   \centering
   \setlength{\extrarowheight}{6pt}
-  \tabularx{\linewidth}{| X | c | c | m{0.18\linewidth} | m{0.15\linewidth} |}
+  \tabularx{\linewidth}{| X | c | c | C{0.18} | C{0.15} |}
     \hline
     \rowcolor{gray!20} 
     \textbf{Points clés du chapitre} & \ok & \pasOk & \textbf{En classe} & \textbf{Exercices}
@@ -483,7 +490,7 @@
 \newenvironment{tableauConnaissancesSansExercices}{
   \centering
   \setlength{\extrarowheight}{6pt}
-  \tabularx{\linewidth}{| X | c | c | m{0.2\linewidth} |}
+  \tabularx{\linewidth}{| X | c | c | C{0.2} |}
     \hline
     \rowcolor{gray!20} 
     \textbf{Points clés du chapitre} & \ok & \pasOk & \textbf{En classe}
@@ -497,13 +504,13 @@
 %%%% Tableau de correction élève
 \newcommand{\correctionEleve}[1]{
   \setlength{\extrarowheight}{6pt}
-  \begin{tabularx}{\linewidth}{| X | m{0.26\textwidth} | m{0.26\textwidth} | m{0.26\textwidth} |}
+  \begin{tabularx}{\linewidth}{| X | C{0.26} | C{0.26} | C{0.26} |}
     \hline
-    \rowcolor{gray!20} 
-    \centering \textbf{Question} &
-    \centering \textbf{L'erreur} &
-    \centering \textbf{Analyse de l'erreur} &
-    \phantom{Bla} \textbf{La correction}
+    \rowcolor{gray!20}
+    \textbf{Question} &
+    \textbf{L'erreur} &
+    \textbf{Analyse de l'erreur} &
+    \textbf{La correction}
     \\ \hline
     %
     \phantom{b} \vspace{#1 pt}
@@ -851,6 +858,9 @@
 }
 \newcommand{\reaction}{
   \!\!\schemestart \arrow(.mid east--.mid west){->}[, 0.9, ultra thick] \schemestop\!\!
+}
+\newcommand{\metreParSeconde}{
+  \unit{m\cdot s}^{-1}
 }
 %% grandeurs
 \newcommand{\gISS}{g_\text{ISS}}
