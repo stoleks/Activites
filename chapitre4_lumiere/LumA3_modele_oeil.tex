@@ -88,7 +88,7 @@
       \hline
       Optique & \centering diaphragme & lentille & écran 
       \\ \hline
-      Oeil & \hspace{40pt} iris \hspace{40pt} & \hspace{100pt} & \hspace{100pt} 
+      Oeil & \hspace{40pt} iris \hspace{40pt} & \correction{Cristallin}\hspace{100pt} & \correction{rétine}\hspace{100pt} 
       \\ \hline
     \end{tabular}
   \end{center}
@@ -96,13 +96,17 @@
 \question{
   \docu{\ref{doc:rayons_lentille}} Décrire le trajet des trois rayons particuliers construit pour une lentilles convergentes (``le rayon passant par $\ldots$ ressort de la lentille $\ldots$'').
 }{
-  ...
+  \begin{listePoints}
+    \item le rayon marron passe par le centre optique $O$ et n'est pas dévié ;
+    \item le rayon rouge arrive parallèle à l'axe optique et ressort de la lentille en passant par le foyer image $F'$ ;
+    \item le rayon gris passe par le foyer objet $F$ et ressort de la lentille en étant parallèle à l'axe optique.
+  \end{listePoints}
 }{7}
 
 \question{
   \docu{\ref{doc:convention_optique}} Indiquer le signe (positif ou négatif) de $\algebrique{AB}$ et $\algebrique{A'B'}$ sur la figure du document~\ref{doc:rayons_lentille}.
 }{
-  ...
+  $\algebrique{AB} > 0$ et $\algebrique{A'B'} < 0$.
 }{3}
 
 \question{
@@ -110,7 +114,14 @@
   \docu{\ref{doc:convention_optique}, \ref{doc:rayons_lentille} et \ref{doc:grandissement}}
   Appliquer le théorème de Thalès sur les triangles OAB et OA'B' pour établir la relation entre $\gamma$, $\algebrique{OA'}$ et $\algebrique{OA}$.
 }{
-  ...
+  En appliquant le théorème de Thalès sur les deux triangles semblables $OAB$ et $OA'B'$, on obtient directement la relation suivante :
+  \begin{equation*}
+    \Frac{\algebrique{OA'}}{\algebrique{OA}} = \Frac{\algebrique{A'B'}}{\algebrique{AB}}
+  \end{equation*}
+  Comme par définition $\algebrique{A'B'} / \algebrique{AB} = \gamma$, on a donc que
+  \begin{equation*}
+    \gamma = \Frac{\algebrique{OA'}}{\algebrique{OA}}
+  \end{equation*}
 }{8}
 
 \question{
@@ -118,7 +129,10 @@
   L'image formé de l'objet a une hauteur $\algebrique{A'B'} = -0,\!01 \unit{m}$.
   En utilisant la relation calculée question~\ref{exo:thales_grandissement}, calculer la distance $OA'$ entre la lentille et l'écran.
 }{
-  ...
+  Ici $\gamma = -0,\!01 \unit{m} / 1,\!20 \unit{m} = - 0,\!0083$. Et donc 
+  \begin{equation*}
+    OA' = |\gamma| \times OA = 0,\!0083 \times 6,\!00 \unit{m} = 0,\!05 \unit{m}
+  \end{equation*}
 }{5}
 
 \begin{doc}{Synthèse}
