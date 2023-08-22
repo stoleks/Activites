@@ -1,19 +1,73 @@
+%%%% Ce fichier sert à déclarer les titres des chapitres des différents niveaux
+
+%% Seconde
+%%%% Chapitre 
+\newcommand{\sndCorp} {Corps purs et mélanges}
+\newcommand{\sndSolu} {Solutions}
+\newcommand{\sndMouv} {Mouvement et interactions}
+\newcommand{\sndAtom} {Structure de l'atome}
+\newcommand{\sndMole} {Des atomes à la matière}
+\newcommand{\sndLumi} {Ondes lumineuses et optique}
+\newcommand{\sndTran} {Transformations de la matière et nucléaires}
+\newcommand{\sndChim} {Transformations chimiques}
+\newcommand{\sndSign} {Signaux et capteurs}
+
+%%%% en-tête correspondant
+\newcommand{\teteSndCorp} {\newpage \enTete{\sndCorp}{1} }
+\newcommand{\teteSndSolu} {\newpage \enTete{\sndSolu}{2} }
+\newcommand{\teteSndMouv} {\newpage \enTete{\sndMouv}{3} }
+\newcommand{\teteSndAtom} {\newpage \enTete{\sndAtom}{4} }
+\newcommand{\teteSndMole} {\newpage \enTete{\sndMole}{5} }
+\newcommand{\teteSndLumi} {\newpage \enTete{\sndLumi}{6} }
+\newcommand{\teteSndTran} {\newpage \enTete{\sndTran}{7} }
+\newcommand{\teteSndChim} {\newpage \enTete{\sndReac}{8} }
+\newcommand{\teteSndSign} {\newpage \enTete{\sndSign}{9} }
+
+
+%% Première ST2S
 %%%% Chapitres
-\newcommand{\sndChapitreUn}    {Corps purs et solutions}
-\newcommand{\sndChapitreDeux}  {Mouvement et interactions}
-\newcommand{\sndChapitreTrois} {Atomes et molécules}
-\newcommand{\sndChapitreQuatre}{Ondes lumineuses et optique}
-\newcommand{\sndChapitreCinq}  {Transformations de la matière et réactions nucléaires}
-\newcommand{\sndChapitreSix}   {Réactions chimiques}
-\newcommand{\sndChapitreSept}  {Signaux et capteurs}
-\newcommand{\sndChapitreHuit}  {Ondes sonores}
+\newcommand{\premStssElec} {Sécurité chimique et électrique dans l'habitat}
+\newcommand{\premStssRout} {Sécurité routière}
+\newcommand{\premStssSono} {Ondes sonores et audition}
+\newcommand{\premStssVisi} {Propagation de la lumière et vision}
+\newcommand{\premStssPres} {Propriétés des fluides et pression sanguine}
+\newcommand{\premStssComp} {Contrôle de la composition des milieux biologiques}
+\newcommand{\premStssEner} {Besoins énergétiques et alimentation}
+\newcommand{\premStssBiom} {Biomolécules dans l’organisme}
+\newcommand{\premStssAlim} {Gestion des ressources naturelles et alimentation}
 
 %%%% en-tête
-\newcommand{\sndEnTeteUn}    {\newpage \enTete{\sndChapitreUn}{1}}
-\newcommand{\sndEnTeteDeux}  {\newpage \enTete{\sndChapitreDeux}{2}}
-\newcommand{\sndEnTeteTrois} {\newpage \enTete{\sndChapitreTrois}{3}}
-\newcommand{\sndEnTeteQuatre}{\newpage \enTete{\sndChapitreQuatre}{4}}
-\newcommand{\sndEnTeteCinq}  {\newpage \enTete{\sndChapitreCinq}{5}}
-\newcommand{\sndEnTeteSix}   {\newpage \enTete{\sndChapitreSix}{6}}
-\newcommand{\sndEnTeteSept}  {\newpage \enTete{\sndChapitreSept}{7}}
-\newcommand{\sndEnTeteHuit}  {\newpage \enTete{\sndChapitreHuit}{8}}
+\newcommand{\tetePremStssElec} {\newpage \enTete{\premStssElec}{1} }
+\newcommand{\tetePremStssRout} {\newpage \enTete{\premStssRout}{2} }
+\newcommand{\tetePremStssSono} {\newpage \enTete{\premStssSono}{3} }
+\newcommand{\tetePremStssVisi} {\newpage \enTete{\premStssVisi}{4} }
+\newcommand{\tetePremStssPres} {\newpage \enTete{\premStssPres}{5} }
+\newcommand{\tetePremStssComp} {\newpage \enTete{\premStssComp}{6} }
+\newcommand{\tetePremStssEner} {\newpage \enTete{\premStssEner}{7} }
+\newcommand{\tetePremStssBiom} {\newpage \enTete{\premStssBiom}{8} }
+\newcommand{\tetePremStssAlim} {\newpage \enTete{\premStssAlim}{9} }
+
+
+
+%% Terminale ST2S
+%%%% Chapitres
+\newcommand{\termStssOrga} {Représentation des molécules organiques}
+\newcommand{\termStssRout} {Sécurité routière}
+\newcommand{\termStssAlim} {Sécurité physico-chimique dans l'alimentation}
+\newcommand{\termStssEnvi} {Sécurité chimique dans l'environnement}
+\newcommand{\termStssImag} {La physique au service de l'imagerie médicale}
+\newcommand{\termStssDosa} {Contrôle de la composition des milieux naturels}
+\newcommand{\termStssBiom} {Biomolécules et alimentation}
+\newcommand{\termStssMedi} {De la molécule au médicament}
+\newcommand{\termStssCosm} {L'usage responsable des cosmétiques}
+
+%%%% en-tête
+\newcommand{\teteTermStssOrga} {\newpage \enTete{\termStssOrga}{0} }
+\newcommand{\teteTermStssRout} {\newpage \enTete{\termStssRout}{1} }
+\newcommand{\teteTermStssAlim} {\newpage \enTete{\termStssAlim}{2} }
+\newcommand{\teteTermStssEnvi} {\newpage \enTete{\termStssEnvi}{3} }
+\newcommand{\teteTermStssImag} {\newpage \enTete{\termStssImag}{4} }
+\newcommand{\teteTermStssDosa} {\newpage \enTete{\termStssDosa}{5} }
+\newcommand{\teteTermStssBiom} {\newpage \enTete{\termStssBiom}{6} }
+\newcommand{\teteTermStssMedi} {\newpage \enTete{\termStssMedi}{7} }
+\newcommand{\teteTermStssCosm} {\newpage \enTete{\termStssCosm}{8} }
