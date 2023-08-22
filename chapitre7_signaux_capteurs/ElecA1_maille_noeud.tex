@@ -1,0 +1,131 @@
+%%%%
+\sndEnTeteSept
+\numeroActivite{1}
+
+%%%% titre
+\titreActivite{Loi des noeuds et loi des mailles}
+
+
+%%%% Objectifs
+\begin{objectifs}
+  \item Revoir quelques notions de bases des circuits électriques
+  \item Revoir la loi des noeuds et la loi des mailles
+\end{objectifs}
+
+
+%%%% docs
+\begin{doc}{Circuit électrique}
+    Un circuit électrique est composé d'au moins un générateur, un récepteur (résistance, moteur, DEL, etc.) et de fils de connexion.
+
+  \begin{encart}
+    Un \important{dipôle} est un élément d'un circuit électrique possédant deux bornes.
+  \end{encart}
+
+  \begin{encart}
+    Un \important{n\oe{}ud} est une connexion qui relie au moins trois dipôles entre eux.
+  \end{encart}
+
+  \begin{encart}
+    Une \important{maille} est un chemin fermé, ne comportant pas forcément de générateur.
+  \end{encart}
+\end{doc}
+
+\begin{doc}{Exemple de circuit}
+  \label{doc:circuit_exemple_del}
+  \vspace*{-24pt}
+  \begin{center}
+  \begin{circuitikz}
+    \ctikzset{bipoles/vsourceam/inner plus={\tiny $+$}}
+    \ctikzset{bipoles/vsourceam/inner minus={\tiny $-$}}
+    \draw (4, 2) -- (7, 2)
+      to [rmeter, t=V, i=$I_3$, v=, name=uV] (7, -2) -- (4, -2)
+      to [rmeter, t=A, i=$I_1$, v=, name=uA] (0, -2)
+      to [ceV, i=$I_1$, v=$U_G$] (0, 2)
+      to [R, l={$R$}, -*, i=$I_1$, v=, name=uR] (4, 2)
+      to [empty diode, -*, i=$I_2$, v=, name=uD] (4, -2);
+    \fixedvlen{uV}{$U_V$}
+    \fixedvlen{uA}{$U_A$}
+    \fixedvlen{uR}{$U_R$}
+    \fixedvlen{uD}{$U_D$}
+  \end{circuitikz}
+  \end{center}
+  \vspace*{-8pt}
+  Ce circuit électrique permet de mesurer la caractéristique d'un dipôle, ici une diode électroluminescente (abrégée DEL).
+\end{doc}
+
+%%
+\question{
+  Combien de n\oe{}uds, mailles et dipôles comporte le circuit du document~\ref{doc:circuit_exemple_del} ?
+}{
+  5 dipôles, 2 noeuds et 2 mailles.
+}{1}
+
+
+%%
+\begin{doc}{Association en série et en dérivation}
+  Il existe deux façon d'associer des dipôles entre eux :
+  \begin{listePoints}
+    \item deux dipôles sont en séries s'ils sont situés dans la même maille et ne sont pas séparé par un noeud.
+    \item deux dipôles sont en dérivation si leurs bornes sont connectés au même noeud.
+  \end{listePoints}
+\end{doc}
+
+\newpage
+\vspace*{-28pt}
+\question{
+  Indiquer les dipôles qui sont en série et les dipôles qui sont en dérivation.
+}{
+  Le générateur de tension, la résistance et l'ampèremètre sont en séries.
+  Le voltmètre et la DEL sont en dérivation.
+}{2}
+
+
+%%
+\vspace*{-10pt}
+\begin{doc}{Loi des noeuds et intensité}
+  \chevron La quantité d'électrons qui \textbf{circulent} dans le circuit électrique se conserve.
+  \textbf{Cette quantité d'électron est mesurée par l'intensité du courant notée $I$.}
+  %
+  \begin{encart}
+    L'intensité du courant se mesure en \important{ampère} noté A, avec un ampèremètre branché en série.
+  \end{encart}
+  %
+  \begin{encart}
+    \important{Loi des noeuds} : la somme des intensités entrant dans un noeud est égale à la somme des intensité sortant du noeud.
+  \end{encart}
+  %
+  Cette loi traduit la conservation de l'intensité du courant.
+\end{doc}
+
+\question{
+  Donner la relation imposée par la loi des noeuds entre les intensités $I_1$, $I_2$ et $I_3$ dans le circuit du document~\ref{doc:circuit_exemple_del}.
+}{
+  $I_1 = I_2 + I_3$
+}{1}
+
+
+%%
+\vspace*{-10pt}
+\begin{doc}{Loi des mailles et tension}
+  Ce qui met en mouvement les électrons dans un circuit, c'est la différence d'état électrique entre deux points d'un circuit.
+  \textbf{Cette différence d'état est mesurée par la tension électrique notée $U$.}
+  %
+  \begin{encart}
+    La tension électrique se mesure en \important{volt} noté V, avec un voltmètre branché en dérivation.
+  \end{encart}
+  %
+  \begin{encart}
+    \important{Loi des mailles} : la somme des tensions des dipôles le long d'une maille est égale à 0 V.
+  \end{encart}
+  %
+  \chevron Pour sommer les tensions, il faut parcourir la maille dans un sens, en \textbf{ajoutant} les tensions dont les flèches vont dans le sens du parcours et en \textbf{soustrayant} les tensions dont les flèches vont dans le sens opposé du parcours.
+\end{doc}
+
+\question{
+  Donner la relation imposée par la loi des mailles entre les tensions $U_D$ et $U_V$ du document~\ref{doc:circuit_exemple_del}.
+  Faire de même pour les tensions $U_R$, $U_D$, $U_A$ et $U_G$.
+}{
+  $U_D - U_V = 0 \unit{V}$, donc $U_D = U_V$. \\
+  $-U_R - U_D - U_A + U_G = 0 \unit{V}$, donc $U_G = U_R + U_D + U_A$
+}{3}
+\vspace*{-8pt}

@@ -2,13 +2,13 @@
 \sndEnTeteSix
 
 %%%% titre
-\vspace*{-40pt}
+\vspace*{-38pt}
 \numeroActivite{3}
 \titreTP{Synthèse de l'éthanoate d'isoamyle}
 
 %%%% Objectifs
 \begin{objectifs}
-  \item Synthétiser une molécule naturelle.
+  \item Synthétiser une molécule naturelle et comprendre le montage à reflux.
   \item Réaliser un protocole en respectant les consignes de sécurités.
 \end{objectifs}
 
@@ -26,8 +26,9 @@
   \label{doc:protocole_synthese_banane}
   Dans le ballon, introduire :
   \begin{listePoints}
-    \item 10 mL d'alcool isoamylique ;
+    \item 10,0 mL d'alcool isoamylique ;
     \item 15 mL d'acide éthanoïque ;
+    \item 2 ou 3 pierre ponces ;
     \item 1 mL d'acide sulfurique. \attention \textbf{opération réalisée par l'enseignant} \attention
   \end{listePoints}
   
@@ -38,16 +39,18 @@
 
 \mesure Réaliser le protocole de synthèse du document~\ref{doc:protocole_synthese_banane}.
 
-\question{
-  En utilisant le nom des molécules, écrire la réaction chimique modélisant la synthèse de l'éthanoate d'isoamyle.
-}{
-  alcool isoamylique + acide éthanoïque \reaction éthanoate d'isoamyle + eau
-}{1}
-
 
 %%
 \begin{doc}{Synthèse de l'éthanoate d'isoamyle}
-  \begin{tabularx}{\textwidth}{| X | C{0.15} | C{0.15} | C{0.15} | C{0.15} |}
+  \label{doc:synthese_banane}
+  La réaction de synthèse est
+  \vspace*{-4pt}
+  \begin{center}
+    \chemfig{C_2H_4O_2}(l) + \chemfig{C_5H_{12}O}(l) \reaction \chemfig{C_7H_{14}O_2}(l) + \chemfig{H_2O}(l)
+  \end{center}
+  \vspace*{-4pt}
+  
+  \begin{tblr}{| X[1.5, c, m] | X[1, c] | X[1, c] | X[1, c] | X[1, c] |}
     \hline
     %
     Nom & Acide éthanoïque & Alcool isoamylique & Éthanoate d'isoamyle & Acide sulfurique
@@ -64,20 +67,60 @@
     %
     Solubilité dans l'eau salée & Grande & Très faible & Très faible & Grande
     \\ \hline
-    %
-    Danger &
-    \image{0.4}{images/pictogrammes/picto_flambe}~\image{0.4}{images/pictogrammes/picto_ronge} & 
-    \image{0.41}{images/pictogrammes/picto_flambe}~\image{0.41}{images/pictogrammes/picto_altere} &
-    \image{0.48}{images/pictogrammes/picto_flambe} &
-    \image{0.48}{images/pictogrammes/picto_ronge}
+    Sécurité &
+    \picto{0.38}{flambe}~\picto{0.38}{ronge} &
+    \picto{0.38}{flambe}~\picto{0.38}{altere} &
+    \picto{0.38}{flambe} &
+    \picto{0.38}{ronge}
     \\ \hline
-  \end{tabularx}
+  \end{tblr}
 \end{doc}
+
+%%
+\newpage
+\vspace*{-24pt}
+\question{
+  Vérifier que la réaction de synthèse du document~\ref{doc:synthese_banane} est ajustée (équilibrée) en comptant chaque élément chimique du côté des réactifs et du côté des produits.
+}{
+  Oui elle est ajustée, on a autant d'élément carbone (7), hydrogène (16) et oxygène (3) des deux côtés.
+}{2}
+
+
+%%
+\begin{doc}{Montage à reflux}
+  \label{doc:montage_reflux}
+  \vspace*{-24pt}
+  \begin{encart}
+    \begin{center}
+      \image{0.5}{images/chimie/montage_reflux.png}
+      
+      \vspace*{-8pt}
+      \textbf{\small{Schéma du montage à reflux}}
+    \end{center}
+  \end{encart}
+  Pour accélérer la réaction de synthèse, on va chauffer le milieu réactionnel.
+  
+  Un montage à reflux permet de \texteTrouMultiLignes{chauffer le milieu réactionnel sans perte de quantité de matière à cause de l'évaporation.}{1}
+  
+  Le fonctionnement est le suivant : les vapeurs du milieu réactionnel passe au centre du réfrigérant.
+  Cette vapeur est refroidie par l'eau qui circule sur les côtés du réfrigérant.
+  En refroidissant, cette vapeur va se liquéfier et former des gouttes liquides, qui vont retomber dans le milieu réactionnel.
+  Ainsi, on évite les pertes de réactifs due à l'évaporation du milieu réactionnel quand il est chauffé.
+\end{doc}
+
+\numeroQuestion Légender le schéma du montage à reflux du document~\ref{doc:montage_reflux}.
+
 
 
 %%
 \begin{doc}{Récupération du produit d'intérêt}
+  \label{doc:decantation_synthese_banane}
   Après réalisation de la synthèse, procéder à un relargage : introduire dans le ballon 25 mL d'eau salée saturée.
+  \vspace*{-8pt}
+  \begin{center}
+    \image{1}{images/chimie/protocole_decantation}
+  \end{center}
+  \vspace*{-16pt}
   Verser le mélange réactionnel dans l'ampoule à décanter.
   Agiter, puis laisser décanter.
   Éliminer la phase aqueuse dans un bécher, recueillir alors la phase organique dans un tube fermé.
@@ -85,8 +128,45 @@
 
 
 %%%% Questions
+
 \question{
-  ...
+  En vous aidant du tableau du document~\ref{doc:synthese_banane}, expliquer pourquoi on introduit de l'eau salée pour récupérer le produit d'intérêt, l'éthanoate d'isoamyle.
 }{
-  ...
-}{1}
+  L'éthanoate d'isoamyle est peu soluble dans l'eau salée, contrairement à toutes les autres espèces.
+  Cela va permettre de l'isoler par décantation en créant un mélange hétérogène.
+}{2}
+
+\mesure Récupérer l'éthanoate d'isoamyle, en réalisant le protocole du document~\ref{doc:decantation_synthese_banane}
+
+
+%%
+\bigskip
+\begin{doc}{Les arômes d'un gâteau à la banane}
+  L'arôme d'un fruit ne dépend pas d'un seul type de molécule.
+  Pour recomposer un arôme de pomme, il faut au moins 50 molécules différentes, dans les bonnes proportions.
+  Dans la banane, l'arôme est essentiellement dû à une seule molécule : l'éthanoate d'isoamyle \chemfig{C_7H_{12}O_2}.
+  
+  Pour faire un gâteau à la banane une méthode consiste à extraire l'arôme de la banane, par exemple en écrasant des bananes dans la préparation.
+  Autre méthode : synthétiser la molécule d'éthanoate d'isoamyle, à partir d'alcool isoamylique.
+  Cette fois, l'arôme n'est plus appelé \og naturel \fg, mais \og identique au naturel \fg.
+  
+  \textbf{Il n'y a aucune différence entre la molécule extraite de la banane et celle synthétisée}, dont la formule est aussi \chemfig{C_7H_{12}O_2}.
+\end{doc}
+
+
+%%
+\newpage
+\begin{doc}{Préparer un gâteau à la banane}
+  Dans une recette, pour préparer un gâteau au goût de banane, il faut 250 g de banane ou 1 mL d'arôme de banane.
+  
+  \begin{donnees}
+    \item 50 mL d'arôme de banane synthétisé coûte 3 \euro.
+    \item 1 kg de banane coûte 3 \euro.
+  \end{donnees}
+\end{doc}
+
+\question{
+  Pour quelle(s) raison(s) pourrait-on privilégier un arôme de banane synthétisé pour réaliser des gâteaux ?
+}{
+  Utiliser un arôme synthétisé coûte moins cher. 
+}{3}
