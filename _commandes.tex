@@ -149,9 +149,9 @@
   \setcounter{section}{#2}
   \setcounter{subsection}{0}
   \setcounter{sousSection}{0}
-  \teteGauche{Lycée Condorcet}{Chapitre \arabic{section} -- #1} % left header
+  \teteGauche{\etablissement{}}{Chapitre \arabic{section} -- #1} % left header
   \chead{} % central header
-  \teteDroite{2022 -- 2023}{Seconde}
+  \teteDroite{\annee{}}{\classe{}}
 }
 %
 \newcommand{\enTeteFicheReussite}[1]{
@@ -470,83 +470,87 @@
 %%%% Tableau de competence
 \newenvironment{tableauCompetences}{
   \centering
-  \setlength{\extrarowheight}{6pt}
-  \tabularx{\linewidth}{| c | X | c | c | c | c |}
+  \begin{tblr}{
+    colspec = {| c | X[c] | c | c | c | c |},
+    rows = {m},
+    row{1} = {gray!20}
+  }
     \hline
-    \rowcolor{gray!20}
     \centering \textbf{Compétences} & \centering \textbf{Items} & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A}
     \\ \hline
 }
 {
-    \\ \hline
-  \endtabularx
+  \end{tblr}
 }
 
 %%%% Tableau de connaissances
 \newenvironment{tableauConnaissances}{
   \centering
-  \setlength{\extrarowheight}{6pt}
-  \tabularx{\linewidth}{| X | c | c | C{0.18} | C{0.15} |}
+  \begin{tblr}{
+    colspec = {| X[c] | c | c | c | c |},
+    rows = {m},
+    column{4} = {0.22},
+    column{5} = {0.21},
+    row{1} = {gray!20}
+  }
     \hline
-    \rowcolor{gray!20} 
     \textbf{Points clés du chapitre} & \ok & \pasOk & \textbf{En classe} & \textbf{Exercices}
     \\ \hline
 }
 {   
     \\ \hline
-  \endtabularx
+  \end{tblr}
 }
 
 %%%% Tableau de connaissances sans exercices
 \newenvironment{tableauConnaissancesSansExercices}{
   \centering
-  \setlength{\extrarowheight}{6pt}
-  \tabularx{\linewidth}{| X | c | c | C{0.2} |}
+  \begin{tblr}{
+    colspec = {| X[c] | c | c | c |},
+    rows = {m},
+    column{4} = {0.2},
+    row{1} = {gray!20}
+  }
     \hline
-    \rowcolor{gray!20} 
     \textbf{Points clés du chapitre} & \ok & \pasOk & \textbf{En classe}
     \\ \hline
 }
-{   
-    \\ \hline
-  \endtabularx
+{ 
+  \end{tblr}
 }
 
 %%%% Tableau de correction élève
 \newcommand{\correctionEleve}[1]{
-  \setlength{\extrarowheight}{6pt}
-  \begin{tabularx}{\linewidth}{| X | C{0.26} | C{0.26} | C{0.26} |}
-    \hline
-    \rowcolor{gray!20}
-    \textbf{Question} &
+  \begin{tblr}{
+    colspec = {| X[-1, c] | X[2, c] | X[2, c] | X[2, c] |},
+    row{1} = {gray!20}
+  }
+    \hline 
+    \textbf{Question} & 
     \textbf{L'erreur} &
     \textbf{Analyse de l'erreur} &
-    \textbf{La correction}
-    \\ \hline
+    \textbf{La correction} \\ \hline
     %
-    \phantom{b} \vspace{#1 pt}
-    & & & \\ \hline
-    \phantom{b} \vspace{#1 pt}
-    & & & \\ \hline
-    \phantom{b} \vspace{#1 pt}
-    & & & \\ \hline
-    \phantom{b} \vspace{#1 pt}
-    & & & \\ \hline
-  \end{tabularx}
+    \phantom{b} \vspace{#1 pt} & & & \\ \hline
+    \phantom{b} \vspace{#1 pt} & & & \\ \hline
+    \phantom{b} \vspace{#1 pt} & & & \\ \hline
+    \phantom{b} \vspace{#1 pt} & & & \\ \hline
+  \end{tblr}
 }
 
 %%%% Tableau bilan de la correction
 \newcommand{\bilanCorrection}[1]{
-  \setlength{\extrarowheight}{6pt}
-  \begin{tabularx}{\linewidth}{| X | X |}
+  \begin{tblr}{
+    colspec = {| X[c] | X[c] |},
+    row{1} = {gray!20}
+  }
     \hline
-    \rowcolor{gray!20}
     \textbf{Ce que je n'avais pas compris...} &
     \textbf{Ce que maintenant j'ai compris...}
     \\ \hline
     \phantom{b} \vspace{#1 pt} % \newline \newline \newline
     & \\ \hline
-  \end{tabularx}
+  \end{tblr}
 }
 
 

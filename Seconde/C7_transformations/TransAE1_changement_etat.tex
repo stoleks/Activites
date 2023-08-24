@@ -6,7 +6,6 @@
 \numeroActivite{1}
 \titreTP{Fusion de la glace}
 
-
 %%%% Objectifs
 \begin{objectifs}
   \item Comprendre le lien entre énergie et température.
@@ -44,7 +43,7 @@
   \begin{encart}
     Un corps chaud en contact avec un corps froid lui transfert de l'énergie, ce qui se traduit par une modification de la température des deux corps : on parle de \important{transfert thermique}.
   \end{encart}
-  L'énergie transférée se note $Q$, son unité est le Joule \unit{joule}.
+  L'énergie transférée se note $Q$, son unité est le Joule \unit{\joule}.
   Un corps qui \textbf{reçoit un transfert thermique positif} ($Q > 0$) voit \textbf{sa température augmenter.}
   
   \begin{encart}
@@ -74,7 +73,9 @@
   \vspace*{-20pt}
   \begin{protocole}
     \item Placer le calorimètre sur la balance et appuyer sur ``tare''.
-    \item Verser environ \qty{200}{\ml}} d'eau et mesurer la masse $m_\text{eau}$ introduite.
+    \item Verser environ 
+    $\SI{200}{\ml}$
+    d'eau et mesurer la masse $m_\text{eau}$ introduite.
     \item Fermer le calorimètre et introduire le thermomètre. Mesurer la température initiale de l'eau $T_i$.
     \item Mesurer la masse $m_\text{glaçons}$ d'au moins deux glaçons sur une balance.
     \item Introduire rapidement ces glaçons dans le calorimètre et le refermer.
@@ -84,14 +85,16 @@
   \textbf{Mesures réalisées :}
   \begin{center}
     \newcommand{\tailleTableau}{\hspace{60pt}\phantom{$\Frac{1}{8}$}}
-    \begin{tabular}{| c | c | c | c | c |}
+    \begin{tblr}{
+      colspec = {|c|c|c|c|c|},
+      row{1} = {gray!20!white}
+    }
       \hline
-      \rowcolor{gray!20}
       Grandeur mesurée & $m_\text{eau}$ & $m_\text{glaçons}$ & $T_i$ & $T_f$ 
       \\ \hline
       Mesure & \tailleTableau & \tailleTableau & \tailleTableau & \tailleTableau
       \\ \hline
-    \end{tabular}
+    \end{tblr}
   \end{center}
 \end{doc}
 
@@ -100,7 +103,7 @@
   \label{doc:energie_changement_etat}
   Pour faire fondre de la glace, il faut un transfert thermique entre la glace et un autre corps.
   \begin{encart}
-    L'énergie nécessaire pour changer d'état s'appelle \important{l'énergie de changement d'état} et on la note $L$, son unité est le Joule$\unit{J}$.
+    L'énergie nécessaire pour changer d'état s'appelle \important{l'énergie de changement d'état} et on la note $L$, son unité est le Joule \unit{\joule}.
   \end{encart}
   Plus la masse de la glace est élevée et plus l'énergie de changement d'état sera élevée.
   
@@ -131,7 +134,7 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
   \begin{equation*}
     Q = m_\text{eau} \times c_\text{eau} \times (T_f - T_i)
   \end{equation*}
-  où $c_\text{eau} = \qty{4,180}{\Joule\per\g\per\degreeCelsius}$ est la capacité calorifique de l'eau.
+  où $c_\text{eau} = \qty{4,180}{\joule\per\g\per\degreeCelsius}$ est la capacité calorifique de l'eau.
   Cette constante mesure la quantité d'énergie nécessaire pour augmenter la température de \qty{1}{\degreeCelsius} pour \qty{1}{\g} d'eau.
   
   Calculer la valeur de $Q$ avec vos mesures.
@@ -140,10 +143,10 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
   \begin{align*}
     Q
     & = c_\text{eau} \times m_\text{eau} \times (T_f - T_i) \\
-    & = \qty{4,180}{\Joule\per\g\per\degreeCelsius}
+    & = \qty{4,180}{\joule\per\g\per\degreeCelsius}
       \times \qty{199}{\g}
       \times (\num{6,3} - \num{17,4}) \unit{\degreeCelsius} \\
-    & = \qty{-9233}{\Joule}
+    & = \qty{-9233}{\joule}
   \end{align*}
   \vspace*{-24pt}
 }{2}
@@ -171,14 +174,14 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
   \begin{align*}
     L_m
     = \Frac{L}{m_\text{glaçon}}
-    = \Frac{\qty{9233}{\Joule}}{\qty{27,92}{\g}}
-    = \qty{330,7}{\Joule\g}
+    = \Frac{\qty{9233}{\joule}}{\qty{27,92}{\g}}
+    = \qty{330,7}{\joule\per\g}
   \end{align*}
   \vspace*{-12pt}
 }{2}
 
 \question{
-  Comparer avec la valeur de référence $L_{m, \text{référence}} = \qty{334}{\Joule\per\g}$.
+  Comparer avec la valeur de référence $L_{m, \text{référence}} = \qty{334}{\joule\per\g}$.
   L'hypothèse de la question~\ref{exo:energie_L_fusion} vous semble-t-elle valide ?
 }{
   On trouve une énergie de changement d'état massique plus petite que la valeur de référence.

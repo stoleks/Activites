@@ -23,10 +23,6 @@
 \usepackage{multicol} % pour avoir plusieurs colonnes côte-à-côte
 \usepackage{listings} % pour insérer du code
 %% Tableau
-\usepackage{tabularx} % pour insérer des tableaux
-\usepackage[table]{xcolor} % pour avoir des couleurs
-\usepackage{multirow} % pour avoir des tableaux avec des cellules fusionnées
-\usepackage{makecell} % pour régler le format des cellules d'un tableau
 \usepackage{tabularray} % pour avoir de meilleurs tableaux [TO DO : retirer les autres paquets ?]
 %% Math
 \usepackage{amsmath} % symboles mathématiques
@@ -85,11 +81,6 @@
 \setlength{\headheight}{22.50113pt}
 
 
-%%%% Réglage pour avoir des cellules moins sérrée
-\renewcommand{\tabularxcolumn}[1]{m{#1}}
-\setlength{\extrarowheight}{8pt}
-
-
 %%%% Réglage de dashundergaps pour avoir des points et pas de numération
 \dashundergapssetup{
   gap-numbers = false,
@@ -105,3 +96,4 @@
 	 group-minimum-digits = 4, % groupage des chiffres par millier
   inter-unit-product = \ensuremath { { } \cdot { } } % point médian entre les unités
 }
+\AtBeginDocument{\RenewCommandCopy\qty\SI} % Pour "écraser" la commande \qty du package physics

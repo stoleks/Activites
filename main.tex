@@ -8,9 +8,13 @@
 \input{_chapitres}
 
 %%%% Paramètres réglables
-% \modeCorrection
 \colorlet{couleurPrincipale}{cyanSombre}
 \colorlet{couleurImportant}{vertSombre}
+\modeCorrection
+%%%% pour l'en-tête
+\newcommand{\annee}{2023-2024}
+\newcommand{\etablissement}{Lycée Jean Moulin}
+\newcommand{\classe}{seconde}
 
 %%%% doc
 \begin{document}
@@ -45,14 +49,14 @@
   %% Chapitre 4
   % \input{chapitre4_lumiere/LumA1_onde_lumineuse}
   % \input{chapitre4_lumiere/LumAE1_spectres}
-  % \input{chapitre4_lumiere/LumA2_spectres_neon}
+  \input{Seconde/C6_lumiere/LumA2_spectres_neon}
   % \input{chapitre4_lumiere/LumAE2_descartes}
   % \input{chapitre4_lumiere/LumA3_modele_oeil}
   % \input{chapitre4_lumiere/LumAE3_image}
   % \input{chapitre4_lumiere/LumA4_exp_newton}
   
   %% Chapitre 5
-  %\input{chapitre5_transformations/TransAE1_changement_etat}
+  \input{Seconde/C7_transformations/TransAE1_changement_etat}
   % \input{chapitre5_transformations/TransA1_transfert_energie}
   % \input{chapitre5_transformations/TransA2_nucleaire}
   
@@ -66,8 +70,8 @@
   % \input{chapitre6_reaction_chimie/ChimA4_principe_synthese}
 
   %% Chapitre 7
-  \input{chapitre7_signaux_capteurs/ElecAE1_loi_ohm}
+  % \input{chapitre7_signaux_capteurs/ElecAE1_loi_ohm}
   % \includepdf[pages=26]{papier_millimetre}
   % \input{chapitre7_signaux_capteurs/ElecA1_maille_noeud}
-  \input{chapitre7_signaux_capteurs/ElecAE2_son_vitesse}
+  % \input{chapitre7_signaux_capteurs/ElecAE2_son_vitesse}
 \end{document}
