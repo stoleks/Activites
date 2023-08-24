@@ -1,64 +1,63 @@
-%%%% french character
+%%%% Pour avoir les accents et autre caractère français
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-%%%% useful packages
-\usepackage[a4paper, left=1.3cm, right=1.3cm, top=2.2cm, bottom=2.3cm]{geometry}
-\usepackage{subcaption} % for figure caption
-\usepackage{graphicx} % image
-\usepackage{tabularx} % table
-\usepackage[table]{xcolor} % color in table
-\usepackage{amsmath} % math
-\usepackage{amssymb} % bold math
-\usepackage{wasysym} % integral
-\usepackage[many]{tcolorbox} % colored box
-\usepackage{fancyhdr} % headers
-\usepackage{enumitem} % for bullet in itemize
-\usepackage[colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black]{hyperref} % for link
-\usepackage{accents} % for complex notation
-\usepackage[european, straightvoltages, RPvoltages]{circuitikz} % for electronic circuit
-\usepackage{multicol} % to use several columns
-\usepackage{fontawesome} % awesome icons
-\usepackage{ifthen} % for loop and boolean in commands
-\usepackage{pdfpages} % to include pdf
-\usepackage{wrapfig} % to wrap text around figures
-\usepackage{chemfig} % to draw chemistry formula
-\usepackage{multirow} % for vertically merged cells
-\usepackage{makecell} % to format cell in tables
-\usepackage{physics} % for derivatives, braket, etc.
-\usepackage{esvect} % for large vectors
-\usepackage{listings} % for code
-\usepackage{dashundergaps} % for automatic text to fill
-\usepackage{tabularray} % for better tables
-% dyslexia friendly font (need to be compiled in xetex)
-%\usepackage{fontspec}
-%\setmainfont{OpenDyslexic}
+%%%% Paquets utilisé
+\usepackage{ifthen} % pour programmer avec des boucle et des conditions
+%% Images/dessin
+\usepackage{subcaption} % pour les légendes des figures
+\usepackage{graphicx} % pour insérer des images
+\usepackage[european, straightvoltages, RPvoltages]{circuitikz} % pour dessiner des circuits électrique
+\usepackage{pdfpages} % pour inclure des fichiers pdf
+\usepackage{wrapfig} % pour entourer les images par du texte 
+\usepackage{chemfig} % pour dessiner des formules chimiques
+\usepackage{fontawesome} % pour dessiner de jolies icônes
+%% Mise en page
+\usepackage{geometry} % définition des marges
+\usepackage{dashundergaps} % pour avoir générer des textes à compléter
+\usepackage{fancyhdr} % pour faire des en-tête
+\usepackage[many]{tcolorbox} % pour faire de jolie boîtes colorée
+\usepackage{enumitem} % pour pouvoir définir des listes personnalisées
+\usepackage{hyperref} % pour insérer des liens
+\usepackage{multicol} % pour avoir plusieurs colonnes côte-à-côte
+\usepackage{listings} % pour insérer du code
+%% Tableau
+\usepackage{tabularx} % pour insérer des tableaux
+\usepackage[table]{xcolor} % pour avoir des couleurs
+\usepackage{multirow} % pour avoir des tableaux avec des cellules fusionnées
+\usepackage{makecell} % pour régler le format des cellules d'un tableau
+\usepackage{tabularray} % pour avoir de meilleurs tableaux [TO DO : retirer les autres paquets ?]
+%% Math
+\usepackage{amsmath} % symboles mathématiques
+\usepackage{amssymb} % symboles mathématiques en gras
+\usepackage{wasysym} % pour avoir des symbole d'intégrale
+\usepackage{accents} % pour les notations mathématiques avec une barre
+\usepackage{physics} % pour les dérivées, les bra, les kets, etc.
+\usepackage{esvect} % pour faire de jolis vecteurs
+\usepackage{siunitx} % pour avoir de jolie grandeurs avec des unités 
+%% Décommenter pour avoir une police spéciale dysléxie (doit être compilé en XeTeX)
+% \usepackage{fontspec}
+% \setmainfont{OpenDyslexic}
 
 
-%%%% settings
+%%%% Réglages de la taille des indentations et des sauts de paragraphes
 \setlength{\parskip}{0cm}
 \setlength{\parindent}{0cm}
 \renewcommand{\baselinestretch}{1}
+% réglage du niveau (sous-section) ou s'arrête la table des matières
 \setcounter{tocdepth}{2}
 
 
-%%%% tikz configuration
-\usetikzlibrary{babel}
-\tikzset{>=latex}
+%%%% Réglage de la géométrie des pages
+\geometry{
+  a4paper, % format
+  left=1.3cm, right=1.3cm, % marge horizontale
+  top=2.2cm, bottom=2.3cm % marge verticale
+}
 
 
-%%%% header
-\renewcommand{\headrulewidth}{0.4pt}
-\setlength{\headheight}{22.50113pt}
-
-
-%%%% Table
-\renewcommand{\tabularxcolumn}[1]{m{#1}}
-\setlength{\extrarowheight}{8pt}
-
-
-%%%% Chemfig configuration
+%%%% Réglage de chemfig
 \setchemfig{
   atom sep=20pt,
   bond style={line width=1pt},
@@ -66,10 +65,43 @@
 }
 
 
-%%%% dashundergaps configuration
+%%% Apparence (couleur) des liens
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black, % lien type table des matière
+  citecolor=black, % citation
+  filecolor=black, 
+  urlcolor=blue!90!black % lien internet
+}
+
+
+%%%% Réglage de tikz (flèche et caractères)
+\usetikzlibrary{babel}
+\tikzset{>=latex}
+
+
+%%%% Réglage des en-tête
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{22.50113pt}
+
+
+%%%% Réglage pour avoir des cellules moins sérrée
+\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\setlength{\extrarowheight}{8pt}
+
+
+%%%% Réglage de dashundergaps pour avoir des points et pas de numération
 \dashundergapssetup{
   gap-numbers = false,
   gap-format = dot,
   gap-widen,
   gap-extend-percent
+}
+
+
+%%%% Réglage de siunit
+\sisetup{
+  locale = FR, % français
+	 group-minimum-digits = 4, % groupage des chiffres par millier
+  inter-unit-product = \ensuremath { { } \cdot { } } % point médian entre les unités
 }

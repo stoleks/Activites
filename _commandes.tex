@@ -61,7 +61,7 @@
 }
 \newcommand{\titreTP}[1]{
   \titreActi{TP}{#1}
-  %\titreActi{Activité expérimentale}{#1}
+  % \titreActi{Activité expérimentale}{#1}
 }
 \newcommand{\titreActivite}[1]{
   \titreActi{Activité}{#1}
@@ -112,7 +112,7 @@
   \setcounter{acti}{#1 - 1}
   \setcounter{page}{1}
 }
-% fixe le numéro de page (#2) et de partie (#1)
+% fixe le numéro de partie (#1) et le numéro de la page (#2)
 \newcommand{\numeroPartieCours}[2]{
   \newpage
   \setcounter{subsection}{#1 - 1}
@@ -215,8 +215,16 @@
     \lignesReponse{#3}
   }
 }
+% Pour simplifier la commande question
+\newcommand{\reponseCorrigee}[1]{
+  \vspace*{2pt}
+  \hspace{16pt}
+  \textcolor{\couleurCorrection}{
+    \faCaretRight \hspace{2pt} #1
+  }
+}
 
-%
+% Affiche uniquement le numéro de la question
 \newcounter{exercice}
 \newcommand{\numeroQuestion}{
   \refstepcounter{exercice}
@@ -227,24 +235,20 @@
   }
 }
 
-% correction
-\newcommand{\reponseCorrigee}[1]{
-  \vspace*{2pt}
-  \hspace{16pt}
-  \textcolor{\couleurCorrection}{
-    \faCaretRight \hspace{2pt} #1
-  }
-}
+% Correction affichée si en mode prof
 \newcommand{\correction}[1]{
   \ifthenelse {\boolean{modeProf}} { % prof
     \textcolor{\couleurCorrection}{#1}
   }{ % eleve
   }
 }
+
+% À ajouter devant la bonne réponse dans un qcm
 \newcommand{\reponseQCM}{
   \correction{
     \hspace*{-17pt}$\checkmark$\hspace*{-12pt}
   }
+  % Note : trace une croix à la bonne position
 }
 
 % trace des lignes pour répondre
@@ -319,8 +323,8 @@
   }
 }
 
-% texte à trou sur plusieurs lignes
-\newcommand{\texteTrouLigneComplete}[1]{
+% texte à trou sur tout le reste de la ligne
+\newcommand{\texteTrouLigne}[1]{
   \ifthenelse {\boolean{modeProf}} {% prof
     \textcolor{couleurPrincipale!60!black}{ \textbf{#1} }
   }{% élève
@@ -581,7 +585,9 @@
   \textcolor{couleurPrincipale!75!black}{\faWrench\faFlask}
 }
 % pictogramme sécurité
-\newcommand{\picto}[2]{\image{#1}{images/pictogrammes/picto_#2}}
+\newcommand{\picto}[2]{
+  \image{#1}{images/pictogrammes/picto_#2}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -846,19 +852,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% unité, degré, vecteur, etc.
-\newcommand{\unit}[1]{
-  \; \mathrm{#1}
-}
-\newcommand{\unitb}[1]{
-  \unit{\mathbf{#1}}
-}
-\newcommand{\degree}{
-  ^\circ\!
-}
-\newcommand{\celsius}{
-  \degree\, \mathrm{C}
-}
+%%%% fraction, nombre algébrique, etc.
 \newcommand{\Frac}[2]{
   \displaystyle \frac{#1}{#2}
 }
@@ -868,9 +862,7 @@
 \newcommand{\reaction}{
   \!\!\schemestart \arrow(.mid east--.mid west){->}[, 0.9, ultra thick] \schemestop\!\!
 }
-\newcommand{\metreParSeconde}{
-  \unit{m\cdot s}^{-1}
-}
+
 %% grandeurs
 \newcommand{\gISS}{g_\text{ISS}}
 \newcommand{\MTerre}{M_\text{Terre}}
@@ -882,6 +874,7 @@
 \newcommand{\saccha}{Saccharose (\chemfig{C_{12} H_{22} O_{11}})}
 \newcommand{\vitamC}{Vitamine C (\chemfig{C_{6} H_{8} O_{6}})}
 \newcommand{\ionsCa}{Ion calcium (\chemfig{Ca^{2+}})}
+
 %% vecteurs
 \newcommand{\FBsurA}{
   F_{B/A}
@@ -915,6 +908,7 @@
   \endgroup%
 }%
 \makeatother
+
 %% element chimique
 \makeatletter
 \newcommand{\element}[2]{%
@@ -945,10 +939,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Couleur pour le code
-\definecolor{vertCode}    {rgb}{0.2,0.6,0}
-\definecolor{grisCode}    {rgb}{0.5,0.5,0.5}
-\definecolor{violetCode}  {rgb}{0.58,0,0.82}
-\definecolor{fondCode}    {rgb}{0.95,0.95,0.92}
+\definecolor{vertCode}  {rgb}{0.2,0.6,0}
+\definecolor{grisCode}  {rgb}{0.5,0.5,0.5}
+\definecolor{violetCode}{rgb}{0.58,0,0.82}
+\definecolor{fondCode}  {rgb}{0.95,0.95,0.92}
 %%%% Style python
 \lstdefinestyle{codePython}{
     backgroundcolor=\color{fondCode},
