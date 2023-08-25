@@ -385,6 +385,7 @@
 \newenvironment{doc}[1]{
   \begin{boite}
     \titreDocu {#1} \newline
+    
 }
 { \end{boite} }
 
@@ -421,12 +422,13 @@
 \newenvironment{objectifs}{
   \begin{objBoite}
     \begin{center}
-      \sousTitre{\large Objectifs de la séance :}
-      \begin{listeObjectifs}
+      \sousTitre{Objectifs de la séance :}
+    \end{center}
+    \vspace*{-20pt}
+    \begin{listeObjectifs}
 }
 { 
-      \end{listeObjectifs}
-    \end{center}
+    \end{listeObjectifs}
   \end{objBoite}
 }
 
