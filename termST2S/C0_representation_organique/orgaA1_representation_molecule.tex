@@ -1,0 +1,249 @@
+%%%%
+\teteTermStssOrga
+
+%%%% titre
+\numeroActivite{1}
+\titreActivite{Représenter des molécules organiques}
+
+%%%% objectifs
+\begin{objectifs}
+  \item Rappeler les règles de formation des molécules et la valence d'un atome
+  \item Rappeler les différentes représentations des molécules organiques
+\end{objectifs}
+
+\begin{contexte}
+  Les atomes de carbones peuvent se lier pour former des \textbf{chaines carbonées}, de formes et de tailles variées.
+  Ces chaînes carbonnées, une fois liée à des atomes d'hydrogène, d'oxygène ou d'azote, forment des \textbf{molécules organiques}.
+  Il existe ainsi des millions de molécules organiques différentes.
+
+  \problematique{
+    Comment peut-on représenter ces molécules ?
+  }
+\end{contexte}
+
+
+%%
+\titrePartie{La valence}
+
+\begin{doc}{Liaison moléculaire}
+  \label{doc:liaison_molecule}
+  \separationDeuxBlocs{%
+  Le corps humain est composé majoritairement de 4 atomes :
+  \begin{listePoints}
+    \item l'oxygène   \chemfig{O} (\num{65\percent} en masse),
+    \item le carbone  \chemfig{C} (\num{18\percent}),
+    \item l'hydrogène \chemfig{H} (\num{10\percent})
+    \item et l'azote  \chemfig{N} (\num{3\percent}).
+  \end{listePoints}
+  }{%
+  \begin{encart}
+    \important{Numéro atomique :} il correspond au nombre de protons d'un atome et est noté $Z$ : \isotope{A}{Z}{X} (\exemple \isotope{12}{6}{C})
+    Par neutralité de l'atome, c'est aussi son nombre d'électrons.
+  \end{encart}
+  }
+
+  À partir du numéro atomique d'un atome, on peut déterminer sa structure électronique en couche (1, 2 ou 3) et sous-couche (s ou p), puis sa \important{valence} (mono, bi, tri ou tétravalent).
+  %
+  \begin{encart}
+    Pour former des molécules, les atomes partagent les électrons de leur couche externe pour former des \important{liaison covalentes}.
+    Chaque liaison covalente apporte 1 électron à l'atome.
+    La \important{valence} est le nombre de liaisons formées par l'atome.
+  \end{encart}
+  %
+  \begin{encart}
+    La couche 1 contient au maximum \textbf{2 électrons} et les couches 2 et 3 contiennent jusqu'à \textbf{8 électrons}.
+  \end{encart}
+  %
+  \begin{encart}
+    Les atomes cherchent à remplir leur couche externe : c'est la règle du \important{duet} (couche 1) ou de de \important{l'octet} (couche 2 ou 3).
+  \end{encart}
+  \begin{encart}
+    Pour connaitre la valence d'un atome, il suffit donc de compter combien d'électrons il lui manque pour remplir sa couche externe.
+  \end{encart}
+
+  \exemple \element{6}{C} : $1^2 2^4$,
+  il lui manque \textbf{4} électrons pour compléter sa couche externe et respecter la règle de \textbf{l'octet.}
+  Il fera donc \textbf{4} liaisons, il est \textbf{tétravalent}.
+\end{doc}
+
+
+%% questions
+\question{%
+  Indiquer la configuration électronique de l'oxygène \element{8}{C}, combien d'électrons il lui manque pour respecter la règle du duet ou de l'octet, le nombre de liaisons ainsi formées et sa valence.
+}{%
+  \element{8}{C} : $1^2 2^6$,
+  il lui manque 2 électrons pour respecter la règle de l'octet, il formera donc 2 liaisons. Il est bivalent.
+}{2}
+
+%
+\question{%
+  Même question pour l'azote \element{7}{N} et l'hydrogène \element{1}{H}.
+}{%
+}{4}
+
+
+%%
+\begin{doc}{Liaisons multiples}
+  \label{doc:liaisons_multiples}
+  \begin{encart}
+    Pour compléter leur couche externe et respecter la règle de l'octet, deux atomes peuvent se lier en formant 2 ou 3 liaions covalentes.
+    On dit qu'il y a une \texteTrouAuto{liaison double} ou une \texteTrouAuto{liaison triple}.
+  \end{encart}
+\end{doc}
+
+%
+\numeroQuestion{%
+Indiquer si les liaisons sont simples, triples ou doubles sur les molécules suivantes :
+\begin{equation}
+  \chemfig{N~N} \qq \chemfig{O=C=O} \qq \chemfig{H-C~N}
+\end{equation}
+
+
+%%
+\titrePartie{Les représentations des molécules}
+
+%%
+\titreSousPartie{La formule brute}
+
+\begin{doc}{Formule brute}
+  \label{doc:formule_brute}
+
+  Elle indique le nombre de chaque élément présent dans la molécule.
+  Elle permet de calculer facilement les \important{masses molaires} et de vérifier si deux molécules sont \important{isomères}.
+
+  \begin{encart}
+    Deux molécules sont \important{isomères} si elles ont la même formule brute, mais un agencement des atomes différents.
+  \end{encart}
+
+  \exemple Le butane \chemfig{C_4 H_{10}}. L'éthanol \chemfig{C_2 H_6 O}. 
+\end{doc}
+
+L'oxybenzone est une molécule utilisée pour protéger des UVA et B issu du soleil.
+Sa formule brute est \chemfig{C_14 H_12 O_3}.
+%
+\question{%
+  Indiquer le nombre d'élément d'hydrogène, d'oxygène et de carbone dans la molécule d'oxybenzone.
+}{%
+  Il y a 12 hydrogènes, 3 oxygènes et 14 carbones.
+}{1}
+
+La taurine est un acide aminé produit naturellement dans le corps humain.
+Sa représentation avec un modèle moléculaire est présentée à gauche.
+%
+\question{%
+  Donner la formule brute de la taurine.
+}{%
+  \chemfig{C_2 H_7 O_3 N}
+}{1}
+
+
+%%
+\titreSousPartie{La formule développée}
+
+\begin{doc}{Formule développée}
+  \label{doc:formule_developpee}
+
+  Elle représente tous les éléments chimiques et toutes les liaisons dans le même plan.
+
+  \exemples
+  \begin{equation*}
+    \chemfig{
+      H 
+      - C (-[3] O (-[4] H) -[9] H)
+      - C (-[3] H -[9] H)
+      - H
+    }
+    éthanol
+    \qq
+    \chemfig{
+      Cl
+      - C (-[3] H -[9] H)
+      - Si (-[3] H -[9] H)
+      - H
+    }
+    chlorométhylsilane
+    \qq
+    \chemfig{
+      *6 (C (-[4] H)
+        - C (-[3] H)
+        = C (- N (-[3] H)
+          -[11] C
+            (= O
+            -[10] C
+              (-[3] H -[6] H -[9] H)
+            )
+          )
+        - C (-[11] H)
+        = C (-[9] H)
+        - C (-[7] O (-[4] H))
+        =
+      )
+    }
+    paracétamol
+  \end{equation*}
+\end{doc}
+
+
+%%
+\titreSousPartie{La formule semi-développée}
+
+\begin{doc}{Formule semi-développée}
+  \label{doc:formule_semi_developpee}
+
+  Comme la formule développée, elle représente tous les éléments chimiques, mais elle ne détaille pas les liaisons des éléments \textbf{hydrogènes}.
+
+  \exemples
+  \begin{equations*}
+    \chemfig{CH_2 (-[3] OH) - CH_3}
+    éthanol
+    \qq
+    \chemfig{Cl - CH_2 - Si H_3}
+    chlorométhylsilane
+    \qq
+    \chemfig{
+      *6 (-C =C 
+          (-N (-C (=O -[10] C)))
+        -C =C -C
+          (-O)
+        =
+      )
+    }
+    paracétamol
+  \end{equation*}
+\end{doc}
+
+
+%%
+\titreSousPartie{La formule topologique}
+
+\begin{doc}{Formule topologique}
+  \label{doc:formule_topologique}
+
+  Elle représente les liaisons \textbf{carbone-carbone \chemfig{C - C}} par des segments formant un angle de \num{30\degree}.
+  Les éléments \textbf{carbones} et \textbf{hydrogènes} qui sont attachés aux carbones \textbf{ne sont pas représentés}.
+  Tous les autres éléments chimiques sont représentés normalement.
+
+  \exemples
+  \begin{equations*}
+    \chemfig{-[1] (-[3] OH) -[11]}
+    éthanol
+    \qq
+    \chemfig{Cl-[1] -[11] Si H_3}
+    chlorométhylsilane
+    \qq
+    \chemfig{
+      *6 (-=
+          (-N (- (=O -[10])))
+        -=-
+          (-O)
+        =
+      )
+    }
+    paracétamol
+  \end{equations*}
+\end{doc}
+
+%
+\question{%
+}{%
+}{}
