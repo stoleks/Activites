@@ -1,11 +1,13 @@
-\documentclass[14pt]{extarticle}
+\documentclass[12pt]{extarticle}
 
-%%%% paramètres généraux
+%%%% paramètres généraux et commande prédéfinies
 \input{_parametres}
-
-%%%% quelques commandes
 \input{_commandes}
-\input{_chapitres}
+
+%%%% figures, chapitres et petites macros
+\input{macros}
+\input{figures}
+\input{chapitres}
 
 %%%% Paramètres réglables
 \colorlet{couleurPrincipale}{cyanSombre}
@@ -19,9 +21,11 @@
 %%%% doc
 \begin{document}
   %% chapitre 1
-  \input{}
+  %\input{termST2S/C0_representation_organique/orgaA1_representation_molecule}
+
+  \renewcommand{\classe}{Terminale ST2S}
   %% Chapitre 1
-  %\input{Seconde/C1_corps_melanges/corpTP1_verre_couleur}
+  \input{Seconde/C1_corps_melanges/corpTP1_verre_couleur}
   % \input{seconde/C1_corps_melanges/Corp1A_identification}
   % \input{seconde/C1_corps_melanges/Corp1A_CCM}
   % \input{seconde/C1_corps_melanges/Corp1B_dosage_dakin}

@@ -19,18 +19,107 @@
               minimum height=#3] {};
   \shorthandon{;}
 }
-\newcommand\rectangleCyan[2]{\rectangle{couleurPrincipale}{#1}{#2}}
-
-%%%% simple boite
-\newenvironment{boite}{
-  \begin{tcolorbox}
-  [ breakable, enhanced jigsaw, % to break box over page
-    arc = 0mm, % straight line
-    colback= white, % white background
-    colframe= black % dark frame
-  ]
+\newcommand\rectangleCyan[2]{
+  \rectangle{couleurPrincipale}{#1}{#2}
 }
-{ \end{tcolorbox} }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% une simple boite vide
+\newtcolorbox{boite}[1][]{
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  arc = 0mm, % les lignes de la boites sont droites
+  colback = white, colframe = black, % fond blanc et traits noirs
+  #1
+}
+
+%%%% document
+\newcounter{documentNum}
+\newtcolorbox{doc}[3][]{
+  before title = {\refstepcounter{documentNum}},
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  colback = white, % fond blanc
+  colframe = couleurPrincipale!25!black, % couleur de la boite
+  coltitle = black, % couleur du titre
+  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi des traits de la boite
+  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
+  colbacktitle = white, % fond pour le titre blanc
+  fonttitle = \bfseries\sffamily,
+  title = {Document \arabic{documentNum} -- #2\strut \label{#3}},
+  #1
+}
+
+%%%% Passage important à connaître
+\newtcolorbox{encart}[1][]{
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
+  colback = white!95!couleurPrincipale, % fond
+  borderline west={4pt}{0pt}{couleurPrincipale}, % barre gauche
+  #1
+}
+
+%%%% contexte
+\newtcolorbox{contexte}[1][]{
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  boxrule = 3pt, sharp corners, % contours droits
+  colframe = couleurPrincipale, % couleur des contours
+  colback = white!95!couleurPrincipale, % fond
+  #1
+}
+
+%%%% Pour les objectifs
+\newtcolorbox{boiteObjectifs}[2][]{
+  empty, % pas de boite automatique
+  attach boxed title to top left = {yshift=-2.5mm}, % position
+  boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
+  frame code = { % tracé de la boite
+    \path (title.east |- frame.north) coordinate (aux);
+    \path [draw=couleurPrincipale, line width = 3pt]
+    (frame.west) |- ([xshift=-4mm] title.north east)
+    to[out=0, in=180] ([xshift=10mm] aux) -| % définit la courbe
+    (frame.east) |- (frame.south) -| cycle; % trace la boite
+  },
+  coltitle = black, % couleur du titre
+  fonttitle = \bfseries\sffamily, % police du titre
+  title = {#2},
+  #1 
+}
+\newenvironment{objectifs}{
+  \begin{boiteObjectifs}{Objectifs de la séance :}
+    \begin{listeObjectifs}
+}{
+    \end{listeObjectifs}
+  \end{boiteObjectifs}
+}
+
+%%%% Espace pour un coup de pouce
+\newcounter{coupDePouceNum}
+\newtcolorbox{coupDePouce}[1][]{
+  before title = {\refstepcounter{coupDePouceNum}},
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  arc = 0mm, % les lignes de la boites sont droites
+  colback = white, colframe = black, % fond blanc et traits noirs
+  fonttitle = \bfseries, coltitle = black, % couleur et police du titre
+  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
+  colbacktitle = white, % fond pour le titre blanc
+  title = {
+    \textcolor{couleurPrincipale}{\faThumbsUp}
+    Coup de pouce \arabic{coupDePouceNum} :
+    \flushright \vspace*{-26pt}\faSquareO
+  },
+  #1
+}
+
+%%%% Espace pour une appréciation
+\newcommand{\appreciation}[1]{
+  \begin{boite}
+    \vspace*{-4pt}
+    \sousTitre{Appréciation et remarques}
+    
+    \vspace*{#1 cm}
+    \phantom{b}
+  \end{boite}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,10 +143,10 @@
 
 
 %%%% activité ou TP
-\newcounter{acti}
+\newcounter{activiteNum}
 \newcommand{\titreActi}[2]{
-  \refstepcounter{acti}
-  \titre{#1 \arabic{section}.\arabic{acti} -- #2}
+  \refstepcounter{activiteNum}
+  \titre{#1 \arabic{section}.\arabic{activiteNum} -- #2}
 }
 \newcommand{\titreTP}[1]{
   \titreActi{TP}{#1}
@@ -83,34 +172,36 @@
   \rectangleCyan{60pt}{1pt}
   \vspace*{10pt}
 }
-\newcounter{sousSection}
+\newcounter{sousSectionNum}
 \newcommand{\titreSection}[1]{
   \vspace*{16pt}
   \refstepcounter{subsubsection}
-  \setcounter{sousSection}{0}
+  \setcounter{sousSectionNum}{0}
   \rectangleCyan{30pt}{4pt}
   \sousTitre{\large \arabic{subsubsection} -- #1}
   \vspace*{10pt}
 }
 \newcommand{\titreSousSection}[1]{
   \vspace*{12pt}
-  \refstepcounter{sousSection}
-  \sousTitre{\Alph{sousSection} -- #1}
+  \refstepcounter{sousSectionNum}
+  \sousTitre{\Alph{sousSectionNum} -- #1}
   \vspace*{8pt}
 }
 
 %%%% fixe le numéro de l'activité
 \newcommand{\numeroActivite}[1]{
+  % fixe les compteurs LaTeX
+  \setcounter{page}{1}
   \setcounter{subsection}{0}
   \setcounter{subsubsection}{0}
-  \setcounter{sousSection}{0}
   \setcounter{figure}{0}
-  \setcounter{document}{0}
-  \setcounter{exercice}{0}
-  \setcounter{QCM}{0}
-  \setcounter{countCoupDePouce}{0}
-  \setcounter{acti}{#1 - 1}
-  \setcounter{page}{1}
+  % fixe les compteurs internes
+  \setcounter{qcmNum}{0}
+  \setcounter{documentNum}{0}
+  \setcounter{questionNum}{0}
+  \setcounter{coupDePouceNum}{0}
+  \setcounter{sousSectionNum}{0}
+  \setcounter{activiteNum}{#1 - 1}
 }
 % fixe le numéro de partie (#1) et le numéro de la page (#2)
 \newcommand{\numeroPartieCours}[2]{
@@ -148,7 +239,7 @@
   \pagestyle{fancy}
   \setcounter{section}{#2}
   \setcounter{subsection}{0}
-  \setcounter{sousSection}{0}
+  \setcounter{sousSectionNum}{0}
   \teteGauche{\etablissement{}}{Chapitre \arabic{section} -- #1} % left header
   \chead{} % central header
   \teteDroite{\annee{}}{\classe{}}
@@ -225,13 +316,13 @@
 }
 
 % Affiche uniquement le numéro de la question
-\newcounter{exercice}
+\newcounter{questionNum}
 \newcommand{\numeroQuestion}{
-  \refstepcounter{exercice}
+  \refstepcounter{questionNum}
   \vspace*{2pt}
   \hspace{15pt}
   \textcolor{\couleurExercice}{%couleurPrincipale!75!black}{
-    \textbf{\arabic{exercice}} {\small\faMinus}
+    \textbf{\arabic{questionNum}} {\small\faMinus}
   }
 }
 
@@ -247,18 +338,17 @@
 \newcommand{\reponseQCM}{
   \correction{
     \hspace*{-17pt}$\checkmark$\hspace*{-12pt}
-  }
-  % Note : trace une croix à la bonne position
+  } % Note : trace une croix à la bonne position
 }
 
 % trace des lignes pour répondre
-\newcounter{int}
+\newcounter{ligneNum}
 \newcommand{\lignesReponse}[1]{
-  \setcounter{int}{-1}
+  \setcounter{ligneNum}{-1}
   \loop
-    \stepcounter{int}
-    \ifnum \value{int} < #1
-    \lignePointillee{0.99} \\[8pt]
+    \stepcounter{ligneNum}
+    \ifnum \value{ligneNum} < #1
+    \lignePointillee{0.98} \\[8pt]
   \repeat
   \ifnum #1 > 0
     \vspace*{-12pt}
@@ -278,23 +368,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% QCM
 % question QCM
-\newcounter{QCM}
+\newcounter{qcmNum}
 \newcommand{\QCM}[2]{
-  \refstepcounter{QCM}
+  \refstepcounter{qcmNum}
   \vspace*{2pt}
-  \textcolor{couleurPrincipale!75!black}{\textbf{\arabic{QCM}} {\small\faMinus}} #1
+  \textcolor{couleurPrincipale!75!black}{
+    \textbf{\arabic{qcmNum}} {\small\faMinus}
+  } #1
   
   \begin{qcm}
     #2
   \end{qcm}
 }
 
-
 %%%% Pour afficher les compétences
 \newcommand{\competence}[1]{
   ~{\footnotesize\textit{(#1)}}
 }
-
 
 %%%% Espace pour indiquer nom, prénom et classe
 \newcommand{\nomPrenomClasse}{
@@ -375,100 +465,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% documents
-\newcounter{document}
-\newcommand{\titreDocu}[1]{
-  \refstepcounter{document} % update counter
-  \textsf{\textbf{Document \arabic{document} -- #1}} % print document title
-  \addcontentsline{toc}{document}{\protect\numberline{} #1} % update table of content
-}
-\newenvironment{doc}[1]{
-  \begin{boite}
-    \titreDocu {#1} \newline
-    
-}
-{ \end{boite} }
-
-%% pour les référencer
-\newcommand{\docu}[1]{
-  \textbf{(Doc. #1)}
-}
-
-
-%%%% problematique
-\newcommand{\problematique}[1]{
-  \hspace{8pt}
-  \flecheLongue
-  \textbf{#1}
-}
-
-
-%%%% objectifs
-\newenvironment{objBoite}{
-  \begin{tcolorbox}
-  [boxrule = 0pt,
-  frame hidden, sharp corners,
-  colback = white, enhanced,
-  borderline north={2pt}{0pt}{couleurPrincipale},
-  borderline south={2pt}{0pt}{couleurPrincipale},
-  borderline west={4pt}{0pt}{couleurPrincipale},
-  borderline east={4pt}{0pt}{couleurPrincipale}
-  ]
-  
-}
-{
-  \end{tcolorbox}
-}
-\newenvironment{objectifs}{
-  \begin{objBoite}
-    \begin{center}
-      \sousTitre{Objectifs de la séance :}
-    \end{center}
-    \vspace*{-20pt}
-    \begin{listeObjectifs}
-}
-{ 
-    \end{listeObjectifs}
-  \end{objBoite}
-}
-
-
-%%%% Espace pour un coup de pouce
-\newcounter{countCoupDePouce}
-\newenvironment{coupDePouce}{
-  \refstepcounter{countCoupDePouce}
-  \vspace*{-12pt}
-  \begin{boite}
-    \begin{flushright}
-      \textcolor{couleurPrincipale}{\faSquareO}
-    \end{flushright}
-    
-    \vspace*{-30pt}
-    \textcolor{couleurPrincipale}{\faThumbsUp}
-    \textbf{Coup de pouce \arabic{countCoupDePouce}} :\\[4pt]
-}
-{
-  \end{boite}
-}
-
-
-%%%% Espace pour une appréciation
-\newcommand{\appreciation}[1]{
-  \vspace*{8pt}
-  \sousTitre{Appréciation et remarques}
-  \vspace*{-8pt}
-  \begin{boite}
-    \vspace{#1 pt}
-    \phantom{b}
-  \end{boite}
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Définit un nouveau type de colonne : taille fixée par une fraction
-%%%% de la largeur de la ligne, avec un texte centré
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1\linewidth}}
-
 %%%% Tableau de competence
 \newenvironment{tableauCompetences}{
   \centering
@@ -597,34 +593,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Passage important
-\newenvironment{encart}{
-  \begin{tcolorbox}
-  [boxrule = 0pt,
-  frame hidden, sharp corners,
-  colback = white!95!couleurPrincipale, % background color
-  breakable, enhanced jigsaw, % to break box over page
-  borderline west={4pt}{0pt}{couleurPrincipale}] % left bar
-  
-}
-{
-  \end{tcolorbox}
-}
-
-%%%% contexte
-\newenvironment{contexte}{
-  \begin{tcolorbox}
-  [boxrule = 4pt, sharp corners,
-  colframe = couleurPrincipale,
-  colback = white!95!couleurPrincipale, % background color
-  breakable, enhanced jigsaw] % to break box over page
-  
-}
-{
-  \end{tcolorbox}
-}
-
-
 %%%% emphase
 \newcommand{\emphase}[1]{
   \textcolor{couleurImportant}{\textsf{\bfseries \large #1}}
@@ -645,11 +613,11 @@
   \textbf{Note :}
 }
 %
-\newcounter{appelProf}
+\newcounter{compteAppelProf}
 \newcommand{\appelProf}{
-  \refstepcounter{appelProf}
+  \refstepcounter{compteAppelProf}
   \hspace{24pt} \faHandPaperO \hspace{2pt}
-  \textbf{Appel n$^\circ$ \arabic{appelProf} :}
+  \textbf{Appel n$^\circ$ \arabic{compteAppelProf} :}
 }
 
 
@@ -664,21 +632,17 @@
 \newlist{qcm}{itemize}{2}
 \setlist[qcm]{label=$\square$, leftmargin=2cm}
 
-
 %%%% liste d'objectif
 \newlist{listeObjectifs}{itemize}{2}
 \setlist[listeObjectifs]{label = \chevron}
-
 
 %%%% protocole
 \newlist{protocole}{itemize}{2}
 \setlist[protocole]{label = {\footnotesize \fleche}}
 
-
 %%%% liste de points
 \newlist{listePoints}{itemize}{2}
 \setlist[listePoints]{label = \pointCyan}
-
 
 %%%% jeu de données
 \newenvironment{donnees}{
@@ -688,6 +652,12 @@
   \end{listePoints}
 }
 
+%%%% problematique
+\newcommand{\problematique}[1]{
+  \hspace{8pt}
+  \flecheLongue
+  \textbf{#1}
+}
 
 %%%% liste avec chiffre
 \newlist{enumeration}{enumerate}{2}
@@ -697,25 +667,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Séparation de la page
 \newcommand{\separationTroisBlocs}[3]{
-  \begin{minipage}[t]{0.3\linewidth}
+  \begin{minipage}[T]{0.3\linewidth}
     #1
   \end{minipage}
   ~
-  \begin{minipage}[t]{0.3\linewidth}
+  \begin{minipage}[T]{0.3\linewidth}
     #2
   \end{minipage}
   ~
-  \begin{minipage}[t]{0.3\linewidth}
+  \begin{minipage}[T]{0.3\linewidth}
     #3
   \end{minipage}
 }
 %%%%
 \newcommand{\separationDeuxBlocs}[2]{
-  \begin{minipage}[t]{0.48\linewidth}
+  \begin{minipage}[T]{0.48\linewidth}
     #1
   \end{minipage}
   \hfill
-  \begin{minipage}[t]{0.48\linewidth}
+  \begin{minipage}[T]{0.48\linewidth}
     #2
   \end{minipage}
 }
@@ -730,135 +700,8 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% tikz macros
-%%%% rectangle
-\newcommand{\tkzRect}[4]{
-  \fill[color=#1] (#2,#4) -- (-#2,#4) -- (-#2,#3) -- (#2,#3);
-}
-\newcommand{\tkzEllipse}[4]{
-  \fill[color=#1] (0,#3) ellipse (#2 and #4);
-}
-\newcommand{\tkzLegende}[4]{
-  \draw[black, ->, very thick] (#2 + #4, #3) node[right] {#1} -- (#2, #3);
-}
-\newcommand{\tkzCercle}[4]{
-  \filldraw [#3] (#1, #2) circle (#4pt);
-}
-\newcommand{\tkzCercleLigne}[5]{
-  \filldraw [color = #4, fill = #3, very thick] (#1, #2) circle (#5pt);
-}
-%%%% tube à essais
-\newcommand{\tkzTubeEssai}[3]{
-  \draw[thick] (#1,#2) -- (#1,0) arc (0:-180:#1) -- (-#1,#2);
-  \draw[thick] (0,#2) ellipse (#1 and #3);
-}
-\newcommand{\tkzBasTubeEssai}[5]{
-  \fill[color=#1] (-#2,#3) -- (#2,#3) arc (0:-180:#2);
-  \tkzRect{#1}{#2}{#3 - 0.01}{#4}
-  \tkzEllipse{#1!85!black}{#2}{#4}{#5}
-}
-\newcommand{\tkzPhaseTubeEssai}[5]{
-  \tkzRect{#1}{#2}{#3}{#4}
-  \tkzEllipse{#1}{#2}{#3}{#5}
-  \tkzEllipse{#1!85!black}{#2}{#4}{#5}
-}
-
-%%%% Point et vecteurs
-\newcommand{\tkzLabel}[3]{
-  \node at (#1, #2) {#3};
-}
-\newcommand{\tkzPointLabel}[3]{
-  \filldraw (#1, #2) circle (2pt) node[above] {#3};
-}
-\newcommand{\tkzVecteur}[6]{
-  \draw[black, ->, very thick] (#1, #2) -- (#1 + #3, #2 + #4) node[#6] {#5};
-}
-\newcommand{\tkzEquiv}[6]{
-  \draw[black, <->, thick] (#1, #2) -- (#1 + #3, #2 + #4);
-  \draw[black] (#1 + #3/2, #2 + #4/2) node[#6] {#5};
-}
-\newcommand{\tkzVecteurX}[4]{
-  \draw[black, ->, very thick] (#1, #2) -- (#1 + #3, #2) node[above] {#4};
-}
-\newcommand{\tkzVecteurY}[4]{
-  \draw[black, ->, very thick] (#1, #2) -- (#1, #2 + #3) node[right] {#4};
-}
-\newcommand{\tkzEquivY}[5]{
-  \draw[#1, <->, thick] (#2, #3) -- (#2, #3 + #4);
-  \draw[#1] (#2, #3 + #4/2) node[right] {#5};
-}
-\newcommand{\tkzEquivX}[5]{
-  \draw[#1, <->, thick] (#2, #3) -- (#2 + #4, #3);
-  \draw[#1] (#2 + #4/2, #3) node[below] {#5};
-}
-
-%%%% plan de classe
-\newcommand{\rectangleTexte}[5]{
-  \filldraw [fill=white, draw=black, ultra thick] (#1, #2) rectangle (#1 + #3, #2 + #4);
-  \node at (#1 + #3/2, #2 + #4/2) [font=\sffamily] {\textbf{\large #5}};
-}
-% place dans la classe
-\newcommand{\place}[3]{
-  \rectangleTexte{#1}{#2}{3}{2}{#3}
-}
-\newcommand{\deuxPlaces}[4]{
-  \place{#1}{#2}{#3}
-  \place{#1 + 3}{#2}{#4}
-}
-\newcommand{\troisPlaces}[5]{
-  \place{#1}{#2}{#3}
-  \place{#1 + 3}{#2}{#4}
-  \place{#1 + 6}{#2}{#5}
-}
-\newcommand{\quatrePlaces}[6]{
-  \place{#1}{#2}{#3}
-  \place{#1 + 3}{#2}{#4}
-  \place{#1 + 6}{#2}{#5}
-  \place{#1 + 9}{#2}{#6}
-}
-%%%% rangée
-\newboolean{quatrePlace}
-\setboolean{quatrePlace}{false}
-\newcommand{\avecQuatrePlaces}{ \setboolean{quatrePlace}{true} }
-\newcommand{\avecTroisPlaces}{ \setboolean{quatrePlace}{false} }
-\newcommand{\rangee}[9]{
-  \ifthenelse {\boolean{quatrePlace}} {
-    \deuxPlaces  {0}{#1} {#2}{#3}
-    \quatrePlaces{7}{#1} {#4}{#5}{#6}{#7}
-    \deuxPlaces  {20}{#1}{#8}{#9}
-  }{
-    \deuxPlaces {#1}{#2}     {#3}{#4}
-    \troisPlaces{#1 + 7}{#2} {#5}{#6}{#7}
-    \deuxPlaces {#1 + 17}{#2}{#8}{#9}
-  }
-}
-\newcommand{\rang}[9]{
-  \ifthenelse {\boolean{quatrePlace}} {
-    \deuxPlaces  {0} {12 - 3*#1} {#2}{#3}
-    \quatrePlaces{7} {12 - 3*#1} {#4}{#5}{#6}{#7}
-    \deuxPlaces  {20}{12 - 3*#1} {#8}{#9}
-  }{
-    \deuxPlaces {0} {12 - 3*#1} {#2}{#3}
-    \troisPlaces{7} {12 - 3*#1} {#4}{#5}{#6}
-    \deuxPlaces {17}{12 - 3*#1} {#7}{#8}
-  }
-}
-
-%%%% TP
-\newcommand{\paillasse}[3]{
-  \rectangleTexte{#1}{#2}{4}{2}{#3}
-}
-\newcommand{\rangeeTP}[6]{
-  \paillasse{#1}{#2}     {#3}
-  \paillasse{#1 + 4}{#2} {#4}
-  \paillasse{#1 + 12}{#2}{#5}
-  \paillasse{#1 + 16}{#2}{#6}
-}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% fraction, nombre algébrique, etc.
+%%%% fraction, nombre algébrique, réaction
 \newcommand{\Frac}[2]{
   \displaystyle \frac{#1}{#2}
 }
@@ -869,33 +712,7 @@
   \!\!\schemestart \arrow(.mid east--.mid west){->}[, 0.9, ultra thick] \schemestop\!\!
 }
 
-%% grandeurs
-\newcommand{\gISS}{g_\text{ISS}}
-\newcommand{\MTerre}{M_\text{Terre}}
-\newcommand{\RTerre}{R_\text{Terre}}
-\newcommand{\inertie}{\text{inertie}}
-\newcommand{\Tfus}{ T_{\text{f}} }
-\newcommand{\Teb}{ T_{\text{éb}} }
-\newcommand{\avogadro}{6,\!02 \times 10^{23}}
-\newcommand{\saccha}{Saccharose (\chemfig{C_{12} H_{22} O_{11}})}
-\newcommand{\vitamC}{Vitamine C (\chemfig{C_{6} H_{8} O_{6}})}
-\newcommand{\ionsCa}{Ion calcium (\chemfig{Ca^{2+}})}
-
-%% vecteurs
-\newcommand{\FBsurA}{
-  F_{B/A}
-}
-\newcommand{\FAsurB}{
-  F_{A/B}
-}
-\newcommand{\vvFAsurB}{
-  \vv{F}_{A/B}
-}
-\newcommand{\vvFBsurA}{
-  \vv{F}_{B/A}
-}
-
-%% atome et isotope
+%% atome ou isotope
 \makeatletter
 \newcommand{\isotope}[3]{%
    \settowidth\@tempdimb{\ensuremath{\scriptstyle#1}}%
@@ -915,7 +732,7 @@
 }%
 \makeatother
 
-%% element chimique
+%% element chimique dans le tableau périodique
 \makeatletter
 \newcommand{\element}[2]{%
    \settowidth\@tempdimb{\ensuremath{\footnotesize #1}}%
@@ -932,9 +749,12 @@
 \newcommand{\siecle}[1]{
   \textsc{\romannumeral #1}\textsuperscript{e}~siècle
 }
+
 %% texte avec une boite autour
 \newcommand{\texteEncadre}[1]{
-  \frame{\vphantom{$\Frac{1}{10}$} \text{ #1 } }
+  \frame{
+    \vphantom{$\Frac{1}{10}$} \text{#1}
+  }
 }
 
 %% case cochée
