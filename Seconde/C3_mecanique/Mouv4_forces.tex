@@ -32,7 +32,7 @@
 
 %%%%
 \vspace{-10pt}
-\begin{doc}{Satellite Hubble}
+\begin{doc}{Satellite Hubble}{doc:satellite_hubble}
   \begin{wrapfigure}{l}{0.4\linewidth}
     \image{1}{images/mouvements/hubble}
   \end{wrapfigure}
@@ -46,17 +46,17 @@
 \end{doc}
 
 %%
-\begin{doc}{Force et action mécanique}
+\begin{doc}{Force et action mécanique}{doc:force_action_mecanique}
   \chevron Un corps exerce une \important{action mécanique} sur le système étudié si \reponseLigne
-  \reponse{1}
+  \reponseLigne{1}
   
   Pour modéliser une action mécanique, on utilise le concept de \important{force}.
   
   \begin{encart}
-    La force exercée par un corps $A$ sur un corps $B$ est représentée par un vecteur \vFAsurB}.
+    La force exercée par un corps $A$ sur un corps $B$ est représentée par un vecteur $\vvFAsurB$.
     Ce vecteur possède les caractéristiques suivantes :
     \begin{listePoints}
-      \item Une \important{norme} notée \FAsurB, qui s'exprime en \dotfill
+      \item Une \important{norme} notée $\FAsurB$, qui s'exprime en \dotfill
       \item Une \important{direction} et un \important{sens} qui dépendent de la situation.
       \item Un \important{point d'application} : le centre du système $B$.
     \end{listePoints}
@@ -65,14 +65,15 @@
 
 %%
 \newpage
-\bgin{doc}{Force d'interaction gravitationnelle}
+\begin{doc}{Force d'interaction gravitationnelle}{doc:interaction_gravitationnelle}
   \chevron Tous les corps qui possèdent une masse s’attirent entre eux : c’est l’attraction gravitationnelle.
 
   \begin{encart}
     On modélise l'attraction gravitationnelle exercée par le corps $A$ sur le corps $B$ par une force représentée par un vecteur $\vvFAsurB$ :
     
-    \begin{wrapfigure}[2]{r}{0.4\linewidth}
-      \vspace*{-105pt}
+    \vspace*{-12pt}
+    \begin{wrapfigure}[6]{r}{0.4\linewidth}
+      \vspace*{-20pt}
       \begin{tikzpicture}
         % corps A et B
         \tkzCercle{0}{0}{gray!50!white}{20}
@@ -83,10 +84,11 @@
         \tkzPointLabel{4}{2}{$B$}
         % force et distance
         \tkzVecteur{4}{2}{-1.5}{-0.75}{$\vvFAsurB$}{left}
-        \tkzVecteur{0.5}{-1}{4}{2}{\phantom{G}$d$}{right}
+        \tkzEquiv{0.5}{-1}{4}{2}{\phantom{G}$d$}{right}
       \end{tikzpicture}
     \end{wrapfigure}
-    
+
+    \phantom{b}
     \begin{listePoints}
       \item \important{Point d'application} : centre du corps $B$
       \item \important{Direction} : la droite $AB$.
@@ -105,22 +107,32 @@
 
 %%%%
 \question{
-  Compléter les documents \ref{doc:force_action} et \ref{doc:gravitation}.
+  Compléter les documents \ref{doc:force_action_mecanique} et \ref{doc:interaction_gravitationnelle}.
+}{
+
 }{0}
 
 \question{
   Donner trois exemples d'actions mécaniques qu'on peut rencontrer dans la vie quotidienne.
+}{
+
 }{5}
 
 \question{
   Quelle différence remarquez-vous entre ces actions de la vie quotidienne et l'action exercée par la Terre sur le satellite Hubble ?
+}{
+
 }{3}
 
 \question{
-  Sur le schéma ci-dessous, représenter la force d’interaction gravitationnelle #»F T /S exercée par la Terre T sur le satellite Hubble S.
-  La Terre est assimilée à une boule de rayon RT = 6,37 × 103 km et de masse MT = 5,97 × 1024 kg.
+  Sur le schéma ci-dessous, représenter la force d’interaction gravitationnelle F T /S exercée par la Terre T sur le satellite Hubble S.
+  La Terre est assimilée à une boule de rayon $R_T = \qty{6,37e3}{\km}$ et de masse $M_T = \qty{5,97e24}{\kg}$.
+}{
+  bla
 }{0}
 
 \question{
-   En utilisant le document 3, donner la relation qui relie la norme de la force FT/S et la masse du satellite mS, la masse de la Terre MT, la constante G et la distance d.
+   En utilisant le document 3, donner la relation qui relie la norme de la force FT/S et la masse du satellite $m_S$, la masse de la Terre $M_T$, la constante G et la distance d.
+}{
+
 }{2}

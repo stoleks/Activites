@@ -1,15 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% quelque couleurs
-\definecolor{vertSombre} {RGB}{  0,  92,  46}
-\definecolor{cyanSombre} {RGB}{  0, 140, 128}
-\definecolor{jauneSombre}{RGB}{138, 103,   0}
-\definecolor{jauneClair} {RGB}{218, 173,   0}
-\definecolor{rougeSombre}{RGB}{148,  31,   0}
-\definecolor{rougeClair} {RGB}{224,  39,  34}
+\definecolor{vertSombre}  {RGB} {  0,  95,  17}
+%
+\definecolor{jauneSombre}{RGB}  {213, 145,   2}
+\definecolor{orangeSombre}{RGB} {174,  82,   0}
+\definecolor{cyanSombre}  {RGB} {  0, 140, 128}
+\definecolor{bleuPale}    {RGB} { 39,  76, 167}
+%
+\definecolor{jauneClair} {RGB} {218, 173,   0}
+\definecolor{rougeSombre}{RGB} {148,  31,   0}
+\definecolor{rougeClair} {RGB} {224,  39,  34}
 
 %%% quelques couleurs dérivées des couleurs choisie
-\newcommand{\couleurCorrection}{couleurPrincipale!60!black}
-\newcommand{\couleurExercice}{couleurPrincipale!75!black}
+\newcommand{\couleurPrimSombre}{couleurPrim!60!black}
 
 %%%% rectangle coloré
 \newcommand\rectangle[3]{%
@@ -20,7 +23,7 @@
   \shorthandon{;}
 }
 \newcommand\rectangleCyan[2]{
-  \rectangle{couleurPrincipale}{#1}{#2}
+  \rectangle{couleurPrim}{#1}{#2}
 }
 
 
@@ -39,7 +42,7 @@
   before title = {\refstepcounter{documentNum}},
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   colback = white, % fond blanc
-  colframe = couleurPrincipale!25!black, % couleur de la boite
+  colframe = couleurPrim!25!black, % couleur de la boite
   coltitle = black, % couleur du titre
   boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi des traits de la boite
   titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
@@ -53,8 +56,8 @@
 \newtcolorbox{encart}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   frame hidden, sharp corners, boxrule = 0mm, % pas de contours
-  colback = white!95!couleurPrincipale, % fond
-  borderline west={4pt}{0pt}{couleurPrincipale}, % barre gauche
+  colback = couleurPrim!5, % fond
+  borderline west={4pt}{0pt}{couleurPrim}, % barre gauche
   #1
 }
 
@@ -62,8 +65,8 @@
 \newtcolorbox{contexte}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   boxrule = 3pt, sharp corners, % contours droits
-  colframe = couleurPrincipale, % couleur des contours
-  colback = white!95!couleurPrincipale, % fond
+  colframe = couleurPrim, % couleur des contours
+  colback = couleurPrim!5, % fond
   #1
 }
 
@@ -74,7 +77,7 @@
   boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
   frame code = { % tracé de la boite
     \path (title.east |- frame.north) coordinate (aux);
-    \path [draw=couleurPrincipale, line width = 3pt]
+    \path [draw=couleurPrim, line width = 3pt]
     (frame.west) |- ([xshift=-4mm] title.north east)
     to[out=0, in=180] ([xshift=10mm] aux) -| % définit la courbe
     (frame.east) |- (frame.south) -| cycle; % trace la boite
@@ -103,7 +106,7 @@
   titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
   colbacktitle = white, % fond pour le titre blanc
   title = {
-    \textcolor{couleurPrincipale}{\faThumbsUp}
+    \textcolor{couleurPrim}{\faThumbsUp}
     Coup de pouce \arabic{coupDePouceNum} :
     \flushright \vspace*{-26pt}\faSquareO
   },
@@ -220,6 +223,11 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Paramètre par défaut pour l'en-tête
+\newcommand{\annee}{2023 -- 2024}
+\newcommand{\etablissement}{Lycée}
+\newcommand{\classe}{seconde}
+
 %%%% en-tête
 \newcommand{\teteGauche}[2]{
   \lhead{
@@ -291,12 +299,31 @@
   \TeacherModeOn
 }
 
+% Pour afficher le numéro d'une question avec choix du compteur
+\newcommand{\numeroQuestion}[2]{
+  \refstepcounter{#1}
+  \vspace*{2pt}
+  \hspace{#2pt}
+  \textcolor{couleurSec}{
+    \textbf{\arabic{#1}} {\small\faMinus}
+  }
+}
+
+% Pour simplifier la commande question
+\newcommand{\reponseCorrigee}[1]{
+  \vspace*{2pt}
+  \textcolor{couleurSec}{\faCaretRight}
+  \hspace{1pt}
+  \textbf{\textcolor{couleurTer}{#1}}
+}
+
 % définit une commande pour afficher une question 
 % #1 : question
 % #2 : réponse
 % #3 : nombres de lignes pour répondre
+\newcounter{questionNum}
 \newcommand{\question}[3]{
-  \numeroQuestion\!#1
+  \numeroQuestion{questionNum}{16} \!#1
   
   % pointille ou correction
   \ifthenelse {\boolean{modeProf}} { % prof
@@ -306,39 +333,13 @@
     \lignesReponse{#3}
   }
 }
-% Pour simplifier la commande question
-\newcommand{\reponseCorrigee}[1]{
-  \vspace*{2pt}
-  \hspace{16pt}
-  \textcolor{\couleurCorrection}{
-    \faCaretRight \hspace{2pt} #1
-  }
-}
-
-% Affiche uniquement le numéro de la question
-\newcounter{questionNum}
-\newcommand{\numeroQuestion}{
-  \refstepcounter{questionNum}
-  \vspace*{2pt}
-  \hspace{15pt}
-  \textcolor{\couleurExercice}{%couleurPrincipale!75!black}{
-    \textbf{\arabic{questionNum}} {\small\faMinus}
-  }
-}
 
 % Correction affichée si en mode prof
 \newcommand{\correction}[1]{
   \ifthenelse {\boolean{modeProf}} { % prof
-    \textcolor{\couleurCorrection}{#1}
+    #1
   }{ % eleve
   }
-}
-
-% À ajouter devant la bonne réponse dans un qcm
-\newcommand{\reponseQCM}{
-  \correction{
-    \hspace*{-17pt}$\checkmark$\hspace*{-12pt}
-  } % Note : trace une croix à la bonne position
 }
 
 % trace des lignes pour répondre
@@ -357,28 +358,27 @@
 
 % sous questions
 \newcommand{\sousQuestion}[2]{
-  \hspace{15pt}
-  \textcolor{couleurPrincipale!75!black}{\textbullet} #1
+  \hspace{16pt}
+  \textcolor{couleurSec}{\textbullet} #1
   
   \vspace*{8pt}
   \reponse{#2}
 }
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% QCM
 % question QCM
-\newcounter{qcmNum}
 \newcommand{\QCM}[2]{
-  \refstepcounter{qcmNum}
-  \vspace*{2pt}
-  \textcolor{couleurPrincipale!75!black}{
-    \textbf{\arabic{qcmNum}} {\small\faMinus}
-  } #1
-  
+  \numeroQuestion{qcmNum}{0} #1
   \begin{qcm}
     #2
   \end{qcm}
+}
+
+% À ajouter devant la bonne réponse dans un qcm
+\newcounter{qcmNum}
+\newcommand{\reponseQCM}{
+  \correction{
+    \hspace*{-17pt}$\checkmark$\hspace*{-12pt}
+  } % Note : trace une croix à la bonne position
 }
 
 %%%% Pour afficher les compétences
@@ -399,24 +399,24 @@
 % texte à trou automatique
 \newcommand{\texteTrouAuto}[1]{
   \gap{
-    \textcolor{couleurPrincipale!60!black}{ \textbf{#1} }
+    \textcolor{\couleurPrimSombre}{ \textbf{#1} }
   }
 }
 
 % texte à trou dans une ligne réglable
 \newcommand{\texteTrou}[2]{
   \ifthenelse {\boolean{modeProf}} {% prof
-    \textcolor{couleurPrincipale!60!black}{ \textbf{#1} }
+    \textcolor{\couleurPrimSombre}{ \textbf{#1} }
   }{% élève
     \espaceReponse
-    \lignePointillee{#2}
+    \lignePointillee{#2}\hspace*{-2pt}
   }
 }
 
 % texte à trou sur tout le reste de la ligne
 \newcommand{\texteTrouLigne}[1]{
   \ifthenelse {\boolean{modeProf}} {% prof
-    \textcolor{couleurPrincipale!60!black}{ \textbf{#1} }
+    \textcolor{\couleurPrimSombre}{ \textbf{#1} }
   }{% élève
     \espaceReponse \dotfill
   }
@@ -425,7 +425,7 @@
 % texte à trou sur plusieurs lignes
 \newcommand{\texteTrouMultiLignes}[2]{
   \ifthenelse {\boolean{modeProf}} {% prof
-    \textcolor{couleurPrincipale!60!black}{ \textbf{#1} }
+    \textcolor{\couleurPrimSombre}{ \textbf{#1} }
   }{% élève
     \reponseLigne
     \lignesReponse{#2}
@@ -441,7 +441,7 @@
 % espace vertical pour la réponse
 \newcommand{\espaceReponse}{
   \phantom{$\Frac{1}{1}$} % espace vertical
-  \hspace*{-40pt} \phantom{b} % ajuste l'espace horizontal
+  \hspace*{-38pt} \phantom{b} % ajuste l'espace horizontal
 }
 
 
@@ -470,14 +470,12 @@
   \centering
   \begin{tblr}{
     colspec = {| c | X[c] | c | c | c | c |},
-    rows = {m},
+    rows = {m}, hlines,
     row{1} = {gray!20}
   }
-    \hline
-    \centering \textbf{Compétences} & \centering \textbf{Items} & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A}
-    \\ \hline
-}
-{
+    \centering \textbf{Compétences} & \centering \textbf{Items} 
+    & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
+}{
   \end{tblr}
 }
 
@@ -486,17 +484,14 @@
   \centering
   \begin{tblr}{
     colspec = {| X[c] | c | c | c | c |},
-    rows = {m},
+    rows = {m}, hlines,
     column{4} = {0.22},
     column{5} = {0.21},
     row{1} = {gray!20}
   }
-    \hline
-    \textbf{Points clés du chapitre} & \ok & \pasOk & \textbf{En classe} & \textbf{Exercices}
-    \\ \hline
-}
-{   
-    \\ \hline
+    \textbf{Points clés du chapitre} & \ok & \pasOk
+    & \textbf{En classe} & \textbf{Exercices} \\
+}{   
   \end{tblr}
 }
 
@@ -505,15 +500,13 @@
   \centering
   \begin{tblr}{
     colspec = {| X[c] | c | c | c |},
-    rows = {m},
+    rows = {m}, hlines,
     column{4} = {0.2},
     row{1} = {gray!20}
   }
-    \hline
-    \textbf{Points clés du chapitre} & \ok & \pasOk & \textbf{En classe}
-    \\ \hline
-}
-{ 
+    \textbf{Points clés du chapitre} & \ok & \pasOk
+    & \textbf{En classe} \\
+}{ 
   \end{tblr}
 }
 
@@ -521,18 +514,18 @@
 \newcommand{\correctionEleve}[1]{
   \begin{tblr}{
     colspec = {| X[-1, c] | X[2, c] | X[2, c] | X[2, c] |},
+    hlines,
     row{1} = {gray!20}
   }
-    \hline 
     \textbf{Question} & 
     \textbf{L'erreur} &
     \textbf{Analyse de l'erreur} &
-    \textbf{La correction} \\ \hline
+    \textbf{La correction} \\
     %
-    \phantom{b} \vspace{#1 pt} & & & \\ \hline
-    \phantom{b} \vspace{#1 pt} & & & \\ \hline
-    \phantom{b} \vspace{#1 pt} & & & \\ \hline
-    \phantom{b} \vspace{#1 pt} & & & \\ \hline
+    \phantom{b} \vspace{#1 pt} & & & \\
+    \phantom{b} \vspace{#1 pt} & & & \\
+    \phantom{b} \vspace{#1 pt} & & & \\
+    \phantom{b} \vspace{#1 pt} & & & \\
   \end{tblr}
 }
 
@@ -540,51 +533,54 @@
 \newcommand{\bilanCorrection}[1]{
   \begin{tblr}{
     colspec = {| X[c] | X[c] |},
+    hlines,
     row{1} = {gray!20}
   }
-    \hline
     \textbf{Ce que je n'avais pas compris...} &
-    \textbf{Ce que maintenant j'ai compris...}
-    \\ \hline
-    \phantom{b} \vspace{#1 pt} % \newline \newline \newline
-    & \\ \hline
+    \textbf{Ce que maintenant j'ai compris...} \\
+    \phantom{b} \vspace{#1 pt} & \\
   \end{tblr}
+}
+
+%%%% Alignement dans un tableau
+\newcommand{\vAligne}[1]{
+  \strut \\ \vspace*{#1}
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% symboles : chevron, flèche, attention, etc.
 \newcommand{\chevron}{
-  \textcolor{couleurPrincipale}{\small \faChevronRight}
+  \textcolor{couleurPrim}{\small \faChevronRight}
 }
 %
 \newcommand{\fleche}{
-  \textcolor{couleurPrincipale}{\faCaretRight}
+  \textcolor{couleurPrim}{\faCaretRight}
 }
 %
 \newcommand{\attention}{
-  \textcolor{couleurPrincipale}{\faExclamationTriangle}
+  \textcolor{couleurPrim}{\faExclamationTriangle}
 }
 %
 \newcommand{\flecheLongue}{
-  \textcolor{couleurPrincipale}{\faLongArrowRight}
+  \textcolor{couleurPrim}{\faLongArrowRight}
 }
 %
 \newcommand{\ok}{
-  \textcolor{couleurPrincipale}{\faCheckCircle}
+  \textcolor{couleurPrim}{\faCheckCircle}
 }
 %
 \newcommand{\pasOk}{
-  \textcolor{couleurPrincipale}{\faTimesCircle}
+  \textcolor{couleurPrim}{\faTimesCircle}
 }
 %
 \newcommand{\pointCyan}{
-  \textcolor{couleurPrincipale}{\textbullet}
+  \textcolor{couleurPrim}{\textbullet}
 }
 %
 \newcommand{\mesure}{
   \hspace{15pt}
-  \textcolor{couleurPrincipale!75!black}{\faWrench\faFlask}
+  \textcolor{couleurSec}{\faWrench\faFlask}
 }
 % pictogramme sécurité
 \newcommand{\picto}[2]{
@@ -595,11 +591,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% emphase
 \newcommand{\emphase}[1]{
-  \textcolor{couleurImportant}{\textsf{\bfseries \large #1}}
+  \textcolor{couleurSec}{\textsf{\bfseries \large #1}}
 }
 %
 \newcommand{\important}[1]{
-  \!\textcolor{couleurImportant}{\textsf{\bfseries #1}}\!\!
+  \!\textcolor{couleurSec}{\textsf{\bfseries #1}}\!\!
 }
 %
 \newcommand{\exemple}{
@@ -661,7 +657,7 @@
 
 %%%% liste avec chiffre
 \newlist{enumeration}{enumerate}{2}
-\setlist[enumeration]{label = \textcolor{couleurPrincipale!75!black}{\textbf{\arabic*.}} }
+\setlist[enumeration]{label = \textcolor{\couleurPrimSombre}{\textbf{\arabic*.}} }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

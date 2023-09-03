@@ -16,14 +16,12 @@
 
 
 %%%% contexte
-\begin{encart}
-  \emphase{Contexte :}
-  
+\begin{contexte}
   La \textsf{DGCCRF} (Direction générale de la concurrence, de la consommation et de la répression des fraudes) dispose de 11 laboratoires répartis dans tout le pays. 
   Les personnes qui travaillent dans ces laboratoires sont sollicitées pour vérifier la pureté de certains échantillons.
   
   Trois missions vous sont confiées par la \textsf{DGCCRF}.
-\end{encart}
+\end{contexte}
 
 \textbf{\large \fleche Pour chaque mission vous devrez rédiger un rapport avec :}
 \begin{itemize}
@@ -35,65 +33,66 @@
 
 
 %%%% document
-\begin{doc}{Masse volumique}
+\begin{doc}{Masse volumique}{doc:masse_volumique}
   Chaque espèce chimique possède une masse volumique $\rho$ qui lui est propre.
   Pour un échantillon, elle est définie par le rapport entre la masse $m$ et le volume $V$ de cet échantillon : 
   \begin{equation*}
     \rho = \Frac{m}{V}
   \end{equation*}
   \begin{itemize}
-      \item La masse s'exprime en $\unit{g}$.
-      \item Le volume s'exprime en $\unit{mL}$ ou $\unit{L}$.
-      \item La masse volumique s'exprime en $\unit{g/mL}$ ou $\unit{g/L}$.
+      \item La masse s'exprime en \unit{\g}.
+      \item Le volume s'exprime en \unit{\ml} ou $\unit{\litre}$.
+      \item La masse volumique s'exprime en $\unit{\g/\ml}$ ou $\unit{\g/\litre}$.
   \end{itemize}
 \end{doc}
 
-\begin{doc}{}
-  \vspace*{-1.2cm}
-  \begin{wrapfigure}{r}{0.2\linewidth}
-    \image{1}{images/molecules/glycerol_chimie.png}
+%%
+\begin{doc}{Glycérol}{doc:glycerol}
+  \begin{wrapfigure}{r}{0.27\linewidth}
+    \chemfig{
+      HO -[-1] CH_2 -[1] CH (-[3] OH) -[-1] CH_2 -[1] OH
+    }
   \end{wrapfigure}
   
-  Le glycérol est un composé chimique de fomule \chemfig{C_3H_8O_3}. C'est un liquide incolore, inodore et visqueux, avec un goût sucré. 
+  Le glycérol est un composé chimique de formule brute\bruteCHO{3}{8}{3}.
+  C'est un liquide incolore, inodore et visqueux, avec un goût sucré. 
   Le glycérol est faiblement toxique et donc utilisé dans de nombreuses préparations pharmaceutiques.
   
-  Masse volumique du glycérol $\rho = 1,26 \unit{g / mL}$.
+  Masse volumique du glycérol $\rho = \qty{1,26}{\g/\ml}$.
 \end{doc}
 
 
-\begin{multicols}{2}
-%%%%
-\begin{doc}{Écart relatif}
+%%
+\begin{doc}{Écart relatif}{doc:ecart_relatif}
   Pour comparer une valeur mesurée $\text{Mes}$ et une valeur théorique $\text{Théo}$, on calcule l'écart relatif entre ces deux valeurs en $\%$
   \begin{equation*}
     ER = \Frac{|\text{Mes} - \text{Théo}|}{\text{Théo}} \times 100
   \end{equation*}
   Si cet écart est faible, on a un bon accord entre théorie et expérience.
 \end{doc}
-%%%%
 
-%%%%
-\begin{doc}{Température de fusion}
-  Acide benzoïque $\Tfus \approx 122\degree\unit{C}$.
+%%
+\begin{doc}{Température de fusion}{temperature_fusion}
+  Acide benzoïque $\Tfus \approx \qty{122}{\degreeCelsius}$.
+   
+  Glucose $\Tfus \approx \qty{146}{\degreeCelsius}$
+\end{doc}
+
+%%
+\begin{doc}{Masse volumique d'un mélange eau-éthanol}{doc:densite_ethanol_eau}
+  \begin{wrapfigure}{r}{0.6\linewidth}
+    \begin{center}
+      \image{1}{images/donnees/masse_volumique_ethanol_eau.png}
+    \end{center}
+    \phantom{b}
+  \end{wrapfigure}
   
-  Glucose $\Tfus \approx 146\degree\unit{C}$
-\end{doc}
-%%%%
-
-%%%%
-\begin{doc}{}
   L'eau et l'éthanol forment un mélange homogène, dont la masse volumique varie en fonction de la quantité d'éthanol présente.
-  \begin{center}
-    \image{0.9}{images/donnees/masse_volumique_ethanol_eau.png}
-  \end{center}
 \end{doc}
-%%%%
-\end{multicols}
 
-
-\begin{doc}{Mesure d'une température de fusion avec un banc Köfler}
-  \vspace*{-1.2cm}
-  \begin{wrapfigure}[10]{r}{0.6\linewidth}
+%%
+\begin{doc}{Mesure d'une température de fusion avec un banc Köfler}{doc:banc_kofler}
+  \begin{wrapfigure}[11]{r}{0.6\linewidth}
     \centering
     \image{1}{images/instruments_chimie/banc_kofler.png}
     {\scriptsize Source : A.-S. Bernard et al., Techniques expérimentales en chimie}
@@ -108,7 +107,7 @@
   La température à la surface du banc pouvant varier, pour régler le banc, on utilise des solides de référence dont on connaît la température de fusion.
 \end{doc}
 
-\newpage
+
 %%%% questions
 \emphase{Mission 1 : Glycérol pharmaceutique}
 
@@ -143,9 +142,3 @@ Vous disposez d'un échantillon transmis par le fournisseur. \textbf{Le protocol
 \begin{center}
 \textbf{Rédiger un rapport pour établir quelle entreprise a raison.}
 \end{center}
-
-
-\feuilleBlanche
-%%%% conclusion
-% \begin{encart}
-% \end{encart}

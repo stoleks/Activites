@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Bouts de molécules fréquement utilisés
+%% Hydrogène saturés
+\definesubmol\paireH{(-[::90] H) (-[::-90] H)}
+\definesubmol\paireSatH{(-[::30] H) (-[::-30] H)}
+\definesubmol\saturationH{(-[::90] H) (-[::-90] H) (-[::0] H)}
+
+%% Quelques groupes caractéristiques
+\definesubmol\carboxyle{(=[:90] O) (-[:-30] OH)}
+\definesubmol\carbonyle{(=[:90] O) -[:-30]}
+\definesubmol\ester{(=[:90] O) -[:-30] O}
+\definesubmol\ether{-[:30] O -[:-30]}
+\definesubmol\amide{(=[:90] O) -[:-30] N}
+
+%% parties colorées
+\definesubmol\cetoneCouleur{(=[3,,,,couleurQuat] \textcolor{couleurQuat}{O}) -[-1,,,,couleurQuat]}
+%% ramification
+\definesubmol\alkyleG{(-[-5] R_1)}
+\definesubmol\alkyleD{(-[-1] R_2)}
+
+%%%% Pour simplifier l'écriture des formules brutes
+\newcommand{\bruteCHO}[3]{
+  \chemfig{C_{#1} H_{#2} O_{#3}}
+}
+
+%%%% Élément récurrent, pour faciliter la lecture
+\newcommand{\hydrogene}{\chemfig{H}}
+\newcommand{\carbone}{\chemfig{C}}
+\newcommand{\oxygene}{\chemfig{O}}
+\newcommand{\azote}{\chemfig{N}}

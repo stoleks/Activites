@@ -24,6 +24,8 @@
 \usepackage{listings} % pour insérer du code
 %% Tableau
 \usepackage{tabularray} % pour avoir de meilleurs tableaux
+%% QR code
+\usepackage{qrcode}
 %% Math
 \usepackage{amsmath} % symboles mathématiques
 \usepackage{amssymb} % symboles mathématiques en gras
@@ -32,9 +34,21 @@
 \usepackage{physics} % pour les dérivées, les bra, les kets, etc.
 \usepackage{esvect} % pour faire de jolis vecteurs
 \usepackage{siunitx} % pour avoir de jolie grandeurs avec des unités 
-%% Décommenter pour avoir une police spéciale dysléxie (doit être compilé en XeTeX)
-% \usepackage{fontspec}
-% \setmainfont{OpenDyslexic}
+
+
+%%%% Commandes prédéfinies
+\input{_commandes}
+\input{macros}
+\input{figures}
+\input{chapitres}
+\input{molecules}
+
+
+%%%% Couleurs réglables
+\colorlet{couleurPrim}{cyanSombre}
+\colorlet{couleurSec}{bleuPale}
+\colorlet{couleurTer}{vertSombre}
+\colorlet{couleurQuat}{orangeSombre}
 
 
 %%%% Réglages de la taille des indentations et des sauts de paragraphes
@@ -55,7 +69,7 @@
 
 %%%% Réglage de chemfig
 \setchemfig{
-  atom sep=26pt,
+  atom sep=24pt,
   bond style={line width=1pt},
   angle increment=30
 }
@@ -67,7 +81,7 @@
   linkcolor=black, % lien type table des matière
   citecolor=black, % citation
   filecolor=black, 
-  urlcolor=blue!90!black % lien internet
+  urlcolor=couleurPrim!10!black % lien internet
 }
 
 
