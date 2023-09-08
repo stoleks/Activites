@@ -15,15 +15,12 @@
 \newcommand{\couleurPrimSombre}{couleurPrim!60!black}
 
 %%%% rectangle coloré
-\newcommand\rectangle[3]{%
+\NewDocumentCommand{\rectangle}{O{couleurPrim} m m}{%
   \shorthandoff{;}
   \tikz \node (rect) [draw, fill, color=#1,
               minimum width=#2,
               minimum height=#3] {};
   \shorthandon{;}
-}
-\newcommand\rectangleCyan[2]{
-  \rectangle{couleurPrim}{#1}{#2}
 }
 
 
@@ -170,9 +167,9 @@
 \newcommand{\titrePartie}[1]{
   \vspace*{24pt}
   \refstepcounter{subsection}
-  \rectangleCyan{60pt}{1pt}
+  \rectangle{60pt}{1pt}
   \sousTitre{\Large \Roman{subsection} -- #1}
-  \rectangleCyan{60pt}{1pt}
+  \rectangle{60pt}{1pt}
   \vspace*{10pt}
 }
 \newcounter{sousSectionNum}
@@ -180,7 +177,7 @@
   \vspace*{16pt}
   \refstepcounter{subsubsection}
   \setcounter{sousSectionNum}{0}
-  \rectangleCyan{30pt}{4pt}
+  \rectangle{30pt}{4pt}
   \sousTitre{\large \arabic{subsubsection} -- #1}
   \vspace*{10pt}
 }
@@ -218,15 +215,15 @@
   \par\noindent\rule{\textwidth}{0.4pt}
 }
 \newcommand{\lignePointillee}[1]{
-  \makebox[#1\textwidth]{\dotfill}
+  \makebox[#1\linewidth]{\dotfill}
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Paramètre par défaut pour l'en-tête
-\newcommand{\annee}{2023 -- 2024}
-\newcommand{\etablissement}{Lycée}
-\newcommand{\classe}{seconde}
+\newcommand{\annee}{Réglez avec \textbackslash renewcommand\{\textbackslash annee\}\{2023 -- 2024\}}
+\newcommand{\classe}{Réglez avec \textbackslash renewcommand\{\textbackslash classe\}\{Seconde\}}
+\newcommand{\etablissement}{Réglez avec \textbackslash renewcommand\{\textbackslash etablissement\}\{Lycée\}}
 
 %%%% en-tête
 \newcommand{\teteGauche}[2]{
@@ -250,7 +247,7 @@
   \setcounter{sousSectionNum}{0}
   \teteGauche{\etablissement{}}{Chapitre \arabic{section} -- #1} % left header
   \chead{} % central header
-  \teteDroite{\annee{}}{\classe{}}
+  \teteDroite{\annee{}}{\classe{}} % right header
 }
 %
 \newcommand{\enTeteFicheReussite}[1]{
@@ -281,8 +278,8 @@
   Pour être sûr-e d'obtenir une bonne note, je m'entraîne avec les exercices corrigés du manuel indiqués dans la colonne de droite.
 }
 \newcommand{\questionFicheReussite}[1]{
-  S'il me reste des questions, je les note ici pour les poser au début de l'évaluation :\\[4pt]
-  \lignesReponse{#1}
+  S'il me reste des questions, je les note ici pour les poser au début de l'évaluation : 
+  \lignesDeReponse{#1}
 }
 \newcommand{\coursFicheReussite}{
   Je prépare une fiche au format A4 avec toutes les notions, définitions ou grandeurs dont je pense avoir besoin pendant l'évaluation.
@@ -300,7 +297,7 @@
 }
 
 % Pour afficher le numéro d'une question avec choix du compteur
-\newcommand{\numeroQuestion}[2]{
+\NewDocumentCommand{\numeroQuestion}{O{questionNum} O{16}}{
   \refstepcounter{#1}
   \vspace*{2pt}
   \hspace{#2pt}
@@ -309,13 +306,42 @@
   }
 }
 
+% Pour homogénéiser les commandes avec du texte corrigé
+\newcommand{\texteCorrection}[1]{
+  \textbf{\textcolor{couleurTer}{#1}}
+}
+
 % Pour simplifier la commande question
 \newcommand{\reponseCorrigee}[1]{
   \vspace*{2pt}
   \textcolor{couleurSec}{\faCaretRight}
   \hspace{1pt}
-  \textbf{\textcolor{couleurTer}{#1}}
+  \texteCorrection{#1}
 }
+
+
+% trace des lignes pointillées pour répondre aux questions
+% \lignessDeReponse* complète la ligne actuelle par des pointillées
+% \lignesDeReponse commence à la ligne suivante
+\newcounter{ligneNum}
+\NewDocumentCommand{\lignesDeReponse}{s m}{
+  % Trace la fin de la ligne, ou pas
+  \IfBooleanTF{#1}{ % Version *
+    \espaceReponse \dotfill
+    \ifnum #2 < 1
+      \newline
+    \fi
+  }{}
+  % Trace le bon nombre de lignes
+  \setcounter{ligneNum}{-1}
+  \loop
+    \stepcounter{ligneNum}
+    \ifnum \value{ligneNum} < #2
+      \\[8pt] \lignePointillee{0.98}
+  \repeat
+  \vspace*{1pt}
+}
+
 
 % définit une commande pour afficher une question 
 % #1 : question
@@ -323,14 +349,12 @@
 % #3 : nombres de lignes pour répondre
 \newcounter{questionNum}
 \newcommand{\question}[3]{
-  \numeroQuestion{questionNum}{16} \!#1
-  
+  \numeroQuestion \!#1
   % pointille ou correction
   \ifthenelse {\boolean{modeProf}} { % prof
-    \reponseCorrigee{#2}
+    \\[1pt] \reponseCorrigee{#2}
   }{ % eleve
-    \vspace*{8pt}
-    \lignesReponse{#3}
+    \lignesDeReponse{#3}
   }
 }
 
@@ -340,20 +364,6 @@
     #1
   }{ % eleve
   }
-}
-
-% trace des lignes pour répondre
-\newcounter{ligneNum}
-\newcommand{\lignesReponse}[1]{
-  \setcounter{ligneNum}{-1}
-  \loop
-    \stepcounter{ligneNum}
-    \ifnum \value{ligneNum} < #1
-    \lignePointillee{0.98} \\[8pt]
-  \repeat
-  \ifnum #1 > 0
-    \vspace*{-12pt}
-  \fi
 }
 
 % sous questions
@@ -367,7 +377,7 @@
 
 % question QCM
 \newcommand{\QCM}[2]{
-  \numeroQuestion{qcmNum}{0} #1
+  \numeroQuestion[qcmNum][0] #1
   \begin{qcm}
     #2
   \end{qcm}
@@ -377,7 +387,7 @@
 \newcounter{qcmNum}
 \newcommand{\reponseQCM}{
   \correction{
-    \hspace*{-17pt}$\checkmark$\hspace*{-12pt}
+    \hspace*{-15pt}$\checkmark$\hspace*{-12pt}
   } % Note : trace une croix à la bonne position
 }
 
@@ -396,51 +406,34 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% texte à trou automatique
-\newcommand{\texteTrouAuto}[1]{
-  \gap{
-    \textcolor{\couleurPrimSombre}{ \textbf{#1} }
+% texte à trou avec option pour régler la largeur
+\NewDocumentCommand{\texteTrou}{o m}{
+  \IfValueTF{#1}{ % Si la largeur est réglée, on utilise des lignes
+    \ifthenelse {\boolean{modeProf}} {% prof
+      \texteCorrection{#2}
+    }{% élève
+      \espaceReponse
+      \lignePointillee{#1}
+      \hspace*{-12pt}
+    }
+  }{ % Sinon on utilise dash undergap pour la version automatique
+    \espaceReponse \hspace*{0.1pt}
+    \gap{\texteCorrection{#2}}
   }
 }
 
-% texte à trou dans une ligne réglable
-\newcommand{\texteTrou}[2]{
+% texte à trou avec option pour laisser plusieurs lignes
+\NewDocumentCommand{\texteTrouLignes}{O{0} m}{
   \ifthenelse {\boolean{modeProf}} {% prof
-    \textcolor{\couleurPrimSombre}{ \textbf{#1} }
+    \texteCorrection{#2}
   }{% élève
-    \espaceReponse
-    \lignePointillee{#2}\hspace*{-2pt}
+    \lignesDeReponse*{#1}
   }
-}
-
-% texte à trou sur tout le reste de la ligne
-\newcommand{\texteTrouLigne}[1]{
-  \ifthenelse {\boolean{modeProf}} {% prof
-    \textcolor{\couleurPrimSombre}{ \textbf{#1} }
-  }{% élève
-    \espaceReponse \dotfill
-  }
-}
-
-% texte à trou sur plusieurs lignes
-\newcommand{\texteTrouMultiLignes}[2]{
-  \ifthenelse {\boolean{modeProf}} {% prof
-    \textcolor{\couleurPrimSombre}{ \textbf{#1} }
-  }{% élève
-    \reponseLigne
-    \lignesReponse{#2}
-  }
-}
-
-% reponse en fin de ligne
-\newcommand{\reponseLigne}{
-  \espaceReponse
-  \dotfill \\[8pt]
 }
 
 % espace vertical pour la réponse
 \newcommand{\espaceReponse}{
-  \phantom{$\Frac{1}{1}$} % espace vertical
+  \phantom{$\dfrac{1}{1}$} % espace vertical
   \hspace*{-38pt} \phantom{b} % ajuste l'espace horizontal
 }
 
@@ -471,7 +464,7 @@
   \begin{tblr}{
     colspec = {| c | X[c] | c | c | c | c |},
     rows = {m}, hlines,
-    row{1} = {gray!20}
+    row{1} = {couleurPrim!20}
   }
     \centering \textbf{Compétences} & \centering \textbf{Items} 
     & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
@@ -487,7 +480,7 @@
     rows = {m}, hlines,
     column{4} = {0.22},
     column{5} = {0.21},
-    row{1} = {gray!20}
+    row{1} = {couleurPrim!20}
   }
     \textbf{Points clés du chapitre} & \ok & \pasOk
     & \textbf{En classe} & \textbf{Exercices} \\
@@ -502,7 +495,7 @@
     colspec = {| X[c] | c | c | c |},
     rows = {m}, hlines,
     column{4} = {0.2},
-    row{1} = {gray!20}
+    row{1} = {couleurPrim!20}
   }
     \textbf{Points clés du chapitre} & \ok & \pasOk
     & \textbf{En classe} \\
@@ -515,7 +508,7 @@
   \begin{tblr}{
     colspec = {| X[-1, c] | X[2, c] | X[2, c] | X[2, c] |},
     hlines,
-    row{1} = {gray!20}
+    row{1} = {couleurPrim!20}
   }
     \textbf{Question} & 
     \textbf{L'erreur} &
@@ -534,7 +527,7 @@
   \begin{tblr}{
     colspec = {| X[c] | X[c] |},
     hlines,
-    row{1} = {gray!20}
+    row{1} = {couleurPrim!20}
   }
     \textbf{Ce que je n'avais pas compris...} &
     \textbf{Ce que maintenant j'ai compris...} \\
@@ -661,7 +654,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Séparation de la page
+%%%% Séparation de la page en blocs
 \newcommand{\separationTroisBlocs}[3]{
   \begin{minipage}[T]{0.3\linewidth}
     #1
@@ -676,16 +669,7 @@
   \end{minipage}
 }
 %%%%
-\newcommand{\separationDeuxBlocs}[2]{
-  \begin{minipage}[T]{0.48\linewidth}
-    #1
-  \end{minipage}
-  \hfill
-  \begin{minipage}[T]{0.48\linewidth}
-    #2
-  \end{minipage}
-}
-\newcommand{\separationBlocs}[4]{
+\NewDocumentCommand{\separationBlocs}{O{0.48} O{0.48} m m}{
   \begin{minipage}[T]{#1\linewidth}
     #3
   \end{minipage}
@@ -698,9 +682,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% fraction, nombre algébrique, réaction
-\newcommand{\Frac}[2]{
-  \displaystyle \frac{#1}{#2}
-}
 \newcommand{\algebrique}[1]{
   \overline{\mathrm{#1}}
 }
@@ -749,7 +730,7 @@
 %% texte avec une boite autour
 \newcommand{\texteEncadre}[1]{
   \frame{
-    \vphantom{$\Frac{1}{10}$} \text{#1}
+    \vphantom{$\dfrac{1}{10}$} \text{#1}
   }
 }
 
@@ -767,22 +748,22 @@
 \definecolor{fondCode}  {rgb}{0.95,0.95,0.92}
 %%%% Style python
 \lstdefinestyle{codePython}{
-    backgroundcolor=\color{fondCode},
-    commentstyle=\color{magenta},
-    keywordstyle=\color{vertCode},
-    numberstyle=\tiny\color{grisCode},
-    stringstyle=\color{violetCode},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,
-    breaklines=true,
-    captionpos=b,
-    keepspaces=true,
-    numbers=left,
-    numbersep=5pt, 
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false, 
-    tabsize=2
+  backgroundcolor=\color{fondCode},
+  commentstyle=\color{magenta},
+  keywordstyle=\color{vertCode},
+  numberstyle=\tiny\color{grisCode},
+  stringstyle=\color{violetCode},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt, 
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false, 
+  tabsize=2
 }
 \def\inline{\lstinline[style=codePython,language=python]}
 

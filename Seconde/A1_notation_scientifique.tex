@@ -1,0 +1,133 @@
+%%%%
+\teteSndMeth
+
+%%%% titre
+\numeroActivite{1}
+\vspace*{-24pt}
+\titreActivite{Notation scientifique et unités}
+
+
+%%%%
+\titreSection{Rappels sur les puissance de 10}
+
+%%
+\begin{doc}{Les puissances de 10}{doc:A1_puissance_10}
+  Les puissances indiquent qu'on va répéter une multiplication ($2^3 = 2 \times 2 \times 2 = 8$).
+  
+  Pour lire les puissances de 10, il suffit de suivre deux règles simple
+  \begin{encart}
+    \pointCyan Écrire le nombre $10^a$ (avec $a = 0, 1, 2, 3, \ldots$), revient à écrire ``$1$'' suivi de $a = 0, 1, 2, 3, \ldots$ zéros. \\
+    \exemple $10^3 = 1000$
+
+    \pointCyan Écrire le nombre $10^{-a}$ (avec $a = 1, 2, 3, \ldots$), revient à écrire ``$0,$'' suivi de $a - 1 = 0, 1, 2, \ldots$ zéros et d'un $1$. \\
+    \exemple $10^{-2} = 0,\!01$
+  \end{encart}
+\end{doc}
+
+
+\numeroQuestion Écrire les nombres correspondant aux puissances de 10 suivantes : \\
+$\num{e2} =$ \texteTrou[0.1]{\num{100}} \qq{}
+$\num{e5} = $ \texteTrou[0.2]{\num{100000}} \qq{}
+$\num{e-3} =$ \texteTrou[0.1]{\num{0,001}} \qq{}
+$\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
+
+\numeroQuestion Écrire les nombres suivants comme le produit d'un chiffre différent de zéro et d'une puissance de 10 \exemple \num{600} = \num{6,00e2} : \\
+\separationBlocs{
+  100000 = \texteTrouLignes{\num{1e5}\\}
+  1 = \texteTrouLignes{\num{1e0}\\}
+  9000000 = \texteTrouLignes{\num{9e6}}
+}{
+  0,1 = \texteTrouLignes{\num{1e-1}\\}
+  0,0006 = \texteTrouLignes{\num{1e-4}\\}
+  0,00705 = \texteTrouLignes{\num{7,05e-3}}
+}
+
+
+%%
+\begin{doc}{Règles de calculs}{doc:A1_calcul_puissance_10}
+  Il y a deux règles de calculs à connaître pour les puissances de 10
+  \begin{encart}
+    \pointCyan $10^a \times 10^b = 10^{a + b}$ \\   
+    \pointCyan $10^{-a} = \dfrac{1}{10^a}$
+  \end{encart}
+\end{doc}
+
+
+\numeroQuestion Réaliser les calculs suivants :\\[8pt]
+\separationBlocs{
+  $10^2 \times 10^1 =$ \texteTrouLignes{$10^{2 + 1} = 10^3 = 1000$\\}
+  $10^4 \times 10^{-3} =$ \texteTrouLignes{$10^{4 - 3} = 10^1 = 10$}
+}{
+  $10^{-2} \times 10^{-3} =$ \texteTrouLignes{$10^{-2 - 3} = 10^{-5} = 0,00001$\\}
+  $10^{-1} \times 10^{-5} \times 10^4 =$ \texteTrouLignes{$10^{-1 - 5 + 4} = 10^{-2} = 0,01$}
+}
+
+
+%%
+\begin{doc}{Moyen mnémotechnique}{doc:A1_decalage_virgule}
+  \begin{listePoints}
+    \item Si je décale la virgule de 1 rang vers la gauche, alors
+    \texteTrou[0.25]{je réduis} de 1 unité la puissance de dix.
+    \item Si je décale la virgule de 1 rang vers la droite, alors
+    \texteTrou[0.35]{j'augmente} de 1 unité la puissance de dix.
+  \end{listePoints}
+\end{doc}
+
+
+%%%%
+\titreSection{Notation scientifique}
+
+\begin{doc}{La notation scientifique}{doc:A1_notation_scientifique}
+  \begin{encart}
+  La notation scientifique d'une quantité se présente de la façon suivante :
+  \begin{equation*}
+    \texteEncadre{chiffre différent de zéro}
+    \;,\;
+    \texteEncadre{autres chiffres} 
+    \; \vphantom{\frac{1}{10}}^{\times} \;
+    \texteEncadre{puissance de dix}
+    \;
+    \texteEncadre{\important{unité}}
+  \end{equation*}
+  \end{encart}
+\end{doc}
+
+\numeroQuestion Écrire les quantités suivantes en notation scientifique : \\[8pt]
+\separationBlocs{
+  \qty{288}{\hour}      = \texteTrouLignes{\qty{2,88e2}{\hour}\\}
+  \qty{1}{\m}           = \texteTrouLignes{\qty{1e0}{\m}\\}
+  \qty{756 864 000}{\s} = \texteTrouLignes{\qty{7,56 864 000}{8\s}\\}
+  \qty{638}{\newton}    = \texteTrouLignes{\qty{6,38e2}{\newton}}
+}{
+  \num{0,1}         = \texteTrouLignes{\num{1,0e-1}\\}
+  \qty{8960}{\g/\l} = \texteTrouLignes{\qty{8,96e3}{\g/\l}\\}
+  \qty{0,436}{\s}   = \texteTrouLignes{\qty{4,36e-1}{\s}\\}
+  \qty{0,336}{\s}   = \texteTrouLignes{\qty{3,36e-1}{\s}}
+}
+
+%%%%
+\titreSection{Le système international de mesure}
+
+%%
+\begin{doc}{Le système international}{doc:A1_SI}
+  Pour comparer des grandeurs entre elles, il faut les exprimer avec les \important{mêmes unités de mesures.} % exemple centime et euros
+  
+  Pour pouvoir communiquer facilement d'un pays à un autre, le \important{système international (SI)} a été développé par la Conférence Générale des Poids et Mesures (CGPM). % histoire des sciences système métrique
+  
+  Le système international est composé de \important{sept unités de base,} que l'on retrouve quotidiennement. Une part importante de nos technologies modernes dépendent de la précision avec laquelle ces unités sont définies.
+  
+  \begin{center}
+    \begin{tblr}{
+      hlines, row{1} = {couleurPrim!20}, colspec = {|c |c |c |}
+    }
+      Grandeur             & Unité      & Symbole de l'unité \\
+      Masse                & kilogramme & kg \\
+      Temps                & seconde    & s \\
+      Longueur             & mètre      & m \\
+      Température          & kelvin     & K \\
+      Quantité de matière  & mole       & mol \\
+      Intensité électrique & ampère     & A \\
+      Intensité lumineuse  & candela    & cd
+    \end{tblr}
+  \end{center}
+\end{doc}

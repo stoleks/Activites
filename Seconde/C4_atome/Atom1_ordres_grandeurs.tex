@@ -11,8 +11,7 @@
 \titreSection{Notation scientifique}
 
 %%
-\begin{doc}{Les puissances de 10}
-  \vspace*{-24pt}
+\begin{doc}{Les puissances de 10}{doc:A1_puissance_10}
   \begin{encart}
   \begin{listePoints}
     \item Écrire le nombre $10^n$ (avec $n = 0, 1, 2, 3, \ldots$), revient à écrire ``$1$'' suivi de $n = 0, 1, 2, 3, \ldots$ zéros. \textit{Exemple : $10^3 = 1000$}
@@ -28,18 +27,15 @@
 \end{doc}
 \bigskip
 
-% \begin{doc}{Moyen mnémotechnique}
-%   \vspace*{-12pt}
-%   \begin{listePoints}
-%     \item Si je décale la virgule de 1 rang vers la gauche, alors \dotfill \\
-%     de 1 unité la puissance de dix.
-%     \item Si je décale la virgule de 1 rang vers la droite, alors \dotfill \\
-%     de 1 unité la puissance de dix.
-%   \end{listePoints}
-% \end{doc}
+\begin{doc}{Moyen mnémotechnique}{doc:A1_decalage_virgule}
+  \begin{listePoints}
+    \item Si je décale la virgule de 1 rang vers la gauche, alors \texteTrouAuto{je réduis de 1 unité} la puissance de dix.
+    \item Si je décale la virgule de 1 rang vers la droite, alors \dotfill \\
+    de 1 unité la puissance de dix.
+  \end{listePoints}
+\end{doc}
 
-\begin{doc}{La notation scientifique}
-  \vspace*{-24pt}
+\begin{doc}{La notation scientifique}{doc:A1_notation_scientifique}
   \begin{encart}
   La notation scientifique d'une quantité se présente de la façon suivante :
   \begin{equation*}
@@ -54,9 +50,8 @@
   \end{encart}
 \end{doc}
 
-\question{
-  Écrire les quantités suivantes en notation scientifique :
-}{0}
+\numeroQuestion Écrire les quantités suivantes en notation scientifique :
+  
 \separationDeuxBlocs{
   $288 \unit{h} = \dotfill$ \\[4pt]
   $1 \unit{m} = \dotfill$ \\[4pt]
@@ -71,18 +66,24 @@
 
 
 %%
-\titreSection{\href{https://www.youtube.com/watch?v=xTV47tuv_Fg}{Les ordres de grandeurs}}
+\titreSection{Les ordres de grandeurs}
 
-\begin{doc}{Définitions}
-  \vspace*{-24pt}
+\begin{doc}{Définition d'un ordre de grandeur}{doc:A1_def_ordre_grandeur}
+  \begin{wrapfigure}[3]{r}{0.1\linewidth}
+    \vspace*{-32pt}
+    \qrcode{https://www.youtube.com/watch?v=xTV47tuv_Fg}
+  \end{wrapfigure}
+
+  \vAligne{-36pt}
   \begin{encart}
-  L'ordre de grandeur d'un nombre est la puissance de 10 la plus proche de ce nombre.
+    L'ordre de grandeur d'une quantité est la puissance de 10 la plus proche de cette quantité.
   \end{encart}
+  %
+  \exemple L'ordre de grandeur de \qty{60}{\s} est \qty{e2}{\s} (60 est plus proche de 100 que de 10). 
 \end{doc}
 
-\question{
-  Donner l'ordre de grandeur des quantités suivantes :
-}{0}
+\numeroQuestion Donner l'ordre de grandeur des quantités suivantes :
+
 \separationDeuxBlocs{
   $3,\!00 \cdot 10^8 \unit{m.s^{-1}} = \dotfill$ \\[4pt]
   $1,\!67 \cdot 10^{-27} \unit{kg} = \dotfill$
@@ -93,8 +94,6 @@
 
 
 %%%%
-\newpage
-\vspace*{-36pt}
 \titreSection{Le système international de mesure}
 
 %%
@@ -108,71 +107,57 @@ Pour pouvoir communiquer facilement d'un pays à un autre, le \important{systèm
 Le système international est composé de \important{sept unités de base,} que l'on retrouve quotidiennement. Une part importante de nos technologies modernes dépendent de la précision avec laquelle ces unités sont définies.
 
 \begin{center}
-  \begin{tabular}{| c | c | c |}
-    \hline
-    \rowcolor{gray!20}
-    Grandeur             & Unité      & Symbole de l'unité
-    \\ \hline
-    Masse                & kilogramme & kg
-    \\ \hline
-    Temps                & seconde    & s
-    \\ \hline
-    Longueur             & mètre      & m
-    \\ \hline
-    Température          & kelvin     & K
-    \\ \hline
-    Quantité de matière  & mole       & mol
-    \\ \hline
-    Intensité électrique & ampère     & A
-    \\ \hline
-    Intensité lumineuse  & candela    & cd 
-    \\ \hline
-  \end{tabular}
+  \begin{tblr}{
+    hlines, row{1} = {couleurPrim!20}, colspec = {|c |c |c |}
+  }
+    Grandeur             & Unité      & Symbole de l'unité \\
+    Masse                & kilogramme & kg \\
+    Temps                & seconde    & s \\
+    Longueur             & mètre      & m \\
+    Température          & kelvin     & K \\
+    Quantité de matière  & mole       & mol \\
+    Intensité électrique & ampère     & A \\
+    Intensité lumineuse  & candela    & cd
+  \end{tblr}
 \end{center}
 
 
 %%
 \titreSousSection{De l’échelle microscopique à l’échelle astronomique}
 
-\question{
-  Compléter le tableau en associant à chaque objet sa longueur, puis l'ordre de grandeur de cette longueur. Pour ça, utilisez six de ces huit longueurs (attention aux unités !) :
-  \begin{equation*}
-    10^{16} \unit{m} \quad
-    6400 \unit{km} \quad
-    10^{20}\unit{m} \quad
-    0,\!1\unit{nm} \quad
-    60\unit{\mu m} \quad
-    6 \unit{mm} \quad
-    1000 \unit{km} \quad
-    10^{12} \unit{m}
-  \end{equation*}
-}{0}
-
-\vspace*{-24pt}
+\numeroQuestion
+Compléter le tableau en associant à chaque objet sa longueur, puis l'ordre de grandeur de cette longueur. Pour ça, utilisez six de ces huit longueurs (attention aux unités !) :
+%
 \begin{center}
-  \begin{tabularx}{\linewidth}
-  {| c | m{0.1025\linewidth} | m{0.105\linewidth}| m{0.1025\linewidth}
-   | m{0.105\linewidth} | m{0.105\linewidth} | m{0.105\linewidth} |}
-    \hline 
-    Objet & 
-    Épaisseur cheveux &
-    Rayon Voie Lactée &
-    Rayon système solaire &
-    France métropolitaine &
-    Fourmi &
-    Atome
-    \\ \hline
-    Image & 
-    \vphantom{b}\vspace*{-16pt} \image{1}{images/taille_objet/taille_cheveux} &
-    \image{1}{images/taille_objet/taille_galaxie} &
-    \image{1}{images/taille_objet/taille_systeme_solaire} &
-    \image{1}{images/taille_objet/taille_france} &
-    \image{1}{images/taille_objet/taille_fourmi} &
-    \image{1}{images/taille_objet/taille_atome}
-    \\ \hline
-    Taille & \vphantom{$\Frac{1}{1}$} & & & & &
-    \\ \hline
-    Ordre de grandeur & \vphantom{$\Frac{1}{1}$} & & & & &
-    \\ \hline
-  \end{tabularx}
+  \begin{tblr}{c}
+  \qty{10e16}{\m} &
+  \qty{6400}{\km} &
+  \qty{10e20}{\m} &
+  \qty{0,1}{\nm} &
+  \qty{60}{\micro\m} &
+  \qty{6}{\mm} &
+  \qty{1000}{\km} &
+  \qty{10e12}{\m}
+  \end{tblr}
 \end{center}
+
+\begin{tblr}{
+  colspec = {|X[-1] |X[1] |X[1] |X[1] |X[1] |X[1] |X[1] |},
+  hlines, columns = {c}, row{1} = {couleurPrim!20, m}, width = \linewidth
+}
+  Objet &
+  Épaisseur cheveux & Voie Lactée & Système solaire &
+  Hexagone & Fourmi & Atome \\
+  % 
+  \vAligne{25pt} Image & 
+  \image{1}{images/taille_objet/taille_cheveux} &
+  \image{1}{images/taille_objet/taille_galaxie} &
+  \image{1}{images/taille_objet/taille_systeme_solaire} &
+  \image{1}{images/taille_objet/taille_france} &
+  \image{1}{images/taille_objet/taille_fourmi} &
+  \image{1}{images/taille_objet/taille_atome} \\
+  %
+  Taille & \vphantom{$\Frac{1}{1}$} & & & & & \\
+  %
+  Ordre de grandeur & \vphantom{$\Frac{1}{1}$} & & & & & \\
+\end{tblr}
