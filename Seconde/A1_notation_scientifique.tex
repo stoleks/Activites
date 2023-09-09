@@ -3,11 +3,15 @@
 
 %%%% titre
 \numeroActivite{1}
-\vspace*{-24pt}
+\vspace*{-28pt}
 \titreActivite{Notation scientifique et unités}
 
+% \begin{objectifs}
+%   \item Revoir les puissances de 10 et la notation scientifique
+% \end{objectifs}
 
 %%%%
+\vspace*{-12pt}
 \titreSection{Rappels sur les puissance de 10}
 
 %%
@@ -17,29 +21,29 @@
   Pour lire les puissances de 10, il suffit de suivre deux règles simple
   \begin{encart}
     \pointCyan Écrire le nombre $10^a$ (avec $a = 0, 1, 2, 3, \ldots$), revient à écrire ``$1$'' suivi de $a = 0, 1, 2, 3, \ldots$ zéros. \\
-    \exemple $10^3 = 1000$
+    \exemple \num{e3} = \texteTrou{\num{1000}}
 
     \pointCyan Écrire le nombre $10^{-a}$ (avec $a = 1, 2, 3, \ldots$), revient à écrire ``$0,$'' suivi de $a - 1 = 0, 1, 2, \ldots$ zéros et d'un $1$. \\
-    \exemple $10^{-2} = 0,\!01$
+    \exemple \num{e-2} = \texteTrou{\num{0,01}}
   \end{encart}
 \end{doc}
 
 
 \numeroQuestion Écrire les nombres correspondant aux puissances de 10 suivantes : \\
-$\num{e2} =$ \texteTrou[0.1]{\num{100}} \qq{}
-$\num{e5} = $ \texteTrou[0.2]{\num{100000}} \qq{}
+$\num{e2}  =$ \texteTrou[0.1]{\num{100}} \qq{}
+$\num{e5}  =$ \texteTrou[0.2]{\num{100000}} \qq{}
 $\num{e-3} =$ \texteTrou[0.1]{\num{0,001}} \qq{}
 $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 
-\numeroQuestion Écrire les nombres suivants comme le produit d'un chiffre différent de zéro et d'une puissance de 10 \exemple \num{600} = \num{6,00e2} : \\
+\numeroQuestion Écrire les nombres suivants comme le produit d'un nombre compris entre 0 et 9 et d'une puissance de 10 \exemple \num{600} = \num{6,00e2} : \\
 \separationBlocs{
-  100000 = \texteTrouLignes{\num{1e5}\\}
-  1 = \texteTrouLignes{\num{1e0}\\}
-  9000000 = \texteTrouLignes{\num{9e6}}
+  \num{100000}  = \texteTrouLignes{\num{1e5}\\}
+  \num{1}       = \texteTrouLignes{\num{1e0}\\}
+  \num{9000000} = \texteTrouLignes{\num{9e6}}
 }{
-  0,1 = \texteTrouLignes{\num{1e-1}\\}
-  0,0006 = \texteTrouLignes{\num{1e-4}\\}
-  0,00705 = \texteTrouLignes{\num{7,05e-3}}
+  \num{0,1}     = \texteTrouLignes{\num{1e-1}\\}
+  \num{0,0006}  = \texteTrouLignes{\num{1e-4}\\}
+  \num{0,00705} = \texteTrouLignes{\num{7,05e-3}}
 }
 
 
@@ -79,16 +83,23 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 
 \begin{doc}{La notation scientifique}{doc:A1_notation_scientifique}
   \begin{encart}
-  La notation scientifique d'une quantité se présente de la façon suivante :
-  \begin{equation*}
+  La \important{notation scientifique} d'une quantité se présente de la façon suivante :
+  % Textes
+  \begin{center}
     \texteEncadre{chiffre différent de zéro}
-    \;,\;
+    \qq{}
     \texteEncadre{autres chiffres} 
-    \; \vphantom{\frac{1}{10}}^{\times} \;
+    \qq{}
     \texteEncadre{puissance de dix}
-    \;
     \texteEncadre{\important{unité}}
-  \end{equation*}
+  \end{center}
+  % Virgule et multiplication
+  \vspace*{-30pt} \hspace*{4pt}
+  \begin{tikzpicture}  
+    \draw [white] (0,0) circle;
+    \draw [couleurSec, thick] (5.5,-0.25) circle [radius=0.3] node {$,$};
+    \draw [couleurSec, thick] (9.65,0) circle [radius=0.3] node {$\times$};
+  \end{tikzpicture}
   \end{encart}
 \end{doc}
 
@@ -99,11 +110,14 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
   \qty{756 864 000}{\s} = \texteTrouLignes{\qty{7,56 864 000}{8\s}\\}
   \qty{638}{\newton}    = \texteTrouLignes{\qty{6,38e2}{\newton}}
 }{
-  \num{0,1}         = \texteTrouLignes{\num{1,0e-1}\\}
-  \qty{8960}{\g/\l} = \texteTrouLignes{\qty{8,96e3}{\g/\l}\\}
-  \qty{0,436}{\s}   = \texteTrouLignes{\qty{4,36e-1}{\s}\\}
-  \qty{0,336}{\s}   = \texteTrouLignes{\qty{3,36e-1}{\s}}
+  \qty{0,01}{\percent} = \texteTrouLignes{\qty{1,0e-2}{\percent}\\}
+  \qty{8960}{\g/\l}    = \texteTrouLignes{\qty{8,96e3}{\g/\l}\\}
+  \qty{0,436}{\s}      = \texteTrouLignes{\qty{4,36e-1}{\s}\\}
+  \qty{0,336}{\s}      = \texteTrouLignes{\qty{3,36e-1}{\s}}
 }
+
+\attention Il faut \textbf{toujours} préciser \textbf{l'unité} d'une grandeur quand on réalise un calcul !
+Les grandeurs sans unités sont rares en physique-chimie.
 
 %%%%
 \titreSection{Le système international de mesure}
