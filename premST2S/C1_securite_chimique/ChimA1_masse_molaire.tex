@@ -1,0 +1,144 @@
+%%%%
+\tetePremStssChim
+
+%%%% titre
+\vspace*{-36pt}
+\numeroActivite{1}
+\titreActivite{Compter les entités comme une chimiste}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Revoir la notion de mole.
+  \item Découvrir la notion de masse molaire.
+\end{objectifs}
+
+\begin{contexte}
+  Les objets macroscopiques qui nous entourent sont constitués d'un grand nombre d'entités chimiques microscopiques.
+  
+  \problematique{
+    Comment compter et mesurer les entités chimiques présentent dans des objets du quotidien ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Espèce chimique et corps pur}{doc:A1_espece_corps_pur}
+  \begin{encart}
+    La matière est constituée \important{d'entités chimiques} microscopiques : atomes, molécules, ions.
+    Une \important{espèce chimique} est constituée d'un ensemble d'entités chimiques
+identiques.
+  \end{encart}
+  \begin{encart}
+    Un \important{corps pur} est un échantillon (solide, liquide ou gazeux) composé d'une \important{espèce chimique.}
+
+    Un \important{mélange} est un échantillon composé de plusieurs \important{espèce chimique.}
+  \end{encart}
+\end{doc}
+
+%%
+\begin{doc}{Composition de la coriandre pour \qty{100}{g}}{doc:A1_coriandre}
+  \centering
+  \begin{tblr}{
+    colspec = {|c |c |c |c |c |}, hlines, row{1} = {couleurPrim!20}
+  }
+    Constituant & Eau \chemfig{H_2O} &
+    Ion calcium \chemfig{Ca^{2+}} & Saccharose \bruteCHO{12}{22}{11} & autres \\
+    %
+    Masse & \qty{92,2}{\g} & \qty{67e-3}{\g} & \qty{0,82}{\g} & \qty{6,91}{\g}
+  \end{tblr}
+\end{doc}
+
+
+%%%%
+\question{
+  La coriandre est-elle un corps pur ou un mélange ?
+}{
+  C'est un mélange, elle est constitué de plusieurs espèces chimiques.
+}{1}
+
+
+%%
+\begin{doc}{La mole}{doc:A1_mole}
+  Un échantillon de sucre en poudre est un corps pur, il ne contient que des molécules de glucose \bruteCHO{6}{12}{6}.
+
+  Le nombre d'entité de glucose contenu dans cet échantillon est gigantesque, de l'ordre de \num{e23} !
+  \begin{equation*}
+    \num{e23} = \num{100 000 000 000 000 000 000 000}
+  \end{equation*}
+
+  Pour compter plus facilement, en chimie on préfère compter en faisant des paquets qu'on appelle \important{mole.}
+
+  \begin{encart}
+    Une \important{mole} contient précisement $N_A = \qty{6,02 e23}{\per\mole}$ entités chimiques.
+  \end{encart}
+  \attention $N_A$ est une constante appelée \textbf{nombre d'Avogadro}, en hommage au scientifique Aemedeo Avogadro.
+  L'unité \og \unit{\per\mole} \fg\! signifie \og par mole \fg, c’est le nombre d'atomes dans une mole.
+\end{doc}
+
+%%
+\begin{doc}{Masse molaire}{doc:A1_masse_molaire}
+  \begin{encart}
+    Chaque \important{atome} possède une \important{masse molaire} atomique, qui correspond à \textbf{la masse d'une mole d'atome}.
+    La masse molaire se note $M$ et s'exprime en \unit{\g/\mole} ou \unit{\g\per\mole}.
+  \end{encart}
+  Les masses molaires sont indiquée dans le tableau périodique des éléments.
+
+  \tableauPeriodique{
+    \node[name=H, Element]               {\elementText{1}{H}{Hydrogène}[1,00]};
+    \node[name=C, right of=H, Nonmetal]  {\elementText{6}{C}{Carbone}  [12,0]};
+    \node[name=O, right of=C, Nonmetal]  {\elementText{8}{O}{Oxygène}  [16,0]};
+    \node[name=Ca, right of=O, Nonmetal] {\elementText{20}{Ca}{Calcium}[40,0]};
+  }
+
+  %
+  \begin{encart}
+    La masse molaire d'une \important{molécule} est \textbf{la somme de la masse molaire de ses constituants}.
+  \end{encart}
+  Elle peut être donnée, ou calculée à partir de la formule brute de la molécule.
+
+  \exemple pour la molécule de dioxyde de carbone \chemfig{CO_2}, sa masse molaire vaut
+  \begin{equation*}
+    \masseMol{CO_2} = \masseMol{C} + 2 \times \masseMol{O}
+    = \qty{12}{\g\per\mole} + 2\times\qty{16}{\g\per\mole}
+    = \qty{44}{\g\per\mole}
+  \end{equation*}
+
+  %
+  \begin{encart}
+    La masse molaire des ions est identique à la masse molaire de l'atome ou la molécule liée.
+  \end{encart}
+
+  \exemples $\masseMol{Mn} = \masseMol{Mn^{2+}}$,
+  $\masseMol{H_3O^{+}} = \masseMol{H_3O}$.
+\end{doc}
+
+%%%%
+\question{
+  Calculer la masse molaire de chaque constituant de la coriandre à partir de leur formule brute.
+}{
+  
+}{3}
+
+
+%%
+\begin{doc}{Qquantité de matière}{doc:A1_quantite_matiere}
+  \begin{encart}
+    La \important{quantité de matière}, notée $n$, est la grandeur qui détermine le nombre d'entité chimique dans un échantillon.
+    Son \important{unité} est \textbf{la mole}, notée \unit{\mole}.
+  \end{encart}
+
+  Pour mesurer la quantité de matière d'une espèce chimique dans un échantillon,
+  il faut le peser et utiliser la relation suivante
+  \begin{equation*}
+    n = \dfrac{m}{M}
+  \end{equation*}
+  Cette relation lie la quantié de matière $n_\espece$, la masse $m_\espece$ et la masse molaire $M_\espece$ de l'espèce.
+\end{doc}
+
+%%%%
+\question{
+  Calculer la quantité de matière de chaque constituant de la coriandre.
+}{
+  
+}{3}
