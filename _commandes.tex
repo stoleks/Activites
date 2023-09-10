@@ -681,13 +681,29 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% fraction, nombre algébrique, réaction
+%% nombre algébrique, réaction
 \newcommand{\algebrique}[1]{
   \overline{\mathrm{#1}}
 }
 \newcommand{\reaction}{
   \!\!\schemestart \arrow(.mid east--.mid west){->}[, 0.9, ultra thick] \schemestop\!\!
 }
+
+%% Pour simplifier l'écriture des formules brutes
+\newcommand{\bruteCHO}[3]{
+  \chemfig{C_{#1} H_{#2} O_{#3}}
+}
+
+%% pour les masse molaire et atomique
+\newcommand{\masseMol}[1]{
+  M(\chemfig{#1})
+  % M_{\chemfig{#1}}
+}
+\newcommand{\masseAtom}[1]{
+  m(\chemfig{#1})
+  % m_{\chemfig{#1}}
+}
+
 
 %% atome ou isotope
 \makeatletter

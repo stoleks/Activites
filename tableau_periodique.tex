@@ -1,17 +1,22 @@
-%%%%
-\newcommand{\elementText}[3]
+%%%% Pour afficher un élément dans le tableau périodique
+\NewDocumentCommand{\elementText}{m m m o}
 {
   \begin{minipage}{2.2cm}
     \begin{center}
-      \element{#1}{#2} % element symbol and atomic number
-      \\[8 pt]
-      \small{#3} % element name
+      {\small #3} \\ % element name 
+      {\ensuremath\footnotesize \textbf{#1}} \\ % nombre atomique
+      \chemfig[atom style={scale = 1.3}]{#2} % symbole atomique
+      % \element{#1}{#2} % element symbol and atomic number
+      \IfValueT{#4}{
+        \\ {\ensuremath\small \qty{#4}{\g/\mole}}
+      }
     \end{center}
   \end{minipage}
 }
 
-%%%%
-\newcommand{\tableauPeriodique}{
+
+%%%% Pour afficher un tableau périodique
+\newcommand{\tableauPeriodique}[1]{
 \begin{tikzpicture}[font=\sffamily, scale=0.75, transform shape]
 %% Fill Color Styles
   \tikzstyle{elementFill}     = [fill=yellow!30]
@@ -26,7 +31,8 @@
 %% Element Styles
   \tikzstyle{Element} = [
     draw=black, elementFill,
-    minimum width=2.25cm, minimum height=2.51cm,
+    minimum width=2.3cm, 
+    minimum height=2.51cm,
     node distance=2.52cm
   ]
   \tikzstyle{Alkali}      = [Element, alkaliFill]
@@ -40,6 +46,15 @@
   \tikzstyle{GroupLabel}  = [font={\sffamily\LARGE}, minimum width=2.5cm, node distance=2cm]
   \tikzstyle{TitleLabel}  = [font={\sffamily\Huge\bfseries}]
 
+%% Elements
+  #1
+\end{tikzpicture}
+}
+
+
+%%%% Affiche les deux première périodes en bloc S et P
+\newcommand{\tableauPeriodiqueSP2}{
+  \tableauPeriodique{
 %% Group 1 - IA
   \node[name=H, Element]              {\elementText{1} {H} {Hydrogène}};
   \node[name=Li, below of=H, Alkali]  {\elementText{3} {Li}{Lithium}};
@@ -71,5 +86,5 @@
   \node[name=Period1, left of=H,  PeriodLabel] {\normalsize{1}};
   \node[name=Period2, left of=Li, PeriodLabel] {\normalsize{2}};
   \node[name=Period3, left of=Na, PeriodLabel] {\normalsize{3}};
-\end{tikzpicture}
+  }
 }
