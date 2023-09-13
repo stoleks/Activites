@@ -3,12 +3,13 @@
 {
   \begin{minipage}{2.2cm}
     \begin{center}
-      {\small #3} \\ % element name 
-      {\ensuremath\footnotesize \textbf{#1}} \\ % nombre atomique
-      \chemfig[atom style={scale = 1.3}]{#2} % symbole atomique
+      \IfValueTF{#4}{ \vAligne{-20pt} }{ \vAligne{-34pt} } % position du nom
+      {\small #3} \\[2pt] % nom de l'élément
+      {\ensuremath\footnotesize \textbf{#1}} \\[6pt] % nombre atomique
+      \chemfig[atom style={scale = 1.8}]{#2} % symbole atomique
       % \element{#1}{#2} % element symbol and atomic number
       \IfValueT{#4}{
-        \\ {\ensuremath\small \qty{#4}{\g/\mole}}
+        \\ {\small \qty{#4}{\g/\mole}}
       }
     \end{center}
   \end{minipage}
@@ -18,7 +19,7 @@
 %%%% Pour afficher un tableau périodique
 \newcommand{\tableauPeriodique}[1]{
 \begin{tikzpicture}[font=\sffamily, scale=0.75, transform shape]
-%% Fill Color Styles
+%% Couleur de remplissage
   \tikzstyle{elementFill}     = [fill=yellow!30]
   \tikzstyle{alkaliFill}      = [fill=red!45]
   \tikzstyle{alkaliEarthFill} = [fill=red!30]
@@ -28,17 +29,17 @@
   \tikzstyle{halogenFill}     = [fill=orange!30]
   \tikzstyle{nobleGasFill}    = [fill=orange!45]
 
-%% Element Styles
+%% Style des éléments
   \tikzstyle{Element} = [
     draw=black, elementFill,
-    minimum width=2.3cm, 
-    minimum height=2.51cm,
-    node distance=2.52cm
+    minimum width=2.85cm, % Largeur de la case
+    minimum height=2.7cm, % Hauteur de la case
+    node distance=2.85cm % Espace entre deux case
   ]
   \tikzstyle{Alkali}      = [Element, alkaliFill]
   \tikzstyle{AlkaliEarth} = [Element, alkaliEarthFill]
-  \tikzstyle{Metal}       = [Element, elementFill]
-  \tikzstyle{Metalloid}   = [Element, elementFill]
+  \tikzstyle{Metal}       = [Element, metalFill]
+  \tikzstyle{Metalloid}   = [Element, metalloidFill]
   \tikzstyle{Nonmetal}    = [Element, elementFill]
   \tikzstyle{Halogen}     = [Element, halogenFill]
   \tikzstyle{NobleGas}    = [Element, nobleGasFill]
@@ -46,45 +47,30 @@
   \tikzstyle{GroupLabel}  = [font={\sffamily\LARGE}, minimum width=2.5cm, node distance=2cm]
   \tikzstyle{TitleLabel}  = [font={\sffamily\Huge\bfseries}]
 
-%% Elements
+%% Place des éléments
   #1
 \end{tikzpicture}
 }
 
 
-%%%% Affiche les deux première périodes en bloc S et P
-\newcommand{\tableauPeriodiqueSP2}{
-  \tableauPeriodique{
-%% Group 1 - IA
-  \node[name=H, Element]              {\elementText{1} {H} {Hydrogène}};
-  \node[name=Li, below of=H, Alkali]  {\elementText{3} {Li}{Lithium}};
-  \node[name=Na, below of=Li, Alkali] {\elementText{11}{Na}{Sodium}};
-%% Group 2 - IIA
-  \node[name=Be, right of=Li, AlkaliEarth] {\elementText{4} {Be}{Béryllium}};
-  \node[name=Mg, below of=Be, AlkaliEarth] {\elementText{12}{Mg}{Magnésium}};
-%% Group 13 - IIIA
-  \node[name=B,  right of=Be, Metalloid] {\elementText{5} {B} {Bore}};
-  \node[name=Al, below of=B,  Metal]     {\elementText{13}{Al}{Aluminium}};
-%% Group 14 - IVA
-  \node[name=C,  right of=B, Nonmetal]  {\elementText{6} {C} {Carbone}};
-  \node[name=Si, below of=C, Metalloid] {\elementText{14}{Si}{Silicium}};
-%% Group 15 - VA
-  \node[name=N, right of=C, Nonmetal] {\elementText{7} {N}{Azote}};
-  \node[name=P, below of=N, Nonmetal] {\elementText{15}{P}{Phosphore}};
-%% Group 16 - VIA
-  \node[name=O, right of=N, Nonmetal] {\elementText{8} {O}{Oxygène}};
-  \node[name=S, below of=O, Nonmetal] {\elementText{16}{S}{Soufre}};
-%% Group 17 - VIIA
-  \node[name=F,  right of=O, Halogen] {\elementText{9} {F} {Fluor}};
-  \node[name=Cl, below of=F, Halogen] {\elementText{17}{Cl}{Chlore}};
-%% Group 18 - VIIIA
-  \node[name=Ne, right of=F,  NobleGas] {\elementText{10}{Ne}{Néon}};
-  \node[name=Ar, below of=Ne, NobleGas] {\elementText{18}{Ar}{Argon}};
-  \node[name=He, above of=Ne, NobleGas] {\elementText{2} {He}{Helium}};
-
-%% Period
-  \node[name=Period1, left of=H,  PeriodLabel] {\normalsize{1}};
-  \node[name=Period2, left of=Li, PeriodLabel] {\normalsize{2}};
-  \node[name=Period3, left of=Na, PeriodLabel] {\normalsize{3}};
-  }
-}
+%%%% Pour faciliter l'utilisation du tableau périodique
+\newcommand{\elementH} {\elementText{1} {H} {Hydrogène}[1,00]}
+\newcommand{\elementHe}{\elementText{2} {He}{Hélium}   [4,00]}
+\newcommand{\elementLi}{\elementText{3} {Li}{Lithium}  [6,94]}
+\newcommand{\elementBe}{\elementText{4} {Be}{Béryllium}[9,01]}
+\newcommand{\elementB} {\elementText{5} {B} {Bore}     [10,8]}
+\newcommand{\elementC} {\elementText{6} {C} {Carbone}  [12,0]}
+\newcommand{\elementN} {\elementText{7} {N} {Azote}    [14,0]}
+\newcommand{\elementO} {\elementText{8} {O} {Oxygène}  [16,0]}
+\newcommand{\elementF} {\elementText{9} {F} {Fluor}    [19,0]}
+\newcommand{\elementNe}{\elementText{10}{Ne}{Néon}     [20,2]}
+\newcommand{\elementNa}{\elementText{11}{Na}{Sodium}   [23,0]}
+\newcommand{\elementMg}{\elementText{12}{Mg}{Magnésium}[24,3]}
+\newcommand{\elementAl}{\elementText{13}{Al}{Aluminium}[27,0]}
+\newcommand{\elementSi}{\elementText{14}{Si}{Silicium} [28,1]}
+\newcommand{\elementP} {\elementText{15}{P} {Phosphore}[31,0]}
+\newcommand{\elementS} {\elementText{16}{S} {Soufre}   [32,1]}
+\newcommand{\elementCl}{\elementText{17}{Cl}{Chlore}   [35,5]}
+\newcommand{\elementAr}{\elementText{18}{Ar}{Argon}    [39,9]}
+\newcommand{\elementK} {\elementText{19}{K} {Potassium}[39,1]}
+\newcommand{\elementCa}{\elementText{20}{Ca}{Calcium}  [40,0]}

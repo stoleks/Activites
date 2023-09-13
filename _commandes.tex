@@ -598,10 +598,6 @@
   \flecheLongue \textit{Exemples :}
 }
 %
-\newcommand{\note}{
-  \textbf{Note :}
-}
-%
 \newcounter{compteAppelProf}
 \newcommand{\appelProf}{
   \refstepcounter{compteAppelProf}
@@ -632,6 +628,10 @@
 %%%% liste de points
 \newlist{listePoints}{itemize}{2}
 \setlist[listePoints]{label = \pointCyan}
+
+%%%% liste avec des flèches
+\newlist{listeFleche}{itemize}{2}
+\setlist[listeFleche]{label = \textbf{\flecheLongue}}
 
 %%%% jeu de données
 \newenvironment{donnees}{
@@ -668,14 +668,14 @@
     #3
   \end{minipage}
 }
-%%%%
-\NewDocumentCommand{\separationBlocs}{O{0.48} O{0.48} m m}{
-  \begin{minipage}[T]{#1\linewidth}
-    #3
+%%%% En utilisant cette commande, il ne faut PAS faire de saut de ligne
+\NewDocumentCommand{\separationBlocs}{m O{0.48} m O{0.48}}{
+  \begin{minipage}[T]{#2\linewidth}
+    #1
   \end{minipage}
   \hfill
-  \begin{minipage}[T]{#2\linewidth}
-    #4
+  \begin{minipage}[T]{#4\linewidth}
+    #3
   \end{minipage}
 }
 

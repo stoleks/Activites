@@ -2,7 +2,6 @@
 \tetePremStssChim
 
 %%%% titre
-\vspace*{-36pt}
 \numeroActivite{1}
 \titreTP{Préparation d'une solution isotonique par dissolution}
 
@@ -14,36 +13,51 @@
 \end{objectifs}
 
 \begin{contexte}
-  Le sucre contenu dans nos muscles permet à notre corps de fournir un effort intensif.
-  Cependant, les réserves en sucre sont limitées, il faut donc les renouveler pour continuer à fournir un effort important.
-  Un moyen efficace de renouveler ces ressources est de boire avant, et pendant l'effort des boissons isotoniques.
-  Une boisson isotonique contient une quantité bien précise de glucose (sucre).
-
-  Il existe plusieurs boissons de ce type dans le commerce, mais leur prix est élevé malgré une préparation simple.
+  Le glucose (sucre) contenu dans nos muscles permet à notre corps de fournir un effort intensif.
+  Cependant, les réserves en glucose sont limitées, il faut donc les renouveler pour continuer à fournir un effort important.
+  Un moyen efficace de renouveler ces ressources est de boire avant et pendant l'effort des boissons isotoniques.
+  Une boisson isotonique contient une quantité bien précise de glucose.
+  
   \problematique{
     Comment préparer une boisson isotonique ?
   }
 \end{contexte}
+\bigskip
 
 
 %%%%
-\begin{doc}{Notion de concentration massique}{doc:TP1_concentration_massique}
-  La concentration massique d’une espèce en solution dans un solvant, est notée $C_m$.
-  Elle désigne la masse $m_\solute$ de soluté (c'est à dire d'espèce dissoute) dans un volume Vsolution de solution.
-  On a alors la relation :
-  \begin{equation*}
-    c_m = \dfrac{ m_\solute }{ V_\solution }
-  \end{equation*}
+\begin{doc}{Solution}{doc:TP1_solution}
+  \begin{encart}
+     Une \important{solution} est un mélange homogène.
+     Le \important{solvant} est le composant majoritaire du mélange. Le \important{soluté} est l'espèce qui est dispersée dans le solvant.
+  \end{encart}
+\end{doc}
 
-  \exemples les solutions ci-dessous contiennent un nombre de plus en plus petit de particule.
-  Comme leur volumes diminuent aussi, la concentration massique reste identique.
-  \begin{tblr}{
-    colspec = {|c |c |c |}, hlines, 
-  }
-    & & \\
-    8 dans \qty{1,00}{\litre} & 4 dans \qty{0,50}{\litre} & 2 dans \qty{0,25}{\litre} \\
-    $c_m = \qty{8}{\per\litre}$  & $c_m = \qty{8}{\per\litre}$  & $c_m = \qty{8}{\per\litre}$
-  \end{tblr}
+\begin{doc}{Notion de concentration massique}{doc:TP1_concentration_massique}
+  \begin{encart}
+    La \important{concentration} massique d’une espèce en solution dans un solvant, est notée $C_m$.
+    La concentration massique représente la masse $m_\solute$ de soluté (c'est à dire d'espèce dissoute) dans un volume $V_\solution$ de solution.
+    On a alors la relation :
+    \begin{equation*}
+      c_m = \dfrac{ m_\solute }{ V_\solution }
+    \end{equation*}
+  \end{encart}
+
+  \exemples les solutions ci-dessous contiennent un nombre de plus en plus petit de particules de masse $m = \qty{1}{\g}$.
+  Comme le volume des solutions diminue aussi, la concentration massique reste identique.
+  %
+  \vspace*{-30pt}
+  \begin{center}
+    \begin{tblr}{
+      colspec = {c c c}, width = 0.5\linewidth
+    }
+      \image{0.3}{images/chimie/concentration0001} &
+      \image{0.3}{images/chimie/concentration0002} &
+      \image{0.3}{images/chimie/concentration0003} \\
+      \qty{8}{\g} dans \qty{1,00}{\litre} & \qty{4}{\g} dans \qty{0,50}{\litre} & \qty{2}{\g} dans \qty{0,25}{\litre} \\
+      $c_m = \qty{8}{\g/\litre}$  & $c_m = \qty{8}{\g/\litre}$  & $c_m = \qty{8}{\g/\litre}$
+    \end{tblr}
+  \end{center}
 \end{doc}
 
 %%
@@ -51,15 +65,15 @@
   Donner l'unité de la concentration massique $c_m$. Citer une autre grandeur qui s'exprime avec la même unité, s'agit-il de la même chose ?
 }{
   Unité : \unit{\g\per\litre}. C'est l'unité de la masse volumique, qui représente la densité d'un corps.
-}{1}
+}{2}
 
 \begin{doc}{Boisson isotonique d'une joggeuse}{doc:TP1_boisson_joggeuse}
-  Avant de partir courir, une joggeurse se prépare une boisson isotonique.
-  Elle introduit \qty{10}{\g} de sel \chemfig{NaCl} et 6 morceaux de glucose \bruteCHO{6}{12}{6} de \qty{5}{\g} chacun dans une bouteille de \qty{1}{\litre}, qu'elle remplit d'eau.
+  Avant de partir courir, une joggeuse se prépare une boisson isotonique.
+  Elle introduit \qty{10}{\g} de sel \chemfig{NaCl} et 6 morceaux de glucose \bruteCHO{6}{12}{6} (du sucre) de \qty{5}{\g} chacun dans une bouteille de \qty{1}{\litre}, qu'elle remplit d'eau.
 \end{doc}
 
 \question{
-  Calculer la concentration massique en chlorure de sodium \chemfig{NaCl}, puis en glucose \bruteCHO{6}{12}{6}.
+  Calculer la concentration massique en chlorure de sodium \chemfig{NaCl}, puis en glucose.
 }{
   \begin{align*}
     c_{m,\text{sel}} &= \dfrac{\qty{10}{\g}}{\qty{1}{\litre}} = \qty{10}{\g\per\litre} \\
@@ -68,7 +82,7 @@
 }{2}
 
 \question{
-  Calculer la masse de sel et la masse de sucre qu'il faut mettre dans une fiole jaugée de $\qty{100}{\mL} = \qty{0,100}{\litre}$ pour réaliser la même boisson isotonique.
+  Calculer la masse de sel et la masse de sucre qu'il faut mettre dans une fiole jaugée de $\qty{100}{\mL}$ pour réaliser la même boisson isotonique.
 }{
   \begin{align*}
     m_\text{sel} &= \qty{10}{\g\per\litre} \times \qty{0,100}{\litre} = \qty{1,0}{\g} \\
@@ -77,17 +91,19 @@
 }{2}
 
 \numeroQuestion
-Mettre les images dans l'ordre pour reconstituer, le protocole de dissolution.
-Pour chaque image, indiquer le chiffre en dessous de l'image qui correspond à l'action à réaliser parmi les phrases suivantes :
+Mettre les images dans l'ordre pour reconstituer le protocole de dissolution.
+En dessous de chaque image, indiquer le chiffre correspondant à l'action à réaliser parmi les phrases suivantes :
 \begin{enumerate}
-  \item Peser le solide grâce à la coupelle de pesée
+  \item Peser le solide dans la coupelle de pesée.
   \item Agiter la fiole jaugée jusqu'à dissolution du solide.
-  \item Remplir la fiole jaugée aux deux tiers avec de l'eau distillée.
-  \item Agiter pour homogénéiser la solution.
+  \item Agiter la fiole jaugée pour homogénéiser la solution.
   \item Compléter la fiole jaugée avec de l'eau distillée jusqu’au trait de jauge.
-  \item Tarer la balance.
-  \item Introduire le solide dans la fiole jaugée grâce à un entonnoir.
-  \item Rincer la coupelle et l'entonnoir avec de l'eau distillée.
+  \item Tarer la balance avec la coupelle de pesée dessus.
+  \item Introduire le solide dans la fiole jaugée et la remplir aux deux tiers avec de l'eau distillée.
 \end{enumerate}
+
+\begin{boite}
+  \vAligne{10cm}
+\end{boite}
 
 \numeroQuestion Une fois validé, réaliser le protocole de dissolution pour préparer la boisson isotonique.
