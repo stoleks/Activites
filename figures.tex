@@ -59,64 +59,39 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% plan de classe
-\newcommand{\rectangleTexte}[5]{
-  \filldraw [fill=white, draw=black, ultra thick] (#1, #2) rectangle (#1 + #3, #2 + #4);
-  \node at (#1 + #3/2, #2 + #4/2) [font=\sffamily] {\textbf{\large #5}};
+\NewDocumentCommand{\texteCadre}{O{black} r() O{2} r() O{2} m}{
+  \filldraw [fill=white, draw=#1, ultra thick] (#2, #4) rectangle (#2 + #3, #4 + #5);
+  \node at (#2 + #3/2, #4 + #5/2) [font=\sffamily] {\textbf{\large #6}};
 }
-% place dans la classe
-\newcommand{\place}[3]{
-  \rectangleTexte{#1}{#2}{3}{2}{#3}
+
+%% place dans la classe
+\NewDocumentCommand{\place}{r() r() m}{
+  \texteCadre(#1)[3](#2)[2] {#3}
 }
-\newcommand{\deuxPlaces}[4]{
-  \place{#1}{#2}{#3}
-  \place{#1 + 3}{#2}{#4}
+\NewDocumentCommand{\places}{r()r() r[] d[] d[] d[]}{
+  \place(#1)(#2) {#3}
+  \IfValueT{#4}{ \place(#1 + 3)(#2) {#4} }
+  \IfValueT{#5}{ \place(#1 + 6)(#2) {#5} }
+  \IfValueT{#6}{ \place(#1 + 9)(#2) {#6} }
 }
-\newcommand{\troisPlaces}[5]{
-  \place{#1}{#2}{#3}
-  \place{#1 + 3}{#2}{#4}
-  \place{#1 + 6}{#2}{#5}
-}
-\newcommand{\quatrePlaces}[6]{
-  \place{#1}{#2}{#3}
-  \place{#1 + 3}{#2}{#4}
-  \place{#1 + 6}{#2}{#5}
-  \place{#1 + 9}{#2}{#6}
-}
-%%%% rangée
-\newboolean{quatrePlace}
-\setboolean{quatrePlace}{false}
-\newcommand{\avecQuatrePlaces}{ \setboolean{quatrePlace}{true} }
-\newcommand{\avecTroisPlaces} { \setboolean{quatrePlace}{false} }
-\newcommand{\rangee}[9]{
-  \ifthenelse {\boolean{quatrePlace}} {
-    \deuxPlaces  {0}{#1} {#2}{#3}
-    \quatrePlaces{7}{#1} {#4}{#5}{#6}{#7}
-    \deuxPlaces  {20}{#1}{#8}{#9}
+
+%% rangée de classe ou de TP
+\NewDocumentCommand{\rangee}{m r[]r[] r()r()r()d() r[]r[]}{
+  \places(0)(0 - 3*#1) [#2][#3]
+  \IfValueTF{#7}{
+    \places(7) (0 - 3*#1) [#4][#5][#6][#7]
+    \places(20)(0 - 3*#1) [#8][#9]
   }{
-    \deuxPlaces {#1}{#2}     {#3}{#4}
-    \troisPlaces{#1 + 7}{#2} {#5}{#6}{#7}
-    \deuxPlaces {#1 + 17}{#2}{#8}{#9}
-  }
-}
-\newcommand{\rang}[9]{
-  \ifthenelse {\boolean{quatrePlace}} {
-    \deuxPlaces  {0} {12 - 3*#1} {#2}{#3}
-    \quatrePlaces{7} {12 - 3*#1} {#4}{#5}{#6}{#7}
-    \deuxPlaces  {20}{12 - 3*#1} {#8}{#9}
-  }{
-    \deuxPlaces {0} {12 - 3*#1} {#2}{#3}
-    \troisPlaces{7} {12 - 3*#1} {#4}{#5}{#6}
-    \deuxPlaces {17}{12 - 3*#1} {#7}{#8}
+    \places(8.5)(0 - 3*#1) [#4][#5][#6]
+    \places(20) (0 - 3*#1) [#8][#9]
   }
 }
 
-%%%% TP
-\newcommand{\paillasse}[3]{
-  \rectangleTexte{#1}{#2}{4}{2}{#3}
-}
-\newcommand{\rangeeTP}[6]{
-  \paillasse{#1}{#2}     {#3}
-  \paillasse{#1 + 4}{#2} {#4}
-  \paillasse{#1 + 12}{#2}{#5}
-  \paillasse{#1 + 16}{#2}{#6}
+\NewDocumentCommand{\rangeeTP}{m r[]r[]r[] r()r()r()d()}{
+  \places(3)(0 - 3*#1) [#2][#3][#4]
+  \IfValueTF{#8}{
+    \places(14) (0 - 3*#1) [#5][#6][#7][#8]
+  }{
+    \places(14) (0 - 3*#1) [#5][#6][#7]
+  }
 }
