@@ -417,7 +417,11 @@
       \hspace*{-12pt}
     }
   }{ % Sinon on utilise dash undergap pour la version automatique
-    \espaceReponse \hspace*{0.1pt}
+    \ifthenelse{\boolean{modeProf}}{% prof
+      \hspace*{-24pt}
+    }{% élève
+      \espaceReponse \hspace*{0.1pt}
+    }
     \gap{\texteCorrection{#2}}
   }
 }

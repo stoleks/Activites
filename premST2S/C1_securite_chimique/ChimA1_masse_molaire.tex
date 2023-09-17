@@ -49,7 +49,7 @@ identiques.
     Constituant & Eau \chemfig{H_2O} &
     Ion calcium \chemfig{Ca^{2+}} & Saccharose \bruteCHO{12}{22}{11} & autres \\
     %
-    Masse & \qty{92,2}{\g} & \qty{67e-3}{\g} & \qty{0,82}{\g} & \qty{6,91}{\g}
+    Masse & \qty{92,2}{\g} & \qty{0,067}{\g} & \qty{0,82}{\g} & \qty{6,91}{\g}
   \end{tblr}
 \end{doc}
 
@@ -105,7 +105,7 @@ identiques.
       \node[name=O, right of=C, Nonmetal]  {\elementO};
       \node[name=Ca, right of=O, Nonmetal] {\elementCa};
       %% Légende
-      \tkzVecteur{12.1}{-1}{-2}{0}{Masse molaire}{below right}
+      \tkzLegende[couleurSec](10.1)(-0.9){Masse molaire}*
     }
   \end{center}
   \vspace*{-20pt}
@@ -136,7 +136,18 @@ identiques.
 \question{
   Calculer la masse molaire des trois constituants de la coriandre dont la formule brute est précisée dans le document~\ref{doc:A1_coriandre}.
 }{
-  
+  \begin{align*}
+    \masseMol{H_2O} &=
+    2\times\masseMol{H} + \masseMol{O} =
+    \qty{18,0}{\g\per\mole} \\
+    %
+    \masseMol{Ca^{2+}} &= \masseMol{Ca} = \qty{40,0}{\g\per\mole} \\
+    %
+    \masseMol{C_{12}H_{22}O_{11}} &=
+    12\times\masseMol{C} + 22\times\masseMol{H} + 11\times\masseMol{O} =
+    \qty{372,0}{\g\per\mole}
+  \end{align*}
+  \vspace*{-20pt}
 }{3}
 
 
@@ -159,5 +170,11 @@ identiques.
 \question{
   Calculer la quantité de matière des trois constituants de la coriandre, en utilisant la masse molaire déjà calculée et leurs masses données dans le document~\ref{doc:A1_coriandre}.
 }{
-  
+  \begin{align*}
+    n(\chemfig{H_2O}) = \dfrac{m (\chemfig{H_2O})}{\masseMol{H_2O}} = \qty{5,12}{\mole}
+    \qq{} 
+    n(\chemfig{Ca^{2+}}) = \qty{1,68e-3}{\mole}
+    \qq{}
+    n(\chemfig{C_{12} H_{22} O_{11}}) = \qty{2,22e-3}{\mole}
+  \end{align*}
 }{3}

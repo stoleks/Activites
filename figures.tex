@@ -6,9 +6,7 @@
 \newcommand{\tkzEllipse}[4]{
   \fill[color=#1] (0,#3) ellipse (#2 and #4);
 }
-\newcommand{\tkzLegende}[4]{
-  \draw[black, ->, very thick] (#2 + #4, #3) node[right] {#1} -- (#2, #3);
-}
+
 \newcommand{\tkzCercle}[4]{
   \filldraw [#3] (#1, #2) circle (#4pt);
 }
@@ -39,26 +37,23 @@
 \newcommand{\tkzPointLabel}[3]{
   \filldraw (#1, #2) circle (2pt) node[above] {#3};
 }
-\newcommand{\tkzVecteur}[6]{
-  \draw[black, ->, very thick] (#1, #2) -- (#1 + #3, #2 + #4) node[#6] {#5};
+% \tkzVecteur [couleur] (x) [longueur x] (y) [longueur y] {legende} [position legende] 
+% ajouter une * à la fin transforme la flèche en double flèche <->
+\NewDocumentCommand{\tkzVecteur}{O{black} r() O{0} r() O{0} m O{right} s}{
+  \IfBooleanTF{#8}{
+    \draw[#1, <->, very thick] (#2, #4) -- (#2 + #3, #4 + #5) node[#7] {#6};
+  }{
+    \draw[#1, ->, very thick] (#2, #4) -- (#2 + #3, #4 + #5) node[#7] {#6};
+  }
 }
-\newcommand{\tkzEquiv}[6]{
-  \draw[black, <->, thick] (#1, #2) -- (#1 + #3, #2 + #4);
-  \draw[black] (#1 + #3/2, #2 + #4/2) node[#6] {#5};
-}
-\newcommand{\tkzVecteurX}[4]{
-  \draw[black, ->, very thick] (#1, #2) -- (#1 + #3, #2) node[above] {#4};
-}
-\newcommand{\tkzVecteurY}[4]{
-  \draw[black, ->, very thick] (#1, #2) -- (#1, #2 + #3) node[right] {#4};
-}
-\newcommand{\tkzEquivY}[5]{
-  \draw[#1, <->, thick] (#2, #3) -- (#2, #3 + #4);
-  \draw[#1] (#2, #3 + #4/2) node[right] {#5};
-}
-\newcommand{\tkzEquivX}[5]{
-  \draw[#1, <->, thick] (#2, #3) -- (#2 + #4, #3);
-  \draw[#1] (#2 + #4/2, #3) node[below] {#5};
+% \tkzLegende (x) (y) [longueur fleche] {légende} 
+% ajouter une * passe de la version gauche -> à la version droite <-
+\NewDocumentCommand{\tkzLegende}{O{black} r() r() O{1.25} m s}{
+  \IfBooleanTF{#6}{
+    \draw[#1, ->, very thick] (#2 + #4, #3) node[right] {#5} -- (#2, #3);
+  }{
+    \draw[#1, ->, very thick] (#2, #3) node[left] {#5} -- (#2 + #4, #3);
+  }
 }
 
 
