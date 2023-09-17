@@ -407,7 +407,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % texte à trou avec option pour régler la largeur
-\NewDocumentCommand{\texteTrou}{o m}{
+\NewDocumentCommand{\texteTrou}{o +m}{
   \IfValueTF{#1}{ % Si la largeur est réglée, on utilise des lignes
     \ifthenelse {\boolean{modeProf}} {% prof
       \texteCorrection{#2}
@@ -427,7 +427,7 @@
 }
 
 % texte à trou avec option pour laisser plusieurs lignes
-\NewDocumentCommand{\texteTrouLignes}{O{0} m}{
+\NewDocumentCommand{\texteTrouLignes}{O{0} +m}{
   \ifthenelse {\boolean{modeProf}} {% prof
     \texteCorrection{#2}
   }{% élève
@@ -673,7 +673,7 @@
   \end{minipage}
 }
 %%%% En utilisant cette commande, il ne faut PAS faire de saut de ligne
-\NewDocumentCommand{\separationBlocs}{m O{0.48} m O{0.48}}{
+\NewDocumentCommand{\separationBlocs}{+m O{0.48} +m O{0.48}}{
   \begin{minipage}[T]{#2\linewidth}
     #1
   \end{minipage}
