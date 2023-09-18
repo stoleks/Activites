@@ -466,11 +466,11 @@
 \newenvironment{tableauCompetences}{
   \centering
   \begin{tblr}{
-    colspec = {| c | X[c] | c | c | c | c |},
+    colspec = {| c | X[l] | c | c | c | c |},
     rows = {m}, hlines,
     row{1} = {couleurPrim!20}
   }
-    \centering \textbf{Compétences} & \centering \textbf{Items} 
+    \textbf{Compétences} & \centering \textbf{Items} 
     & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
 }{
   \end{tblr}
@@ -633,16 +633,22 @@
 \newlist{listePoints}{itemize}{2}
 \setlist[listePoints]{label = \pointCyan}
 
+%%%% liste tirets
+\newlist{listeTirets}{itemize}{2}
+\setlist[listeTirets]{label = \textcolor{couleurPrim}{\small\faMinus}}
+
 %%%% liste avec des flèches
 \newlist{listeFleche}{itemize}{2}
 \setlist[listeFleche]{label = \textbf{\flecheLongue}}
 
 %%%% jeu de données
 \newenvironment{donnees}{
-  \textbf{Données :}
-  \begin{listePoints}
+  \begin{multicols}{2}
+    \textbf{Données :}
+    \begin{listeTirets}
 }{
-  \end{listePoints}
+    \end{listeTirets}
+  \end{multicols}
 }
 
 %%%% problematique
@@ -672,7 +678,7 @@
     #3
   \end{minipage}
 }
-%%%% En utilisant cette commande, il ne faut PAS faire de saut de ligne
+%%%% Separation en deux blocs
 \NewDocumentCommand{\separationBlocs}{+m O{0.48} +m O{0.48}}{
   \begin{minipage}[T]{#2\linewidth}
     #1
