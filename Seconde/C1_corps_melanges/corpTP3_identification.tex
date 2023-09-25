@@ -1,0 +1,242 @@
+%%%% début de la page
+\teteSndCorp
+
+
+%%%% titre
+%\nomPrenomClasse
+\numeroActivite{3}
+\titreTP{Identifier des solides et des liquides}
+
+%%%% Contexte 1
+\begin{contexte}
+  Pour pouvoir identifier des espèces chimiques, on peut utiliser trois méthodes :
+  \begin{listePoints}
+    \item \textbf{Mesurer des propriétés physiques} et les comparer à des valeurs de références.
+    \item \textbf{Réaliser des tests chimiques.}
+    \item \textbf{Réaliser une chromatographie sur couche mince (CCM).}
+  \end{listePoints}
+  Aujourd'hui on va s'intéresser aux deux premières méthodes d'identification.
+\end{contexte}
+
+
+\begin{encart}  
+  On cherche à déterminer expérimentalement, avec la plus grande précision possible, la masse volumique d’échantillons métalliques mis à votre disposition.
+  
+  \problematique{S'agit-il d’aluminium, de cuivre, de zinc ou de fer ?}
+\end{encart}
+
+\question{
+  Rappeler la relation qui permet de calculer la masse volumique d'un échantillon de matière de masse $m$ et de volume $V$.
+}{
+  \begin{equation*}
+    \rho = \dfrac{m}{V}
+  \end{equation*}
+}{2}
+
+\begin{doc}{Propriétés physiques de quelques métaux}{doc:TP3_proprietes_metaux}
+  \centering
+  \begin{tblr}{
+    hlines, colspec = {|c |c |c |}, row{1} = {couleurPrim!20}
+  }
+    Métal
+    & Aspect à $T = \qty{20}{\degreeCelsius}$ 
+    & Masse volumique (\unit{\g/\cubic\cm}) \\
+    %
+    Aluminium & Solide gris brillant   & \num{2,700} \\
+    Cuivre    & Solide orange brillant & \num{8,960} \\
+    Zinc      & Solide gris sombre     & \num{7,150} \\
+    Fer       & Solide gris brillant   & \num{7,860}
+  \end{tblr}
+\end{doc}
+
+\begin{doc}{Volume d'un parallélépipède rectangle}{doc:TP3_volume parallelepipede}
+  \begin{multicols}{2}
+    Pour calculer le volume d'un parallélépipède rectangle de longueur $L$, de profondeur $p$ et d’épaisseur $e$, on utilise la relation suivante :
+    \begin{equation*}
+      V = L \times p \times e
+    \end{equation*}
+    Si $L$, $p$ et $e$ sont mesurées en \unit{\cm}, le résultat s’exprimera en \unit{\cubic\cm}.
+
+    \centering
+    \begin{tikzpicture}
+      % Parallelepipede
+      \draw (0,0)--(4,0)--(4,2)--(0,2)--(0,0); % face
+      \draw (0,2)--(1,3)--(5,3)--(4,2); % haut
+      \draw (4,0)--(5,1)--(5,3); % côté
+      % Perspective
+      \draw[dashed] (0,0)--(1,1)--(1,3); % côté
+      \draw[dashed] (1,1)--(5,1); % fond
+      % Legendes
+      \tkzVecteur(0)[4](-0.25){$L$}[below]*
+      \tkzVecteur(-0.25)(0)[2]{$e$}[left]*
+      \tkzVecteur(4.25)[1](-0.1)[1]{$p$}[right]*
+    \end{tikzpicture}
+  \end{multicols}
+\end{doc}
+
+\mesure Mesurer la masse volumique d'un échantillon à l'aide du matériel disponible.
+
+\question{
+  En utilisant le document~\ref{doc:TP3_proprietes_metaux}, déterminer la nature de l'échantillon.
+}{
+
+}{2}
+
+
+
+%%%% Contexte 2
+\begin{encart}
+  Les eaux minérales sont des mélanges homogène contenant plusieurs ions de nature et de masses différentes.
+  Les eaux minérales sont en général impropre à une consommation régulière, mais elles peuvent servir dans des régimes spécifiques.
+  
+  \problematique{Comment déterminer les ions présents dans des eaux minérales ?}
+\end{encart}
+
+
+
+%%%% documents
+\begin{doc}{Composition de trois eaux minérales}{doc:TP3_composition_eau}
+  \begin{multicols}{3}
+    \centering
+    \textbf{Vichy St Yorre} \\
+    \begin{tblr}{
+      hlines, colspec = {l r}, row{1} = {couleurPrim!20}
+    }
+      \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+      \ionBicarbonate & \num{4368} \\
+      \ionChlorure    & \num{322}  \\
+      \ionSodium      & \num{1708} \\
+      \ionSulfate     & \num{174}  \\
+      \ionPotassium   & \num{110}  \\
+      \ionCalcium     & \num{90}   \\
+      \ionFluorure    & \num{1}    \\
+      \ionMagnesium   & \num{11}   \\
+    \end{tblr}
+
+    %
+    \textbf{Mont Roucous\vphantom{p}} \\
+    \begin{tblr}{
+      hlines, colspec = {l r}, row{1} = {couleurPrim!20}
+    }
+      \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+      \ionBicarbonate & \num{1} \\
+      \ionChlorure    & \num{2}  \\
+      \ionSodium      & \num{3,2}  \\
+      \ionSulfate     & \num{6,9}  \\
+      \ionFluorure    & < \num{0,1}  \\
+      \ionCalcium     & \num{2,7}  \\
+      \ionNitrate     & \num{1,8}  \\
+      \ionMagnesium   & \num{0,3}  \\
+    \end{tblr}
+    
+    %
+    \textbf{Cristalline\vphantom{p}} \\
+    \begin{tblr}{
+      hlines, colspec = {l r}, row{1} = {couleurPrim!20}
+    }
+      \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+      \ionBicarbonate & \num{228} \\
+      \ionChlorure    & \num{15}    \\
+      \ionSodium      & \num{8,4}  \\
+      \ionSulfate     & \num{11}  \\
+      \ionPotassium   & \num{2,3}     \\
+      \ionCalcium     & \num{549}   \\
+      \ionNitrate     & < \num{1}   \\
+      \ionMagnesium   & \num{6,9}   \\
+    \end{tblr}
+
+    %
+    % \textbf{Volvic\vphantom{p}} \\
+    % \begin{tblr}{
+    %   hlines, colspec = {l r}, row{1} = {couleurPrim!20}
+    % }
+    %   \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+    %   \ionBicarbonate & \num{65,3} \\
+    %   \ionChlorure    & \num{8,4}  \\
+    %   \ionSodium      & \num{9,4}  \\
+    %   \ionSulfate     & \num{6,9}  \\
+    %   \ionPotassium   & \num{5,7}  \\
+    %   \ionCalcium     & \num{9,9}  \\
+    %   \ionNitrate     & \num{6,3}  \\
+    %   \ionMagnesium   & \num{6,1}  \\
+    % \end{tblr}
+    % 
+    % %
+    % \textbf{Hépar} \\
+    % \begin{tblr}{
+    %   hlines, colspec = {l r}, row{1} = {couleurPrim!20}
+    % }
+    %   \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+    %   \ionBicarbonate & \num{383,7} \\
+    %   \ionChlorure    & \num{11}    \\
+    %   \ionSodium      & \num{14,2}  \\
+    %   \ionSulfate     & \num{1479}  \\
+    %   \ionPotassium   & \num{4}     \\
+    %   \ionCalcium     & \num{549}   \\
+    %   \ionNitrate     & \num{4,3}   \\
+    %   \ionMagnesium   & \num{119}   \\
+    % \end{tblr}
+  \end{multicols}
+\end{doc}
+
+
+%%%%
+\begin{doc}{Tests caractéristiques de certains ions}{doc:TP3_tests_ions}
+  \begin{center}
+    \begin{tblr}{
+      hlines, colspec = {| c | c | c |}, row{1} = {couleurPrim!20}
+    }
+      Ion à tester &
+      Réactif utilisé &
+      Résultat du test positif \\
+      %
+      \ionChlorure &
+      Solution de nitrate d'argent &
+      Précipité blanc, noircit* \\
+      %
+      \ionSulfate &
+      Solution de chlorure de baryum &
+      Précipité blanc \\
+      %
+      \ionCalcium &
+      Solution d'oxalate d'ammonium &
+      Précipité blanc \\
+      %
+      \ionMagnesium &
+      Solution d'hydroxyde de sodium &
+      Précipité blanc
+    \end{tblr}
+    
+    \bigskip
+    * Le précipité blanc noircit à la lumière.
+  \end{center}
+\end{doc}
+
+
+%%%%
+On a trois béchers (A, B, C) contenant des eaux minérales, que vous voulez identifier.
+
+\mesure
+Réaliser le protocole suivant :
+\begin{protocole}
+  \item Verser dans 4 tubes à essais quelques \unit{\mL} d'eau d'un bécher.
+  \item Réaliser un test différent dans chaque tube à essais à l'aide des 4 réactifs.
+  \item Noter si un précipité se forme et son abondance dans le tableau suivant ($-$, $+$, $++$, $+++$).
+  \item Répéter pour les deux autres bécher.
+\end{protocole}
+
+\begin{center}
+  \begin{tblr}{
+    hlines, colspec = {|l | c | c | c|}, row{1} = {couleurPrim!20}
+  }
+    Test réalisé & Bécher A & Bécher B & Bécher C \\
+    Nitrate d'argent    & & & \\
+    Chlorure de baryum  & & & \\
+    Oxalate d'ammonium  & & & \\
+    Hydroxyde de sodium & & &
+  \end{tblr}
+\end{center}
+
+\question{
+  En utilisant les documents~\ref{doc:TP3_composition_eau} et~\ref{doc:TP3_tests_ions}, donner l'eau minérale contenue dans chaque bécher.
+}{}{3}

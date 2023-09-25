@@ -1,11 +1,9 @@
 %%%% début de la page
 \teteSndCorp
 
-
 %%%% titre
 \nomPrenomClasse
-\vspace{-12pt}
-\numeroActivite{3}
+\numeroActivite{4}
 \titreTP{Séparer et identifier des espèces chimiques}
 
 
@@ -18,45 +16,33 @@
 
 %%%% evaluation
 \begin{tableauCompetences}
-  \centering APP --
-  Rechercher l'information.
-  & & & &
-  \\ \hline
+  \centering APP &
+  Rechercher et utiliser des informations dans un document.
+  & & & & \\
   %
-  \centering ANA/RAI --
-  Justifier un protocole.
-  & & & &
-  \\ \hline
-  %
-  \centering REA --
-  Mettre en \oe{}uvre un protocole.
-  & & & &
-  \\ \hline
-  %
-  \centering VAL --
-  Comparer avec des valeurs de références.
+  \centering VAL &
+  Comparer des valeurs mesurées avec des valeurs de références.
   & & & &
 \end{tableauCompetences}
 
 
 
 %%%% contexte
-\begin{encart}
-  \emphase{Contexte :}
-  
+\begin{contexte}
   En Europe, les colorants alimentaires sont désignés par un préfixe E suivi d'un numéro.
   Ces colorants se retrouvent dans de nombreux produits.
   
   On cherche à déterminer les colorants présent dans du sirop à l'aide d'une \textbf{Chromatographie sur Couche Mince (CCM).}
-\end{encart}
+\end{contexte}
 
 
 %%%% document
-\begin{doc}{Chromatographie sur Couche Mince (CCM)}
-  \vspace*{-32pt}
-  \begin{wrapfigure}{r}{0.5\linewidth}
+\begin{doc}{Chromatographie sur Couche Mince (CCM)}{doc:}
+  \begin{wrapfigure}[11]{l}{0.5\linewidth}
     \centering
-    \image{1}{images/CCM/CCM_exp.png}
+    \vspace*{-16pt}
+    \image{0.7}{images/chimie/CCM/CCM_exp.png}
+    
     \footnotesize{Schéma expérimental d'une CCM.}
   \end{wrapfigure}
 
@@ -72,25 +58,22 @@
 \end{doc}
 
 %%%%
-\begin{doc}{Lecture d'un chromatogramme}
-  \vspace*{-24pt}
-  \begin{wrapfigure}{r}{0.4\linewidth}
-    \vspace*{-30pt}
+\begin{doc}{Lecture d'un chromatogramme}{doc:}
+  \begin{multicols}{2}
+    \begin{listePoints}
+      \item \textbf{Lecture verticale :} si le dépôt d'un échantillon se sépare en plusieurs tâches, il s'agit d'un mélange.
+      \item \textbf{Lecture horizontale :} sur une même plaque, une même espèce chimique migre toujours à la même hauteur.
+    \end{listePoints}
+    \vfill \strut
+
     \centering
-    \image{0.9}{images/CCM/chromatogramme_TP.png}
-  \end{wrapfigure}
-  
-  \textbullet\hspace{2pt} \textbf{Lecture verticale :} si le dépôt d'un échantillon se sépare en plusieurs tâches, il s'agit d'un mélange.
-  
-  \textbullet\hspace{2pt} \textbf{Lecture horizontale :} sur une même plaque, une même espèce chimique migre toujours à la même hauteur.
- 
-  \vspace{20pt}
-  \phantom{4}
+    \image{0.7}{images/chimie/CCM/chromatogramme_TP.png} \\
+    \footnotesize{schéma d'un chromatogramme}
+  \end{multicols}
 \end{doc}
 
 %%%%
-\begin{doc}{Colorants alimentaires}
-  \vspace*{-18pt}
+\begin{doc}{Colorants alimentaires}{doc:}
   \begin{itemize}[label=\textbullet]
     \item \textbf{E102 : jaune de tartrazine.} Son usage doit s'accompagner en France de la mention \og peut avoir des effets indésirables sur l'activité et l'attention chez les enfants \fg.
     \item \textbf{E133 : bleu brillant.} Un enfant de 40 kg peut ingérer jusqu'à $240\unit{mg}$ de bleu brillant en une journée. Au-delà le conseil européen indique que ce produit peut être toxique.
@@ -98,19 +81,18 @@
 \end{doc}
 
 %%%%
-\begin{doc}{Réalisation d'une CCM}
-  \vspace*{1pt}
+\begin{doc}{Réalisation d'une CCM}{doc:}
   
   \separationTroisBlocs{
     \begin{center}
-      \includegraphics[height=0.15\textheight]{images/CCM/CCM_etapes_cuve.png}
+      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_cuve.png}
     \end{center}
     
     \vspace*{-12pt}
     Remplir jusqu'à environ 0,5 cm de hauteur d'éluant la cuve à CCM.
   }{
     \begin{center}
-      \includegraphics[height=0.15\textheight]{images/CCM/CCM_etapes_trait.png}
+      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_trait.png}
     \end{center}
     
     \vspace*{-12pt}
@@ -118,7 +100,7 @@
     Vérifier que le trait est au-dessus du niveau de l'éluant.
   }{
     \begin{center}
-      \includegraphics[height=0.15\textheight]{images/CCM/CCM_etapes_depot.png}
+      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_depot.png}
     \end{center}
     
     \vspace*{-12pt}
@@ -128,9 +110,9 @@
   
   \bigskip
   
-  \separationDeuxBlocs{
+  \separationBlocs{
     \begin{center}
-      \includegraphics[height=0.25\textheight]{images/CCM/CCM_etapes_ajout.png}
+      \includegraphics[height=0.25\textheight]{images/chimie/CCM/CCM_etapes_ajout.png}
     \end{center}
     
     \vspace*{-12pt}
@@ -139,7 +121,7 @@
     \textbf{Ne jamais déplacer la cuve} et attendre que l'éluant monte.
   }{
     \begin{center}
-      \includegraphics[height=0.25\textheight]{images/CCM/CCM_etapes_retrait.png}
+      \includegraphics[height=0.25\textheight]{images/chimie/CCM/CCM_etapes_retrait}
     \end{center}
     
     \vspace*{-12pt}
@@ -152,67 +134,29 @@
 %%%% questions
 \question{
   Placer quelques gouttes de sirop vert dans un bécher de $50\unit{mL}$. Ajouter environ $10\unit{mL}$ d'eau distillée et agiter.\competence{REA}
-}{0}
+}{}{0}
 
 \question{
   Réaliser le protocole du document 3, avec un dépôt de colorant jaune, un dépôt de colorant bleu et  et un dépôt de la solution préparée à la question 1.\competence{REA}
-}{0}
+}{}{0}
 
 \question{
   Coller ici le chromatogramme \textbf{sec} et entourer les différentes tâches au crayon à papier.\competence{REA}
-}{0}
+}{}{0}
 \vspace*{240pt}
 
-\newpage
 \question{
   Pourquoi doit-on placer la ligne de dépôt au dessus du niveau de l'éluant ?\competence{ANA/RAI}
-}{2}
+}{}{2}
 
 \question{
   Pourquoi ne doit-on pas déplacer la cuve pendant la montée de l'éluant ?\competence{ANA/RAI}
-}{2}
+}{}{2}
 
 \question{
   En analysant le chromatogramme à l'aide du document 2, indiquer si les échantillons sont des corps purs ou des mélanges.\competence{APP}
-}{3}
+}{}{3}
 
 \question{
   En utilisant le chromatogramme, que contient le colorant vert du sirop ? Justifier avec des arguments simples.\competence{APP, VAL}
-}{2}
-
-
-% \newpage
-% \question{Relier chaque verrerie à son nom.}{0}
-
-% %%
-% \newcommand{\centeredBullet}{\centering\textbullet}
-% \vspace*{-12pt}
-% \begin{center}
-%   \image{1}{images/instruments_chimie/instruments_1.png}
-  
-%   \begin{tabular}{
-%     m{0.23\textwidth} m{0.23\textwidth} m{0.23\textwidth} m{0.23\textwidth} m{12pt}
-%   }
-%     \centeredBullet & \centeredBullet & \centeredBullet & \centeredBullet & \phantom{b}
-%     \\[48pt]
-%     \centeredBullet & \centeredBullet & \centeredBullet & \centeredBullet & \phantom{b}
-%     \\
-%     \centering sabot de pesée  &  \centering tube à essai  &  \centering coupelle de pesée  & \centering verre à pied &
-%   \end{tabular}
-% \end{center}
-
-% %%
-% \vspace{12pt}
-% \begin{center}
-%   \image{1}{images/instruments_chimie/instruments_2.png}
-  
-%   \begin{tabular}{
-%     m{0.21\textwidth} m{0.23\textwidth} m{0.25\textwidth} m{0.28\textwidth} m{12pt}
-%   }
-%     \centeredBullet & \centering\textbullet & \centeredBullet & \centeredBullet & \phantom{b}
-%     \\[48pt]
-%     \centeredBullet & \centeredBullet & \centeredBullet & \centeredBullet & \phantom{b}
-%     \\
-%     \centering éprouvette graduée  &  \centering bécher &  \centering fiole jaugée  & \centering erlenmeyer &
-%   \end{tabular}
-% \end{center}
+}{}{2}
