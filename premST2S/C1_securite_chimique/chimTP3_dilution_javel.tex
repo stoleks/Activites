@@ -1,0 +1,141 @@
+%%%%
+\tetePremStssChim
+
+%%%% titre
+\vspace*{-36pt}
+\numeroActivite{3}
+\titreTP{Dilution d’un produit désinfectant}
+
+% \begin{tableauCompetences}
+%   APP & Rechercher et utiliser des informations dans un document. & & & & \\
+%   REA & Réaliser des calculs. Réaliser un protocole en respectant les consignes de sécurités. & & & & \\
+% \end{tableauCompetences}
+\begin{objectifs}
+  \item Connaître les pictogrammes de sécurité
+  \item Savoir réaliser une dilution et calculer un facteur de dilution
+\end{objectifs}
+
+
+%%%% Documents 
+\begin{doc}{Les pictogrammes de sécurités}{doc:TP3_picto_secu}
+  Les pictogrammes de sécurités sont à connaître par c\oe{}ur ! \\[4pt]
+
+  %% Tableau avec les pictogrammes
+  \NewDocumentCommand{\pictoTableau}{m O{65}}{
+    \hspace{16pt} \image{0.45}{images/securite/picto_#1} \vAligne{-#2pt}
+  }
+  \begin{tblr}{
+    colspec = {|X[-1, h, m] |X[4, m] |}, hlines,
+    row{1} = {couleurPrim!20, c}
+  }
+    \textbf{Pictogramme} & \textbf{Signification} \\
+    %
+    \pictoTableau{ronge} &
+    {\texteTrou{Corrosif.} \\
+    Je peux attaquer ou détruire les métaux.
+    Je ronge la peau et/ou les yeux en cas de contact.} \\
+    %
+    \pictoTableau{toxique} &
+    {\texteTrou{Toxique, irritant, narcotique.} \\
+    J'empoisonne à forte dose.
+    J'irrite la peau, les yeux et/ou les voies respiratoires.
+    Je peux provoquer des allergies, de la somnolence ou des vertiges.} \\
+    %
+    \pictoTableau{tue}[55] &
+    {\texteTrou{Toxique.} \\
+    J’empoisonne rapidement, même à faible dose.} \\
+    %
+    \pictoTableau{explose} &
+    {\texteTrou{Explosif.} \\
+    Je peux exploser au contact d’une flamme, d’une étincelle, d’électricité statique, sous l’effet de la chaleur, de frottements ou d’un choc.} \\
+    %
+    \pictoTableau{flambe} &
+    {\texteTrou{Inflammable.} \\
+    Je peux m’enflammer au contact d’une flamme, d’une étincelle, d’électricité statique, sous l’effet de la chaleur, de frottements ou au contact de l’air ou de l’eau.} \\
+    %
+    \pictoTableau{flamber} &
+    {\texteTrou{Comburant.} \\
+    Je peux provoquer ou aggraver un incendie ou même provoquer une explosion en présence de produits inflammables.} \\
+    %
+    \pictoTableau{pression} &
+    {\texteTrou{Gaz sous pression.} \\
+    Je peux exploser sous l’effet de la chaleur.
+    Je peux causer des brûlures ou blessures liées au froid.} \\
+    %
+    \pictoTableau{pollue} &
+    {\texteTrou{Dangereux pour l'environnement.} \\
+    Je provoque des effets néfastes sur les organismes du milieu aquatique, sur les êtres vivants.} \\
+    %
+    \pictoTableau{sante} &
+    {\texteTrou{Mutagène, cancerogène, reprotoxique.} \\
+    Je peux provoquer le cancer, modifier l’ADN, nuire à la fertilité ou au f\oe{}tus, altérer le fonctionnement des organes.
+    Je peux être mortel en cas d’ingestion dans les voies respiratoires.}
+    %
+  \end{tblr}
+\end{doc}
+
+
+%%%% Activité
+\begin{contexte}
+  L'eau de Javel est un produit ménager très couramment utilisé pour désinfecter les salles
+de bain ou cuisines.
+  On trouve dans le commerce des solutions prêtes à l’emploi mais d’autres
+doivent être diluées pour une bonne utilisation.
+
+  \problematique{Comment réaliser ces solutions ?}
+\end{contexte}
+
+\begin{doc}{Étiquette d'une eau de Javel}{doc:TP3_eau_javel}
+  \begin{wrapfigure}{r}{0.2\linewidth}
+    \vspace*{-16pt}
+    \centering
+    \image{0.44}{images/securite/picto_toxique}~\image{0.44}{images/securite/picto_pollue}
+    \image{0.44}{images/securite/picto_ronge}
+  \end{wrapfigure}
+  
+  Dans la maison, pour désinfecter :
+  \begin{listePoints}
+    \item Les surfaces lavables : diluer $3 + \frac{1}{2}$ verre d’eau de Javel dans \qty{5}{\litre} d’eau, laver.
+    Laisser agir 15 minutes puis rincer.
+    \item Les canalisations : diluer 1 verre dans \qty{1}{\litre} d’eau, verser.
+    \item La poubelle : diluer $1 + \frac{1}{2}$ verre d’eau de Javel dans \qty{1}{\litre} d’eau, frotter.
+    Laisser agir 15 minutes puis rincer.
+  \end{listePoints}
+  \begin{donnees}
+    \item \num{1} verre = \qty{14}{\centi\litre}
+  \end{donnees}
+\end{doc}
+
+\begin{doc}{Matériel disponible}{doc:TP3_verrerie_disponible}
+  \begin{listePoints}
+    \item Éprouvette graduée.
+    \item Pipettes jaugées de \qty{5,0}{\ml}, \qty{10,0}{\ml}.
+    \item Pipette graduée.
+    \item Fioles jaugées de \qty{25,0}{\ml}, \qty{100,0}{\ml}, \qty{200,0}{\ml}.
+    \item Bécher.
+  \end{listePoints}
+\end{doc}
+
+\titreSection{Questions préliminaires}
+
+\question{
+  En utilisant le document~\ref{doc:TP3_eau_javel}, calculer le volume d'eau de Javel qu'il faut utiliser pour préparer la solution pour surfaces lavables.
+}{}{3}
+
+\question{
+  Comparer le volume trouvé aux \qty{5}{\litre} d'eau nécessaires pour réaliser la dilution.
+}{}{1}
+
+
+\titreSection{Travail à réaliser}
+
+\mesure
+Utilisez les documents proposés et les questions préliminaires pour préparer une solution pour surfaces lavables.
+Vous détaillerez le raisonnement suivi et rédigerez votre compte rendu, en respectant les étapes de la démarche scientifique.
+  
+\chevron[couleurSec] Proposition d’organisation :
+\begin{protocole}
+  \item Par groupe de 4, reformuler la problématique et proposer un protocole pour préparer la solution.
+  \item Par 2, mettre en oeuvre le protocole en respectant les consignes de sécurité.
+  \item Seule, rédiger un compte-rendu en incluant des schémas légendés et une conclusion.
+\end{protocole}

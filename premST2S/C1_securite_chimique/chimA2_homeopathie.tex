@@ -1,0 +1,132 @@
+%%%%
+\tetePremStssChim
+
+%%%% titre
+\numeroActivite{2}
+\titreActivite{L'homéopathie}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre le principe de la dilution et sa réalisation expérimentale
+\end{objectifs}
+
+\begin{contexte}
+  En mars 2018, 124 professionnels de la santé signaient une tribune contre les \og médecines alternatives \fg\; comme l’homéopathie, demandant que celles-ci ne soient plus remboursées par la Sécurité Sociale.
+  En 2019, Agnès Buzyn (ministre de la Santé) décide de suivre les recommandations de la Haute Autorité de santé.
+  Le taux de remboursement passe de \qty{30}{\percent} à \qty{15}{\percent} en 2020, puis à \qty{0}{\percent} au 1er janvier 2021. 
+  
+  \problematique{
+    Qu'est-ce que l'homéopathie ? Pourquoi y a-t-il un débat sur son efficacité ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Principe de l'homéopathie}{doc:A2_principe_homeopathie}
+  \begin{wrapfigure}{r}{0.2\linewidth}
+    \vspace*{-30pt}
+    \centering
+    \qrcode{https://vimeo.com/252413062}
+  \end{wrapfigure}
+  
+  Le principe de l'homéopathie est décrit dans la vidéo liée au QR code.
+  En regardant la vidéo, vous devrez prendre des notes pour répondre aux questions qui suivent.
+  
+\end{doc}
+
+\question{
+  Donner le nom du \textbf{principe médical} utilisé dans l'homéopathie et donner un exemple pour l'expliquer.
+}{
+Cette médecine repose sur le «principe de similitude ». Il stipule qu’un malade peut être soigné en lui administrant à très petites doses une substance entrainant, chez une personne saine, des symptômes similaires à ceux de la maladie qui l’affecte. L’écorce provoque des maux de ventres comme le paludisme.
+Exemple : l’utilisation d’écorce de quinquina soignant le paludisme. 
+}{6}
+
+\question{
+  Expliquer le \textbf{protocole de fabrication} des médicaments homéopathique.
+}{
+  On introduit 1 goutte de principe actif que l’on dilue dans 99 gouttes de solvant. On va successivement diluer cette solution afin d’obtenir des granulés. On enrobe la solution obtenue sur des granules de saccharose et lactose.
+}{5}
+
+\question{
+  Donner des arguments \textbf{qui permettent de douter} l’efficacité de l’homéopathie.
+}{
+    • Pas de preuves scientifiques de son efficacité biologique : le principe actif est trop dilué à partir de 5CH, l’efficacité est quasi nulle
+    • Peut retarder la prise de rendez-vous chez un médecin
+}{5}
+
+
+%%
+\newpage
+\vspace*{-36pt}
+\begin{doc}{La dilution}{doc:A2_principe_dilution}
+  \begin{wrapfigure}[5]{r}{0.5\linewidth}
+    \vspace*{-48pt}
+    \centering
+    \begin{multicols}{4}
+    \image{1}{images/chimie/protocoles/dilution0001} \\[-12pt]
+    \footnotesize{$S_0$}
+    
+    \image{1}{images/chimie/protocoles/dilution0002}
+    
+    \image{1}{images/chimie/protocoles/dilution0003}
+    
+    \image{1}{images/chimie/protocoles/dilution0004} \\[-12pt]
+    \footnotesize{$S_1$}
+    \end{multicols}
+  \end{wrapfigure}
+  \vAligne{-40pt}
+  
+  \begin{encart}
+    Le principe de la \important{dilution} est de \important{diminuer la concentration} en soluté dans une solution en rajoutant du \important{solvant.}
+  \end{encart}
+  La solution de départ est appelée \important{solution mère}, notée $S_0$.
+  La solution obtenue après dilution est appelée \important{solution fille}, notée $S_1$.
+\end{doc}
+
+\begin{doc}{Facteur de dilution}{doc:A2}
+  La quantité de matière de soluté dans le volume de solution mère prélevée $V_0$ est la même que dans le volume de solution fille préparée $V_1$.
+  
+  Les quantités de matières étant égales, comme $n = c \times V$, on a
+  \begin{align*}
+    c_0 \times V_0 &= c_1 \times V_1 \\
+    \Longrightarrow V_0 &= \dfrac{c_1}{c_0} \times V_1
+  \end{align*}
+
+  \begin{encart}  
+    Le rapport des concentrations de la solution mère et de la solution fille est appelée le \important{facteur de dilution $F$.}
+    On dit qu'on a dilué $F$ fois la solution mère.
+  \end{encart}
+  \exemple Un facteur de dilution $F = 4$ indique que la solution mère a été diluée 4 fois et que la solution mère a une concentration 4 fois plus faible.
+\end{doc}
+
+\begin{doc}{CH homéopathique}{doc:A2_CH_homeopathique}
+  Les comprimés homéopathiques \og China Rubra 10 CH \fg à base de quinine, aiderait à soigner certaines fièvres.
+  Pour fabriquer ce médicament, on prépare une solution mère en dissolvant \qty{0,02}{\mole} de quinine % de formule brute \chemfig{C_{20}H_{24}N_2O_2}
+  dans \qty{50,0}{\ml} d’éthanol.
+  
+  Puis on prélève $n = \qty{1,0}{\ml}$ de cette solution et on le dilue 100 fois dans l’éthanol pour obtenir une première solution fille notée 1 CH.
+  
+  On prélève de nouveau \qty{1,0}{\ml} de cette solution 1 CH et on le dilue à nouveau 100 fois dans l'éthanol pour obtenir une solution 2 CH.
+  On répète cette procédure jusqu'à arrive à 10 CH.
+\end{doc}
+
+%%%%
+\question{
+  Calculer la concentration molaire $c = n / V$ dans la solution mère.
+}{
+
+}{2}
+
+\question{
+  Calculer le facteur de dilution d'une solution homéopathique à 1 CH, puis à 10 CH.
+}{
+
+}{2}
+
+\question{
+  Calculer la concentration de la solution 10 CH, puis calculer le nombre de molécules de quinine dans \qty{10}{\ml} de solution 10 CH.
+  \textbf{Rappel :} $\qty{1}{\mole} = \num{6,02e23}$ molécules.
+}{
+
+}{2}

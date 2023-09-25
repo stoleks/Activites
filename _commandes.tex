@@ -547,35 +547,35 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% symboles : chevron, flèche, attention, etc.
-\newcommand{\chevron}{
-  \textcolor{couleurPrim}{\small \faChevronRight}
+\NewDocumentCommand{\chevron}{O{couleurPrim}}{
+  \textcolor{#1}{\small \faChevronRight}
 }
 %
-\newcommand{\fleche}{
-  \textcolor{couleurPrim}{\faCaretRight}
+\NewDocumentCommand{\fleche}{O{couleurPrim}}{
+  \textcolor{#1}{\faCaretRight}
 }
 %
-\newcommand{\attention}{
-  \textcolor{couleurPrim}{\faExclamationTriangle}
+\NewDocumentCommand{\attention}{O{couleurPrim}}{
+  \textcolor{#1}{\faExclamationTriangle}
 }
 %
-\newcommand{\flecheLongue}{
-  \textcolor{couleurPrim}{\faLongArrowRight}
+\NewDocumentCommand{\flecheLongue}{O{couleurPrim}}{
+  \textcolor{#1}{\faLongArrowRight}
 }
 %
-\newcommand{\ok}{
-  \textcolor{couleurPrim}{\faCheckCircle}
+\NewDocumentCommand{\ok}{O{couleurPrim}}{
+  \textcolor{#1}{\faCheckCircle}
 }
 %
-\newcommand{\pasOk}{
-  \textcolor{couleurPrim}{\faTimesCircle}
+\NewDocumentCommand{\pasOk}{O{couleurPrim}}{
+  \textcolor{#1}{\faTimesCircle}
 }
 %
-\newcommand{\pointCyan}{
-  \textcolor{couleurPrim}{\textbullet}
+\NewDocumentCommand{\pointCyan}{O{couleurPrim}}{
+  \textcolor{#1}{\textbullet}
 }
 %
-\newcommand{\mesure}{
+\NewDocumentCommand{\mesure}{O{couleurPrim}}{
   \hspace{15pt}
   \textcolor{couleurSec}{\faWrench\faFlask}
 }
@@ -627,7 +627,7 @@
 
 %%%% protocole
 \newlist{protocole}{itemize}{2}
-\setlist[protocole]{label = {\footnotesize \fleche}}
+\setlist[protocole]{label = {\footnotesize \fleche[couleurSec]}}
 
 %%%% liste de points
 \newlist{listePoints}{itemize}{2}
@@ -643,8 +643,10 @@
 
 %%%% jeu de données
 \newenvironment{donnees}{
+  
+  \textbf{Données :}
+  \vspace*{-8pt}
   \begin{multicols}{2}
-    \textbf{Données :}
     \begin{listeTirets}
 }{
     \end{listeTirets}

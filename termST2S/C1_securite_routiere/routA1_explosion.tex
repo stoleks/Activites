@@ -1,0 +1,246 @@
+%%%%
+\teteTermStssRout
+
+%%%% titre
+\numeroActivite{1}
+\titreActivite{L'explosion du port de Beyrouth}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Faire un bilan de matière à partir d'une équation de réaction fournie
+  \item Utiliser la relation entre le volume et le volume molaire $V = n \times V_m$
+\end{objectifs}
+
+\begin{contexte}
+  Le 4 août 2020, une terrible explosion a fait voler en éclats le port de Beyrouth, blessant plus de \num{6500} personnes et causant \num{190} décès.
+  La cause, découverte récemment, indique qu'un incendie se serait déclaré dans un entrepôt de nitrate d’ammonium.
+  
+  \problematique{
+    Comment expliquer l’ampleur de l’explosion dans ce hangar ?
+  }
+\end{contexte}
+
+
+%%%%
+\begin{doc}{Description du stockage à Beyrouth}{doc:TP1_description_stockage}
+  Le conseil supérieur de la défense indique qu'un incendie s’est déclaré dans un hangar de \qty{50000}{\cubic\metre} dans lequel étaient stockés \qty{2750e3}{\kg} de nitrate d’ammonium de formule brute \chemfig{NH_4 NO_3}.
+\end{doc}
+
+%%
+\begin{doc}{Rappels sur la réaction chimique}{doc:TP1_rappel_reaction_chimique}
+  On réalise une transformation chimique lorsqu’on mélange des espèces chimiques et que de nouvelles espèces chimiques apparaissent.
+  \begin{encart}
+    Pour modéliser une transformation chimique on écrit une \important{réaction chimique} entre entités chimiques.
+  \end{encart}
+  équation de la transformation chimie produite lors de l’incendie dans le hangar à \qty{300}{\degreeCelsius} :
+  \begin{center}
+    \important{2}\chemfig{NH_4 NO_3}(s) \reaction
+    \important{2}\chemfig{N_2}(g) + \chemfig{O_2}(g) + \important{4}\chemfig{H_2O}(l)
+  \end{center}
+
+  \begin{multicols}{2}
+    \begin{encart}
+      Les espèces chimiques qui sont transformées au cours de la réaction chimique sont les \important{réactifs.}
+      Les réactifs sont à gauche dans la réaction.
+    \end{encart}
+    \begin{encart}
+      Les espèces chimiques qui sont produites au cours de la réaction chimique sont les \important{produits.}
+      Les produits sont à droite dans la réaction.
+    \end{encart}
+  \end{multicols}
+\end{doc}
+
+%%
+\begin{doc}{Faire un bilan de matière}{doc:TP1_bilan_matiere}
+  L'équation de la réaction est comme une recette de cuisine :
+  \begin{center}
+    \important{2}\chemfig{NH_4 NO_3}(s) \reaction
+    \important{2}\chemfig{N_2}(g) + \chemfig{O_2}(g) + \important{4}\chemfig{H_2O}(l)
+  \end{center}
+  Si je mélange \important{deux} \chemfig{NH_4 NO_3},
+  il se forme \important{deux} \chemfig{N_2},
+  \important{un} \chemfig{O_2} et
+  \important{quatre} \chemfig{H_2 O}.
+  
+  Si je mélange 4 \chemfig{NH_4 NO_3}, il se forme \texteTrou{4} \chemfig{N_2}, \texteTrou{2} \chemfig{O_2} et \texteTrou{8} \chemfig{H_2 O}.
+  
+  Si je mélange 6 \chemfig{NH_4 NO_3}, il se forme \texteTrou{6} \chemfig{N_2}, \texteTrou{3} \chemfig{O_2} et \texteTrou{12} \chemfig{H_2 O}.
+  
+  Si je mélange \qty{2,4}{\mole} \chemfig{NH_4 NO_3}, il se forme
+  \texteTrou{2,4 mole} \chemfig{N_2},
+  \texteTrou{1,2 mole} \chemfig{O_2} et \\
+  \texteTrou{4,8 mole} \chemfig{H_2 O}.
+\end{doc}
+
+%%
+\begin{doc}{calcul de quantité de matière (solide et gaz)}{doc:TP1_calcul_mole_sol_gaz}
+  La relation utilisée pour calculer la quantité de matière dépend de l'état physique de l'espèce chimique.
+  \begin{multicols}{2}
+    Espèces chimique à l'état solide
+    \begin{equation*}
+      n = \dfrac{m}{M}
+    \end{equation*}
+    \begin{listePoints}
+      \item $n$ la quantité de matière en \unit{\mole}
+      \item $m$ la masse en \unit{\g}
+      \item $M$ la masse molaire en \unit{\g\per\mole}
+    \end{listePoints}
+    La masse molaire se calcule en additionnant les masse molaire atomique des entités chimiques qui composent la molécule.
+    
+    Espèce chimique à l'état gazeux
+    \begin{equation*}
+      n = \dfrac{V}{V_m}
+    \end{equation*}
+    \begin{listePoints}
+      \item $n$ la quantité de matière en \unit{\mole}
+      \item $V$ le volume en \unit{\litre}
+      \item $V_m$ la volume molaire en \unit{\litre\per\mole}
+    \end{listePoints}
+    Le volume molaire d'un gaz est une constante $V_m = \qty{24}{\litre\per\mole}$ (à \qty{20}{\degreeCelsius} et sous pression atmosphérique)
+  \end{multicols}
+\end{doc}
+
+%%
+\begin{doc}{Tableau descriptif des espèces chimiques}{doc:TP1_descriptif_especes_chimiques}
+  \begin{tblr}{
+    colspec = {|X[-1,c] |X[1,c] |X[1,c] |X[1,c] |X[1,c] |}, hlines,
+    row{1} = {couleurPrim!20}
+  }
+    Espèce chimique & Nitrate d'ammonium & diazote & dioxygène & eau \\
+    Formule brute & \chemfig{NH_4 NO_3} & \chemfig{N_2} & \chemfig{O_2} & \chemfig{H_2O} \\
+    Propriétés physico-chimiques & 
+    {Solide à \qty{20}{\degreeCelsius} (poudre blanche). \\
+    Légèrement nocif.} &
+    {Gazeux à \qty{20}{\degreeCelsius}. \\
+    Gaz incolore inerte présent dans l’air.} &
+    {Gazeux à \qty{20}{\degreeCelsius}. \\
+    Gaz incolore oxydant présent dans l’air.\\
+    Comburant.} &
+    {Liquide à \qty{20}{\degreeCelsius}. \\
+    Amphotère.} 
+  \end{tblr}    
+\end{doc}
+
+
+%%%%
+\titreSection{Le stockage}
+
+\begin{donnees}
+  \item \masseMol{C} = \qty{12,0}{\g\per\mole}
+  \item \masseMol{N} = \qty{14,0}{\g\per\mole}
+  \item \masseMol{O} = \qty{16,0}{\g\per\mole}
+  \item \masseMol{H} = \qty{1,0}{\g\per\mole}
+\end{donnees}
+
+\question{
+  Donner le nom et la formule brute de l’espèce chimique entreposée dans le port de Beyrouth responsable de l’explosion.
+}{
+
+}{2}
+
+\question{
+  Après avoir converti la masse de cette espèce chimique en gramme, calculer sa masse molaire notée \masseMol{NH_4 NO_3}.
+}{
+
+}{3}
+
+\newpage
+\vspace*{-28pt}
+\question{
+  En déduire, à l'aide du document~\ref{doc:TP1_description_stockage} et~\ref{doc:TP1_calcul_mole_sol_gaz}, la quantité de matière $n_1$ de nitrate d’ammonium entreposée dans le hangar.
+}{
+  
+}{3}
+
+
+%%%%
+\titreSection{La réaction produite par l’incendie}
+
+\begin{donnees}
+  \item $\qty{1}{\cubic\metre} = \qty{e3}{\litre}$
+  \item $\qty{1}{\kelvin} = \qty{273}{\degreeCelsius}$
+\end{donnees}
+
+\question{
+  Réécrire l’équation de la réaction produite lors de l’incendie.
+  A partir du document~\ref{doc:TP1_descriptif_especes_chimiques}, nommer les réactifs et les produits de cette réaction chimique. Les qualifieriez-vous d’espèces chimiques dangereuses ? 
+}{
+  
+}{4}
+
+\numeroQuestion
+La chaleur apportée par l’incendie a permis à la réaction de se produire.
+Compléter la première ligne \og \textbf{\textsf{avant l'incendie}} \fg\!
+et la deuxième ligne \og \textbf{\textsf{après l'incendie}} \fg,
+du tableau ci-dessous, en vous aidant du document~\ref{doc:TP1_bilan_matiere}
+
+\vspace*{8pt}
+\begin{tblr}{
+  vlines, hlines,
+  colspec = {c X[c,m] X[c,m] X[c,m] X[c,m]},
+  hline{1,2} = {1-5}{dashed},
+  vline{1,6} = {1}{dashed},
+  vline{2} = {1}{text = \clap{:}},
+  vline{3} = {1}{text = \clap{$\longrightarrow$}},
+  vline{4,5} = {1}{text = \clap{+}},
+  row{1} = {couleurPrim!20}
+}
+  Équation de la réaction &
+  \important{2}\chemfig{NH_4 NO_3}(s) &
+  \important{2}\chemfig{N_2}(g) &
+  \chemfig{O_2}(g) &
+  \important{4}\chemfig{H_2O}(l) \\
+  %
+  État du système & \SetCell[c=4]{c} \textbf{Quantités de matières} & & & \\
+  %
+  \vAligne{2pt} \textbf{\textsf{Avant l’incendie}} \vAligne{5pt} &
+  $n_1 =$ \texteTrou[0.5]{\qty{200}{\mole}} &
+  $n(\chemfig{N_2}) =$ \texteTrou[0.2]{\qty{200}{\mole}} &
+  $n(\chemfig{O_2}) =$ \texteTrou[0.2]{\qty{200}{\mole}} &
+  $n(\chemfig{H_2O}) =$ \texteTrou[0.2]{\qty{200}{\mole}} \\
+  %
+  \vAligne{2pt} \textbf{\textsf{Après l’incendie}} \vAligne{5pt} &
+  $n_{f,1} =$ \texteTrou[0.5]{\qty{200}{\mole}} &
+  $n_f(\chemfig{N_2}) =$ \texteTrou[0.2]{\qty{200}{\mole}} &
+  $n_f(\chemfig{O_2}) =$ \texteTrou[0.2]{\qty{200}{\mole}} &
+  $n_f(\chemfig{H_2O}) =$ \texteTrou[0.2]{\qty{200}{\mole}}
+\end{tblr}
+
+\vspace*{8pt}
+\question{
+  En utilisant le document~\ref{doc:TP1_calcul_mole_sol_gaz} et le tableau ci-dessus, calculer (dans les conditions normales),
+  le volume de diazote $V(\chemfig{N_2})$,
+  de dioxygène $V(\chemfig{O_2})$ et
+  de vapeur d’eau $V(\chemfig{H_2O})$ produit.
+}{
+
+}{7}
+
+\newpage
+\question{
+  Soit $n$ la quantité de matière produite totale avec $n = n_f(\chemfig{N_2}) + n_f(\chemfig{O_2}) + n_f(\chemfig{H_2O})$
+  et $V$ le volume totale $V = V(\chemfig{N_2}) + V(\chemfig{O_2}) + V(\chemfig{H_2O})$.
+  Calculer $n$ et $V$.
+}{
+
+}{6}
+
+\question{
+  Conclure sur la valeur de $V$ par rapport à celle du hangar
+}{
+
+}{3}
+
+\question{
+  \textit{Pour les plus rapide.}
+  La relation des gaz parfait est la suivante :
+  \begin{equation*}
+    PV = nRT
+  \end{equation*}
+  avec $R = \qty{8,31}{\pascal\cubic\metre\per\mole\per\kelvin}$. \\
+  Sachant que la température dans le hangar était de \qty{600}{\degreeCelsius} après la réaction, calculer la pression produite par la réaction.
+  La comparer avec la pression atmosphérique $P_\text{atm} = \qty{100}{\kilo\pascal}$ et la pression dans un pneu de vélo $P_\text{pneu} = \qty{300}{\kilo\pascal}$.
+}{
+
+}{6}
