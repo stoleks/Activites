@@ -462,6 +462,18 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Tableau générique avec la première ligne bleue
+\NewDocumentEnvironment{tableau}{m}{
+  \centering
+  \begin{tblr}{
+    hlines,
+    colspec = #1,
+    row{1} = {couleurPrim!20},
+  }
+}{
+  \end{tblr}
+}
+
 %%%% Tableau de competence
 \newenvironment{tableauCompetences}{
   \centering
@@ -510,8 +522,8 @@
 %%%% Tableau de correction élève
 \newcommand{\correctionEleve}[1]{
   \begin{tblr}{
-    colspec = {| X[-1, c] | X[2, c] | X[2, c] | X[2, c] |},
     hlines,
+    colspec = {| X[-1, c] | X[2, c] | X[2, c] | X[2, c] |},
     row{1} = {couleurPrim!20}
   }
     \textbf{Question} & 
@@ -529,8 +541,8 @@
 %%%% Tableau bilan de la correction
 \newcommand{\bilanCorrection}[1]{
   \begin{tblr}{
-    colspec = {| X[c] | X[c] |},
     hlines,
+    colspec = {| X[c] | X[c] |},
     row{1} = {couleurPrim!20}
   }
     \textbf{Ce que je n'avais pas compris...} &
@@ -538,6 +550,7 @@
     \phantom{b} \vspace{#1 pt} & \\
   \end{tblr}
 }
+
 
 %%%% Alignement dans un tableau
 \newcommand{\vAligne}[1]{

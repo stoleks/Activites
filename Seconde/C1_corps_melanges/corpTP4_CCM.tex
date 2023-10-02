@@ -9,8 +9,7 @@
 
 %%%% objectifs
 \begin{objectifs}
-  \item Réaliser une Chromatographie sur Couche Mince.
-  \item Renforcer ses connaissances sur le matériel de chimie.
+  \item Réaliser et analyser une Chromatographie sur Couche Mince.
 \end{objectifs}
 
 
@@ -37,7 +36,7 @@
 
 
 %%%% document
-\begin{doc}{Chromatographie sur Couche Mince (CCM)}{doc:}
+\begin{doc}{Chromatographie sur Couche Mince (CCM)}{doc:TP4_CCM}
   \begin{wrapfigure}[11]{l}{0.5\linewidth}
     \centering
     \vspace*{-16pt}
@@ -58,7 +57,70 @@
 \end{doc}
 
 %%%%
-\begin{doc}{Lecture d'un chromatogramme}{doc:}
+\begin{doc}{Réalisation d'une CCM}{doc:TP4_protocole_CCM}
+  \begin{multicols}{3}
+    \begin{center}
+      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_cuve.png}
+      
+      Remplir jusqu'à environ \qty{0,5}{\cm} de hauteur d'éluant la cuve à CCM.
+    \end{center} 
+    
+    \begin{center}
+      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_trait.png}
+      
+      Tracer au crayon à papier un trait à \qty{1}{\cm} du bord inférieur.
+    \end{center}
+  
+    \begin{center}
+      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_depot.png}
+      Marquer des emplacements,
+      puis prélever chaque échantillon avec un cure dent et les déposer sur un des emplacements.
+    \end{center}
+  \end{multicols}
+  
+  \bigskip
+  
+  \begin{multicols}{2}
+    \begin{center}
+      \includegraphics[height=0.25\textheight]{images/chimie/CCM/CCM_etapes_ajout.png}
+      
+      Poser doucement la plaque dans la cuve en la tenant par les côtés et fermer la cuve.
+      \textbf{Ne jamais déplacer la cuve} et attendre que l'éluant monte.
+    \end{center}
+
+    \begin{center}
+      \includegraphics[height=0.25\textheight]{images/chimie/CCM/CCM_etapes_retrait}
+      
+      Quand le front de l'éluant s'approche du haut, sortir la plaque.
+      Tracer une ligne indiquant la hauteur où l'éluant est monté.
+    \end{center}
+  \end{multicols}
+\end{doc}
+
+
+%%%% questions
+\mesure
+Placer un MM's dans chaque tube à essais et les recouvrir d'eau.
+Attendre que le colorant se soit dissous dans l'eau et récupérer les MM's.
+
+\mesure
+Réaliser le protocole du document~\ref{doc:TP4_protocole_CCM}, avec un dépôt de colorant jaune, un dépôt de colorant bleu et deux dépôts des solutions préparées précédemment.
+
+\mesure
+Coller ici le chromatogramme \textbf{sec} et entourer les différentes tâches au crayon à papier.
+\vspace*{240pt}
+
+\question{
+  Pourquoi doit-on placer la ligne de dépôt au dessus du niveau de l'éluant ?
+}{}{2}
+
+\question{
+  Pourquoi ne doit-on pas déplacer la cuve pendant la montée de l'éluant ?
+}{}{2}
+
+
+%%%%
+\begin{doc}{Lecture d'un chromatogramme}{doc:TP4_chromatogramme}
   \begin{multicols}{2}
     \begin{listePoints}
       \item \textbf{Lecture verticale :} si le dépôt d'un échantillon se sépare en plusieurs tâches, il s'agit d'un mélange.
@@ -73,90 +135,78 @@
 \end{doc}
 
 %%%%
-\begin{doc}{Colorants alimentaires}{doc:}
-  \begin{itemize}[label=\textbullet]
+\begin{doc}{Colorants alimentaires}{doc:TP4_colorants_alimentaire}
+  \begin{listePoints}
     \item \textbf{E102 : jaune de tartrazine.} Son usage doit s'accompagner en France de la mention \og peut avoir des effets indésirables sur l'activité et l'attention chez les enfants \fg.
     \item \textbf{E133 : bleu brillant.} Un enfant de 40 kg peut ingérer jusqu'à $240\unit{mg}$ de bleu brillant en une journée. Au-delà le conseil européen indique que ce produit peut être toxique.
-  \end{itemize}
+  \end{listePoints}
 \end{doc}
+
+\question{
+  En analysant le chromatogramme à l'aide du document~\ref{doc:TP4_chromatogramme}, indiquer si les échantillons sont des corps purs ou des mélanges.
+}{}{4}
+
+\question{
+  En utilisant le chromatogramme, donner la composition des colorants présents sur la couche externe des MM's.
+}{}{6}
+
+
+\newpage
+
+%%%% Contexte
+\begin{contexte}
+  Les huiles essentielles sont obtenues à partir de végétaux pressés ou par distillation fractionnée.
+  Les huiles essentielles sont riches en molécules odorantes.
+  
+  \problematique{
+    Comment décrire la composition d'une huile essentielle à l'aide d'une CCM ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\separationBlocs{
+  %%
+  \begin{doc}{Huile essentielle de citron et d'orange}{doc:TP4_huile_essentielle}
+    L'huile essentielle d'orange (HEO) et l'huile essentielle de citron (HEC)
+    sont obtenues en pressant les zestes d'une orange et d'un citron respectivement.
+  \end{doc}
+}[0.305]{
+  %%
+  \begin{doc}{Odorat et molécules odorantes}{doc:TP4_molecules_odorantes}
+    Chez les humains, Les molécules odorantes sont captées par des neurones de l’épithélium olfactif,
+    puis ces neurones transmettent l'information nerveuse au cerveau qui y associe une odeur.
+  
+    Voilà quelques exemples de molécules odorantes :
+    \begin{listePoints}
+      \item le \important{limonène} (LIM), est associé à une odeur d'orange.
+      \item le \important{linalol} (LIN), est associé à une odeur fraiche et florale.
+      \item le \important{géraniol} (G), est associé à une odeur de rose.
+      \item le \important{citral} (C), est associé à une odeur de citron.
+    \end{listePoints}
+  \end{doc}
+}[0.695]
+
 
 %%%%
-\begin{doc}{Réalisation d'une CCM}{doc:}
+\question{
+  Quelles molécules odorantes peut-on trouver dans l'huile essentiel de citron et d'orange ?
+}{
+}{2}
+
+\begin{doc}{Résultat d'une CCM}{doc:TP4_chromatogramme}
+  On a réalisé deux CCM pour déterminer la composition des huiles essentielles d'orange et de citron.
+  \begin{multicols}{2}
+    \centering
+    \image{0.5}{images/donnees/chromato_HEC}
+    
+    \image{0.5}{images/donnees/chromato_HEO}
+  \end{multicols}
   
-  \separationTroisBlocs{
-    \begin{center}
-      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_cuve.png}
-    \end{center}
-    
-    \vspace*{-12pt}
-    Remplir jusqu'à environ 0,5 cm de hauteur d'éluant la cuve à CCM.
-  }{
-    \begin{center}
-      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_trait.png}
-    \end{center}
-    
-    \vspace*{-12pt}
-    À environ 1 cm du bord inférieur, tracer au crayon à papier un trait fin.
-    Vérifier que le trait est au-dessus du niveau de l'éluant.
-  }{
-    \begin{center}
-      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_depot.png}
-    \end{center}
-    
-    \vspace*{-12pt}
-    Marquer les emplacements des échantillons à déposer.
-    Prélever chaque échantillon avec un cure dent et les déposer sur l'emplacement prévu.
-  }
-  
-  \bigskip
-  
-  \separationBlocs{
-    \begin{center}
-      \includegraphics[height=0.25\textheight]{images/chimie/CCM/CCM_etapes_ajout.png}
-    \end{center}
-    
-    \vspace*{-12pt}
-    Introduire délicatement la plaque dans la cuve en la tenant par les côtés.
-    Refermer la cuve.
-    \textbf{Ne jamais déplacer la cuve} et attendre que l'éluant monte.
-  }{
-    \begin{center}
-      \includegraphics[height=0.25\textheight]{images/chimie/CCM/CCM_etapes_retrait}
-    \end{center}
-    
-    \vspace*{-12pt}
-    Quand le front de l'éluant s'approche du bord supérieur, sortir la plaque.
-    Tracer immédiatement une ligne indiquant la hauteur où l'éluant est monté.
-  }
 \end{doc}
 
-
-%%%% questions
 \question{
-  Placer quelques gouttes de sirop vert dans un bécher de $50\unit{mL}$. Ajouter environ $10\unit{mL}$ d'eau distillée et agiter.\competence{REA}
-}{}{0}
+  En analysant les chromatogramme, donner la composition de l'HEC et l'HEO.
+}{
 
-\question{
-  Réaliser le protocole du document 3, avec un dépôt de colorant jaune, un dépôt de colorant bleu et  et un dépôt de la solution préparée à la question 1.\competence{REA}
-}{}{0}
-
-\question{
-  Coller ici le chromatogramme \textbf{sec} et entourer les différentes tâches au crayon à papier.\competence{REA}
-}{}{0}
-\vspace*{240pt}
-
-\question{
-  Pourquoi doit-on placer la ligne de dépôt au dessus du niveau de l'éluant ?\competence{ANA/RAI}
-}{}{2}
-
-\question{
-  Pourquoi ne doit-on pas déplacer la cuve pendant la montée de l'éluant ?\competence{ANA/RAI}
-}{}{2}
-
-\question{
-  En analysant le chromatogramme à l'aide du document 2, indiquer si les échantillons sont des corps purs ou des mélanges.\competence{APP}
-}{}{3}
-
-\question{
-  En utilisant le chromatogramme, que contient le colorant vert du sirop ? Justifier avec des arguments simples.\competence{APP, VAL}
-}{}{2}
+}{5}

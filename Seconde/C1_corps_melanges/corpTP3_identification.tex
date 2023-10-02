@@ -35,9 +35,7 @@
 
 \begin{doc}{Propriétés physiques de quelques métaux}{doc:TP3_proprietes_metaux}
   \centering
-  \begin{tblr}{
-    hlines, colspec = {|c |c |c |}, row{1} = {couleurPrim!20}
-  }
+  \begin{tableau}{|c |c |c |}
     Métal
     & Aspect à $T = \qty{20}{\degreeCelsius}$ 
     & Masse volumique (\unit{\g/\cubic\cm}) \\
@@ -46,7 +44,7 @@
     Cuivre    & Solide orange brillant & \num{8,960} \\
     Zinc      & Solide gris sombre     & \num{7,150} \\
     Fer       & Solide gris brillant   & \num{7,860}
-  \end{tblr}
+  \end{tableau}
 \end{doc}
 
 \begin{doc}{Volume d'un parallélépipède rectangle}{doc:TP3_volume parallelepipede}
@@ -99,10 +97,8 @@
   \begin{multicols}{3}
     \centering
     \textbf{Vichy St Yorre} \\
-    \begin{tblr}{
-      hlines, colspec = {l r}, row{1} = {couleurPrim!20}
-    }
-      \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+    \begin{tableau}{l | r}
+      \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
       \ionBicarbonate & \num{4368} \\
       \ionChlorure    & \num{322}  \\
       \ionSodium      & \num{1708} \\
@@ -111,14 +107,12 @@
       \ionCalcium     & \num{90}   \\
       \ionFluorure    & \num{1}    \\
       \ionMagnesium   & \num{11}   \\
-    \end{tblr}
+    \end{tableau}
 
     %
     \textbf{Mont Roucous\vphantom{p}} \\
-    \begin{tblr}{
-      hlines, colspec = {l r}, row{1} = {couleurPrim!20}
-    }
-      \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+    \begin{tableau}{l | r}
+      \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
       \ionBicarbonate & \num{1} \\
       \ionChlorure    & \num{2}  \\
       \ionSodium      & \num{3,2}  \\
@@ -127,14 +121,12 @@
       \ionCalcium     & \num{2,7}  \\
       \ionNitrate     & \num{1,8}  \\
       \ionMagnesium   & \num{0,3}  \\
-    \end{tblr}
+    \end{tableau}
     
     %
     \textbf{Cristalline\vphantom{p}} \\
-    \begin{tblr}{
-      hlines, colspec = {l r}, row{1} = {couleurPrim!20}
-    }
-      \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+    \begin{tableau}{l | r}
+      \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
       \ionBicarbonate & \num{228} \\
       \ionChlorure    & \num{15}    \\
       \ionSodium      & \num{8,4}  \\
@@ -143,14 +135,12 @@
       \ionCalcium     & \num{549}   \\
       \ionNitrate     & < \num{1}   \\
       \ionMagnesium   & \num{6,9}   \\
-    \end{tblr}
+    \end{tableau}
 
     %
     % \textbf{Volvic\vphantom{p}} \\
-    % \begin{tblr}{
-    %   hlines, colspec = {l r}, row{1} = {couleurPrim!20}
-    % }
-    %   \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+    % \begin{tableau}{l | r}
+    %   \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
     %   \ionBicarbonate & \num{65,3} \\
     %   \ionChlorure    & \num{8,4}  \\
     %   \ionSodium      & \num{9,4}  \\
@@ -159,14 +149,12 @@
     %   \ionCalcium     & \num{9,9}  \\
     %   \ionNitrate     & \num{6,3}  \\
     %   \ionMagnesium   & \num{6,1}  \\
-    % \end{tblr}
+    % \end{tableau}
     % 
     % %
     % \textbf{Hépar} \\
-    % \begin{tblr}{
-    %   hlines, colspec = {l r}, row{1} = {couleurPrim!20}
-    % }
-    %   \SetCell[c=2]{c} Minéralisation \qty{1}{\mg} pour \qty{1}{\litre} \\
+    % \begin{tableau}{l | r}
+    %   \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
     %   \ionBicarbonate & \num{383,7} \\
     %   \ionChlorure    & \num{11}    \\
     %   \ionSodium      & \num{14,2}  \\
@@ -175,7 +163,7 @@
     %   \ionCalcium     & \num{549}   \\
     %   \ionNitrate     & \num{4,3}   \\
     %   \ionMagnesium   & \num{119}   \\
-    % \end{tblr}
+    % \end{tableau}
   \end{multicols}
 \end{doc}
 
@@ -183,9 +171,7 @@
 %%%%
 \begin{doc}{Tests caractéristiques de certains ions}{doc:TP3_tests_ions}
   \begin{center}
-    \begin{tblr}{
-      hlines, colspec = {| c | c | c |}, row{1} = {couleurPrim!20}
-    }
+    \begin{tableau}{| c | c | c |}
       Ion à tester &
       Réactif utilisé &
       Résultat du test positif \\
@@ -205,7 +191,7 @@
       \ionMagnesium &
       Solution d'hydroxyde de sodium &
       Précipité blanc
-    \end{tblr}
+    \end{tableau}
     
     \bigskip
     * Le précipité blanc noircit à la lumière.
@@ -226,15 +212,13 @@ Réaliser le protocole suivant :
 \end{protocole}
 
 \begin{center}
-  \begin{tblr}{
-    hlines, colspec = {|l | c | c | c|}, row{1} = {couleurPrim!20}
-  }
+  \begin{tableau}{|l | c | c | c|}
     Test réalisé & Bécher A & Bécher B & Bécher C \\
     Nitrate d'argent    & & & \\
     Chlorure de baryum  & & & \\
     Oxalate d'ammonium  & & & \\
     Hydroxyde de sodium & & &
-  \end{tblr}
+  \end{tableau}
 \end{center}
 
 \question{
