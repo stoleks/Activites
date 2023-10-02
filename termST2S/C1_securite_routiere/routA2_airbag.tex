@@ -1,0 +1,118 @@
+%%%%
+\teteTermStssRout
+
+%%%% titre
+\numeroActivite{2}
+\vspace*{-0pt}
+\nomPrenomClasse
+\titreActivite{Principe de fonctionnement d'un airbag}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Étudier le fonctionnement d'un airbag
+\end{objectifs}
+
+
+%%%% docs
+\begin{doc}{Utilité d'un airbag}{doc:A2_fonction_airbag}
+  \begin{wrapfigure}{r}{0.5\linewidth}  
+    \centering
+    \vspace*{-24pt}
+    \image{1}{images/securite/ouverture_airbag} \\
+    \small{Ouverture d'un airbag}
+  \end{wrapfigure}
+  
+  Les airbags sont utilisés dans les voitures, pour protéger les passagers en cas de choc violent.
+  L'airbag permettrait d'obtenir jusqu'à \qty{25}{\percent} de personnes tuées en moins sur les routes.
+  Pour protéger efficacement les passagers, l'airbag doit se gonfler en une fraction de seconde.
+\end{doc}
+
+%%
+\begin{doc}{Accéléromètre}{doc:A2_accelerometre}
+  Un accéléromètre est un dispositif qui permet de détecter des variations de vitesse.
+  En cas de choc la voiture passe de sa vitesse de croisière à une vitesse nulle en très peu de temps.
+  La décélération, alors très importante, est détectée par l'accéléromètre, qui transmet un signal électrique au détonateur, ce qui déclenche une suite de réactions chimiques dont l'un des produits est le gaz servant à gonfler l'airbag.
+  Ce processus est extrêmement rapide : il prend environ \qty{0,1}{\s}.
+\end{doc}
+
+\begin{doc}{Réaction chimiques servant à gonfler un airbag}{doc:A2_reaction_chim_airbag}
+  Le détonateur enclenche d'abord la décomposition extrêmement rapide (explosive) de l'azoture de sodium solide \chemfig{NaN_3}(s) en sodium solide \chemfig{Na}(s) et diazote gazeux \chemfig{N_2}(s) selon la réaction (1) d'équation :
+  \begin{equation}
+    2 \chemfig{NaN_3}(s) \reaction 2\chemfig{Na}(s) + 3\chemfig{N_2}(g)
+  \end{equation}
+  
+  Le sodium, dangereux, est éliminé au fur et à mesure de sa formation selon la réaction (2) d'équation :
+  \begin{equation}
+    10\chemfig{Na}(s) + 2\chemfig{KNO_3}(s) \reaction \chemfig{K_2O}(s) + 5 \chemfig{Na_2O}(s) + \chemfig{N_2}(g)
+  \end{equation}
+
+  Puis \chemfig{K_2O} et \chemfig{Na_2O} sont consommés à leur tour par la silice \chemfig{SiO_2} selon les réactions (3) et (4) d'équation :
+  \begin{align}
+    \chemfig{K_2O} + \chemfig{Na_2O} + \chemfig{SiO_2} &\reaction \chemfig{K_2 Na_2 SiO_4} \\
+    2\chemfig{Na_2 O} + \chemfig{SiO_2} &\reaction \chemfig{Na_4SiO_4}
+  \end{align}
+\end{doc}
+
+
+\begin{doc}{Danger des espèces chimiques intervenant dans le gonflement d'un airbag}{doc:A2_danger_substances}
+  \begin{tblr}{
+    hlines, vlines, row{1} = {couleurPrim!20}, width = \linewidth,
+    colspec = {X[c,m] X[2,c,m] X[c,m] X[c,m] X[c,m] X[c,m] X[1, c,m] X[c,m]}
+  }
+    \chemfig{NaN_3} & \chemfig{Na} &
+    \chemfig{N_2} & \chemfig{KNO_3} &
+    \chemfig{K_2O} et \chemfig{Na_2O} & \chemfig{SiO_2} &
+    \chemfig{K_2Na_2} \chemfig{SiO_4} & \chemfig{Na_4 SiO_4} \\
+    %
+    très toxique & s'enflamme au contact l'eau &
+    inoffensif & irritant &
+    corrosif & inoffensif &
+    inoffensif & inoffensif 
+  \end{tblr}
+  Tant que l’airbag ne s’est pas gonflé, l'azoture de sodium est inaccessible, donc sans danger.
+  À la fin du gonflage, tous les produits restants sont inoffensifs.
+\end{doc}
+
+\textbf{Données :}
+
+M(\chemfig{N})  = \qty{14}{\g/\mole}, 
+M(\chemfig{O})  = \qty{16}{\g/\mole},
+M(\chemfig{Na}) = \qty{23}{\g/\mole},
+M(\chemfig{K})  = \qty{39,1}{\g/\mole},
+M(\chemfig{Si}) = \qty{28,1}{\g/\mole}
+
+%%%%
+\newpage
+\vspace*{-24pt}
+\question{
+  Donner le nom et la formule brute du gaz utilisé pour gonfler un airbag.
+}{}{2}
+
+\question{
+  Préciser l'intérêt de la réaction chimique (2).
+}{
+}{3}
+
+\question{
+  Préciser la nécessité d'utiliser la silice.
+}{}{3}
+
+\question{
+  L'airbag du conducteur contient \qty{70}{\litre} de gaz dans des conditions de températures et de pressions telles que le volume molaire est égal à $V_m = \qty{30}{\litre\per\mole}$. \\
+  Calculer en moles la quantité de matière de gaz produit pour remplir l'airbag.
+}{}{4}
+
+\question{
+  Sachant que les équations des réaction (1) et (2) peuvent être réduite à l'équation suivante
+  \begin{equation*}
+    10 \chemfig{NaN_3}(s) + 2 \chemfig{KNO_3}(s) \reaction \chemfig{K_2 O}(s) + 5\chemfig{Na_2 O}(s) + 16\chemfig{N_2}(g)
+  \end{equation*}
+  En déduire la quantité de matière initiale d'azoture de sodium qu'il a fallu introduire pour obtenir les \qty{70}{\litre} de gaz du coussin d'air.
+}{
+}{8}
+
+\question{
+  En déduire la masse de \chemfig{NaN_3} présente initialement dans l’airbag.
+}{
+}{3}
