@@ -240,14 +240,14 @@
     \footnotesize #2
   }
 }
-\newcommand{\enTete}[2]{
+\newcommand{\enTete}[3]{
   \pagestyle{fancy}
-  \setcounter{section}{#2}
+  \setcounter{section}{#3}
   \setcounter{subsection}{0}
   \setcounter{sousSectionNum}{0}
   \teteGauche{\etablissement{}}{Chapitre \arabic{section} -- #1} % left header
   \chead{} % central header
-  \teteDroite{\annee{}}{\classe{}} % right header
+  \teteDroite{\annee{}}{#2} % right header
 }
 %
 \newcommand{\enTeteFicheReussite}[1]{
@@ -464,7 +464,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Tableau générique avec la première ligne bleue
 \NewDocumentEnvironment{tableau}{m}{
-  \centering
+  \begin{center}
   \begin{tblr}{
     hlines,
     colspec = #1,
@@ -472,6 +472,7 @@
   }
 }{
   \end{tblr}
+  \end{center}
 }
 
 %%%% Tableau de competence

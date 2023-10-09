@@ -1,0 +1,163 @@
+%%%% début de la page
+\teteSndSolu
+
+%%%% titre
+\vspace*{-36pt}
+\numeroActivite{1}
+\titreTP{Dosage du sucre par étalonnage}
+
+%%%% objectifs
+\begin{objectifs}
+  \item Apprendre le vocabulaire sur les solutions.
+  \item Comprendre la notion de concentration massique
+  \item Comprendre le principe de la dilution et de la dissolution
+\end{objectifs}
+
+
+%%%% contexte
+\begin{contexte}
+  Le sucre couramment présent dans notre alimentation est le saccharose.
+  Cette espèce chimique peut entraîner des risques pour la santé si on en consomme trop.
+  Il est donc important de pouvoir déterminer la quantité de sucre consommée par jour.
+
+  \problematique{Comment déterminer la masse de saccharose présent dans un sirop ?}
+\end{contexte}
+
+
+%%%% documents
+\begin{doc}{Solution, solvant et soluté}{doc:TP1_solution}
+  \begin{encart}
+    \chevron Une \important{solution} est un mélange homogène. \\
+    Le \important{solvant} est le composant majoritaire du mélange.
+    Les \important{solutés} sont les espèces qui sont dispersées dans le solvant.
+  \end{encart}
+  
+  \begin{center}
+    \important{Solvant + Soluté(s) = Solution}
+  \end{center}
+  
+  \begin{encart}
+    On parle de \important{solution aqueuse} si le solvant est l'eau \chemfig{H_2 O}.
+  \end{encart}
+\end{doc}
+
+\begin{doc}{Composition d'un sirop}{doc:TP1_sirop}
+  Le constructeur annonce que le sirop est composé d'\textit{eau}, de \textit{sucre} de \textit{jus de citron} et d'\textit{acide citrique} principalement.
+\end{doc}
+
+
+\question{
+  Donner le solvant et les solutés présents dans le sirop.
+}{}{2}
+
+
+%%%%
+\begin{doc}{Concentration en soluté}{doc:TP1_concentration}
+  \begin{encart}
+    La \important{concentration massique $\mathbf{c}$} mesure la quantité de soluté présent dans une solution.
+    C'est le rapport de la masse $m$ de \textbf{soluté} dissous dans le volume $V$ de la \textbf{solution}
+    \begin{equation*}
+      c = \frac{m_\text{soluté}}{V_\text{solution}}
+    \end{equation*} 
+  \end{encart}
+  % \attention Il faut bien distinguer \textbf{concentration massique} et \textbf{masse volumique}.
+  % La concentration mesure la masse de soluté contenue dans une solution.
+  % La masse volumique mesure la masse d'un échantillon contenue dans un volume donné.
+\end{doc}
+
+
+\begin{doc}{Dissolution du sucre dans l'eau}{doc:TP1_protocole_dissolution}
+  \begin{protocole}
+      \item Peser une masse donnée de sucre avec une balance de précision.
+      \item Mettre le sucre dans une fiole jaugée de 50 mL.
+      \item Compléter la fiole jaugée jusqu'à mi-hauteur avec de l'eau distillée, agiter.
+      \item Compléter jusqu'au trait de jauge avec de l'eau distillée.
+      \item Verser le mélange dans un bêcher de 100 mL.
+  \end{protocole}
+\end{doc}
+
+
+%%%% questions
+\newpage
+\vspace*{-28pt}
+
+\mesure
+En utilisant le Document~\ref{doc:TP1_protocole_dissolution}, préparer un mélange de \qty{50}{\ml} d'eau et de de sucre.
+
+\mesure
+Mesurer et noter la masse volumique du mélange préparé $\rho =$ \texteTrou[0.1]{\qty{0,15}{\g/\ml}}
+
+\question{
+  Calculer la concentration massique de sucre dans la solution aqueuse préparé.
+}{}{1}
+
+
+%%%%
+\begin{doc}{Mesure de concentration}{doc:TP1_dosage}
+  \begin{encart}
+    On parle de \important{dosage} quand on mesure la concentration d'une espèce chimique présente dans une solution.
+  \end{encart}
+  \begin{encart}
+    Un \important{dosage par étalonnage} consiste à déterminer la concentration d’une espèce chimique en comparant une grandeur physique caractéristique de la solution, à la même grandeur physique mesurée pour des solutions étalon.
+  \end{encart}
+\end{doc}
+ 
+\numeroQuestion 
+En utilisant le papier millimétré, tracer la masse volumique en fonction de la concentration massique de sucre dans l'eau.
+
+\numeroQuestion
+  En déduire la concentration massique de sucre dans la sirop $c_\text{sirop} =$ \texteTrou[0.1]{\qty{0,6}{\g/\ml}}
+
+
+%%%%
+\begin{doc}{Principe d'une dilution}{doc:TP1_principe_dilution}
+  \begin{wrapfigure}[5]{r}{0.5\linewidth}
+    \vspace*{-48pt}
+    \centering
+    \begin{multicols}{4}
+    \image{1}{images/chimie/protocoles/dilution0001} \\[-12pt]
+    \footnotesize{$S_0$}
+    
+    \image{1}{images/chimie/protocoles/dilution0002}
+    
+    \image{1}{images/chimie/protocoles/dilution0003}
+    
+    \image{1}{images/chimie/protocoles/dilution0004} \\[-12pt]
+    \footnotesize{$S_1$}
+    \end{multicols}
+  \end{wrapfigure}
+  \vAligne{-40pt}
+  
+  \begin{encart}
+    Le principe de la \important{dilution} est de \important{diminuer la concentration} en soluté dans une solution en rajoutant du \important{solvant.}
+  \end{encart}
+  La solution de départ est appelée \important{solution mère}, notée $S_0$.
+  La solution obtenue après dilution est appelée \important{solution fille}, notée $S_1$.
+
+  Pour diluer une solution, il faut
+  \begin{protocole}
+    \item Prélever un volume $V_0$ de la solution à l'aide de la pipette graduée.
+    Le bas du ménisque doit atteindre la graduation supérieure.
+    \item Introduire la solution prélevée dans la fiole jaugée de volume $V_1$.
+    \item Ajouter de l'eau distillée dans la fiole jaugée jusqu'aux $2/3$ et agiter doucement. Compléter jusqu'à ce que le bas du ménisque atteigne le trait de jauge.
+    \item Fermer la fiole et l'agiter en la retournant plusieurs fois.
+    \item Verser la solution fille obtenue dans un bécher.
+  \end{protocole}
+\end{doc}
+
+
+%%%%
+\begin{doc}{Facteur de dilution}{doc:TP1_dilution}  
+  Le \important{facteur de dilution} est le rapport du volume de la solution fille sur le volume de la solution mère
+  \begin{equation*}
+    F = \frac{V_\text{1}}{V_\text{0}}
+  \end{equation*}
+  On dit qu'on a dilué $F$ fois une solution.
+\end{doc}
+
+\mesure 
+Diluer 2 fois le sirop et mesurer sa masse volumique. 
+
+\numeroQuestion
+En en déduire la concentration massique en sucre.
+Que constatez-vous ?

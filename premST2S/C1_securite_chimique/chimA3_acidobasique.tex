@@ -1,0 +1,130 @@
+%%%%
+\tetePremStssChim
+
+%%%% titre
+\numeroActivite{3}
+\titreActivite{Entretien des cheveux}
+
+\begin{objectifs}
+  \item Définir un acide et une base selon le modèle de Br\o{}nsted
+  \item Écrire l’équation d’une réaction acido-basique à partir des couples acide/base.
+\end{objectifs}
+
+\begin{contexte}
+  Sur certains sites de beauté, il est conseillé d’utiliser du vinaigre de cidre et du bicarbonate de soude pour entretenir ses cheveux.
+  Inès, âgée de 8 ans, se verse les deux produits sur les cheveux sans les diluer.
+  Catastrophe ! Une émulsion gazeuse se forme aussitôt sur sa tête !
+
+  \problematique{
+    Que s'est-il passé quand le bicarbonate de soude et le vinaigre de cidre se sont mélangés ?
+  }
+\end{contexte}
+
+\begin{doc}{Le modèle de Br\o{}nsted}{doc:A3_modele_bronsted}
+  \begin{wrapfigure}[3]{r}{0.1\linewidth}
+    \qrcode{https://www.youtube.com/watch?v=EztCKi3oJEI}
+  \end{wrapfigure}
+
+  Joannes Nicolaus Br\o{}nsted est un chimiste danois du début du 20ème siècle.
+  Il est connu pour sa définition des substances acides et basiques : 
+  \begin{encart}    
+    \begin{listePoints}
+      \item Un acide est une molécule capable de donner un ion \chemfig{H^+} (un proton)
+      \item Une base est une molécule qui reçoit un ion \chemfig{H^+}
+    \end{listePoints}
+  \end{encart}
+  
+  L'acide noté \chemfig{AH}, se transforme en sa base conjuguée notée \chemfig{A^{-}} en perdant un proton \chemfig{H^+}.
+  La base conjuguée \chemfig{A^{-}} se transforme en l'acide \chemfig{AH} quand elle capte un proton \chemfig{H^+}.
+
+  \begin{encart}
+    On parle de couple acide/base noté ici \chemfig{AH}/\chemfig{A^{-}}.    
+  \end{encart}
+  \attention l'acide est toujours à gauche et la base est toujours à droite.
+
+  \exemple
+  \texteTrouLignes{\chemfig{HCl}/\chemfig{Cl^{-}}, l'acide est \chemfig{HCl} et la base \chemfig{Cl^{-}} est dans ce couple.}
+\end{doc}
+
+\question{
+  Indiquer l'acide et la base du couple acide/base \chemfig{H_2O}/\chemfig{HO^{-}}.
+}{}{1}
+
+\begin{doc}{Réaction acido-basique}{doc:A3_acido_basique}
+  \begin{encart}  
+    Lors d'une réaction chimique acido-basique, l'acide d'un couple réagit avec la base d'un autre couple.
+  \end{encart}
+  
+  \exemple On a deux couples : \chemfig{H_3O^{+}}/\chemfig{H_2O} et \chemfig{NH_4^{+}}/\chemfig{NH_3}.
+
+  Si on mélange les ions oxonium \chemfig{H_3 O^{+}}, un acide, avec l'ammoniac \chemfig{NH_3}, une base, on va avoir une réaction chimique
+  \vspace*{-12pt}
+  \begin{center}
+    \chemfig{H_3O^{+}} + \chemfig{NH_3} \reaction \chemfig{H_2O} + \chemfig{NH_4^{+}}
+  \end{center}
+\end{doc}
+
+\question{
+  Établir la réaction acido-basique entre le couple \chemfig{H_3O^{+}}/\chemfig{H_2O} et le couple \chemfig{H_2O}/\chemfig{HO^{-}}.  
+}{}{2}
+
+%%
+\newpage
+\vspace*{-40pt}
+
+\begin{doc}{Le bicarbonate de soude}{doc:A3_bicarbonate}
+  \begin{wrapfigure}{r}{0.2\linewidth}
+    \vspace*{-38pt}
+    \centering
+    \image{0.63}{images/photos/bicarbonate}
+  \end{wrapfigure}
+  Le bicarbonate de sodium ou bicarbonate de soude (abus de langage) est nommé hydrogénocarbonate de sodium en nomenclature moderne.
+  C’est un composé chimique dont la formule brute est \chemfig{NaHCO_3}.
+  Il se présente sous la forme de fins cristaux blancs, solubles dans l’eau, qui forme les ions sodium \chemfig{Na^+} et hydrogénocarbonate \chemfig{HCO_3^{-}} en solution.
+\end{doc}
+
+\begin{doc}{Le vinaigre de cidre}{doc:A3_vinaigre}
+  \begin{wrapfigure}{l}{0.2\linewidth}
+    \vspace*{-22pt}
+    \centering
+    \image{0.65}{images/photos/vinaigre}
+  \end{wrapfigure}
+  Le vinaigre est une solution aqueuse à faible concentration en acide éthanoïque de
+  formule \chemfig{CH_3COOH}, qui rentre principalement dans l'alimentation humaine comme condiment et conservateur alimentaire. 
+  Le vinaigre résulte d'une transformation d'une solution aqueuse d'éthanol (le vin ou ici le cidre) exposée à l'air, et fermenté à l’aide de micro-organisme.
+  Cela explique son étymologie de \og vin aigre \fg\; devenu \og vinaigre \fg.
+  Le vinaigre de cidre à 8° comporte \qty{8}{\g} d’acide éthanoïque par litre de solution
+\end{doc}
+
+\begin{doc}{Couples acide/base à connaitre}{doc:A3_couple_acide_base}
+  \begin{tblr}{
+    hlines, colspec = {|X[c,m] |c |X[c,m] |c |X[c,m] |},
+    row{1} = {couleurPrim!20},
+    row{2} = {couleurPrim!10},
+    width = \linewidth,
+  }
+    & \SetCell[c=2]{c} Forme acide & & \SetCell[c=2]{c} Forme basique \\
+    Couple acide/base & Formule brute & Nom & Formule brute & Nom \\
+    \chemfig{H_3O^+}/\chemfig{H_2O}         & \chemfig{H_3O^+} & ion oxonium          & \chemfig{H_2O} & eau \\
+    \chemfig{H_2O}/\chemfig{HO^{-}}         & \chemfig{H_2O} & eau                    & \chemfig{HO^{-}} & ion hydroxyde \\
+    \chemfig{HCl}/\chemfig{Cl^{-}}          & \chemfig{HCl} & acide chlorhydrique     & \chemfig{Cl^{-}} & ion chlorure \\
+    {\chemfig{CH_3COOH}/\\    
+    \chemfig{CH_3COO^{-}}}                  & \chemfig{CH_3COOH} & acide éthanoïque   & \chemfig{CH_3COO^{-}} & ion éthanoate \\
+    \chemfig{H_2CO_3}/\chemfig{HCO_3^{-}}   & \chemfig{H_2CO_3} & acide carbonique    & \chemfig{HCO_3^{-}} & ion hydrogéno-carbonate \\
+    \chemfig{HCO_3^{-}}/\chemfig{CO_3^{2-}} & \chemfig{HCO_3^{-}} & ion hydrogéno-carbonate & \chemfig{CO_3^{2-}} & ion carbonate \\
+    \chemfig{NH_4^+}/\chemfig{NH_3}         & \chemfig{NH_4^+} & ion ammonium         & \chemfig{NH_3} & ammoniac \\
+  \end{tblr}
+\end{doc}
+
+\question{
+  En utilisant les documents~\ref{doc:A3_bicarbonate},~\ref{doc:A3_vinaigre} et~\ref{doc:A3_couple_acide_base}, donner les couples acide/base composant le bicarbonate de soude et présent dans le vinaigre de cidre.
+}{}{2}
+
+\question{
+  Établir la réaction acido-basique qui a lieue quand on mélange du bicarbonate de soude et du vinaigre de cidre.
+}{}{2}
+
+\question{
+  En pratique, l'acide carbonique se décompose spontanément en eau et en dioxyde de carbone.
+  Modifier la réaction acido-basique en conséquence.
+}{}{1}

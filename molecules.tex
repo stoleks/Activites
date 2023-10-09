@@ -7,7 +7,7 @@
 
 %% Quelques groupes caractéristiques
 \definesubmol\carboxyle{(=[:90] O) (-[:-30] OH)}
-\definesubmol\carbonyle{(=[:90] O) -[:-30]}
+\definesubmol\carbonyle{(=[::60] O) -[::-60]}
 \definesubmol\ester{(=[:90] O) -[:-30] O}
 \definesubmol\ether{-[:30] O -[:-30]}
 \definesubmol\amide{(=[:90] O) -[:-30] N}
@@ -23,3 +23,38 @@
 \newcommand{\carbone}{\chemfig{C}}
 \newcommand{\oxygene}{\chemfig{O}}
 \newcommand{\azote}{\chemfig{N}}
+\newcommand{\oxonium}{\chemfig{H_3O^+}}
+
+
+%%%% Acide gras
+\definesubmol\cc{
+  -[::60] -[::-60]
+}
+\definesubmol\teteAcide{
+  O-[::30] (=[::60]O) -[::-60]
+}
+\definesubmol\cis{
+  -[::60] =[::-60] -[::-60]
+}
+\definesubmol\trans{
+  -[::60] =[::-30] -[::-30]
+}
+\definesubmol\palmitique{
+  !\teteAcide !\cc !\cc !\cc !\cc !\cc !\cc !\cc
+}
+\definesubmol\oleique{
+  !\teteAcide !\cc !\cc !\cc !\cis -[::60] !\cc !\cc !\cc
+}
+\definesubmol\trioleique{
+  !\carbonyle !\cc !\cc !\cc -[::60] =[::60] -[::60] !\cc !\cc -[::-60] -[::-60] -[::-60]
+}
+\definesubmol\alphaLinoleique{
+  !\teteAcide !\cc !\cc !\cc !\trans !\trans !\trans -[::60]
+}
+\definesubmol\trioleine{
+   (-[::150] -[::60] O-[::-60] !\trioleique)
+   (-[::-90] -[::-60] O-[::60] !\trioleique)
+   -[::30] O-[::60] !\trioleique
+}
+%% glycerol
+\definesubmol\glycerol{HO -[-1] -[1] (-[3] OH) -[-1] -[1] OH}

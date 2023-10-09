@@ -1,0 +1,84 @@
+%%%%
+\teteSndCorp
+
+%%%% titre
+%\vspace*{-36pt}
+\numeroActivite{2}
+\titreActivite{Mesure de la masse volumique de l'air}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Calculer la masse volumique de l'air.
+\end{objectifs}
+
+\begin{contexte}
+  L'atmosphère est un mélange de plusieurs gaz : dioxygène, diazote, dioxyde de carbone, etc.
+  
+  \problematique{
+    Comment calculer la masse volumique de l'air à partir de sa composition ou d'une expérience ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Mesure de la masse volumique de l'air}{doc:A2_masse_volumique_air}
+  \begin{wrapfigure}{r}{0.1\linewidth}
+    \vspace*{-29pt}
+    \qrcode{https://www.youtube.com/watch?v=isEo51ncsKU&t=26s}
+  \end{wrapfigure}
+  On peut mesurer la masse volumique de l'air en dégonflant un ballon dans une bouteille d'eau.
+  La bouteille d'eau permet de mesurer le volume d'air expulsé.
+  En pesant le ballon avant et après le dégonflage, on peut calculer la masse d'air expulsée.
+\end{doc}
+
+\numeroQuestion 
+Schématiser les 3 étapes de l'expérience réalisée.
+\vspace*{200pt}
+
+\numeroQuestion
+Remplir le tableau ci-dessous 
+\begin{tableau}{|c |c |c |c |}
+  Grandeur & Masse du ballon plein $m_1 $ & Masse du ballon dégonflé $m_2$ & Volume d'air expulsé $V$ \\
+  \SetCell{couleurPrim!10} Valeur & \vphantom{$\dfrac{1}{2}$} & &
+\end{tableau}
+
+\question{
+  Calculer la masse volumique mesurée $\rho_\text{mes}(\text{air})$.
+}{}{3}
+
+%%
+\begin{doc}{Masse volumique d'un mélange}{doc:A2_composition_atmo}
+  Pour un mélange de gaz, la masse volumique du mélange est simplement la somme des masses volumique de chaque gaz pondérée par la fraction volumique de chaque gaz du mélange.
+
+  Pour l'air, on aura donc
+  \begin{equation*}
+    \rho(\text{air}) = p_v(\chemfig{O_2}) \rho(\chemfig{O_2}) + p_v(\chemfig{N_2}) \rho(\chemfig{N_2}) + p_v(\chemfig{Ar}) \rho(\chemfig{Ar}) + p_v(\chemfig{CO_2}) \rho(\chemfig{CO_2})
+  \end{equation*}
+\end{doc}
+
+\newpage
+\question{
+  Rappeler les fractions volumique des gaz composant l'air (\chemfig{O_2}, \chemfig{N_2}, \chemfig{CO_2}, \chemfig{Ar}).
+}{}{2}
+
+\begin{doc}{Masse volumique des gaz composant l'air}{doc:A2_masse_volumique_air}
+  \textbf{Données :}
+  \begin{listeTirets}
+    \item Masse volumique du \chemfig{CO_2} gazeux : $\rho(\chemfig{CO_2}) = \qty{1,87}{\g/\litre}$.
+    \item Masse volumique du \chemfig{O_2}  gazeux : $\rho(\chemfig{O_2})  = \qty{1,35}{\g/\litre}$.
+    \item Masse volumique du \chemfig{N_2}  gazeux : $\rho(\chemfig{N_2})  = \qty{1,18}{\g/\litre}$.
+    \item Masse volumique de \chemfig{Ar}   gazeux : $\rho(\chemfig{Ar})   = \qty{1,78}{\g/\litre}$.
+  \end{listeTirets}
+\end{doc}
+
+
+%%%%
+\question{
+  Calculer la masse volumique théorique de l'air $\rho_\text{theo}(\text{air})$.
+}{
+}{4}
+
+\question{
+  Comparer la valeur théorique et la valeur mesurée. Est-ce qu'elles sont égales ? Est-ce qu'elles sont cohérentes ?
+}{}{2}

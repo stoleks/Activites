@@ -1,0 +1,134 @@
+%%%%
+\tetePremStssChim
+
+%%%% titre
+\vspace*{-36pt}
+\numeroActivite{4}
+\titreTP{Solutions acides et basiques}
+
+\begin{objectifs}
+  \item Connaître la relation $[\oxonium] = 10^{-pH}$
+  \item Savoir mesurer le pH d'une solution
+\end{objectifs}
+
+
+%%%% Activité
+\begin{contexte}
+  Le vinaigre blanc, l'eau de javel ou simplement l'eau du robinet peuvent servir à l'entretien de la maison.
+  Ces solutions aqueuses n'ont pas les mêmes propriétés, notamment parce qu'elles n'ont pas le même pH.
+
+  \problematique{
+    Comment mesurer le pH de ces solutions ? Quelles informations apporte-t-il ?
+  }
+\end{contexte}
+
+
+%%%% Documents 
+\begin{doc}{Le pH des solutions aqueuses}{doc:TP4_pH_aqueuse}
+  \begin{wrapfigure}[3]{r}{0.1\linewidth}
+    \qrcode{https://www.youtube.com/watch?v=hJ4y2B8ueUo}
+  \end{wrapfigure}
+  
+  Sur les étiquettes d'eau minérales, on peut lire le pH suivi d'une valeur voisine de 7.
+  Le pH est une grandeur qui se mesure et qui \textbf{n'a pas d'unité}.
+  
+  \begin{encart}
+    Pour les solutions aqueuse la valeur du pH est comprise entre
+    \begin{center}
+      \texteTrou{0} $\leq$ pH $\leq$ \texteTrou{14}
+    \end{center}
+  \end{encart}
+
+  \begin{encart}
+    \begin{listePoints}
+      \item Les solutions \important{acides} ont un pH \texteTrou{< 7}
+      \item Les solutions \important{neutres} ont un pH \texteTrouLignes{= 7. C'est le pH de l'eau.}
+      \item Les solutions \important{basiques} ont un pH \texteTrou{> 7}
+    \end{listePoints}
+  \end{encart}
+\end{doc}
+
+\begin{doc}{La mesure du pH d'une solution}{doc:TP4_mesure_pH}
+  \pointCyan \important{L’indicateur coloré}
+  C’est une espèce chimique qui change de \textbf{couleur} en fonction de la valeur du pH de la solution.
+  Introduire quelques gouttes d’un indicateur coloré permet donc de déterminer le caractère acide, basique ou neutre d’une solution. \\
+  \flecheLongue \texteTrou{Méthode \textbf{peu} précise.}
+
+  \pointCyan \important{Le papier pH}
+  Le papier pH est une bande de papier imbibée d’un indicateur universel.
+  En déposant une goutte de solution sur un morceau de papier pH, on détermine une valeur \textbf{approximative} du pH en \textbf{comparant} la couleur obtenue avec celle du \textbf{nuancier.} \\  
+  \flecheLongue \texteTrou{Méthode \textbf{moyennement} précise.}
+
+  \pointCyan \important{Le pH-mètre}
+  Le pH-mètre est un appareil de mesure constitué d’une électrode reliée à un boîtier électronique indiquant la valeur du pH.
+  Le pH-mètre doit être étalonné avec deux solutions tampons (dont le pH est constant et connu).
+  Une fois étalonné, on rince l’électrode et on la plonge dans la solution aqueuse dont on cherche à déterminer le pH. \\
+  \flecheLongue \texteTrou{Méthode \textbf{très} précise.}
+\end{doc}
+
+\begin{doc}{Protocoles de mesure}{doc:TP4_protocole_mesure}
+  Avec un indicateur coloré :
+  \begin{protocole}
+    \item Verser quelques millilitre de la solution dont on étudie le pH dans 3 tubes à essais
+    \item Ajouter quelques gouttes de Bleu de Bromothymol (BBT)
+    \item En milieu acide le BBT est jaune, bleu en milieu basique et vert en milieu neutre.
+  \end{protocole}
+  
+  Avec le papier pH :
+  \begin{protocole}
+    \item Placer un petit morceau de papier pH dans une coupelle
+    \item Y déposer quelques gouttes de solution
+    \item Comparer la couleur du papier obtenue au nuancier pour déterminer la valeur du pH
+  \end{protocole}
+  
+  Avec le pH-mètre :
+  \begin{protocole}
+    \item Verser un peu de solution dans un bécher
+    \item Plonger la sonde du pH-mètre dans la solution dont on cherche le pH
+    \item Lire la valeur du pH sur l’écran
+  \end{protocole}
+\end{doc}
+
+\mesure Mesurer et noter la valeur du pH du vinaigre blanc, de l'eau de javel et de l’eau du robinet, puis compléter le tableau ci-dessous
+
+\begin{tblr}{
+    hlines,
+    width = \linewidth,
+    colspec = {|c |X[2,c] |X[2,c] |X[2,c] |},
+    row{1} = {couleurPrim!20},
+  }
+  Mesure de pH      & Eau & vinaigre blanc & javel \\
+  indicateur coloré & & & \\
+  papier pH         & & & \\
+  pH-mètre          & & &
+\end{tblr}
+\smallskip
+
+\question{
+  Indiquer le caractère acide, basique ou neutre de chaque solution, en justifiant.
+}{
+  Eau : neutre. Javel : basique. Vinaigre blanc : acide.
+}{3}
+
+\question{
+  Quelle est la méthode la plus précise pour mesurer le pH ?
+}{}{1}
+
+
+%%
+\begin{doc}{Concentration en ions oxonium \oxonium d’une solution et pH}{doc:pH_oxonium}
+  La valeur du pH d’une solution permet de connaître la concentration molaire
+  (en \unit{\mole\per\litre}) en \important{ions oxonium \oxonium} dans la solution.
+  \begin{encart}
+    Cette concentration se note [\oxonium] et elle est définie par :
+    \begin{equation*}
+      [\oxonium] = 10^{-\text{pH}}
+    \end{equation*}
+  \end{encart}
+\end{doc}
+
+\question{
+  Calculer la concentration en ions oxonium \oxonium de chaque solutions.
+}{
+
+}{3}
