@@ -40,7 +40,7 @@
   -[::60] =[::-30] -[::-30]
 }
 \definesubmol\palmitique{
-  !\teteAcide !\cc !\cc !\cc !\cc !\cc !\cc !\cc
+  !\carbonyle !\cc !\cc !\cc !\cc !\cc !\cc !\cc
 }
 \definesubmol\oleique{
   !\teteAcide !\cc !\cc !\cc !\cis -[::60] !\cc !\cc !\cc
@@ -55,6 +55,11 @@
    (-[::150] -[::60] O-[::-60] !\trioleique)
    (-[::-90] -[::-60] O-[::60] !\trioleique)
    -[::30] O-[::60] !\trioleique
+}
+\definesubmol\tripalmitine{
+   (-[::150] -[::60] O-[::-60] (=[::60] O) -[::-60] -[::-60] !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % gauche
+   (-[::-90] -[::60] O-[::-60] (=[::-60]O) -[::60] -[::60] !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % droite
+   -[::30] O-[::60] !\palmitique % bas
 }
 %% glycerol
 \definesubmol\glycerol{HO -[-1] -[1] (-[3] OH) -[-1] -[1] OH}
