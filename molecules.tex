@@ -23,7 +23,15 @@
 \newcommand{\carbone}{\chemfig{C}}
 \newcommand{\oxygene}{\chemfig{O}}
 \newcommand{\azote}{\chemfig{N}}
+\newcommand{\eau}{\chemfig{H_2O}}
 \newcommand{\oxonium}{\chemfig{H_3O^+}}
+\newcommand{\hydroxyde}{\chemfig{HO^{-}}}
+
+
+%%%% Molécule courante
+\definesubmol\paracetamol{
+  *6((-HO)-=-(-NH (-[::-60] (=[::-60]O)-[::60]))=-=)
+}
 
 
 %%%% Acide gras

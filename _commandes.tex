@@ -53,7 +53,7 @@
 \newtcolorbox{encart}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   frame hidden, sharp corners, boxrule = 0mm, % pas de contours
-  colback = couleurPrim!5, % fond
+  colback = couleurPrim!10, % fond
   borderline west={4pt}{0pt}{couleurPrim}, % barre gauche
   #1
 }
@@ -403,6 +403,11 @@
   Prénom : \lignePointillee{0.3}
   Classe : \dotfill
 }
+\newcommand{\nomPrenom}{
+  \vspace*{-24pt}
+  Nom : \lignePointillee{0.3}
+  Prénom : \lignePointillee{0.3}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -509,12 +514,12 @@
 \newenvironment{tableauConnaissancesSansExercices}{
   \centering
   \begin{tblr}{
-    colspec = {| X[c] | c | c | c |},
+    colspec = {| X[l,m] | c | c | c |},
     rows = {m}, hlines,
     column{4} = {0.2},
     row{1} = {couleurPrim!20}
   }
-    \textbf{Points clés du chapitre} & \ok & \pasOk
+    \centering \textbf{Points clés du chapitre} & \ok & \pasOk
     & \textbf{En classe} \\
 }{ 
   \end{tblr}
