@@ -156,7 +156,10 @@
   \titreActi{Activité}{#1}
 }
 \newcommand{\titreEvaluation}[1]{
-  \titreActi{Évaluation}{#1}
+  \titre{Évaluation \arabic{section} -- #1}
+  % reset du numéro de page et d'exercices
+  \setcounter{page}{1}
+  \numeroActivite{1}
 }
 
 
@@ -250,7 +253,7 @@
   \teteDroite{\annee{}}{#2} % right header
 }
 %
-\newcommand{\enTeteFicheReussite}[1]{
+\newcommand{\enTeteFicheReussite}[2]{
   \newpage
   \setcounter{subsection}{0}
   \pasDePagination
@@ -258,10 +261,10 @@
   \phantom{b}
   \vspace*{-70pt}
   \titre{Fiche \og Réussir son évaluation \fg}
-  \titre{#1}
+  \titre{Chapitre #1 -- #2}
   
   \vspace*{-6pt}
-  % \titreSection{Ce que je dois savoir}
+  \titreSection{Ce que je dois savoir}
   
   Pour savoir quoi réviser, je lis les points clés du chapitre évalués :
   \begin{itemize}
@@ -270,6 +273,7 @@
   \end{itemize}
   
   Pour travailler les notions qui ne sont pas maîtrisées, je reprend les activités associés.
+  \vspace*{6pt}
 }
 \newcommand{\basDePageFicheReussite}{
   \titreSection{Ce qu'il me reste à faire}
@@ -460,9 +464,9 @@
 
 %%%% Pour faire plusieurs sujets en parallèle
 \newcommand{\variationSujet}[2]{
-  \ifthenelse {\boolean{sujetA}}
-  {\hspace*{-2pt}#1\hspace*{-2pt}}
-  {\hspace*{-2pt}#2\hspace*{-2pt}}
+  \hspace*{-6pt}
+  \ifthenelse {\boolean{sujetA}}{#1}{#2}
+  \hspace*{-6pt}
 }
 
 
