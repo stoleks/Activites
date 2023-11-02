@@ -1,0 +1,150 @@
+%%%% début de la page
+\teteSndSolu
+
+
+%%%% titre
+\vspace*{-36pt}
+\numeroActivite{2}
+\titreTP{Dosage d'un antiseptique}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre la notion de concentration massique.
+  \item Doser la quantité de permanganate de potassium présente dans du Dakin.
+\end{objectifs}
+
+
+%%%% contexte
+\begin{contexte}
+  Le Dakin est une solution antiseptique qui sert à nettoyer des plaies. Le principe actif du Dakin est stabilisé par l'ajout de permanganate de potassium \chemfig{KMnO_4}.
+  Le permanganate de potassium donne une teinte violette au Dakin.
+  
+  \problematique{Comment mesurer la concentration en \chemfig{KMnO_4} dans le Dakin ?}
+\end{contexte}
+
+
+%%%%
+\begin{doc}{Concentration en soluté}{doc:TP2_concentration}
+  \begin{encart}
+    La \important{concentration massique $\mathbf{c}$} mesure la quantité de soluté présent dans une solution.
+    C'est le rapport de la masse $m$ de \textbf{soluté} dissous dans le volume $V$ de la \textbf{solution}
+    \begin{equation*}
+      c = \frac{m_\text{soluté}}{V_\text{solution}}
+    \end{equation*}
+  \end{encart}
+\end{doc}
+
+
+%%%%
+\begin{doc}{Dakin}{doc:TP2_dakin}
+  Le Dakin est une solution aqueuse d'hypochlorite de sodium \chemfig{Na ClO}.
+  Du permanganate de potassium \chemfig{K MnO_4} est ajouté à la solution, pour qu'elle ne soit pas dégradée par l'exposition au rayonnement UV du Soleil.
+  
+  \fleche Sur une bouteille de Dakin il est indiqué que la concentration de \chemfig{KMnO_4} vaut $\approx \qty{0,01}{\g/\litre}$.
+\end{doc}
+
+%
+\question{
+  Donner le solvant et les solutés de la solution de Dakin.
+}{}{2}
+
+
+%%%%
+\begin{doc}{Mesure de concentration d'une solution colorée}{doc:TP2_dosage}  
+  \begin{encart}
+    Une \important{échelle de teinte} permet de mesurer la concentration d'un soluté coloré.
+  \end{encart}
+
+  La teinte d'une solution est proportionnelle à la concentration en soluté.
+  On prépare une série de solutions \textbf{étalons} dont on connaît la concentration et on compare leur teinte avec la solution dont on veut mesurer la concentration.
+  
+  \attention Il faut comparer les teintes avec des verreries identiques, la teinte s'assombrit avec l'épaisseur.
+\end{doc}
+
+
+%%%%
+\begin{doc}{Protocole d'une dilution}{doc:TP2_protocole_dilution}
+  \begin{wrapfigure}[5]{r}{0.5\linewidth}
+    \vspace*{-48pt}
+    \centering
+    \begin{multicols}{4}
+    \image{1}{images/chimie/protocoles/dilution0001} \\[-12pt]
+    \footnotesize{$S_0$}
+    
+    \image{1}{images/chimie/protocoles/dilution0002}
+    
+    \image{1}{images/chimie/protocoles/dilution0003}
+    
+    \image{1}{images/chimie/protocoles/dilution0004} \\[-12pt]
+    \footnotesize{$S_1$}
+    \end{multicols}
+  \end{wrapfigure}
+  \vAligne{-40pt}
+  
+  \begin{encart}
+    La \important{dilution} est la \important{diminution de la concentration} en soluté d'une solution en rajoutant du \important{solvant.}
+  \end{encart}
+  La solution de départ est appelée \important{solution mère}, notée $S_0$.
+  La solution obtenue après dilution est appelée \important{solution fille}, notée $S_1$.
+
+  Pour diluer une solution, il faut
+  \begin{protocole}
+    \item Prélever un volume $V_0$ de la solution à l'aide d'une pipette graduée.
+    \textbf{Le bas du ménisque} doit atteindre la graduation supérieure.
+    \item Introduire la solution prélevée dans la fiole jaugée de volume $V_1$.
+    \item Ajouter de l'eau distillée dans la fiole jaugée jusqu'aux $2/3$ et agiter doucement.
+    Compléter jusqu'à ce que \textbf{le bas du ménisque} atteigne le trait de jauge.
+    \item Fermer la fiole et l'agiter en la retournant plusieurs fois.
+    \item Verser la solution fille obtenue dans un bécher.
+  \end{protocole}
+\end{doc}
+
+%%%%
+\begin{doc}{Facteur de dilution}{doc:TP1_dilution}  
+  Le \important{facteur de dilution} est le rapport du volume de la solution fille sur le volume de la solution mère et il est égal au rapport des concentrations des solutions mère et fille.
+  \begin{equation*}
+    F = \dfrac{V_1}{V_0} = \dfrac{c_0}{c_1}
+  \end{equation*}
+\end{doc}
+
+
+%
+\question{
+  On souhaite réaliser une échelle de teinte composée de 4 solutions étalon pour mesurer la concentration de permanganate de potassium dans le Dakin.
+
+  \begin{center}
+    \begin{tblr}{c | X[1,c] | X[1,c] | X[1,c] | X[1,c]}
+      Solution étalon & 1 & 2 & 3 & 4 \\ \hline
+      Concentration (\unit{\g/\litre}) & & & & 
+    \end{tblr}
+  \end{center}
+  
+  Calculer le facteur de dilution entre les différentes solutions.
+}{}{1}
+
+%
+\question{
+  Justifier l’intervalle des concentrations proposées pour l’échelle de teinte, à partir de la valeur attendue de la concentration en permanganate de potassium.
+}{}{1}
+
+%
+\question{
+  Sachant que le volume de la fiole jaugée est $V_1 = \qty{50}{\ml}$, donner le volume de la solution mère $V_0$ à prélever pour avoir un facteur de dilution $F = 2$.
+}{}{2}
+
+%
+\mesure
+Réaliser l'échelle de teinte en effectuant trois dilutions successives.
+Verser quelques millilitres de chaque solutions dans des tubes à essais.
+
+%
+\mesure
+Utiliser l'échelle de teinte pour encadrer la valeur de la concentration en permanganate de potassium dans le Dakin.
+Est-elle cohérente avec celle du constructeur ?
+\lignesDeReponse{2}
+
+%
+\question{
+  Proposer une autre échelle de teinte pour améliorer la précision de la mesure (donner une liste de concentration).
+}{}{1}

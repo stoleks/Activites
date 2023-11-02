@@ -64,6 +64,11 @@
   boxrule = 3pt, sharp corners, % contours droits
   colframe = couleurPrim, % couleur des contours
   colback = couleurPrim!5, % fond
+  title = {Contexte :}, % titre
+  colbacktitle = couleurPrim!5, % couleur du fond du titre
+  fonttitle = \bfseries\sffamily, coltitle = black, %
+  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
+  detach title, before upper={\hspace{-8pt}\tcbtitle\;},
   #1
 }
 
@@ -140,7 +145,7 @@
   \phantom{b}
   \pasDePagination
 }
-
+    
 
 %%%% activité ou TP
 \newcounter{activiteNum}
@@ -369,6 +374,12 @@
   }{ % eleve
   }
 }
+
+% Point associé à une question
+\newcommand{\points}[1]{
+  \marginnote{#1~pts}
+}
+
 
 % sous questions
 \newcommand{\sousQuestion}[2]{
@@ -779,9 +790,11 @@
 }
 
 %% texte avec une boite autour
-\newcommand{\texteEncadre}[1]{
-  \frame{
-    \vphantom{$\dfrac{1}{10}$} \text{#1}
+\NewDocumentCommand{\texteEncadre}{m O{black}}{
+  \textcolor{#2}{
+    \frame{
+      \vphantom{$\dfrac{1}{10}$} \textcolor{black}{\text{#1}}
+    }
   }
 }
 
