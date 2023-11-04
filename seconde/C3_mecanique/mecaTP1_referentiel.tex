@@ -1,0 +1,141 @@
+%%%% début de la page
+\teteSndMouv
+
+%%%%
+\nomPrenomClasse
+
+
+%%%% titre
+\numeroActivite{1}
+\titreTP{Décrire le mouvement}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Décrire un mouvement.
+  \item Comprendre la notion de référentiel.
+  \item Comprendre que le mouvement dépend du référentiel.
+\end{objectifs}
+
+
+%%%% evaluation
+\begin{tableauCompetences}
+  APP &
+  Représenter une situation par un schéma avec une légende.
+  & & & & \\
+  %
+  COM &
+  Travailler en groupe, communiquer à l'oral.
+  & & & & \\
+\end{tableauCompetences}
+
+%%%%
+\vspace*{6pt}
+\begin{doc}{Un peu de vocabulaire}{doc:TP1_vocabulaire}
+  \begin{encart}
+    \important{Système} : objet dont on étudie le mouvement.
+  \end{encart}
+  
+  \begin{encart}
+    \important{Trajectoire} : ensemble des positions successives occupées par le système.
+  \end{encart}
+  
+  Le \important{mouvement} d'un système est donné par la description de sa trajectoire + l'évolution de sa vitesse.
+\end{doc} 
+
+
+\begin{doc}{Type de trajectoires}{doc:TP1_trajectoires}
+  Trajectoire \important{rectiligne} : \texteTrou{trajectoire représentée par une droite.}
+  
+  \texteTrou{Trajectoire circulaire} : trajectoire représentée par un cercle.
+  
+  Trajectoire \important{curviligne} : \texteTrou{trajectoire représentée par une courbe.}
+\end{doc}
+
+
+\begin{doc}{Vitesse et accéleration}{doc:TP1_vitesse}
+  Vitesse \important{uniforme} (constante) : le système n’accélère pas.
+  
+  La vitesse augmente : \texteTrouLignes{le système accélère.}
+  
+  La vitesse diminue : \texteTrouLignes{le système décélère.}
+  
+  Si \texteTrou{la vitesse est constante}, on dit que le système est \important{immobile}.
+\end{doc}
+
+
+%%%%
+
+\numeroQuestion
+Compléter les documents~\ref{doc:TP1_trajectoires} et~\ref{doc:TP1_vitesse}.
+
+\fleche Pour la suite de cette activité, vous allez choisir entre l'étude du mouvement des oies ou de la Lune.
+Vous présenterez ensuite les résultats de votre étude au reste de la classe à l'oral.
+
+
+%%%%
+\newpage
+\titreSousSection{\'Etude du mouvement des oies}
+
+Le compteur du bateau affiche une vitesse $v_\text{bateau} = \qty{3,6e1}{\km/\hour}$.
+
+\vspace*{6pt}
+\numeroQuestion Pour la personne qui filme les oies, quelle est la vitesse des oies ?
+
+\numeroQuestion Pour une personne se trouvant sur la berge, quelle est la vitesse des oies ?
+
+\numeroQuestion Schématiser la trajectoire des oies si on les observe depuis la berge.
+
+\numeroQuestion Indiquer le mouvement des oies depuis le bateau et la berge.
+
+%%
+\titreSousSection{\'Etude du mouvement de la Lune}
+
+La Lune tourne autour de la Terre à une vitesse $v_\text{Lune} = \qty{3,7e3}{\km/\hour}$
+et la Terre tourne autour du Soleil à une vitesse $v_\text{Terre} = \qty{1,1e5}{\km/\hour}$.
+
+\begin{figure}[!ht]
+  \begin{subfigure}{0.48\linewidth}
+    \centering
+    \image{0.8}{images/mecanique/terre_lune.png}
+    \caption{Point de vue centré sur la Terre}
+    \label{fig:terre_lune}
+  \end{subfigure}
+  \begin{subfigure}{0.48\linewidth}
+    \centering
+    \image{0.8}{images/mecanique/terre_lune_soleil.png}
+    \caption{Point de vue centré sur le Soleil}
+    \label{fig:terre_lune_soleil}
+  \end{subfigure}
+\end{figure}
+
+\vspace*{-6pt}
+\numeroQuestion Depuis le point de vue centré sur la Terre, quelle est la vitesse de la Lune ?
+
+\numeroQuestion Schématiser la trajectoire de la Lune depuis ce point de vue et indiquer son mouvement.
+
+\numeroQuestion Peut-on décrire la vitesse de la Lune depuis le point de vue centré sur le Soleil ?
+
+\numeroQuestion Schématiser la trajectoire de la Lune depuis ce point de vue.
+
+
+%%%%
+\titreSousSection{Notion de référentiel}
+
+\question{
+  Convertir la vitesse $v_\text{Lune}$ en \unit{\m/\s}.
+  \textit{Rappel :} \qty{1}{\km} = \qty{e3}{\metre}, \qty{1}{\hour} = \qty{3,6e3}{\s}.
+}{}{2}
+
+\question{
+  Quelle distance la Lune parcours pendant 1 seconde ?
+  Comparer avec la longueur de sa trajectoire, qui est de \qty{2,4e6}{\km}.
+}{}{1}
+
+\question{
+  Peut-on décrire la trajectoire de la Lune en l'observant pendant 1 seconde ?
+}{}{2}
+
+\question{
+  Conclusion : pourquoi est-il important de définir le référentiel, qui est l’endroit où on se place et le temps passé à observer, avant d'étudier un mouvement ?
+}{}{1}

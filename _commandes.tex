@@ -58,6 +58,15 @@
   #1
 }
 
+%%%% Boite de correction
+\newtcolorbox{boiteCorrection}[1][]{
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
+  colback = couleurPrim!10, % fond
+  #1
+}
+
+
 %%%% contexte
 \newtcolorbox{contexte}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
@@ -117,13 +126,15 @@
 
 %%%% Espace pour une appréciation
 \newcommand{\appreciation}[1]{
-  \begin{boite}
-    \vspace*{-4pt}
-    \sousTitre{Appréciation et remarques}
-    
-    \vspace*{#1 cm}
-    \phantom{b}
-  \end{boite}
+  \pasCorrection{
+    \begin{boite}
+      \vspace*{-4pt}
+      \sousTitre{Appréciation et remarques}
+      
+      \vspace*{#1 cm}
+      \phantom{b}
+    \end{boite}
+  }
 }
 
 
@@ -315,19 +326,6 @@
   }
 }
 
-% Pour homogénéiser les commandes avec du texte corrigé
-\newcommand{\texteCorrection}[1]{
-  \textbf{\textcolor{couleurTer}{#1}}
-}
-
-% Pour simplifier la commande question
-\newcommand{\reponseCorrigee}[1]{
-  \vspace*{2pt}
-  \textcolor{couleurSec}{\faCaretRight}
-  \hspace{1pt}
-  \texteCorrection{#1}
-}
-
 
 % trace des lignes pointillées pour répondre aux questions
 % \lignessDeReponse* complète la ligne actuelle par des pointillées
@@ -361,23 +359,31 @@
   \numeroQuestion \!#1
   % pointille ou correction
   \ifthenelse {\boolean{modeProf}} { % prof
-    \\[1pt] \reponseCorrigee{#2}
+    \begin{boiteCorrection}
+      #2
+    \end{boiteCorrection}
   }{ % eleve
     \lignesDeReponse{#3}
   }
 }
 
-% Correction affichée si en mode prof
+% Affiche le contenu en mode correction
 \newcommand{\correction}[1]{
-  \ifthenelse {\boolean{modeProf}} { % prof
+  \ifthenelse {\boolean{modeProf}} { % correction
     #1
-  }{ % eleve
+  }{}
+}
+
+% Affiche le contenu si on est pas en mode correction
+\newcommand{\pasCorrection}[1]{
+  \ifthenelse{\boolean{modeProf}} {}{ % pas correction
+    #1
   }
 }
 
 % Point associé à une question
 \newcommand{\points}[1]{
-  \marginnote{#1~pts}
+  \marginnote{#1}
 }
 
 
@@ -413,43 +419,43 @@
 
 %%%% Espace pour indiquer nom, prénom et classe
 \newcommand{\nomPrenomClasse}{
-  \vspace*{-24pt}
-  Nom : \lignePointillee{0.3}
-  Prénom : \lignePointillee{0.3}
-  Classe : \dotfill
+  \pasCorrection{
+    \vspace*{-24pt}
+    Nom : \lignePointillee{0.3}
+    Prénom : \lignePointillee{0.3}
+    Classe : \dotfill
+  }
 }
 \newcommand{\nomPrenom}{
-  \vspace*{-24pt}
-  Nom : \lignePointillee{0.3}
-  Prénom : \lignePointillee{0.3}
+  \pasCorrection{
+    \vspace*{-24pt}
+    Nom : \lignePointillee{0.3}
+    Prénom : \lignePointillee{0.3}
+  }
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % texte à trou avec option pour régler la largeur
 \NewDocumentCommand{\texteTrou}{o +m}{
-  \IfValueTF{#1}{ % Si la largeur est réglée, on utilise des lignes
-    \ifthenelse {\boolean{modeProf}} {% prof
-      \texteCorrection{#2}
-    }{% élève
+  \ifthenelse {\boolean{modeProf}}{ % prof
+    \important[black]{#2}
+  }{ % élève
+    \IfValueTF{#1}{ % Si la largeur est réglée, on utilise des lignes
       \espaceReponse
       \lignePointillee{#1}
       \hspace*{-12pt}
-    }
-  }{ % Sinon on utilise dash undergap pour la version automatique
-    \ifthenelse{\boolean{modeProf}}{% prof
-      \hspace*{-24pt}
-    }{% élève
+    }{ % Sinon on utilise dash undergap pour la version automatique
       \espaceReponse \hspace*{0.1pt}
+      \gap{#2}
     }
-    \gap{\texteCorrection{#2}}
   }
 }
 
 % texte à trou avec option pour laisser plusieurs lignes
 \NewDocumentCommand{\texteTrouLignes}{O{0} +m}{
   \ifthenelse {\boolean{modeProf}} {% prof
-    \texteCorrection{#2}
+    \important[black]{#2}
   }{% élève
     \lignesDeReponse*{#1}
   }
@@ -485,13 +491,13 @@
 %%%% Tableau générique avec la première ligne bleue
 \NewDocumentEnvironment{tableau}{m}{
   \begin{center}
-  \begin{tblr}{
-    hlines,
-    colspec = #1,
-    row{1} = {couleurPrim!20},
-  }
+    \begin{tblr}{
+      hlines,
+      colspec = #1,
+      row{1} = {couleurPrim!20},
+    }
 }{
-  \end{tblr}
+    \end{tblr}
   \end{center}
 }
 
@@ -509,66 +515,17 @@
   \end{tblr}
 }
 
-%%%% Tableau de connaissances
-\newenvironment{tableauConnaissances}{
-  \centering
-  \begin{tblr}{
-    colspec = {| X[c] | c | c | c | c |},
-    rows = {m}, hlines,
-    column{4} = {0.22},
-    column{5} = {0.21},
-    row{1} = {couleurPrim!20}
-  }
-    \textbf{Points clés du chapitre} & \ok & \pasOk
-    & \textbf{En classe} & \textbf{Exercices} \\
-}{   
-  \end{tblr}
-}
-
 %%%% Tableau de connaissances sans exercices
-\newenvironment{tableauConnaissancesSansExercices}{
+\newenvironment{tableauConnaissances}{
   \centering
   \begin{tblr}{
     colspec = {| X[l,m] | c | c | c |},
     rows = {m}, hlines,
     column{4} = {0.2},
-    row{1} = {couleurPrim!20}
+    row{1} = {couleurPrim!20, c}
   }
-    \centering \textbf{Points clés du chapitre} & \ok & \pasOk
-    & \textbf{En classe} \\
+    \textbf{Points clés du chapitre} & \ok & \pasOk & \textbf{En classe} \\
 }{ 
-  \end{tblr}
-}
-
-%%%% Tableau de correction élève
-\newcommand{\correctionEleve}[1]{
-  \begin{tblr}{
-    hlines,
-    colspec = {| X[-1, c] | X[2, c] | X[2, c] | X[2, c] |},
-    row{1} = {couleurPrim!20}
-  }
-    \textbf{Question} & 
-    \textbf{L'erreur} &
-    \textbf{Analyse de l'erreur} &
-    \textbf{La correction} \\
-    %
-    \phantom{b} \vspace{#1 pt} & & & \\
-    \phantom{b} \vspace{#1 pt} & & & \\
-    \phantom{b} \vspace{#1 pt} & & & \\
-    \phantom{b} \vspace{#1 pt} & & & \\
-  \end{tblr}
-}
-
-%%%% Tableau bilan de la correction
-\newcommand{\bilanCorrection}[1]{
-  \begin{tblr}{
-    hlines,
-    colspec = {| X[c] | X[c] |},
-    row{1} = {couleurPrim!20}
-  }
-    \textbf{Ce que je n'avais pas compris...} &
-    \textbf{Ce que maintenant j'ai compris...} \\
-    \phantom{b} \vspace{#1 pt} & \\
   \end{tblr}
 }
 
@@ -625,8 +582,8 @@
   \textcolor{couleurSec}{\textsf{\bfseries \large #1}}
 }
 %
-\newcommand{\important}[1]{
-  \!\textcolor{couleurSec}{\textsf{\bfseries #1}}\!\!
+\NewDocumentCommand{\important}{O{couleurSec!75!black} m}{
+  \!\textcolor{#1}{\textsf{\bfseries #2}}\!\!
 }
 %
 \newcommand{\exemple}{

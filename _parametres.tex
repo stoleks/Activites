@@ -110,6 +110,7 @@
 \sisetup{
   locale = FR, % français
 	 group-minimum-digits = 4, % groupage des chiffres par millier
-  inter-unit-product = \ensuremath { { } \cdot { } } % point médian entre les unités
+  inter-unit-product = \ensuremath { { } \cdot { } }, % point médian entre les unités,
+  propagate-math-font = true, reset-math-version = false % pour avoir des versions bold
 }
 \AtBeginDocument{\RenewCommandCopy\qty\SI} % Pour "écraser" la commande \qty du package physics

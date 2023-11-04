@@ -7,7 +7,7 @@
 
 %%%% titre
 \numeroActivite{2}
-\titreActivite{Chute d'une balle}
+\titreTP{Chute d'une balle}
 
 
 %%%% objectifs
@@ -19,11 +19,10 @@
 
 %%%% evaluation
 \begin{tableauCompetences}
-  \centering S'Approprier (APP) &
-  Représenter la situation par un schéma.
-  & & & &
-  \\ \hline
-  \centering Communication (COM) &
+  APP &
+  Représenter une situation par un schéma.
+  & & & & \\
+  COM &
   Travailler en groupe, échanger entre élèves.
   & & & &
 \end{tableauCompetences}
@@ -35,24 +34,19 @@
 
 
 %%%% documents
-\begin{doc}{Chronophotographie de la chute d'une balle}
-  \label{doc:chrono}
-  \vspace*{-20pt}
+\begin{doc}{Chronophotographie de la chute d'une balle}{doc:TP2_chrono}
   \begin{center}
-    \image{0.9}{images/mouvements/chronophotographie_balle.png}
+    \image{0.9}{images/mecanique/chronophotographie_balle.png}
   \end{center}
-  Une chronophotographie est une superposition de plusieurs images prises les unes après les autres avec un intervalle de temps régulier.
-  Pour réaliser cette chronophotographie, \textbf{on a pris une image toutes les} $\mathbf{40} \unit{\mathbf{ms}}$.
-  \bigskip
+  La superposition de plusieurs images prises les unes après les autres avec un intervalle de temps régulier est une \important{chronophotographie}.
+  Pour réaliser cette chronophotographie, \textbf{on a pris une image toutes les} $\mathbf{\qty{40}{\ms}}$.
+  Une chronophotographie permet de repérer des positions par lesquelles passent la balle.
   
-  Réaliser une chronophotographie permet de repérer des positions par lesquelles passent la balle, ce qui est impossible à l'oeil nu.
   Les ronds indiquent les positions de la balle, les carrés indiquent les positions du centre de masse de l'homme sur la trottinette.
 \end{doc}
 
 %%
-\begin{doc}{Vecteur}
-  \label{doc:vecteur}
-  \vspace*{-24pt}
+\begin{doc}{Vecteur}{doc:TP2_vecteur}
   \begin{encart}
     \important{Vecteur} : objet mathématique représenté par un segment fléché $\longrightarrow$ et noté avec une lettre surmontée d'une flèche $\vv{v}$.
     
@@ -63,52 +57,48 @@
 \end{doc}
 
 %%
-\begin{doc}{Vecteur déplacement et vecteur vitesse d'un point}
-  \label{doc:vitesse}
+\begin{doc}{Vecteur déplacement et vecteur vitesse d'un point}{doc:TP2_vitesse}
   Soient $P_1$ la position d'un point à l'instant $t_1$ et $P_3$ la position de ce même point à l'instant $t_3$.
   Le déplacement du point matériel entre les dates $t_1$ et $t_3$ est défini par le vecteur déplacement $\vv{P_1 P_3}$.
   Graphiquement, c'est la flèche qui relie $P_1$ à $P_3$. 
-  \bigskip
   
   Le vecteur $\vv{P_1 P_3}$ est caractérisé par
+  \begin{multicols}{2}
   \begin{listePoints}
+    \item Une origine : le point $P_1$.
     \item une direction : celle de la droite $P_1 P_3$.
     \item Un sens : de $P_1$ vers $P_2$.
-    \item Une norme : égale à la distance $P_1 P_3$ en mètre (m).
-    \item Une origine : le point $P_1$
+    \item Une norme : la distance $P_1 P_3$ en mètre \unit{m}.
   \end{listePoints}
+  \end{multicols}
   
   \begin{encart}
     Le \important{vecteur vitesse} $\vv{v_2}$ d'un système au point $P_2$ entre les instants $t_1$ et $t_3$ a pour expression
-    \begin{equation}
+    \begin{equation*}
       \vv{v_2} = \frac{\vv{P_1 P_3}}{t_3 - t_1}
-    \end{equation}
+    \end{equation*}
   \end{encart}
   
   Le vecteur $\vv{v_2}$ est caractérisé par :
+  \begin{multicols}{2}
   \begin{listePoints}
+    \item Une origine : $P_2$.
     \item une direction : parallèle au segment $P_1 P_3$ et tangent à la trajectoire.
     \item Un sens : le sens du mouvement.
     \item Une norme : $v_2 
-    = \norm{\vv{v_2}}
+    %= \norm{\vv{v_2}}
     = \displaystyle \norm{\frac{\vv{P_1 P_3}}{t_3 - t_1}}
     = \displaystyle \frac{P_1 P_3}{t_3 - t_1}$.
-    \item Une origine : $P_2$.
   \end{listePoints}
+  \end{multicols}
+  
   $P_1 P_3$ est la distance entre les points $P_1$ et $P_3$ en mètre (m). $t_3 - t_1$ est la durée séparant les instants $t_1$ et $t_3$ en seconde (s). $v_2$ est la norme de la vitesse en mètre par seconde (m/s).
 \end{doc}
 
 
 
 %%%%
-\newpage
-\titreSection{Mouvement dans le référentiel de \lignePointillee{0.2}}
-
-%
-\question{
-  Quel est le référentiel utilisé pour décrire le mouvement de la balle et de l'homme sur la trottinette ici ?
-}{1}
-
+% \titreSection{Mouvement dans le référentiel de la caméra}
 
 %%
 \titreSousSection{Mouvement de l'homme sur la trottinette}
@@ -116,46 +106,43 @@
 %
 \question{
   Quelle est la trajectoire de l'homme sur la trottinette ?
-}{1}
+}{}{1}
 
 %
 \question{
-  Comment évolue la vitesse de l'homme sur la trottinette ? Indiquer la nature de son mouvement.
-}{2}
+  Comment évolue la vitesse de l'homme sur la trottinette ? Décrire son mouvement.
+}{}{1}
 
 
 %%%%
 \titreSousSection{Mouvement de la balle}
 
 %
-\question{
-  Repérer sur la chronophotographie du document~\ref{doc:chrono}, le point de départ de la balle.
-  On notera $P_1$ cette position.
-  Numéroter les positions successives de la balle, que l'on notera $P_2, P_3, \ldots P_8$
-}{0}
+\mesure
+Repérer sur la chronophotographie du document~\ref{doc:TP2_chrono}, le point de départ de la balle.
+On notera $P_1$ cette position.
+Numéroter les positions successives de la balle, que l'on notera $P_2, P_3, \ldots P_8$
+
+%
+\mesure
+Tracer sur la photo du document~\ref{doc:TP2_chrono} le vecteur $\vv{P_2 P_3}$ et le vecteur $\vv{P_5 P_7}$.
 
 %
 \question{
-  Tracer sur la photo du document~\ref{doc:chrono} le vecteur $\vv{P_2 P_3}$ et le vecteur $\vv{P_5 P_7}$.
-}{0}
-
-%
-\question{
-  En utilisant l'échelle sur la photo, déterminer les normes en mètre de ces deux vecteurs.
+  En utilisant l'échelle sur la photo, déterminer les normes en mètre de $\vv{P_1 P_3}$ et $\vv{P_5 P_7}$.
   Indiquer si ces normes sont identiques.
-}{2}
+}{}{2}
+
+%
+\mesure
+Schématiser le vecteur vitesse $\vv{v_2}$ entre les points $P_2$ et $P_3$ et le vecteur vitesse $\vv{v_6}$ entre les points $P_5$ et $P_7$, en vous aidant du document~\ref{doc:TP2_vitesse}.
 
 %
 \question{
-  Calculer la norme en mètre par seconde de ces deux vecteurs, en vous aidant du document~\ref{doc:vitesse}.
-}{2}
+  Calculer la norme en mètre par seconde de $\vv{v_2}$ et $\vv{v_6}$, en vous aidant du document~\ref{doc:TP2_vitesse}.
+}{}{2}
 
-%
-\question{
-  Schématiser le vecteur vitesse $\vv{v_2}$ entre les points $P_2$ et $P_3$ et le vecteur vitesse $\vv{v_6}$ entre les points $P_5$ et $P_7$, en vous aidant du document~\ref{doc:vitesse}.
-}{0}
 
-\feuilleBlanche
 
 %%%%
 % \newpage
