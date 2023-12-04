@@ -66,7 +66,6 @@
   #1
 }
 
-
 %%%% contexte
 \newtcolorbox{contexte}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
@@ -77,7 +76,7 @@
   colbacktitle = couleurPrim!5, % couleur du fond du titre
   fonttitle = \bfseries\sffamily, coltitle = black, %
   titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
-  detach title, before upper={\hspace{-8pt}\tcbtitle\;},
+  detach title, before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;},
   #1
 }
 
@@ -137,6 +136,17 @@
   }
 }
 
+%%%% Espace fiche TP
+\newtcolorbox{boiteMateriel}[2][]{
+  colback = white, colframe = black, % fond blanc et traits noirs
+  coltitle = white, % couleur du titre
+  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi des traits de la boite
+  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
+  colbacktitle = couleurPrim, % fond pour le titre blanc
+  fonttitle = \bfseries\sffamily, % type de titre
+  title = {\centering \large #2}, % titre
+  #1
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% pagination et sections
@@ -176,6 +186,14 @@
   % reset du numéro de page et d'exercices
   \setcounter{page}{1}
   \numeroActivite{1}
+}
+\newcounter{exerciceNum}
+\newcommand{\exercice}[1]{
+  \refstepcounter{exerciceNum}
+  \sousTitre{Exercice \arabic{exerciceNum} : #1}
+  % reset des numéros de questions
+  \setcounter{questionNum}{0}
+  \setcounter{documentNum}{0}
 }
 
 
@@ -319,10 +337,23 @@
 % Pour afficher le numéro d'une question avec choix du compteur
 \NewDocumentCommand{\numeroQuestion}{O{questionNum} O{16}}{
   \refstepcounter{#1}
+  \setcounter{sousQuestionNum}{0}
   \vspace*{2pt}
-  \hspace{#2pt}
+  \ifnum \thequestionNum > 9
+    \hspace{6 pt}
+  \else
+    \hspace{#2 pt}
+  \fi
   \textcolor{couleurSec}{
     \textbf{\arabic{#1}} {\small\faMinus}
+  }
+}
+
+\newcommand{\numeroSousQuestion}{
+  \refstepcounter{sousQuestionNum}
+  \hspace{16 pt}
+  \textcolor{couleurSec}{
+    \textbf{\arabic{questionNum}.\arabic{sousQuestionNum}.}
   }
 }
 
@@ -355,6 +386,7 @@
 % #2 : réponse
 % #3 : nombres de lignes pour répondre
 \newcounter{questionNum}
+\newcounter{sousQuestionNum}
 \newcommand{\question}[3]{
   \numeroQuestion \!#1
   % pointille ou correction
@@ -706,6 +738,10 @@
   m(\chemfig{#1})
   % m_{\chemfig{#1}}
 }
+
+
+%% Unités
+\DeclareSIUnit{\dornic}{\text{\textdegree D}}
 
 
 %% atome ou isotope

@@ -1,0 +1,209 @@
+%%%%
+\teteTermStssEnvi
+
+%%%% titre
+\vspace*{-36pt}
+\numeroActivite{2}
+\titreActivite{Potabilité et pollution des eaux}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre la modélisation de de la dissolution des composés ioniques.
+  \item Comprendre le lien entre présence d'ions et conductivité électrique.
+\end{objectifs}
+
+\begin{contexte}
+  Les activités industrielles humaines polluent les fleuves et les rivières, composés d'eau douce, mais aussi les océans et les mers, composés d'eau salée.
+  Ainsi, dans les 50 dernières années, la qualité des eaux s'est considérablement dégradée.
+  
+  \problematique{
+    Quels paramètres physico-chimiques permettent de contrôler la qualité d'une eau ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Concentration en ions}{doc:A2_concentration_eau}
+  Pour mesurer la qualité d'une eau, il faut pouvoir décrire sa composition en ions.
+  Pour ça, on va utiliser la \important{concentration ionique en masse}
+  et la \important{concentration ionique en quantité de matière}.
+
+  \begin{encart}  
+    La \important{concentration ionique en masse} (« massique ») d'un ion en solution
+    %
+    \begin{center}
+      \begin{tblr}{X[c] | X[l]}
+        $c_{m,X} = \dfrac{m_X}{V}$ &
+        { $m_X$ est la masse d'ion en \unit{\g} \\
+        $V$ est le volume de la solution en \unit{\litre} }
+      \end{tblr}
+    \end{center}
+    L'unité de $c_{m,X}$ est \texteTrou[0.1]{\unit{\g\per\litre}}
+  \end{encart}
+  %
+  \begin{encart}  
+    La \important{concentration ionique en quantité de matière} (« molaire ») d'un ion en solution
+    %
+    \begin{center}
+      \begin{tblr}{X[c] | X[l]}
+        $[X] = \dfrac{n_X}{V}$ &
+        { $n_X$ est la quantité de matière d'ion en \unit{\mole} \\
+        $V$ est le volume de la solution en \unit{\litre} }
+      \end{tblr}
+    \end{center}
+    L'unité de $[X]$ est \texteTrou[0.1]{\unit{\mole\per\litre}}
+  \end{encart}
+\end{doc}
+
+\numeroQuestion Indiquer les unités de $c_{m,X}$ et de $[X]$ dans le document~\ref{doc:A2_concentration_eau}.
+
+\question{
+  Donner la relation littérale qui permet de calculer la masse d'ion en fonction de la concentration ionique massique et du volume d'eau.
+}{}{2}
+
+
+%%
+\begin{doc}{Potabilité d'une eau}{doc:A2_potabilite_eau}
+  \begin{wrapfigure}[3]{r}{0.3\linewidth}
+    \vspace*{-24pt}
+    \begin{boite}
+      \pointCyan \important{Organoleptique :} \\ qui affecte les sens.
+    \end{boite}
+  \end{wrapfigure}
+
+  Pour qu'une eau soit désignée comme potable, elle doit répondre à plusieurs critères.
+  Ces critères sont établis par l'Organisation Mondiale de la Santé, l'OMS.
+
+  \begin{listePoints}
+    \item \important{Qualité microbiologique :} l'eau est consommable s'il n'y a pas de germes témoins de matières fécales, de parasites et de micro-organismes pathogènes.
+    Il n'y a pas de seuil de tolérance pour la qualité bactériologique de l'eau : c'est une \important{limite de potabilité.}
+    \item \important{Qualités organoleptiques :} l'eau ne doit pas avoir d'odeur, ni de saveur particulière. L'eau doit être limpide.
+    \item \important{Critères physico-chimiques} que l'eau doit respecter
+  \end{listePoints}
+
+  \centering
+  \begin{tblr}{
+    colspec = {|l |l |}, hlines,
+    row{1} = { couleurPrim!20, m, c },
+  }
+    Paramètres & Limite de potabilité \\
+    \ionChlorure & \qty{200}{\mg\per\litre} \\
+    \ionSodium   & \qty{200}{\mg\per\litre} \\
+    \ionSulfate  & \qty{250}{\mg\per\litre} \\
+    pH           & Entre \num{6,5} et \num{9} \\
+    Température  & < \qty{25}{\degreeCelsius} \\
+    Conductivité & Entre \num{200} et 
+    \qty{1100}{\micro\siemens\per\cm} à \qty{25}{\degreeCelsius} \\
+  \end{tblr}
+  
+  \faArrowUp\; Exemple de critères physico-chimiques de potabilité d'une eau.
+\end{doc}
+
+\question{
+  Lister les critères physico-chimiques que doit respecter une eau potable.
+}{
+}{5}
+
+
+%%
+\begin{doc}{Etiquettes d'eau minérale}{doc:A2_eau_minerale}
+  \begin{multicols}{3}
+    \centering
+    \textbf{Vichy St Yorre}
+     \begin{tableau}{l | r}
+      \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
+      \ionBicarbonate & \num{4368} \\
+      \ionChlorure    & \num{322}  \\
+      \ionSodium      & \num{1708} \\
+      \ionSulfate     & \num{174}  \\
+      \ionPotassium   & \num{110}  \\
+      \ionCalcium     & \num{90}   \\
+      \ionFluorure    & \num{1}    \\
+      \ionMagnesium   & \num{11}   \\
+    \end{tableau}
+    %
+    
+    \textbf{Mont Roucous}
+    \begin{tableau}{l | r}
+      \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
+      \ionBicarbonate & \num{1} \\
+      \ionChlorure    & \num{2}  \\
+      \ionSodium      & \num{3,2}  \\
+      \ionSulfate     & \num{6,9}  \\
+      \ionFluorure    & < \num{0,1}  \\
+      \ionCalcium     & \num{2,7}  \\
+      \ionNitrate     & \num{1,8}  \\
+      \ionMagnesium   & \num{0,3}  \\
+    \end{tableau}
+    %
+    
+    \textbf{Cristalline}
+    \begin{tableau}{l | r}
+      \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
+      \ionBicarbonate & \num{228} \\
+      \ionChlorure    & \num{15}    \\
+      \ionSodium      & \num{8,4}  \\
+      \ionSulfate     & \num{11}  \\
+      \ionPotassium   & \num{2,3}     \\
+      \ionCalcium     & \num{549}   \\
+      \ionNitrate     & < \num{1}   \\
+      \ionMagnesium   & \num{6,9}   \\
+    \end{tableau}
+  \end{multicols}
+\end{doc}
+
+\question{
+  Indiquer quelle eau du document~\ref{doc:A2_eau_minerale} est potable selon les critères de l'OMS.
+}{}{4}
+
+
+%%%%
+\begin{doc}{Impact des activités humaines sur la qualité chimique de l'eau}{doc:A2_impact_humain}
+  Depuis les années 1950, la qualité des eaux s'est fortement dégradée.
+  Cette dégradation met en péril les écosystème en milieux aquatiques et marins.
+
+  Dans les océans, on constate :
+  \begin{listePoints}
+    \item une diminution du pH des océans due à l'absorption de dioxyde de carbone émis par les activités humaines ;
+    \item une salinité (concentration ionique en sodium et chlorure) accrue ;
+    \item une augmentation de la température des eaux ;
+    \item une augmentation de la présence de matières plastiques et d'hydrocarbures.
+  \end{listePoints}
+
+  \begin{wrapfigure}[3]{r}{0.1\linewidth}
+    \vspace*{-35pt}
+    \qrcode{https://www.eaufrance.fr/la-qualite-des-rivieres}
+  \end{wrapfigure}
+  Dans les rivières, leur pollution dépend de leur localisation. 
+  En fonction des industries et des villes à proximité, leur qualité est plus ou moins altérée. 
+  Le site eauFrance permet de suivre la qualité des rivière en France (scanner le QR code pour y accéder).
+
+  \begin{tblr}{
+    colspec = {|X[l] |X[l] |X[l] |}, hlines,
+    cell{1}{1} = {r=2}{c}, cell{1}{2} = {c=2}{c},
+    row{1,2} = {couleurPrim!20, c}
+  }
+    \textbf{Macropolluants} & \textbf{Micropolluant} & \\
+    & \textbf{Organiques} & \textbf{Inorganiques} \\
+    Matières en suspension, nitrates, phosphates, \ldots &
+    Hydrocarbures, plastifiant, pesticides, détergents, médicaments, \ldots &
+    Métaux et autre éléments lourds : \chemfig{Pb}, \chemfig{Hg}, \chemfig{Cd}, \chemfig{Cu}, \chemfig{Fe}, \chemfig{Zn}, \chemfig{Co}, \ldots
+  \end{tblr}
+
+  \faArrowUp\; Types de polluants qu'on retrouve dans les eaux.
+\end{doc}
+
+\question{
+  Aller sur le site eauFrance et indiquer quelle est la proportion des cours d'eau qui sont dans un bon état chimique en 2015. 
+  Cette proportion a-t-elle augmentée par rapport à 2010 ?
+}{}{3}
+
+\question{
+  Quels sont les zones de la France ou les cours d'eau sont dans le moins bon état chimique ?
+  Et le moins bon état biologique ?
+}{}{3}
+
+\question{
+  En cherchant sur le site eauFrance, expliquer ce qu'est le phénomène \important{d'eutrophisation des milieux.}
+}{}{4}

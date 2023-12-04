@@ -1,0 +1,179 @@
+%%%% début de la page
+\teteSndMouv
+
+
+%%%% titre
+\vspace*{-32pt}
+\numeroActivite{2}
+\titreActivite{Modéliser une action par une force}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre la notion de force
+  \item Connaître des exemples de forces
+\end{objectifs}
+
+%%%%
+\begin{doc}{Force et action mécanique}{doc:A2_action_force}
+  \begin{encart}  
+    Un corps exerce une \important{action mécanique} sur un système étudié \texteTrouLignes[1]{s’il est capable d’en modifier le mouvement.}
+  \end{encart}
+  
+  Une action mécanique est modélisée par une \important{force.}
+
+  \begin{encart}
+    La force exercée par un corps $A$ sur un corps $B$ est représentée par un vecteur $\vvFAsurB$.
+    Ce vecteur possède les caractéristiques suivantes :
+    \begin{listePoints}
+      \item Une \important{valeur} notée $\FAsurB$, qui s'exprime en newton noté \unit{\newton}.
+      \item Une \important{direction} et un \important{sens} qui dépendent de la situation.
+      \item Une \important{origine}, appelée \important{point d'application} : le centre du système $B$.
+    \end{listePoints}
+  \end{encart}
+\end{doc}
+
+\mesure
+Une personne pousse un carton. 
+Représenter la force $\vv{F}_\text{personne/carton}$ qu'exerce la personne sur le carton.
+
+\vspace*{-8pt}
+\begin{center}
+  \image{0.23}{images/mecanique/personne_carton}
+\end{center}
+
+
+%%
+\begin{doc}{Exemples de forces}{doc:A2_exemples_forces}
+  On distingue 2 types d'actions :
+  \begin{listePoints}
+    \item les \important{actions de contact} (contact entre l’objet qui donne la force et l’objet qui la reçoit),
+    \item les \important{actions à distance} (pas de contact).
+  \end{listePoints}
+  
+  \begin{tblr}{
+    colspec = {|c |c |X[c] |}, hlines,
+    row{1} = { couleurPrim!20 },
+  }
+    Force & Valeur & Direction, sens \\
+    %
+    poids $\vv{P}$ &
+    $P = m \times g$ &
+    verticale, vers le bas \\
+    %
+    réaction du support $\vv{R}$ &
+    égale au poids $R = P$ &
+    perpendiculaire au support, vers le haut \\
+    %
+    frottements $\vv{f}$ &
+    dépend du cas étudié &
+    opposés à la vitesse $\vv{v}$ \\
+  \end{tblr}
+  \smallskip
+  
+  \begin{listePoints}
+    \item $\vv{P}$ représente l'interaction gravitationnelle de la Terre.
+    \item $\vv{R}$ représente l'action exercée par le support sur un objet posé dessus.
+    \item $\vv{f}$ représentent l'action d'un milieu (gaz, liquide, support solide).
+  \end{listePoints}
+  \attention Si un objet est \important{immobile par rapport au milieu,} il n'y a pas de frottements.
+\end{doc}
+
+\vspace*{-16pt}
+\question{
+  Parmi les forces $\vv{P}$, $\vv{R}$ et $\vv{f}$, indiquer celles qui modélisent une action de contact et celles qui modélisent une action à distance.
+}{}{3}
+
+
+%%%%
+\begin{center}
+  \begin{tblr}{
+    colspec = {|X[c,m] |X[c,m] |}, hlines,
+    row{1,3} = {couleurPrim!20},
+  }
+    Ballon & Curling \\
+    \image{0.8}{images/mecanique/ballon_football} &
+    \image{0.8}{images/mecanique/curling} \\
+    %
+    Parachutiste & Skieuse \\
+    \image{0.8}{images/mecanique/parachutiste} &
+    \image{0.8}{images/mecanique/skieur} \\  
+  \end{tblr}
+\end{center}
+
+%%
+\mesure 
+En vous aidant des documents~\ref{doc:A2_action_force} et~\ref{doc:A2_exemples_forces}, compléter le tableau :
+\begin{listePoints}
+  \item Schématiser la ou les forces entrant en jeu, en faisant attention à leurs points d'application.
+  \item Tracer la somme de toutes les forces entrant en jeu.
+\end{listePoints}
+
+
+
+%%%%
+% \titreSection{Principe d'inertie}
+
+% \question{
+%   Répondre par vrai ou faux en justifiant à l'aide d'exemples ou de contre exemples.
+% }{}{0}
+
+% \vspace*{-6pt}
+% \question{
+%   Si un objet est en mouvement, alors il est forcément accéléré.
+% }{}{2}
+
+% \question{Si un objet est en mouvement, alors il subit une force dans le sens du mouvement.}{}{2}
+
+% \question{Si deux objets sont animés par les mêmes forces, alors ils suivent la même trajectoire.}{}{2}
+
+% \question{
+%   On dit que deux forces se compensent si leur sommes vectorielle est nulle.
+%   Pour quels systèmes de la figure~\ref{tab:situations_sportives} les forces se compensent-elles ?
+% }{}{2}
+
+% \question{
+%   Quel est le mouvement du système dans chaque cas où les forces se compensent ?
+% }{}{2}
+
+
+
+% \begin{doc}{Conclusion : Le principe d'inertie}
+%   \phantom{b}
+%   \vspace*{-12pt}
+  
+%   \chevron Le \important{principe d'inertie} a été formulé pour la première fois par Newton en 1687.
+%   Newton s'appuyait sur les travaux de Descartes et de Galilée, et parfois on appelle ce principe la \important{première loi de Newton}.
+%   Sa formulation moderne est la suivante :
+  
+%   \begin{encart}
+%     Si les forces qui s'exercent sur un système se compensent, alors ce système est \\[6pt]
+%     soit \lignePointillee{0.2}, 
+%     soit en mouvement \dotfill
+%   \end{encart}
+  
+%   \begin{encart}
+%     Réciproquement, si un système est \dotfill \\[6pt]
+%     .\dotfill, alors les forces\\[6pt]
+%     . \dotfill
+%   \end{encart}
+% \end{doc}
+
+
+% %%%%
+% \titreSection{Variation du vecteur vitesse}
+
+% \question{
+%   Comment varie $\vv{v}$ pour un système qui a un mouvement rectiligne uniforme ?
+%   En déduire la variation de $\vv{v}$ pour un système soumis à des forces qui se compensent.
+% }{}{3}
+
+% \begin{doc}{Principe d'inertie et vitesse}
+%   \vspace*{-24pt}
+%   \begin{encart}
+%     Le principe d'inertie dit que si le vecteur vitesse \dotfill \\[6pt]
+%     au cours de la trajectoire, alors \dotfill \\[6pt]
+%     \reponse{1}
+%     %les forces exercées sur le système se compensent.
+%   \end{encart}
+% \end{doc}

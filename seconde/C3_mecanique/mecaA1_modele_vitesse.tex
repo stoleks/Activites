@@ -4,15 +4,16 @@
 %%%% titre
 %\nomPrenomClasse
 \numeroActivite{1}
+\vspace*{-36pt}
 \titreActivite{Modéliser le mouvement}
 
 
 %%%% objectifs
 \vspace{-10pt}
 \begin{objectifs}
-  \item Comprendre les limites du modèle du point matériel.
-  \item Comprendre la notion de référentiel.
-  \item Comprendre la notion de vecteur.
+  \item Modéliser le système étudié par un point matériel.
+  \item Comprendre que le mouvement dépend du référentiel choisi.
+  \item Comprendre l'utilisation des vecteurs en physique.
 \end{objectifs}
 
 
@@ -24,6 +25,7 @@
 
 
 %%%%
+\vspace*{-12pt}
 \titreSection{Système et référentiel}
 
 %%%%
@@ -34,10 +36,8 @@
   
     On ne va s'intéresser qu'au mouvement global du système.
     C'est pourquoi on va modéliser le système par
-    \texteTrouLignes{
-      Un point de même masse, localisé en son centre de masse.
-    }
-    \texteTrou{
+    \texteTrouLignes[2]{
+      Un point de même masse que le système, localisé au centre de masse du système.
       C'est le \important{modèle du point matériel.}
     }
   \end{encart}
@@ -64,6 +64,8 @@
 \end{tblr}
 
 %%
+\newpage
+\vspace*{-34pt}
 \begin{doc}{Référentiel}{doc:A1_referentiel}
   Pour décrire le mouvement, il faut pouvoir le repérer dans l’espace et dans le temps, pour ça on utilise un référentiel.
   
@@ -84,24 +86,54 @@
 \titreSection{Vecteur}
 
 %%
+\vspace*{-8pt}
 \begin{doc}{Vecteur en physique}{doc:A1_vecteur}
   \begin{encart}
     \important{Vecteur} : objet mathématique représenté par un segment fléché $\longrightarrow$ et noté avec une lettre surmontée d'une flèche $\vv{v}$.
     
     Un vecteur contient quatre information : 
-    \begin{listePoints}
-      \item \texteTrou{Une direction}
-      \item \texteTrou{Un sens}
-      \item \texteTrou{}
-      \item \dotfill 
-    \end{listePoints}
+    \begin{multicols}{2}
+      \begin{listePoints}
+        \item \texteTrou{Une direction.}
+        \item \texteTrou{Un sens.}
+        \item \texteTrou{Une valeur, ou norme.}
+        \item \texteTrou{Une origine.}
+      \end{listePoints}
+    \end{multicols}
   
     Un vecteur est \important{constant} si
     \texteTrouLignes[1]{sa norme, sa direction et son sens sont constants.}
   \end{encart}
   
   \fleche En physique on va se servir des vecteurs pour représenter différentes grandeurs :
-  \texteTrouLignes[1]{vitesse, force, champ électromagnétique, aimantation}
+  \texteTrouLignes[1]{vitesse, force, champ électromagnétique, aimantation, accéleration, etc.}
   
   \attention Un vecteur n'est \textbf{jamais} égal à un nombre, qui contient moins d'information.
+\end{doc}
+
+\begin{doc}{Opération sur les vecteurs}{doc:A1_operation_vecteur}
+  Même si les vecteurs ne sont pas des nombres, on peut effectuer des \important{opérations} avec.
+  Cette année on ne réalisera que des opérations graphique.
+  \begin{multicols}{3}
+    \centering
+    \begin{boite}
+      \vAligne{50pt}
+    \end{boite}
+    Addition
+    
+    \begin{boite}
+      \vAligne{50pt}
+    \end{boite}
+    Multiplication par un nombre
+
+    \begin{boite}
+      \vAligne{50pt}
+    \end{boite}
+    Soustraction
+  \end{multicols}
+
+  \begin{encart}
+    Le \important{vecteur nul}, noté $\vv{0}$, est le vecteur de valeur nulle.
+    On l'obtient en soustrayant un vecteur par lui même $\vv{a} - \vv{a} = \vv{a} + (-1 \times \vv{a}) = \vv{0}$.
+  \end{encart}
 \end{doc}

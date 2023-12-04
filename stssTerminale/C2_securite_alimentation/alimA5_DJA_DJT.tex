@@ -1,0 +1,128 @@
+%%%%
+\teteTermStssAlim
+
+%%%% titre
+\numeroActivite{5}
+\titreActivite{Contrôle qualité d'un dessert à base de lait}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre le principe de la \important{D}ose \important{J}ournalière \important{A}dmissible (\important{DJA})
+  et de la \important{D}ose \important{J}ournalière \important{T}olérable (\important{DJT}).
+\end{objectifs}
+
+\begin{contexte}
+  Une inspectrice sanitaire contrôle un restaurant et réalise un prélèvement sur un dessert pour enfant.
+
+  \problematique{
+    Est-ce que ce dessert respecte les doses toxicologiques de référence ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Dose Journalière Admissible (DJA) et Dose Journalière Tolérable (DJT)}{doc:A5_DJA_DJT}
+  \begin{encart}
+    Les \important{Doses Journalières} sont les quantités d'une substance, qu'une personne peut manger tous les jours de sa vie sans risques pour sa santé.
+  \end{encart}  
+
+  Les \important{Doses Journalières} sont estimées par des études scientifiques et exprimées en \unit{\mg} de substance par \unit{\kg} de masse corporelle, soit en \unit{\mg\per\kg}.
+
+  \begin{encart}
+    On distingue deux types de \important{Doses Journalières}
+    \begin{listePoints}  
+      \item \important{DJA :} pour les substances autorisées et ajoutées volontairement ;
+      \item \important{DJT :} pour les contaminants présent involontairement (métaux lourds, radionucléides, composés organiques, etc.)
+    \end{listePoints}
+  \end{encart}
+\end{doc}
+
+\begin{doc}{Lait de vache cru}{doc:A5_lait_vache_cru}
+  Le lait de vache cru est le lait issu de la traite des vaches.
+  Le lait est constitué à \qty{87,5}{\percent} d'eau, de glucides, de protéines et de matières grasses.
+
+  Le lait peut-être contaminé par des polluants comme la mélamine, ou infecté par des micro-organismes.
+  Ces micro-organismes peuvent venir de l'environnement (terre, paille, mouche, déjection, camion-citerne, etc.) ou être présents sur la vache (infection des mamelles).
+
+  Pour que les micro-organismes prolifèrent, il faut de l'humidité (de l'eau), de l'énergie (sous forme de chaleur), de la nourriture (contenue dans le lait) et en général du dioxygène.
+\end{doc}
+
+\begin{doc}{Techniques de conservation des aliments}{doc:A5_technique_conservation}
+  Pour tuer les micro-organismes, on peut augmenter la température d'un aliment pendant une certaine durée, avant de refroidir l'aliment rapidement.
+
+  \begin{center}
+    \begin{tblr}{
+      colspec = {|c |c |c |c |}, hlines,
+      column{1} = { couleurPrim!10 },
+      row{1,2} = { couleurPrim!20 },
+      cell{1}{1} = {r=2}{c},
+      cell{1}{2} = {r=2}{c},
+      cell{1}{3} = {c=2}{c},
+    }
+      Technique & Pasteurisation & Stérilisation & \\
+      %
+      & & Appertisation & Upérisation (UHT) \\
+      %
+      Température &
+      Entre \qty{65}{\degreeCelsius} et \qty{100}{\degreeCelsius} &
+      Environ \qty{120}{\degreeCelsius} &
+      Environ \qty{140}{\degreeCelsius} \\
+      %
+      Durée &
+      Quelques dizaines de secondes &
+      Quelques secondes &
+      Quelques secondes \\
+    \end{tblr}
+  \end{center}
+\end{doc}
+  
+\begin{doc}{Doses toxicologiques de références}{doc:A5_doses_references}
+  \centering
+  \begin{tblr}{
+    colspec = {|c |c |c |}, hlines,
+    row{1} = { couleurPrim!20 },
+    row{2} = { couleurPrim!10 },
+    cell{1}{1} = {c=2}{c},
+  }
+    \textbf{DJA (\unit{\mg\per\kg})} & & \textbf{DJT (\unit{\mg\per\kg})} \\
+    %
+    E102 & E122 & Mélamine \\
+    %
+    \num{7,5} & \num{4} & \num{0,5} \\
+  \end{tblr}
+\end{doc}
+
+\separationBlocs{
+  \begin{doc}{Gâteau à analyser}{doc:A5_gateau}
+    \image{1}{images/photos/conservation/gateau_DJA_DJT}
+  \end{doc}
+}{
+  \begin{doc}{Analyse du dessert}{doc:A5_analyse_dessert}
+    \centering
+    \phantom{b}\vspace*{-12pt}
+    
+    \begin{tableau}{|c |c |c |}
+      E102 (jaune) & E122 (rouge) & Mélamine \\
+      %
+      \qty{150}{\mg} & \qty{50}{\mg} & \qty{4}{\pico\g}
+    \end{tableau}
+    
+    \phantom{b}
+  \end{doc}
+}
+
+\smallskip
+\question{
+  Indiquer les méthodes de conservations utilisé pour conserver le lait dans le gâteau à analyser.
+  Identifier si les méthodes de conservations sont des procédés physiques ou chimiques.
+}{}{5}
+
+\question{
+  Calculer les masses maximales de colorant jaune E102, de colorant rouge E122 et de mélamine qu'un-e enfant de \qty{20}{\kg} peut ingérer chaque jour.
+}{}{6}
+
+\question{
+  Le dessert peut-il être servi sans danger dans le restaurant ?
+  Justifier en répondant à la problématique posée dans le contexte.
+}{}{6}

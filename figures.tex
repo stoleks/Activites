@@ -15,16 +15,16 @@
 }
 
 %%%% tube à essais
-\newcommand{\tkzTubeEssai}[3]{
+\newcommand{\tkzTubeEssais}[3]{
   \draw[thick] (#1,#2) -- (#1,0) arc (0:-180:#1) -- (-#1,#2);
   \draw[thick] (0,#2) ellipse (#1 and #3);
 }
-\newcommand{\tkzBasTubeEssai}[5]{
+\newcommand{\tkzBasTubeEssais}[5]{
   \fill[color=#1] (-#2,#3) -- (#2,#3) arc (0:-180:#2);
   \tkzRect{#1}{#2}{#3 - 0.01}{#4}
   \tkzEllipse{#1!85!black}{#2}{#4}{#5}
 }
-\newcommand{\tkzPhaseTubeEssai}[5]{
+\newcommand{\tkzPhaseTubeEssais}[5]{
   \tkzRect{#1}{#2}{#3}{#4}
   \tkzEllipse{#1}{#2}{#3}{#5}
   \tkzEllipse{#1!85!black}{#2}{#4}{#5}
@@ -76,7 +76,7 @@
 }
 
 %% rangée de classe ou de TP
-\NewDocumentCommand{\rangee}{m r[]r[] r()r()r()d() r[]r[]}{
+\NewDocumentCommand{\rangee}{m r()r() r()r()r()d() r()r()}{
   \places(0)(0 - 3*#1) [#2][#3]
   \IfValueTF{#7}{
     \places(7) (0 - 3*#1) [#4][#5][#6][#7]
@@ -94,4 +94,27 @@
   }{
     \places(14) (0 - 3*#1) [#5][#6][#7]
   }
+}
+
+
+%%%% tube à essai de sang
+\newcommand{\tubeEssaisSolution}[1]{
+  \begin{tikzpicture}
+    \tkzBasTubeEssais{#1}{0.25}{0}{0.75}{0.1} % contenu du tube
+    \tkzTubeEssais{0.25}{1.5}{0.1} % tube
+  \end{tikzpicture}
+}
+
+\newcommand{\tubeEssaisSangCentrifuge}[3]{
+  \begin{tikzpicture}
+    % phases dans le tube à essai
+    \tkzBasTubeEssais{rougeSombre!75!white} {0.35}{0}{#1}{0.1}
+    \tkzPhaseTubeEssais{gray!10!white}      {0.35}{#1}{#2}{0.1}
+    \tkzPhaseTubeEssais{jauneClair!75!white}{0.35}{#2}{#3}{0.1}
+    \tkzTubeEssais{0.35}{#3 + 1}{0.1}
+    % Légende
+    \tkzLegende(0.4)(#3 - 0.1) [1]{Plasma}*
+    \tkzLegende(0.4)(#2 - 0.08)[1]{Globules blancs}*
+    \tkzLegende(0.4)(-0.1)     [1]{Globules rouges}*
+  \end{tikzpicture}
 }
