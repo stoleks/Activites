@@ -41,11 +41,11 @@
       \pgfmathparse{\hor-1}
       % axe x
       \foreach[parse = true] 
-        \i in {-\hor+0.2, -\hor+0.4,..., \hor-0.2} \draw[axes] (\i, -0.1) -- (\i, 0.1);
+        \i in {-\hor+0.2, -\hor+0.4,..., \hor-0.2} \draw[axes] (\i,-0.1) -- (\i,0.1);
       \foreach[parse = true] \i in {-\hor,...,\hor} \draw[axes] (\i,-0.2) -- (\i,0.2);
       % axe y
       \foreach[parse = true]
-        \i in {-\ver+0.2, -\ver+0.4,..., \ver-0.2} \draw[axes] (-0.1, \i) -- (0.1, \i);
+        \i in {-\ver+0.2, -\ver+0.4,..., \ver-0.2} \draw[axes] (-0.1,\i) -- (0.1,\i);
       \foreach[parse = true] \i in {-3,...,3} \draw[axes] (-0.2,\i) -- (0.2,\i);
       % Tension sinusoïdale
       \draw[trace] plot(\x, {3.25*sin((1.57*\x + 1.57) r)}); % r = radian

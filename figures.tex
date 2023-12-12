@@ -57,6 +57,14 @@
 }
 
 
+\newcommand{\barrePourcentage}[1]{%
+  \begin{tikzpicture}
+    \fill[color=couleurPrim]    (0.0,    0.0) rectangle (#1*8ex, 1.5ex);
+    \fill[color=couleurPrim!20] (#1*8ex, 0.0) rectangle (8.0ex,  1.5ex);
+  \end{tikzpicture}
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% plan de classe
 \NewDocumentCommand{\texteCadre}{O{black} r() O{2} r() O{2} m}{

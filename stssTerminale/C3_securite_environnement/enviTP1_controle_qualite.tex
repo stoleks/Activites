@@ -1,0 +1,102 @@
+%%%%
+\teteTermStssEnvi
+
+%%%% titre
+\vspace*{-32pt}
+\numeroActivite{1}
+\titreTP{Contrôle de la qualité d'une eau du robinet}
+\vspace*{-8pt}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre le principe d'un dosage conductimétrique
+  \item Savoir lire un volume équivalent à partir de l'évolution de la conductivité
+\end{objectifs}
+
+\begin{contexte}
+  La teneur en ions chlorure \chemfig{Cl^{-}} d'une eau destinée à la consommation ne doit pas dépasser \qty{250}{\mg\per\litre}.
+  
+  \problematique{
+    Comment contrôler cette limite de qualité ?
+  }
+\end{contexte}
+
+
+%%%%
+\begin{doc}{Principe d'un dosage conductimétrique}{doc:TP1_principe_dosage}
+  Pour réaliser un dosage conductimétrique, on utilise une espèce chimique ionique pour qu'elle réagisse avec l'ion dont on veut mesurer la concentration pour former un solide.
+
+  Par exemple, on veut mesurer les ions sulfate \chemfig{SO_4^{2-}} présents dans de l'eau.
+  On va utiliser une \important{solution titrante} d'ions baryum \chemfig{Ba^{2+}} pour doser, car les ions sulfate et baryum se transforment en une espèce solide :
+  \begin{equation*}
+    \chemfig{SO_4^{2-}}(aq) + \chemfig{Ba^{2+}}(aq) \reaction \chemfig{BaSO_4}(s)
+  \end{equation*}
+  Comme on transforme des ions en solide, la solution voit d'abord sa conductivité baisser, avant de remonter quand tous les ions \chemfig{SO_4^{2-}} présents au départ ont été transformés.
+  
+  Cette variation de la conductivité permet de mesurer précisément \important{l'équivalence.}
+  À l'équivalence, on a introduit la même quantité de matière de \chemfig{Ba^{2+}} qu'il y avait d'ions \chemfig{SO_4^{2-}} initialement
+  \begin{equation*}
+    n(\chemfig{Ba^{2+}}) = n(\chemfig{SO_4^{2-}})
+  \end{equation*}
+\end{doc}
+
+\begin{doc}{Protocole d'un dosage conductimétrique}{doc:TP1_protocole_dosage}
+  En pratique pour réaliser un dosage conductimétrique, il faut :
+  \begin{protocole}
+    \item verser millilitre par millilitre la \important{solution titrante} dans l'eau à doser ;
+    \item mesurer la \important{conductivité $\sigma$} pour chaque millilitre versé avec un \important{conductimètre} ;
+    \item tracer la conductivité en fonction du volume de la solution titrante versé $V$ ;
+    \item tracer les deux droites de la conductivité et repérer leur point d'intersection (l'équivalence).
+  \end{protocole}
+
+  \begin{encart}  
+    À l'intersection des droites, on a \important{l'équivalence,} associé au \important{volume d'équivalence $V_\text{eq}$}.
+  \end{encart}
+
+  \begin{center}  
+    \image{0.39}{images/chimie/montages/dosage_conductimetrique}
+  \end{center}
+\end{doc}
+
+\begin{doc}{Dosage d'une eau d'une robinet}{doc:TP1_dosage_robinet}
+  \begin{wrapfigure}{r}{0.4\linewidth}
+    \vspace*{-36pt}
+    \centering
+    \image{1}{images/donnees/conductivite_dosage}
+  \end{wrapfigure}
+  Pour contrôler la qualité de l'eau d'une robinet, on réalise un dosage conductimétrique.
+
+  On prélève $V_\text{eau} = \qty{200}{\mL}$ d'eau du robinet dont on veut déterminer la concentration en ions chlorure \chemfig{Cl^{-}}.
+  On dose cette eau avec une solution de nitrate d'argent (\chemfig{Ag^+}, \chemfig{NO_3^{-}}), de concentration en ions $[\chemfig{Ag^+}] = \qty{1,0e-2}{\mol\per\litre}$.
+
+  Une fois mélangés, les ions argent et les ions chlorure se transforment pour former un précipité blanc de chlorure d'argent \chemfig{AgCl}.
+
+  On obtient la courbe de dosage présentée à droite, avec les points mesurées et les deux droite de tendances.
+  Les deux droites se croisent pour $V = \qty{16,5}{\ml}$.
+\end{doc}
+
+%%
+\question{
+  Donner l'espèce chimique titrante et l'espèce que l'on veut doser dans l'eau du robinet.
+}{
+}{3}
+
+\question{
+  Écrire la réaction de dosage entre l'espèce titrante et l'espèce à doser.
+}{}{2}
+
+\question{
+  Donner la valeur du volume équivalent $V_\text{eq}$.
+}{}{2}
+
+\question{
+  Calculer la concentration molaire $[\chemfig{Cl^{-}}]$, en montrant que $[\chemfig{Ag^+}] \times V_\text{eq} = [\chemfig{Cl^{-}}] \times V_\text{eau}$.
+}{}{6}
+
+\question{
+  Calculer la concentration massique en ions chlorure dans cet échantillon d'eau du robinet.
+  Conclure si cette eau du robinet est propre à la consommation ou non.
+
+  \textbf{Donnée :} M(\chemfig{Cl}) = \qty{35,5}{\g\per\mole}
+}{}{3}

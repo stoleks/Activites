@@ -1,0 +1,136 @@
+%%%%
+\teteTermStssEnvi
+
+%%%% titre
+%\vspace*{-32pt}
+\numeroActivite{2}
+\titreTP{Composition de l'air}
+\vspace*{-8pt}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Connaître la composition de l'air.
+  \item Connaître quelques tests d'identification de gaz présents dans l'air.
+  \item Savoir calculer une fraction molaire.
+\end{objectifs}
+
+\begin{contexte}
+  L'air qui nous entoure et qui nous permet de respirer est un mélange composé de plusieurs molécules.
+  
+  \problematique{
+    Quelle est la composition de l'air et comment la mesurer ?
+  }
+\end{contexte}
+
+
+%%%%
+\begin{doc}{Composition de l'air}{doc:TP2_composition_air}
+  \begin{tableau}{|l|c|}
+    Constituant & Proportion molaire \\
+    Diazote \chemfig{N_2}             & \phantom{0}\qty{78,08}{\percent} \barrePourcentage{0.7808} \\
+    Dioxygène \chemfig{O_2}           & \phantom{0}\qty{20,95}{\percent} \barrePourcentage{0.2095} \\
+    Argon \chemfig{Ar}                & \phantom{00}\qty{0,93}{\percent} \barrePourcentage{0.0093} \\
+    Dioxyde de carbone \chemfig{CO_2} & \phantom{00}\qty{0,04}{\percent} \barrePourcentage{0.0004} \\
+    Néon \chemfig{Ne}                 & \qty{18,2}{\ppm} \barrePourcentage{0.0000182} \\
+    Hélium \chemfig{He}               & \phantom{0}\qty{5,2}{\ppm} \barrePourcentage{0.0000052} \\
+    Monoxyde d'azote \chemfig{NO}     & \phantom{0}\qty{5,0}{\ppm} \barrePourcentage{0.0000050} \\
+    Méthane \chemfig{CH_4}            & \phantom{0}\qty{1,9}{\ppm} \barrePourcentage{0.0000019} \\
+    Eau \eau                          & Variable \\ 
+  \end{tableau}
+
+  \vspace*{-80pt}
+  \begin{center}
+    \begin{tikzpicture}
+      % Barres
+      \fill[color = couleurPrim]    (0.0 , 0.0)        rectangle (0.7808*90ex, 3ex);
+      \fill[color = couleurPrim!50] (0.7808*90ex, 0.0) rectangle (0.9903*90ex, 3ex);
+      \fill[color = couleurPrim!25] (0.9903*90ex, 0.0) rectangle        (90ex, 3ex);
+      % Valeurs
+      \node[white] at (0.7808*45ex, 1.5ex) {\textbf{\qty{78,08}{\percent}}};
+      \node[black] at (0.8855*90ex, 1.5ex) {\textbf{\qty{20,95}{\percent}}};
+      \node[black] at        (91ex, 1.5ex) {\textbf{\qty{0,97} {\percent}}};
+      % Carré légende
+      \fill[color = couleurPrim]    (75ex, 15ex) rectangle (78ex, 12ex);
+      \fill[color = couleurPrim!50] (75ex, 11ex) rectangle (78ex, 8ex);
+      \fill[color = couleurPrim!25] (75ex, 7ex)  rectangle (78ex, 4ex);
+      % Légende
+      \node[black,right] at (78ex, 13.5ex) {\textbf{Diazote}};
+      \node[black,right] at (78ex, 9.5ex)  {\textbf{Dioxygène}};
+      \node[black,right] at (78ex, 5.5ex)  {\textbf{Autres gaz}};
+    \end{tikzpicture}
+  \end{center}
+
+  \qty{1}{\percent} signifie qu'il y a 1 molécule sur un total de 100 molécules.
+  
+  \qty{1}{\ppm} signifie qu'il y a 1 molécule sur un total de \num{1000000}.
+\end{doc}
+
+
+\begin{doc}{Fraction molaire}{doc:TP2_fraction_molaire}
+  La \important{fraction molaire} est le rapport entre la quantité de matière du constituant considéré et la quantité de matière totale dans le mélange étudié.
+
+  La fraction molaire est noté $x_i$ pour le constituant $i$. Elle varie entre 0 et 1 et se calcule avec la relation :
+  \begin{equation*}
+    x_i = \dfrac{n_i}{n_\text{tot}}
+  \end{equation*}
+
+  $n_i$ est la quantité de matière du constituant $i$.
+
+  $n_\text{tot}$ est la quantité de matière totale dans le mélange.
+\end{doc}
+
+\question{
+  Convertir les proportions molaire des 5 premiers constituants de l'air en fraction molaire pour pouvoir les comparer.
+}{}{4}
+
+
+\begin{doc}{Quelques tests pour identifier des espèces chimiques}{doc:TP2_tests_identification}
+  \pointCyan L'eau de chaux est une solution saturée en hydroxyde de calcium \chemfig{Ca} $(\chemfig{OH})_2$.
+  En présence de dioxyde de carbone \chemfig{CO_2}, l'eau de chaux se trouble, suite à la formation d'un précipité blanc de carbonate de calcium \chemfig{CaCO_3}.
+
+  \pointCyan Le sulfate de cuivre anhydre \chemfig{CuSO_4} est une poudre blanche.
+  En contact avec des molécules d'eau \chemfig{H_2O} la poudre bleuit, suite à la formation d'un complexe pentahydrate \chemfig{CuSO_4, 5H_2O}.
+
+  \pointCyan La combustion d'une allumette nécessite un combustible, la cellulose de formule brute \bruteCHO{6}{10}{5} du bois de l'allumette, et un comburant, le dioxygène \chemfig{O_2}.
+  Cette réaction chimique forme du dioxyde de carbone \chemfig{CO_2} et de la vapeur d'eau \chemfig{H_2O}.
+\end{doc}
+
+\question{
+  Pour chacun des 3 tests, établir l'équation de la réaction chimique mise en jeu.
+}{
+}{3}
+
+
+%%%%
+\begin{doc}{Combustion d'une bougie}{doc:TP2_combustion_bougie}
+  Le combustible d'une bougie est l'acide stéarique de formule brute \bruteCHO{18}{36}{2}
+  L'équation de la réaction de combustion d'une bougie est
+  \begin{center}
+    \bruteCHO{18}{36}{2}(s) + 26\chemfig{O_2}(g) \reaction
+    18\chemfig{CO_2}(g) + 18\chemfig{H_2O}(g)
+  \end{center}
+
+  \textbf{Matériel :} un cristallisoir, une bougie, une éprouvette graduée.
+
+  \textbf{Protocole :} remplir la coupelle d'eau.
+  Placer et allumer la bougie au centre de la coupelle.
+  Recouvrir la bougie avec l'éprouvette.
+
+  Le dioxyde de carbone se dissout dans l'eau dès sa formation et la vapeur d'eau se condense rapidement, ce qui laisse un vide dans le récipient où à lieu la combustion.
+\end{doc}
+
+\begin{doc}{Volume molaire des gaz}{doc:TP2_volume_molaire}
+  Le volume molaire des gaz vaut $V_m = \qty{24,1}{\litre\per\mole}$ à \qty{20}{\degreeCelsius} sous pression atmosphérique.
+  Cette valeur est la même pour tous les gaz, donc \textbf{la fraction volumique est égale à la fraction molaire pour les gaz.}
+\end{doc}
+
+\mesure Réaliser l'expérience du document~\ref{doc:TP2_combustion_bougie} et mesurer le volume d'eau déplacé.
+
+\question{
+  En déduire la fraction volumique de dioxygène, puis la fraction molaire de dioxygène.
+}{}{4}
+
+\question{
+  Comparer cette valeur avec celle fournie dans le document~\ref{doc:TP2_composition_air}.
+}{}{1}
