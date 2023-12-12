@@ -42,6 +42,9 @@
 \definesubmol\teteAcide{
   O-[::30] (=[::60]O) -[::-60]
 }
+\definesubmol\teteAcideDev{
+  - O - C (=[::90] O) -
+}
 \definesubmol\cis{
   -[::60] =[::-60] -[::-60]
 }
@@ -59,6 +62,15 @@
 }
 \definesubmol\alphaLinoleique{
   !\teteAcide !\cc !\cc !\cc !\trans !\trans !\trans -[::60]
+}
+\definesubmol\alphaLinolenique{
+  !\teteAcide !\cc !\cc !\cc !\cis !\cis !\cis -[::60]
+}
+\definesubmol\steraique{
+  !\teteAcideDev C_{17}H_{35}
+}
+\definesubmol\caproique{
+  !\teteAcideDev - CH_2 - CH_2 - CH_2 - CH_2 - CH_3
 }
 \definesubmol\trioleine{
    (-[::150] -[::60] O-[::-60] !\trioleique)

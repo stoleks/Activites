@@ -1,0 +1,155 @@
+%%%%
+\teteTermStssAlim
+
+%%%% titre
+\numeroActivite{1}
+\titreTP{Contrôler la fraicheur d'un lait}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Déterminer la fraîcheur d’un lait conformément aux normes de santé publique.
+\end{objectifs}
+
+\begin{contexte}
+  En tant qu’inspecteur-ice Hygiène et Sécurité, vous avez prélevé du lait dans le réfrigérateur d’un restaurant.
+  
+  \problematique{
+    Les client-es du restaurant peuvent-ils consommer sans risque ce lait ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Le degré Dornic}{doc:TP1_degre_dornic}
+  Pierre Dornic, ingénieur agronome du XIXème siècle, a effectué de nombreuses recherches sur le lait et ses constituants.
+  Dans l’industrie laitière, l’acidité d’un lait n’est pas exprimée par son pH mais par son degré Dornic : un degré Dornic (\unit{\dornic}) correspond à une concentration de \qty{0,1}{\g} d’acide lactique par litre de lait.
+\end{doc}
+
+%%
+\begin{doc}{Degré Dornic et fraîcheur du lait}{doc:TP1_dornic_fraicheur}
+  Le pH du lait dépend de son état de fraîcheur.
+  Il est d’environ \num{6,7} pour un lait frais puis il diminue au cours du temps.
+  L’acidité naturelle du lait est due à la présence de nombreuses espèces chimiques,
+  comme la caséine ou l’acide lactique.
+  
+  Les bactéries qui prolifèrent dans le lait transforment le lactose,
+  un sucre présent dans le lait, en acide lactique de formule \chemfig{C_3 H_6 O_3}.
+  Si la quantité d’acide lactique présente est trop grande alors le lait n’est plus frais et ne doit plus être consommé.
+  
+  \textbf{Pour éviter les troubles digestifs, le lait que nous consommons doit être frais.}
+  
+  Lorsque l’acidité augmente, la caséine (protéine) coagule : on dit que « le lait tourne ».
+  L’acidité croît avec le temps, c’est donc un bon critère d’évaluation de la fraîcheur.
+  La fraîcheur d’un lait est caractérisée par son degré Dornic \unit{\dornic}.
+
+  \begin{tblr}{
+    colspec = {X[c] | X[c] | X[c] | X[c] | X[c]},
+    vline{2} = {1}{text = \clap{\qty{18}{\dornic}}},
+    vline{3} = {1}{text = \clap{\qty{35}{\dornic}}},
+    vline{4} = {1}{text = \clap{\qty{50}{\dornic}}},
+    vline{5} = {1}{text = \clap{\qty{100}{\dornic}}},
+  }
+    & & & & \\ \hline
+    %
+    Lait frais &
+    Le lait caille en chauffant &
+    Le lait caille à température ambiante &
+    Le yaourt tourne &
+    Yaourt « bulgare »
+  \end{tblr}
+\end{doc}
+
+%%%%
+\numeroQuestion Lire les documents et compléter le schéma du document~\ref{doc:TP1_dispositif_experimental}.
+
+\mesure Préparer le dispositif expérimental en suivant les consignes du document~\ref{doc:TP1_preparation}.
+
+\mesure Réaliser un \important{premier dosage rapide :}
+Verser \unit{mL} par \unit{mL} la solution titrante de soude dans l'erlenmeyer.
+Quand la solution change de couleur et que la couleur persiste après agitation, noter la valeur $V_1$ du volume de soude versé.
+
+\mesure Réaliser un \important{deuxième dosage précis :}
+\begin{protocole}
+  \item Toujours en agitant, recommencer le dosage de zéro.
+  \item Verser rapidement jusqu'à $V_1 - \qty{1}{\ml}$, puis verser goutte-à-goutte.
+  \item Quand le changement de couleur est persistant arrêter de verser et noter la valeur précise $V_e$ du volume de soude versé.
+\end{protocole}
+
+\question{
+  Les ions hydroxydes \hydroxyde et l'acide lactique \chemfig{C_3 H_6 O_3} sont présents initialement dans le milieu réactionnel lors du dosage.
+  En déduire l’équation de la réaction acido-basique de dosage. 
+  
+  \textbf{Couples acide/base :} \chemfig{C_3 H_6 O_3}/\chemfig{C_3 H_5 O_3^{-}} et \eau/\hydroxyde
+}{
+}{1}
+
+
+%%
+\begin{doc}{Dispositif expérimental}{doc:TP1_dispositif_experimental}
+  \begin{center}
+    \separationBlocs{
+      \image{1}{images/chimie/montage_dosage}
+    }{
+      \texteTrou{Burette} \\[5.4cm]
+      Solution de soude $c_b = \qty{0,05}{\mol\per\litre}$ \\[2.3cm]
+      \texteTrou{Erlen meyer} \\[1.5cm]
+      Lait $V_a = \qty{20}{\ml}$ + eau \qty{150}{\ml} + indicateur \\[0.1cm]
+      \texteTrou{Barreau aimantée} \\
+      \texteTrou{Agitateur magnétique}
+    }    
+  \end{center}
+  
+  L'acide lactique est complètement consommé par la solution de soude quand le pH de la solution augmente rapidement.
+  C'est-à-dire quand l'indicateur coloré change de couleur.
+\end{doc}
+
+%%
+\begin{doc}{Préparation du dispositif expérimental}{doc:TP1_preparation}
+  \begin{listePoints}
+    \item Prélever un volume $V_a = \qty{10}{\ml}$ de lait de concentration molaire $c_a$ inconnue en acide lactique à l’aide d’une pipette jaugée (rincée avec le lait ) et les mettre dans un erlenmeyer de \qty{250}{\ml}.
+    \item Ajouter \qty{75}{\ml} d’eau distillée et quelques gouttes
+    phénolphtaléine. La phénolphtaléine est un indicateur coloré incolore en milieu acide et fuschia lorsque $\text{pH} > 10$.
+    %de bleu de bromothymol. Le bleu de bromothymol est un indicateur coloré jaune en milieu acide et bleu lorsque $\text{pH} > \num{7,6}$
+    \item Préparation de la burette, à compléter avant tout dosage :
+    Introduire la solution titrante de soude (\chemfig{Na^+} + \hydroxyde) de concentration $c_b = \qty{0,05}{\mol\per\litre}$ (rincer au préalable la burette avec de l’eau distillée puis avec un peu de solution de soude).
+    \item Mettre l’agitateur magnétique en marche.
+  \end{listePoints}
+\end{doc}
+
+
+\begin{doc}{Équivalence}{doc:TP1_equivalence}
+  Lorsque tous l'acide lactique a été consommé, on dit qu'on a atteint \important{l'équivalence.}
+  La quantité de matière d’ions hydroxyde \hydroxyde versée est alors égale au nombre de mole
+  d’acide lactique contenu dans $V_a = \qty{20}{\ml}$ de lait.
+\end{doc}
+
+\question{
+  Donner la relation entre la quantité de matière $n_a$ d'acide lactique et la quantité de matière $n_b$ d'ions hydroxyde.
+}{}{1}
+
+\question{
+  Exprimer $n_a$ en fonction de $c_a$ et $V_a$.
+}{}{1}
+
+\question{
+  Exprimer $n_b$ en fonction de $c_b$ et $V_e$.
+}{}{1}
+
+\question{
+  En utilisant les 3 relations précédentes, donner l'expression littérale de $c_a$ en fonction de $c_b$, $V_e$ et $V_a$.
+  Calculer la valeur de $c_a$.
+}{}{3}
+
+\question{
+  Calculer la quantité de matière $n_a$ d'acide lactique contenue dans \qty{1}{\litre} de lait.
+}{}{2}
+
+\question{
+  Calculer la masse de lait contenue dans \qty{1}{\litre} de lait.
+  \textbf{Donnée :} $\text{M(acide lactique)} = \qty{90}{\g\per\mole}$.
+}{}{2}
+
+\question{
+  En déduire le degré Dornic du lait. Ce lait est-il frais ?
+}{}{4}

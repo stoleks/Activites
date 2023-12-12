@@ -1,8 +1,11 @@
 %%%% Ce fichier sert à déclarer les titres des chapitres des différents niveaux
 
+%% Commun
+\newcommand{\methode} {Outils pratiques}
+
 %% Seconde
-%%%% Chapitre 
-\newcommand{\sndMeth} {Outils pratiques}
+%%%% Chapitre
+\newcommand{\snd}{Seconde}
 \newcommand{\sndCorp} {Corps purs et mélanges}
 \newcommand{\sndSolu} {Solutions}
 \newcommand{\sndMouv} {Mouvement et interactions}
@@ -14,7 +17,7 @@
 \newcommand{\sndSign} {Signaux et capteurs}
 
 %%%% en-tête correspondant
-\newcommand{\teteSndMeth} {\newpage \enTete{\sndMeth}{Seconde}{0} }
+\newcommand{\teteSndMeth} {\newpage \enTete{\methode}{Seconde}{0} }
 \newcommand{\teteSndCorp} {\newpage \enTete{\sndCorp}{Seconde}{1} }
 \newcommand{\teteSndSolu} {\newpage \enTete{\sndSolu}{Seconde}{2} }
 \newcommand{\teteSndMouv} {\newpage \enTete{\sndMouv}{Seconde}{3} }
@@ -28,8 +31,10 @@
 
 %% Première ST2S
 %%%% Chapitres
+\newcommand{\premStss}{Première ST2S}
 \newcommand{\premStssChim} {Sécurité chimique dans l'habitat}
 \newcommand{\premStssElec} {Sécurité électrique dans l'habitat}
+\newcommand{\premStssRedo} {Antiseptique et désinfectant, oxydoréduction}
 \newcommand{\premStssRout} {Sécurité routière}
 \newcommand{\premStssSono} {Ondes sonores et audition}
 \newcommand{\premStssVisi} {Propagation de la lumière et vision}
@@ -41,21 +46,24 @@
 \newcommand{\premStssAlim} {Gestion des ressources naturelles et alimentation}
 
 %%%% en-tête
-\newcommand{\tetePremStssChim} {\newpage \enTete{\premStssChim}{Première ST2S}{1} }
-\newcommand{\tetePremStssElec} {\newpage \enTete{\premStssElec}{Première ST2S}{2} }
-\newcommand{\tetePremStssRout} {\newpage \enTete{\premStssRout}{Première ST2S}{3} }
-\newcommand{\tetePremStssSono} {\newpage \enTete{\premStssSono}{Première ST2S}{4} }
-\newcommand{\tetePremStssVisi} {\newpage \enTete{\premStssVisi}{Première ST2S}{5} }
-\newcommand{\tetePremStssPres} {\newpage \enTete{\premStssPres}{Première ST2S}{6} }
-\newcommand{\tetePremStssStru} {\newpage \enTete{\premStssStru}{Première ST2S}{7} }
-\newcommand{\tetePremStssComp} {\newpage \enTete{\premStssComp}{Première ST2S}{8} }
-\newcommand{\tetePremStssEner} {\newpage \enTete{\premStssEner}{Première ST2S}{9} }
-\newcommand{\tetePremStssBiom} {\newpage \enTete{\premStssBiom}{Première ST2S}{10} }
-\newcommand{\tetePremStssAlim} {\newpage \enTete{\premStssAlim}{Première ST2S}{11} }
+\newcommand{\tetePremStssMeth} {\newpage \enTete{\methode}     {\premStss}{0}}
+\newcommand{\tetePremStssChim} {\newpage \enTete{\premStssChim}{\premStss}{1} }
+\newcommand{\tetePremStssElec} {\newpage \enTete{\premStssElec}{\premStss}{2} }
+\newcommand{\tetePremStssRedo} {\newpage \enTete{\premStssRedo}{\premStss}{3} }
+\newcommand{\tetePremStssRout} {\newpage \enTete{\premStssRout}{\premStss}{3} }
+\newcommand{\tetePremStssSono} {\newpage \enTete{\premStssSono}{\premStss}{4} }
+\newcommand{\tetePremStssVisi} {\newpage \enTete{\premStssVisi}{\premStss}{5} }
+\newcommand{\tetePremStssPres} {\newpage \enTete{\premStssPres}{\premStss}{6} }
+\newcommand{\tetePremStssStru} {\newpage \enTete{\premStssStru}{\premStss}{7} }
+\newcommand{\tetePremStssComp} {\newpage \enTete{\premStssComp}{\premStss}{8} }
+\newcommand{\tetePremStssEner} {\newpage \enTete{\premStssEner}{\premStss}{9} }
+\newcommand{\tetePremStssBiom} {\newpage \enTete{\premStssBiom}{\premStss}{10} }
+\newcommand{\tetePremStssAlim} {\newpage \enTete{\premStssAlim}{\premStss}{11} }
 
 
 %% Terminale ST2S
 %%%% Chapitres
+\newcommand{\termStss}{Terminale ST2S}
 \newcommand{\termStssOrga} {Représentation des molécules organiques}
 \newcommand{\termStssRout} {Sécurité routière}
 \newcommand{\termStssAlim} {Sécurité physico-chimique dans l'alimentation}
@@ -67,12 +75,13 @@
 \newcommand{\termStssCosm} {L'usage responsable des cosmétiques}
 
 %%%% en-tête
-\newcommand{\teteTermStssOrga} {\newpage \enTete{\termStssOrga}{Terminale ST2S}{0} }
-\newcommand{\teteTermStssRout} {\newpage \enTete{\termStssRout}{Terminale ST2S}{1} }
-\newcommand{\teteTermStssAlim} {\newpage \enTete{\termStssAlim}{Terminale ST2S}{2} }
-\newcommand{\teteTermStssEnvi} {\newpage \enTete{\termStssEnvi}{Terminale ST2S}{3} }
-\newcommand{\teteTermStssImag} {\newpage \enTete{\termStssImag}{Terminale ST2S}{4} }
-\newcommand{\teteTermStssDosa} {\newpage \enTete{\termStssDosa}{Terminale ST2S}{5} }
-\newcommand{\teteTermStssBiom} {\newpage \enTete{\termStssBiom}{Terminale ST2S}{6} }
-\newcommand{\teteTermStssMedi} {\newpage \enTete{\termStssMedi}{Terminale ST2S}{7} }
-\newcommand{\teteTermStssCosm} {\newpage \enTete{\termStssCosm}{Terminale ST2S}{8} }
+\newcommand{\teteTermStssMeth} {\newpage \enTete{\methode}     {\termStss}{0}}
+\newcommand{\teteTermStssOrga} {\newpage \enTete{\termStssOrga}{\termStss}{0} }
+\newcommand{\teteTermStssRout} {\newpage \enTete{\termStssRout}{\termStss}{1} }
+\newcommand{\teteTermStssAlim} {\newpage \enTete{\termStssAlim}{\termStss}{2} }
+\newcommand{\teteTermStssEnvi} {\newpage \enTete{\termStssEnvi}{\termStss}{3} }
+\newcommand{\teteTermStssImag} {\newpage \enTete{\termStssImag}{\termStss}{4} }
+\newcommand{\teteTermStssDosa} {\newpage \enTete{\termStssDosa}{\termStss}{5} }
+\newcommand{\teteTermStssBiom} {\newpage \enTete{\termStssBiom}{\termStss}{6} }
+\newcommand{\teteTermStssMedi} {\newpage \enTete{\termStssMedi}{\termStss}{7} }
+\newcommand{\teteTermStssCosm} {\newpage \enTete{\termStssCosm}{\termStss}{8} }

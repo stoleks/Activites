@@ -1,0 +1,106 @@
+%%%%
+\tetePremStssElec
+
+%%%% titre
+\vspace*{-36pt}
+\numeroActivite{3}
+\titreActivite{La tension du secteur}
+
+\begin{objectifs}
+  \item Comprendre les caractéristiques de la tension du secteur.
+\end{objectifs}
+
+\begin{contexte}
+  Camille a acheté un chargeur de téléphone sur un site de commerce en ligne chinois.
+
+  \problematique{
+    Ce chargeur peut-il fonctionner avec la tension du secteur fournie en France ?
+  }
+\end{contexte}
+
+
+\begin{doc}{Tension du secteur en Europe}{doc:A3_tension_secteur}
+  \begin{wrapfigure}[15]{r}{0.6\linewidth}
+    \vspace*{-16pt}
+    \centering
+    % Oscillogramme
+    \def\ver{3.6} % longueur verticale
+    \def\hor{5.0} % longueur horizontale
+    \begin{tikzpicture}[
+      trace/.style={couleurPrim!75!black, ultra thick, samples = 80},
+      screen/.style={couleurPrim!10, thick},
+      axes/.style={couleurPrim, thick}
+    ]
+      % Fond de l'écran
+      \fill[screen] (-\hor, -\ver) rectangle (\hor, \ver);
+      % Grille et axes
+      \draw[thin, couleurPrim!30] (-\hor, -\ver) grid (\hor, \ver);
+      \draw[axes] (-\hor, 0) -- (\hor, 0); % temps
+      \draw[axes] (0, -\ver) -- (0, \ver); % 
+      % Graduation
+      \pgfmathparse{\hor-1}
+      % axe x
+      \foreach[parse = true] 
+        \i in {-\hor+0.2, -\hor+0.4,..., \hor-0.2} \draw[axes] (\i,-0.1) -- (\i,0.1);
+      \foreach[parse = true] \i in {-\hor,...,\hor} \draw[axes] (\i,-0.2) -- (\i,0.2);
+      % axe y
+      \foreach[parse = true]
+        \i in {-\ver+0.2, -\ver+0.4,..., \ver-0.2} \draw[axes] (-0.1,\i) -- (0.1,\i);
+      \foreach[parse = true] \i in {-3,...,3} \draw[axes] (-0.2,\i) -- (0.2,\i);
+      % Tension sinusoïdale
+      \draw[trace] plot(\x, {3.25*sin((1.57*\x + 1.57) r)}); % r = radian
+      % Échelle
+      \tkzVecteur(-5) (-3)[1]  {\textbf{100 V}} [right]
+      \tkzVecteur(-5)[1] (-3)  {\textbf{5 ms}} [below right]
+      \tkzVecteur(-4)[4] (3.3) {\textbf{Période} $\mathbf{T}$ \hspace{12pt}\phantom{b}} [below left]*
+    \end{tikzpicture}
+
+    Oscillogramme de la tension du secteur.
+  \end{wrapfigure}
+  
+  En Europe la tension du secteur est la tension électrique délivrée dans les habitations.
+
+  La tension du secteur est \important{sinusoïdale,} car le courant est \important{alternatif}.
+  Elle est définie par deux grandeurs 
+  \begin{listePoints}
+    \item une \important{fréquence} $f$;
+    \item une \important{tension efficace} $U$.
+  \end{listePoints}
+
+  La tension efficace est proportionnelle à la valeur maximale que peut atteindre la tension du secteur 
+  \begin{equation*}
+    U = \dfrac{U_\text{max}}{\sqrt{2}}
+  \end{equation*}
+
+  On peut mesurer la valeur maximale et la fréquence sur un \important{oscillogramme.}
+\end{doc}
+
+\question{
+  Utiliser l'oscillogramme pour calculer la valeur de $U_\text{max}$ et de la période $T$.
+}{
+
+}{2}
+
+\question{
+  Calculer la tension efficace $U$ à l'aide de la tension maximale $U_\text{max}$.
+}{}{2}
+
+\question{
+  Calculer la fréquence et $f$ à l'aide de la période $T$.
+}{}{2}
+
+
+\begin{doc}{Caractéristiques du chargeur de téléphone}{doc:A3_chargeur_telephone}
+  \begin{multicols}{2}
+    \begin{listePoints}
+      \item Entrée : 100-\qty{240}{\volt} AC 50-\qty{60}{\hertz}.
+      \item Sortie : \qty{5,00}{\volt} DC.
+      \item Ampérage : \qty{1}{\ampere}.
+      \item Puissance : \qty{5}{\watt}.
+    \end{listePoints}
+  \end{multicols}
+\end{doc}
+
+\question{
+  Camille peut-elle utiliser le chargeur en le branchant sur une prise en France ?
+}{}{2}

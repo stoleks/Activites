@@ -6,7 +6,7 @@
 
 
 %%%% titre
-\numeroActivite{6}
+\numeroActivite{4}
 \titreActivite{Principe des actions réciproques}
 
 
@@ -16,13 +16,11 @@
   %
   \centering ANA/RAI &
   Analyser les forces qui s'exercent sur un système.
-  & & & &
-  \\ \hline
+  & & & & \\
   %
   \centering REA &
   Schématiser une situation.
-  & & & &
-  \\ \hline
+  & & & & \\
   %
   \centering COM &
   Travailler en groupe.
@@ -33,36 +31,34 @@
 %%%% objectifs
 \begin{objectifs}
   \item Analyser et schématiser un système en mouvement
+  \item Utiliser le principe d'inertie
   \item Comprendre le principe des actions réciproques
 \end{objectifs}
 
 
 %%%%
-\begin{doc}{Forces qui se compensent}
-  \vspace*{-22pt}
+\begin{doc}{Forces qui se compensent}{doc:A4_forces_compensent}
   \begin{encart}
     On dit que les forces exercées sur un système \important{se compensent}, si leur somme vectorielle est nulle (égale à $\vv{0}$ le vecteur de norme nulle).
     
-    La somme de deux vecteurs est nulle s'ils ont
-    
-    \begin{wrapfigure}[1]{r}{0.5\linewidth}
-      \vspace*{-55pt}
+    \begin{wrapfigure}{r}{0.4\linewidth}
+      \vspace*{-40pt}
       \begin{center}
         \begin{tikzpicture}
           % système 
           \tkzCercle{0}{0}{gray!50!white}{20}
           \tkzPointLabel{0}{0}{$A$}
           % forces
-          \tkzVecteur{0}{0}{-1.7}{-0.75}{$\vv{F}_1$}{left}
-          \tkzVecteur{0}{0}{1.7}{0.75}{$\vv{F}_2$}{right}
+          \tkzVecteur(0)[-1.7](0)[-0.75]{$\vv{F}_1$}[left]
+          \tkzVecteur(0)[1.7] (0)[0.75] {$\vv{F}_2$}[right]
         \end{tikzpicture}
       
         $\vv{F}_1 + \vv{F}_2 = \vv{0}$, les forces exercée sur le système $A$ se compensent.
       \end{center}
     \end{wrapfigure}
-    \phantom{b} 
     
-    \vspace*{-24pt}
+    La somme de deux vecteurs est nulle s'ils ont
+    
     \begin{listePoints}
       \item \important{même point d'application},
       \item \important{même direction},
@@ -74,27 +70,37 @@
 
 
 %%%%
-\begin{doc}{\href{https://www.youtube.com/watch?v=Kf0bBxmNeec}{Ballon lancé depuis un skateboard}}
-  \vspace*{-22pt}
-  \begin{center}
-    \image{0.31}{images/mouvements/lancer_balle_reciproque_1.jpg}
-    \image{0.31}{images/mouvements/lancer_balle_reciproque_2.jpg}
-    \image{0.31}{images/mouvements/lancer_balle_reciproque_3.jpg}
-  \end{center}
+\begin{doc}{Ballon lancé depuis un skateboard}{doc:A4_ballon}
+  \begin{flushright}
+    \vspace*{-18pt}
+    \qrcode{https://youtu.be/Kf0bBxmNeec?t=99}
+  \end{flushright}
+  \begin{multicols}{3}
+    \centering
+    \image{0.9}{images/mecanique/lancer_balle_reciproque_1.jpg}
+    
+    Avant le lancer
+    
+    \image{0.9}{images/mecanique/lancer_balle_reciproque_2.jpg}
+
+    Pendant le lancer
+    
+    \image{0.9}{images/mecanique/lancer_balle_reciproque_3.jpg}
+
+    Après le lancer
+  \end{multicols}
 \end{doc}
 
 
 %%%
 \problematique{Quelle est la force qui met en mouvement la personne sur le skateboard ?}
 
-\question{
-  Étudier le mouvement du système $A$ \og personne sur le skateboard \fg\; et du système $B$ \og ballon \fg\; avant, pendant et après le lancé du ballon.
-}{0}
-\vspace*{-8pt}
-\question{
-  Décrire les propriétés de la force qui met en mouvement le système $A$.
-}{0}
+\numeroQuestion
+Étudier le mouvement du système $A$ \og personne sur le skateboard \fg\; et du système $B$ \og ballon \fg\; avant, pendant et après le lancer du ballon.
 
-\fleche Détaillez soigneusement les étapes de vos raisonnements par écrits au dos de cette feuille.
+\numeroQuestion
+Décrire les propriétés de la force qui met en mouvement le système $A$.
 
-\feuilleBlanche
+\fleche Vous Détaillerez soigneusement les étapes de vos raisonnements par écrits sur un compte-rendu complet, compréhensible par un-e élève qui n'aurait pas vu la vidéo.
+
+%\feuilleBlanche
