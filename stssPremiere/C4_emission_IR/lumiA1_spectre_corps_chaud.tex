@@ -1,0 +1,132 @@
+%%%%
+\tetePremStssLumi
+
+%%%% titre
+\numeroActivite{1}
+\titreActivite{Spectre électromagnétique et rayonnement thermique d'un corps chaud}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Savoir que la lumière est une onde électromagnétique.
+  \item Comprendre le lien entre la température d'un objet et la lumière que l'objet émet.
+  \item Connaître la loi de Wien qui relie température et maximum d'émission.
+\end{objectifs}
+
+\begin{contexte}
+  Les corps très chaud, comme les étoiles, les lampes incandescentes ou la lave en fusion, émettent de la lumière.
+  
+  \problematique{
+    Comment la température d'un corps influence ses émissions lumineuses ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{La lumière : une onde électromagnétique}{doc:A1_}
+  \begin{encart}
+    La lumière est une \important{onde électromagnétique.}
+    C'est-à-dire un champ électrique et un champ magnétique qui se propagent.
+  \end{encart}
+
+  Quand on disperse de la lumière blanche avec un prisme ou un réseau, on observe qu'elle est composée des couleurs de l'arc-en-ciel.
+  \begin{center}
+    \image{0.5}{images/lumiere/spectre_lumineux}
+  \end{center}
+  \begin{center}
+    \image{1}{images/lumiere/spectre_EM}
+  \end{center}
+
+  À chaque couleur est associée une radiation de longueur d'onde $\lambda$, on appelle ça le \important{spectre électromagnétique.}
+
+  \begin{encart}    
+    On va s'intéresser à trois domaines du spectre électromagnétique.
+    \begin{listePoints}
+      \item \important{Domaine visible :} radiation avec une longueur d'onde entre \qty{400}{\nm} et \qty{800}{\nm}.
+      \item \important{Domaine InfraRouge (IR) :} radiation avec une longueur d'onde supérieure à \qty{800}{\nm} et inférieure à \qty{1}{\mm}.
+      \item \important{Domaine UltraViolet (UV) :} radiation avec une longueur d'onde inférieure à \qty{400}{\nm} et supérieure à \qty{1}{\nm}.
+    \end{listePoints}
+  \end{encart}
+\end{doc}
+
+\question{
+  Est-ce que les longueurs d'ondes augmentent quand on passe du rouge au violet ?
+}{}{2}
+
+\mesure
+Un spectroscope disperse la lumière blanche et permet d'étudier le spectre d'émission d'une source lumineuse.
+À l'aide du spectroscopes, observer les différentes sources lumineuses de la pièce.
+
+
+%%
+\newpage
+\vspace*{-32pt}
+\begin{doc}{Spectre du rayonnement thermique des corps chauds}{doc:A1_spectre_corps_chaud}
+  \begin{wrapfigure}[5]{r}{0.4\linewidth}
+    \vspace*{-22pt}
+    \centering
+    \image{1}{images/thermodynamique/loi_emission_corps_chaud}
+  \end{wrapfigure}
+  \phantom{b}\vspace*{-22pt}
+  
+  \begin{encart}  
+    Un corps chauffé à un température $T$ émet des ondes électromagnétiques, c'est-à-dire de la lumière.
+    Le \important{spectre} de la lumière émise est une fonction continue, qu'on appelle le \important{rayonnement thermique des corps chauds.}
+  \end{encart}
+
+  Le graphique à droite représente le spectre du rayonnement thermique d'un corps chaud à une température $T = \qty{3000}{\kelvin}$.
+  Ce spectre à une intensité maximale $I_{max}$ pour une longueur d'onde $\lambda_{max}$.
+  \smallskip
+
+  \begin{encart}
+    Conversion d'un degré Celsius en kelvin :
+    $\qty{1}{\kelvin} = \qty{1}{\degreeCelsius} + 273$. 
+    \exemple $\qty{20}{\degreeCelsius} = \qty{293}{\kelvin}$.
+  \end{encart}
+\end{doc}
+
+\question{
+  Convertir $T = \qty{37}{\degreeCelsius}$ en kelvin \unit{\kelvin}.
+}{}{1}
+
+
+\begin{doc}{Loi de Wien}{doc:A1_loi_Wien}
+  \begin{wrapfigure}[10]{r}{0.45\linewidth}
+    \vspace*{-30pt}
+    \centering
+    \image{1}{images/thermodynamique/emission_corps_chaud}
+  \end{wrapfigure}
+  
+  Quand la température d'un corps augmente, on observe deux choses :
+  \begin{listeTirets}
+    \item l'intensité de la lumière émise est plus élevée, le corps est plus lumineux ;
+    \item la longueur d'onde d'intensité maximale $\lambda_{max}$ diminue et la composition de la lumière émise change.
+  \end{listeTirets}
+  Le deuxième point a une implication très concrète pour nous : un objet change de couleur si sa température est suffisamment élevée.
+  \smallskip
+
+  \begin{encart}
+    La relation entre la longueur d'onde $\lambda_{max}$ et la température $T$ du corps est donnée par la \important{loi de Wien}
+    \begin{equation*}
+      \lambda_{max} = \dfrac{C}{T}
+    \end{equation*}
+    \begin{listePoints}
+      \item $\lambda_{max}$ est la longueur d'onde du maximum d'intensité en mètre.
+      \item $T$ est la température du corps exprimée en Kelvin noté \unit{\kelvin}.
+      \item $C$ est la constante de Wien $C = \qty{2,9e-3}{\kelvin\m}$
+    \end{listePoints}
+  \end{encart}
+\end{doc}
+
+
+%%%%
+\mesure
+À l'aide d'un tableur, tracer $\lambda_{max}$ en fonction de la température $T$ avec la loi de Wien, pour $T$ comprise entre \qty{300}{\kelvin} et \qty{10000}{\kelvin}.
+
+\mesure
+Utiliser le graphique obtenu pour déterminer la plus petite et la plus haute valeur de la température où $\lambda_{max}$ est dans le domaine du visible.
+
+\question{
+  Déterminer à l'aide du tableur la longueur d'onde de la radiation émise par un corps humain à une température de \qty{37}{\degreeCelsius}.
+  A quel domaine du spectre électromagnétique appartient-elle ?
+}{}{1}

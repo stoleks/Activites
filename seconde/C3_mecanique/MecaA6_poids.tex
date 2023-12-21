@@ -1,0 +1,108 @@
+%%%% début de la page
+\teteSndMouv
+
+
+%%%% titre
+\numeroActivite{6}
+\titreActivite{Poids et interaction gravitationnelle}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre le lien entre la force d'interaction gravitationnelle et le poids
+\end{objectifs}
+
+
+%%
+\begin{doc}{Force d'interaction gravitationnelle}{doc:A6_interaction_gravitationnelle}
+  \chevron Tous les corps qui possèdent une masse s’attirent entre eux : c’est l’attraction gravitationnelle.
+
+  \begin{encart}
+    On modélise l'attraction gravitationnelle exercée par le corps $A$ sur le corps $B$ par une force représentée par un vecteur $\vvFAsurB$ :
+    
+    \vspace*{-12pt}
+    \begin{wrapfigure}[6]{r}{0.4\linewidth}
+      \vspace*{-20pt}
+      \begin{tikzpicture}
+        % corps A
+        \tkzCercle{0}{0}{gray!50!white}{20}
+        \tkzLabel{-1.2}{0}{$m_A$}
+        \tkzPointLabel{0}{0}{$A$}
+        % corps B
+        \tkzCercle{4}{2}{gray!50!white}{20}
+        \tkzLabel{2.8}{2}{$m_B$}
+        \tkzPointLabel{4}{2}{$B$}
+        % force et distance
+        \tkzVecteur(4)[-1.75](2)[-0.875]{$\vvFAsurB$}[left]
+        \tkzVecteur(0.5)[4](-1)[2]{}*
+        \tkzLabel{2.5}{-0.5}{$d$}
+      \end{tikzpicture}
+    \end{wrapfigure}
+
+    \phantom{b}
+    \begin{listePoints}
+      \item \important{Point d'application} : centre du corps $B$
+      \item \important{Direction} : la droite $AB$.
+      \item \important{Sens} : de $B$ vers $A$ (force attractive).
+      \item \important{Valeur} : 
+    \end{listePoints}
+    \begin{center}
+      $\FAsurB = G\times \dfrac{m_A \times m_B}{d^2}$
+    \end{center}
+      
+    Dans la formule de la valeur de la force, les masses s'expriment en kilogramme (\unit{\kg}),
+    la distance en mètre (\unit{\m}) et
+    la \important{constante universelle de gravitation $\mathbf{G}$} en newton mètre carrée par kilogramme carrée (\unit{\newton \m\squared \per\kg\squared}).
+    Sa valeur (à connaître) est 
+    \begin{center}
+      $G = \qty{6,67e-11}{\newton \m\squared \per\kg\squared}$
+    \end{center}
+  \end{encart}
+\end{doc}
+
+\begin{doc}{La planète Terre}{doc:A6_terre}
+  La Terre est la troisième planète du système solaire.
+  En première approche, on peut considérer que la Terre est une boule de rayon $R_T = \qty{6,37e6}{\m}$
+  et de masse $M_T = \qty{5,97e24}{\kg}$.
+\end{doc}
+
+%%%%
+On cherche à calculer la force d'interaction gravitationnelle qu'exerce la Terre sur un objet de masse $m$ \textbf{à la surface de la Terre}.
+  
+\begin{center}
+  \begin{tikzpicture}
+    % Terre et Satellite
+    \tkzCercleLigne{0}{0} {couleurPrim!30}{couleurPrim} {50}
+    \tkzPointLabel{0}{0}{$T$}
+    % Distance
+    \tkzVecteur(0)[-1](0)[-1.48]{}*
+    \tkzLabel{-0.3}{-1}{$R_T$}
+    % Objet
+    \filldraw (-1, -1.48) circle (2pt);
+    \tkzLabel{-1.5}{-1.75}{Objet}
+  \end{tikzpicture}
+  
+  Représentation de la Terre avec un objet à sa surface
+\end{center}
+
+
+\question{
+  Donner la formule littérale de la valeur de la force d'interaction gravitationnelle 
+  $F_{T/objet}$ qu'exerce la terre sur l'objet.
+}{}{3}
+
+\newpage
+\question{
+  Rappeler la formule littérale du poids $P$ que la Terre exerce sur un objet de masse $m$ sur Terre.
+  Rappeler la valeur de $g$
+}{}{3}
+
+\question{
+  Dans l'expression de $F_{T/objet}$, on va regrouper tous les termes qui sont constant sur Terre et les noter $g$.
+  Donner la formule littérale de $g$ en fonction de $M_T$, $R_T$ et de $G$.
+}{}{3}
+
+\question{
+  Calculer la valeur numérique de $g$. 
+  En déduire le lien entre le poids $P$ et $F_{T/objet}$.
+}{}{5}
