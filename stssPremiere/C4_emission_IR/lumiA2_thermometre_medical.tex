@@ -1,0 +1,102 @@
+%%%%
+\tetePremStssLumi
+
+%%%% titre
+\numeroActivite{2}
+\titreActivite{Thermomètre médical sans contact}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre le fonctionnement d'un thermomètre médical sans contact.
+\end{objectifs}
+
+\begin{contexte}
+  Pour mesurer la température corporelle d'une personne rapidement et sans contact, on utilise un thermomètre sans contact.
+  
+  \problematique{
+    Quel principe physique utilise un thermomètre sans contact pour fonctionner ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Émission d'un corps chaud}{doc:A2_emission_corps}
+  \begin{encart}
+    La surface d'un corps émet un \important{rayonnement électromagnétique}, dont l'intensité dépend de la température du corps $T$.
+  \end{encart}
+
+  Comme on l'a vu, pour des température « faible » ($< \qty{1000}{\degreeCelsius}$) le rayonnement est dans le domaine des infrarouge IR, avec une longueur d'onde supérieure à \qty{800}{\nm}.
+\end{doc}
+
+\begin{doc}{Mesure de température avec un thermomètre infrarouge}{doc:A2_capteur_infrarouge}
+  Le rayonnement émis par le corps observé est focalisé par une lentille sur un capteur qui génère une tension électrique.
+  Cette tension électrique dépend de \important{l'intensité} du rayonnement émis.
+  
+  Le signal est amplifié et transformé en une grandeur proportionnelle à la température du corps, grâce à un traitement numérique.
+  La température mesurée est ensuite affichée sur un écran.
+
+  La mesure de température sans contact présente plusieurs avantages :
+  \begin{listePoints}
+    \item temps de mesure très court ;
+    \item mesure non invasive ;
+    \item possible de mesurer des objets en mouvement.
+  \end{listePoints}
+
+  \begin{center}
+    \image{0.8}{images/thermodynamique/capteur_IR}
+  \end{center}
+
+  On ne peut mesurer que la température de la surface d'un corps avec un thermomètre IR.
+\end{doc}
+
+
+\begin{doc}{Thermomètres médicaux sans contact}{doc:A2_thermometre_medicaux}
+  Les thermomètres médicaux sont conçus pour mesurer les températures du corps humain.
+
+  L'intensité du rayonnement infrarouge est convertie en tension électrique, puis l'appareil calcule et affiche la température.
+
+  \textbf{Caractéristiques techniques d'un thermomètre médical IR :}
+    \begin{listePoints}
+      \item plage de mesure : de \qty{32,0}{\degreeCelsius} à \qty{42,0}{\degreeCelsius} ;
+      \item précision : $\pm \qty{0,2}{\degreeCelsius}$ ;
+      \item affichage : 3 digits ;
+      \item sensibilité du capteur IR : de \qty{8}{\micro\m} à \qty{14}{\micro\m}.
+    \end{listePoints}
+\end{doc}
+
+
+%%%%
+\question{
+  Un thermomètre affiche une température de \qty{36,8}{\degreeCelsius}. 
+  Calculer la plage de température possible du corps à l'aide de la précision de la mesure.
+}{}{2}
+
+\question{
+  À l'aide de la loi de Wien, calculer la longueur d'onde d'intensité maximale émise par un corps à une température de \qty{32}{\degreeCelsius}.
+}{}{3}
+
+\question{
+  Le capteur IR est-il adapté pour mesurer de telle température ?
+}{}{3}
+
+\question{
+  On mesure la tension électrique fournie par le capteur pour différentes température :
+
+  \begin{center}
+    \begin{tblr}{
+      colspec = {|l |c |c |c |c |c |}, hlines,
+      column{1} = {couleurPrim!20}
+    }
+      Température $T$ en \unit{\degreeCelsius} & 32,0 & 34,5 & 37,0 & 39,5 & 42,0 \\
+      Tension $U$ en \unit{\milli\volt}        & 512  & 1120 & 1635 & 2055 & 2430 \\
+    \end{tblr}
+  \end{center}
+  
+  En utilisant une méthode graphique ou numérique, déterminer la température d'un corps correspondant à une tension de \qty{1728}{\milli\volt}.
+}{}{4}
+
+\question{
+  Quel type de lentille doit-on utiliser dans le thermomètre ?
+  Quelle est le nom de la distance entre la lentille et le capteur ?
+}{}{3}
