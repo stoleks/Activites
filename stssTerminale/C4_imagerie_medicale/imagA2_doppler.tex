@@ -1,0 +1,116 @@
+%%%%
+\teteTermStssImag
+
+%%%% titre
+\numeroActivite{2}
+\titreActivite{Principe d'une échographie doppler}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre le principe d'une échographie doppler.
+\end{objectifs}
+
+\begin{contexte}
+  Pour vérifier que le sang circule normalement dans les vaisseaux sanguins, de nos jours on utilise l'échographie doppler, qui est précise et non-intrusive.
+  
+  \problematique{
+    Comment fonctionne une échographie doppler ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{L'effet doppler}{doc:A2_effet_doppler}
+  \begin{wrapfigure}[4]{r}{0.4\linewidth}
+    \centering
+    \vspace*{-35pt}
+    \image{0.85}{images/acoustique/effet_doppler}
+  \end{wrapfigure}
+  
+  Quand deux personnes sont à la même distance d'une source sonore immobile, elles entendent le même son.
+  Mais si la source est en mouvement, chaque personne perçoit un son différent :
+  \begin{listePoints}
+    \item si la source se rapproche, le son parait plus aigu : \important{la fréquence de l'onde augmente} ;
+    \item si la source s'éloigne, le son parait plus grave : \important{la fréquence de l'onde diminue}.
+  \end{listePoints}
+  
+  \begin{encart}  
+    C'est \important{l'effet doppler} : la fréquence de l'onde émise change lorsqu'il y a un mouvement relatif entre la source d'émission et la personne qui écoute.
+  \end{encart}
+\end{doc}
+
+
+%%%%
+\question{
+  Yasmine entend la sirène d'une ambulance de plus en plus aiguë.
+  L'ambulance se rapproche ou s'éloigne de Yasmine ?
+}{
+}{2}
+
+%%
+\begin{doc}{L'échographie doppler}{doc:A2_echographie_doppler}
+  L'échographie doppler utilise aussi le phénomène d'écho, comme l'échographie simple.
+  Une sonde est posée sur la peau recouverte d'un gel et émet des ultrasons.
+  Les ultrasons se propagent dans le corps et sont réfléchis par les globules rouges dans les vaisseaux sanguins.
+
+  Après réflexion, les ultrasons sont reçues par la sonde.
+  La fréquence de l'onde sonore réfléchie varie en fonction de la fréquence de l'onde émise et de la vitesse de déplacement des globules rouges.
+
+  \begin{center}
+    \image{0.45}{images/acoustique/echographie_doppler}
+  \end{center}
+
+  Mesurer le décalage en fréquence $\Delta f$ entre la fréquence de l'onde émise et la fréquence de l'onde reçue, permet donc de déterminer la vitesse et le sens d'écoulement du sang dans les vaisseaux.
+
+  \begin{encart}
+    Le décalage se calcule avec la relation suivante :
+    \begin{equation*}
+      \Delta f = f_R - f_E = \dfrac{2vf_E \cos(\theta)}{c}
+    \end{equation*}
+  \end{encart}
+  \begin{multicols}{2}
+    \begin{listePoints}
+      \item $f_E$ est la fréquence de l'onde émise en \unit{\hertz} ;
+      \item $f_R$ est la fréquence de l'onde réfléchie en \unit{\hertz} ;
+      \item $c$ est la célérité du son dans le corps en \unit{\m\per\s} ;
+      \item $v$ est la vitesse des globules rouges en \unit{\m\per\s} ;
+      \item $\theta$ est l'angle entre l'axe de la sonde et l'axe du vaisseau sanguin.
+    \end{listePoints}
+  \end{multicols}
+\end{doc}
+
+
+%%%%
+\question{
+  Indiquer quels partie du corps humain réfléchit le son dans une échographie doppler et quelle est la grandeur mesurée.
+}{
+}{2}
+
+
+\begin{doc}{Échographie doppler d'une artère}{doc:A2_doppler_artere}
+  Les échographies doppler servent notamment à vérifier que les patient-es ne présentent pas de \important{sténose aortique}, c'est-à-dire une diminution du diamètre d'une artère.
+  On peut exprimer cette diminution du diamètre en pourcentage par rapport à une taille normale.
+  On a alors une évolution du signal mesuré avec une échographie doppler en fonction de l'avancée de la sténose.
+  \begin{center}
+    \image{0.5}{images/acoustique/doppler_stenose}
+    
+    Signal doppler visible en fonction de l'avancée de la sténose.
+  \end{center}
+
+  On compare deux images d'échographie doppler d'une artère rénale : celle d'un-e patient-e sans pathologie et celle d'un-e patient-e souffrant d'une sténose aortique.
+  
+  \begin{center}
+    \image{0.75}{images/acoustique/doppler_stenose_artere}
+    
+    \separationBlocs
+    {\centering\faArrowUp\; A}
+    {\centering \faArrowUp\; B \hspace{4cm}\phantom{b}}
+  \end{center}
+\end{doc}
+
+
+%%%%
+\question{
+  Analyser les échographies du document~\ref{doc:A2_doppler_artere} et en déduire qui souffre de sténose aortique.
+}{}{1}

@@ -1,0 +1,117 @@
+%%%%
+\teteTermStssImag
+
+%%%% titre
+\numeroActivite{1}
+\titreTP{Réalisation pratique d'une échographie}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Utiliser une démarche expérimentale pour comprendre le principe d'imagerie par échographie.
+\end{objectifs}
+
+\begin{contexte}
+  En envoyant des ultrasons sur un corps humain, on observe que les ondes sont plus ou moins réfléchies en fonction des tissus rencontré.
+  Si on détecte beaucoup d'ultrasons réfléchis sur des tissus dur, la zone correspondante apparaît blanche sur l’image (os).
+  Si on ne détecte pas ou peu d’ultrasons réfléchis, c’est qu’ils se sont propagé dans des tissus mou : la zone apparaît sombre sur l’image (liquide ou membrane).
+  
+  \problematique{
+    Comment reconstruire une image à partir des données mesurée pendant une échographie ?
+  }
+\end{contexte}
+
+
+%%%%
+\begin{doc}{Onde ultrasonore et matériau}{doc:TP1_ultrason_materiau}
+  Quand une onde sonore dans le domaine des ultrasons arrive sur une surface,
+  elle peut être \important{transmise}, \important{absorbée} ou \important{réfléchie} en fonction des propriétés du matériau.
+  \begin{listePoints}
+    \item \important{Transmission :} l'onde traverse le matériau ;
+    \item \important{Absorption :} l'onde est absorbée par le matériau (son amplitude diminue) ;
+    \item \important{Réflexion :} l'onde est réfléchie comme sur un miroir.
+  \end{listePoints}
+
+  En général, plus un matériau est dense et dur, plus il réfléchira bien les ondes ultrasonore.
+\end{doc}
+
+\begin{doc}{Matériel disponible}{doc:TP1_materiel}
+  On dispose 
+  \begin{listeTirets}
+    \item d'un générateur \qty{12}{\volt} ;
+    \item d'un émetteur d'ultrasons (noté E), qui émet autour de \qty{40}{\kilo\hertz} ;
+    \item d'un récepteur d'ultrasons (noté R), sensible autour de \qty{40}{\kilo\hertz} ;
+    \item d'un oscilloscope ;
+    \item de câbles BNC et de câbles banane.
+  \end{listeTirets}
+\end{doc}
+
+\begin{doc}{Protocole de mise en place}{doc:TP1_mise_en_place}
+  \begin{protocole}
+    \item Alimenter l’émetteur (E) d’ultrasons en \qty{12}{\volt} en mode salve et le relier à la voie 1 de l’oscilloscope.
+    \item Placer le récepteur (R) à environ \qty{15}{\cm} en face de l'émetteur que l'on relie à la voie 2 de l'oscilloscope.
+    \item Allumer et régler l'oscilloscope pour qu'il affiche les signaux des deux voies.
+    \item Changer le calibre de la voie 2 pour augmenter la sensibilité verticale (en Volt par division : V/div) et obtenir 2 signaux de taille similaire à l’écran.
+  \end{protocole}
+\end{doc}
+
+%%
+\mesure Réaliser le protocole du document~\ref{doc:TP1_mise_en_place}, appeler le professeur en cas de soucis.
+
+\question{
+  Comparer la fréquence des signaux émis par l’émetteur (E) et reçus par le récepteur (R).
+  Comparer la tension maximale des signaux émis par l’émetteur (E) et reçus par le récepteur (R). Proposer une explication possible de ces résultats.
+}{
+}{2}
+
+\mesure Placer une plaque entre l'émetteur et le récepteur.
+Compléter le tableau concernant la capacité de transmission des différents matériaux avec les adjectifs : fort, moyen, faible.
+
+\smallskip
+\begin{tblr}{
+    colspec = {|c |X[c] |X[c] |X[c] |X[c] |X[c] |}, hlines,
+    column{1} = { couleurPrim!20 },
+  }
+  Matériau & & & & & \\
+  Capacité de transmission & & & & & \\
+\end{tblr}
+\bigskip
+
+
+\mesure 
+Dans une échographie, l'émetteur et le récepteur sont côte à côte.
+Placer l'émetteur et le récepteur côte à côte, puis placer des obstacles devant l'ensemble pour remplir le tableau suivant avec les adjectifs fort, moyen, faible.
+
+
+\smallskip
+\begin{tblr}{
+    colspec = {|c |X[c] |X[c] |X[c] |X[c] |X[c] |}, hlines,
+    column{1} = { couleurPrim!20 },
+  }
+  Matériau & & & & & \\
+  Capacité de réflexion & & & & & \\
+\end{tblr}
+\bigskip
+
+\question{
+  Mesurer la durée $\Delta t$ en seconde mise par les ultrasons pour faire l'aller-retour.
+}{}{2}
+
+\question{
+  Trouver la relation entre la célérité $c$ de l'onde ultrasonore, le temps $\Delta t$ que met l'onde à faire l'aller-retour et la distance $d$ entre l'émetteur-récepteur et l'obstacle.
+}{}{3}
+
+\question{
+  Calculer d, sachant que $c = \qty{340}{\m\per\s}$ dans l'air.
+}{}{3}
+
+\question{
+  Vérifier cette mesure avec une règle.
+}{}{2}
+
+\mesure Pour comprendre le fonctionnement de l'échographie médicale, on utilise le dispositif précédant.
+Une boîte en carton (ventre) contient un objet (foetus), que l'on va chercher à imager.
+
+\question{
+  Proposer et réaliser une démarche pour identifier la position de l'objet dans la boite.
+}{}{6}

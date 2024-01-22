@@ -190,7 +190,7 @@
 \newcounter{exerciceNum}
 \newcommand{\exercice}[1]{
   \refstepcounter{exerciceNum}
-  \sousTitre{Exercice \arabic{exerciceNum} : #1}
+  \sousTitre{\large Exercice \arabic{exerciceNum} : #1}
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
@@ -746,7 +746,7 @@
 % \DeclareSIUnit{}{\text{}}
 
 
-%% atome ou isotope
+%% atome ou isotope #1: Z, #2: A, #3: X
 \makeatletter
 \newcommand{\isotope}[3]{%
    \settowidth\@tempdimb{\ensuremath{\scriptstyle#1}}%

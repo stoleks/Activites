@@ -2,8 +2,7 @@
 \teteSndAtom
 
 %%%% titre
-\vspace*{-44pt}
-\numeroActivite{3}
+\numeroActivite{1}
 \titreActivite{L'élément chimique}
 
 
@@ -27,48 +26,46 @@
 \end{contexte}
 
 
-%%%% Documents
-\begin{doc}{Fabriquer des élément chimique}
-  L'université du Colorado a créé une animation pour fabriquer des atomes à l'aide de leurs constituants.
-  
-  \important{Lancer l'application \og Symbole \fg\, sur : \url{https://tinyurl.com/nrenzhzh}}
-\end{doc}
-
-
 %%%%
 \titreSection{L'atome}
 
 %%%%
-\question{
-  Légender cette représentation d'un atome en utilisant les mots proton, neutron, électron, nucléons et noyau.
-}{0}
+\numeroQuestion
+Légender cette représentation d'un atome en utilisant les mots proton, neutron, électron, nucléons et noyau.
 
-\begin{flushleft}  
-  \image{0.4}{images/atome/atome.jpg}
-\end{flushleft}
+\begin{center}
+  \image{0.8}{images/atomes/atome.png}
+\end{center}
 
-\vspace*{-30pt}
+\begin{wrapfigure}[1]{r}{0.1\linewidth}
+  \vspace*{-60pt}
+  \qrcode{https://phet.colorado.edu/sims/html/build-an-atom/latest/build-an-atom_fr.html}
+\end{wrapfigure}
+
+\mesure Scanner le qrcode pour accéder à l'animation.
+
 \question{
   Dans l'application le cadre \og symbole \fg\, indique l'élément chimique fabriqué.
   Que faut-il ajouter pour changer d'élément chimique ?
-}{2}
+}{}{2}
+
+\begin{doc}{Notation d'un élément chimique}{doc:A1_notation_element}
+  Pour distinguer les atomes on utilise la notation \isotope{A}{Z}{X}.
+  \begin{encart}
+    \begin{listePoints}
+      \item \chemfig{X} est le symbole de l'atome considéré.
+      \item $Z$ est le nombre de \texteTrou[0.3]{protons}, appelé \important{numéro atomique.}
+      \item $A$ est le nombre de \texteTrou[0.3]{neutrons}, appelé \important{nombre de masse.}
+    \end{listePoints}
+  \end{encart}
+\end{doc}
+
+\numeroQuestion 
+Compléter le document~\ref{doc:A1_notation_element}.
 
 \question{
-  Pour distinguer les atomes on utilise la notation \isotope{A}{Z}{X}. Compléter l'encadré ci-dessous.
-}{0}
-
-\vspace*{-8pt}
-\begin{encart}
-  \begin{listePoints}
-    \item \chemfig{X} est le symbole de l'atome considéré.
-    \item $Z$ est le nombre de \lignePointillee{0.2}, appelé \important{numéro atomique.}
-    \item $A$ est le nombre de \lignePointillee{0.2}, appelé \important{nombre de masse.}
-  \end{listePoints}
-\end{encart}
-
-\question{
-  \isotope{23}{11}{Na} : le sodium \chemfig{Na} possède \lignePointillee{0.05} protons, \lignePointillee{0.05} nucléons, \lignePointillee{0.05} neutrons.
-}{0}
+  \isotope{23}{11}{Na} : le sodium \chemfig{Na} possède \texteTrou{11} protons, \texteTrou{23} nucléons, \texteTrou{12} neutrons.
+}{}{0}
 
 
 %%%%
@@ -78,15 +75,15 @@
   Vérifier que la case \og Neutralité/Ionisation\fg\, est cochée.
   Dans quel cas un élément chimique est un atome neutre ?
   Comment appelle-t-on cet élément sinon ?
-}{2}
+}{}{3}
 
 \question{
-  Que signifie le \og + \fg\, de \chemfig{Na^+} ? Donner la composition de l'élément.
-}{2}
+  Que signifie le « + » de \chemfig{Na^+} ? Donner la composition de l'élément, c'est-à-dire son nombre de proton, neutron et électrons.
+}{}{3}
 
 \question{
   Que peut-on dire de l'ion chlorure \chemfig{Cl^{-}} et de l'ion cuivrique \chemfig{Cu^{2+}} ?
-}{1}
+}{}{3}
 
 
 %%%%
@@ -95,8 +92,8 @@
 \question{
   Vérifier que la case \og Stabilité/Instabilité \fg\, est cochée.
   Deux atomes du même élément peuvent-ils avoir des noyaux différents ?
-}{2}
+}{}{3}
 
 \question{
   Que manque-t-il à l'élément \isotope{2}{2}{He} pour être stable ?
-}{1}
+}{}{2}

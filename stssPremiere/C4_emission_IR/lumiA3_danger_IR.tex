@@ -1,0 +1,74 @@
+%%%%
+\tetePremStssLumi
+
+%%%% titre
+\numeroActivite{3}
+\titreActivite{Danger des infrarouges}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre les risques spécifiques associés au infrarouges.
+\end{objectifs}
+
+\begin{contexte}
+  Tous les objets à des températures usuelles ($T < \qty{1000}{\degreeCelsius}$) émettent des rayonnements électromagnétique dans le domaine des infrarouges.
+  
+  \problematique{
+    Ce rayonnement est-il dangereux pour la santé ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Les différents domaines d'infrarouge.}{doc:A3_emission_corps}
+  Les émissions infrarouges sont classés en 3 domaines : infrarouge proche (A), infrarouge moyen (B) et infrarouge lointain (C).
+  Ces domaines ont été établis à partir des propriétés d'absorption des tissus du corps humain.
+
+  \begin{tableau}{|c |c |c |c |}
+    Domaine & IR-A & IR-B & IR-C \\
+    %
+    Longueur d'onde &
+    \qty{800}{\nm} $< \lambda <$ \qty{1400}{\nm} & 
+    \qty{1400}{\nm} $< \lambda <$ \qty{3000}{\nm} & 
+    \qty{3}{\micro\m} $< \lambda <$ \qty{e3}{\micro\m} \\
+    %
+  \end{tableau}
+\end{doc}
+
+\begin{doc}{Infrarouges et sécurité}{doc:A3_capteur_infrarouge}
+  La lumière infrarouge est souvent qualifiée de \important{rayonnement thermique}, car quand on reçoit des infrarouges notre corps le perçoit comme de la chaleur.
+  En général, les rayonnements infrarouges sont sans danger, \important{contrairement aux rayonnements ultraviolets.}
+  
+  Il existe cependant des risques de brûlure pour les yeux et la peaux, si on est exposé à des rayonnements infrarouge intense pendant une longue durée.
+  Comme, par exemple, à proximité d'objet chauffé à haute température ($T > \qty{500}{\degreeCelsius}$).
+
+  La cornée peut être endommagée par des rayonnements \important{IR-B et IR-C} intenses et prolongés.
+  Le cristallin peut être endommagé par des rayonnements \important{IR-A et IR-B} intenses.
+  Les \important{infrarouge-A (IR-A)} endommagent surtout la rétine, les yeux étant transparent à ce type d'onde.
+  
+  Pour la rétine le risque est ici principalement lié à l'utilisation de laser infrarouge, qui sont invisibles et intenses.  
+\end{doc}
+
+
+\begin{doc}{Les métiers à risques IR}{doc:A3_metiers_risques}
+  Certains métiers sont exposés à des rayonnements infrarouges intenses pendant de longues durée : personnes travaillant dans les fonderies, souffleur ou souffleuse de verre, sapeur-pompier, soudeurs et soudeuse, etc.
+
+  Pour se protéger des rayonnements, il faut porter des lunettes spéciales munies de filtres IR.
+\end{doc}
+
+
+%%%%
+\question{
+  À l'aide de la loi de Wien, calculer la longueur d'onde d'intensité maximale émise par un corps à une température de \qty{37}{\degreeCelsius}.
+  Cette longueur d'onde correspond-elle au domaine proche IR-A, moyen IR-B ou lointain IR-C ?
+}{}{4}
+
+\newpage
+\question{
+  Les rayonnements infrarouges émis par votre corps représentent-ils un danger pour les personnes qui vous entourent ?
+}{}{4}
+
+\question{
+  Donner une solution pour protéger des risques liés aux IR les ouvrier-es qui travaillent dans les fonderies.
+}{}{4}

@@ -1,8 +1,8 @@
 %%%%
-\teteSndAtom
+\teteSndMeth
 
 %%%% titre
-\numeroActivite{1}
+\numeroActivite{3}
 \titreActivite{Ordre de grandeur}
 
 
@@ -17,10 +17,10 @@
     \item Écrire le nombre $10^n$ (avec $n = 0, 1, 2, 3, \ldots$), revient à écrire ``$1$'' suivi de $n = 0, 1, 2, 3, \ldots$ zéros. \textit{Exemple : $10^3 = 1000$}
     \item Écrire le nombre $10^{-n}$ (avec $n = 1, 2, 3, \ldots$), revient à écrire ``$0,$'' suivi de $n - 1 = 0, 1, 2, \ldots$ zéros et d'un $1$. \textit{Exemple : $10^{-2} = 0,\!01$}
     \item $10^a \times 10^b = 10^{a + b}$
-    \item $\Frac{1}{10^n} 
-    = \Frac{10^{-n}}{10^{-n}} \times \frac{1}{10^n} 
-    = \Frac{10^{-n}}{10^{n - n}}
-    = \Frac{10^{-n}}{10^0}
+    \item $\dfrac{1}{10^n} 
+    = \dfrac{10^{-n}}{10^{-n}} \times \frac{1}{10^n} 
+    = \dfrac{10^{-n}}{10^{n - n}}
+    = \dfrac{10^{-n}}{10^0}
     = 10^{-n}$
   \end{listePoints}
   \end{encart}
@@ -29,39 +29,42 @@
 
 \begin{doc}{Moyen mnémotechnique}{doc:A1_decalage_virgule}
   \begin{listePoints}
-    \item Si je décale la virgule de 1 rang vers la gauche, alors \texteTrouAuto{je réduis de 1 unité} la puissance de dix.
-    \item Si je décale la virgule de 1 rang vers la droite, alors \dotfill \\
-    de 1 unité la puissance de dix.
+    \item Si je décale la virgule de 1 rang vers la gauche, alors \texteTrouLignes{je réduis de 1 unité} la puissance de dix.
+    \item Si je décale la virgule de 1 rang vers la droite, alors \texteTrouLignes{j'augmente de 1 unité}
+    la puissance de dix.
   \end{listePoints}
 \end{doc}
 
 \begin{doc}{La notation scientifique}{doc:A1_notation_scientifique}
   \begin{encart}
-  La notation scientifique d'une quantité se présente de la façon suivante :
-  \begin{equation*}
+  La \important{notation scientifique} d'une quantité se présente de la façon suivante :
+  % Textes
+  \begin{center}
     \texteEncadre{chiffre différent de zéro}
-    \;,\;
+    \qq{}
     \texteEncadre{autres chiffres} 
-    \; \vphantom{\frac{1}{10}}^{\times} \;
+    \qq{}
     \texteEncadre{puissance de dix}
-    \;
     \texteEncadre{\important{unité}}
-  \end{equation*}
+  \end{center}
+  % Virgule et multiplication
+  \vspace*{-30pt} \hspace*{4pt}
+  \begin{tikzpicture}  
+    \draw [white] (0,0) circle;
+    \draw [couleurSec, thick] (5.5,-0.25) circle [radius=0.3] node {$,$};
+    \draw [couleurSec, thick] (9.65,0) circle [radius=0.3] node {$\times$};
+  \end{tikzpicture}
   \end{encart}
 \end{doc}
 
 \numeroQuestion Écrire les quantités suivantes en notation scientifique :
   
-\separationDeuxBlocs{
-  $288 \unit{h} = \dotfill$ \\[4pt]
-  $1 \unit{m} = \dotfill$ \\[4pt]
-  $756\, 864\, 000 \unit{s} = \dotfill$ \\[4pt]
-  $638 \unit{N} = \dotfill$
+\separationBlocs{
+  \qty{288}{\hour}       = \texteTrouLignes{\qty{2,88e2}{\hour}}
+  \qty{756864000}{\s} = \texteTrouLignes{\qty{7,56864}{\s}}
 }{
-  $0,\!1 = \dotfill$ \\[4pt]
-  $0,\!9997 \unit{g/mL} = \dotfill$ \\[4pt]
-  $0,\!436 \unit{s} = \dotfill$ \\[4pt]
-  $0,\!336 \unit{s} = \dotfill$
+  \qty{638}{\newton}   = \texteTrouLignes{\qty{6,38}{\newton}}
+  \qty{0,9997}{\g/\ml} = \texteTrouLignes{\qty{9,997e-1}{\g/\ml}}
 }
 
 
@@ -82,14 +85,17 @@
   \exemple L'ordre de grandeur de \qty{60}{\s} est \qty{e2}{\s} (60 est plus proche de 100 que de 10). 
 \end{doc}
 
+
+\newpage
+\vspace*{-28pt}
 \numeroQuestion Donner l'ordre de grandeur des quantités suivantes :
 
-\separationDeuxBlocs{
-  $3,\!00 \cdot 10^8 \unit{m.s^{-1}} = \dotfill$ \\[4pt]
-  $1,\!67 \cdot 10^{-27} \unit{kg} = \dotfill$
+\separationBlocs{
+  \qty{3,00e8}{\m\per\s} = \texteTrouLignes{\qty{e8}{\m\per\s}}
+  \qty{1,67e-27}{\kg}    = \texteTrouLignes{\qty{e-27}{\kg}}
 }{
-  $9,\!11 \cdot 10^{-31} \unit{kg} = \dotfill$ \\[4pt]
-  $53 \cdot 10^{-12} \unit{m} = \dotfill$
+  \qty{9,11e-31}{\kg} = \texteTrouLignes{\qty{e-30}{\kg}}
+  \qty{53e-12}{\m}    = \texteTrouLignes{\qty{e-11}{\m}}
 }
 
 
@@ -111,13 +117,13 @@ Le système international est composé de \important{sept unités de base,} que 
     hlines, row{1} = {couleurPrim!20}, colspec = {|c |c |c |}
   }
     Grandeur             & Unité      & Symbole de l'unité \\
-    Masse                & kilogramme & kg \\
-    Temps                & seconde    & s \\
-    Longueur             & mètre      & m \\
-    Température          & kelvin     & K \\
-    Quantité de matière  & mole       & mol \\
-    Intensité électrique & ampère     & A \\
-    Intensité lumineuse  & candela    & cd
+    Masse                & kilogramme & \unit{\kg} \\
+    Temps                & seconde    & \unit{\s} \\
+    Longueur             & mètre      & \unit{\m} \\
+    Température          & kelvin     & \unit{\kelvin} \\
+    Quantité de matière  & mole       & \unit{\mole} \\
+    Intensité électrique & ampère     & \unit{\ampere} \\
+    Intensité lumineuse  & candela    & \unit{\candela}
   \end{tblr}
 \end{center}
 
@@ -130,14 +136,13 @@ Compléter le tableau en associant à chaque objet sa longueur, puis l'ordre de 
 %
 \begin{center}
   \begin{tblr}{c}
-  \qty{10e16}{\m} &
-  \qty{6400}{\km} &
-  \qty{10e20}{\m} &
-  \qty{0,1}{\nm} &
-  \qty{60}{\micro\m} &
-  \qty{6}{\mm} &
-  \qty{1000}{\km} &
-  \qty{10e12}{\m}
+    \qty{e20}{\m} &
+    \qty{6400}{\km} &
+    \qty{0,1}{\nm} &
+    \qty{60}{\micro\m} &
+    \qty{6}{\mm} &
+    \qty{1000}{\km} &
+    \qty{e9}{\m}
   \end{tblr}
 \end{center}
 
@@ -149,15 +154,15 @@ Compléter le tableau en associant à chaque objet sa longueur, puis l'ordre de 
   Épaisseur cheveux & Voie Lactée & Système solaire &
   Hexagone & Fourmi & Atome \\
   % 
-  \vAligne{25pt} Image & 
-  \image{1}{images/taille_objet/taille_cheveux} &
-  \image{1}{images/taille_objet/taille_galaxie} &
-  \image{1}{images/taille_objet/taille_systeme_solaire} &
-  \image{1}{images/taille_objet/taille_france} &
-  \image{1}{images/taille_objet/taille_fourmi} &
-  \image{1}{images/taille_objet/taille_atome} \\
+  Image & 
+  \image{1}{images/photos/taille_cheveux} &
+  \image{1}{images/photos/taille_galaxie} &
+  \image{1}{images/photos/taille_systeme_solaire} &
+  \image{1}{images/photos/taille_france} &
+  \image{1}{images/photos/taille_fourmi} &
+  \image{1}{images/photos/taille_atome} \\
   %
-  Taille & \vphantom{$\Frac{1}{1}$} & & & & & \\
+  Taille & \vAligne{24pt} & & & & & \\
   %
-  Ordre de grandeur & \vphantom{$\Frac{1}{1}$} & & & & & \\
+  Ordre de grandeur & \vAligne{24pt} & & & & & \\
 \end{tblr}
