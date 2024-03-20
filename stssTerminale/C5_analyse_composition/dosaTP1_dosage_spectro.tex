@@ -1,0 +1,108 @@
+%%%%
+\teteTermStssDosa
+
+%%%% titre
+\numeroActivite{1}
+\titreTP{Préparer une solution de glucose}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Revoir le principe d'une dissolution et d'une dilution
+  \item Réaliser une dissolution et une dilution.
+\end{objectifs}
+
+\begin{contexte}
+  Les patient-es en hypoglycémie ont besoin d'un apport en glucose contrôlé.
+  Pour ça, à l'hopital on prépare des solution de concentration précise.
+  
+  \problematique{
+    Comment préparer une solution de concentration donnée avec une dissolution ou une dilution ?
+  }
+\end{contexte}
+
+
+%%%%
+\begin{doc}{Solution glucosée}{doc:TP1_solution_glucose}
+  Une solution de glucose à \qty{5}{\percent} signifie qu'elle contient \qty{5,0}{\g} de glucose pour \qty{100}{\g} de solution, soit \qty{100}{\ml} de solution aqueuse.
+\end{doc}
+    
+\begin{doc}{Protocole de dissolution dans le désordre}{doc:TP1_protocole_disso}
+  \begin{tblr}{
+    colspec = {X[c] X[c] X[c] X[c] X[c] X[c]},
+  }
+    \image{1}{images/chimie/protocoles/dissoDilu0002.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0004.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0001.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0005.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0003.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0006.png} \\
+    \nombreCercle{1} Verser le solide dans la fiole jaugée &
+    \nombreCercle{2} Agiter la fiole pour homogénéiser &
+    \nombreCercle{3} Peser le glucose en poudre &
+    \nombreCercle{4} Remplir avec de l'eau distillée jusqu'au trait de jauge &
+    \nombreCercle{5} Verser de l'eau distillée jusqu'au 2/3 &
+    \nombreCercle{6} Agiter de nouveau pour homogénéiser \\
+  \end{tblr}
+\end{doc}
+
+\begin{doc}{Protocole de dilution dans le désordre}{doc:TP1_protocole_dilu}
+  \begin{tblr}{
+    colspec = {X[c] X[c] X[c] X[c] X[c] X[c]},
+  }
+    %
+    \image{1}{images/chimie/protocoles/dissoDilu0010.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0007.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0009.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0012.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0008.png} &
+    \image{1}{images/chimie/protocoles/dissoDilu0011.png} \\
+    \nombreCercle{1} Agiter la fiole pour homogénéiser &
+    \nombreCercle{2} Prélever la solution mère à diluer &
+    \nombreCercle{3} Verser de l'eau distillée jusqu'au 2/3 &
+    \nombreCercle{4} Agiter de nouveau pour homogénéiser &
+    \nombreCercle{5} Verser la solution mère dans la fiole jaugée  &
+    \nombreCercle{6} Remplir avec de l'eau distillée jusqu'au trait de jauge \\
+  \end{tblr}
+\end{doc}
+
+\begin{doc}{Facteur de dilution}{doc:TP1_facteur_dilution}  
+  Le \important{facteur de dilution} est le rapport du volume de la solution fille sur le volume de la solution mère prélevé
+  \begin{equation*}
+    F = \frac{V_\text{1}}{V_\text{0}}.
+  \end{equation*}
+
+  C'est aussi le rapport de la concentration mère sur la concentration fille
+  \begin{equation*}
+    F = \frac{c_0}{c_1}. 
+  \end{equation*}
+  
+  On dit qu'on a dilué $F$ fois une solution.
+\end{doc}
+
+%%
+\question{
+  Il faut préparer une solution de glucose de \qty{50}{\ml} à \qty{15}{\percent} pour une patiente hypoglycémique.
+  Calculer la masse de glucose en poudre à prélever pour la solution.
+}{}{4}
+
+\question{
+  Remettre dans l'ordre les étapes du protocole de dissolution.
+}{}{2}
+
+\mesure Réaliser la solution de glucose à \qty{15}{\percent}.
+
+\question{
+  Pour un autre patient, il faut réaliser une solution de \qty{50}{\ml}, 10 fois moins concentrée que la première.
+  Calculer le volume à prélever de la première solution (solution mère) afin de réaliser une deuxième solution de \qty{50}{\ml} (solution fille).
+}{}{4}
+
+\question{
+  Calculer la concentration en glucose de la deuxième solution.
+}{}{4}
+
+\question{
+  Remettre dans l'ordre les étapes du protocole de dilution.
+}{}{2}
+
+\mesure Réaliser la deuxième solution de glucose.

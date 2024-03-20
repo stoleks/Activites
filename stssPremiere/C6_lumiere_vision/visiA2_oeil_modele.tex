@@ -1,0 +1,111 @@
+%%%%
+\tetePremStssVisi
+
+%%%% titre
+\numeroActivite{2}
+\titreActivite{Vision humaine et modèle optique}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre le mécanisme de la vision chez les humains.
+  \item Comprendre la formation des images sur la rétine.
+\end{objectifs}
+
+\begin{contexte}
+  La vue est un des sens les plus importants chez nous, elle permet d'observer notre environnement grâce à nos yeux.
+  Les yeux forment des images réelles, interprétés par notre cerveau pour former des images mentales.
+  
+  \problematique{
+    Comment est formée une image sur la rétine et comment le cerveau interprète cette information pour donner notre vision ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Modélisation de l'oeil}{doc:A2_modele_oeil}  
+  \begin{wrapfigure}{r}{0.5\linewidth}
+    \vspace*{-30pt}
+    \centering
+    \image{1}{images/lumiere/modele_oeil_optique}
+
+    \vspace*{-12pt}
+    \small{Schéma simplifié de l'oeil et de sa modélisation optique.}
+  \end{wrapfigure}
+
+  Dans l'oeil, la lumière se propage à travers plusieurs milieux \important{transparents} et \important{homogène} pour former une image sur la \important{rétine :}
+  \begin{listePoints}
+    \item la \important{cornée} est une membrane transparente qui concentre la lumière sur le cristallin ;
+    \item le \important{cristallin} est une lentille élastique ;
+    \item \important{l'humeur} aqueuse est liquide ;
+    \item \important{l'humeur} vitrée est gélatineuse.
+  \end{listePoints}
+
+  En optique, on modélise l'oeil par un système simple :
+  \begin{listePoints}
+    \item \important{L'iris} est modélisé par un \important{diaphragme} ;
+    \item \important{Le cristallin} et les milieux transparents sont modélisés par une lentille convergente ;
+    \item \important{La rétine} est modélisé par un écran.
+  \end{listePoints}
+\end{doc}
+
+\question{
+  Compter le nombre de milieux traversés et de réfractions subies par la lumière avant d'arriver sur la rétine.
+}{}{2}
+
+\question{
+  Rappeler comment la lumière se propage dans un milieu transparent homogène.
+}{}{1}
+
+
+\begin{doc}{L'iris et le cristallin}{doc:A2_iris_cristallin}
+  \important{L'iris} est une membrane circulaire qui permet à l'oeil de régler le diamètre de la \important{pupille.} 
+  
+  Quand le diamètre de la pupille augmente, la lumière entre davantage dans l'oeil.
+  Cette dilatation permet d'avoir une image plus lumineuse, mais diminue la netteté de l'image.
+
+  L'iris se contracte principalement quand la luminosité ambiante augmente, grâce à deux muscles opposés : un système radial dilatateur (fibres orientées vers l'extérieur comme les rayons d'une roue) et un un système concentrique constricteur (fibres disposées de façon concentrique, en sphincter).
+
+  Le \important{cristallin} est une lentille déformable dans l'oeil, placé juste derrière l'iris.
+  Le cristallin concentre les rayons lumineux pour former une image des objets observés sur la rétine.
+  Pour pouvoir ajuster la netteté des objets observés, le cristallin peut se déformer grâce à des muscles, c'est ce qui permet notamment de voir net de près.
+\end{doc}
+
+\question{
+  Expliquer pourquoi on visualise mieux les détails d'un objet quand il est bien éclairé.
+}{}{2}
+
+
+\begin{doc}{La rétine}{doc:A2_retine}
+  La lumière qui traverse l'oeil forme une image nette de l'objet observé sur la \important{rétine.}
+
+  % \begin{wrapfigure}{r}{0.4\linewidth}
+  %   \image{1}
+  % \end{wrapfigure}
+  
+  La rétine est constitué de deux types de terminaisons nerveuses photosensibles :
+  \begin{listePoints}
+    \item les \important{bâtonnets,} qui sont sensibles pour 1 longueur d'onde et permettent de voir quand il y a une faible luminosité ;
+    \item les \important{cônes,} qui sont sensible dans 3 longueurs d'onde différentes et permettent d'avoir une vision en couleur.
+  \end{listePoints}
+  Quand ils reçoivent de la lumière dans leur gamme de sensibilité, les cônes et les bâtonnets émettent un signal dans le \important{nerf optique,} ce qui permet à notre cerveaux de reconstituer une image en couleur.
+\end{doc}
+
+\question{
+  Expliquer pourquoi on distingue moins bien les couleurs dans un endroit sombre.
+}{}{2}
+
+
+\begin{doc}{Défaut de l'oeil et de la vision}{doc:A2_defaut_oeil}
+  Les troubles de la visions sont dû à des défauts de l'oeil.
+  Si c'est la forme de l'oeil ou le cristallin qui a des défauts, la personne aura des problèmes de netteté (images floues).
+  Si ce sont la rétine qui a des défauts, la personne aura des problèmes avec la vision des couleurs ou sera partiellement aveugle.
+
+  Quelques exemples de troubles commun :
+  \begin{listePoints}
+    \item la myopie, qui empêche de voir net de loi. À cause d'un défaut dans la forme de l'oeil ou le cristallin, la formation des images se fait avant la rétine.
+    \item l'hypermétropie, qui empêche de voir net de près, pour des raisons inverses de la myopie, l'image est formée après la rétine.
+    \item la presbytie, qui est lié à un durcissement du cristallin en vieillissant, ce qui empêche d'effectuer une mise au point pour voir net de près.
+    \item le daltonisme, qui empêche de distinguer certaines couleurs. Les différentes formes de daltonisme sont liées à des défauts dans les cônes.
+  \end{listePoints}
+\end{doc}

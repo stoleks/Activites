@@ -1,0 +1,119 @@
+%%%%
+\teteSndMole
+
+%%%% titre
+\vspace*{-32pt}
+\numeroActivite{1}
+\titreTP{Dénombrer un grand nombre d'entités identiques}
+
+
+%%%% Objectifs
+\begin{objectifs}
+  \item Comprendre qu'une \important{espèce chimique} est constituée d'un très (très) grand nombre \important{d'entités chimiques}.
+  \item Comprendre l'utilité de compter les entités par paquets.
+  \item Comprendre le concept de mole.
+\end{objectifs}
+
+\begin{contexte}  
+  Les atomes, ions et molécules sont des entités chimique qui composent toute la matière macroscopique qui nous entoure.
+  
+  \problematique{
+    Comment compter les \important{entité chimique} microscopique dans une \important{espèce chimique} macroscopique ?
+  }
+\end{contexte}
+
+
+%%%%
+\titreSection{Compter des entités au quotidien}
+
+%%
+\begin{doc}{Des paquets pour mieux compter}{doc:TP1_compter_paquet}
+  Au quotidien, de nombreux objets ne sont pas compté à l'unité, mais par \important{paquet.}
+  Par exemple, on compte les oeufs par douzaines et les feuilles de papier par ramette de 500 feuilles.
+  Si on devait compter les feuilles de papier d'une ramette une par une ce serait une sacré corvée !
+
+  On va voir l'intérêt de faire des paquets en comptant des grain de riz.
+\end{doc}
+
+\mesure On va peser $N_A = 100$ grains de riz, on note leur masse $m_\text{100 grains}$ = \texteTrou[0.1]{\qty{4}{\g}}
+
+\question{
+  Calculer la masse d'un grain de riz $m_\text{grain}$ à partir de la masse de 100 grains de riz.
+}{}{1}
+
+\question{
+  À partir de la masse d'un grain de riz, calculer le nombre $N$ de grains de riz dans un sac de riz de \qty{1}{\kg}.
+}{}{2}
+
+\question{
+  Calculer le nombre $n$ de paquets de 100 grains de riz qu'il y a dans \qty{1}{\kg} de riz.
+}{}{2}
+
+
+%%%%
+\titreSection{Compter des entités en chimie}
+
+%%
+\begin{doc}{Masse d'une entité}{doc:A3_masse_entite}
+  La masse d'une entité composée de plusieurs atomes est égale à la somme des masses des atomes de l'entité.
+  
+  \exemple 
+  $m(\chemfig{C_2 H_6 O}) = 2\times m(\chemfig{C}) + 6\times m(\chemfig{H}) + m(\chemfig{O})$
+  
+  \begin{donnees}
+    \item $m(\chemfig{H})  = \qty{1,67e-24}{\g}$
+    \item $m(\chemfig{C})  = \qty{1,99e-23}{\g}$
+    \item $m(\chemfig{O})  = \qty{2,66e-23}{\g}$
+    % \item $m(\chemfig{Ca)} = \qty{6,66e-23}{\g}$
+  \end{donnees}
+\end{doc}
+
+\begin{doc}{Composition du sucre}{doc:A3_composition_sucre}
+  Le sucre blanc en poudre ou en cube utilisé en pâtisserie est composée de saccharose.
+  La saccharose est une molécule de formule brute \bruteCHO{12}{22}{11}.
+\end{doc}
+
+\question{
+  Calculer la masse d'une molécule de saccharose $m_\text{saccharose}$ à partir de la masse des atomes qui la constitue.
+}{}{2}
+
+\question{
+  Calculer le nombre $N$ de molécule de saccharose dans un sachet de sucre de \qty{1}{\kg}.
+}{}{2}
+
+
+\begin{doc}{La mole}{doc:TP1_mole}
+  Pour faciliter le comptage, en chimie on regroupe les entités en paquets qu'on appelle \important{mole.}
+  \begin{encart}
+    Une \important{mole} contient précisément $N_A = \qty{6,02 e23}{\per\mole}$ entités chimiques.
+  \end{encart}
+  \attention $N_A$ est une constante appelée \important{nombre d'Avogadro}, en hommage au scientifique Aemedeo Avogadro.
+  L'unité « \unit{\per\mole} » signifie « par mole », c’est le nombre d'entités dans une mole.
+\end{doc}
+
+\question{
+  Calculer le nombre $n$, en \unit{\mole}, de paquets de $N_A = \qty{6.02e23}{\per\mole}$ molécules dans un sachet de sucre de \qty{1}{\kg}.
+}{}{3}
+
+\mesure Remplir le tableau ci-dessous avec les grandeurs calculées ou mesurées.
+
+\medskip
+\begin{tblr}{
+    row{1} = {couleurPrim!20, c}, hlines,
+    colspec = {c | X[1] | X[1]},
+    row{2-5} = {12mm, c, m},
+  }
+  Échantillon étudié & Sac de riz & Sachet de sucre \\
+  Masse d'une entité       & $m_\text{riz} =$ \texteTrou[0.25]{..} & $m_\text{saccharose} =$ \texteTrou[0.25]{..} \\
+  Nombre d'entités $N$     & & \\
+  Taille d'un paquet $N_A$ & & \\
+  Nombre de paquets $n$    & & \\
+\end{tblr}
+
+
+\begin{doc}{La quantité de matière}{doc:TP1_quantite_matiere}
+  \begin{encart}
+    En chimie le nombre de paquets s’appelle le \important{nombre de moles} ou la \important{quantité de matière.}
+    On la note $n$ et son unité dans le système international s’écrit « mol ».
+  \end{encart}
+\end{doc}

@@ -1,0 +1,140 @@
+%%%%
+\tetePremStssVisi
+
+%%%% titre
+\numeroActivite{1}
+\titreActivite{Propagation de la lumière et illusion d'optique}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Décrire la propagation de la lumière.
+\end{objectifs}
+
+\begin{contexte}
+  \vspace*{-14pt}
+  \begin{wrapfigure}[6]{r}{0.25\linewidth}
+    \centering
+    \vspace*{-16pt}
+    \image{1}{images/lumiere/mirage-froid}
+  \end{wrapfigure}
+  
+  Pour voir un objet, il faut avoir une ligne de vue directe sur celui-ci, car la lumière semble toujours se propager en ligne droite.
+  
+  Une exception est le cas des mirages froid : près d'une surface très froide, on peut voir apparaître des objets sans avoir de ligne de vue directe dessus, les objets semblent alors léviter dans les airs !
+  
+  \problematique{
+    Dans quelles conditions la lumière se propage-t-elle en ligne droite et comment expliquer le phénomène des mirages froids ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{La lumière : une onde électromagnétique}{doc:A1_onde_EM}
+  La lumière est une \important{onde électromagnétique}, dont les propriétés dépendent de sa \important{vitesse de propagation} et de sa \important{longueur d'onde,} notée $\lambda$.
+  
+  \begin{encart}
+    Une onde est dite \important{monochromatique} (« une couleur »), si elle a une longueur d'onde bien définie.
+    Une onde est dite \important{polychromatique} (« plusieurs couleurs »), si elle est la superposition de plusieurs ondes monochromatique.
+  \end{encart}
+  
+  \begin{encart}
+    Dans le vide, une onde électromagnétique se propage à la vitesse de la lumière notée $c$
+    \begin{equation*}
+      c = \qty{3,00e8}{\m\per\s}
+    \end{equation*}
+  \end{encart}
+\end{doc}
+
+\begin{doc}{Un peu de vocabulaire}{doc:A1_vocabulaire}
+  \begin{encart}
+    \important{Milieu transparent :} milieu que la lumière visible traverse sans être \important{absorbée}, c'est-à-dire sans que son intensité ne diminue.
+  \end{encart}
+  %
+  \begin{encart}
+    \important{Milieu homogène :} milieu dont les propriétés sont identiques en tout point (pression, température, concentration, etc.).
+  \end{encart}
+\end{doc}
+
+\question{
+  L'air est-il un milieu transparent ? Justifier.
+}{}{1}
+
+\question{
+  L'air est-il toujours un milieu homogène ? Donner un contre-exemple.
+}{}{2}
+
+\separationBlocs{
+  \QCM{
+    Un laser émet une lumière qui est
+  }{
+    \item une onde monochromatique.
+    \item une onde polychromatique.
+  }
+}{
+  \QCM{
+    Une torche émet une lumière qui est
+  }{
+    \item une onde monochromatique.
+    \item une onde polychromatique.
+  }
+}
+
+\newpage
+\mesure Observer et schématiser la propagation du laser dans l'eau sucrée homogène et hétérogène.
+\vspace{4cm}
+
+\question{
+  La lumière se propage-t-elle toujours en ligne droite ?
+}{}{2}
+
+\question{
+  Donner le type de milieu transparent pour lequel la lumière se propage en ligne droite.
+}{}{2}
+
+%%
+\begin{doc}{Indice de réfraction}{doc:A1_indice_refraction}
+  \begin{encart}
+    La capacité d'un milieu à réduire la vitesse de la lumière est mesurée par un nombre que l'on appelle \important{l'indice de réfraction} et que l'on note $n_\text{milieu}$.
+    C'est un nombre sans unité.
+    
+    Dans le milieu, la vitesse de la lumière est
+    \begin{equation*}
+      c_\text{milieu} = \dfrac{c}{n_\text{milieu}}
+    \end{equation*}
+  \end{encart}
+  
+  \exemples
+  \begin{listePoints}
+    \item L'air a un indice de réfraction $n_\text{air} = \num{1,00}$ et donc $c_\text{air} = c = \qty{3,00e8}{\m\per\s}$.
+    \item L'eau a un indice de réfraction $n_\text{eau} = 1,\!33$ et donc $c_\text{eau} = \qty{2,26e8}{\m\per\s}$.
+  \end{listePoints}
+\end{doc}
+
+\begin{doc}{Loi de Snell-Descartes}{doc:A1_descartes}
+  On peut quantifier la déviation de la lumière quand elle passe d'un milieu à un autre, c'est la loi de \important{Snell-Descartes.}
+
+  \vspace*{-16pt}
+  \begin{wrapfigure}{r}{0.4\linewidth}
+    \centering
+    \image{1}{images/lumiere/angles_refraction}
+  \end{wrapfigure}
+  \phantom{b}
+  \begin{encart}
+    Lorsque la lumière passe d'un milieu homogène d'indice $n_1$ à un milieu homogène d'indice $n_2$, alors
+    \begin{equation*}
+      n_1 \sin(i_1) = n_2 \sin(i_2)
+    \end{equation*}
+  \end{encart}
+  \phantom{b}
+\end{doc}
+
+%%%%
+\mesure
+Pour expliquer le phénomène de mirage, on va modéliser l'air comme une superposition de plusieurs couche d'air : chaque couche est homogène avec une même température.
+L'indice de réfraction de l'air \textbf{diminue} quand la température \textbf{augmente.}
+
+En vous aidant de la loi de Snell-Descartes, schématiser le trajet d'une onde lumineuse partant d'un objet et qui traverserait plusieurs couches d'air près d'une surface froide.
+
+\mesure 
+Pour notre cerveaux, la lumière suit toujours une trajectoire rectiligne : tracer cette trajectoire sur votre schéma et en déduire pourquoi on voit apparaître l'objet à un endroit où il n'est pas.

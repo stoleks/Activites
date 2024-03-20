@@ -1,0 +1,100 @@
+%%%%
+\teteTermStssDosa
+
+%%%% titre
+\numeroActivite{1}
+\titreActivite{Dissolution et concentration des ions en solution}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre le lien entre un composé ionique et les ions qui le constitue.
+  \item Savoir calculer la concentration d'un ion à partir de la concentration d'un composé ionique.
+\end{objectifs}
+
+\begin{contexte}
+  De nombreuses analyses médicales repose sur le fait de mesurer la concentration d'espèces dissoutes dans le sang.
+  
+  \problematique{
+    Quels sont les principes chimiques qui permettent d'étudier la composition ionique d'une solution ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Neutralité des solutions}{doc:A1_neutralite_solution}
+  \begin{wrapfigure}{l}{0.4\linewidth}
+    \vspace*{-18pt}
+    \image{1}{images/chimie/dissolution}
+  \end{wrapfigure}
+  Une solution est \important{électriquement neutre,} que le soluté soit moléculaire ou neutre !
+
+  Une molécule est composée d'atomes électriquement neutres, un soluté moléculaire ne possède donc pas de charge électrique.
+  
+  Un ion est électriquement chargé. Pour qu'une solution ionique soit électriquement neutre, il faut une proportion d'anions (ions négatifs) et de cations (ions positifs) conduisant à une charge électrique totale nulle
+
+  \textcolor{couleurPrim}{\faLongArrowLeft} Dissolution du chlorure de sodium
+\end{doc}
+
+%%
+\begin{doc}{Équation de dissolution et calcul de concentration}{doc:A1_equation_dissolution}
+  Pour déterminer la concentration \important{des espèces ioniques} dissoutes à partir de la concentration \important{en soluté,} on utilise la concentration en quantité de matière (\unit{\mole\per\litre}).
+  \medskip
+
+  \exemple Pour la dissolution du chlorure d'aluminium, une entité de chlorure d'aluminium \chemfig{Al Cl_3} produit 1 ion aluminium III \chemfig{Al^{3+}} et 3 ions chlorure \chemfig{Cl^{-}}.
+
+  Donc, si on a une concentration en chlorure d'aluminium de \qty{2,0}{\mole\per\litre}, on aura une concentration de \qty{2,0}{\mole\per\litre} d'ion aluminium III et une concentration de $3\times\qty{2,0}{\mole\per\litre} = \qty{6,0}{\mole\per\litre}$ d'ion chlorure.
+\end{doc}
+
+%%
+\begin{doc}{Quelques composés ioniques}{doc:A1_composes_ioniques}
+  \begin{tableau}{|c |c |c |c |}
+    Composé ionique      & Formule brute & Cation & Anion \\
+    %
+    Sulfate de magnésium & \chemfig{MgSO_4} &
+    Ion magnésium \chemfig{Mg^{2+}} &
+    Ion sulfate \chemfig{SO_4^{2-}} \\
+    %
+    Chlorure de sodium & \chemfig{NaCl} &
+    Ion sodium \chemfig{Na^{+}} &
+    Ion chlorure \chemfig{Cl^{-}} \\
+    %
+    Hydroxyde de sodium & \chemfig{NaOH} &
+    Ion sodium \chemfig{Na^{+}} &
+    Ion hydroxyde \chemfig{HO^{-}} \\
+    %
+    Chlorure de fer II & \chemfig{FeCl_2} &
+    Ion fer II \chemfig{Fe^{2+}} &
+    Ion chlorure \chemfig{Cl^{-}} \\
+  \end{tableau}
+\end{doc}
+
+
+%%%%
+\question{
+  Écrire l'équation de dissolution du chlorure de fer \chemfig{Fe Cl_2}.
+}{
+}{2}
+
+\newpage
+\question{
+  \qty{6,0}{\g} de chlorure de fer sont dissous dans \qty{1,0}{\litre} d'eau.
+  Calculer la concentration en masse $c_m$ de chlorure de fer dans la solution. 
+}{}{2}
+
+\question{
+  Calculer la concentration en quantité de matière en utilisant la relation suivante 
+  \begin{equation*}  
+    c = \dfrac{c_m}{M(\chemfig{FeCl_2})}
+  \end{equation*}
+}{}{4}
+
+\begin{donnees}
+  \item $M(\chemfig{Fe}) = \qty{55,8}{\g\per\mole}$
+  \item $M(\chemfig{Cl}) = \qty{35,5}{\g\per\mole}$
+\end{donnees}
+
+
+\question{
+  En déduire la concentration en quantité de matière des ions fer notés $[\chemfig{Fe^{2+}}]$ et des ions chlorure notés $[\chemfig{Cl^{-}}]$.
+}{}{3}

@@ -33,6 +33,15 @@
   #1
 }
 
+%%%% boite colorée
+\newtcolorbox{boiteColoree}[1][]{
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  arc = 2mm, % les lignes de la boites sont droites
+  colback = couleurPrim, colframe = white, % fond et traits colorés
+  coltext = white,
+  #1
+}
+
 %%%% document
 \newcounter{documentNum}
 \newtcolorbox{doc}[3][]{
@@ -181,8 +190,12 @@
 \newcommand{\titreActivite}[1]{
   \titreActi{Activité}{#1}
 }
-\newcommand{\titreEvaluation}[1]{
-  \titre{Évaluation \arabic{section} -- #1}
+\NewDocumentCommand{\titreEvaluation}{o m}{
+  \IfNoValueTF {#1}{
+    \titre{Évaluation \arabic{section} -- #2}
+  }{
+    \titre{Évaluation #1 -- #2}
+  }
   % reset du numéro de page et d'exercices
   \setcounter{page}{1}
   \numeroActivite{1}
@@ -321,6 +334,12 @@
 }
 \newcommand{\coursFicheReussite}{
   Je prépare une fiche au format A4 avec toutes les notions, définitions ou grandeurs dont je pense avoir besoin pendant l'évaluation.
+  \bigskip
+  
+  \begin{center}
+    \textcolor{couleurSec}{\faThumbsUp}
+    \important{La fiche préparée pourra être utilisée pendant l'évaluation pour s'aider !}
+  \end{center}
 }
 
 
@@ -365,7 +384,7 @@
 \NewDocumentCommand{\lignesDeReponse}{s m}{
   % Trace la fin de la ligne, ou pas
   \IfBooleanTF{#1}{ % Version *
-    \espaceReponse \dotfill
+    \espaceReponse \dotfill\phantom{bb}
     \ifnum #2 < 1
       \newline
     \fi
@@ -606,6 +625,13 @@
 \newcommand{\picto}[2]{
   \image{#1}{images/pictogrammes/picto_#2}
 }
+% Nombre dans un cercle
+\newcommand*\nombreCercle[1]{
+  % \tikz[baseline=(char.base)]{
+  %   \node [shape=circle, draw filled, inner sep=1.2pt, color=couleurSec!20] (char) {\textcolor{black}{#1};
+  % }
+  \important[couleurSec]{#1}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -630,6 +656,17 @@
   \refstepcounter{compteAppelProf}
   \hspace{24pt} \faHandPaperO \hspace{2pt}
   \textbf{Appel n$^\circ$ \arabic{compteAppelProf} :}
+}
+
+%
+\newcommand{\extrait}[2]{
+  « #1 »
+  
+  \vspace*{-12pt}
+  \begin{flushright}
+    \textit{#2}
+  \end{flushright}
+  \vspace*{-12pt}
 }
 
 
@@ -743,6 +780,7 @@
 %% Unités
 \DeclareSIUnit{\dornic}{\text{\textdegree D}}
 \DeclareSIUnit{\ppm}{\text{ppm}}
+\DeclareSIUnit{\COeq}{\text{kgCO$_{2}$e}}
 % \DeclareSIUnit{}{\text{}}
 
 
