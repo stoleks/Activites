@@ -1,0 +1,223 @@
+%%%%
+\teteSndLumi
+\vspace*{-24pt}
+
+%%%% titre
+\numeroActivite{1}
+\titreTP{Formation des images et vision}
+
+
+%%%% Objectifs
+\vspace*{-4pt}
+\begin{objectifs}
+  \item Former une image avec une lentille convergente.
+  \item Comprendre la modélisation optique de l'oeil.
+\end{objectifs}
+
+\begin{contexte}
+  L'oeil humain permet de construire l'image d'un objet observé sur la rétine, qui contient des cellules capable de percevoir les couleurs (cônes) ou l'intensité lumineuse (bâtonnets).
+  
+  \problematique{
+    Comment modéliser et comprendre la formation d'une image par un oeil ?
+  }
+\end{contexte}
+
+
+%%%% Formation d'une image avec une lentille
+\begin{doc}{Lentille convergente}{doc:TP1_lentille_convergente}
+  \begin{wrapfigure}[4]{r}{0.4\linewidth}
+    \centering
+    \vspace*{-42pt}
+    \image{0.6}{images/lumiere/schema_lentilles_conv}
+  \end{wrapfigure}
+  
+  Cette année en optique on va travailler avec des \important{lentilles convergentes,} qui concentrent les rayons lumineux.
+  Elles sont plus épaisses au centre qu'aux extrémités et sont schématisées par une double flèche fermée.
+
+  \begin{encart}
+    Une \important{lentille convergente} possède
+    \begin{listePoints}
+      \item un \important{centre optique} noté $O$, au centre de la lentille. 
+      \item un \important{foyer image} noté $F'$ et son symétrique par rapport à $O$, le \important{foyer objet} noté $F$.
+      \item une \important{distance focale} noté $f'$, qui est la distance $OF'$.
+    \end{listePoints}
+    
+    La droite perpendiculaire à la lentille passant par $O$ est appelée \important{l'axe optique}, orientée par rapport au sens de propagation de la lumière.
+  \end{encart}
+
+  Les lentilles convergentes ont une propriétés particulières : tous les rayons lumineux qui partent d'un point et traversent la lentille vont converger en un même point, ce qui permet de reconstituer une image.
+\end{doc}
+
+\begin{doc}{Formation d'une image avec une lentille}{doc:TP1_formation_image}
+  \begin{wrapfigure}[6]{r}{0.5\linewidth}
+    \vspace{-20pt}
+    \begin{boite}
+      \important{Vocabulaire :}
+      \vspace{-8pt}
+      \begin{encart}
+        Un \important{rayon incident} va vers la lentille.
+        Un \important{rayon émergent} s'éloigne de la lentille.
+      \end{encart}
+    \end{boite}
+  \end{wrapfigure}
+  
+  Trois rayons lumineux ont des propriétés particulières quand ils traversent une lentille convergente. 
+  En utilisant deux rayons lumineux particuliers qui partent d'un point, on peut trouver où les rayons lumineux convergent pour former son image.
+
+  \begin{listePoints}
+    \item Tout rayon incident qui passe par le centre optique n'est pas dévié.
+    \item Tout rayon qui passe par le foyer objet $F$ émerge parallèle à l'axe optique.
+    \item Tout rayon incident parallèle à l'axe optique émerge en passant par le foyer image $F'$.
+  \end{listePoints}
+
+  \begin{center}
+    \image{0.7}{images/lumiere/formation_image_lentille_conv}
+  \end{center}
+\end{doc}
+
+\mesure
+Placer la lentille sur le banc optique, puis repérer la position des points virtuels $F$ et de $F'$ sur le banc optique par rapport à la lentille.
+
+\mesure
+Placer la lampe avec l'objet en forme de « F » sur le banc optique, puis mesurer la taille de la lettre « F » qu'on note $AB =$ \texteTrou[0.1]{\qty{15}{\cm}}
+
+\mesure 
+Placer la lampe à une distance supérieure à $f'$, mais inférieure à $2\times f'$. 
+Placer l'écran de l'autre côté du banc optique et le déplacer pour trouver la position où l'image est nette sur l'écran.
+Mesurer la taille de l'image $A'B'$, la distance $OA$ et la distance              $OA'$.
+Répéter cette opération en plaçant la lampe à une distance de $2f'$, puis à une distance supérieure à $2f'$.
+
+\numeroQuestion
+Remplir le tableau ci-dessous avec vos mesures.
+
+% \vspace*{-16pt}
+\begin{tableau}{
+  |X[c] |X[c] |X[c] | X[c] |
+}
+  Position de l'objet &
+  Taille de l'image $A'B'$ (\unit{\cm}) &
+  Distance lentille objet $OA$ (\unit{\cm}) &
+  Distance lentille image $OA'$ (\unit{\cm}) \\
+  $f' < OA < 2f'$ & & & \\
+  $OA = 2f'$      & & & \\
+  $OA > 2f'$      & & & \\
+\end{tableau}
+
+\question{
+  Pour chaque position de l'objet, calculer le \important{grandissement $\gamma = \dfrac{A'B'}{AB}$} (« gamma ») et le rapport $g = \dfrac{OA'}{OA}$.
+  Est-ce que $g$ et $\gamma$ sont égaux ?
+}{}{3}
+
+
+%%%% Modélisation de l'oeil
+\begin{doc}{Modèle simplifié de l'oeil}{doc:TP1_modele_oeil}
+  \begin{wrapfigure}[8]{r}{0.45\linewidth}
+    \centering
+    \vspace*{-12pt}
+    \image{0.9}{images/lumiere/modele_oeil_optique}
+  \end{wrapfigure}
+  
+  L'oeil humain est un organe complexe (et fragile !) composé de plusieurs éléments.
+  On peut modéliser un oeil humain en trois parties :
+  
+  \begin{listePoints}
+    \item \important{l'iris,} avec un trou central (la pupille) de taille variable. L'iris permet de contrôler la quantité de rayons lumineux arrivant dans l'oeil.
+    \item \important{le cristallin, la cornée et les humeurs,} qui dévient les rayon lumineux comme une lentille convergente.
+    \item \important{la rétine,} qui reçoit les rayons lumineux et sur laquelle l'image est formée.
+    Elle est composée de cônes pour percevoir les couleurs et de bâtonnets pour percevoir l'intensité lumineuse.
+  \end{listePoints}
+
+  Une fois l'image d'un objet formée sur la rétine, la lumière est transformée en signaux électriques.
+  Ces signaux électriques sont transmis au cerveaux par le nerf optique, qui les utilise pour former notre vision.
+\end{doc}
+
+%%%%
+\mesure
+Associer chaque composant de l'oeil avec l'objet permettant de le modéliser
+
+\vspace*{-16pt}
+\begin{center}
+  \begin{tableau}{|c| X[c]| X[c]| X[c]| X[c]|}
+    Optique & diaphragme & lentille & écran \\
+    %
+    Oeil & iris & \correction{Cristallin} & \correction{rétine}\\
+    %
+  \end{tableau}
+\end{center}
+
+
+% \begin{doc}{Rayons particuliers à travers une lentille convergente}{doc:TP1_rayons_lentille}
+%   \centering
+%   \image{0.9}{images/lumiere/image_lentille_convergente}
+% \end{doc}
+
+% \begin{doc}{Grandissement}{doc:TP1_grandissement}
+%   \begin{encart}
+%     Le \important{grandissement} noté $\gamma$ (gamma) est le rapport entre la hauteur algébrique de l'image par celle de l'objet :
+%     \begin{equation*}
+%         \gamma = \dfrac{\algebrique{A'B'}}{\algebrique{AB}}
+%     \end{equation*}
+%   \end{encart}
+% \end{doc}
+
+% \begin{doc}{Synthèse}{doc:TP1_synthese}
+%   \begin{encart}
+%     Le signe du grandissement $\gamma$ indique si l'image obtenue est droite ($\gamma > 0$) ou inversée ($\gamma < 0$).
+    
+%     La valeur du grandissement indique si l'image est plus petite ($|\gamma| < 1$) ou plus grande ($|\gamma| > 1$) que l'objet.
+%   \end{encart}
+% \end{doc}
+
+% \question{
+%   \ref{doc:TP1_convention_optique} Indiquer le signe (positif ou négatif) de $\algebrique{AB}$ et $\algebrique{A'B'}$ sur la figure du document~\ref{doc:TP1_rayons_lentille}.
+% }{
+%   $\algebrique{AB} > 0$ et $\algebrique{A'B'} < 0$.
+% }{3}
+
+
+% \begin{doc}{Quelques conventions d'optique}{doc:TP1_convention_optique}
+%   L'image d'un objet $AB$ est notée $A'B'$.
+%   \begin{encart}
+%     En optique les longueurs sont \important{algébriques}, c'est-à-dire qu'elles sont positives ou négatives en fonction de leur sens, on les note avec une barre $\algebrique{AB}$
+%     \begin{listePoints}
+%       \item $\algebrique{AB} > 0$ : B est au dessus ou à droite de A ;
+%       \item $\algebrique{AB} < 0$ : B est en dessous ou à gauche de A.
+%     \end{listePoints}
+%   \end{encart}
+% \end{doc}
+
+% \question{
+%   \ref{doc:TP1_rayons_lentille} Décrire le trajet des trois rayons particuliers construit pour une lentilles convergentes (``le rayon passant par $\ldots$ ressort de la lentille $\ldots$'').
+% }{
+%   \begin{listePoints}
+%     \item le rayon marron passe par le centre optique $O$ et n'est pas dévié ;
+%     \item le rayon rouge arrive parallèle à l'axe optique et ressort de la lentille en passant par le foyer image $F'$ ;
+%     \item le rayon gris passe par le foyer objet $F$ et ressort de la lentille en étant parallèle à l'axe optique.
+%   \end{listePoints}
+% }{7}
+
+% \question{
+%   \label{exo:thales_grandissement}
+%   \ref{doc:TP1_convention_optique}, \ref{doc:TP1_rayons_lentille} et \ref{doc:TP1_grandissement}
+%   Appliquer le théorème de Thalès sur les triangles OAB et OA'B' pour établir la relation entre $\gamma$, $\algebrique{OA'}$ et $\algebrique{OA}$.
+% }{
+%   En appliquant le théorème de Thalès sur les deux triangles semblables $OAB$ et $OA'B'$, on obtient directement la relation suivante :
+%   \begin{equation*}
+%     \dfrac{\algebrique{OA'}}{\algebrique{OA}} = \dfrac{\algebrique{A'B'}}{\algebrique{AB}}
+%   \end{equation*}
+%   Comme par définition $\algebrique{A'B'} / \algebrique{AB} = \gamma$, on a donc que
+%   \begin{equation*}
+%     \gamma = \dfrac{\algebrique{OA'}}{\algebrique{OA}}
+%   \end{equation*}
+% }{8}
+
+% \question{
+%   Un objet a une hauteur $\algebrique{AB} = 1,\!20 \unit{m}$ et est placé à $6,\!00\unit{m}$ d'une lentille.
+%   L'image formé de l'objet a une hauteur $\algebrique{A'B'} = -0,\!01 \unit{m}$.
+%   En utilisant la relation calculée question~\ref{exo:thales_grandissement}, calculer la distance $OA'$ entre la lentille et l'écran.
+% }{
+%   Ici $\gamma = -0,\!01 \unit{m} / 1,\!20 \unit{m} = - 0,\!0083$. Et donc 
+%   \begin{equation*}
+%     OA' = |\gamma| \times OA = 0,\!0083 \times 6,\!00 \unit{m} = 0,\!05 \unit{m}
+%   \end{equation*}
+% }{5}

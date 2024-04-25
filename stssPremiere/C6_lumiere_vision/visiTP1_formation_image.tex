@@ -1,0 +1,169 @@
+%%%%
+\tetePremStssVisi
+
+%%%% titre
+\numeroActivite{1}
+\titreTP{Formation d'une image}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre la formation des images par une lentille.
+\end{objectifs}
+
+\begin{contexte}
+  Les lentilles permettent de former des images réelles (sur un écran) ou virtuelle (en regardant au travers de la lentille).
+  
+  \problematique{
+    Comment se forment des images à travers une lentille ?
+  }
+\end{contexte}
+
+
+%%%%
+\begin{doc}{Les lentilles convergentes et divergentes}{doc:TP1_lentilles}
+  \begin{wrapfigure}[10]{r}{0.4\linewidth}
+    \centering
+    \vspace*{-42pt}
+    \image{0.6}{images/lumiere/schema_lentilles_conv}
+    \image{0.6}{images/lumiere/schema_lentilles_div}
+  \end{wrapfigure}
+  
+  Il existe deux types de lentilles en optique : 
+  \begin{listePoints}
+      \item les lentilles \important{convergentes,} qui concentrent les rayons lumineux.
+      Elles sont plus épaisses au centre qu'aux extrémités et sont schématisées par une double flèche fermée.
+      \item Les lentilles \important{divergentes,} qui étalent les rayons lumineux.
+      Elles sont plus fines au centre qu'aux extrémités et sont schématisée par une double flèche ouverte.
+  \end{listePoints}
+
+  On peut déterminer le trajet de la lumière qui passe dans ces lentilles en utilisant les lois de Snell-Descartes, mais on va voir que la lumière suit trois règles simples en les traversant.
+\end{doc}
+
+\begin{doc}{Modélisation de la propagation de la lumière par des lentilles}{doc:TP1_formation_image}
+  % \begin{wrapfigure}[8]{r}{0.5\linewidth}
+  %   \vspace*{-18pt}
+
+  % \end{wrapfigure}
+  
+  En optique une lentille est modélisée avec
+  \begin{listePoints}
+    \item son \important{axe optique}, perpendiculaire à la lentille et passant en son centre O, appelé \important{centre optique}. L'axe optique est orienté dans le sens de propagation de la lumière ;
+    \item son \important{foyer objet $F$} et \important{son foyer image $F'$}, qui sont équidistants au centre O et placés sur l'axe optique.
+  \end{listePoints}
+
+  \begin{boite}
+    \vspace{-4pt}
+    \important{Vocabulaire :}
+    \vspace{-8pt}
+    \begin{encart}
+      \begin{listePoints}
+        \item Un \important{rayon incident} va vers la lentille.
+        \item Un \important{rayon émergent} s'éloigne de la lentille.
+        \item La \important{distance focale $f'$} est la distance entre $O$ et $F'$, $OF'$.
+      \end{listePoints}
+    \end{encart}
+    \vspace{-4pt}
+    
+    $f'$ est négative pour une lentille divergente et positive pour une lentille convergente.
+  \end{boite}    
+
+  Trois rayons ont des propriétés particulières, communes au lentilles convergentes et divergentes :
+  
+  \begin{listePoints}
+    \item Tout rayon incident qui passe par le centre optique n'est pas dévié.
+    \begin{center}
+      \image{0.4}{images/lumiere/conv_centre}
+      \image{0.4}{images/lumiere/div_centre}
+    \end{center}
+  
+    \item Tout rayon (ou son prolongement) qui passe par le foyer objet $F$ émerge parallèle à l'axe optique.
+    \begin{center}
+      \image{0.4}{images/lumiere/conv_foyer_objet}
+      \image{0.4}{images/lumiere/div_foyer_objet}
+    \end{center}
+  
+    \item Pour tout rayon incident qui arrive parallèle à l'axe optique, le rayon émergent (ou son prolongement) passe par le foyer image $F'$.
+    \begin{center}
+      \image{0.4}{images/lumiere/conv_foyer_image}
+      \image{0.4}{images/lumiere/div_foyer_image}
+    \end{center}
+  \end{listePoints}
+\end{doc}
+
+%%
+\mesure
+Tracer le faisceau émergent dans les deux cas suivants.
+\begin{center}
+  \image{0.4}{images/lumiere/conv_faisceau_para}
+  \image{0.4}{images/lumiere/div_faisceau_para}
+\end{center}
+
+\begin{doc}{Construire l'image d'un objet}{doc:TP1_construction_image}
+  \begin{wrapfigure}[7]{r}{0.7\linewidth}
+    \vspace*{-34pt}
+    \centering
+    \image{1}{images/lumiere/formation_image_lentille_conv0002}
+  \end{wrapfigure}
+  Pour construire l'image $A'B'$ d'un objet $AB$ à travers une lentille convergente, on cherche l'image du point $B$ en traçant deux des trois rayon incidents particuliers, avec leur rayons émergents.
+
+  L'intersection des rayons émergents donne l'image réelle $B'$.
+  Si on doit utilise les prolongements des rayons émergents, l'image est virtuelle.
+
+  Le rapport de la taille de l'image sur la taille de l'objet est appelée le \important{grandissement}, noté \important{$\gamma$} (« gamma ») :
+  \begin{equation*}
+    \gamma = \dfrac{\text{Taille de l'image}}{\text{Taille de l'objet}}
+  \end{equation*}
+  Si l'image est renversée, on met un signe $-$ devant la valeur du grandissement.
+\end{doc}
+
+% \numeroQuestion
+% Tracer l'image de $AB$ dans le document~\ref{doc:TP1_construction_image}.
+
+\mesure En utilisant la distance focale $f'$ de la lentille, repérer le foyer objet $F$ sur le banc.
+Repérer également le point $P$ situé à la distance $2f'$ à gauche de $O$.
+
+\mesure Pour différentes positions de l'objet entre $F$ et $O$ ; puis entre $F$ et $P$ ; puis entre $P$ et l'infini ; chercher s'il est possible de former une image réelle nette sur l'écran.
+Si ce n'est pas possible d'avoir une image réelle, chercher s'il existe une image virtuelle nette en regardant à travers la lentille.
+
+\newpage
+\numeroQuestion
+Consigner vos résultats dans le tableau ci-dessous.
+\begin{center}
+  \begin{tableau}{
+    |X[c] | X[c] |X[c] |X[c] | X[c] |
+  }
+    Position de l'objet & Image réelle ou virtuelle & 
+    Image droite ou renversée & Taille de l'image $A'B'$ en \unit{cm} &
+    Grandissement (si image réelle) \\
+    Entre $O$ et $F$ & & & & \\
+    Entre $F$ et $P$ & & & & \\
+    En $P$ & & & & \\
+    Entre P et l'infini & & & & \\
+  \end{tableau}
+\end{center}
+
+\numeroQuestion
+Tracer l'image $A'B'$ pour chacun des 4 cas suivants.
+
+\begin{center}
+  \image{0.7}{images/lumiere/formation_image_lentille_conv0001}
+  \vspace*{24pt}
+  
+  \image{0.7}{images/lumiere/formation_image_lentille_conv0002}
+  \vspace*{24pt}
+  
+  \image{0.7}{images/lumiere/formation_image_lentille_conv0003}
+  \vspace*{24pt}
+\end{center}
+
+\begin{center}
+  \image{0.7}{images/lumiere/formation_image_lentille_conv0004}
+\end{center}
+
+
+\question{
+  Est-ce que l'image $A'B'$ obtenue graphiquement est cohérente avec celle observée dans les 4 situations ?
+}{
+
+}{4}

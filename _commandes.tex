@@ -619,6 +619,7 @@
 %
 \NewDocumentCommand{\mesure}{O{couleurPrim}}{
   \hspace{15pt}
+  %\numeroQuestion
   \textcolor{couleurSec}{\faWrench\faFlask}
 }
 % pictogramme sécurité
@@ -632,7 +633,10 @@
   % }
   \important[couleurSec]{#1}
 }
-
+% Pour légender une image
+\newcommand{\legende}[1]{
+  \textcolor{couleurPrim}{\faArrowUp} \; #1
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% emphase
@@ -778,6 +782,7 @@
 
 
 %% Unités
+\DeclareSIUnit{\dioptre}{\text{$\delta$}}
 \DeclareSIUnit{\dornic}{\text{\textdegree D}}
 \DeclareSIUnit{\ppm}{\text{ppm}}
 \DeclareSIUnit{\COeq}{\text{kgCO$_{2}$e}}

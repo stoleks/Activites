@@ -1,0 +1,147 @@
+%%%%
+\tetePremStssVisi
+
+%%%% titre
+\numeroActivite{3}
+\titreActivite{Les principaux défauts de l'oeil}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre les trois grands défauts de l'oeil et le principe de leur correction.
+\end{objectifs}
+
+\begin{contexte}
+  La myopie, l'hypermétropie et la presbytie sont les trois défauts de l'oeil les plus courants.
+  Ils sont liés à un problème de \important{stigmatisme} de l'oeil, c'est-à-dire que l'image d'un point ressemble à une tâche, ce qui donne une vision floue.
+  
+  \problematique{
+    Comment corriger les problèmes de vue à l'aide de lentilles minces ?
+  }
+\end{contexte}
+
+
+%%%%
+\begin{doc}{Vergence d'une lentille}{doc:TP2_vergence}
+  \begin{encart}
+    La \important{vergence $V$} d'une lentille est l'inverse de sa distance focale, elle s'exprime en \important{dioptrie,} noté \unit{\dioptre}
+    \begin{equation*}  
+      V = \dfrac{1}{f'} = \dfrac{1}{OF'}
+    \end{equation*}
+  \end{encart}
+
+  La vergence est positive + pour les lentilles convergentes et négative - pour les lentilles divergentes.
+\end{doc}
+
+\begin{doc}{Principe de l'accommodation}{doc:TP2_accommodation}
+  Pour qu'un objet soit vu net, il faut qu'il y ait \important{stigmatisme}, c'est-à-dire que l'image d'un point observé soit un point sur la rétine.
+  Pour assurer ce stigmatisme à toute distance, les muscles ciliaires qui entourent le cristallin peuvent en modifier la forme pour le rendre plus ou moins convergent.
+  Ce phénomène s'appelle \important{l'accommodation.}
+
+  \begin{wrapfigure}[19]{r}{0.4\linewidth}
+    \vspace*{-20pt}
+    \centering
+    \image{0.9}{images/lumiere/oeil_accommodation} \\
+    \legende{Schéma d'un oeil normal en vision de près, sans et avec accommodation.}
+    
+    \image{0.9}{images/lumiere/oeil_repos} \\
+    \legende{Schéma d'un oeil sain au repos.}
+  \end{wrapfigure}
+
+  \pointCyan \important{Pour un objet proche.}
+  
+  Sans accommodation l'image d'un point sur la rétine serait une tâche et on verrait flou.
+  Pour compenser, le cerveau va contracter les muscles ciliaires pour « gonfler » le cristallin et augmenter sa vergence, ce qui permet de former une image nette.
+
+  Plus l'objet observé est proche, plus la distance focale $f'$ de l'oeil est courte : le foyer image se rapproche du cristallin pour former une image sur la rétine.
+  
+  \pointCyan \important{Pour un objet lointain.}
+  
+  Au delà de \qty{6}{\m} on considère que l'objet observé est à « l'infini ».
+  Les rayons lumineux arrivent alors parallèles sur l'oeil, qui est conçu pour former une image exactement sur la rétine.
+  Les muscles ciliaires sont au repos et le cristallin à sa forme normale.
+
+  \pointCyan \important{Limites de l'accommodation.}
+  
+  L'accommodation est bornée par deux distances, le \important{punctum remotum PR} et le \important{punctum proximum PP.}
+  \begin{listePoints}
+    \item Le \important{punctum proximum} est le point le plus proche pouvant être vu net.
+    Pour un oeil normal accommodé au maximum, le punctum proximum se trouve à \qty{20}{\cm}.
+    Le punctum proximum diminue avec l'âge : c'est la presbytie.
+  \end{listePoints}
+  
+  \begin{listePoints}
+    \item Le \important{punctum remotum} est le point le plus loin pouvant être vu net.
+    Pour un oeil normal au repos, le punctum remotum se trouve à l'infini.
+  \end{listePoints}
+\end{doc}
+
+\begin{doc}{Les défauts de l'oeil et leur correction}{doc:TP2_defauts}
+  \important{L'hypermétropie}, la \important{presbytie}, la \important{myopie} et \important{l'astigmatisme} sont des défauts de l'oeil où l'image n'est pas formée correctement sur la rétine, ce qui entraine une vision floue.
+
+  \begin{wrapfigure}[10]{r}{0.4\linewidth}
+    \centering
+    \vspace*{-2pt}
+    \image{0.9}{images/lumiere/oeil_myope}
+    \legende{Schéma d'un oeil myope regardant au loin avec ou sans correction.}
+    % \\[4pt]
+    
+    % \image{0.9}{images/lumiere/oeil_hypermetrope}
+    % \legende{Schéma d'un oeil hypermétrope regardant au loin avec ou sans correction.}
+  \end{wrapfigure}
+  
+  Pour corriger ses défauts, on ajoute une lentille mince pour corriger \important{la vergence} de l'oeil, afin que l'image se forme sur la rétine avec un stigmatisme parfait.
+
+  \begin{encart}
+    On peut considérer que deux lentilles minces accolées sont équivalentes à une seule lentille mince.
+    La vergence de cette lentille est simplement la somme de la vergence des deux lentilles séparées.
+  \end{encart}
+
+  %
+  \pointCyan \important{La myopie.}
+
+  Un oeil myope a une vergence $V_\text{oeil}$ trop élevée, ce qui entraine une formation de l'image devant la rétine.
+  Pour corriger ce défaut, on ajoute donc une lentille divergente de vergence $V_\text{lentille} < 0$ devant l'oeil afin de diminuer la vergence totale de l'oeil $V = V_\text{oeil} + V_\text{lentille}$.
+
+  %
+  \pointCyan \important{L'hypermétropie.}
+
+  Un oeil hypermétrope a une vergence $V_\text{oeil}$ trop faible, ce qui entraine une formation de l'image derrière la rétine.
+  Pour corriger ce défaut, on ajoute donc une lentille convergente de vergence $V_\text{lentille} > 0$ devant l'oeil afin d'augmenter a vergence totale de l'oeil $V = V_\text{oeil} + V_\text{lentille}$.
+
+  %
+  \pointCyan \important{La presbytie.}
+
+  Un oeil presbyte est comme un oeil hypermétrope, sauf que c'est lié à l'âge.
+  En vieillissant le cristallin perd en élasticité et les muscles ciliaires fatiguent, ce qui empêche l'oeil d'accommoder de près.
+  On corrige ce défaut comme l'hypermétropie.
+
+  %
+  \pointCyan \important{L'astigmatisme.}
+
+  L'astigmatisme est lié à un défaut de courbure du cristallin ou de la cornée, qui ne ressemble plus à une sphère aplatie, mais à un ballon de rugby aplati.
+  Pour corriger ce défaut, on crée des verres avec une épaisseur variable pour compenser la surface irrégulière de la cornée ou du cristallin.
+\end{doc}
+
+\begin{wrapfigure}[10]{r}{0.5\linewidth}
+  \centering
+  \vspace*{-2pt}
+  \image{0.75}{images/lumiere/oeil_a_completer} \\
+  \legende{Oeil hypermétrope} \\[8pt]
+
+  \image{1}{images/lumiere/oeil_zone_accommodation} \\[8pt]
+  \legende{Zone de vision nette comparée}
+\end{wrapfigure}
+
+\mesure
+L'oeil ci-contre est hypermétrope.
+Placer son foyer et prolonger les rayons lumineux qui arrivent dans l'oeil.
+
+\begin{doc}{Accommodation d'un oeil myope et hypermétrope}{doc:TP2_accommodation}
+  Pour un oeil myope, le punctum proximum est plus proche de l'oeil que pour un oeil normal, mais le punctum remotum n'est plus à l'infini.
+
+  Pour un oeil hypermétrope, le punctum proximum est plus loin de l'oeil que pour un oeil normal, mais le punctum remotum est toujours à l'infini.
+\end{doc}
+
+\mesure 
+Placer sur les axes ci-contre le PP, le PR et la zone de visibilité nette de chaque oeil.

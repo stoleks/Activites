@@ -1,0 +1,63 @@
+%%%%
+\tetePremStssStru
+
+%%%% titre
+\numeroActivite{3}
+\vspace*{-34pt}
+\titreActivite{Les fonctions organiques}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Connaître les 7 groupes caractéristiques et les 8 familles fonctionnelles associées.
+\end{objectifs}
+
+%%
+\begin{doc}{Fonctions organiques}{doc:OA2_fonction_organique}
+
+  Certaines séquences d'éléments donnent des \important{propriétés} spécifiques aux molécules organiques que l’on classe en différentes \important{familles.}
+  $R_1,$ $R_2$ et $R_3$ sont des chaînes carbonées appelées \og radicaux alkyles \fg.\\[4pt]
+  
+  \begin{tblr}{
+    width = \linewidth,
+    colspec = {|c |c |c |X |}, hlines,
+    column{2} = {couleurPrim!20},
+    row{1} = {couleurPrim!10},
+    cell{3}{1} = {r=2}{c},
+    rows = {m}, columns = {c}
+  }
+    Groupe caractéristique & Famille fonctionnelle & Formule & Exemple \\
+    %
+    Hydroxyle & Alcool
+    & \chemfig{R_1 - OH} 
+    & \chemname[-2pt]{\chemfig{-[1] -[-1] OH}}{éthanol} \\
+    %
+    Carbonyle & Cétone
+    & \chemfig{R_1-[1] C (=[3] O) -[-1]R_2}
+    & \chemname[-2pt]{\chemfig{-[1] !\carbonyle -[1]}}{butan-2-one} \\    
+    %
+    & Aldéhyde
+    & \chemfig{R_1-[1] C (=[3] O) -[-1]H}
+    & \chemname[-2pt]{\chemfig{(- H) =[3] O }}{méthanal ou formaldéhyde} \\
+    %
+    Carboxyle & Acide carboxylique
+    & \chemfig{R_1-[1] C (=[3] O) -[-1]OH}
+    & \chemname[1pt]{\chemfig{-[-1] -[1] !\carboxyle}}{acide propanoïque} \\
+    %
+    Ester & Ester
+    & \chemfig{R_1 -[1] C(=[3] O) -[-1]O -[1]R_2}
+    & \chemname[1pt]{\chemfig{-[-1] -[1] !\ester -[1] -[-1]}}{propanoate d'éthyle} \\
+    %
+    Éther-oxyde & Éther
+    & \chemfig{R_1 -[1] O -[-1] R_2}
+    & \chemname[1pt]{\chemfig{-[-1] -[1] O -[-1] -[1]}}{éthoxyéthane} \\
+    %
+    Amine & Amine
+    & \chemfig{R_1 - NH_2}
+    & \chemname[-2pt]{\chemfig{-[1] -[-1] NH_2}}{methan-1-amine} \\
+    %
+    Amide & Amide
+    & \chemfig{R_1-[1] C (=[3] O) -[-1]N (-[-3] R_3) - R_2}
+    & \chemname{\chemfig{-[-1] -[1] !\amide H_2}}{propanamide}
+  \end{tblr}
+\end{doc}

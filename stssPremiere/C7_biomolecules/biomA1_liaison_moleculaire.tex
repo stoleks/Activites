@@ -1,0 +1,146 @@
+%%%%
+\tetePremStssStru
+
+%%%% titre
+\numeroActivite{1}
+\vspace*{-30pt}
+\titreActivite{Les molécules organiques}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Rappeler les règles de formation des molécules.
+  \item Introduire la notion de valence d'un élément chimique.
+\end{objectifs}
+
+\begin{contexte}
+  Les atomes de carbones peuvent se lier entre eux pour former des \important{chaînes carbonées,} de formes et de tailles variées.
+  Ces chaînes carbonées, une fois liée à des atomes d'hydrogène, d'oxygène ou d'azote, forment des \important{molécules organiques.}
+  Il existe ainsi des millions de molécules organiques différentes, ce sont elles qui sont les briques de bases de tout être vivant sur Terre.
+
+  \problematique{
+    Comment comprendre la structure des molécules organiques ?
+  }
+\end{contexte}
+
+
+%%
+\begin{doc}{Éléments composant un corps humain}{doc:element_corps_humain_A1}
+  Le corps humain est composé majoritairement de 4 éléments chimiques :
+  \vspace*{-4pt}
+  \begin{multicols}{2}
+  \begin{listePoints}
+    \item l'oxygène   \chemfig{O} (\qty{65}{\percent} en masse),
+    \item le carbone  \chemfig{C} (\qty{18}{\percent}),
+    \item l'hydrogène \chemfig{H} (\qty{10}{\percent})
+    \item et l'azote  \chemfig{N} (\qty{3}{\percent}).
+  \end{listePoints}
+  \end{multicols}
+  
+  \begin{encart}
+    \important{Numéro atomique :} il correspond au nombre de protons d'un atome et est noté $Z$ : \isotope{A}{Z}{X} (\hspace{-8pt}\exemple \isotope{12}{6}{C})
+    Par neutralité de l'atome, c'est aussi son nombre d'électrons.
+  \end{encart}
+\end{doc}
+
+
+%%
+\begin{doc}{Configuration électronique}{doc:A1_config_electronique}
+  %
+  À partir du numéro atomique d'un atome, on peut déterminer sa structure électronique en couche (1, 2 ou 3) et sous-couche (s ou p).
+  
+  \begin{encart}
+    La couche 1 contient au maximum \important{2 électrons} et les couches 2 et 3 contiennent jusqu'à \important{8 électrons}.
+  \end{encart}
+  Les électrons d'un atome vont se placer dans ses couches en respectant leur ordre jusqu'à les remplir : d'abords 2 électrons dans la couche 1, puis 8 dans la couche 2, puis 8 dans la couche 3. 
+  \begin{encart}
+    La dernière couche remplie est la \important{couche externe.}
+  \end{encart}
+\end{doc}
+
+\question{
+  Donner la configuration électronique de l'oxygène \isotope{}{8}{O} et indiquer le numéro de sa couche externe.
+}{}{2}
+
+
+%%%%
+\begin{doc}{Liaison moléculaire}{doc:A1_liaison_mol}
+  %
+  \begin{encart}
+    Les atomes cherchent à remplir leur couche externe pour gagner en stabilité : c'est la règle du \important{duet} (couche 1) ou de \important{l'octet} (couche 2 ou 3).
+  \end{encart}
+  
+  %
+  \begin{encart}
+    Pour former des molécules, les atomes partagent les électrons de leur couche externe pour former des \important{liaison covalentes}.
+    Chaque liaison covalente apporte 1 électron à l'atome, ce qui lui permet de remplir sa couche externe.
+  \end{encart}
+  \begin{encart}
+    La \important{valence} est le nombre de liaisons formées par l'atome.
+    Un élément peut être mono (1), bi (2), tri (3) ou tétravalent (4 liaisons).
+  \end{encart}
+  %
+  Pour connaître la valence d'un atome, il suffit donc de compter combien d'électrons il lui manque pour remplir sa couche externe.
+
+  \exemple \isotope{}{6}{C} : $1^2\; 2^4$,
+  il lui manque \important{4} électrons pour compléter sa couche externe et respecter la règle de \important{l'octet.}
+  Il fera donc \important{4} liaisons, il est \important{tétravalent.}
+\end{doc}
+
+\question{%
+  Indiquer combien d'électrons il manque à l'oxygène \isotope{}{8}{O} pour respecter la règle de l'octet, le nombre de liaisons ainsi formées et sa valence.
+}{%
+  \isotope{}{8}{O} : $1^2\; 2^6$,
+  il lui manque 2 électrons pour respecter la règle de l'octet, il formera donc 2 liaisons. Il est bivalent.
+}{2}
+
+\question{%
+  Même question pour l'azote \isotope{}{7}{N} et l'hydrogène \isotope{}{1}{H}.
+}{%
+  Il manque 3 électrons à l'azote pour respecter la règle de l'octet, l'azote formera donc 3 liaisons. Il est trivalent. \\
+  Il manque 1 électron à l'hydrogène pour respecter la règle du duet, l'hydrogène formera donc 1 liaison. Il est monovalent.
+}{4}
+
+
+%%
+\begin{doc}{Liaisons multiples}{doc:liaisons_multiples_A1}
+  %
+  \begin{encart}
+    Pour compléter leur couche externe et respecter la règle de l'octet, deux atomes peuvent se lier en formant 2 ou 3 liaisons covalentes.
+    
+    On dit qu'il y a une \important{liaison double} ou une \important{liaison triple}
+  \end{encart}
+\end{doc}
+
+%
+\question{
+  Indiquer si les liaisons sont simples, triples ou doubles sur les molécules suivantes :
+  \begin{equation*}
+    \chemfig{N ~N} \qq{}
+    \chemfig{O =C =O} \qq{}
+    \chemfig{H -C ~N}
+  \end{equation*}
+}{
+  Liaison triple, liaison double et double, liaison simple et triple
+}{0}
+
+
+
+\begin{doc}{Valence des éléments \chemfig{C}, \chemfig{H}, \chemfig{O}, \chemfig{N}}{doc:A1_valence_elements}
+  \begin{center}
+    \begin{tblr}{c c}
+      \SetCell{couleurPrim!40} \chemfig{C ([3]-) ([-3]-) ([6]-) -}
+      \chemfig{C ([4]-) ([-4]-) =} &
+      \SetCell{couleurSec!40}  \chemfig{H -} \\
+      %
+      \SetCell{couleurPrim!40} Le carbone est tétravalent &
+      \SetCell{couleurSec!40} L'hydrogène est monovalent \\
+      %
+      \SetCell{couleurTer!40} \chemfig{O =} \chemfig{O ([6]-) -} &
+      \SetCell{couleurQuat!40} \chemfig{- N ([-3]-) -} \\
+      %
+      \SetCell{couleurTer!40}  L'oxygène est bivalent &
+      \SetCell{couleurQuat!40}  L'azote est trivalent \\
+    \end{tblr}
+  \end{center}
+\end{doc}
