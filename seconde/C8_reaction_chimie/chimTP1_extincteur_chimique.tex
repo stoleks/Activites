@@ -1,0 +1,121 @@
+%%%%
+\teteSndChim
+
+%%%% titre
+\numeroActivite{1}
+\titreTP{Extincteur chimique}
+
+%%%% Objectifs
+\begin{objectifs}
+  \item Comprendre qu'une réaction chimique microscopique peut modéliser plusieurs transformations macroscopiques.
+  \item Comprendre le principe de réactif limitant.
+\end{objectifs}
+
+\begin{contexte}
+  Le bicarbonate de sodium est un produit utilisé couramment pour le nettoyage ou la cuisine, sa formule brute est \chemfig{NaHCO_3}.
+
+  Associé avec du vinaigre blanc dans un extincteur, il peut aussi servir à former du dioxyde de carbone pour éteindre les incendies.
+  
+  \problematique{
+    Quelles quantités de vinaigre ou de bicarbonate faut-il mettre pour avoir un extincteur efficace ?
+  }
+\end{contexte}
+
+
+%%%% Exp
+\begin{doc}{Protocole pour réaliser un mini extincteur}{doc:TP1_exp_extincteur}
+  \begin{protocole}
+    \item Remplir à moitié le bécher de vinaigre d'alcool.
+    \item À l'aide d'une éprouvette graduée, verser \qty{20}{\ml} de vinaigre d'alcool dans la fiole jaugée.
+    \item Peser une masse $m$ de bicarbonate de soude, choisie dans le tableau ci-dessous.
+    \begin{center}
+      \begin{tblr}{
+        colspec = {c c c c c c}, hlines, vlines,
+        column{1} = {couleurPrim!20}
+      }
+        Masse $m$ de bicarbonate &
+        \qty{0,5}{\g} &
+        \qty{1,0}{\g} &
+        \qty{1,5}{\g} &
+        \qty{2,5}{\g} &
+        \qty{3,0}{\g} \\
+      \end{tblr}
+    \end{center}
+    \item Verser le bicarbonate pesé dans un ballon en baudruche.
+    \item Entourer le col de la fiole jaugée avec le ballon de baudruche.
+    \item Redresser et agiter doucement le ballon de baudruche pour faire tomber le bicarbonate de sodium.
+    \item Ne plus toucher au ballon.
+  \end{protocole}
+\end{doc}
+
+\mesure Après l'avoir lu en entier, réaliser le protocole du document~\ref{doc:TP1_exp_extincteur}.
+Noter vos observations dans le tableau ci-dessous :
+\begin{center}
+  \begin{tblr}{
+    colspec = {c c c}, hlines, vlines,
+    column{1} = {couleurPrim!10},
+    row{1} = {X[c], couleurPrim!20}
+  }
+    Masse de \bicarbonateSodium & Présence de \bicarbonateSodium solide & Gonflement du ballon (+, ++, +++, ++++) \\
+    \qty{0,5}{\g} & & \\
+    \qty{1,0}{\g} & & \\
+    \qty{1,5}{\g} & & \\
+    \qty{2,5}{\g} & & \\
+    \qty{3,0}{\g} & & \\
+  \end{tblr}
+\end{center}
+
+
+%%
+\begin{doc}{Réactif limitant}{doc:TP1_reactif_limitant}
+  Une réaction chimique s'arrête quand un des réactifs est complètement transformé.
+  \begin{encart}
+    Dans une réaction chimique, le \important{réactif limitant} est le réactif qui est totalement transformé, qui disparaît complètement.
+    Il est dit « \important{limitant} », car il est responsable de l'arrêt de la transformation.
+  \end{encart}
+\end{doc}
+
+\question{
+  En vous aidant de vos observations pour justifier, indiquer quel est le réactif limitant pour les 5 cas étudiés.
+}{
+  ...
+}{3}
+
+
+
+%%%% Theo
+\begin{doc}{Réaction chimique dans l'extincteur}{doc:TP1_reaction_extincteur}
+  Le bicarbonate de sodium \chemfig{NaHCO_3} se présente sous la forme d'une poudre solide.
+  Pour produire du dioxyde de carbone gazeux avec, on réalise une réaction acio-basique avec un acide et le bicarbonate de sodium.
+  
+  Le vinaigre blanc ménager contient de l'acide éthanoïque \chemfig{C_2H_4O_2}.
+  Lors de la réaction entre le bicarbonate de sodium et l'acide éthanoïque, on fait les observations suivantes :
+  \begin{itemize}
+    \item il y a un dégagement gazeux de dioxyde de carbone \chemfig{CO_2} ;
+    \item la quantité d'eau liquide dans le système augmente ;
+    \item des ions sodium \chemfig{Na^{+}} sont produits ;
+    \item des ions éthanoate \chemfig{C_2H_3O_2^{-}} sont produits.
+  \end{itemize}
+\end{doc}
+
+\question{
+  Lister les réactifs de la réaction chimique, en précisant leur états physique.
+}{}{2}
+
+\question{
+  Lister les produits de la réaction chimique, en précisant leur états physique.
+}{}{2}
+
+\question{
+   Écrire la réaction chimique dans l'extincteur, avec à gauche de la flèche les réactifs et à droite les produits.
+}{}{4}
+
+%%
+% \begin{doc}{Masse d'une mole des réactifs}{doc:A_}
+%   La masse d'une mole est appelée la \important{masse molaire}.
+% 
+%   \begin{donnees}
+%     \item Une mole de calcaire \chemfig{CaCO_3} a une masse de $100 \unit{g}$.
+%     \item Une mole d'acide éthanoïque \chemfig{C_2H_4O_2} a une masse de $60 \unit{g}$.
+%   \end{donnees}
+% \end{doc}

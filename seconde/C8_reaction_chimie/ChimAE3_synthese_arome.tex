@@ -22,8 +22,7 @@
 
 
 %%%% docs
-\begin{doc}{Protocole de synthèse}
-  \label{doc:protocole_synthese_banane}
+\begin{doc}{Protocole de synthèse}{doc:protocole_synthese_banane}
   Dans le ballon, introduire :
   \begin{listePoints}
     \item 10,0 mL d'alcool isoamylique ;
@@ -41,8 +40,7 @@
 
 
 %%
-\begin{doc}{Synthèse de l'éthanoate d'isoamyle}
-  \label{doc:synthese_banane}
+\begin{doc}{Synthèse de l'éthanoate d'isoamyle}{doc:synthese_banane}
   La réaction de synthèse est
   \vspace*{-4pt}
   \begin{center}
@@ -50,29 +48,33 @@
   \end{center}
   \vspace*{-4pt}
   
-  \begin{tblr}{| X[1.5, c, m] | X[1, c] | X[1, c] | X[1, c] | X[1, c] |}
-    \hline
+  \begin{tblr}{
+    colspec = {X[1.5, c, m] X[1, c] X[1, c] X[1, c] X[1, c]},
+    hlines, vlines
+  }
     %
-    Nom & Acide éthanoïque & Alcool isoamylique & Éthanoate d'isoamyle & Acide sulfurique
-    \\ \hline
+    Nom & Acide éthanoïque & Alcool isoamylique & Éthanoate d'isoamyle & Acide sulfurique \\
     %
-    Formule & \chemfig{C_2H_4O_2} & \chemfig{C_5H_{12}O} & \chemfig{C_7H_{14}O_2} & (\chemfig{2H^+ ;\; SO_4^{2-}})
-    \\ \hline
+    Formule & \chemfig{C_2H_4O_2} &
+    \chemfig{C_5H_{12}O} &
+    \chemfig{C_7H_{14}O_2} &
+    (\chemfig{2H^+ ;\; SO_4^{2-}}) \\
     %
-    Masse volumique & $1,\!05$ g/mL & $0,\!81$ g/mL & $0,\!87$ g/mL & $1,\!83$ g/mL
-    \\ \hline
+    Masse volumique &
+    \qty{1,05}{\g\per\ml} &
+    \qty{0,81}{\g\per\ml} &
+    \qty{0,87}{\g\per\ml} &
+    \qty{1,83}{\g\per\ml} \\
     %
-    Solubilité dans l'eau & Grande & Moyenne & Faible & Grande
-    \\ \hline
+    Solubilité dans l'eau & Grande & Moyenne & Faible & Grande \\
     %
-    Solubilité dans l'eau salée & Grande & Très faible & Très faible & Grande
-    \\ \hline
+    Solubilité dans l'eau salée & Grande & Très faible & Très faible & Grande \\
     Sécurité &
     \picto{0.38}{flambe}~\picto{0.38}{ronge} &
     \picto{0.38}{flambe}~\picto{0.38}{altere} &
     \picto{0.38}{flambe} &
     \picto{0.38}{ronge}
-    \\ \hline
+    \\
   \end{tblr}
 \end{doc}
 
@@ -87,8 +89,7 @@
 
 
 %%
-\begin{doc}{Montage à reflux}
-  \label{doc:montage_reflux}
+\begin{doc}{Montage à reflux}{doc:montage_reflux}
   \vspace*{-24pt}
   \begin{encart}
     \begin{center}
@@ -113,8 +114,7 @@
 
 
 %%
-\begin{doc}{Récupération du produit d'intérêt}
-  \label{doc:decantation_synthese_banane}
+\begin{doc}{Récupération du produit d'intérêt}{doc:decantation_synthese_banane}
   Après réalisation de la synthèse, procéder à un relargage : introduire dans le ballon 25 mL d'eau salée saturée.
   \vspace*{-8pt}
   \begin{center}
@@ -141,7 +141,7 @@
 
 %%
 \bigskip
-\begin{doc}{Les arômes d'un gâteau à la banane}
+\begin{doc}{Les arômes d'un gâteau à la banane}{doc:A_arome_banane}
   L'arôme d'un fruit ne dépend pas d'un seul type de molécule.
   Pour recomposer un arôme de pomme, il faut au moins 50 molécules différentes, dans les bonnes proportions.
   Dans la banane, l'arôme est essentiellement dû à une seule molécule : l'éthanoate d'isoamyle \chemfig{C_7H_{12}O_2}.
@@ -156,7 +156,7 @@
 
 %%
 \newpage
-\begin{doc}{Préparer un gâteau à la banane}
+\begin{doc}{Préparer un gâteau à la banane}{doc:A_gateau_banane}
   Dans une recette, pour préparer un gâteau au goût de banane, il faut 250 g de banane ou 1 mL d'arôme de banane.
   
   \begin{donnees}

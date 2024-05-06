@@ -1,0 +1,139 @@
+%%%%
+\teteSndLumi
+%\nomPrenomClasse
+
+%%%% titre
+\numeroActivite{2}
+\titreTP{La réfraction de la lumière}
+
+% \begin{tableauCompetences}
+%   REA &
+%   Réaliser une série de mesures avec précision.
+%   & & & &
+% \end{tableauCompetences}
+
+
+%%%% Objectifs
+\begin{objectifs}
+  \item Comprendre comment décrire le phénomène de réfraction.
+  \item Découvrir la loi de Snell-Descartes.
+\end{objectifs}
+
+\begin{contexte}
+  La lumière se propage en ligne droite dans un même milieu transparent.
+  Lorsque la lumière passe d'un milieu à un autre sa direction de propagation change : c'est le phénomène de \important{réfraction.}
+
+  En arrivant avec certains angles, la lumière peut aussi être \important{réfléchie}, c'est le phénomène de \important{réflexion.}
+  
+  \problematique{
+    Comment décrire mathématiquement le phénomène de réfraction et de réflexion ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Indice de réfraction}{doc:TP2_refraction}
+  Quand la lumière se propage dans un milieu, sa vitesse est réduite.
+  
+  \begin{encart}
+    La capacité d'un milieu à réduire la vitesse de la lumière est mesurée par un nombre que l'on appelle \important{l'indice de réfraction} et que l'on note $n_\text{milieu}$.
+    
+    Dans le milieu, la vitesse de la lumière est
+    \begin{equation*}
+      c_\text{milieu} = \dfrac{c}{n_\text{milieu}}
+    \end{equation*}
+  \end{encart}
+  
+  \exemples
+  \begin{listePoints}
+    \item L'air a un indice de réfraction $n_\text{air} = 1,\!00$ et donc $c_\text{air} = c = 3,\!00 \times 10^8 \unit{m.s}^{-1}$.
+    \item L'eau a un indice de réfraction $n_\text{eau} = 1,\!33$ et donc $c_\text{eau} = 2,\!26 \times 10^8 \unit{m.s}^{-1}$.
+  \end{listePoints}
+\end{doc}
+
+\begin{doc}{Mesure de l'indice de réfraction}{doc:TP2_exp_disque_optique}
+  \begin{wrapfigure}{r}{0.5\linewidth}
+    \vspace*{-35pt}
+    \centering
+    \image{0.9}{images/lumiere/disque_optique_refraction}
+  \end{wrapfigure}
+  \important{Matériel utilisé :}
+  \begin{itemize}
+    \item 1 source de lumière alimentée en 12 V continu ;
+    \item 1 demi-cylindre de plexiglas sur son disque-support gradué en degrés.
+  \end{itemize}
+  \bigskip
+
+  Votre professeur préféré a réalisé les mesures suivantes avec ce dispositif expérimental :
+  \begin{center}
+    \begin{tblr}{
+      columns = {c},
+      hlines, vlines,
+      column{1} = {l, couleurPrim!20},
+    }
+      Angle d'incidence $i_1$   & 0 & 5 & 10 & 15 & 20 & 30 & 40 & 50 & 60 & 70 & 80 & 90 \\
+      Angle de réfraction $i_2$ & 0 & 3.3 & 6.7 & 9.9 & 13.2 & 19.5 & 25.4 & 30.7 & 35.3 & 38.8 & 41.0 & 41.8 \\
+    \end{tblr}
+  \end{center}
+\end{doc}
+
+\mesure
+Ouvrir le programme python \texttt{refraction\_1.py} et le lire en entier.
+
+\mesure
+Dans le programme python \texttt{refraction\_1.py}, repérer les lignes correspondant aux angles $i_1$ et $i_2$ mesurés.
+Les remplir avec les valeurs du document~\ref{doc:TP2_exp_disque_optique} et lancer le programme.
+
+\begin{doc}{La proportionnalité}{doc:TP2_proportionnalite}
+  Deux grandeurs $a$ et $b$ sont \important{proportionnelles} si le graphique représentant la grandeur $a$ en fonction de la grandeur $b$ est une droite passant par l'origine du repère.
+  Ces deux grandeurs $a$ et $b$ sont alors reliées par l'égalité 
+  \begin{equation*}
+    a = k\times b
+  \end{equation*}
+  Dans cette égalité $k$ est une constante. $k$ est le \important{coefficient directeur} de la droite.
+\end{doc}
+
+
+%%%%
+\question{
+  Est-ce que l'on a une relation de proportionnalité entre $i_1$ et $i_2$ ? Justifier à partir du graphique obtenu.
+}{}{2}
+
+\mesure
+Ouvrir le programme python \texttt{refraction\_2.py} et repérer les lignes correspondant aux angles $i_1$ et $i_2$.
+Les remplir en les copiant depuis \texttt{refraction\_1.py} et lancer le programme.
+
+\question{
+  Est-ce que l'on a une relation de proportionnalité entre $\sin(i_1)$ et $\sin(i_2)$ ?
+  Justifier à partir du graphique obtenu.
+}{
+  ...
+}{2}
+
+
+%%%%
+\begin{doc}{Loi de Snell-Descartes}{doc:TP2_loi_snell_descartes}
+  \begin{encart}
+    Lorsque la lumière passe d'un milieu d'indice $n_1$ à un milieu d'indice $n_2$, alors
+    \begin{listePoints}
+      \item le rayon incident, le rayon réfracté et la normale sont \texteTrouLignes[1]{dans le même plan.}
+      \item \;\texteTrou[0.9]{$n_1 \sin(i_1) = n_2 \sin(i_2)$ pour la réfraction.}
+      \item \;\texteTrou[0.9]{$i_3 = i_1$ pour la réflexion.}
+    \end{listePoints}
+    
+    La relation entre l'angle d'incidence $i_1$ et l'angle de réfraction $i_2$ s'appelle la \important{loi de Snell-Descartes}.
+  \end{encart}
+  
+  On retrouve bien la relation de proportionnalité mesurée :
+  \begin{equation*}
+    \sin(i_2) = \dfrac{n_1}{n_2} \times \sin(i_1)
+  \end{equation*}
+\end{doc}
+
+\question{
+  En utilisant la valeur du coefficient directeur 
+  $k = n_\text{air} / n_\text{plexiglas}$
+  calculée par le second programme python, calculer la valeur de l'indice de réfraction $n_\text{plexiglas}$.
+}{
+  ...
+}{3}

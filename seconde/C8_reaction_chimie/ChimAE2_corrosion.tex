@@ -10,7 +10,7 @@
   \centering REA &
   Réaliser un protocole. Suivre les règles de sécurités.
   & & & &
-  \\ \hline
+  \\
   %
   \centering VAL &
   Confronter un modèle à des résultats expérimentaux.
@@ -36,9 +36,7 @@
 
 
 %%%% docs
-\begin{doc}{Protocole expérimental}
-  \label{doc:protocole_corrosion_magnesium}
-  \vspace*{-20pt}
+\begin{doc}{Protocole expérimental}{doc:protocole_corrosion_magnesium}
   \begin{listePoints}
     \item Mettre des gants et des lunettes de protection.
     \item Découper une bande de magnésium de masse $m = \ldots\ldots \unit{g}$.
@@ -56,9 +54,7 @@ Verser $\sim 1\unit{mL}$ de la solution obtenue dans 3 tubes à essais.
 
 %%
 \bigskip
-\begin{doc}{Corrosion du magnésium avec un acide}
-  \label{doc:corrosion_fer}
-  \vspace*{-14pt}
+\begin{doc}{Corrosion du magnésium avec un acide}{doc:corrosion_fer}
   \begin{equation*}
     \underset{\text{1 atome de magnésium}}{\chemfig{Mg}(s)}
     + \underset{\text{2 ions hydrogènes}}{2\chemfig{H^+}(aq)}
@@ -86,28 +82,26 @@ Verser $\sim 1\unit{mL}$ de la solution obtenue dans 3 tubes à essais.
 }{1}
 
 %%
-\begin{doc}{Tests d'identifications}
-  \label{doc:tests_identifications_corrosion}
-  \vspace*{-24pt}
+\begin{doc}{Tests d'identifications}{doc:tests_identifications_corrosion}
   \begin{center}
-    \begin{tabular}{| c | c | c |}
-      \hline
-      \rowcolor{gray!20}
-      Ion à tester & Solution utilisée & Résultat du test positif
-      \\ \hline
+    \begin{tblr}{
+      colspec = {c c c}, hlines, vlines,
+      row{1} = {couleurPrim!20}
+    }
+      Ion à tester & Solution utilisée & Résultat du test positif \\
       %
       Chlorure \chemfig{Cl^{-}} &
       Nitrate d'argent \chemfig{AgNO_3} &
-      Précipité blanc \\ \hline
+      Précipité blanc \\
       %
       Hydrogène \chemfig{H^+} &
       Bleu de thymol &
-      Couleur rouge-violette \\ \hline
+      Couleur rouge-violette \\
       %
       Magnésium \chemfig{Mg^{2+}} &
       Solution d'hydroxyde de sodium &
-      Précipité blanc \\ \hline
-    \end{tabular}
+      Précipité blanc \\
+    \end{tblr}
   \end{center}
 \end{doc}
 
@@ -116,19 +110,18 @@ Réaliser chaque test d'identification du document~\ref{doc:tests_identification
 
 Noter les résultats des tests dans le tableau suivant:
 \begin{center}
-  \begin{tabular}{| c | c | c |}
-    \hline
-    \rowcolor{gray!20}
-    Ion testé & Résultat démonstration & Résultat élève
-    \\ \hline
+  \begin{tblr}{
+    colspec = {c c c}, hlines, vlines,
+    row{1} = {couleurPrim!20}
+  }
+    Ion testé & Résultat démonstration & Résultat élève \\
     %
-    \hspace{200pt} & & \phantom{Résultat démonstration}
-    \\ \hline
+    \hspace{200pt} & & \phantom{Résultat démonstration} \\
     %
-    & & \\ \hline
+    & & \\
     %
-    & & \\ \hline
-  \end{tabular}
+    & & \\
+  \end{tblr}
 \end{center}
 \bigskip
 
@@ -154,8 +147,7 @@ Noter les résultats des tests dans le tableau suivant:
 
 
 %%
-\begin{doc}{Réactif limitant}
-  \vspace*{-22pt}
+\begin{doc}{Réactif limitant}{doc:A_}
   \begin{encart}
     Dans une réaction chimique, le \important{réactif limitant} est le réactif qui est totalement transformé, qui disparaît complètement.
     Il est dit \og \important{limitant} \fg, car il est responsable de l'arrêt de la réaction.
