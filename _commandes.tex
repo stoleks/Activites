@@ -679,6 +679,21 @@
   \includegraphics[width=#1\linewidth]{#2}
 }
 
+%%%% qr code en insert sur la droite
+\NewDocumentCommand{\QRCode}{o m}{
+  \IfNoValueTF{#1} {
+    \begin{wrapfigure}{r}{0.1\linewidth}
+      \vspace*{-16pt}
+      \qrcode{#2}
+    \end{wrapfigure}
+  }{
+    \begin{wrapfigure}[#1]{r}{0.1\linewidth}
+      \vspace*{-16pt}
+      \qrcode{#2}
+    \end{wrapfigure}
+  }
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% qcm

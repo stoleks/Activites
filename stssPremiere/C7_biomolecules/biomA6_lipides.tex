@@ -1,0 +1,106 @@
+%%%%
+\tetePremStssStru
+
+%%%% titre
+\numeroActivite{6}
+\titreActivite{Les lipides}
+
+\begin{objectifs}
+  \item Étudier la structure des lipides.
+  \item Comprendre la composition d'un triglycéride.
+\end{objectifs}
+
+\begin{contexte}
+  Les lipides sont des corps gras et ne sont pas solubles dans l'eau.
+  Ils entrent dans la constitution de la membranes de nos cellules et forment aussi une importante réserves d'énergie dans notre organisme.
+
+  \problematique{
+    Quelle est la structure des lipides ?
+  }
+\end{contexte}
+
+
+
+%%%%%
+\begin{doc}{Structure d'un lipide}{doc:A6_structure_lipide}
+  Un lipide est une molécule constitué de de deux parties :
+  \begin{listePoints}
+    \item une tête hydrophile, qui peut se mélanger avec de l'eau ;
+    \item une queue hydrophobe, qui ne peut pas se mélanger avec de l'eau.
+  \end{listePoints}
+  On va voir étudier deux types de lipides : les acides gras et les triglycérides.
+\end{doc}
+
+\begin{doc}{Les acides gras}{doc:A6_acide_gras}
+  \begin{encart}
+    Les \important{acides gras} sont des \important{acides carboxyliques} qui possèdent une longue chaîne carbonée sans ramification.
+    Les acides gras peuvent être 
+    \begin{listePoints}
+      \item \important{saturés} (en hydrogène) si la chaîne carbonée ne comporte que des liaisons carbone-carbone simples ;
+      \item \important{insaturés} si la chaîne carbonée comporte au moins une liaison carbone-carbone double.
+    \end{listePoints}
+  \end{encart}
+  
+  \begin{center}
+    \chemname{
+      \chemfig[atom sep = 1.75em]{OH-[1]!\palmitique}
+    }{
+      Acide palmitique, un acide gras saturé.
+    }
+
+    \chemname{
+      \chemfig[atom sep = 1.75em]{H!\oleique}
+    }{
+      Acide oléique, un acide gras insaturé.
+    }
+  \end{center}
+
+  Dans le cadre d'une alimentation saine, il faut limiter les acides gras saturés et privilégier les lipides riches en acides gras insaturés.
+\end{doc}
+
+\begin{doc}{Les triglycérides}{doc:A6_triglycerides}
+  \vspace*{-18pt}
+  \begin{wrapfigure}[2]{r}{0.3\linewidth}
+    \centering
+    \chemname{
+      \chemfig{CH_2 (-[3]OH) -CH (-[3]OH) -CH_2(-[3]OH)}
+    }{
+      Glycérol
+    }
+  \end{wrapfigure}
+  \vphantom{b}
+  \begin{encart}
+    Les \important{triglycérides} sont des \important{triester} composés d'un \important{glycérol} et de trois \important{acides gras} (pas forcément trois fois le même).
+  \end{encart}
+
+  \begin{center}
+    \chemfig[atom sep=1.25em]{[:-60]!\tripalmitine} 
+    \qq{} ou \qq{}
+    \chemfig{
+      H C (!\teteAcideDev C_{15} H_{31}) 
+      (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{15} H_{31}))
+      -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{15} H_{31})
+    } \\[8pt]
+    
+    Tripalmitine, triglycéride composé d'un glycérol et de trois acide palmitique
+  \end{center}
+\end{doc}
+
+\begin{doc}{Micelles et membrane cellulaire}{doc:A6_micelle_membrane}
+  La structure particulière des molécules de lipides mène à la formation de structure particulière dans de l'eau liquide.
+  Les queue hydrophobe étant repoussée par les molécules d'eau, elles vont s'agglomérer et former des structures ou les queues sont isolés de l'eau environnante : \important{les micelles.}
+  
+  Des exemples de micelles sont \important{les couches bi-lipidique,} composée de deux couches de lipides avec les têtes hydrophile orientée vers l'extérieur, ce qui permet à leur queue hydrophobes de ne pas rentrer en contact avec de l'eau. 
+  Les interactions électrostatiques entre les différentes parties de la membrane la pousse à former une sphère (comme une bulle de savon), avec un extérieur et un intérieur : c'est la base \important{d'une membrane cellulaire.}
+
+  Les membranes cellulaire sont plus complexe qu'une simple couche bi-lipidique : elles sont aussi composées de \important{protéines}, qui permettent de renforcer la structure de la membrane cellulaire et de contrôler ce qui sort et ce qui entre de la cellule.
+
+  TODO : FIGURE MICELLE ET MEMBRANE
+\end{doc}
+
+\question{
+}{}{2}
+
+\numeroQuestion
+
+\mesure

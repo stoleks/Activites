@@ -42,12 +42,15 @@
 \newcommand{\gaz}{$_\text{(g)}$}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Molécule courante
 \definesubmol\paracetamol{
   *6((-HO)-=-(-NH (-[::-60] (=[::-60]O)-[::60]))=-=)
 }
 
-%%%% Acide gras
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Lipides
 \definesubmol\cc{
   -[::60] -[::-60]
 }
@@ -94,5 +97,103 @@
    (-[::-90] -[::60] O-[::-60] (=[::-60]O) -[::60] -[::60] !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % droite
    -[::30] O-[::60] !\palmitique % bas
 }
+
 %% glycerol
-\definesubmol\glycerol{HO -[-1] -[1] (-[3] OH) -[-1] -[1] OH}
+\definesubmol\glycerol{
+  HO -[-1] -[1] (-[3] OH) -[-1] -[1] OH
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Glucides
+%% Amidon
+\definesubmol\amylopectine{
+  -[-1]O-[1]
+  -[1] (-[3] CH_2 OH)
+  -[::-60] O -[::-60]
+  (-[::-60] (-[::60]OH) -[::-60] (-[::60]OH) -[::-60])
+}
+\newcommand{\amylopectineTopologique}{
+  {\footnotesize
+  \chemfig[atom sep=2.2em]{
+    % partie gauche
+    ... !\amylopectine !\amylopectine
+    % cycle central
+    -[-1] O -[-3,1.2] CH_2O -[-3,1.2] % on agrandit l'espace vertical
+    -[-1] O -[::-60] (-[::-60] (-[::60]OH) -[::-60] (-[::60]OH) -[::-60]
+    % cycle à gauche
+    (-[::120,1.25] O -[::-60,1.2]
+    *6(-O- (-[,0.5]CH_2OH) -(-[6]O-[6]...) -(-OH) -(-OH)-))
+    % partie droite
+    -[::-60]) !\amylopectine !\amylopectine -[-1] ...
+  }}
+}
+\definesubmol\amylopectineHamw{
+  % début du cycle
+  O -[1,0.6]
+  % perspective
+    <[-1.5,0.7] (-[3,0.6] OH)
+    -[,,,,line width=2.4pt] (-[-3,0.6] OH)
+    >[1.5,0.7]
+  (-[4.5,0.7] O
+  -[6] (-[3,0.5] -[5,0.75] OH)
+  -[-4.5,0.7])
+  % fin du cycle
+  -[-1,0.6]
+}
+\definesubmol\amylopectineGaucheHamw{
+  O -[5,0.6]
+  % début du cycle, perspective
+    <[-4.5,0.7] (-[-3,0.6] OH)
+    -[6,,,,line width=2.4pt] (-[3,0.6] OH)
+    >[4.5,0.7] (-[1.5,0.7]) (-[-5,0.6] O -[5] ...)
+  % fin du cycle
+  -[1.5,0.7] (-[3,0.4] -[5,0.6] OH)
+  -O -[-1.5,0.7]
+}
+\definesubmol\amylopectineCentraleHamw{
+  O -[-1,0.7] -[-3,0.6]
+  % début du cycle
+  - O -[-1.5,0.7] ( % perspective
+    <[-4.5,0.7] (-[-3,0.6] OH)
+    -[6,,,,line width=2.4pt] (-[3,0.6] OH)
+    >[4.5,0.7] (-[1.5,0.7]) (-[-5,0.6] !\amylopectineGaucheHamw)
+  )
+  % fin du cycle
+  -[-1,0.6]
+}
+
+%% glucose Hamworth : il faut ajouter [cram width=2pt, atom sep=2.5em] au début de la figure
+\definesubmol\glucoseHamw{
+  % début du cycle
+  HO -[3,0.6,2]?
+  % Partie en perspective
+  <[-1.5,0.7] (-[3,0.6] OH)
+  -[,,,,line width=2.4pt] (-[-3,0.6] OH)
+  >[1.5,0.7] (-[-3,0.6] OH)
+  % fin partie perspective
+  -[4.5,0.7] O 
+  % fin du cycle
+  -[6]? (-[3,0.5] -[5,0.75] OH)
+}
+%% glucose topologique
+\definesubmol\glucoseTopo{
+  *6(-(-OH) -(-OH) -(-[3]OH) (-[0]-[1]OH) -O- -(-OH))
+}
+
+%% fructose Hamworth : il faut ajouter [cram width=2pt, atom sep=2.5em] au début de la figure
+\definesubmol\fructoseHamw{
+  % début du cycle
+  HO -[3,0.6,2]?
+  % Partie en perspective
+  <[-1.5,0.7] (-[3,0.6] OH)
+  -[,,,,line width=2.4pt] (-[-3,0.6] OH) 
+  >[1.5,0.7] (-[3,0.6] OH) (-[-3,0.5] -[-1,0.75] OH)
+  % fin partie perspective
+  -[4.5,0.7] O 
+  % fin du cycle
+  -[6]?
+}
+\definesubmol\fructoseTopo{
+  *6(-(-OH) -(-OH) -(-[3]OH) (-[0]-[1]OH) -O- -(-OH))
+}
