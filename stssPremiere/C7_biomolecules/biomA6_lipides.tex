@@ -2,6 +2,7 @@
 \tetePremStssStru
 
 %%%% titre
+\vspace*{-36pt}
 \numeroActivite{6}
 \titreActivite{Les lipides}
 
@@ -11,7 +12,7 @@
 \end{objectifs}
 
 \begin{contexte}
-  Les lipides sont des corps gras et ne sont pas solubles dans l'eau.
+  Les lipides sont les molécules composants les matières grasses et ne sont pas solubles dans l'eau.
   Ils entrent dans la constitution de la membranes de nos cellules et forment aussi une importante réserves d'énergie dans notre organisme.
 
   \problematique{
@@ -23,12 +24,13 @@
 
 %%%%%
 \begin{doc}{Structure d'un lipide}{doc:A6_structure_lipide}
-  Un lipide est une molécule constitué de de deux parties :
-  \begin{listePoints}
-    \item une tête hydrophile, qui peut se mélanger avec de l'eau ;
-    \item une queue hydrophobe, qui ne peut pas se mélanger avec de l'eau.
-  \end{listePoints}
-  On va voir étudier deux types de lipides : les acides gras et les triglycérides.
+  \begin{encart}
+    Les lipides constituent la matière grasse du vivant.
+    Les lipides sont des molécules \important{hydrophobes,} qui ne se mélangent pas avec l'eau.
+  \end{encart}
+  Les lipides peuvent se trouver sous formes solide (cire, graisse), ou liquide (huile).
+  
+  On va étudier deux types de lipides : les acides gras et les triglycérides.
 \end{doc}
 
 \begin{doc}{Les acides gras}{doc:A6_acide_gras}
@@ -41,32 +43,73 @@
     \end{listePoints}
   \end{encart}
   
-  \begin{center}
-    \chemname{
-      \chemfig[atom sep = 1.75em]{OH-[1]!\palmitique}
+  \begin{multicols}{2}
+    \centering
+    \chemname[8pt]{
+      {\small
+        \chemfig[atom sep = 1.4em]{OH-[1]!\palmitique}
+      }
     }{
-      Acide palmitique, un acide gras saturé.
+      Acide palmitique, un acide gras \important{saturé.}
     }
 
-    \chemname{
-      \chemfig[atom sep = 1.75em]{H!\oleique}
+    \chemname[8pt]{
+      {\small
+        \chemfig[atom sep = 1.4em]{[:30]HO-!\trioleique}
+      }
     }{
-      Acide oléique, un acide gras insaturé.
+      Acide oléique, un acide gras \important{insaturé.}
     }
-  \end{center}
+  \end{multicols}
+
+  Les acides gras saturés ont une formule brute de la forme \bruteCHO{n}{2n}{2}.
 
   Dans le cadre d'une alimentation saine, il faut limiter les acides gras saturés et privilégier les lipides riches en acides gras insaturés.
 \end{doc}
 
+\begin{doc}{Quelques acides gras et leurs sources}{doc:A6_sources_acides_gras}
+  \begin{tblr}{
+    colspec = {X[l] X[l] X[l] X[l] X[l]}, hlines, vlines,
+    column{1} = {couleurPrim!20, font=\bfseries},
+    row{2} = {c},
+  }
+    Acide gras &
+    Acide stéarique &
+    Acide palmitique &
+    Acide oléique &
+    Acide $\alpha$-linolénique \\
+    %
+    Formule brute &
+    \bruteCHO{18}{36}{2} &
+    \bruteCHO{16}{32}{2} &
+    \bruteCHO{18}{34}{2} &
+    \bruteCHO{18}{32}{2} \\
+    %
+    Sources dans l'alimentation &
+    Boeuf, mouton, porc, beurre &
+    Huile de palme, huile de coco &
+    Olive, amande, avocat, noisette &
+    Tournesol, colza, maïs, cacahuète
+  \end{tblr}
+\end{doc}
+
+\question{
+  Entourer et nommer les fonctions organiques qui sont présentes dans l'acide palmitique et l'acide oléique.
+}{}{2}
+
+\question{
+  Indiquer si l'acide stéarique et l'acide oléique sont saturés ou insaturés.
+}{}{2}
+
+
+%%%%
 \begin{doc}{Les triglycérides}{doc:A6_triglycerides}
   \vspace*{-18pt}
   \begin{wrapfigure}[2]{r}{0.3\linewidth}
     \centering
-    \chemname{
-      \chemfig{CH_2 (-[3]OH) -CH (-[3]OH) -CH_2(-[3]OH)}
-    }{
-      Glycérol
-    }
+    \chemfig{CH_2 (-[3]OH) -CH (-[3]OH) -CH_2(-[3]OH)}
+  
+    Glycérol
   \end{wrapfigure}
   \vphantom{b}
   \begin{encart}
@@ -74,33 +117,65 @@
   \end{encart}
 
   \begin{center}
-    \chemfig[atom sep=1.25em]{[:-60]!\tripalmitine} 
-    \qq{} ou \qq{}
-    \chemfig{
-      H C (!\teteAcideDev C_{15} H_{31}) 
-      (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{15} H_{31}))
-      -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{15} H_{31})
-    } \\[8pt]
+    {\small
+      \chemfig[atom sep = 1.25em]{[:-60]!\tripalmitine}
+      \qq{} ou \qq{}
+      \chemfig[atom sep = 1.75em]{
+        H C (!\teteAcideDev C_{15} H_{31}) 
+        (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{15} H_{31}))
+        -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{15} H_{31})
+      } \\[8pt]
+    }
+    \legende{
+      Tripalmitine, triglycéride composé d'un glycérol et de trois acide palmitique
+    }
+ \end{center}
+
+  \begin{wrapfigure}{l}{0.45\linewidth} 
+    \centering
+    \small{
+      \chemfig[atom sep = 1.25em]{
+        (-[::150] -[::60] O-[::-60] !\trioleique)  % haut
+        (-[::-90] -[::60] O-[::30] !\trilinoleique) % bas
+        -[::30] O-[::60] !\trilinolenique % centre
+      }
+    }
+  \end{wrapfigure}
+ 
+  \textcolor{couleurPrim}{\faArrowLeft} \; 
+  Triglycéride composé de trois acides gras différents.
     
-    Tripalmitine, triglycéride composé d'un glycérol et de trois acide palmitique
-  \end{center}
-\end{doc}
-
-\begin{doc}{Micelles et membrane cellulaire}{doc:A6_micelle_membrane}
-  La structure particulière des molécules de lipides mène à la formation de structure particulière dans de l'eau liquide.
-  Les queue hydrophobe étant repoussée par les molécules d'eau, elles vont s'agglomérer et former des structures ou les queues sont isolés de l'eau environnante : \important{les micelles.}
+  \begin{encart}
+    Un triglycéride est \important{insaturé} s'il comporte \important{au moins un} acide gras insaturé.
+  \end{encart}
   
-  Des exemples de micelles sont \important{les couches bi-lipidique,} composée de deux couches de lipides avec les têtes hydrophile orientée vers l'extérieur, ce qui permet à leur queue hydrophobes de ne pas rentrer en contact avec de l'eau. 
-  Les interactions électrostatiques entre les différentes parties de la membrane la pousse à former une sphère (comme une bulle de savon), avec un extérieur et un intérieur : c'est la base \important{d'une membrane cellulaire.}
+  Les triglycérides compose la majorité des lipides.
 
-  Les membranes cellulaire sont plus complexe qu'une simple couche bi-lipidique : elles sont aussi composées de \important{protéines}, qui permettent de renforcer la structure de la membrane cellulaire et de contrôler ce qui sort et ce qui entre de la cellule.
+  \begin{doc}{Acide gras et cholestérol}{doc:A6_sante}
+    Les acides gras saturés ou les triglycérides saturés augmentent la présence de cholestérol dans le sang.
 
-  TODO : FIGURE MICELLE ET MEMBRANE
+    S'il y a trop de cholestérol dans le sang, on parle \important{d'hypercholestérolémie,} ce qui entraine la formation de plaques graisseuses sur les parois sanguines.
+    Ce rétrécissement des vaisseaux sanguins gêne la circulation sanguine dans le corps, ce qui peut mener à des accidents cardiovasculaires.
+  \end{doc}
 \end{doc}
-
-\question{
-}{}{2}
 
 \numeroQuestion
+Repérer et entourer les fonctions ester dans les triglycérides du document~\ref{doc:A6_triglycerides}.
 
-\mesure
+\question{
+  Quels aliments faut-il éviter si on souffre d'hypercholestérolémie ?
+}{}{2}
+
+
+%%%% DANS UNE ACTIVITE SUR LA POLARITE DE L'EAU
+% \begin{doc}{Micelles et membrane cellulaire}{doc:A6_micelle_membrane}
+%   La structure des molécules de lipides mène à la formation de structure particulière dans de l'eau liquide.
+%   Les queue hydrophobe étant repoussée par les molécules d'eau, elles vont s'agglomérer et former des structures ou les queues sont isolées de l'eau environnante : \important{les micelles.}
+  
+%   Des exemples de micelles sont \important{les couches bi-lipidique,} composée de deux couches de lipides avec les têtes hydrophile orientée vers l'extérieur, ce qui permet à leur queue hydrophobes de ne pas rentrer en contact avec de l'eau. 
+%   Les interactions électrostatiques entre les différentes parties de la membrane la pousse à former une sphère (comme une bulle de savon), avec un extérieur et un intérieur : c'est la base \important{d'une membrane cellulaire.}
+
+%   Les membranes cellulaire sont plus complexe qu'une simple couche bi-lipidique : elles sont aussi composées de \important{protéines}, qui permettent de renforcer la structure de la membrane cellulaire et de contrôler ce qui sort et ce qui entre de la cellule.
+
+%   TODO : FIGURE MICELLE ET MEMBRANE
+% \end{doc}

@@ -1,0 +1,152 @@
+%%%%
+\tetePremStssBiom
+
+%%%% titre
+\vspace*{-30pt}
+\numeroActivite{1}
+\titreActivite{Solubilité des espèces dans l'eau}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre la notion de liaison polaire.
+  \item Comprendre la polarité de la molécule d'eau et la liaison hydrogène.
+  \item Comprendre le lien entre liaison hydrogène et solubilité.
+\end{objectifs}
+
+\begin{contexte}
+  En préparant un gâteau avec du caramel, Medhi remarque que le sucre est soluble dans l'eau, mais que l'huile n'est pas soluble dans l'eau.
+  
+  \problematique{
+    Comment expliquer que certaines espèces chimiques sont plus solubles que d'autres dans l'eau liquide ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Liaison polaire}{doc:A1_liaison_polaire}
+  \begin{wrapfigure}[6]{r}{0.56\linewidth}
+    \centering
+    \vspace*{-20pt}
+    \tableauPeriodique[1.9][1.9]{
+      \node[name=H,               elec4] {\elementElectroneg{H} {2,20}}; % 1 -IA
+      \node[name=Li, below of=H,  elec1] {\elementElectroneg{Li}{0,98}};
+      \node[name=Na, below of=Li, elec1] {\elementElectroneg{Na}{0,93}};
+      \node[name=Be, right of=Li, elec3] {\elementElectroneg{Be}{1,57}}; % 2 -IIA
+      \node[name=Mg, below of=Be, elec2] {\elementElectroneg{Mg}{1,31}};
+      \node[name=B,  right of=Be, elec4] {\elementElectroneg{B} {2,04}}; % 13 -IIIA
+      \node[name=Al, below of=B,  elec3] {\elementElectroneg{Al}{1,61}};
+      \node[name=C,  right of=B,  elec5] {\elementElectroneg{C} {2,50}}; % 14 -IVA
+      \node[name=Si, below of=C,  elec4] {\elementElectroneg{Si}{1,90}};
+      \node[name=N,  right of=C,  elec6] {\elementElectroneg{N} {3,04}}; % 15 - VA
+      \node[name=P,  below of=N,  elec4] {\elementElectroneg{P} {2,19}};
+      \node[name=O,  right of=N,  elec7] {\elementElectroneg{O} {3,44}}; % 16 -VIA
+      \node[name=S,  below of=O,  elec5] {\elementElectroneg{S} {2,58}};
+      \node[name=F,  right of=O,  elec8] {\elementElectroneg{F} {3,98}}; %17 -VIIA
+      \node[name=Cl, below of=F,  elec7] {\elementElectroneg{Cl}{3,16}};
+    }
+    
+    \legende{Électronégativité de quelques éléments chimiques}
+  \end{wrapfigure}
+  \phantom{b}\vspace*{-20pt}
+    
+  \begin{encart}
+    Une \important{liaison covalente} entre deux éléments dans une molécule est \important{polaire} si la charge des électrons mis en commun est dissymétrique entre les deux éléments.
+  \end{encart}
+  L'attirance des électrons par un élément dépend de son \important{électronégativité,} notée $\chi$ (« ki »).
+  Plus l'électronégativité d'un élément est forte, plus il attire les électrons.
+
+  Si on prend \chemfig{O} et \chemfig{H}, on voit qu'il y a une forte différence d'électronégativité ($\chi(O) - \chi(H) > 0,4$), ce qui indique que l'électron sera plus proche de l'oxygène que de l'hydrogène, la liaison \chemfig{O-H} est \important{polaire.}
+
+  \begin{encart}  
+    Une liaison polaire implique que la molécule est légèrement chargée électriquement aux extrémité de la liaisons, avec une \important{charge négative} du côté de l'élément le plus électronégatif et une \important{charge positive} du côté de l'élément le moins électronégatif.
+  \end{encart}
+\end{doc}
+
+
+\begin{doc}{La molécule H$_2$O}{doc:A1_molecule_eau} 
+  \begin{wrapfigure}[3]{l}{0.25\linewidth}
+    \centering
+    \vspace*{-22pt}
+    \image{1}{images/organique/eau_polarite}
+  \end{wrapfigure}
+  \phantom{b}\vspace*{-20pt}
+    
+  \begin{encart}
+    L'eau est une molécule \important{polaire,} car 
+    \begin{listePoints}
+      \item la liaison \chemfig{O-H} est une liaison polaire ;
+      \item les charge $\delta^+$ et $\delta^-$ n'ont pas le même centre.
+    \end{listePoints}
+  \end{encart}
+
+  Autour de l'oxygène se trouve une zone chargée négativement de charge $2\delta^-$.
+  Autour des deux hydrogènes se trouve deux zones chargées positivement de charge $\delta^+$.  
+  Ici $\delta$ est un nombre compris entre $0$ et $e$ la charge élémentaire.
+\end{doc}
+
+\begin{doc}{Liaison hydrogène}{doc:A1_liaison_hydrogene}
+  \begin{encart}
+    La \important{liaison hydrogène} est une liaison électrostatique entre deux molécules polaires.
+  \end{encart}
+  Comme les deux bouts opposés d'un aimant, les charge + et - s'attirent mutuellement.
+  Contrairement aux liaisons covalentes, les liaisons hydrogènes sont représentées en pointillés.
+
+  \begin{encart}  
+    Pour les molécules du vivant, les liaisons hydrogène se forment quasiment toujours avec des groupes hydroxyle \chemfig{HO-C...} ou des groupe carbo \chemfig{O=C...}.
+  \end{encart}
+  C'est parce que l'électronégativité du carbone et de l'oxygène sont différentes
+  ($\chi(O) - \chi(C) > 0,4$),
+  alors que les électronégativités du carbone, de l'hydrogène et de l'azote sont similaires.
+\end{doc}
+
+\begin{doc}{Solubilité}{doc:A1_solubilité}
+  \begin{listePoints}
+    \item Un solvant est \important{polaire} s'il est composé de molécules polaires : l'eau est un solvant polaire.
+    \item Un solvant est \important{apolaire} s'il n'est pas composé de molécules polaires : l'huile est un solvant apolaire.
+  \end{listePoints}
+  Les solides polaires et ioniques se dissolvent facilement dans les solvants polaires, car des liaisons hydrogènes se forment entre les éléments du solide et les molécules du solvant, ce qui le dissout.
+
+  Les solvants apolaires et polaires ne se mélangent pas.
+\end{doc}
+
+\begin{doc}{Glucose et oléine}{doc:A1_glucose_oleine}
+  \begin{multicols}{2}
+    \centering
+    %% glucose linéaire
+    {\small
+      \chemfig[atom sep = 1.5em]{
+         HO -[6] (-[-4] (-[6] HO) -[-2] -[-4] HO) -[4] (-[6] HO) -[2] (-OH) -[4] (=[6] O) -[2] H
+      }
+    } \\[6pt]
+    \legende{Molécule de glucose}
+
+    {\small
+      \chemfig[atom sep = 2.0em]{
+        H C (!\teteAcideDev C_{17} H_{33}) 
+        (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
+        -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
+      }
+    } \\[6pt]
+    \legende{Molécule d'oléine}
+    %
+  \end{multicols}
+\end{doc}
+
+\question{
+  En s'aidant de l'exemple donné avec la molécule d'eau, montrer que la molécule de glucose est polaire.
+}{}{2}
+
+\question{
+  Est-ce que la trioléine, qui compose l'huile d'olive, est polaire ?
+}{}{1}
+
+\question{
+  Expliquer pourquoi le sucre mélange avec l'eau, mais pas l'huile d'olive.
+}{}{2}
+
+
+\begin{doc}{Stockage des nutriments}{doc:A1_stockage}
+  La polarité d'une molécule va avoir un impact sur la façon dont elle peut être stockée dans l'organisme.
+  Par exemple, les vitamines apolaires peuvent être stockée dans les graisses (elles aussi apolaires), ce qui permet de constituer des réserves, alors que les vitamines polaires vont être dissoutes dans le sang et évacuée par les urines.
+\end{doc}

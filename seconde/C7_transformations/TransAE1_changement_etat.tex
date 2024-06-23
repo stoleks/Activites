@@ -22,7 +22,7 @@
 
 
 %%%% docs
-\begin{doc}{Un peu de vocabulaire}
+\begin{doc}{Un peu de vocabulaire}{doc:TP1_vocabulaire}
   Dans ce chapitre on va s'intéresser à l'évolution de la température et des états des objets.
   Cette branche de la physique s'appelle la \textbf{thermodynamique} (\og \textit{thermos} \fg : \textit{chaud} en grec ``thermodynamique'' = ``évolution de la chaleur'').
   Pour pouvoir définir précisément ce que l'on étudie, on utilise un vocabulaire particulier en thermodynamique.
@@ -38,8 +38,7 @@
 \end{doc}
 
 %%
-\begin{doc}{Transfert thermique}
-  \vspace*{-20pt}
+\begin{doc}{Transfert thermique}{doc:TP1_transfert_thermique}
   \begin{encart}
     Un corps chaud en contact avec un corps froid lui transfert de l'énergie, ce qui se traduit par une modification de la température des deux corps : on parle de \important{transfert thermique}.
   \end{encart}
@@ -54,12 +53,11 @@
 \end{doc}
 
 %%
-\begin{doc}{Calorimètre}
-  \vspace*{-34pt}
+\begin{doc}{Calorimètre}{doc:TP1_calorimetre}
   \begin{wrapfigure}{r}{0.15\linewidth}
     \centering
     \vspace*{-8pt}
-    \image{0.9}{images/transformations/calorimetre}
+    \image{0.9}{images/thermodynamique/calorimetre}
   \end{wrapfigure}
   
   Un calorimètre (\og \textit{calor} \fg : \textit{chaleur} en latin) est un récipient qui sert à mesurer des transferts thermiques.
@@ -68,9 +66,7 @@
 \end{doc}
 
 %%
-\begin{doc}{Protocole de mesure de la variation de température}
-  \label{doc:protocole_fusion_eau}
-  \vspace*{-20pt}
+\begin{doc}{Protocole de mesure de la variation de température}{doc:TP1_variation_temperature}
   \begin{protocole}
     \item Placer le calorimètre sur la balance et appuyer sur ``tare''.
     \item Verser environ \qty{200}{\ml} d'eau et mesurer la masse $m_\text{eau}$ introduite.
@@ -82,23 +78,18 @@
   
   \textbf{Mesures réalisées :}
   \begin{center}
-    \newcommand{\tailleTableau}{\hspace{60pt}\phantom{$\Frac{1}{8}$}}
     \begin{tblr}{
-      colspec = {|c|c|c|c|c|},
-      row{1} = {gray!20!white}
+      columns = {c}, hlines, vlines,
+      row{1} = {couleurPrim!20}
     }
-      \hline
-      Grandeur mesurée & $m_\text{eau}$ & $m_\text{glaçons}$ & $T_i$ & $T_f$ 
-      \\ \hline
-      Mesure & \tailleTableau & \tailleTableau & \tailleTableau & \tailleTableau
-      \\ \hline
+      Grandeur mesurée & $m_\text{eau}$ & $m_\text{glaçons}$ & $T_i$ & $T_f$ \\ 
+      Mesure & & & & \\
     \end{tblr}
   \end{center}
 \end{doc}
 
 %%
-\begin{doc}{Énergie de changement d'état}
-  \label{doc:energie_changement_etat}
+\begin{doc}{Énergie de changement d'état}{doc:TP1_energie_changement_etat}
   Pour faire fondre de la glace, il faut un transfert thermique entre la glace et un autre corps.
   \begin{encart}
     L'énergie nécessaire pour changer d'état s'appelle \important{l'énergie de changement d'état} et on la note $L$, son unité est le Joule \unit{\joule}.
@@ -108,7 +99,7 @@
   \begin{encart}
     On peut définir \important{l'énergie de changement d'état massique} notée $L_m$, qui est propre à chaque corps pur et s'exprime en Joule par gramme \unit{\joule\per\g} :
     \begin{equation*}
-      L_m = \Frac{L}{m_\text{glace}}
+      L_m = \dfrac{L}{m_\text{glace}}
     \end{equation*}
   \end{encart}
 \end{doc}
@@ -166,13 +157,13 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
 }{2}
 
 \question{
-  En vous aidant du document~\ref{doc:energie_changement_etat}, calculer la valeur $L_m$ de l'énergie de changement d'état massique de fusion de la glace.
+  En vous aidant du document~\ref{doc:TP1_energie_changement_etat}, calculer la valeur $L_m$ de l'énergie de changement d'état massique de fusion de la glace.
 }{
   \vspace*{-18pt}
   \begin{align*}
     L_m
-    = \Frac{L}{m_\text{glaçon}}
-    = \Frac{\qty{9233}{\joule}}{\qty{27,92}{\g}}
+    = \dfrac{L}{m_\text{glaçon}}
+    = \dfrac{\qty{9233}{\joule}}{\qty{27,92}{\g}}
     = \qty{330,7}{\joule\per\g}
   \end{align*}
   \vspace*{-12pt}
@@ -193,11 +184,10 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
 \titreSection{Bilan}
 
 On voit que pour fondre, les glaçons ont dû recevoir de l'énergie sous forme de transfert thermique par l'eau liquide autour d'eux.
-On parle de \texteTrouMultiLignes{transformation endothermique.}{1}
+On parle de \texteTrouLignes[1]{transformation endothermique.}
 
 %%
-\begin{doc}{Transformations endothermique et exothermique}
-  \vspace*{-20pt}
+\begin{doc}{Transformations endothermique et exothermique}{doc:TP1_endothermique_exothermique}
   \begin{encart}
     \begin{listePoints}
       \item Si l'énergie du système \textbf{augmente}, $Q > 0$, pendant une transformation physique, on parle de \important{transformation endothermique}.
@@ -205,7 +195,7 @@ On parle de \texteTrouMultiLignes{transformation endothermique.}{1}
     \end{listePoints}
   \end{encart}
   \begin{center}
-     \image{1}{images/transformations/transformation_energie}
+     \image{1}{images/thermodynamique/transformation_energie}
   \end{center}
   \attention Attention aux signes !
   

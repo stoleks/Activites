@@ -1,6 +1,6 @@
 %%%%
 \teteSndSign
-\numeroActivite{2}
+\numeroActivite{1}
 
 %%%% titre
 \vspace*{-24pt}
@@ -19,7 +19,7 @@
   \begin{wrapfigure}[6]{r}{0.6\linewidth}
     \vspace*{-28pt}
     \begin{center}
-      \image{1}{images/son_emission_perception}
+      \image{1}{images/acoustique/son_emission_perception}
     \end{center}
   \end{wrapfigure}
 
@@ -36,16 +36,14 @@
   \begin{wrapfigure}[3]{l}{0.5\linewidth}
     \vspace*{-18pt}
     \begin{center}
-      \image{1}{images/son_exemple_periode}
+      \image{1}{images/acoustique/son_exemple_periode}
     \end{center}
   \end{wrapfigure}
   %
   Un signal sonore, ou un son, est caractérisé par son \important{intensité sonore} et sa \important{fréquence}.
   
-  %
-  \vspace*{40pt}
   \begin{encart}
-    La fréquence $f$ est exprimée en hertz noté Hz, c'est l'inverse de la période de vibration $T$
+    La fréquence $f$ est exprimée en hertz noté \unit{\hertz}, c'est l'inverse de la période de vibration $T$
     \begin{equation*}
       f = \frac{1}{T}
     \end{equation*}
@@ -73,6 +71,9 @@
   \begin{wrapfigure}[5]{r}{0.1\linewidth}
     \vspace*{-28pt}
     \qrcode{https://play.google.com/store/apps/details?id=com.chazot.fizziq&hl=fr&gl=US&pli=1}
+    \medskip
+    
+    \qrcode{https://apps.apple.com/fr/app/fizziq/id1516870599}
   \end{wrapfigure}
   On va chercher à mesurer la vitesse du son dans l'air.
   Pour ça on va utiliser l'application FizziQ, téléchargeable ici :
@@ -91,16 +92,19 @@
   Citer des exemples de capteurs avec les grandeurs mesurées et exploitées.
 }{
   bla
-}{2}
+}{4}
+
+\mesure
+Télécharger l'application FizziQ.
+
+\begin{doc}{Chronométrer un son avec FizziQ}{doc:TP1_chrono_son}
+  Pour mesurer le temps que met un son pour parcourir une certaine distance, on peut aller dans \important{outils $\rightarrow$ chronomètre sonore} sur l'application FizziQ.
+
+  On peut alors déclencher et arrêter un chronomètre avec un son.
+\end{doc}
 
 \question{
-  Télécharger l'application FizziQ.
-}{
- bla
-}{0}
-
-\question{
-  En utilisant deux smartphone, la fonction déclencheurs de Fizziq et le microphone comme capteur, développer un protocole pour mesurer la vitesse du son dans l'air.
+  En utilisant deux smartphone et la fonction chronomètre sonore de FizziQ, développer un protocole pour mesurer la vitesse du son dans l'air.
 }{
  bla
 }{10}

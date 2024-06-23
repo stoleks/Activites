@@ -1,0 +1,109 @@
+\newcommand{\largeurCaseTableauPeriodique}{1.5}
+
+%%%% Pour afficher un élément dans le tableau périodique
+\NewDocumentCommand{\elementTexteCharge}{m m m o}
+{
+  \begin{minipage}{\largeurCaseTableauPeriodique cm}
+    \begin{center}
+      \IfValueTF{#4}{ \vAligne{-20pt} }{ \vAligne{-34pt} } % position du nom
+      {\small #3} \\[2pt] % nom de l'élément
+      {\ensuremath\footnotesize \textbf{#1}} \\[6pt] % nombre atomique
+      \chemfig[atom style={scale = 1.8}]{#2} % symbole atomique
+      % \element{#1}{#2} % element symbol and atomic number
+      \IfValueT{#4}{
+        \\ {\small \qty{#4}{\g/\mole}}
+      }
+    \end{center}
+  \end{minipage}
+}
+
+%%%% Pour afficher un élément dans le tableau périodique
+\NewDocumentCommand{\elementElectroneg}{m m}
+{
+  \begin{minipage}{\largeurCaseTableauPeriodique cm}
+    \begin{center}
+      {\Large \important[black]{#1} \\[2pt]} % symbole atomique
+      {\footnotesize $\chi = $\num{#2}} % électronégativité
+    \end{center}
+  \end{minipage}
+}
+
+
+%%%% Pour afficher un tableau périodique
+%% #1 : largeur ; #2 : hauteur ; #3 : élements
+\NewDocumentCommand{\tableauPeriodique}{O{2.6} O{2.7} m}{
+\begin{tikzpicture}[font=\sffamily, scale=0.75, transform shape]
+  
+%% Couleur de remplissage
+  \tikzstyle{jauneClair}  = [fill=yellow!30]
+  \tikzstyle{jaune}       = [fill=yellow!45]
+  \tikzstyle{jauneFonce}  = [fill=yellow!60]
+  \tikzstyle{rougeClair}  = [fill=red!20]
+  \tikzstyle{rouge}       = [fill=red!35]
+  \tikzstyle{rougeFonce}  = [fill=red!50]
+  \tikzstyle{orangeClair} = [fill=orange!30]
+  \tikzstyle{orange}      = [fill=orange!45]
+  \tikzstyle{orangeFonce} = [fill=orange!60]
+  \tikzstyle{vertClair}   = [fill=vertForet!20]
+  \tikzstyle{vert}        = [fill=vertForet!35]
+  \tikzstyle{vertFonce}   = [fill=vertForet!50]
+  
+%% Type d'élément, par famille
+  \tikzstyle{Alcali} = [Element, vertFonce]
+  \tikzstyle{Alcalo} = [Element, vert]
+  \tikzstyle{Metaux} = [Element, vertClair]
+  \tikzstyle{Metoid} = [Element, orangeClair]
+  \tikzstyle{NoMeta} = [Element, orange]
+  \tikzstyle{Haloge} = [Element, orangeFonce]
+  \tikzstyle{GazRar} = [Element, rouge]
+
+%% Type d'élément, par électronégativité
+ \tikzstyle{elec1} = [Element, vertClair]
+ \tikzstyle{elec2} = [Element, vert]
+ \tikzstyle{elec3} = [Element, jaune]
+ \tikzstyle{elec4} = [Element, orangeClair]
+ \tikzstyle{elec5} = [Element, orange]
+ \tikzstyle{elec6} = [Element, orangeFonce]
+ \tikzstyle{elec7} = [Element, rouge]
+ \tikzstyle{elec8} = [Element, rougeFonce]
+  
+%% Style des éléments
+  \tikzstyle{Element} = [
+    draw=black, jaune,
+    minimum width  = #1 cm, % Largeur de la case
+    node distance  = #1 cm, % Espace entre deux case
+    minimum height = #2 cm, % Hauteur de la case
+  ]
+
+%% Période, groupe et titre
+  \tikzstyle{Period} = [font={\sffamily\LARGE}, node distance=2cm]
+  \tikzstyle{Groupe} = [font={\sffamily\LARGE}, minimum width=2.5cm, node distance=2cm]
+  \tikzstyle{Titre}  = [font={\sffamily\Huge\bfseries}]
+
+%% Place des éléments
+  #3
+\end{tikzpicture}
+}
+
+
+%%%% Pour faciliter l'utilisation du tableau périodique
+\newcommand{\elementH} {\elementTexteCharge{1} {H} {Hydrogène}[1,00]}
+\newcommand{\elementHe}{\elementTexteCharge{2} {He}{Hélium}   [4,00]}
+\newcommand{\elementLi}{\elementTexteCharge{3} {Li}{Lithium}  [6,94]}
+\newcommand{\elementBe}{\elementTexteCharge{4} {Be}{Béryllium}[9,01]}
+\newcommand{\elementB} {\elementTexteCharge{5} {B} {Bore}     [10,8]}
+\newcommand{\elementC} {\elementTexteCharge{6} {C} {Carbone}  [12,0]}
+\newcommand{\elementN} {\elementTexteCharge{7} {N} {Azote}    [14,0]}
+\newcommand{\elementO} {\elementTexteCharge{8} {O} {Oxygène}  [16,0]}
+\newcommand{\elementF} {\elementTexteCharge{9} {F} {Fluor}    [19,0]}
+\newcommand{\elementNe}{\elementTexteCharge{10}{Ne}{Néon}     [20,2]}
+\newcommand{\elementNa}{\elementTexteCharge{11}{Na}{Sodium}   [23,0]}
+\newcommand{\elementMg}{\elementTexteCharge{12}{Mg}{Magnésium}[24,3]}
+\newcommand{\elementAl}{\elementTexteCharge{13}{Al}{Aluminium}[27,0]}
+\newcommand{\elementSi}{\elementTexteCharge{14}{Si}{Silicium} [28,1]}
+\newcommand{\elementP} {\elementTexteCharge{15}{P} {Phosphore}[31,0]}
+\newcommand{\elementS} {\elementTexteCharge{16}{S} {Soufre}   [32,1]}
+\newcommand{\elementCl}{\elementTexteCharge{17}{Cl}{Chlore}   [35,5]}
+\newcommand{\elementAr}{\elementTexteCharge{18}{Ar}{Argon}    [39,9]}
+\newcommand{\elementK} {\elementTexteCharge{19}{K} {Potassium}[39,1]}
+\newcommand{\elementCa}{\elementTexteCharge{20}{Ca}{Calcium}  [40,0]}

@@ -75,11 +75,14 @@
 \definesubmol\trioleique{
   !\carbonyle !\cc !\cc !\cc -[::60] =[::60] -[::60] !\cc !\cc -[::-60] -[::-60] -[::-60]
 }
-\definesubmol\alphaLinoleique{
+\definesubmol\linolenique{
   !\teteAcide !\cc !\cc !\cc !\trans !\trans !\trans -[::60]
 }
-\definesubmol\alphaLinolenique{
-  !\teteAcide !\cc !\cc !\cc !\cis !\cis !\cis -[::60]
+\definesubmol\trilinolenique{
+  !\carbonyle !\cc !\cc !\cc !\cis !\cis !\cis -[::60]
+}
+\definesubmol\trilinoleique{
+  !\carbonyle !\cc !\cc !\cc !\cis !\cis !\cc !\cc
 }
 \definesubmol\steraique{
   !\teteAcideDev C_{17}H_{35}
@@ -93,9 +96,20 @@
    -[::30] O-[::60] !\trioleique
 }
 \definesubmol\tripalmitine{
-   (-[::150] -[::60] O-[::-60] (=[::60] O) -[::-60] -[::-60] !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % gauche
-   (-[::-90] -[::60] O-[::-60] (=[::-60]O) -[::60] -[::60] !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % droite
+   (-[::150] -[::60] O-[::-60] (=[::60] O) -[::-60] -[::-60] !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % haut
+   (-[::-90] -[::60] O-[::60] (=[::-60]O) !\cc !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % centre
    -[::30] O-[::60] !\palmitique % bas
+}
+\definesubmol\cholesterol{
+  HO-[1] *6(-- % 1er cycle
+    *6(=-- % 2eme cycle
+      *6(- % 3eme cycle
+        *5(--- 
+          (-[:90] (-[::60]) -[:30] -[:-30] -[:30] -[:-30] (-[:-90]) -[:30]) % lipide
+        - (-[:90]) -) % 4eme
+      ----) % 3eme
+    ---) % 2eme
+  - (-[:90]) ---) % 1er
 }
 
 %% glycerol

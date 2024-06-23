@@ -1,8 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% quelque couleurs
 \definecolor{vertSombre}  {RGB} {  0,  95,  17}
+\definecolor{vertForet}   {RGB} {124, 179,  66}
 %
-\definecolor{jauneSombre}{RGB}  {213, 145,   2}
+\definecolor{jauneSombre} {RGB} {213, 145,   2}
 \definecolor{orangeSombre}{RGB} {174,  82,   0}
 \definecolor{cyanSombre}  {RGB} {  0, 140, 128}
 \definecolor{bleuPale}    {RGB} { 39,  76, 167}
@@ -299,48 +300,6 @@
   \chead{} % central header
   \teteDroite{\annee{}}{#2} % right header
 }
-%
-\newcommand{\enTeteFicheReussite}[2]{
-  \newpage
-  \setcounter{subsection}{0}
-  \pasDePagination
-  
-  \phantom{b}
-  \vspace*{-70pt}
-  \titre{Fiche \og Réussir son évaluation \fg}
-  \titre{Chapitre #1 -- #2}
-  
-  \vspace*{-6pt}
-  \titreSection{Ce que je dois savoir}
-  
-  Pour savoir quoi réviser, je lis les points clés du chapitre évalués :
-  \begin{itemize}
-    \item Si je pense maîtriser une notion, je coche la case \ok
-    \item Si je pense que je dois la retravailler, je coche la case \pasOk
-  \end{itemize}
-  
-  Pour travailler les notions qui ne sont pas maîtrisées, je reprend les activités associés.
-  \vspace*{6pt}
-}
-\newcommand{\basDePageFicheReussite}{
-  \titreSection{Ce qu'il me reste à faire}
-}
-\newcommand{\travailExerciceCorrige}{
-  Pour être sûr-e d'obtenir une bonne note, je m'entraîne avec les exercices corrigés du manuel indiqués dans la colonne de droite.
-}
-\newcommand{\questionFicheReussite}[1]{
-  S'il me reste des questions, je les note ici pour les poser au début de l'évaluation : 
-  \lignesDeReponse{#1}
-}
-\newcommand{\coursFicheReussite}{
-  Je prépare une fiche au format A4 avec toutes les notions, définitions ou grandeurs dont je pense avoir besoin pendant l'évaluation.
-  \bigskip
-  
-  \begin{center}
-    \textcolor{couleurSec}{\faThumbsUp}
-    \important{La fiche préparée pourra être utilisée pendant l'évaluation pour s'aider !}
-  \end{center}
-}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -570,12 +529,12 @@
 \newenvironment{tableauConnaissances}{
   \centering
   \begin{tblr}{
-    colspec = {| X[l,m] | c | c | c |},
-    rows = {m}, hlines,
+    colspec = {Q[t,wd=0.7\textwidth] c c c},
+    rows = {m}, hlines, vlines,
     column{4} = {0.2},
     row{1} = {couleurPrim!20, c}
   }
-    \textbf{Points clés du chapitre} & \ok & \pasOk & \textbf{En classe} \\
+    \textbf{Connaissances et capacités exigibles} & \ok & \pasOk & \textbf{En classe} \\
 }{ 
   \end{tblr}
 }
@@ -801,6 +760,7 @@
 \DeclareSIUnit{\dornic}{\text{\textdegree D}}
 \DeclareSIUnit{\ppm}{\text{ppm}}
 \DeclareSIUnit{\COeq}{\text{kgCO$_{2}$e}}
+\DeclareSIUnit{\jour}{\text{jour}}
 % \DeclareSIUnit{}{\text{}}
 
 
