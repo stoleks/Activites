@@ -291,14 +291,27 @@
     \footnotesize #2
   }
 }
-\newcommand{\enTete}[3]{
-  \pagestyle{fancy}
+\NewDocumentCommand{\enTete}{o m o s}{
+  % reset des compteurs
+  \newpage
   \setcounter{section}{#3}
   \setcounter{subsection}{0}
+  \setcounter{subsubsection}{0}
   \setcounter{sousSectionNum}{0}
-  \teteGauche{\etablissement{}}{Chapitre \arabic{section} -- #1} % left header
-  \chead{} % central header
-  \teteDroite{\annee{}}{#2} % right header
+  
+  % affichage de l'entête version fiche réussite (*)
+  \IfBooleanTF{#4}{
+    \pasDePagination
+    \phantom{b} \vspace*{-70pt}
+    % \titre{Connaissances et capacités à apprendre}
+    \titre{#2}
+  % affichage de l'entête version activité
+  }{
+    \pagestyle{fancy}
+    \teteGauche{\etablissement{}}{#2} % left header
+    \chead{} % central header
+    \teteDroite{\annee{}}{#1} % right header
+  }
 }
 
 
@@ -515,7 +528,7 @@
 \newenvironment{tableauCompetences}{
   \centering
   \begin{tblr}{
-    colspec = {| c | X[l] | c | c | c | c |},
+    colspec = {| c | Q[l, wd=0.6\linewidth] | c | c | c | c |},
     rows = {m}, hlines,
     row{1} = {couleurPrim!20}
   }
@@ -529,7 +542,7 @@
 \newenvironment{tableauConnaissances}{
   \centering
   \begin{tblr}{
-    colspec = {Q[t,wd=0.7\textwidth] c c c},
+    colspec = {Q[t, wd=0.7\textwidth] c c c},
     rows = {m}, hlines, vlines,
     column{4} = {0.2},
     row{1} = {couleurPrim!20, c}
