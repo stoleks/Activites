@@ -59,6 +59,37 @@
   #1
 }
 
+\newtcolorbox{activite}[3][]{
+  before title = {\refstepcounter{activiteNum}},
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  colback = white, % fond blanc
+  colframe = couleurPrim!25!black, % couleur de la boite
+  coltitle = black, % couleur du titre
+  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi de la boite
+  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
+  colbacktitle = white, % fond pour le titre blanc
+  fonttitle = \bfseries\sffamily,
+  title = {\documentaire* Activité \arabic{section}.\arabic{activiteNum} -- #2\strut},
+  remember as = #3,
+  #1
+}
+\newcounter{TPNum}
+\newtcolorbox{TP}[3][]{
+  before title = {\refstepcounter{TPNum}},
+  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  colback = white, % fond blanc
+  colframe = couleurPrim!25!black, % couleur de la boite
+  coltitle = black, % couleur du titre
+  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi de la boite
+  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
+  colbacktitle = white, % fond pour le titre blanc
+  fonttitle = \bfseries\sffamily,
+  title = {\mesure* TP \arabic{section}.\arabic{TPNum} -- #2\strut},
+  remember as = #3,
+  #1
+}
+
+
 %%%% Passage important à connaître
 \newtcolorbox{importants}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
@@ -76,7 +107,7 @@
   #1
 }
 
-%%%% contexte
+%%%% Boîte pour le contexte
 \newtcolorbox{contexte}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   boxrule = 3pt, sharp corners, % contours droits
@@ -91,29 +122,44 @@
 }
 
 %%%% Pour les objectifs
-\newtcolorbox{boiteObjectifs}[2][]{
+\newenvironment{objectifs}{%
+  \begin{listeObjectifs}} {\end{listeObjectifs}}
+%
+\tcolorboxenvironment{objectifs}{
   empty, % pas de boite automatique
   attach boxed title to top left = {yshift=-2.5mm}, % position
   boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
   frame code = { % tracé de la boite
-    \path (title.east |- frame.north) coordinate (aux);
     \path [draw=couleurPrim, line width = 3pt]
-    (frame.west) |- ([xshift=-4mm] title.north east)
-    to[out=0, in=180] ([xshift=10mm] aux) -| % définit la courbe
+    (frame.west) |- ([xshift=6mm] title.north east)
+    to[out=0, in=180] ([xshift=20mm] title.east) -| % définit la courbe
     (frame.east) |- (frame.south) -| cycle; % trace la boite
   },
   coltitle = black, % couleur du titre
   fonttitle = \bfseries\sffamily, % police du titre
-  title = {#2},
-  #1 
+  title = {Objectifs :}
 }
-\newenvironment{objectifs}{
-  \begin{boiteObjectifs}{Objectifs de la séance :}
-    \begin{listeObjectifs}
-}{
-    \end{listeObjectifs}
-  \end{boiteObjectifs}
+
+
+%%%% Pour les pré-requis
+\newenvironment{prerequis}{%
+  \begin{listeObjectifs}} {\end{listeObjectifs}}
+%
+\tcolorboxenvironment{prerequis}{
+  empty, % pas de boite automatique
+  attach boxed title to top left = {yshift=-2.5mm}, % position
+  boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
+  frame code = { % tracé de la boite
+    \path [draw=couleurPrim, line width = 3pt]
+    (frame.south east) |- ([xshift=-34mm, yshift=-4mm] frame.south east)
+    to[out=180, in=0] ([xshift=-47mm] frame.south east) -| % définit la courbe
+    (frame.west) |- (title.north) -| cycle; % trace la boite
+  },
+  coltitle = black, % couleur du titre
+  fonttitle = \bfseries\sffamily, % police du titre
+  title = {Prérequis :}
 }
+
 
 %%%% Espace pour un coup de pouce
 \newcounter{coupDePouceNum}
@@ -588,12 +634,27 @@
 \NewDocumentCommand{\pointCyan}{O{couleurPrim}}{
   \textcolor{#1}{\textbullet}
 }
-%
-\NewDocumentCommand{\mesure}{O{couleurPrim}}{
-  \hspace{15pt}
-  %\numeroQuestion
-  \textcolor{couleurSec}{\faWrench\faFlask}
+
+% Quelques questions spéciales
+\NewDocumentCommand{\questionSpeciale}{O{couleurSec} m}{
+  \textcolor{#1}{#2}
 }
+%
+\NewDocumentCommand{\mesure}{o s}{
+  \IfBooleanTF{#2}{}{ \hspace{7pt} }
+  \questionSpeciale[#1]{\faFlask\hspace{1pt} \faWrench\!}
+}
+%
+\NewDocumentCommand{\telechargement}{o s}{
+  \IfBooleanTF{#2}{}{ \hspace{7pt} }
+  \questionSpeciale[#1]{\faDownload\, \faMobile\;}
+}
+%
+\NewDocumentCommand{\documentaire}{o s}{
+  \IfBooleanTF{#2}{}{ \hspace{7pt} }
+  \questionSpeciale[#1]{\faFileText\hspace{1pt} \faBook}
+}
+
 % pictogramme sécurité
 \newcommand{\picto}[2]{
   \image{#1}{images/pictogrammes/picto_#2}
