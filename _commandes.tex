@@ -59,8 +59,17 @@
   #1
 }
 
-\newtcolorbox{activite}[3][]{
-  before title = {\refstepcounter{activiteNum}},
+
+%%%% Boîtes pour les activités et TP pour une séquence en plan de travail
+% Boite de durée
+\newtcbox{\dureeActivite}[1][]{
+  arc = 2mm, % courbes des bords
+  colback = couleurSec, colframe = white, % couleurs boite
+  coltext = white,
+}
+% Boite de base pour les activités ou TP
+\newtcolorbox{boiteActivite}[6][]{
+  before title = {\refstepcounter{#5}},
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   colback = white, % fond blanc
   colframe = couleurPrim!25!black, % couleur de la boite
@@ -69,23 +78,43 @@
   titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
   colbacktitle = white, % fond pour le titre blanc
   fonttitle = \bfseries\sffamily,
-  title = {\documentaire* Activité \arabic{section}.\arabic{activiteNum} -- #2\strut},
-  remember as = #3,
+  title = {#6 \arabic{section}.\arabic{#5} -- #2\strut \label{#4}},
+  enlarge bottom by = 12pt,
+  overlay= {\node at ([xshift = -36pt, yshift = -5pt] frame.south east) {
+    \dureeActivite{{\small \important[white]{#3}}}
+  }; }, % affiche la durée de l'activité
+  remember as = #4,
   #1
 }
+
+% Boite activité
+\NewDocumentEnvironment{activite}{m O{1 h} m}{%
+  \begin{boiteActivite}{#1}{#2}{#3}
+    {activiteNum}{\documentaire* \hspace{-4pt} Activité}
+}{
+  \end{boiteActivite}
+}
+% Compteur pour les TP
 \newcounter{TPNum}
-\newtcolorbox{TP}[3][]{
-  before title = {\refstepcounter{TPNum}},
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  colback = white, % fond blanc
-  colframe = couleurPrim!25!black, % couleur de la boite
-  coltitle = black, % couleur du titre
-  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi de la boite
+% Boite TP
+\NewDocumentEnvironment{TP}{m O{2 h} m}{%
+  \begin{boiteActivite}{#1}{#2}{#3}
+    {TPNum}{\mesure* \hspace{-4pt} TP}
+}{
+  \end{boiteActivite}
+}
+% Pour réferencer une activité
+\newcommand{\reference}[1]{\arabic{section}.\ref{#1}}
+
+% Boîte pour la tâche finale
+\newtcolorbox{tacheFinale}[1][]{
+  breakable, enhanced jigsaw, % boite coupable entre pages
+  colback = white, colframe = black, % couleur cadre
+  boxrule = 0.5mm, arc = 0.5mm, % forme du cadre
+  colbacktitle = white, coltitle = black, % couleur titre
   titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
-  colbacktitle = white, % fond pour le titre blanc
-  fonttitle = \bfseries\sffamily,
-  title = {\mesure* TP \arabic{section}.\arabic{TPNum} -- #2\strut},
-  remember as = #3,
+  fonttitle = \bfseries\sffamily, % type de titre
+  title = {Tâche finale}, % titre
   #1
 }
 
@@ -109,7 +138,7 @@
 
 %%%% Boîte pour le contexte
 \newtcolorbox{contexte}[1][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  breakable, enhanced jigsaw, % boite coupable entre pages
   boxrule = 3pt, sharp corners, % contours droits
   colframe = couleurPrim, % couleur des contours
   colback = couleurPrim!5, % fond
@@ -117,7 +146,8 @@
   colbacktitle = couleurPrim!5, % couleur du fond du titre
   fonttitle = \bfseries\sffamily, coltitle = black, %
   titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
-  detach title, before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;},
+  detach title,
+  before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;},
   #1
 }
 
@@ -140,8 +170,7 @@
   title = {Objectifs :}
 }
 
-
-%%%% Pour les pré-requis
+%% Pour les pré-requis
 \newenvironment{prerequis}{%
   \begin{listeObjectifs}} {\end{listeObjectifs}}
 %
@@ -735,7 +764,7 @@
 
 %%%% liste d'objectif
 \newlist{listeObjectifs}{itemize}{2}
-\setlist[listeObjectifs]{label = \chevron}
+\setlist[listeObjectifs]{leftmargin=6pt, label=\fleche} %\chevron}
 
 %%%% protocole
 \newlist{protocole}{itemize}{2}

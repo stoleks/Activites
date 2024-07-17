@@ -1,7 +1,11 @@
 %%%% Ce fichier sert à déclarer les titres des chapitres des différents niveaux
 
 %% Commun
-\newcommand{\chapitre}[2]{Chapitre #1 -- #2}
+\newcommand{\chapitre}[2]{
+  Chapitre #1 -- #2
+  \setcounter{section}{#1}
+  \setcounter{activiteNum}{0}
+}
 \newcommand{\methode} {\chapitre{0}{Outils pratiques}}
 
 %% Seconde

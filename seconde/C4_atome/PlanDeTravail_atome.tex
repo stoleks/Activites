@@ -1,0 +1,88 @@
+\teteSndAtom
+
+\titre{Plan de Travail -- \sndAtom}
+  
+\phantom{\methode}\vspace*{-24pt}
+
+\begin{multicols}{2}
+  \begin{activite}{Ordres de grandeur}{ordre_grandeur}
+    \begin{objectifs}  
+      \item Revoir les puissances de 10.
+      \item Apprendre à raisonner en ordres de grandeur.
+    \end{objectifs}
+  \end{activite}
+
+  \phantom{\sndAtom}\vspace*{-24pt}
+  
+  \begin{activite}{Fabriquer un atome}[1 h 30]{atome}
+    \begin{objectifs}
+      \item Étudier la composition d'un atome.
+      \item Comprendre que le nombre de protons définit un élément chimique.
+      \item Savoir distinguer un ion d'un atome.
+    \end{objectifs}
+  \end{activite}
+  
+  \begin{TP}{Le modèle de l'atome}{modele_atome}
+    \begin{objectifs}
+        \item Découvrir la méthode scientifique.
+        \item Utiliser la méthode scientifique pour étudier l'évolution du modèle de l'atome.
+    \end{objectifs}
+  \end{TP}
+  
+  \begin{activite}{Taille d'un atome}{taille_atome}
+    \begin{prerequis}
+      \item Calcul avec les puissances de 10.
+      \item Utilisation des ordres de grandeur.
+    \end{prerequis}
+    %
+    \begin{objectifs}
+      \item Comparer la taille d'un atome à des objets du quotidien pour mieux la comprendre.
+      \item Utiliser les ordres de grandeurs pour mener un raisonnement.
+    \end{objectifs}
+  \end{activite}
+\end{multicols}
+
+\begin{multicols}{2}    
+  \begin{activite}{Cortège électronique}[1 h 30]{cortege_electrons}
+    \begin{prerequis}
+      \item Connaître la structure d'un atome.
+      \item Savoir qu'un atome a autant d'électrons qu'il a de protons.
+    \end{prerequis}
+    %
+    \begin{objectifs}
+      \item Comprendre que les électrons s'organisent en couches électroniques.
+      \item Comprendre la règle de remplissage des couches électroniques.
+    \end{objectifs}
+  \end{activite}
+
+  \phantom{\strut}
+  
+  \begin{TP}{Le Tableau périodique}{tableau_periodique}
+    \begin{prerequis}
+      \item Connaître la structure électronique.
+      \item Savoir remplir les couches et sous-couches électronique d'un atome.
+    \end{prerequis}
+    \begin{objectifs}
+      \item Comprendre la construction du tableau périodique.
+    \end{objectifs}
+  \end{TP}
+\end{multicols}
+    
+  \begin{tikzpicture}
+  [overlay, remember picture, line width=1mm, draw=couleurQuat]
+    \draw[->, rounded corners=4mm] 
+      (ordre_grandeur) 
+      to (5, 18.5) to (8, 17.8) 
+      to (taille_atome);
+    \draw[->] (atome) -- (cortege_electrons);
+    \draw[->, rounded corners=5mm] 
+      (cortege_electrons) 
+      to (10, 2) 
+      to (tableau_periodique);
+  \end{tikzpicture}
+
+\vspace*{-40pt}
+\begin{tacheFinale}
+  Choisir un élément du tableau périodique et réaliser sa case au format $20\times\qty{20}{\cm\squared}$.
+  La case devra contenir des informations microscopique (structure électronique) et des informations macroscopique (dans quels objets on trouve l'élément, etc.)
+\end{tacheFinale}
