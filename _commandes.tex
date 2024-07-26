@@ -70,7 +70,7 @@
 % Boite de base pour les activités ou TP
 \newtcolorbox{boiteActivite}[6][]{
   before title = {\refstepcounter{#5}},
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  enhanced jigsaw, % pour un meilleur rendu
   colback = white, % fond blanc
   colframe = couleurPrim!25!black, % couleur de la boite
   coltitle = black, % couleur du titre
@@ -116,6 +116,30 @@
   fonttitle = \bfseries\sffamily, % type de titre
   title = {Tâche finale}, % titre
   #1
+}
+
+% Boîte pour l'organisation des séances
+\newcounter{seanceNum}
+\newtcbox{\seance}[2][]{
+  before title = {\refstepcounter{seanceNum}},
+  enhanced jigsaw, % pour un meilleur rendu
+  colback = white, colframe = black, % couleur cadre
+  boxrule = 0.5mm, arc = 0.5mm, % forme du cadre
+  height = 0.13\textheight, 
+  colbacktitle = white, coltitle = black, % couleur titre
+  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
+  fonttitle = \bfseries\sffamily, % type de titre
+  title = {Séance \arabic{seanceNum} \hfill (#2)}, % titre,
+  #1
+}
+% Pour afficher 3/2/1 séances dans la programmation
+\NewDocumentEnvironment{programmeSeance}{O{3}}{
+  \begin{tcbraster}[
+    raster columns = #1, 
+    raster width center = (\linewidth - 3cm - 5cm*(3 - #1))
+  ]
+}{
+  \end{tcbraster}
 }
 
 
@@ -361,9 +385,9 @@
 }
 \newcommand{\teteDroite}[2]{
   \rhead{
-    \hfill \textbf{\footnotesize #1}
-    \newline \hfill
-    \footnotesize #2
+    % \hfill \textbf{\footnotesize #1}
+    % \newline 
+    \hfill \footnotesize #2
   }
 }
 \NewDocumentCommand{\enTete}{o m o s}{
@@ -373,6 +397,7 @@
   \setcounter{subsection}{0}
   \setcounter{subsubsection}{0}
   \setcounter{sousSectionNum}{0}
+  \setcounter{seanceNum}{0}
   
   % affichage de l'entête version fiche réussite (*)
   \IfBooleanTF{#4}{
@@ -601,7 +626,7 @@
 
 %%%% Tableau de competence
 \newenvironment{tableauCompetences}{
-  \centering
+  \begin{center}
   \begin{tblr}{
     colspec = {| c | Q[l, wd=0.6\linewidth] | c | c | c | c |},
     rows = {m}, hlines,
@@ -611,6 +636,7 @@
     & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
 }{
   \end{tblr}
+  \end{center}
 }
 
 %%%% Tableau de connaissances sans exercices

@@ -1,8 +1,21 @@
 \teteSndAtom
 
+\vspace*{-40pt}
 \titre{Plan de Travail -- \sndAtom}
-  
-\phantom{\methode}\vspace*{-24pt}
+\vspace*{-8pt}
+
+%\begin{importants}
+  % Le plan de travail est un cadre de travail collectif où tu as la liberté d'avancer, seul-e ou en groupe, à ton rythme.
+  Ce document présente les activités et travaux pratiques à réaliser pendant les 4 semaines du chapitre.
+  À chaque séance (en classe entière ou demi-groupe), tu es libre de choisir quelle activité ou TP réaliser avec ton groupe.
+  Tous les documents sont imprimés sur le bureau du professeur.
+  % Au début de la 2ème et 3ème semaine, une courte interrogation sera réalisé sur certaines activités.
+%\end{importants}
+
+
+%%%% Activités
+\titre{Activités à réaliser}
+\vspace*{-16pt}
 
 \begin{multicols}{2}
   \begin{activite}{Ordres de grandeur}{ordre_grandeur}
@@ -12,15 +25,14 @@
     \end{objectifs}
   \end{activite}
 
-  \phantom{\sndAtom}\vspace*{-24pt}
-  
-  \begin{activite}{Fabriquer un atome}[1 h 30]{atome}
+  \begin{TP}{Fabriquer un atome}[1 h 30]{atome}
     \begin{objectifs}
       \item Étudier la composition d'un atome.
       \item Comprendre que le nombre de protons définit un élément chimique.
       \item Savoir distinguer un ion d'un atome.
+      \item Comprendre la notion d'éléments isotopes.
     \end{objectifs}
-  \end{activite}
+  \end{TP}
   
   \begin{TP}{Le modèle de l'atome}{modele_atome}
     \begin{objectifs}
@@ -34,7 +46,6 @@
       \item Calcul avec les puissances de 10.
       \item Utilisation des ordres de grandeur.
     \end{prerequis}
-    %
     \begin{objectifs}
       \item Comparer la taille d'un atome à des objets du quotidien pour mieux la comprendre.
       \item Utiliser les ordres de grandeurs pour mener un raisonnement.
@@ -55,8 +66,6 @@
     \end{objectifs}
   \end{activite}
 
-  \phantom{\strut}
-  
   \begin{TP}{Le Tableau périodique}{tableau_periodique}
     \begin{prerequis}
       \item Connaître la structure électronique.
@@ -67,22 +76,90 @@
     \end{objectifs}
   \end{TP}
 \end{multicols}
-    
-  \begin{tikzpicture}
-  [overlay, remember picture, line width=1mm, draw=couleurQuat]
+
+\vspace*{-2cm}
+\begin{tikzpicture}
+  [overlay, remember picture, line width=1.5mm, draw=couleurQuat]
     \draw[->, rounded corners=4mm] 
       (ordre_grandeur) 
-      to (5, 18.5) to (8, 17.8) 
+      to (5, 15.5) to (8, 15.2) 
       to (taille_atome);
     \draw[->] (atome) -- (cortege_electrons);
     \draw[->, rounded corners=5mm] 
       (cortege_electrons) 
-      to (10, 2) 
+      to (11.5, -1) 
       to (tableau_periodique);
-  \end{tikzpicture}
+\end{tikzpicture}
 
-\vspace*{-40pt}
+\vspace*{1.5cm}
+Note : les flèches indiquent un ordre entre certaines activités.
+Idéalement, il faut avoir fait l'activité d'où part la flèche avant de faire l'activité où arrive la flèche.
+
+
+%%%% Tâche finale
+\newpage
+\nomPrenomClasse
 \begin{tacheFinale}
   Choisir un élément du tableau périodique et réaliser sa case au format $20\times\qty{20}{\cm\squared}$.
   La case devra contenir des informations microscopique (structure électronique) et des informations macroscopique (dans quels objets on trouve l'élément, etc.)
 \end{tacheFinale}
+
+
+%%%% Progression
+\titre{Progression des activités}
+\vspace*{24pt}
+
+\flecheProgression{
+  (0,  10.) -- (17, 10.) --
+  (17, 7.5) -- (0,  7.5) --
+  (0,  5.0) -- (17, 5.0) --
+  (17, 2.5) -- (0,  2.5) --
+  (0,  0)   -- (17, 0);
+}
+\vspace*{-12.8 cm}
+
+\begin{programmeSeance}
+  \seance{2 h}{}
+  \seance{1 h}{}
+  \seance{2 h}{}
+\end{programmeSeance}
+\vspace*{1.2 cm}
+
+\begin{programmeSeance}
+  \seance{1 h}{
+    Courte évaluation sur la structure d'un atome.
+  }
+  \seance{2 h}{}
+  \seance{1 h}{}
+\end{programmeSeance}
+\vspace*{1.2 cm}
+
+\begin{programmeSeance}[2]
+  \seance{2 h}{
+    \strut \\ \centering
+    \sousTitre{Tâche finale}
+  }
+  \seance{1 h}{
+    \strut \\ \centering
+    \sousTitre{Évaluation du chapitre}
+  }
+\end{programmeSeance}
+
+
+%%%% Evaluation
+\titre{Evaluation de l'autonomie}
+
+\sousTitre{Les différents degrés d'autonomie}
+
+\begin{enumerate}[label = \Alph*]
+  \item Je planifie librement mon apprentissage, je coopère avec mes camarades et je sollicite de l'aide pour valider les travaux réalisés.
+  \item Je travaille seul-e ou avec mes camarades à partir des documents et je sollicite régulièrement de l'aide pour avancer.
+  \item J'avance uniquement quand le professeur est là pour m'aider, je n'arrive pas à planifier mon travail ou je ne fais que recopier les réponses d'un de mes camarades.
+  \item J'utilise des stratégies pour éviter d'apprendre et je refuse d'essayer de faire les activités.
+\end{enumerate}
+
+\begin{tableauCompetences}
+  AUTO & Travailler de manière autonome 
+  & & & & \\
+  %
+\end{tableauCompetences}
