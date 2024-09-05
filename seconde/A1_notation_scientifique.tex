@@ -20,13 +20,13 @@
   Les puissances indiquent qu'on va répéter une multiplication ($2^3 = 2 \times 2 \times 2 = 8$).
   
   Pour lire les puissances de 10, il suffit de suivre deux règles simple
-  \begin{encart}
+  \begin{importants}
     \pointCyan Écrire le nombre $10^a$ (avec $a = 0, 1, 2, 3, \ldots$), revient à écrire ``$1$'' suivi de $a = 0, 1, 2, 3, \ldots$ zéros. \\
-    \exemple \num{e3} = \texteTrou{\num{1000}}
+    \exemple \num{e3} = \texteTrou[0.2]{\num{1000}}
 
     \pointCyan Écrire le nombre $10^{-a}$ (avec $a = 1, 2, 3, \ldots$), revient à écrire ``$0,$'' suivi de $a - 1 = 0, 1, 2, \ldots$ zéros et d'un $1$. \\
-    \exemple \num{e-2} = \texteTrou{\num{0,01}}
-  \end{encart}
+    \exemple \num{e-2} = \texteTrou[0.2]{\num{0,01}}
+  \end{importants}
 \end{doc}
 
 
@@ -36,41 +36,43 @@ $\num{e5}  =$ \texteTrou[0.2]{\num{100000}} \qq{}
 $\num{e-3} =$ \texteTrou[0.1]{\num{0,001}} \qq{}
 $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 
-\numeroQuestion Écrire les nombres suivants comme le produit d'un nombre compris entre 0 et 9 et d'une puissance de 10 \exemple \num{600} = \num{6,00e2} : \\
-\separationBlocs{
-  \num{100000}  = \texteTrouLignes{\num{1e5}\\}
-  \num{1}       = \texteTrouLignes{\num{1e0}\\}
-  \num{9000000} = \texteTrouLignes{\num{9e6}}
-}{
-  \num{0,1}     = \texteTrouLignes{\num{1e-1}\\}
-  \num{0,0006}  = \texteTrouLignes{\num{1e-4}\\}
-  \num{0,00705} = \texteTrouLignes{\num{7,05e-3}}
-}
+\numeroQuestion Écrire les nombres suivants comme le produit d'un nombre compris entre 0 et 9 et d'une puissance de 10 \exemple \num{600} = \num{6,00e2} :
+\begin{multicols}{2}
+  \begin{listePoints}
+    \item \num{100000}  = \texteTrouLignes{\num{1e5}\\}
+    \item \num{1}       = \texteTrouLignes{\num{1e0}\\}
+    \item \num{9000000} = \texteTrouLignes{\num{9e6}}
+    \item \num{0,1}     = \texteTrouLignes{\num{1e-1}\\}
+    \item \num{0,0006}  = \texteTrouLignes{\num{1e-4}\\}
+    \item \num{0,00705} = \texteTrouLignes{\num{7,05e-3}}
+  \end{listePoints}
+\end{multicols}
 
 
 %%
-\vspace*{-8pt}
+\pasCorrection{\vspace*{-8pt}}
 \begin{doc}{Règles de calculs}{doc:A1_calcul_puissance_10}
   Il y a deux règles de calculs à connaître pour les puissances de 10
-  \begin{encart}
+  \begin{importants}
     \pointCyan $10^a \times 10^b = 10^{a + b}$ \\   
     \pointCyan $10^{-a} = \dfrac{1}{10^a}$
-  \end{encart}
+  \end{importants}
 \end{doc}
 
 
-\numeroQuestion Réaliser les calculs suivants :\\[8pt]
-\separationBlocs{
-  $10^2 \times 10^1 =$ \texteTrouLignes{$10^{2 + 1} = 10^3 = 1000$\\}
-  $10^4 \times 10^{-3} =$ \texteTrouLignes{$10^{4 - 3} = 10^1 = 10$}
-}{
-  $10^{-2} \times 10^{-3} =$ \texteTrouLignes{$10^{-2 - 3} = 10^{-5} = 0,00001$\\}
-  $10^{-1} \times 10^{-5} \times 10^4 =$ \texteTrouLignes{$10^{-1 - 5 + 4} = 10^{-2} = 0,01$}
-}
+\numeroQuestion Réaliser les calculs suivants :
+\begin{multicols}{2}
+  \begin{listePoints}
+    \item $10^2 \times 10^1 =$ \texteTrouLignes{$10^{2 + 1} = 10^3 = 1000$\\}
+    \item $10^4 \times 10^{-3} =$ \texteTrouLignes{$10^{4 - 3} = 10^1 = 10$}
+    \item $10^{-2} \times 10^{-3} =$ \texteTrouLignes{$10^{-2 - 3} = 10^{-5} = 0,00001$\\}
+    \item $10^{-1} \times 10^{-5} \times 10^4 =$ \texteTrouLignes{$10^{-1 - 5 + 4} = 10^{-2} = 0,01$}
+  \end{listePoints}
+\end{multicols}
 
 
 %%
-\vspace*{-8pt}
+\pasCorrection{\vspace*{-8pt}}
 \begin{doc}{Moyen mnémotechnique}{doc:A1_decalage_virgule}
   \begin{listePoints}
     \item Si je décale la virgule de 1 rang vers la gauche, alors
@@ -86,8 +88,9 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 \vspace*{-36pt}
 \titreSection{Notation scientifique}
 
+\vspace*{-12pt}
 \begin{doc}{La notation scientifique}{doc:A1_notation_scientifique}
-  \begin{encart}
+  \begin{importants}
   La \important{notation scientifique} d'une quantité se présente de la façon suivante :
   % Textes
   \begin{center}
@@ -105,24 +108,28 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
     \draw [couleurSec, thick] (5.5,-0.25) circle [radius=0.3] node {$,$};
     \draw [couleurSec, thick] (9.65,0) circle [radius=0.3] node {$\times$};
   \end{tikzpicture}
-  \end{encart}
+  \end{importants}
 \end{doc}
 
-\numeroQuestion Écrire les quantités suivantes en notation scientifique : \\[8pt]
-\separationBlocs{
-  \qty{288}{\hour}      = \texteTrouLignes{\qty{2,88e2}{\hour}\\}
-  \qty{1}{\m}           = \texteTrouLignes{\qty{1e0}{\m}\\}
-  \qty{756 864 000}{\s} = \texteTrouLignes{\qty{7,56 864 000}{8\s}\\}
-  \qty{638}{\newton}    = \texteTrouLignes{\qty{6,38e2}{\newton}}
-}{
-  \qty{0,01}{\percent} = \texteTrouLignes{\qty{1,0e-2}{\percent}\\}
-  \qty{8960}{\g/\l}    = \texteTrouLignes{\qty{8,96e3}{\g/\l}\\}
-  \qty{0,436}{\s}      = \texteTrouLignes{\qty{4,36e-1}{\s}\\}
-  \qty{0,336}{\s}      = \texteTrouLignes{\qty{3,36e-1}{\s}}
-}
+\numeroQuestion Écrire les quantités suivantes en notation scientifique :
+\vspace*{-4pt}
+\begin{multicols}{2}
+  \begin{listePoints}
+    \item \qty{288}{\hour}      = \texteTrouLignes{\qty{2,88e2}{\hour}\\}
+    \item \qty{1}{\m}           = \texteTrouLignes{\qty{1e0}{\m}\\}
+    \item \qty{756 864 000}{\s} = \texteTrouLignes{\qty{7,56 864 000}{8\s}\\}
+    \item \qty{638}{\newton}    = \texteTrouLignes{\qty{6,38e2}{\newton}}
+    \item \qty{0,01}{\percent} = \texteTrouLignes{\qty{1,0e-2}{\percent}\\}
+    \item \qty{8960}{\g/\l}    = \texteTrouLignes{\qty{8,96e3}{\g/\l}\\}
+    \item \qty{0,436}{\s}      = \texteTrouLignes{\qty{4,36e-1}{\s}\\}
+    \item \qty{0,336}{\s}      = \texteTrouLignes{\qty{3,36e-1}{\s}}
+  \end{listePoints}
+\end{multicols}
+\vspace*{-4pt}
 
-\attention Il faut \textbf{toujours} préciser \textbf{l'unité} d'une grandeur quand on réalise un calcul !
+\attention Il faut \important{toujours} préciser \important{l'unité} d'une grandeur quand on réalise un calcul !
 Les grandeurs sans unités sont rares en physique-chimie.
+
 
 %%%%
 \titreSection{Le système international de mesure}
@@ -136,9 +143,9 @@ Les grandeurs sans unités sont rares en physique-chimie.
 
   En physique on est amené à décrire des \textbf{échelles} très variées, par exemple quand on mesure la taille d'un cheveu ($\sim \qty{e-6}{\metre}$) ou la taille d'une planète ($\sim \qty{e7}{\metre})$.
   
-  \begin{encart}
+  \begin{importants}
     Pour simplifier la manipulation des grandeurs éloignées de l'unité, chaque \important{puissance de \num{1000}} est associée à un \important{préfixe} dans le système international.
-  \end{encart}
+  \end{importants}
 
   \begin{center}
     \begin{tblr}{

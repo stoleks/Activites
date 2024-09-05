@@ -34,18 +34,28 @@
 
 \numeroQuestion 
 Schématiser les 3 étapes de l'expérience réalisée.
-\vspace*{200pt}
+\pasCorrection{\vspace*{200pt}}
+\correction{
+  Schéma du ballon sur la balance avec $m_1$,
+  schéma du ballon vidé dans une éprouvette graduée avec l'air qui prend la place de l'eau,
+  schéma du ballon sur la balance avec $m_2$.
+}
 
 \numeroQuestion
 Remplir le tableau ci-dessous 
 \begin{tableau}{|c |c |c |c |}
   Grandeur & Masse du ballon plein $m_1 $ & Masse du ballon dégonflé $m_2$ & Volume d'air expulsé $V$ \\
-  \SetCell{couleurPrim!10} Valeur & \vphantom{$\dfrac{1}{2}$} & &
+  \SetCell{couleurPrim!10} Valeur & \correction{\qty{483,2}{\g}} & \correction{\qty{481,4}{\g}} & \correction{\qty{1,5}{\litre}}
 \end{tableau}
 
 \question{
   Calculer la masse volumique mesurée $\rho_\text{mes}(\text{air})$.
-}{}{3}
+}{
+  La masse d'air expulsée est $m = m_2 - m_1 = \qty{1,8}{\g}$, soit une masse volumique
+  \begin{equation*}
+    \rho = \dfrac{m}{V} = \frac{1,8}{1,5} \unit{\g\per\litre} = \qty{1,2}{\g\per\litre}
+  \end{equation*}
+}{3}
 
 %%
 \begin{doc}{Masse volumique d'un mélange}{doc:A2_composition_atmo}
@@ -60,7 +70,12 @@ Remplir le tableau ci-dessous
 \newpage
 \question{
   Rappeler les fractions volumique des gaz composant l'air (\chemfig{O_2}, \chemfig{N_2}, \chemfig{CO_2}, \chemfig{Ar}).
-}{}{2}
+}{
+  $p_v(\chemfig{O_2})  = \qty{21}{\percent}$, 
+  $p_v(\chemfig{N_2})  = \qty{78}{\percent}$, 
+  $p_v(\chemfig{CO_2}) = \qty{0,04}{\percent}$, 
+  $p_v(\chemfig{Ar})   = \qty{0,9 }{\percent}$, 
+}{2}
 
 \begin{doc}{Masse volumique des gaz composant l'air}{doc:A2_masse_volumique_air}
   \textbf{Données :}
@@ -75,10 +90,15 @@ Remplir le tableau ci-dessous
 
 %%%%
 \question{
-  Calculer la masse volumique théorique de l'air $\rho_\text{theo}(\text{air})$.
+  Calculer la masse volumique théorique de l'air $\rho_\text{theo} (\text{air})$.
 }{
+  $\rho_\text{theo} (\text{air}) 
+  = (0,21\times 1,35 + 0,78\times 1,18 + 0,0004\times 1.87 + 0.009\times 1.78) \unit{\g/\litre}
+  = \qty{1.22}{\g/\litre}$
 }{4}
 
 \question{
   Comparer la valeur théorique et la valeur mesurée. Est-ce qu'elles sont égales ? Est-ce qu'elles sont cohérentes ?
-}{}{2}
+}{
+  On trouve deux valeurs légèrement différentes, \qty{1,2}{\g/\litre} et \qty{1,22}{\g/\litre}, mais elles sont cohérentes avec la précision des mesures réalisées pendant l'expérience.
+}{2}
