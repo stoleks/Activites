@@ -2,7 +2,7 @@
 
 %%%% paramètres généraux et commande prédéfinies
 \input{_parametres}
-% \modeCorrection % correction (décommenté)
+\modeCorrection % correction (décommenté)
 
 %%%% pour l'en-tête
 \renewcommand{\annee}{2023-2024}
@@ -18,10 +18,17 @@
   % \input{commun/securite_chimie}
   % \input{commun/regle_vie_classe}
   % \includepdf[pages=26]{commun/papier_millimetre.pdf}
+  % \input{commun/progression_annuelle}
 
 
   %%%% Matériel TP
   % \input{preparationTP/ficheTP_dosage_lait}
+
+
+  %% Divers
+  % \qrcode{https://nosgestesclimat.fr/tutoriel}
+  % \input{stssTerminale/equation_molecule}
+
   
   %%%% Terminale ST2S
   % \input{stssTerminale/A1_analyse_dimensionnelle}
@@ -104,6 +111,7 @@
   % \input{stssPremiere/C6_lumiere_vision/visiTP1_formation_image}
   % \input{stssPremiere/C6_lumiere_vision/visiTP2_correction_oeil}
   %% Biomolécules
+  % \input{stssPremiere/C7_biomolecules/planDeTravail_biomolecules}
   % \input{stssPremiere/C7_biomolecules/biomA1_liaison_moleculaire}
   % \input{stssPremiere/C7_biomolecules/biomA2_representation_organique}
   % \input{stssPremiere/C7_biomolecules/biomA3_famille_organique}
@@ -122,17 +130,17 @@
 
 
   %%%% Seconde
-  % \input{seconde/A1_notation_scientifique} % début
-  % \input{seconde/TP1_secu_labo} % début
+  \input{seconde/A1_notation_scientifique} % début
+  \input{seconde/TP1_secu_labo} % début
   % \input{seconde/A2_analyse_dimensionnelle} % début mécanique
   % \input{seconde/A3_ordres_grandeurs} % début atome
   %% Corps purs et mélanges
-  % \input{seconde/C1_corps_melanges/corpTP1_cocktail_cuisine}
-  % \input{seconde/C1_corps_melanges/corpTP2_repression_fraude}
-  % \input{seconde/C1_corps_melanges/corpTP3_identification}
-  % \input{seconde/C1_corps_melanges/corpA1_composition_melange}
-  % \input{seconde/C1_corps_melanges/corpTP4_CCM}
-  % \input{seconde/C1_corps_melanges/corpA2_densite_air}
+  \input{seconde/C1_corps_melanges/corpTP1_cocktail_cuisine}
+  \input{seconde/C1_corps_melanges/corpTP2_repression_fraude}
+  \input{seconde/C1_corps_melanges/corpTP3_identification}
+  \input{seconde/C1_corps_melanges/corpA1_composition_melange}
+  \input{seconde/C1_corps_melanges/corpTP4_CCM}
+  \input{seconde/C1_corps_melanges/corpA2_densite_air}
   %% Solutions
   % \input{seconde/C2_solution/soluTP1_dissolution_dilution}
   % \input{seconde/C2_solution/soluA1_dissolution}
@@ -150,7 +158,7 @@
   % \input{seconde/C3_mecanique/mecaA7_exercices} % 2h
   % \input{seconde/C3_mecanique/mecaTP3_poids} % 2h
   %% Atome
-  \input{seconde/C4_atome/PlanDeTravail_atome}
+  % \input{seconde/C4_atome/PlanDeTravail_atome}
   % \input{seconde/C4_atome/AtomA1_fabriquer_atome}
   % \input{seconde/C4_atome/AtomA2_taille_atome}
   % \input{seconde/C4_atome/AtomA3_modele_atome}
@@ -184,6 +192,4 @@
   % \input{seconde/C9_signaux_capteurs/ElecAE1_loi_ohm}
   % \input{seconde/C9_signaux_capteurs/ElecA1_maille_noeud}
   % \input{seconde/C9_signaux_capteurs/ElecAE2_son_vitesse}
-  
-  % \qrcode{https://nosgestesclimat.fr/tutoriel}
 \end{document}

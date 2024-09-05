@@ -211,3 +211,28 @@
 \definesubmol\fructoseTopo{
   *6(-(-OH) -(-OH) -(-[3]OH) (-[0]-[1]OH) -O- -(-OH))
 }
+
+%% Alanine et Glycine dans des polypetptides
+\definesubmol\alanine{
+  - CH (-[-3] CH_3) - C (=[3] O) -
+}
+\definesubmol\glycine{
+  - CH_2 - C (=[3] O) -
+}
+
+%% Hormones
+\definesubmol\testosterone{
+  O=[1] *6(-= % 1er cycle
+    *6(--- % 2eme cycle
+      *6(- % 3eme cycle
+        *5(--- 
+          (-[:70] OH) % alcool
+        - (-[:90]) -) % 4eme
+      ----) % 3eme
+    ---) % 2eme
+  - (-[:90]) ---) % 1er
+}
+\definesubmol\creatinine{
+  O= *5(-N (-[-3,0.5]H) -(=NH) -N (-) --)
+  %O= *5(-NH -[,2]C(=NH) -N (-CH_3) -CH_2 -C)
+}
