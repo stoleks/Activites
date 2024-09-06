@@ -32,25 +32,27 @@
 
 \numeroQuestion Écrire les nombres correspondant aux puissances de 10 suivantes : \\
 $\num{e2}  =$ \texteTrou[0.1]{\num{100}} \qq{}
-$\num{e5}  =$ \texteTrou[0.2]{\num{100000}} \qq{}
+$\num{e5}  =$ \texteTrou[0.1]{\num{100000}} \qq{}
 $\num{e-3} =$ \texteTrou[0.1]{\num{0,001}} \qq{}
 $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 
 \numeroQuestion Écrire les nombres suivants comme le produit d'un nombre compris entre 0 et 9 et d'une puissance de 10 \exemple \num{600} = \num{6,00e2} :
+\pasCorrection{\vspace*{-4pt}}
 \begin{multicols}{2}
   \begin{listePoints}
-    \item \num{100000}  = \texteTrouLignes{\num{1e5}\\}
-    \item \num{1}       = \texteTrouLignes{\num{1e0}\\}
+    \setlength\itemsep{-4pt}
+    \item \num{100000}  = \texteTrouLignes{\num{1e5}}
+    \item \num{1}       = \texteTrouLignes{\num{1e0}}
     \item \num{9000000} = \texteTrouLignes{\num{9e6}}
-    \item \num{0,1}     = \texteTrouLignes{\num{1e-1}\\}
-    \item \num{0,0006}  = \texteTrouLignes{\num{1e-4}\\}
+    \item \num{0,1}     = \texteTrouLignes{\num{1e-1}}
+    \item \num{0,0006}  = \texteTrouLignes{\num{1e-4}}
     \item \num{0,00705} = \texteTrouLignes{\num{7,05e-3}}
   \end{listePoints}
 \end{multicols}
 
 
 %%
-\pasCorrection{\vspace*{-8pt}}
+\pasCorrection{\vspace*{-26pt}}
 \begin{doc}{Règles de calculs}{doc:A1_calcul_puissance_10}
   Il y a deux règles de calculs à connaître pour les puissances de 10
   \begin{importants}
@@ -61,20 +63,23 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 
 
 \numeroQuestion Réaliser les calculs suivants :
+\pasCorrection{\vspace*{-4pt}}
 \begin{multicols}{2}
   \begin{listePoints}
-    \item $10^2 \times 10^1 =$ \texteTrouLignes{$10^{2 + 1} = 10^3 = 1000$\\}
+    \setlength\itemsep{-4pt}
+    \item $10^2 \times 10^1 =$ \texteTrouLignes{$10^{2 + 1} = 10^3 = 1000$}
     \item $10^4 \times 10^{-3} =$ \texteTrouLignes{$10^{4 - 3} = 10^1 = 10$}
-    \item $10^{-2} \times 10^{-3} =$ \texteTrouLignes{$10^{-2 - 3} = 10^{-5} = 0,00001$\\}
+    \item $10^{-2} \times 10^{-3} =$ \texteTrouLignes{$10^{-2 - 3} = 10^{-5} = 0,00001$}
     \item $10^{-1} \times 10^{-5} \times 10^4 =$ \texteTrouLignes{$10^{-1 - 5 + 4} = 10^{-2} = 0,01$}
   \end{listePoints}
 \end{multicols}
 
 
 %%
-\pasCorrection{\vspace*{-8pt}}
+\pasCorrection{\vspace*{-26pt}}
 \begin{doc}{Moyen mnémotechnique}{doc:A1_decalage_virgule}
   \begin{listePoints}
+    \setlength\itemsep{-4pt}
     \item Si je décale la virgule de 1 rang vers la gauche, alors
     \texteTrou[0.25]{je réduis} de 1 unité la puissance de dix. \texteTrou{J'ai divisé par 10.}
     \item Si je décale la virgule de 1 rang vers la droite, alors
@@ -112,7 +117,7 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 \end{doc}
 
 \numeroQuestion Écrire les quantités suivantes en notation scientifique :
-\vspace*{-4pt}
+\vspace*{-8pt}
 \begin{multicols}{2}
   \begin{listePoints}
     \item \qty{288}{\hour}      = \texteTrouLignes{\qty{2,88e2}{\hour}\\}
@@ -125,7 +130,7 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
     \item \qty{0,336}{\s}      = \texteTrouLignes{\qty{3,36e-1}{\s}}
   \end{listePoints}
 \end{multicols}
-\vspace*{-4pt}
+\vspace*{-16pt}
 
 \attention Il faut \important{toujours} préciser \important{l'unité} d'une grandeur quand on réalise un calcul !
 Les grandeurs sans unités sont rares en physique-chimie.
@@ -135,6 +140,7 @@ Les grandeurs sans unités sont rares en physique-chimie.
 \titreSection{Le système international de mesure}
 
 %%
+\vspace*{-12pt}
 \begin{doc}{Le système international}{doc:A1_SI}
   Pour comparer des grandeurs entre elles, il faut les exprimer avec les \important{mêmes unités de mesures.} % exemple centime et euros
   

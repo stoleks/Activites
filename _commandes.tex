@@ -311,7 +311,11 @@
 
 
 %%%% chapitre, section et sous-section
-\newcommand{\titreChapitre}[1]{
+\newcommand{\chapitre}[2]{ % Réglage du titre du chapitre
+  \setcounter{activiteNum}{0}
+  Chapitre \arabic{section} -- #1
+}
+\newcommand{\titreChapitre}[1]{ % Affichage du titre du chapitre
   \titre{Chapitre \arabic{section} : #1}
 }
 \newcommand{\titrePartie}[1]{
@@ -390,7 +394,7 @@
     \hfill \footnotesize #2
   }
 }
-\NewDocumentCommand{\enTete}{o m o s}{
+\NewDocumentCommand{\enTete}{o m O{0} s}{
   % reset des compteurs
   \newpage
   \setcounter{section}{#3}

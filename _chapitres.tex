@@ -1,28 +1,23 @@
 %%%% Ce fichier sert à déclarer les titres des chapitres des différents niveaux
 
 %% Commun
-\newcommand{\chapitre}[2]{
-  Chapitre #1 -- #2
-  \setcounter{section}{#1}
-  \setcounter{activiteNum}{0}
-}
-\newcommand{\methode} {\chapitre{0}{Outils pratiques}}
+\newcommand{\methode} {\chapitre{Outils pratiques}}
 
 %% Seconde
 %%%% Chapitre
 \newcommand{\snd}{Seconde}
-\newcommand{\sndCorp} {\chapitre{1}{Corps purs et mélanges}}
-\newcommand{\sndSolu} {\chapitre{2}{Solutions}}
-\newcommand{\sndMouv} {\chapitre{3}{Mouvement et interactions}}
-\newcommand{\sndAtom} {\chapitre{4}{Structure de l'atome}}
-\newcommand{\sndMole} {\chapitre{5}{Des atomes à la matière}}
-\newcommand{\sndLumi} {\chapitre{6}{Ondes lumineuses et optique}}
-\newcommand{\sndTran} {\chapitre{7}{Transformations de la matière}}
-\newcommand{\sndChim} {\chapitre{8}{Transformations chimiques}}
-\newcommand{\sndSign} {\chapitre{9}{Signaux et capteurs}}
+\newcommand{\sndCorp} {\chapitre{Corps purs et mélanges}}
+\newcommand{\sndSolu} {\chapitre{Solutions}}
+\newcommand{\sndMouv} {\chapitre{Mouvement et interactions}}
+\newcommand{\sndAtom} {\chapitre{Structure de l'atome}}
+\newcommand{\sndMole} {\chapitre{Des atomes à la matière}}
+\newcommand{\sndLumi} {\chapitre{Ondes lumineuses et optique}}
+\newcommand{\sndTran} {\chapitre{Transformations de la matière}}
+\newcommand{\sndChim} {\chapitre{Transformations chimiques}}
+\newcommand{\sndSign} {\chapitre{Signaux et capteurs}}
 
 %%%% en-tête correspondant
-\newcommand{\teteSndMeth} {\enTete[\snd]{\methode}[0]}
+\newcommand{\teteSndMeth} {\enTete[\snd]{\methode}}
 \newcommand{\teteSndCorp} {\enTete[\snd]{\sndCorp}[1]}
 \newcommand{\teteSndSolu} {\enTete[\snd]{\sndSolu}[2]}
 \newcommand{\teteSndMouv} {\enTete[\snd]{\sndMouv}[3]}
@@ -37,20 +32,20 @@
 %% Première ST2S
 %%%% Chapitres
 \newcommand{\premStss}{Première ST2S}
-\newcommand{\premStssChim} {\chapitre{1} {Sécurité chimique dans l'habitat}}
-\newcommand{\premStssVisi} {\chapitre{2} {Propagation de la lumière et vision}}
-\newcommand{\premStssRedo} {\chapitre{3} {Antiseptique et désinfectant, oxydoréduction}}
-\newcommand{\premStssLumi} {\chapitre{4} {Les infrarouges et leurs applications}}
-\newcommand{\premStssStru} {\chapitre{5} {Molécules d'intérêt biologique}}
-\newcommand{\premStssBiom} {\chapitre{6} {Biomolécules dans l’organisme}}
-\newcommand{\premStssRout} {\chapitre{7} {Sécurité routière}}
-\newcommand{\premStssAlim} {\chapitre{8} {Gestion des ressources naturelles et alimentation}}
-\newcommand{\premStssElec} {\chapitre{9} {Sécurité électrique dans l'habitat}}
-\newcommand{\premStssPres} {\chapitre{10}{Propriétés des fluides et pression sanguine}}
-\newcommand{\premStssSono} {\chapitre{11}{Ondes sonores et audition}}
+\newcommand{\premStssChim} {\chapitre{Sécurité chimique dans l'habitat}}
+\newcommand{\premStssVisi} {\chapitre{Propagation de la lumière et vision}}
+\newcommand{\premStssRedo} {\chapitre{Antiseptique et désinfectant, oxydoréduction}}
+\newcommand{\premStssLumi} {\chapitre{Les infrarouges et leurs applications}}
+\newcommand{\premStssStru} {\chapitre{Molécules d'intérêt biologique}}
+\newcommand{\premStssBiom} {\chapitre{Biomolécules dans l’organisme}}
+\newcommand{\premStssRout} {\chapitre{Sécurité routière}}
+\newcommand{\premStssAlim} {\chapitre{Gestion des ressources naturelles et alimentation}}
+\newcommand{\premStssElec} {\chapitre{Sécurité électrique dans l'habitat}}
+\newcommand{\premStssPres} {\chapitre{Propriétés des fluides et pression sanguine}}
+\newcommand{\premStssSono} {\chapitre{Ondes sonores et audition}}
 
 %%%% en-tête
-\newcommand{\tetePremStssMeth} {\enTete[\premStss]{\methode}     [0]}
+\newcommand{\tetePremStssMeth} {\enTete[\premStss]{\methode}     }
 \newcommand{\tetePremStssChim} {\enTete[\premStss]{\premStssChim}[1]}
 \newcommand{\tetePremStssVisi} {\enTete[\premStss]{\premStssVisi}[2]}
 \newcommand{\tetePremStssRedo} {\enTete[\premStss]{\premStssRedo}[3]}
@@ -67,24 +62,24 @@
 %% Terminale ST2S
 %%%% Chapitres
 \newcommand{\termStss}{Terminale ST2S}
-\newcommand{\termStssOrga} {\chapitre{1}{Représentation des molécules organiques}}
-\newcommand{\termStssAlim} {\chapitre{2}{Sécurité physico-chimique dans l'alimentation}}
-\newcommand{\termStssImag} {\chapitre{3}{La physique de l'imagerie médicale}}
-\newcommand{\termStssBiom} {\chapitre{4}{Biomolécules et alimentation}}
-\newcommand{\termStssMedi} {\chapitre{5}{De la molécule au médicament}}
-\newcommand{\termStssEnvi} {\chapitre{6}{Sécurité chimique dans l'environnement}}
-\newcommand{\termStssDosa} {\chapitre{7}{Analyser la composition d'un milieu}}
-\newcommand{\termStssRout} {\chapitre{8}{Sécurité routière}}
-\newcommand{\termStssCosm} {\chapitre{9}{L'usage responsable des cosmétiques}}
+\newcommand{\termStssOrga} {\chapitre{Représentation des molécules organiques}}
+\newcommand{\termStssAlim} {\chapitre{Sécurité physico-chimique dans l'alimentation}}
+\newcommand{\termStssImag} {\chapitre{La physique de l'imagerie médicale}}
+\newcommand{\termStssBiom} {\chapitre{Biomolécules et alimentation}}
+\newcommand{\termStssMedi} {\chapitre{De la molécule au médicament}}
+\newcommand{\termStssEnvi} {\chapitre{Sécurité chimique dans l'environnement}}
+\newcommand{\termStssDosa} {\chapitre{Analyser la composition d'un milieu}}
+\newcommand{\termStssRout} {\chapitre{Sécurité routière}}
+\newcommand{\termStssCosm} {\chapitre{L'usage responsable des cosmétiques}}
 
 %%%% en-tête
-\newcommand{\teteTermStssMeth} {\enTete[\termStss]{\methode}     [0]}
+\newcommand{\teteTermStssMeth} {\enTete[\termStss]{\methode}}
 \newcommand{\teteTermStssOrga} {\enTete[\termStss]{\termStssOrga}[1]}
-\newcommand{\teteTermStssRout} {\enTete[\termStss]{\termStssRout}[2]}
-\newcommand{\teteTermStssAlim} {\enTete[\termStss]{\termStssAlim}[3]}
-\newcommand{\teteTermStssEnvi} {\enTete[\termStss]{\termStssEnvi}[4]}
-\newcommand{\teteTermStssImag} {\enTete[\termStss]{\termStssImag}[5]}
-\newcommand{\teteTermStssDosa} {\enTete[\termStss]{\termStssDosa}[6]}
-\newcommand{\teteTermStssBiom} {\enTete[\termStss]{\termStssBiom}[7]}
-\newcommand{\teteTermStssMedi} {\enTete[\termStss]{\termStssMedi}[8]}
+\newcommand{\teteTermStssRout} {\enTete[\termStss]{\termStssRout}[8]}
+\newcommand{\teteTermStssAlim} {\enTete[\termStss]{\termStssAlim}[2]}
+\newcommand{\teteTermStssEnvi} {\enTete[\termStss]{\termStssEnvi}[6]}
+\newcommand{\teteTermStssImag} {\enTete[\termStss]{\termStssImag}[3]}
+\newcommand{\teteTermStssDosa} {\enTete[\termStss]{\termStssDosa}[7]}
+\newcommand{\teteTermStssBiom} {\enTete[\termStss]{\termStssBiom}[4]}
+\newcommand{\teteTermStssMedi} {\enTete[\termStss]{\termStssMedi}[5]}
 \newcommand{\teteTermStssCosm} {\enTete[\termStss]{\termStssCosm}[9]}
