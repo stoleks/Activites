@@ -1,18 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% quelque couleurs
-\definecolor{vertSombre}  {RGB} {  0,  95,  17}
-\definecolor{vertForet}   {RGB} {124, 179,  66}
-%
-\definecolor{jauneSombre} {RGB} {213, 145,   2}
-\definecolor{orangeSombre}{RGB} {174,  82,   0}
-\definecolor{cyanSombre}  {RGB} {  0, 140, 128}
-\definecolor{bleuPale}    {RGB} { 39,  76, 167}
-%
-\definecolor{jauneClair} {RGB} {218, 173,   0}
-\definecolor{rougeSombre}{RGB} {148,  31,   0}
-\definecolor{rougeClair} {RGB} {224,  39,  34}
-
-%%% quelques couleurs dérivées des couleurs choisie
+%%% couleurs dérivées des couleurs choisie
 \newcommand{\couleurPrimSombre}{couleurPrim!60!black}
 
 %%%% rectangle coloré
@@ -826,9 +813,10 @@
 
 %%%% problematique
 \newcommand{\problematique}[1]{
-  \hspace{8pt}
-  \flecheLongue
-  \textbf{#1}
+  \hspace*{-12pt}
+  \flecheLongue[couleurTer]
+  \hspace*{-12pt}
+  \important[couleurTer]{#1}
 }
 
 %%%% liste avec chiffre
