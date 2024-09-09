@@ -13,7 +13,7 @@
 
 \begin{contexte}
   Les triglycérides sont une source importante d'énergie pour notre organisme.
-  La dégradation des acides gras constituants les triglycérides permet de produire de \important{l'adénosine triphosphate}, ou \important{ATP}, qui fournit l'énergie nécessaire aux réactions chimiques du métabolisme cellulaire.
+  La dégradation des acides gras constituants les triglycérides permet de produire de \important{l'adénosine triphosphate,} ou \important{ATP,} qui fournit l'énergie nécessaire aux réactions chimiques du métabolisme cellulaire.
   
   \problematique{
     Quelle réaction chimique permet de séparer les triglycéride en acide gras ?  
@@ -29,19 +29,21 @@
 
   L'oléine est un triglycéride constituant \qty{80}{\percent} de l'huile d'olive.
   
-  Au cours de son absorption par l’organisme, \textbf{l’oléine} est \important{hydrolysée} à l'aide de la lipase pour former de \textbf{l'acide
+  Au cours de son absorption par l’organisme, \important{l’oléine} est \important{hydrolysée} à l'aide de la lipase pour former de \important{l'acide
 oléique} selon l'équation suivante :
   \begin{center}
-    \begin{tblr}{colspec = {c c c}}
-      \SetCell[r=4]{c, m} \chemfig[atom sep = 14pt]{!\trioleine} & 
-      \SetCell[r=5]{c, m} \reaction & 
-      \chemfig[atom sep = 14pt]{H!\oleique} \\
-      %
-      & & + \chemfig[atom sep = 14pt]{H!\oleique} \\
-      & & + \chemfig[atom sep = 14pt]{H!\oleique} \\
-      & & + \chemfig[atom sep = 16pt]{!\glycerol} \\
-      + \texteTrou{3} \chemfig{H_2O} & & 
-    \end{tblr}
+    \separationTroisBlocs{
+      \chemfig[atom sep = 14pt]{!\trioleine}
+      + 3 \texteTrou[0.3]{\chemfig{H_2O}}
+    }[0.3]{
+      \reaction
+    }[0.1]{
+      \centering
+      \chemfig[atom sep = 14pt]{H!\oleique}
+      + \chemfig[atom sep = 14pt]{H!\oleique} 
+      + \chemfig[atom sep = 14pt]{H!\oleique}
+      + \chemfig{!\glycerol}
+    }[0.4]
   \end{center}
   La masse molaire de l'oléine est $M_\text{oléine} = \qty{884}{\g\per\mole}$.
 \end{doc}
@@ -77,8 +79,19 @@ L'organisme hydrolyse une masse d'oléine $m_\text{oléine} = \qty{8,84}{\g}$.
 \begin{doc}{La palmitine}{doc:A2_hydrolyse_palmitine}
   La palmitine est un des triglycérides les plus présents chez les être vivants, animaux ou végétaux.
   \begin{center}
-    \chemfig[atom sep = 18pt]{[:-60] !\tripalmitine} \\[8pt]
-    Formule topologique de la palmitine
+    \separationBlocs{
+      \centering
+      \chemfig[atom sep = 18pt]{[:-60] !\tripalmitine} \\[8pt]
+      Formule topologique de la palmitine
+    }[0.6]{
+      \chemfig{
+        H C (!\teteAcideDev C_{15} H_{31}) 
+        (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{15} H_{31}))
+        -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{15} H_{31})
+      } \\[4pt]
+      
+      Formule semi-développée de la palmitine
+    }[0.3]
   \end{center}
 \end{doc}
 

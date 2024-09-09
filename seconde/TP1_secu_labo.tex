@@ -20,10 +20,12 @@
 
   %% Tableau avec les pictogrammes
   \NewDocumentCommand{\pictoTableau}{m O{65}}{
-    \hspace{16pt} \image{0.45}{images/securite/picto_#1} \vAligne{-#2pt}
+    \hspace{2pt}
+    \image{0.7}{images/securite/picto_#1} \vAligne{-#2pt}
   }
   \begin{tblr}{
-    colspec = {|X[-1, h, m] | X[4, m] |}, hlines,
+    colspec = {Q[h, m, wd = 0.15\linewidth] Q[m, wd = 0.8\linewidth]},
+    hlines, vlines,
     row{1} = {couleurPrim!20, c}
   }
     \textbf{Pictogramme} & \textbf{Signification} \\

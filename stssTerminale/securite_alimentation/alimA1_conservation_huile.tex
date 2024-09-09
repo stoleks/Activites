@@ -2,14 +2,17 @@
 \teteTermStssAlim
 
 %%%% titre
+\vspace*{-36pt}
 \numeroActivite{1}
 \titreActivite{Conservation d'huiles végétales}
+\vspace*{-12pt}
 
 
 %%%% objectifs
 \begin{objectifs}
-  \item Revoir ce qu'est un triglycéride
-  \item Connaître les facteurs responsables de la dégradation d'une huile
+  \item Revoir la structure des acides gras.
+  \item Revoir la définition d'un triglycéride.
+  \item Connaître les facteurs responsables de la dégradation d'une huile.
 \end{objectifs}
 
 \begin{contexte}
@@ -25,7 +28,7 @@
 %%%% docs
 \begin{doc}{Les huiles végétales}{doc:A1_huiles_vegetales}
   \begin{importants}
-    Une huile végétale est composée de \textbf{triesters de glycérol} et \textbf{d'acides gras} \important{saturés} ou \important{insaturés.}
+    Une huile végétale est composée de \important{triesters de glycérol} et \important{d'acides gras} \important{saturés} ou \important{insaturés.}
   \end{importants}
   
   \begin{wrapfigure}{r}{0.22\linewidth}
@@ -34,8 +37,8 @@
     {\small Glycérol}
   \end{wrapfigure}
   
-  Par exemple, l'huile de coco est composée majoritairement de triesters \textbf{d'acide laurique} et \textbf{d'acide myristique}, et en quantité plus faible, d'autres acides tels que \textbf{l'acide oléique.}
-  L'huile d'amande douce est composée en grande majorité de triesters \textbf{acides oléique} et \textbf{linoléique}.
+  Par exemple, l'huile de coco est composée majoritairement de triesters \important{d'acide laurique} et \important{d'acide myristique}, et en quantité plus faible, d'autres acides tels que \important{l'acide oléique.}
+  L'huile d'amande douce est composée en grande majorité de triesters \important{acides oléique} et \important{linoléique.}
   Comme elle rancit facilement, contrairement à l'huile de coco, il est nécessaire de l'acheter en petite quantité.
   
   \begin{center}
@@ -66,6 +69,8 @@
   À partir des modèles moléculaires des acides gras représentés dans le document~\ref{doc:A1_huiles_vegetales}, justifier le nom d'acide donné à ces espèces.
 }{}{2}
 
+\newpage
+\vspace*{-30pt}
 \question{
   Classer les acides gras du document~\ref{doc:A1_huiles_vegetales} en acide gras saturés et insaturés. Justifier.
 }{}{4}
@@ -82,7 +87,7 @@
     Certains facteurs accélèrent cette oxydation comme l’exposition au dioxygène de l’air, à des température élevée, à la lumière (UV), etc.
   \end{importants}
   \begin{importants}
-    Au contraire certains facteur ralentissent cette oxydation, comme \texteTrouLignes[1]{des température faibles, l'obscurité et l'absence de dioxygène, etc.}
+    Au contraire certains facteur ralentissent cette oxydation, comme \texteTrouLignes[2]{des température faibles, l'obscurité, l'absence de dioxygène, etc.}
   \end{importants}
 \end{doc}
 
@@ -112,6 +117,7 @@
   \begin{center}
     \chemfig{R_1- CH= CH- R_2} + \chemfig{I_2} \reaction \chemfig{R_1- CHI- CHI- R_2}
   \end{center}
+  C'est-à-dire que chaque double liaison réagit avec une molécule de diiode.
 
   \begin{importants}
     L'indice d'iode permet de déterminer le degré d'insaturation d'un acide gras.
@@ -132,21 +138,31 @@
 }{}{2}
 
 \question{
-  Une quantité de matière $n = \qty{0,010}{\mole}$ d'acide linoléique réagit
-  avec une masse $m = \qty{5,1}{\g}$ de diiode \chemfig{I_2}.
+  Une quantité de matière $n(\text{linoléique}) = \qty{0,010}{\mole}$ d'acide linoléique réagit
+  avec une masse $m(\chemfig{I_2}) = \qty{5,1}{\g}$ de diiode \chemfig{I_2}.
   Calculer la quantité de matière de diiode et vérifier qu'on retrouve bien le nombre de doubles liaisons que contient une molécule d’acide linoléique.
   
-  \textbf{Données :} M(\chemfig{I_2}) = \qty{254,0}{\g\per\mole}
+  \important{Données :} M(\chemfig{I_2}) = \qty{254,0}{\g\per\mole}
 }{
+  On utilise la relation $n(\chemfig{I_2}) = \dfrac{m(\chemfig{I_2})}{M(\chemfig{I_2})}$, soit
+  \begin{equation*}
+    n(\chemfig{I_2}) = \dfrac{5,1 \unit{g}}{254,0 \unit{\g\per\mole}}
+    = \qty{0,020}{\mole}
+  \end{equation*}
+
+  On trouve donc $n(\chemfig{I_2}) = 2\times n(\text{linoléique})$, soit 2 doubles liaisons.
 }{4}
 
 
 \question{
-  Une quantité de matière $n = \qty{0,020}{\mole}$ d'acide $\alpha$-linolénique réagit avec une masse $m = \qty{15,2}{\g}$ de diiode \chemfig{I_2}.
+  Une quantité de matière $n(\text{linolénique}) = \qty{0,020}{\mole}$ d'acide $\alpha$-linolénique réagit avec une masse $m(\chemfig{I_2}) = \qty{15,2}{\g}$ de diiode \chemfig{I_2}.
   Calculer le nombre de double liaisons que contient une molécule d'acide $\alpha$-linolénique.
 }{
+  On calcule la quantité de matière de diiode qui a réagit $n(\chemfig{I_2}) = m(\chemfig{I_2}) / M(\chemfig{I_2}) = \qty{0,060}{\mole}$. 
 
+  On trouve que $n(\chemfig{I_2}) = 3 \times n(\text{linolénique})$, il y a donc 3 liaisons doubles dans l'acide $\alpha$-linolénique.
 }{4}
+
 
 \newpage
 \textit{Pour les plus rapides}

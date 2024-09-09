@@ -826,17 +826,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Séparation de la page en blocs
-\newcommand{\separationTroisBlocs}[3]{
-  \begin{minipage}[T]{0.3\linewidth}
+\NewDocumentCommand{\separationTroisBlocs}{+m O{0.3} +m O{0.3} +m O{0.3}}{
+  \begin{minipage}[T]{#2\linewidth}
     #1
   \end{minipage}
   ~
-  \begin{minipage}[T]{0.3\linewidth}
-    #2
+  \begin{minipage}[T]{#4\linewidth}
+    #3
   \end{minipage}
   ~
-  \begin{minipage}[T]{0.3\linewidth}
-    #3
+  \begin{minipage}[T]{#6\linewidth}
+    #5
   \end{minipage}
 }
 %%%% Separation en deux blocs
