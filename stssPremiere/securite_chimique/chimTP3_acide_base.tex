@@ -3,12 +3,12 @@
 
 %%%% titre
 \vspace*{-36pt}
-\numeroActivite{4}
+\numeroActivite{3}
 \titreTP{Solutions acides et basiques}
 
 \begin{objectifs}
-  \item Connaître la relation $[\oxonium] = 10^{-pH}$
-  \item Savoir mesurer le pH d'une solution
+  \item Connaître la relation $[\oxonium] = 10^{-pH}$.
+  \item Savoir mesurer le pH d'une solution.
 \end{objectifs}
 
 
@@ -30,7 +30,7 @@
   \end{wrapfigure}
   
   Sur les étiquettes d'eau minérales, on peut lire le pH suivi d'une valeur voisine de 7.
-  Le pH est une grandeur qui se mesure et qui \textbf{n'a pas d'unité}.
+  Le pH est une grandeur qui se mesure et qui \important{n'a pas d'unité.}
   
   \begin{importants}
     Pour les solutions aqueuse la valeur du pH est comprise entre
@@ -50,20 +50,20 @@
 
 \begin{doc}{La mesure du pH d'une solution}{doc:TP4_mesure_pH}
   \pointCyan \important{L’indicateur coloré}
-  C’est une espèce chimique qui change de \textbf{couleur} en fonction de la valeur du pH de la solution.
+  C’est une espèce chimique qui change de \important{couleur} en fonction de la valeur du pH de la solution.
   Introduire quelques gouttes d’un indicateur coloré permet donc de déterminer le caractère acide, basique ou neutre d’une solution. \\
-  \flecheLongue \texteTrou{Méthode \textbf{peu} précise.}
+  \flecheLongue \texteTrouLignes{Méthode \important{peu} précise.}
 
   \pointCyan \important{Le papier pH}
   Le papier pH est une bande de papier imbibée d’un indicateur universel.
-  En déposant une goutte de solution sur un morceau de papier pH, on détermine une valeur \textbf{approximative} du pH en \textbf{comparant} la couleur obtenue avec celle du \textbf{nuancier.} \\  
-  \flecheLongue \texteTrou{Méthode \textbf{moyennement} précise.}
+  En déposant une goutte de solution sur un morceau de papier pH, on détermine une valeur \important{approximative} du pH en \important{comparant} la couleur obtenue avec celle du \important{nuancier.} \\  
+  \flecheLongue \texteTrouLignes{Méthode \important{moyennement} précise.}
 
   \pointCyan \important{Le pH-mètre}
   Le pH-mètre est un appareil de mesure constitué d’une électrode reliée à un boîtier électronique indiquant la valeur du pH.
   Le pH-mètre doit être étalonné avec deux solutions tampons (dont le pH est constant et connu).
   Une fois étalonné, on rince l’électrode et on la plonge dans la solution aqueuse dont on cherche à déterminer le pH. \\
-  \flecheLongue \texteTrou{Méthode \textbf{très} précise.}
+  \flecheLongue \texteTrouLignes{Méthode \important{très} précise.}
 \end{doc}
 
 \begin{doc}{Protocoles de mesure}{doc:TP4_protocole_mesure}
@@ -91,18 +91,19 @@
 
 \mesure Mesurer et noter la valeur du pH du vinaigre blanc, de l'eau de javel et de l’eau du robinet, puis compléter le tableau ci-dessous
 
-\begin{tblr}{
-    hlines,
-    width = \linewidth,
-    colspec = {|c |X[2,c] |X[2,c] |X[2,c] |},
-    row{1} = {couleurPrim!20},
-  }
-  Mesure de pH      & Eau & vinaigre blanc & javel \\
-  indicateur coloré & & & \\
-  papier pH         & & & \\
-  pH-mètre          & & &
-\end{tblr}
-\smallskip
+\begin{center}   
+  \begin{tblr}{
+      hlines, vlines, width = \linewidth,
+      colspec = {c *{3}{Q[c, wd=0.225\linewidth]}},
+      row{1} = {couleurPrim!20},
+    }
+    Mesure de pH      & Eau & vinaigre blanc & javel \\
+    indicateur coloré & & & \\
+    papier pH         & & & \\
+    pH-mètre          & & &
+  \end{tblr}
+\end{center}
+%\smallskip
 
 \question{
   Indiquer le caractère acide, basique ou neutre de chaque solution, en justifiant.

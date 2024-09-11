@@ -8,11 +8,12 @@
 
 %%%% objectifs
 \begin{objectifs}
-  \item Comprendre le principe de la dilution et sa réalisation expérimentale
+  \item Découvrir la notion de concentration molaire.
+  \item Comprendre le principe de la dilution et sa réalisation expérimentale.
 \end{objectifs}
 
 \begin{contexte}
-  En mars 2018, 124 professionnels de la santé signaient une tribune contre les \og médecines alternatives \fg\; comme l’homéopathie, demandant que celles-ci ne soient plus remboursées par la Sécurité Sociale.
+  En mars 2018, 124 professionnels de la santé signaient une tribune contre les » médecines alternatives « comme l’homéopathie, demandant que celles-ci ne soient plus remboursées par la Sécurité Sociale.
   En 2019, Agnès Buzyn (ministre de la Santé) décide de suivre les recommandations de la Haute Autorité de santé.
   Le taux de remboursement passe de \qty{30}{\percent} à \qty{15}{\percent} en 2020, puis à \qty{0}{\percent} au 1er janvier 2021. 
   
@@ -36,25 +37,41 @@
 \end{doc}
 
 \question{
-  Donner le nom du \textbf{principe médical} utilisé dans l'homéopathie et donner un exemple pour l'expliquer.
+  Donner le nom du \important{principe médical} utilisé dans l'homéopathie et donner un exemple pour l'expliquer.
 }{
-Cette médecine repose sur le «principe de similitude ». Il stipule qu’un malade peut être soigné en lui administrant à très petites doses une substance entrainant, chez une personne saine, des symptômes similaires à ceux de la maladie qui l’affecte. L’écorce provoque des maux de ventres comme le paludisme.
-Exemple : l’utilisation d’écorce de quinquina soignant le paludisme. 
-}{6}
+  Cette médecine repose sur le «principe de similitude ». Il stipule qu’un malade peut être soigné en lui administrant à très petites doses une substance entraînant, chez une personne saine, des symptômes similaires à ceux de la maladie qui l’affecte. L’écorce provoque des maux de ventres comme le paludisme.
+  
+  Exemple : l’utilisation d’écorce de quinquina soignant le paludisme. 
+}{2}
 
 \question{
-  Expliquer le \textbf{protocole de fabrication} des médicaments homéopathique.
+  Expliquer le \important{protocole de fabrication} des médicaments homéopathique.
 }{
   On introduit 1 goutte de principe actif que l’on dilue dans 99 gouttes de solvant. On va successivement diluer cette solution afin d’obtenir des granulés. On enrobe la solution obtenue sur des granules de saccharose et lactose.
-}{5}
+}{3}
 
 \question{
-  Donner des arguments \textbf{qui permettent de douter} de l’efficacité de l’homéopathie.
+  Donner des arguments \important{qui permettent de douter} de l’efficacité de l’homéopathie.
 }{
   Pas de preuves scientifiques de son efficacité biologique : le principe actif est trop dilué à partir de 5CH, l’efficacité est quasi nulle.
   
   Peut retarder la prise de rendez-vous chez un médecin.
-}{5}
+}{3}
+
+
+\begin{doc}{Notion de concentration molaire}{doc:A2_concentration_molaire}  
+  \begin{importants}
+    Comme la concentration massique, la \important{concentration molaire $c$} désigne la quantité de matière $n$ de soluté dissous dans un volume de solution donné
+    \begin{equation*}
+      c = \dfrac{n_\solute}{V_\solution}
+    \end{equation*}
+  \end{importants}
+  \begin{listePoints}
+    \item $c$ : concentration molaire en \unit{\mole/\litre}
+    \item $n_\solute$ : quantité de matière du soluté en \unit{\mole}
+    \item $V_\solution$ : volume de la solution en \unit{\litre}
+  \end{listePoints}
+\end{doc}
 
 
 %%
@@ -62,17 +79,17 @@ Exemple : l’utilisation d’écorce de quinquina soignant le paludisme.
 \vspace*{-36pt}
 \begin{doc}{La dilution}{doc:A2_principe_dilution}
   \begin{wrapfigure}[5]{r}{0.5\linewidth}
-    \vspace*{-48pt}
+    \vspace*{-30pt}
     \centering
     \begin{multicols}{4}
-    \image{1}{images/chimie/protocoles/dilution0001} \\[-12pt]
+    \image{1}{images/chimie/protocoles/dissoDilu0007} \\[-0pt]
     \footnotesize{$S_0$}
     
-    \image{1}{images/chimie/protocoles/dilution0002}
+    \image{1}{images/chimie/protocoles/dissoDilu0008}
     
-    \image{1}{images/chimie/protocoles/dilution0003}
+    \image{1}{images/chimie/protocoles/dissoDilu0010}
     
-    \image{1}{images/chimie/protocoles/dilution0004} \\[-12pt]
+    \image{1}{images/chimie/protocoles/dissoDilu0011} \\[-0pt]
     \footnotesize{$S_1$}
     \end{multicols}
   \end{wrapfigure}
@@ -86,12 +103,10 @@ Exemple : l’utilisation d’écorce de quinquina soignant le paludisme.
 \end{doc}
 
 \begin{doc}{Facteur de dilution}{doc:A2}
-  La quantité de matière de soluté dans le volume de solution mère prélevée $V_0$ est la même que dans le volume de solution fille préparée $V_1$.
-  
-  Les quantités de matières étant égales, comme $n = c \times V$, on a
+  La quantité de matière de soluté dans le volume de solution mère prélevée $V_0$ est la même que dans le volume de solution fille préparée $V_1$. Donc $n_1 = n_0$ et comme $n = c \times V$, on a
   \begin{align*}
-    c_0 \times V_0 &= c_1 \times V_1 \\
-    \Longrightarrow V_0 &= \dfrac{c_1}{c_0} \times V_1
+    c_1 \times V_1 &= c_0 \times V_0 \\
+    c_1 &= \underbrace{\dfrac{V_0}{V_1}}_{F} \times c_0
   \end{align*}
 
   \begin{importants}  
@@ -102,7 +117,7 @@ Exemple : l’utilisation d’écorce de quinquina soignant le paludisme.
 \end{doc}
 
 \begin{doc}{CH homéopathique}{doc:A2_CH_homeopathique}
-  Les comprimés homéopathiques \og China Rubra 10 CH \fg à base de quinine, aiderait à soigner certaines fièvres.
+  Les comprimés homéopathiques » China Rubra 10 CH « à base de quinine, aiderait à soigner certaines fièvres.
   Pour fabriquer ce médicament, on prépare une solution mère en dissolvant \qty{0,02}{\mole} de quinine % de formule brute \chemfig{C_{20}H_{24}N_2O_2}
   dans \qty{50,0}{\ml} d’éthanol.
   
@@ -127,7 +142,7 @@ Exemple : l’utilisation d’écorce de quinquina soignant le paludisme.
 
 \question{
   Calculer la concentration de la solution 10 CH, puis calculer le nombre de molécules de quinine dans \qty{10}{\ml} de solution 10 CH.
-  \textbf{Rappel :} $\qty{1}{\mole} = \num{6,02e23}$ molécules.
+  \important{Rappel :} $\qty{1}{\mole} = \num{6,02e23}$ molécules.
 }{
 
 }{2}

@@ -44,7 +44,7 @@ identiques.
   \end{wrapfigure}
   
   \begin{tblr}{
-    colspec = {|c |c |c |c |c |}, hlines, row{1} = {couleurPrim!20}
+    colspec = {*{5}{c}}, hlines, vlines, row{1} = {couleurPrim!20}
   }
     Constituant & Eau \chemfig{H_2O} &
     Ion calcium \chemfig{Ca^{2+}} & Saccharose \bruteCHO{12}{22}{11} & autres \\
@@ -93,22 +93,14 @@ identiques.
     Chaque \important{atome} possède une \important{masse molaire} atomique, qui correspond à \important{la masse d'une mole d'atome.}
     La masse molaire se note $M$ et s'exprime en \unit{\g/\mole} ou \unit{\g\per\mole}.
   \end{importants}
-  Les masses molaires sont indiquées dans le tableau périodique des éléments.
+  Les masses molaires permettent de passer d'une grandeur macroscopique (la masse) à une grandeur microscopique (la mole, c'est-à-dire le nombre d'entités chimiques).
 
-  %% Tableau périodique
-  \vspace*{-4pt}
-  \begin{center}
-    \hspace*{40pt}
-    \tableauPeriodique{
-      \node[name=H, Element]             {\elementH};
-      \node[name=C, right of=H,  NoMeta] {\elementC};
-      \node[name=O, right of=C,  NoMeta] {\elementO};
-      \node[name=Ca, right of=O, NoMeta] {\elementCa};
-      %% Légende
-      \tkzLegende[couleurSec](10.1)(-0.9){Masse molaire}*
-    }
-  \end{center}
-  \vspace*{-20pt}
+  \begin{donnees}
+    \item \masseMol{H}  = \qty{1,00}{\g\per\mole}
+    \item \masseMol{C}  = \qty{12,0}{\g\per\mole}
+    \item \masseMol{O}  = \qty{16,0}{\g\per\mole}
+    \item \masseMol{Ca} = \qty{40,0}{\g\per\mole}
+  \end{donnees}
 
   %
   \begin{importants}
@@ -134,7 +126,7 @@ identiques.
 
 %%%%
 \question{
-  Calculer la masse molaire des trois constituants de la coriandre dont la formule brute est précisée dans le document~\ref{doc:A1_coriandre}.
+  En utilisant les données du document~\ref{doc:A1_masse_molaire}, calculer la masse molaire des trois constituants de la coriandre dont la formule brute est précisée dans le document~\ref{doc:A1_coriandre}.
 }{
   \begin{align*}
     \masseMol{H_2O} &=
@@ -154,7 +146,7 @@ identiques.
 %%
 \begin{doc}{Quantité de matière}{doc:A1_quantite_matiere}
   \begin{importants}
-    La \important{quantité de matière}, notée $n$, est la grandeur qui détermine le nombre d'entité chimique dans un échantillon.
+    La \important{quantité de matière}, notée $n$, est la grandeur qui détermine le nombre d'entités chimiques dans un échantillon.
     Son \important{unité est la mole}, notée \unit{\mole}.
   \end{importants}
 
@@ -163,7 +155,7 @@ identiques.
   \begin{equation*}
     n_\espece = \dfrac{m_\espece}{M_\espece}
   \end{equation*}
-  Cette relation lie la quantié de matière $n_\espece$, la masse $m_\espece$ et la masse molaire $M_\espece$ de l'espèce.
+  Cette relation lie la quantité de matière $n_\espece$ (nombre d'entités dans l'espèce), la masse $m_\espece$ et la masse molaire $M_\espece$ de l'espèce.
 \end{doc}
 
 %%%%

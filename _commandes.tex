@@ -299,8 +299,8 @@
 
 %%%% chapitre, section et sous-section
 \newcommand{\chapitre}[2]{ % Réglage du titre du chapitre
-  \setcounter{activiteNum}{0}
   Chapitre \arabic{section} -- #1
+  \setcounter{activiteNum}{0}
 }
 \newcommand{\titreChapitre}[1]{ % Affichage du titre du chapitre
   \titre{Chapitre \arabic{section} : #1}
@@ -802,7 +802,7 @@
 %%%% jeu de données
 \newenvironment{donnees}{
   
-  \textbf{Données :}
+  \important{Données :}
   \vspace*{-8pt}
   \begin{multicols}{2}
     \begin{listeTirets}
