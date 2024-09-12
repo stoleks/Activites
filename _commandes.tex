@@ -224,7 +224,7 @@
   \pasCorrection{
     \begin{boite}
       \vspace*{-4pt}
-      \sousTitre{Appréciation et remarques}
+      \sousTitre[black]{Appréciation et remarques}
       
       \vspace*{#1 cm}
       \phantom{b}
@@ -246,13 +246,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% pagination et sections
-\newcommand{\titre}[1]{
+\NewDocumentCommand{\titre}{O{black} m}{
   \begin{center}
-    \textsf{\bfseries \Large #1}
+    \textcolor{#1} {\textsf{\bfseries \Large #2}}
   \end{center}
-}
-\newcommand{\sousTitre}[1]{
-  \textsf{\bfseries #1}
 }
 \newcommand{\pasDePagination}{
   \thispagestyle{empty}
@@ -290,7 +287,7 @@
 \newcounter{exerciceNum}
 \newcommand{\exercice}[1]{
   \refstepcounter{exerciceNum}
-  \sousTitre{\large Exercice \arabic{exerciceNum} : #1}
+  \sousTitre[black]{\large Exercice \arabic{exerciceNum} : #1}
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
@@ -309,7 +306,7 @@
   \vspace*{24pt}
   \refstepcounter{subsection}
   \rectangle{40pt}{1pt}
-  \sousTitre{\Large \Roman{subsection} -- #1}
+  \sousTitre[black]{\Large \Roman{subsection} -- #1}
   \rectangle{40pt}{1pt}
   \vspace*{10pt}
 }
@@ -319,13 +316,13 @@
   \refstepcounter{subsubsection}
   \setcounter{sousSectionNum}{0}
   \rectangle{30pt}{4pt}
-  \sousTitre{\large \arabic{subsubsection} -- #1}
+  \sousTitre[black]{\large \arabic{subsubsection} -- #1}
   \vspace*{10pt}
 }
 \newcommand{\titreSousSection}[1]{
   \vspace*{12pt}
   \refstepcounter{sousSectionNum}
-  \sousTitre{\Alph{sousSectionNum} -- #1}
+  \sousTitre[black]{\Alph{sousSectionNum} -- #1}
   \vspace*{8pt}
 }
 

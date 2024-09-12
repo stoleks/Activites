@@ -1,7 +1,8 @@
 \documentclass[12pt]{extarticle}
 
-%%%% paramètres généraux et commande prédéfinies
+%%%% paramètres généraux et commandes prédéfinies
 \input{_parametres}
+\geometry{a5paper, left=1cm, right=1cm, top=1cm, bottom=2cm} % format A5
 % \modeCorrection % correction (décommenté)
 
 %%%% pour l'en-tête
@@ -9,6 +10,10 @@
 \renewcommand{\etablissement}{Lycée Jean Moulin}
 
 %% Priorités :
+% Mardi : Terminale 2h.
+% Mercredi : Première 1h.
+% Jeudi : Seconde 1h, 2h. Première 2h.
+% Vendredi : Terminale 1h.
 
 
 %%%% doc
@@ -16,10 +21,9 @@
   %%%% Commun
   % \includepdf[pages=26]{commun/papier_millimetre.pdf}
   % \input{commun/protocole_dissolution}
-  % \input{commun/securite_chimie}
-  % \input{commun/regle_vie_classe}
+  \input{commun/securite_chimie}
+  \input{commun/regle_vie_classe}
   % \input{commun/progression_annuelle}
-
 
   %%%% Matériel TP
   % \input{preparationTP/ficheTP_dosage_lait}
@@ -86,7 +90,7 @@
   % \input{stssPremiere/securite_chimique/chimTP2_dilution_javel}
   % \input{stssPremiere/securite_chimique/chimTP3_acide_base}
   % \input{stssPremiere/securite_chimique/chimA3_acidobasique}
-  \input{stssPremiere/securite_chimique/chimA4_autoprotolyse_eau}
+  % \input{stssPremiere/securite_chimique/chimA4_autoprotolyse_eau}
   %% Sécurité électrique
   % \input{stssPremiere/securite_electrique/elecA1_risque_electrique}
   % \input{stssPremiere/securite_electrique/elecA2_disjoncteur}
