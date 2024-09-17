@@ -224,7 +224,7 @@
   \pasCorrection{
     \begin{boite}
       \vspace*{-4pt}
-      \sousTitre[black]{Appréciation et remarques}
+      \important[black]{Appréciation et remarques}
       
       \vspace*{#1 cm}
       \phantom{b}
@@ -267,15 +267,23 @@
   \refstepcounter{activiteNum}
   \titre{#1 \arabic{section}.\arabic{activiteNum} -- #2}
 }
-\newcommand{\titreTP}[1]{
-  \titreActi{TP}{#1}
-  % \titreActi{Activité expérimentale}{#1}
+\NewDocumentCommand{\titreTP}{s m}{
+  \IfBooleanTF{#1}{ % Version *
+    \titreActi{Activité expérimentale}{#2}
+  }{
+    \titreActi{TP}{#2}
+  }
 }
-\newcommand{\titreActivite}[1]{
-  \titreActi{Activité}{#1}
+\NewDocumentCommand{\titreActivite}{s m}{
+  \IfBooleanTF{#1}{ % Version * sans le numéro du chapitre
+    \refstepcounter{activiteNum}
+    \titre{Activité \arabic{activiteNum} -- #2}
+  }{
+    \titreActi{Activité}{#2}
+  }
 }
 \NewDocumentCommand{\titreEvaluation}{o m}{
-  \IfNoValueTF {#1}{
+  \IfNoValueTF{#1}{
     \titre{Évaluation \arabic{section} -- #2}
   }{
     \titre{Évaluation #1 -- #2}
@@ -287,7 +295,7 @@
 \newcounter{exerciceNum}
 \newcommand{\exercice}[1]{
   \refstepcounter{exerciceNum}
-  \sousTitre[black]{\large Exercice \arabic{exerciceNum} : #1}
+  \important[black]{\large Exercice \arabic{exerciceNum} : #1}
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
@@ -306,7 +314,7 @@
   \vspace*{24pt}
   \refstepcounter{subsection}
   \rectangle{40pt}{1pt}
-  \sousTitre[black]{\Large \Roman{subsection} -- #1}
+  \important[black]{\Large \Roman{subsection} -- #1}
   \rectangle{40pt}{1pt}
   \vspace*{10pt}
 }
@@ -316,13 +324,13 @@
   \refstepcounter{subsubsection}
   \setcounter{sousSectionNum}{0}
   \rectangle{30pt}{4pt}
-  \sousTitre[black]{\large \arabic{subsubsection} -- #1}
+  \important[black]{\large \arabic{subsubsection} -- #1}
   \vspace*{10pt}
 }
 \newcommand{\titreSousSection}[1]{
   \vspace*{12pt}
   \refstepcounter{sousSectionNum}
-  \sousTitre[black]{\Alph{sousSectionNum} -- #1}
+  \important[black]{\Alph{sousSectionNum} -- #1}
   \vspace*{8pt}
 }
 
@@ -711,6 +719,7 @@
 }
 % Pour légender une image
 \newcommand{\legende}[1]{
+  \vspace*{2pt}
   \textcolor{couleurPrim}{\faArrowUp} \; #1
 }
 

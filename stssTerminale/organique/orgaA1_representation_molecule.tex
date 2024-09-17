@@ -29,7 +29,7 @@
 \vspace*{-8pt}
 
 %%
-\begin{doc}{Éléments composant un corps humain}{doc:element_corps_humain_A1}
+\begin{doc}{Éléments composant un corps humain}{doc:A1_element_corps_humain}
   Le corps humain est composé majoritairement de 4 éléments chimiques :
   \vspace*{-4pt}
   \begin{multicols}{2}
@@ -48,7 +48,7 @@
 \end{doc}
 
 %%
-\begin{doc}{Liaison moléculaire}{doc:liaison_molecule_A1}
+\begin{doc}{Liaison moléculaire}{doc:A1_liaison_molecule}
   %
   À partir du numéro atomique d'un atome, on peut déterminer sa structure électronique en couche (1, 2 ou 3) et sous-couche (s ou p), puis sa \important{valence} (mono, bi, tri ou tétravalent).
   %
@@ -92,7 +92,7 @@
 
 
 %%
-\begin{doc}{Liaisons multiples}{doc:liaisons_multiples_A1}
+\begin{doc}{Liaisons multiples}{doc:A1_liaisons_multiples}
   %
   \begin{importants}
     Pour compléter leur couche externe et respecter la règle de l'octet, deux atomes peuvent se lier en formant 2 ou 3 liaisons covalentes.
@@ -123,7 +123,7 @@
 \titreSousSection{La formule brute}
 
 \vspace*{-8pt}
-\begin{doc}{Formule brute}{doc:formule_brute_A1}
+\begin{doc}{Formule brute}{doc:A1_formule_brute}
   \begin{importants}
     Elle indique le nombre de chaque atomes présents dans la molécule.
   \end{importants}
@@ -169,7 +169,7 @@ Sa représentation avec un modèle moléculaire est présentée ci-contre.
 \titreSousSection{La formule développée}
 
 \vspace*{-8pt}
-\begin{doc}{Formule développée}{doc:formule_developpee_A1}
+\begin{doc}{Formule développée}{doc:A1_formule_developpee}
   \begin{importants}  
     Elle représente tous les éléments chimiques et toutes les liaisons dans le même plan.
   \end{importants}
@@ -199,11 +199,11 @@ Pour les molécules linéaire, on peut passer de la formule brute à la formule 
 
 \vspace*{8pt}
 \begin{tblr}{
-  width = \linewidth,
-  colspec = {|X[0.5] |X |X |X |X |}, hlines,
+  width = \linewidth, hlines, vlines,
+  colspec = {X[0.5] X X X X},
   columns = {l}, rows = {m},
-  column{1} = {couleurPrim!20, c},
-  row{1} = {gray!20, c}, 
+  column{1} = {couleurPrim!10, c},
+  row{1} = {couleurPrim!20, c}, 
   row{4} = {c}
 }
   Formule brute &
@@ -232,7 +232,7 @@ Pour les molécules linéaire, on peut passer de la formule brute à la formule 
 %%
 \titreSousSection{La formule semi-développée}
 
-\begin{doc}{Formule semi-développée}{doc:formule_semi_developpee_A1}
+\begin{doc}{Formule semi-développée}{doc:A1_formule_semi_developpee}
   \begin{importants}
     Comme la formule développée, elle représente tous les éléments chimiques, mais elle ne détaille pas les liaisons des éléments \important{hydrogènes.}
   \end{importants}
@@ -254,6 +254,8 @@ Pour les molécules linéaire, on peut passer de la formule brute à la formule 
   \end{center}
 \end{doc}
 
+\newpage
+\vspace*{-20pt}
 Pour passer de la formule développée à la formule semi-développée, il suffit de 
 \begin{listeFleche}
   \item surligner tous les hydrogènes et leur liaison ;
@@ -283,7 +285,7 @@ Pour passer de la formule développée à la formule semi-développée, il suffi
 %%
 \titreSousSection{La formule topologique}
 
-\begin{doc}{Formule topologique}{doc:formule_topologique_A1}
+\begin{doc}{Formule topologique}{doc:A1_formule_topologique}
   \begin{importants}  
     Elle représente les liaisons \important{carbone-carbone \chemfig{C - C}} par des segments formant des angles.
     Chacune des extrémités d'un segment représente un carbone, sauf si un autre élément chimique y est attaché.
@@ -292,7 +294,8 @@ Pour passer de la formule développée à la formule semi-développée, il suffi
   \end{importants}
 
   \exemples
-  \vspace*{-20pt}
+  \vspace*{-10pt}
+  
   \begin{center}
     \chemname{
       \chemfig{HO-[1]-[-1]}
@@ -305,7 +308,7 @@ Pour passer de la formule développée à la formule semi-développée, il suffi
     %
     \qq{}
     \chemname{
-      \chemfig[baseline=-100pt]{[:30]
+      \chemfig{[:30]
         (-[-5]HO) *6 (-=-(-NH (-[-1] (=[-3]O)-))=-=)
       }
     }{paracétamol}

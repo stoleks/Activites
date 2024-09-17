@@ -2,7 +2,7 @@
 
 %%%% paramètres généraux et commandes prédéfinies
 \input{_parametres}
-\geometry{a5paper, left=1cm, right=1cm, top=1cm, bottom=2cm} % format A5
+% \geometry{a5paper, left=1cm, right=1cm, top=1cm, bottom=2cm} % format A5
 % \modeCorrection % correction (décommenté)
 
 %%%% pour l'en-tête
@@ -21,8 +21,8 @@
   %%%% Commun
   % \includepdf[pages=26]{commun/papier_millimetre.pdf}
   % \input{commun/protocole_dissolution}
-  \input{commun/securite_chimie}
-  \input{commun/regle_vie_classe}
+  % \input{commun/securite_chimie}
+  % \input{commun/regle_vie_classe}
   % \input{commun/progression_annuelle}
 
   %%%% Matériel TP
@@ -44,7 +44,7 @@
   % \input{stssTerminale/securite_routiere/routA2_airbag}
   % \input{stssTerminale/securite_routiere/routA3_alcootest}
   %% Sécurité alimentaire
-  % \input{stssTerminale/securite_alimentation/alimA1_conservation_huile}
+  \input{stssTerminale/securite_alimentation/alimA1_conservation_huile}
   % \input{stssTerminale/securite_alimentation/alimA2_hydrolyse_triglycerides}
   % \input{stssTerminale/securite_alimentation/alimA3_brunissement_pomme}
   % \input{stssTerminale/securite_alimentation/alimA4_procedes_conservation}
@@ -87,7 +87,7 @@
   % \input{stssPremiere/securite_chimique/chimA1_masse_molaire}
   % \input{stssPremiere/securite_chimique/chimA2_homeopathie}
   % \input{stssPremiere/securite_chimique/chimTP1_sol_isotonique}
-  % \input{stssPremiere/securite_chimique/chimTP2_dilution_javel}
+  % \input{stssPremiere/securite_chimique/chimTP2_dilution_javel} %% TODO : utiliser du KMnO4 ou colorant ?
   % \input{stssPremiere/securite_chimique/chimTP3_acide_base}
   % \input{stssPremiere/securite_chimique/chimA3_acidobasique}
   % \input{stssPremiere/securite_chimique/chimA4_autoprotolyse_eau}
@@ -125,11 +125,6 @@
   % \input{stssPremiere/biomolecules/biomA8_vitamines}
   %% Organisme et biomolécules
   % \input{stssPremiere/organisme_biomol/biomA1_polarite_eau}
-  
-  %% AP
-  % \input{stssPremiere/AP/consignes}
-  % \input{stssPremiere/AP/appreciations}
-  % \input{stssPremiere/AP/methode_scientifique}
 
 
   %%%% Seconde
@@ -195,4 +190,8 @@
   % \input{seconde/signaux_capteurs/ElecAE1_loi_ohm}
   % \input{seconde/signaux_capteurs/ElecA1_maille_noeud}
   % \input{seconde/signaux_capteurs/ElecAE2_son_vitesse}
+
+  %%%% Accompagnement personnalisé 
+  % \input{accompagnement_personnel/methode_scientifique}
+  % \input{accompagnement_personnel/unites}
 \end{document}

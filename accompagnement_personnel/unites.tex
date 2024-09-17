@@ -1,0 +1,110 @@
+\teteSndAP
+
+\numeroActivite{2}
+\titreActivite*{Préfixe et abréviation symbolique des unités}
+
+\begin{objectifs}
+  \item Être capable d'associer le symbole d'une unité de mesure avec sa grandeur.
+  \item Savoir reconnaître les préfixe du système international.
+  \item Savoir convertir une unité en multiple ou sous-multiples.
+\end{objectifs}
+
+\begin{contexte}  
+  La maîtrise des unités de mesure et des conversions en multiples et sous-multiples est essentielle en
+  sciences et en mathématiques :
+  \begin{listePoints}
+    \item pour la compréhension des énoncés d’exercices ;
+    \item pour la rédaction des réponses aux questions.
+  \end{listePoints}
+\end{contexte}
+
+\begin{doc}{Les préfixes des unités du système international}{doc:AP_prefixe_unites}
+  Dans le système international, chaque unité multiple ou sous-multiple de 1000 est associée à un préfixe (milli, kilo, méga etc.).
+  À chaque préfixe correspond une puissance de dix.
+  Les symboles des préfixes se comportent donc comme des coefficients multiplicateur qui peuvent être remplacés par le produit d'une puissance de dix équivalente.
+
+  \vspace*{-8pt}
+  \begin{center}
+    \begin{tblr}{
+      hlines, vlines, rows = {25pt},
+      colspec = {c *{8}{Q[c, m, 0.08\linewidth]}},
+      column{1} = {couleurPrim!10, c}, row{1} = {couleurPrim!20, c},
+    }
+      Puissance &
+      \num{e-12} & \num{e-9} & \num{e-6} & \num{e-3} &
+      $10^0$ = 1 &
+      \num{e3} & \num{e6} & \num{e9} \\ %
+      Préfixe & & & & & & & & \\ %
+      Symbole & & & & & & & & \\
+    \end{tblr}
+  \end{center}
+
+  \vspace*{-16pt}
+  \begin{center}
+    \flecheProgression{
+      (0,0) -- (10, 0);
+    }
+    \vspace*{-28pt}
+    \important[white]{Du plus petit au plus grand}
+  \end{center}
+
+  Il existe aussi des multiples et sous-multiples pour \num{0,01}, \num{0,1}, \num{10} et \num{100}, vu que ce sont des échelles souvent manipulées au quotidien.
+  
+  \vspace*{-8pt}
+  \begin{center}
+    \begin{tblr}{
+      hlines, vlines, rows = {25pt},
+      colspec = {c *{4}{Q[c, m, 0.08\linewidth]}},
+      column{1} = {couleurPrim!10, c}, row{1} = {couleurPrim!20, c},
+    }
+      Puissance & \num{e-2} & \num{e-1} & \num{e1} & \num{e2} \\ %
+      Préfixe & & & & \\ %
+      Symbole & & & & \\
+    \end{tblr}
+  \end{center}
+\end{doc}
+
+
+\begin{doc}{Conversion des unités}{doc:AP_conversion}
+  \important{1 - Conversion d'une unité multiple ou sous-multiple en unité de base}
+
+  Dans ce cas, il faut remplacer le préfixe par la puissance de 10 qui lui est associée.
+  
+  \exemple On veut convertir l'énergie $E = \qty{3,6}{\mega\joule}$ en joule, noté \unit{\joule}.
+  Pour ça on utilise que $\qty{1}{\mega\joule} = \qty{e6}{\joule}$.
+  Donc $E =$ \texteTrou[0.3]{\qty{3,6e6}{\mega\joule}}
+
+  \bigskip
+  \important{2 - Conversion d'une unité de base en multiple ou sous-multiple}
+
+  Dans ce cas, il faut diviser la grandeur par la puissance de 10 associée au préfixe que l'on veut utiliser.
+  Cela revient à multiplier par la puissance de 10 d'exposant opposé.
+
+  \exemple On veut convertir la distance $d = \qty{4,3e-9}{\m}$ (mètre) en nanomètre noté \unit{nm}.
+  On utilise que $\qty{1}{\nano\m} = \qty{e-9}{\m}$ et que $1 / 10^{-9} = 10^9$. 
+  Donc $d = $ \texteTrouLignes[1]{\qty{3,6e6}{\mega\joule}}
+\end{doc}
+
+\question{
+  Convertir la fréquence $f = \qty{4,2}{\giga\hertz}$ en hertz noté \unit{\hertz}.
+}{}{3}
+
+\question{
+  Convertir la pression $p = \qty{100 000}{\pascal}$ en hectopascal noté \unit{\hecto\pascal}.
+}{}{3}
+
+\question{
+  Convertir l'intensité électrique $i = \qty{78}{\micro\ampere}$ en ampère noté \unit{\ampere}.
+}{}{3}
+
+\question{
+  Convertir le temps $t = \qty{86400}{\s}$ en megaseconde noté \unit{\mega\s}.
+}{}{3}
+
+\question{
+  Convertir la masse $m = \qty{0,005}{\g}$ en milligramme noté \unit{\milli\g}.
+}{}{3}
+
+\question{
+  Convertir la puissance $P = \qty{4700}{\watt}$ en kilowatt noté \unit{\kilo\watt}.
+}{}{3}
