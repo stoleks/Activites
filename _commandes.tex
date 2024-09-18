@@ -21,12 +21,11 @@
   #1
 }
 
-%%%% boite colorée
-\newtcolorbox{boiteColoree}[1][]{
+%%%% Boite de correction et pour les titres
+\newtcolorbox{boiteColoree}[2][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  arc = 2mm, % les lignes de la boites sont droites
-  colback = couleurPrim, colframe = white, % fond et traits colorés
-  coltext = white,
+  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
+  colback = couleurPrim!#2, % fond
   #1
 }
 
@@ -139,14 +138,6 @@
   #1
 }
 
-%%%% Boite de correction
-\newtcolorbox{boiteCorrection}[1][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
-  colback = couleurPrim!10, % fond
-  #1
-}
-
 %%%% Boîte pour le contexte
 \newtcolorbox{contexte}[1][]{
   breakable, enhanced jigsaw, % boite coupable entre pages
@@ -240,7 +231,7 @@
   titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
   colbacktitle = couleurPrim, % fond pour le titre blanc
   fonttitle = \bfseries\sffamily, % type de titre
-  title = {\centering \large #2}, % titre
+  title = {\centering \large \phantom{À} #2 \phantom{g}}, % titre
   #1
 }
 
@@ -478,9 +469,9 @@
   \numeroQuestion \!#1
   % pointille ou correction
   \ifthenelse {\boolean{modeProf}} { % prof
-    \begin{boiteCorrection}
+    \begin{boiteColoree}
       #2
-    \end{boiteCorrection}
+    \end{boiteColoree}
   }{ % eleve
     \lignesDeReponse{#3}
   }
@@ -821,7 +812,7 @@
 \newcommand{\problematique}[1]{
   \hspace*{-12pt}
   \flecheLongue[couleurTer]
-  \hspace*{-12pt}
+  \hspace*{-10pt}
   \important[couleurTer]{#1}
 }
 
