@@ -715,27 +715,18 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% emphase
-\newcommand{\emphase}[1]{
-  \textcolor{couleurSec}{\textsf{\bfseries \large #1}}
-}
-%
+%%%% points importants
 \NewDocumentCommand{\important}{O{couleurSec!75!black} m}{
   \!\textcolor{#1}{\textsf{\bfseries #2}}\!\!
 }
 %
-\newcommand{\exemple}{
-  \flecheLongue \textit{Exemple :}
-}
-\newcommand{\exemples}{
-  \flecheLongue \textit{Exemples :}
-}
-%
-\newcounter{compteAppelProf}
-\newcommand{\appelProf}{
-  \refstepcounter{compteAppelProf}
-  \hspace{24pt} \faHandPaperO \hspace{2pt}
-  \textbf{Appel n$^\circ$ \arabic{compteAppelProf} :}
+\NewDocumentCommand{\exemple}{s}{
+  \flecheLongue
+  \IfValueTF{#1}{
+    \textit{Exemple :}
+  }{
+    \textit{Exemples :}
+  }
 }
 
 %
@@ -748,7 +739,6 @@
   \end{flushright}
   \vspace*{-12pt}
 }
-
 
 %%%% image
 \newcommand{\image}[2]{
