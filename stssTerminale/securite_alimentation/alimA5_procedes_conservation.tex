@@ -2,7 +2,8 @@
 \teteTermStssAlim
 
 %%%% titre
-\numeroActivite{4}
+\vspace*{-30pt}
+\numeroActivite{5}
 \titreActivite{Procédés de conservations des aliments}
 
 
@@ -26,14 +27,14 @@
 \begin{doc}{Conservation des aliments}{doc:A4_conservation_aliments}
   Les procédés de conservation des aliments cherchent à préserver leurs propriétés gustatives, nutritives et leur comestibilité.
 
-  La conservation d'un aliment implique d'empêcher la croissance de micro-organisme (microbes ou bactéries) et de retarder l'oxydation des corps gras pour que les corps gras ne deviennent pas rance.
+  La conservation d'un aliment implique d'empêcher la croissance de micro-organisme (microbes ou bactéries) et de retarder l'oxydation des corps gras pour que les corps gras ne deviennent pas rances.
   Les méthodes de conservation peuvent modifier l'environnement physique des molécules qui composent l'aliment, ou transformer chimiquement les molécules qui composent l'aliment.
 \end{doc}
 
-\numeroQuestion Nommer tous les changements d'état sur le schéma ci-dessous.
+\numeroQuestion Nommer tous les changements d'états sur le schéma ci-dessous.
 
 \begin{center}
-  \image{0.75}{images/thermodynamique/transformation_etats}
+  \image{0.8}{images/thermodynamique/transformation_etats_large}
 \end{center}
 
 
@@ -61,11 +62,13 @@
   \end{importants}
 \end{doc}
 
+
 \begin{doc}{Quelques méthodes de conservation}{doc:A4_méthodes de conservation}  
   \begin{tblr}{
-      colspec = {X[c,m] |X[2] |X}, row{1} = {couleurPrim!20, c}, column{1} = {m}
+      colspec = {Q[wd=0.22\linewidth, m, c] | X[2,m] | Q[wd=0.2\linewidth, m]}, 
+      row{1} = {couleurPrim!20, c}
     }
-    Procédé & Principe & Procédé physique ou chimique ? \\ \hline
+    \textbf{Procédé} & \textbf{Principe} & \textbf{Physique ou chimique ?} \\ \hline
     \important{La salaison} &
     L'aliment est salé. Le sel diminue la quantité d'eau disponible pour le développement des bactéries.
     & \\ \hline
@@ -96,72 +99,68 @@
     \important{La surgélation} &
     La surgélation est une congélation dû à un abaissement de température à \qty{-20}{\degreeCelsius} à cœur de l'aliment, en moins de vingt minutes. La surgélation permet de conserver toutes les qualités du produit et d'arrêter le développement des bactéries.
     & \\ \hline
-    \important{L'huile} &
-    L'huile empêche l'oxygène d'arriver à l'aliment en remplaçant l'eau dans l'aliment.
-    & \\
-  \end{tblr}
-  
-  \begin{tblr}{
-      colspec = {X[c,m] |X[2] |X},
-    }
     \important{L'atmosphère contrôlée} &
     L'air ambiant est remplacé par un gaz inerte, ce qui prive les bactéries de dioxygènes.
+    & \\ \hline
+    \important{Additifs conservateur} &
+    Des molécules minérales ou organiques aux propriétés anti-bactérienne sont ajoutées dans l'aliment pour en améliorer la conservation.
+    Ces additifs sont désigné par un code type E2XX, (E200, E210, etc.)
     & \\ \hline
     \important{Le fumage} &
     La fumée contient des molécules bactéricides.
     & \\ \hline
-    \important{Additifs conservateur} &
-    Des molécules minérales ou organiques aux propriétés anti-bactérienne sont ajoutées dans l'aliment pour en améliorer la conservation.
-    Ces additifs sont désigné par un code type E200, E210, E316, etc.
+    \important{L'huile} &
+    L'huile empêche l'oxygène d'arriver à l'aliment en remplaçant l'eau dans l'aliment.
+    & \\
   \end{tblr}
 \end{doc}
 
 \numeroQuestion Pour chaque méthode de conservation, indiquer si c'est un procédé physique ou chimique.
 
 
-\begin{doc}{Quelques aliment}{doc:A4_aliments}
-  \begin{multicols}{4}
-    \image{1}{images/photos/conservation/glace} \\
-    \texteTrou{Congélation}
+% \begin{doc}{Quelques aliment}{doc:A4_aliments}
+%   \begin{multicols}{4}
+%     \image{1}{images/photos/conservation/glace} \\
+%     \texteTrou{Congélation}
     
-    \image{1}{images/photos/conservation/cafe_lyophilise} \\
-    \texteTrou{Lyophilisation}
+%     \image{1}{images/photos/conservation/cafe_lyophilise} \\
+%     \texteTrou{Lyophilisation}
     
-    \image{1}{images/photos/conservation/confiture} \\
-    \texteTrou{Sucrage}
-    %
+%     \image{1}{images/photos/conservation/confiture} \\
+%     \texteTrou{Sucrage}
+%     %
     
-    \image{1}{images/photos/conservation/conserve} \\
-    \texteTrou{Stérilisation}
+%     \image{1}{images/photos/conservation/conserve} \\
+%     \texteTrou{Stérilisation}
     
-    \image{1}{images/photos/conservation/lait_sterilise} \\
-    \texteTrou{Stérilisation}
+%     \image{1}{images/photos/conservation/lait_sterilise} \\
+%     \texteTrou{Stérilisation}
     
-    \image{1}{images/photos/conservation/mangue_sechee} \\
-    \texteTrou{Séchage}
-    %
+%     \image{1}{images/photos/conservation/mangue_sechee} \\
+%     \texteTrou{Séchage}
+%     %
     
-    \image{1}{images/photos/conservation/olive_huile} \\
-    \texteTrou{Huile}
+%     \image{1}{images/photos/conservation/olive_huile} \\
+%     \texteTrou{Huile}
     
-    \image{1}{images/photos/conservation/pate_sechee} \\
-    \texteTrou{Séchage}
+%     \image{1}{images/photos/conservation/pate_sechee} \\
+%     \texteTrou{Séchage}
     
-    \image{1}{images/photos/conservation/sauce_soja} \\
-    \texteTrou{Saumurage}
-    %
+%     \image{1}{images/photos/conservation/sauce_soja} \\
+%     \texteTrou{Saumurage}
+%     %
     
-    \image{1}{images/photos/conservation/pizza_surgele} \\
-    \texteTrou{Surgélation}
+%     \image{1}{images/photos/conservation/pizza_surgele} \\
+%     \texteTrou{Surgélation}
     
-    \image{1}{images/photos/conservation/tofu_fume} \\
-    \texteTrou{Fumage}
+%     \image{1}{images/photos/conservation/tofu_fume} \\
+%     \texteTrou{Fumage}
     
-    \image{1}{images/photos/conservation/fromage} \\
-    \texteTrou{Fermentation}
-  \end{multicols}
-\end{doc}
+%     \image{1}{images/photos/conservation/fromage} \\
+%     \texteTrou{Fermentation}
+%   \end{multicols}
+% \end{doc}
 
 
-%%%%
-\numeroQuestion Associer à chaque aliment une méthode de conservation.
+% %%%%
+% \numeroQuestion Associer à chaque aliment une méthode de conservation.

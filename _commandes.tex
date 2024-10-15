@@ -265,12 +265,12 @@
     \titreActi{TP}{#2}
   }
 }
-\NewDocumentCommand{\titreActivite}{s m}{
+\NewDocumentCommand{\titreActivite}{s m O{Activité}}{
   \IfBooleanTF{#1}{ % Version * sans le numéro du chapitre
     \refstepcounter{activiteNum}
-    \titre{Activité \arabic{activiteNum} -- #2}
+    \titre{#3 \arabic{activiteNum} -- #2}
   }{
-    \titreActi{Activité}{#2}
+    \titreActi{#3}{#2}
   }
 }
 \NewDocumentCommand{\titreEvaluation}{o m}{
@@ -852,14 +852,20 @@
   \chemfig{C_{#1} H_{#2} O_{#3}}
 }
 
-%% pour les masse molaire et atomique
-\newcommand{\masseMol}[1]{
-  M(\chemfig{#1})
-  % M_{\chemfig{#1}}
+%% pour les masse molaire et atomique (* -> en indice)
+\NewDocumentCommand{\masseMol}{s m}{
+  \IfValueTF{#1}{
+    M_{\chemfig{#1}}
+  }{
+    M(\chemfig{#2})
+  }
 }
-\newcommand{\masseAtom}[1]{
-  m(\chemfig{#1})
-  % m_{\chemfig{#1}}
+\NewDocumentCommand{\masseAtom}{s m}{
+  \IfValueTF{#1}{
+    m_{\chemfig{#1}}
+  }{
+    m(\chemfig{#1})
+  }
 }
 
 

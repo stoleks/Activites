@@ -18,7 +18,7 @@
   Les atomes, ions et molécules sont des entités chimique qui composent toute la matière macroscopique qui nous entoure.
   
   \problematique{
-    Comment compter les \important{entité chimique} microscopique dans une \important{espèce chimique} macroscopique ?
+    Comment compter les \important{entités chimiques} microscopiques dans une \important{espèce chimique} macroscopique ?
   }
 \end{contexte}
 
@@ -28,7 +28,7 @@
 
 %%
 \begin{doc}{Des paquets pour mieux compter}{doc:TP1_compter_paquet}
-  Au quotidien, de nombreux objets ne sont pas compté à l'unité, mais par \important{paquet.}
+  Au quotidien, de nombreux objets ne sont pas compté à l'unité, mais par \important{paquets.}
   Par exemple, on compte les oeufs par douzaines et les feuilles de papier par ramette de 500 feuilles.
   Si on devait compter les feuilles de papier d'une ramette une par une ce serait une sacré corvée !
 
@@ -58,28 +58,41 @@
   La masse d'une entité composée de plusieurs atomes est égale à la somme des masses des atomes de l'entité.
   
   \exemple 
-  $m(\chemfig{C_2 H_6 O}) = 2\times m(\chemfig{C}) + 6\times m(\chemfig{H}) + m(\chemfig{O})$
+  $\masseAtom{C_2 H_6 O} = 2\times \masseAtom{C} + 6\times \masseAtom{H} + \masseAtom{O}$
   
   \begin{donnees}
-    \item $m(\chemfig{H})  = \qty{1,67e-24}{\g}$
-    \item $m(\chemfig{C})  = \qty{1,99e-23}{\g}$
-    \item $m(\chemfig{O})  = \qty{2,66e-23}{\g}$
-    % \item $m(\chemfig{Ca)} = \qty{6,66e-23}{\g}$
+    \item $\masseAtom{H}  = \qty{0,17e-23}{\g}$
+    \item $\masseAtom{C}  = \qty{1,99e-23}{\g}$
+    \item $\masseAtom{O}  = \qty{2,66e-23}{\g}$
+    % \item $\masseAtom{Ca)} = \qty{6,66e-23}{\g}$
   \end{donnees}
 \end{doc}
 
 \begin{doc}{Composition du sucre}{doc:A3_composition_sucre}
-  Le sucre blanc en poudre ou en cube utilisé en pâtisserie est composée de saccharose.
-  La saccharose est une molécule de formule brute \bruteCHO{12}{22}{11}.
+  Le sucre blanc en poudre ou en cube utilisé en pâtisserie est composée de glucose.
+  La glucose est une molécule de formule brute \bruteCHO{6}{12}{6}.
 \end{doc}
 
 \question{
-  Calculer la masse d'une molécule de saccharose $m_\text{saccharose}$ à partir de la masse des atomes qui la constitue.
-}{}{2}
+  Calculer la masse d'une molécule de glucose $m_\text{glucose}$ à partir de la masse des atomes qui la constitue.
+}{
+  \begin{align*}
+    m_\text{glucose} &= 6\times\masseAtom{C} + 12\times\masseAtom{H} + 6\times\masseAtom{O} \\
+    &= (6\times \num{1,99e-23}) + 12\times\num{0,17e-23} + 6\times\num{2,66e-23})\unit{g} \\
+    &= \qty{29,9e-23}{\g}
+  \end{align*}
+}{2}
 
 \question{
-  Calculer le nombre $N$ de molécule de saccharose dans un sachet de sucre de \qty{1}{\kg}.
-}{}{2}
+  Calculer le nombre $N$ de molécule de glucose dans un sachet de sucre de \qty{1}{\kg}.
+}{
+  On divise la masse du sachet par la masse d'une molécule de sucre 
+  \begin{align*}
+    N &= \dfrac{m_\text{sachet}}{m_\text{glucose}} \\
+    &= \dfrac{\qty{1e3}{\g}}{\qty{29,9e-23}{\g}} \\
+    &= \num{3,34e24}
+  \end{align*}
+}{2}
 
 
 \begin{doc}{La mole}{doc:TP1_mole}
@@ -93,7 +106,11 @@
 
 \question{
   Calculer le nombre $n$, en \unit{\mole}, de paquets de $N_A = \qty{6.02e23}{\per\mole}$ molécules dans un sachet de sucre de \qty{1}{\kg}.
-}{}{3}
+}{
+  \begin{equation*}
+    n = \dfrac{N}{N_A} = \dfrac{\num{3.34e24}}{\qty{6.02e23}{\per\mole}} = \qty{5.55}{\mole} 
+  \end{equation*}
+}{3}
 
 \mesure Remplir le tableau ci-dessous avec les grandeurs calculées ou mesurées.
 
@@ -104,7 +121,7 @@
     row{2-5} = {12mm, c, m},
   }
   Échantillon étudié & Sac de riz & Sachet de sucre \\
-  Masse d'une entité       & $m_\text{riz} =$ \texteTrou[0.25]{..} & $m_\text{saccharose} =$ \texteTrou[0.25]{..} \\
+  Masse d'une entité       & $m_\text{riz} =$ \texteTrou[0.25]{..} & $m_\text{glucose} =$ \texteTrou[0.25]{..} \\
   Nombre d'entités $N$     & & \\
   Taille d'un paquet $N_A$ & & \\
   Nombre de paquets $n$    & & \\
