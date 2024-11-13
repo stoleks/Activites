@@ -25,7 +25,7 @@
   \begin{wrapfigure}[4]{r}{0.4\linewidth}
     \centering
     \vspace*{-35pt}
-    \image{0.85}{images/acoustique/effet_doppler}
+    \image{0.9}{images/acoustique/effet_doppler}
   \end{wrapfigure}
   
   Quand deux personnes sont à la même distance d'une source sonore immobile, elles entendent le même son.
@@ -54,14 +54,17 @@
   Une sonde est posée sur la peau recouverte d'un gel et émet des ultrasons.
   Les ultrasons se propagent dans le corps et sont réfléchis par les globules rouges dans les vaisseaux sanguins.
 
+  \begin{wrapfigure}[10]{l}{0.5\linewidth}
+    \centering
+    \vspace*{-10pt}
+    \image{1}{images/acoustique/echographie_doppler}
+  \end{wrapfigure}
+
   Après réflexion, les ultrasons sont reçues par la sonde.
   La fréquence de l'onde sonore réfléchie varie en fonction de la fréquence de l'onde émise et de la vitesse de déplacement des globules rouges.
 
-  \begin{center}
-    \image{0.45}{images/acoustique/echographie_doppler}
-  \end{center}
-
   Mesurer le décalage en fréquence $\Delta f$ entre la fréquence de l'onde émise et la fréquence de l'onde reçue, permet donc de déterminer la vitesse et le sens d'écoulement du sang dans les vaisseaux.
+  \vspace*{13pt}
 
   \begin{importants}
     Le décalage se calcule avec la relation suivante :
@@ -69,6 +72,7 @@
       \Delta f = f_R - f_E = \dfrac{2vf_E \cos(\theta)}{c}
     \end{equation*}
   \end{importants}
+  
   \begin{multicols}{2}
     \begin{listePoints}
       \item $f_E$ est la fréquence de l'onde émise en \unit{\hertz} ;
@@ -85,7 +89,7 @@
 \question{
   Indiquer quels partie du corps humain réfléchit le son dans une échographie doppler et quelle est la grandeur mesurée.
 }{
-}{2}
+}{3}
 
 
 \begin{doc}{Échographie doppler d'une artère}{doc:A2_doppler_artere}
@@ -93,7 +97,7 @@
   On peut exprimer cette diminution du diamètre en pourcentage par rapport à une taille normale.
   On a alors une évolution du signal mesuré avec une échographie doppler en fonction de l'avancée de la sténose.
   \begin{center}
-    \image{0.5}{images/acoustique/doppler_stenose}
+    \image{0.6}{images/acoustique/doppler_stenose}
     
     Signal doppler visible en fonction de l'avancée de la sténose.
   \end{center}
@@ -101,16 +105,20 @@
   On compare deux images d'échographie doppler d'une artère rénale : celle d'un-e patient-e sans pathologie et celle d'un-e patient-e souffrant d'une sténose aortique.
   
   \begin{center}
-    \image{0.75}{images/acoustique/doppler_stenose_artere}
+    \image{0.8}{images/acoustique/doppler_stenose_artere}
     
-    \separationBlocs
-    {\centering\faArrowUp\; A}
-    {\centering \faArrowUp\; B \hspace{4cm}\phantom{b}}
+    \separationBlocs{
+      \hspace{4cm}
+      \legende{A}
+    }{
+      \hspace{2cm}
+      \legende{B}
+    }
   \end{center}
 \end{doc}
 
 
 %%%%
 \question{
-  Analyser les échographies du document~\ref{doc:A2_doppler_artere} et en déduire qui souffre de sténose aortique.
-}{}{1}
+  Analyser les échographies et en déduire qui de A ou B souffre de sténose aortique.
+}{}{3}

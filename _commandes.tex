@@ -228,7 +228,7 @@
   colback = white, colframe = black, % fond blanc et traits noirs
   coltitle = white, % couleur du titre
   boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi des traits de la boite
-  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
+  titlerule = 0mm, top = 2mm, % pour ne pas avoir de séparation titre/boite
   colbacktitle = couleurPrim, % fond pour le titre blanc
   fonttitle = \bfseries\sffamily, % type de titre
   title = {\centering \large \phantom{À} #2 \phantom{g}}, % titre
@@ -280,8 +280,7 @@
     \titre{Évaluation #1 -- #2}
   }
   % reset du numéro de page et d'exercices
-  \setcounter{page}{1}
-  \numeroActivite{1}
+  \reinitialiseCompteur
 }
 \newcounter{exerciceNum}
 \newcommand{\exercice}[1]{
@@ -326,18 +325,21 @@
 }
 
 %%%% fixe le numéro de l'activité
-\newcommand{\numeroActivite}[1]{
-  % fixe les compteurs LaTeX
+\newcommand{\reinitialiseCompteur}{
+    % fixe les compteurs LaTeX
   \setcounter{page}{1}
   \setcounter{subsection}{0}
   \setcounter{subsubsection}{0}
   \setcounter{figure}{0}
   % fixe les compteurs internes
-  \setcounter{qcmNum}{0}
   \setcounter{documentNum}{0}
   \setcounter{questionNum}{0}
   \setcounter{coupDePouceNum}{0}
   \setcounter{sousSectionNum}{0}
+  \setcounter{seanceNum}{0}
+}
+\newcommand{\numeroActivite}[1]{
+  \reinitialiseCompteur
   \setcounter{activiteNum}{#1 - 1}
 }
 % fixe le numéro de partie (#1) et le numéro de la page (#2)
@@ -380,11 +382,8 @@
 \NewDocumentCommand{\enTete}{o m O{0} s}{
   % reset des compteurs
   \newpage
+  \reinitialiseCompteur
   \setcounter{section}{#3}
-  \setcounter{subsection}{0}
-  \setcounter{subsubsection}{0}
-  \setcounter{sousSectionNum}{0}
-  \setcounter{seanceNum}{0}
   
   % affichage de l'entête version fiche réussite (*)
   \IfBooleanTF{#4}{
@@ -453,7 +452,7 @@
   \loop
     \stepcounter{ligneNum}
     \ifnum \value{ligneNum} < #2
-      \\[8pt] \lignePointillee{0.98}
+      \\[8pt] \lignePointillee{0.96}
   \repeat
   \vspace*{1pt}
 }
@@ -469,7 +468,7 @@
   \numeroQuestion \!#1
   % pointille ou correction
   \ifthenelse {\boolean{modeProf}} { % prof
-    \begin{boiteColoree}
+    \begin{boiteColoree}{10}
       #2
     \end{boiteColoree}
   }{ % eleve
@@ -506,19 +505,27 @@
   \reponse{#2}
 }
 
-% question QCM
-\newcommand{\QCM}[2]{
-  \numeroQuestion[qcmNum][0] #1
-  \begin{qcm}
+%%%% qcm
+\newlist{QCM}{itemize}{2}
+\setlist[QCM]{label = $\square$, leftmargin = 2cm}
+%% #1 : question, 
+%% #2 : réponses
+\NewDocumentEnvironment{qcm}{
+  +m +m 
+}{
+  \numeroQuestion #1
+  \begin{QCM}
     #2
-  \end{qcm}
+}{
+  \end{QCM}
 }
 
 % À ajouter devant la bonne réponse dans un qcm
-\newcounter{qcmNum}
 \newcommand{\reponseQCM}{
   \correction{
-    \hspace*{-15pt}$\checkmark$\hspace*{-12pt}
+    \hspace*{-21pt}
+    {\large\textcolor{couleurSec}{\faCheck}}
+    \hspace*{-12pt}
   } % Note : trace une croix à la bonne position
 }
 
@@ -762,10 +769,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% qcm
-\newlist{qcm}{itemize}{2}
-\setlist[qcm]{label=$\square$, leftmargin=2cm}
-
 %%%% liste d'objectif
 \newlist{listeObjectifs}{itemize}{2}
 \setlist[listeObjectifs]{leftmargin=6pt, label=\fleche} %\chevron}

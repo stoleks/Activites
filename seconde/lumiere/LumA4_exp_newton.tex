@@ -25,55 +25,45 @@
 
 
 %%%% docs
-\begin{doc}{L'expérience de Newton}
-  \label{doc:exp_newton}
-  %\og Au début de l’année 1666, je me procurai un prisme de verre pour réaliser la célèbre expérience des couleurs.
+\begin{doc}{L'expérience de Newton}{doc:A4_exp_newton}
+  %« Au début de l’année 1666, je me procurai un prisme de verre pour réaliser la célèbre expérience des couleurs.
   %Ayant à cet effet obscurci ma chambre, et fait un petit trou dans les volets, pour laisser entrer une quantité convenable de rayons de soleil, je plaçai mon prisme contre ce trou, pour réfracter les rayons sur le mur opposé.
-  %Ce fut d’abord très plaisant de contempler les couleurs vives et intenses ainsi produites. \fg
-  
-  \vspace*{-16pt}
+  %Ce fut d’abord très plaisant de contempler les couleurs vives et intenses ainsi produites. »
   En 1666, Newton étudie la lumière.
   Au cours d'une expérience, il parvient à former un arc-en-ciel à partir d'une source de lumière blanche et d'un prisme de verre.
  
   Pour enrichir son étude, Newton réalise une autre expérience : il isole la partie bleue de la lumière formée par son prisme et éclaire un second prisme avec.
-  \textbf{La lumière bleue est déviée, mais pas étalée et ne change pas de couleur !}
-  Newton en déduit que la lumière \og blanche \fg\, du soleil est une superposition de lumière de toutes les couleurs et le prisme dévie différemment ces lumières.
+  \important{La lumière bleue est déviée, mais pas étalée et ne change pas de couleur !}
+  Newton en déduit que la lumière « blanche » du soleil est une superposition de lumière de toutes les couleurs et le prisme dévie différemment ces lumières.
   
   \vspace*{-8pt}
   \begin{center}
-    \separationDeuxBlocs{
-      \begin{center}
-        \image{0.45}{images/lumière/prisme_blanc} \\
-        \small{Lumière blanche}
-      \end{center}
+    \separationBlocs{
+      \centering
+      \image{0.65}{images/lumiere/prisme_blanc} \\
+      \legende{Lumière blanche}
     }{
-      \begin{center}
-        \image{0.45}{images/lumière/prisme_bleu} \\
-        \small{Lumière bleue}
-      \end{center}
+      \centering
+      \image{0.65}{images/lumiere/prisme_bleu} \\
+      \legende{Lumière bleue}
     }
   \end{center}
 \end{doc}
 
-\begin{doc}{Évolution de l'indice de réfraction $n$ d'un verre}
-  \label{doc:indice_verre}
-  \vspace*{-24pt}
+\begin{doc}{Évolution de l'indice de réfraction $\mathbf{n}$ d'un verre}{doc:A4_indice_verre}
   \begin{center}
-    \image{0.75}{images/lumière/indice_refraction_verre} \\
-    Évolution de $n$ en fonction de la longueur d'onde $\lambda$ pour le verre \og Flint \fg
+    \image{0.75}{images/lumiere/indice_refraction_verre} \\
+    Évolution de $n$ en fonction de la longueur d'onde $\lambda$ pour le verre « Flint »
   \end{center}
 \end{doc}
 
 \newpage
 \vspace*{-36pt}
-\begin{doc}{Rappel sur la réfraction}
-  \label{doc:rappel_refraction}
-  \vspace*{-16pt}
-  
+\begin{doc}{Rappel sur la réfraction}{doc:A4_rappel_refraction}
   \begin{wrapfigure}{r}{0.45\linewidth}
     \vspace*{-14pt}
     \centering
-    \image{1}{images/lumière/angles_refraction.png}
+    \image{1}{images/lumiere/angles_refraction.png}
   \end{wrapfigure}
   D'après la loi de Snell-Descartes, on a 
   \begin{equation*}
@@ -84,7 +74,7 @@
   \begin{equation*}
     \sin(i_2) = \frac{n_1}{n_2} \sin (i_1)
     \quad \Rightarrow \quad
-    i_2 = \arcsin \left(\Frac{n_1}{n_2} \sin(i_1) \right)
+    i_2 = \arcsin \left(\dfrac{n_1}{n_2} \sin(i_1) \right)
   \end{equation*}
 \end{doc}
 
@@ -104,13 +94,13 @@
 }{2}
 
 \question{
-  En utilisant le document~\ref{doc:indice_verre}, indiquer l'indice de réfraction $n_\text{rouge}$ pour le rouge ($\lambda \approx 650 \unit{nm}$) et $n_\text{bleu}$ pour le bleu ($\lambda \approx 450 \unit{nm}$).
+  En utilisant le document~\ref{doc:A4_indice_verre}, indiquer l'indice de réfraction $n_\text{rouge}$ pour le rouge ($\lambda \approx 650 \unit{nm}$) et $n_\text{bleu}$ pour le bleu ($\lambda \approx 450 \unit{nm}$).
 }{
   À partir du graphique on lit $n_\text{rouge} = 1,595$ et $n_\text{bleu} = 1,615$.
 }{1}
 
 \question{
-  En supposant que l'angle d'incidence de la lumière soit $i_1 = 35^\circ$, calculer l'angle de réfraction $i_2$ \textbf{pour le passage du verre à l'air} pour la lumière bleu $i_{2,\text{bleu}}$ et la lumière rouge $i_{2,\text{rouge}}$ à la sortie du prisme. \textbf{Rappel:} $n_2 = n_\text{air} = 1,\!00$.
+  En supposant que l'angle d'incidence de la lumière soit $i_1 = 35^\circ$, calculer l'angle de réfraction $i_2$ \important{pour le passage du verre à l'air} pour la lumière bleu $i_{2,\text{bleu}}$ et la lumière rouge $i_{2,\text{rouge}}$ à la sortie du prisme. \important{Rappel:} $n_2 = n_\text{air} = 1,\!00$.
 }{
   On utilise la relation du document~\ref{doc:rappel_refraction} :
   \begin{align*}
@@ -122,7 +112,7 @@
 }{2}
 
 \question{
-  En comparant ces deux déviations, conclure sur la formation d'un arc-en-ciel par un prisme.
+  En comparant ces deux angles de déviations, conclure sur la séparation de la lumière blanche et la formation d'un arc-en-ciel par un prisme.
 }{
   On voit que $i_{2,\text{rouge}} < i_{2,\text{bleu}}$, le rouge est donc moins dévié que le bleu en passant au travers du prisme. \\
   Cette petite déviation initiale devient de plus en plus grande et permet de séparer les couleurs de la lumière blanche de manière continue : cela forme un arc-en-ciel.
