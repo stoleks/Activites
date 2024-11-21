@@ -789,16 +789,18 @@
 \newlist{listeFleche}{itemize}{2}
 \setlist[listeFleche]{label = \textbf{\flecheLongue}}
 
-%%%% jeu de données
-\newenvironment{donnees}{
-  
+%%%% jeu de données, avec une * pour que ça soit sur deux colonnes
+\NewDocumentEnvironment{donnees}{s +m}{  
   \important{Données :}
-  \vspace*{-8pt}
-  \begin{multicols}{2}
+  \IfBooleanTF{#1}{
+    \vspace*{-8pt}
+    \begin{multicols}{2}
+  }{}
     \begin{listeTirets}
+      #2
 }{
     \end{listeTirets}
-  \end{multicols}
+  \IfBooleanTF{#1}{\end{multicols}}{}
 }
 
 %%%% problematique

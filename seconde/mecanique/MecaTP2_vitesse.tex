@@ -16,8 +16,14 @@
   \item Tracer des vecteurs vitesses.
 \end{objectifs}
 
+\begin{contexte}
+  Quand on change de référentiel, la description du mouvement s'en trouve modifié.
+  Un exemple particulièrement frappant et celui de la chute d'une balle dans un référentiel mobile.
+\end{contexte}
+
 
 %%%% evaluation
+\pasCorrection{
 \begin{tableauCompetences}
   APP &
   Représenter une situation par un schéma.
@@ -26,11 +32,11 @@
   Travailler en groupe, échanger entre élèves.
   & & & &
 \end{tableauCompetences}
-
+}
 
 %%
-\vspace*{6pt}
-\problematique{Quelle est l'influence d'une translation sur la description du mouvement d'un objet ?}
+%\vspace*{6pt}
+%\problematique{Quelle est l'influence d'une translation sur la description du mouvement d'un objet ?}
 
 
 %%%% documents
@@ -39,7 +45,7 @@
     \image{0.85}{images/mecanique/chronophotographie_balle.png}
   \end{center}
   La superposition de plusieurs images prises les unes après les autres avec un intervalle de temps régulier est une \important{chronophotographie}.
-  Pour réaliser cette chronophotographie, \important{on a pris une image toutes les} $\mathbf{\qty{40}{\ms}}$.
+  Pour réaliser cette chronophotographie, \important{on a pris une image toutes les 40 ms}.
   Une chronophotographie permet de repérer des positions par lesquelles passent la balle.
   
   Les ronds indiquent les positions du centre de la balle, les carrés indiquent les positions du centre de masse de l'homme sur la trottinette.
@@ -68,8 +74,10 @@
 \end{doc}
 
 %%
+\pasCorrection{
 \newpage
 \vspace*{-40pt}
+}
 \begin{doc}{Vecteur déplacement}{doc:TP2_deplacement}
   Soient $P_1$ la position d'un point à l'instant $t_1$ et $P_3$ la position de ce même point à l'instant $t_3$.
   Le déplacement du point matériel entre les dates $t_1$ et $t_3$ est défini par le vecteur déplacement $\vv{P_1 P_3}$.
@@ -115,10 +123,6 @@
 \end{doc}
 
 
-
-%%%%
-% \titreSection{Mouvement dans le référentiel de la caméra}
-
 %%
 \vspace*{-4pt}
 \titreSousSection{Mouvement de l'homme sur la trottinette}
@@ -126,12 +130,17 @@
 %
 \question{
   Quelle est la trajectoire de l'homme sur la trottinette ?
-}{}{1}
+}{
+  L'homme a une trajectoire rectiligne.
+}{1}
 
 %
 \question{
   Comment évolue la vitesse de l'homme sur la trottinette ? Décrire son mouvement.
-}{}{1}
+}{
+  Elle est uniforme, car les points sont espacés régulièrement sur la chronophotographie, il n'y a donc pas d’accélération ou de décélération.
+  Le mouvement de l'homme est rectiligne uniforme.
+}{1}
 
 
 %%%%
@@ -151,7 +160,9 @@ Tracer sur la photo du document~\ref{doc:TP2_chrono} le vecteur $\vv{P_2 P_3}$ e
 \question{
   En utilisant l'échelle sur la photo, déterminer les normes en mètre de $\vv{P_1 P_3}$ et $\vv{P_5 P_7}$.
   Indiquer si ces normes sont identiques.
-}{}{2}
+}{
+  La norme du vecteur déplacement augmente.
+}{2}
 
 %
 \mesure
@@ -162,7 +173,9 @@ en vous aidant du document~\ref{doc:TP2_vitesse}.
 %
 \question{
   Calculer la norme en mètre par seconde de $\vv{v_2}$ et $\vv{v_6}$, en vous aidant du document~\ref{doc:TP2_vitesse}.
-}{}{3}
+}{
+  On divise la norme des vecteurs déplacement par l'écart temporel entre deux photos de la chronophotographie pour trouver la norme des deux vecteurs vitesse.
+}{3}
 
 
 

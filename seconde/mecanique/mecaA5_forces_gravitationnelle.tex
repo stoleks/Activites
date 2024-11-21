@@ -17,9 +17,11 @@
 
 
 %%%% evaluation
+\pasCorrection{
 \begin{tableauCompetences}
   COM & Travailler en groupe, échanger entre élèves. & & & &
 \end{tableauCompetences}
+}
 
 
 %%
@@ -76,13 +78,13 @@
 \question{
   Donner des exemples d'actions mécaniques qu'on peut rencontrer dans la vie quotidienne.
 }{
-
+  Faire du vélo, tenir un stylo, porter son sac, tourner un guidon, etc.
 }{5}
 
 \question{
   Quelle différence remarquez-vous entre ces actions de la vie quotidienne et l'interaction gravitationnelle ?
 }{
-
+  Ce sont des actions de contact, il faut toucher les objets pour agir sur eux, alors que l'interaction gravitationnelle est une action à distance.
 }{3}
 
 
@@ -128,18 +130,28 @@ La Terre est assimilée à une boule de rayon $R_T = \qty{6,37e3}{\km}$ et de ma
 \question{
   Donner la formule mathématique qui relie la valeur de la force $F_{T/H}$ et la masse du satellite $m_H$, la masse de la Terre $M_T$, la constante $G$ et la distance $d$.
 }{
-
+  \begin{equation*}
+    F_{T/H} = G\times \dfrac{m_H \times M_T}{d^2}
+  \end{equation*}
 }{3}
 
 \question{
   Exprimer $d$ en fonction de $R_T$ et $h$.
   Calculer la valeur de $d$ en mètre.
 }{
-
+  \begin{equation*}
+    d = R_T + h
+  \end{equation*}
 }{2}
 
 \question{
   Calculer la valeur de $F_{T/H}$.
 }{
-
+  \begin{equation*}
+    F_{T/H} = G\times \dfrac{m_H \times M_T}{d^2}
+    = \qty{6,67e-11}{\newton \m\squared \per\kg\squared} 
+      \times \dfrac{\qty{1,1e4}{\kg}
+      \times \qty{5,97e24}{\kg}}{(\num{6,37e6} + \num{590e3})^2\unit{\km\squared}}
+    = \qty{9,04e4}{\newton}
+  \end{equation*}
 }{4}

@@ -24,8 +24,8 @@
 %%%% docs
 \begin{doc}{Un peu de vocabulaire}{doc:TP1_vocabulaire}
   Dans ce chapitre on va s'intéresser à l'évolution de la température et des états des objets.
-  Cette branche de la physique s'appelle la \textbf{thermodynamique} (\og \textit{thermos} \fg : \textit{chaud} en grec ``thermodynamique'' = ``évolution de la chaleur'').
-  Pour pouvoir définir précisément ce que l'on étudie, on utilise un vocabulaire particulier en thermodynamique.
+  Cette branche de la physique s'appelle la \important{thermodynamique} (« \textit{thermos} » : \textit{chaud} en grec. Thermodynamique : « évolution de la chaleur »).
+  Pour pouvoir définir ce qui est étudié, on utilise un vocabulaire particulier en thermodynamique.
   
   \begin{importants}
     \begin{listePoints}
@@ -43,12 +43,12 @@
     Un corps chaud en contact avec un corps froid lui transfert de l'énergie, ce qui se traduit par une modification de la température des deux corps : on parle de \important{transfert thermique}.
   \end{importants}
   L'énergie transférée se note $Q$, son unité est le Joule \unit{\joule}.
-  Un corps qui \textbf{reçoit un transfert thermique positif} ($Q > 0$) voit \textbf{sa température augmenter.}
+  Un corps qui \important{reçoit un transfert thermique positif} ($Q > 0$) voit \important{sa température augmenter.}
   
   \begin{importants}
     Sous certaines conditions, ce transfert thermique peut mener un des deux corps à changer d'état (solide à liquide par exemple) : on parle de \important{transformation physique}.
   \end{importants}
-  \attention le transfert thermique va \textbf{toujours} du corps chaud vers le corps froid !
+  \attention le transfert thermique va \important{toujours} du corps chaud vers le corps froid !
   Si un corps pur change d'état, sa température ne varie pas au cours du transfert thermique.
 \end{doc}
 
@@ -56,19 +56,19 @@
 \begin{doc}{Calorimètre}{doc:TP1_calorimetre}
   \begin{wrapfigure}{r}{0.15\linewidth}
     \centering
-    \vspace*{-8pt}
+    \vspace*{-30pt}
     \image{0.9}{images/thermodynamique/calorimetre}
   \end{wrapfigure}
   
-  Un calorimètre (\og \textit{calor} \fg : \textit{chaleur} en latin) est un récipient qui sert à mesurer des transferts thermiques.
-  \textbf{Un calorimètre est un vase qui isole son contenu de tous transfert thermique avec l'extérieur :} aucune chaleur n'y rentre ni n'en sort.
+  Un calorimètre (« \textit{calor} » : \textit{chaleur} en latin) est un récipient qui sert à mesurer des transferts thermiques.
+  \important{Un calorimètre est un vase qui isole son contenu de tous transfert thermique avec l'extérieur :} aucune chaleur n'y rentre ni n'en sort.
   Tous les transferts thermiques se passent donc entre les corps que contient le calorimètre.
 \end{doc}
 
 %%
 \begin{doc}{Protocole de mesure de la variation de température}{doc:TP1_variation_temperature}
   \begin{protocole}
-    \item Placer le calorimètre sur la balance et appuyer sur ``tare''.
+    \item Placer le calorimètre sur la balance et appuyer sur tare.
     \item Verser environ \qty{200}{\ml} d'eau et mesurer la masse $m_\text{eau}$ introduite.
     \item Fermer le calorimètre et introduire le thermomètre. Mesurer la température initiale de l'eau $T_i$.
     \item Mesurer la masse $m_\text{glaçons}$ d'au moins deux glaçons sur une balance.
@@ -76,7 +76,7 @@
     \item Quand les glaçons ont entièrement fondus, agiter l'eau et mesurer sa température finale $T_f$.
   \end{protocole}
   
-  \textbf{Mesures réalisées :}
+  \important{Mesures réalisées :}
   \begin{center}
     \begin{tblr}{
       columns = {c}, hlines, vlines,
@@ -88,29 +88,13 @@
   \end{center}
 \end{doc}
 
-%%
-\begin{doc}{Énergie de changement d'état}{doc:TP1_energie_changement_etat}
-  Pour faire fondre de la glace, il faut un transfert thermique entre la glace et un autre corps.
-  \begin{importants}
-    L'énergie nécessaire pour changer d'état s'appelle \important{l'énergie de changement d'état} et on la note $L$, son unité est le Joule \unit{\joule}.
-  \end{importants}
-  Plus la masse de la glace est élevée et plus l'énergie de changement d'état sera élevée.
-  
-  \begin{importants}
-    On peut définir \important{l'énergie de changement d'état massique} notée $L_m$, qui est propre à chaque corps pur et s'exprime en Joule par gramme \unit{\joule\per\g} :
-    \begin{equation*}
-      L_m = \dfrac{L}{m_\text{glace}}
-    \end{equation*}
-  \end{importants}
-\end{doc}
-
 
 %%%%
 \vspace*{-12pt}
 \titreSection{Premier système étudié : l'eau liquide}
 
 \mesure
-Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les valeurs des mesures expérimentales.
+Réaliser le protocole du document~\ref{doc:TP1_variation_temperature} en notant les valeurs des mesures expérimentales.
 
 \question{
   L'eau liquide a-t-elle gagné ou perdu de l'énergie par transfert thermique ?
@@ -142,6 +126,23 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
 
 
 \titreSection{Second système étudié : les glaçons}
+
+%%
+\begin{doc}{Énergie de changement d'état}{doc:TP1_energie_changement_etat}
+  Pour faire fondre de la glace, il faut un transfert thermique entre la glace et un autre corps.
+  \begin{importants}
+    L'énergie nécessaire pour changer d'état s'appelle \important{l'énergie de changement d'état} et on la note $L$, son unité est le Joule \unit{\joule}.
+  \end{importants}
+  Plus la masse de la glace est élevée et plus l'énergie de changement d'état sera élevée.
+  
+  \begin{importants}
+    On peut définir \important{l'énergie de changement d'état massique} notée $L_m$, qui est propre à chaque corps pur et s'exprime en Joule par gramme \unit{\joule\per\g} :
+    \begin{equation*}
+      L_m = \dfrac{L}{m_\text{glace}}
+    \end{equation*}
+  \end{importants}
+\end{doc}
+
 
 \question{
   \label{exo:energie_L_fusion}
@@ -179,7 +180,6 @@ Réaliser le protocole du document~\ref{doc:protocole_fusion_eau} en notant les 
 
 
 %%%%
-\newpage
 \vspace*{-12pt}
 \titreSection{Bilan}
 
@@ -190,17 +190,17 @@ On parle de \texteTrouLignes[1]{transformation endothermique.}
 \begin{doc}{Transformations endothermique et exothermique}{doc:TP1_endothermique_exothermique}
   \begin{importants}
     \begin{listePoints}
-      \item Si l'énergie du système \textbf{augmente}, $Q > 0$, pendant une transformation physique, on parle de \important{transformation endothermique}.
-      \item Si l'énergie du système \textbf{diminue}, $Q < 0$, pendant une transformation physique, on parle de \important{transformation exothermique}.
+      \item Si l'énergie du système \important{augmente}, $Q > 0$, pendant une transformation physique, on parle de \important{transformation endothermique}.
+      \item Si l'énergie du système \important{diminue}, $Q < 0$, pendant une transformation physique, on parle de \important{transformation exothermique}.
     \end{listePoints}
   \end{importants}
   \begin{center}
-     \image{1}{images/thermodynamique/transformation_energie}
+     \image{0.75}{images/thermodynamique/transformation_energie}
   \end{center}
   \attention Attention aux signes !
   
   \begin{listePoints}
-    \item Pour une réaction \textbf{endothermique} le système reçoit de l'énergie et $Q > 0$, ce qui implique que le milieu extérieur va se refroidir. 
-    \item Au contrainte pour une réaction \textbf{exothermique} le système perd de l'énergie et $Q < 0$, ce qui implique que le milieu extérieur va se réchauffer.
+    \item Pour une réaction \important{endothermique} le système reçoit de l'énergie et $Q > 0$, ce qui implique que le milieu extérieur va se refroidir. 
+    \item Au contrainte pour une réaction \important{exothermique} le système perd de l'énergie et $Q < 0$, ce qui implique que le milieu extérieur va se réchauffer.
   \end{listePoints}
 \end{doc}

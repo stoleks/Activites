@@ -2,7 +2,7 @@
 \teteSndMouv
 
 %%%%
-\nomPrenomClasse
+\pasCorrection{\nomPrenomClasse}
 
 
 %%%% titre
@@ -17,8 +17,17 @@
   \item Comprendre que le mouvement dépend du référentiel.
 \end{objectifs}
 
+\begin{contexte}
+  En fonction de où on observe un objet qui bouge, son mouvement peut changer d'apparence.
+
+  \problematique{
+    Comment décrire le mouvement d'un objet en fonction du référentiel choisi ?
+  }
+\end{contexte}
+
 
 %%%% evaluation
+\pasCorrection{
 \begin{tableauCompetences}
   APP &
   Représenter une situation par un schéma avec une légende.
@@ -28,6 +37,7 @@
   Travailler en groupe, communiquer à l'oral.
   & & & & \\
 \end{tableauCompetences}
+}
 
 %%%%
 \vspace*{6pt}
@@ -77,49 +87,73 @@ Il faudra donc être attentif à ce que disent vos camarades !
 
 
 %%%%
-\newpage
-\titreSousSection{\'Etude du mouvement des oies}
+\pasCorrection{\newpage}
+\titreSousSection{Étude du mouvement des oies}
 
 Le compteur du bateau affiche une vitesse $v_\text{bateau} = \qty{3,6e1}{\km/\hour}$.
 
-\vspace*{6pt}
-\numeroQuestion Pour la personne qui filme les oies, quelle est la vitesse des oies ?
+\question{
+  Pour la personne qui filme les oies, quelle est la vitesse des oies ?
+}{
+  Elle est nulle, l'oie apparaît immobile.
+}{0}
 
-\numeroQuestion Pour une personne se trouvant sur la berge, quelle est la vitesse des oies ?
+\question{
+  Pour une personne se trouvant sur la berge, quelle est la vitesse des oies ?
+}{
+  Elle se déplace à la même vitesse que le bateau, donc \qty{36}{\kilo\m\per\hour}
+}{0}
 
-\numeroQuestion Schématiser la trajectoire des oies si on les observe depuis la berge.
+\mesure Schématiser la trajectoire des oies si on les observe depuis la berge.
 
-\numeroQuestion Indiquer le mouvement des oies depuis le bateau et la berge.
+\question{
+  Indiquer le mouvement des oies depuis le bateau et la berge.
+}{
+  Depuis le bateau l'oie est immobile.
+  Depuis la berge l'oie a une trajectoire rectiligne uniforme.
+}{0}
 
 %%
-\titreSousSection{\'Etude du mouvement de la Lune}
+\titreSousSection{Étude du mouvement de la Lune}
 
-La Lune tourne autour de la Terre à une vitesse $v_\text{Lune} = \qty{3,7e3}{\km/\hour}$
-et la Terre tourne autour du Soleil à une vitesse $v_\text{Terre} = \qty{1,1e5}{\km/\hour}$.
+La Lune tourne autour de la Terre a une vitesse $v_\text{Lune} = \qty{3,7e3}{\km/\hour}$
+et la Terre tourne autour du Soleil a une vitesse $v_\text{Terre} = \qty{1,1e5}{\km/\hour}$.
 
-\begin{figure}[!ht]
-  \begin{subfigure}{0.48\linewidth}
-    \centering
-    \image{0.8}{images/mecanique/terre_lune.png}
-    \caption{Point de vue centré sur la Terre}
-    \label{fig:terre_lune}
-  \end{subfigure}
-  \begin{subfigure}{0.48\linewidth}
-    \centering
-    \image{0.8}{images/mecanique/terre_lune_soleil.png}
-    \caption{Point de vue centré sur le Soleil}
-    \label{fig:terre_lune_soleil}
-  \end{subfigure}
-\end{figure}
+\separationBlocs{
+  \centering 
+  \image{0.8}{images/mecanique/terre_lune}
+  
+  \legende{Point de vue centré sur la Terre}
+}{
+  \centering
+  \image{0.8}{images/mecanique/terre_lune_soleil.png}
+  
+  \legende{Point de vue centré sur le Soleil}
+}
 
-\vspace*{-6pt}
-\numeroQuestion Depuis le point de vue centré sur la Terre, quelle est la vitesse de la Lune ?
+\question{
+  Depuis le point de vue centré sur la Terre, quelle est la vitesse de la Lune ?
+}{
+  Depuis le point de vue centré sur la Terre, la Lune a \qty{3,7e3}{\km/\hour}.
+}{0}
 
-\numeroQuestion Schématiser la trajectoire de la Lune depuis ce point de vue et indiquer son mouvement.
+\question{
+  Schématiser la trajectoire de la Lune depuis ce point de vue et décrire son mouvement.
+}{
+  La Lune a une trajectoire circulaire uniforme.
+}{0}
 
-\numeroQuestion Peut-on décrire la vitesse de la Lune depuis le point de vue centré sur le Soleil ?
+\question{
+  Peut-on décrire la vitesse de la Lune depuis le point de vue centré sur le Soleil ?
+}{
+  Non, car la Lune accélère et décélère au cours de la trajectoire.
+}
 
-\numeroQuestion Schématiser la trajectoire de la Lune depuis ce point de vue.
+\question{
+  Schématiser la trajectoire de la Lune depuis ce point de vue.
+}{
+  La Lune a une trajectoire curviligne accélérée.
+}{0}
 
 
 %%%%
@@ -128,17 +162,37 @@ et la Terre tourne autour du Soleil à une vitesse $v_\text{Terre} = \qty{1,1e5}
 \question{
   Convertir la vitesse $v_\text{Lune}$ en \unit{\m/\s}.
   \textit{Rappel :} \qty{1}{\km} = \qty{e3}{\metre}, \qty{1}{\hour} = \qty{3,6e3}{\s}.
-}{}{2}
+}{
+  \begin{equation*}
+    v_\text{Lune}
+    = \num{3,7e3} \cdot \dfrac{\unit{\km}}{\unit{\hour}}
+    = \num{3,7e3} \times \dfrac{\num{e3}}{\num{3.6e3}} \cdot \dfrac{\unit{m}}{\unit{s}}
+    = \num{1,03e3} \cdot \dfrac{\unit{\m}}{\unit{s}}
+  \end{equation*}
+}{2}
 
 \question{
   Quelle distance la Lune parcours pendant 1 seconde ?
   Comparer avec la longueur de sa trajectoire, qui est de \qty{2,4e6}{\km}.
-}{}{1}
+}{
+  \begin{equation*}
+    d 
+    = v_\text{Lune} \times \qty{1}{\s}
+    = \qty{1,03e3}{\m\per\s} \times \qty{1}{\s}
+    = \qty{1,03e3}{\m}
+  \end{equation*}
+  Elle a donc parcouru moins d'un millième de sa trajectoire, c'est comme si sur une échelle de 1 mètre on parcourait 1 millimètre.
+}{1}
 
 \question{
-  Peut-on décrire la trajectoire de la Lune en l'observant pendant 1 seconde ?
-}{}{2}
+  Peut-on décrire la trajectoire de la Lune en l'observant à l’œil nu pendant 1 seconde ?
+}{
+  Non, car elle n'a presque pas bougé sur sa trajectoire et on ne perçoit donc pas son mouvement.
+}{2}
 
 \question{
-  Conclusion : pourquoi est-il important de définir le référentiel, qui est l’endroit où on se place et le temps passé à observer, avant d'étudier un mouvement ?
-}{}{1}
+  Conclusion : pourquoi est-il important de définir le référentiel, qui est l’endroit où on se place pour observer un objet, et le temps passé à observer cet objet, avant d'étudier un mouvement ?
+}{
+  Car le mouvement dépend du référentiel et du temps passé à observer un objet.
+  On dit que le mouvement est \important{relatif.}
+}{1}
