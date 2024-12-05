@@ -32,7 +32,7 @@
   \begin{importants}
     La réaction est symbolisée par une flèche. À gauche de la flèche se trouvent les \important{réactifs} qui se transforment et à droite de la flèche se trouvent les \important{produits} formés :
     \begin{center}
-      réactif 1 + réactif 2 + \texteTrou{1}  \reaction produit 1 + produit 2 + \texteTrou{1} 
+      réactif 1 + réactif 2 + \ldots  \reaction produit 1 + produit 2 + \ldots
     \end{center}
   \end{importants}
   
@@ -42,14 +42,14 @@
 
 \begin{doc}{Notation des états physiques}{doc:A0_notation_etats_physiques}
   Les réactifs et les produits peuvent se trouver dans différents états physiques.
-  Pour indiquer dans quel état se trouve une espèce chimiques, on écrit son état entre parenthèse à côté de sa formule chimique : $(g)$ pour un gaz, $(l)$ pour un liquide, $(s)$ pour un solide et $(aq)$ pour des solutés en solution aqueuse.
+  Pour indiquer dans quel état se trouve une espèce chimiques, on écrit en indice son état entre parenthèse à côté de sa formule chimique : (g) pour un gaz, (l) pour un liquide, (s) pour un solide et (aq) pour des solutés en solution aqueuse.
 \end{doc}
 
 
 \begin{doc}{Combustion du charbon}{doc:A0_combustion_charbon}
   On modélise la combustion du charbon avec du dioxygène par la réaction chimique suivante :
   \begin{equation*}
-    \chemfig{C}(s) + \chemfig{O_2}(g) \reaction \chemfig{CO_2}(g)
+    \chemfig{C}\sol + \chemfig{O_2}\gaz \reaction \chemfig{CO_2}\gaz
   \end{equation*}
   On vérifie bien qu'il y a le même nombre d'atome de carbone et d'oxygène des deux côté de la réaction chimique.
 \end{doc}
@@ -77,58 +77,59 @@
   \end{importants}
   \begin{importants}
     Pour assurer cette \important{conservation}, il faut \important{ajuster} la réaction chimique avec des coefficients devant les éléments chimiques.
-    Ces coefficients sont appelés \important{coefficient stoechiométrique.}
+    Ces coefficients sont appelés \important{coefficients stœchiométriques.}
   \end{importants}
 \end{doc}
 
 \question{
   Ajuster la réaction de combustion du méthane
-  \begin{center}
-      \chemfig{CH_4}(g) + \chemfig{O_2}(g)
-      \reaction
-      \chemfig{CO_2}(g) + \chemfig{H_2O}(g)
-  \end{center}
-  à l'aide de coefficients stoechiométriques.
+  \begin{equation*}
+    \chemfig{CH_4}\gaz + \chemfig{O_2}\gaz
+    \reaction
+    \chemfig{CO_2}\gaz + \chemfig{H_2O}\gaz
+  \end{equation*}
+  à l'aide de coefficients stœchiométriques.
   Commencer par ajuster le nombre d'atomes d'hydrogène.
 }{
   \begin{equation*}
-    \chemfig{CH_4}(g) + 2\chemfig{O_2}(g)
+    \chemfig{CH_4}\gaz + 2\chemfig{O_2}\gaz
     \reaction
-    \chemfig{CO_2}(g) + 2\chemfig{H_2O}(g)
+    \chemfig{CO_2}\gaz + 2\chemfig{H_2O}\gaz
   \end{equation*}
 }{3}
 
 \numeroQuestion
-Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coefficients stoechiométriques devant chaque élément chimique :
-\newcommand{\localEcart}{20}
+Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coefficients stœchiométriques devant chaque élément chimique :
+\newcommand{\localEcart}{16}
 \begin{center}
   %
-  \texteTrou{1} \chemfig{Fe}(s) + \texteTrou{2} \chemfig{H^{+}}(aq)
-  \reaction \texteTrou{1} \chemfig{Fe^{2+}}(aq) + \texteTrou{1} \chemfig{H_2}(g)
+  \texteTrou{1} $\chemfig{Fe}\sol$ + \texteTrou{2} $\chemfig{H^{+}}\aq$
+  \reaction \texteTrou{1} $\chemfig{Fe^{2+}}\aq$ + \texteTrou{1} $\chemfig{H_2}\gaz$
   \\[\localEcart pt]
   %
-  \texteTrou{4} \chemfig{Fe}(s) + \texteTrou{3} \chemfig{O_2}(g)
-  \reaction \texteTrou{2} \chemfig{Fe_2O_3}(s)
+  \texteTrou{4} $\chemfig{Fe}\sol$ + \texteTrou{3} $\chemfig{O_2}\gaz$
+  \reaction \texteTrou{2} $\chemfig{Fe_2O_3}\sol$
   \\[\localEcart pt]
   %
-  \texteTrou{1} \chemfig{C_2H_6O}(l) + \texteTrou{3} \chemfig{O_2}(g)
-  \reaction \texteTrou{2} \chemfig{CO_2}(g) + \texteTrou{3} \chemfig{H_2O}(l)
+  \texteTrou{1} $\chemfig{C_2H_6O}\liq$ + \texteTrou{3} $\chemfig{O_2}\gaz$
+  \reaction \texteTrou{2} $\chemfig{CO_2}\gaz$ + \texteTrou{3} $\chemfig{H_2O}\liq$
   \\[\localEcart pt]
   %
-  \texteTrou{1} \chemfig{Cu^{2+}}(aq) + \texteTrou{2} \chemfig{HO^{-}}(aq)
-  \reaction \texteTrou{1} \chemfig{Cu{(HO)}_2}(s)
+  \texteTrou{1} $\chemfig{Cu^{2+}}\aq$ + \texteTrou{2} $\chemfig{HO^{-}}\aq$
+  \reaction \texteTrou{1} $\chemfig{Cu{(HO)}_2}\sol$
   \\[\localEcart pt]
   %
-  \texteTrou{2} \chemfig{Fe}(s) + \texteTrou{2} \chemfig{H_2O}(l) + \texteTrou{1} \chemfig{O_2}(g)
-  \reaction \texteTrou{2} \chemfig{Fe{(HO)}_2}(s)
+  \texteTrou{2} $\chemfig{Fe}\sol$ + \texteTrou{2} $\chemfig{H_2O}\liq$ + \texteTrou{1} $\chemfig{O_2}\gaz$
+  \reaction \texteTrou{2} $\chemfig{Fe{(HO)}_2}\sol$
   \\[\localEcart pt]
   %
-  \texteTrou{1} \chemfig{Fe{(OH)}_2}(s) + \texteTrou{2} \chemfig{H_2O}(l) + \texteTrou{1} \chemfig{O_2}(g)
-  \reaction \texteTrou{2} \chemfig{Fe{(OH)}_3}(s)
+  \texteTrou{2} $\chemfig{Fe{(OH)}_3}\sol$
+  \reaction \texteTrou{1} $\chemfig{Fe_2O_3}\sol$ + \texteTrou{3} $\chemfig{H_2O}\liq$
   \\[\localEcart pt]
   %
-  \texteTrou{2} \chemfig{Fe{(OH)}_3}(s)
-  \reaction \texteTrou{1} \chemfig{Fe_2O_3}(s) + \texteTrou{3} \chemfig{H_2O}(l)
+  \texteTrou{1} $\chemfig{Fe{(OH)}_2}\sol$ + \texteTrou{2} $\chemfig{H_2O}\liq$ + \texteTrou{1} $\chemfig{O_2}\gaz$
+  \reaction \texteTrou{2} $\chemfig{Fe{(OH)}_3}\sol$
+  \\[\localEcart pt]
   %
 \end{center}
 

@@ -9,15 +9,15 @@
 
 %%%% objectifs
 \begin{objectifs}
-  \item Savoir qu'un \textbf{oxydant} est une espèce qui \textbf{obtient} des électrons.
-  \item Savoir qu'un \textbf{réducteur} est une espèce qui \textbf{relâche} des électrons.
+  \item Savoir qu'un \important{oxydant} est une espèce qui \important{obtient} des électrons.
+  \item Savoir qu'un \important{réducteur} est une espèce qui \important{relâche} des électrons.
   \item Apprendre la méthode pour écrire une réaction d'oxydoréduction.
 \end{objectifs}
 
 \begin{contexte}
-  Un acide et une base forment un couple si l'on peut passer de l'un à l'autre par la perte ou le gain de proton(s) \chemfig{H^+}.
+  Un acide et une base forment un couple si l'on peut passer de l'un à l'autre par la perte ou le gain de proton \chemfig{H^+}.
 
-  Pour les réaction d'oxydoréduction, il s'agit de couple oxydant/réducteur, reliés par la perte ou le gain d'électron(s).
+  Pour les réaction d'oxydoréduction, il s'agit de couple oxydant/réducteur, reliés par la perte ou le gain d'électron.
   
   \problematique{
     Comment décrire une réaction d'oxydoréduction ?
@@ -34,23 +34,21 @@
   \end{importants}
 
   Un oxydant et un réducteur forment un couple oxydant/réducteur, si l'on peut passer de l'un à l'autre par le gain ou la perte d'électrons.
-  Le couple est noté Ox/Red. \exemple{\chemfig{Zn^{2+}}/\chemfig{Zn}}.
+  Le couple est noté Ox/Réd. \exemple{\chemfig{Zn^{2+}}/\chemfig{Zn}}.
 
   À chaque couple oxydant/réducteur, on associe une demi-équation
   \begin{center}
-    oxydant + $n$ \chemfig{e^{-}} = réducteur
+    oxydant + $n$ \chemfig{e^{-}} \reaction réducteur
 
-    $n$ est le nombre d'électrons échangés
+    $n$ est le nombre d'électrons échangés, \chemfig{e^{-}} représente un électron.
   \end{center}
-  \vspace*{-4pt}
-  L'égalité symbolise que la réaction chimique est possible dans les deux sens.
   
   \begin{importants}
     \begin{listePoints}
-      \item Ox + $n$ \chemfig{e^{-}} \!\!\reaction Red
+      \item Oxydant + $n$ \chemfig{e^{-}} \reaction Réducteur
       : il s'agit d'une \important{réduction.}
       L'oxydant est \important{réduit} (se transforme en réducteur).
-      \item  Red \!\!\reaction Ox + $n$ \chemfig{e^{-}}
+      \item  Réducteur \reaction Oxydant + $n$ \chemfig{e^{-}}
       : il s'agit d'une \important{oxydation.}
       Le réducteur est \important{oxydé} (se transforme en oxydant).
     \end{listePoints}
@@ -60,13 +58,13 @@
 %%
 \begin{doc}{La réaction d'oxydoréduction}{doc:A1_reaction_redox}
   \begin{importants}
-    Une réaction d'\important{oxydoréduction} a lieu quand on met en contact un oxydant et un réducteur de deux couples différents.
+    Une réaction \important{d'oxydoréduction} a lieu quand on met en contact un oxydant et un réducteur de deux couples différents.
   \end{importants}
   
   Elle met donc en jeu deux couples oxydant/réducteur.
-  Par exemple avec un couple du fer : \chemfig{Fe^{3+}}/\chemfig{Fe} ; et un couple de l'oxygène : \chemfig{O_2}/\chemfig{O^{2-}}.
+  Par exemple avec un couple du fer : \chemfig{Fe^{3+}}/\chemfig{Fe} ; et un couple de l'oxygène : \chemfig{O_2}/\chemfig{O^{2-}}
 
-  Le gaz \chemfig{O_2} va réagir avec le solide \chemfig{Fe}, pour se transformer en ion \chemfig{Fe^{3+}} et en ion \chemfig{O^{2-}} (phénomène de rouille).
+  Le gaz \chemfig{O_2} va réagir avec le solide \chemfig{Fe}, pour se transformer en ion \chemfig{Fe^{3+}} et en ion \chemfig{O^{2-}}, qui vont se combiner pour former de la rouille \chemfig{Fe_2O_3}.
 
   \begin{importants}
     Les électrons ne sont jamais libres.
@@ -81,48 +79,56 @@
 }{1}
 
 %%
-\begin{doc}{Méthode d'écriture d'une équation d'oxydoréduction}{doc:A1_methode_redox}
-  Pour écrire la réaction d'oxydoréduction entre les ions argent \chemfig{Ag^+} et le cuivre \chemfig{Cu}, il faut suivre la méthode suivante :
-  \begin{enumeration}
-    \item \textbf{Repérer} dans chaque couple quel oxydant réagit avec quel réducteur.
-    \item \textbf{Écrire} les demi-équations de réaction pour chaque couple dans le « bon » sens, avec les réactifs à droite et les produits à gauche.
-    \item \textbf{Ajuster} les deux demi-équations pour qu'il y ait le même nombre d'électrons échangés.
-    \item \textbf{Additionner} les deux demi-équations afin d'obtenir l'équation d'oxydoréduction.
-  \end{enumeration}
-  \attention Il ne doit pas y avoir d'électron dans l'équation finale !
-\end{doc}
-
-%%
 \begin{doc}{L'arbre de Diane}{doc:A1_arbre_diane}
   \begin{wrapfigure}[4]{r}{0.1\linewidth}
     \vspace*{-24pt}
     \qrcode{https://www.youtube.com/watch?v=Wl8ZuN_7gaI}
   \end{wrapfigure}
-  
-  On introduit dans un erlenmeyer une solution incolore concentrée en ions argent $\chemfig{Ag^+}(aq)$.
-  On plonge ensuite un morceau de cuivre solide $\chemfig{Cu}(s)$.
 
-  Après quelques minutes, le morceau de cuivre s'est recouvert de paillettes d'éclat métallique et la solution est devenue bleue.
+  \moleculesGras
+  On introduit dans un erlenmeyer une solution incolore de nitrate d'argent, qui est concentrée en \important{ions argent $\chemfig{Ag^+}\aq$.}
+  On plonge ensuite un \important{fil de cuivre solide $\chemfig{Cu}\sol$.}
+
+  Après quelques minutes, le morceau de cuivre s'est recouvert de \important{paillettes argentées $\chemfig{Ag}\sol$} et la solution \important{est devenue bleue.}
+  Cette couleur bleue est liée à \important{la présence d'ion $\chemfig{Cu^{2+}}\aq$}
+  \moleculesNormale
 
   Les demi-équations intervenant dans  cette réaction sont
   \begin{align*}
-    \chemfig{Cu^{2+}}(aq) + 2\chemfig{e^{-}} \reaction& \chemfig{Cu}(s) \\
-    \chemfig{Ag^+}(aq) + \chemfig{e^{-}} \reaction& \chemfig{Ag}(s)
+    \chemfig{Cu^{2+}}\aq + 2\chemfig{e^{-}} &\reaction \chemfig{Cu}\sol \\
+    \chemfig{Ag^+}\aq + \chemfig{e^{-}} &\reaction \chemfig{Ag}\sol
   \end{align*}
 \end{doc}
 
 \question{
-  Quelle observation macroscopique montre que du métal d'argent s'est formé ?
-}{}{3}
-
-\question{
-  Identifier les réactifs et les produits de la réaction de l'arbre de Diane.
-}{}{3}
-
-\question{
-  À l'aide des demi-équations fournies, identifier les couples Ox/Red qui interviennent dans la réaction de l'arbre de Diane.
+  À l'aide des demi-équations fournies, identifier les couples Oxydant/Réducteur qui interviennent dans la réaction de l'arbre de Diane.
 }{}{2}
 
 \question{
-  Écrire la réaction d'oxydoréduction qui modélise la transformation de l'arbre de Diane.
-}{}{5}
+  Identifier les réactifs et les produits de la réaction de l'arbre de Diane.
+}{}{2}
+
+%%
+\begin{doc}{Méthode d'écriture d'une équation d'oxydoréduction}{doc:A1_methode_redox}
+  Pour écrire la réaction d'oxydoréduction entre les ions argent \chemfig{Ag^+} et le cuivre \chemfig{Cu}, il faut suivre la méthode suivante :
+  \begin{enumeration}
+    \item \important{Repérer} dans les deux couples quel oxydant réagit avec quel oxydant.
+    \item \important{Écrire} les demi-équations de réaction pour chaque couple dans le « bon » sens, avec les réactifs à gauche et les produits à droite.
+    \item \important{Ajuster} les deux demi-équations pour qu'il y ait le même nombre d'électrons échangés en rajoutant un coefficient multiplicateur devant les demi-équations si nécessaire. 
+    \item \important{Additionner} les deux demi-équations afin d'obtenir l'équation d'oxydoréduction.
+  \end{enumeration}
+  \attention Il ne doit pas y avoir d'électrons dans l'équation finale !
+
+  \exemple L'eau oxygénée peut réagir sur elle-même, car elle intervient dans deux couples 
+  ($\chemfig{H_2O_2} + 2\chemfig{H^+} + 2\chemfig{e^{-}} \reaction \chemfig{H_2O}$) et
+  ($\chemfig{O_2} + 2\chemfig{H^+} + 2\chemfig{e^{-}} \reaction \chemfig{H_2O_2}$) : 
+  \begin{alignat*}{3}
+     & \chemfig{H_2O_2} + \chemfig{2H^{+}} &&+ \chemfig{2e^{-}} &&\reaction \chemfig{2H_2O} \\
+    +& &&\chemfig{H_2O_2}  &&\reaction \chemfig{O_2} + \chemfig{2H^{+}} + \chemfig{2e^{-}} \\
+     & &&\chemfig{2H_2O_2} &&\reaction \chemfig{O_2} + \chemfig{2H_2O}
+  \end{alignat*}
+\end{doc}
+
+\question{
+  En suivant la procédure du document~\ref{doc:A1_methode_redox}, écrire la réaction d'oxydoréduction qui modélise la transformation de l'arbre de Diane.
+}{}{4}

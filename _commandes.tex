@@ -622,11 +622,11 @@
 \newenvironment{tableauCompetences}{
   \begin{center}
   \begin{tblr}{
-    colspec = {| c | Q[l, wd=0.6\linewidth] | c | c | c | c |},
+    colspec = {| c | X[l] | c | c | c | c |},
     rows = {m}, hlines,
     row{1} = {couleurPrim!20}
   }
-    \textbf{Compétences} & \centering \textbf{Items} 
+    \textbf{Comp.} & \centering \textbf{Items} 
     & \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
 }{
   \end{tblr}
@@ -642,7 +642,32 @@
     column{4} = {0.2},
     row{1} = {couleurPrim!20, c}
   }
-    \textbf{Connaissances et capacités exigibles} & \ok & \pasOk & \textbf{En classe} \\
+    \important{Connaissances et capacités exigibles} & \ok & \pasOk & \important{En classe} \\
+}{ 
+  \end{tblr}
+}
+
+\newenvironment{tableauMemorisation}{
+  \centering
+ \begin{tblr}{
+    colspec = {
+      Q[l, wd=0.3\textwidth] X[c] X[c] Q[l, wd=0.3\textwidth] 
+      Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth]
+    }, rows = {m}, hlines, vlines,
+    row{1,2} = {couleurPrim!20, c}
+  }
+    \SetCell[r=2]{c} \important{Questions} & 
+    \SetCell[c=2]{c} \important{Auto-évaluation} & &
+    \SetCell[r=2]{c} \important{Réponses} & 
+    \SetCell[r=2]{c} \important{J-7} &
+    \SetCell[r=2]{c} \important{J-30} &
+    \SetCell[r=2]{c} \important{J-180} \\
+    %
+    & % questions
+    \ok & \pasOk & % auto evaluation
+    & % réponses 
+    & & \\ % répétitions
+    %
 }{ 
   \end{tblr}
 }
@@ -728,7 +753,7 @@
 }
 %
 \NewDocumentCommand{\exemple}{s}{
-  \flecheLongue
+  \fleche
   \IfValueTF{#1}{
     \textit{Exemple :}
   }{
@@ -813,7 +838,7 @@
 
 %%%% liste avec chiffre
 \newlist{enumeration}{enumerate}{2}
-\setlist[enumeration]{label = \textcolor{\couleurPrimSombre}{\textbf{\arabic*.}} }
+\setlist[enumeration]{label = \textcolor{couleurSec}{\textbf{\arabic*.}} }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -849,7 +874,7 @@
   \overline{\mathrm{#1}}
 }
 \newcommand{\reaction}{
-  \!\!\schemestart \arrow(.mid east--.mid west){->}[, 0.9, ultra thick] \schemestop\!\!
+  \;\text{\faLongArrowRight}\; % flèche courte et jolie
 }
 
 %% Pour simplifier l'écriture des formules brutes

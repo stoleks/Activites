@@ -30,7 +30,10 @@
     \item Il ne faut pas mélanger les antiseptiques ou les désinfectants avec autre chose que de l'eau.
   \end{listePoints}
 
-  \begin{tableau}{|c |X[l] |X[l] |X[l] |}
+  \begin{tblr}{
+    colspec = {c Q[l, wd=0.26\linewidth] Q[l, wd=0.25\linewidth] Q[l, wd=0.26\linewidth]},
+    hlines, vlines, row{1} = {couleurPrim!20}
+  }
     {Produit \\ oxydant} &
     Peroxyde d'hydrogène (eau oxygénée) &
     Eau de Javel & Solution de diiode \\
@@ -56,7 +59,7 @@
     15 jours après ouverture. &
     3 mois si concentrée, 6 à 12 mois diluée. &
     1 mois après ouverture.    
-  \end{tableau}
+  \end{tblr}
 \end{doc}
 
 \question{
@@ -76,56 +79,56 @@
   \begin{tableau}{l |c |l }
     Principe actif & Couples Ox/red & Demi-équation d'oxydoréduction \\
     \SetCell[r = 2]{l} Eau oxygénée &
-    \chemfig{H_2O_2}\aqu/ \chemfig{H_2O}\liq & 
-    \chemfig{H_2O_2}\aqu + 2\ionHydrogene\aqu + 2\electron = 2\chemfig{H_2O}\liq \\
+    $\chemfig{H_2O_2}\aq/\chemfig{H_2O}\liq$ &
+    $\chemfig{H_2O_2}\aq + 2\chemfig{H^+}\aq + 2\electron \reaction 2\chemfig{H_2O}\liq$ \\
     &
-    \chemfig{O_2}\gaz/ \chemfig{H_2O_2}\aqu & 
-    \chemfig{O_2}\gaz + 2\ionHydrogene\aqu + 2\electron = \chemfig{H_2O_2}\aqu \\
+    $\chemfig{O_2}\gaz/\chemfig{H_2O_2}\aq$ & 
+    $\chemfig{O_2}\gaz + 2\chemfig{H^+}\aq + 2\electron \reaction \chemfig{H_2O_2}\aq$ \\
     %
     \SetCell[r = 2]{l} Eau de Javel &
-    \chemfig{ClO^{-}}\aqu/ \chemfig{Cl^{-}}\aqu &
-    \chemfig{ClO^{-}}\aqu + 2\ionHydrogene\aqu + 2\electron
-    = \chemfig{Cl^{-}}\aqu + \chemfig{H_2O}\liq \\
+    $\chemfig{ClO^{-}}\aq/\chemfig{Cl^{-}}\aq$ &
+    $\chemfig{ClO^{-}}\aq + 2\chemfig{H^+}\aq + 2\electron
+    \reaction \chemfig{Cl^{-}}\aq + \chemfig{H_2O}\liq$ \\
     %
     &
-    \chemfig{ClO^{-}}\aqu/ \chemfig{Cl_2}\gaz  &
-    2\chemfig{ClO^{-}}\aqu + 4\ionHydrogene\aqu + 2\electron
-    = \chemfig{Cl_2}\gaz + \chemfig{H_2O}\liq \\
+    $\chemfig{ClO^{-}}\aq/\chemfig{Cl_2}\gaz$ &
+    $2\chemfig{ClO^{-}}\aq + 4\chemfig{H^+}\aq + 2\electron
+    \reaction \chemfig{Cl_2}\gaz + \chemfig{H_2O}\liq$ \\
     %
     Diiode &
-    \chemfig{I_2}\aqu/ \chemfig{I^{-}}\aqu &
-    \chemfig{I_2}\aqu + 2\electron = 2\chemfig{I^{-}}\aqu \\
+    $\chemfig{I_2}\aq/\chemfig{I^{-}}\aq$ &
+    $\chemfig{I_2}\aq + 2\electron \reaction 2\chemfig{I^{-}}\aq$ \\
     %
     {Permanganate \\ de potassium} &
-    \chemfig{MnO_4^{-}}\aqu/ \chemfig{Mn^{2+}}\aqu &
-    \chemfig{MnO_4^{-}}\aqu + 8\ionHydrogene\aqu + 5\electron
-    = \chemfig{Mn^{2+}}\aqu + 4\chemfig{H_2O}\liq \\
+    $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$ &
+    $\chemfig{MnO_4^{-}}\aq + 8\chemfig{H^+}\aq + 5\electron
+    \reaction \chemfig{Mn^{2+}}\aq + 4\chemfig{H_2O}\liq$ \\
     %
   \end{tableau}
 \end{doc}
 
 
 \begin{doc}{Eau de Javel et produit acide : un mélange dangereux !}{doc:A3_javel_acide}
-  L'eau de Javel est une solution aqueuse basique d'hypoclorite de sodium (\chemfig{Na^{+}}, \chemfig{ClO^{-}}) et de chlorure de sodium (\chemfig{Na^{+}}, \chemfig{Cl^{-}}).
-  Un produit acide contient des ions \ionHydrogene\aqu.
+  L'eau de Javel est une solution aqueuse basique d’hypochlorite de sodium (\chemfig{Na^{+}}, \chemfig{ClO^{-}}) et de chlorure de sodium (\chemfig{Na^{+}}, \chemfig{Cl^{-}}).
+  Un produit acide contient des ions \chemfig{H^+}.
 
-  L'ion chlorure est un réducteur dans le couple \chemfig{Cl_2}\gaz/ \chemfig{Cl^{-}}\aqu.
+  L'ion chlorure est un réducteur dans le couple $\chemfig{Cl_2}\gaz/ \chemfig{Cl^{-}}\aq$.
   La demi-équation d'oxydoréduction associée est
-  \chemfig{Cl_2}\gaz + 2\electron = 2\chemfig{Cl^{-}}\aqu.
+  $\chemfig{Cl_2}\gaz + 2\electron \reaction 2\chemfig{Cl^{-}}\aq$.
 
-  Le dichlore \chemfig{Cl_2}\gaz est un gaz toxique, car le dichlore se combine avec l'eau présente dans les muqueuses pour former des acides qui attaquent les tissus.
+  Le dichlore $\chemfig{Cl_2}\gaz$ est un gaz toxique, car le dichlore se combine avec l'eau présente dans les muqueuses pour former des acides qui attaquent les tissus.
 \end{doc}
 
 
 \question{
-  Établir l'équation de la réaction d'oxydoréduction entre les ions hypochlorites \chemfig{ClO^{-}}\aqu et les ions chlorures \chemfig{Cl^{-}}\aqu.
+  Établir l'équation de la réaction d'oxydoréduction entre les ions hypochlorites $\chemfig{ClO^{-}}\aq$ et les ions chlorures $\chemfig{Cl^{-}}\aq$.
 }{
 
 }{3}
 
 \question{
-  Pourquoi cette réaction ne peut avoir lieue que dans un milieu acide ?
-}{}{1}
+  Pourquoi cette réaction ne peut avoir lieu que dans un milieu acide ?
+}{}{2}
 
 \question{
   Quel est le gaz toxique dégagé par la réaction ?
@@ -135,8 +138,8 @@
 %%%%
 \begin{doc}{}{doc:A3_}
   Judith s'est écorchée le genou et mélange de l'eau oxygénée avec du permanganate de potassium pour soigner sa plaie.
-  Les couples Ox/Red sont \chemfig{O_2}\gaz/ \chemfig{H_2O_2}\aqu et
-  \chemfig{MnO_4^{-}}\aqu/ \chemfig{Mn^{2+}}\aqu.
+  Les couples Ox/Red sont $\chemfig{O_2}\gaz/\chemfig{H_2O_2}\aq$ et
+  $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$.
   
   Au moment de l'application, le mélange devient incolore et forme une mousse.
 \end{doc}
@@ -147,4 +150,4 @@
 \question{
   Établir l'équation de la réaction d'oxydoréduction entre l'eau oxygénée et le permanganate de potassium.
   Expliquer la formation de mousse.
-}{}{4}
+}{}{3}
