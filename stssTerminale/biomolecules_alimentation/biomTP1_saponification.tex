@@ -2,8 +2,8 @@
 \teteTermStssBiom
 
 %%%% titre
-\numeroActivite{5}
-\titreActivite{Saponification d'une matière grasse}
+\numeroActivite{1}
+\titreTP{Saponification d'une matière grasse}
 
 
 %%%% objectifs
@@ -30,28 +30,17 @@
   \begin{equation*}
     \schemestart
     \chemname{
-    \chemfig[atom sep = 1.75em]{
-      H C (!\teteAcideDev C_{15} H_{31}) 
-      (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{15} H_{31}))
-      -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{15} H_{31})
-    }}{triglycéride}
+      \chemfig[atom sep = 1.75em]{!\trioleiqueSemiDev}
+    }{triglycéride}
     +
-    \chemname{
-      \hspace{14pt}3\hydroxyde\hspace{10pt}
-    }{ions hydroxyde}
+    \chemname{\hspace{14pt}3 \hydroxyde \hspace{10pt}}{ions hydroxyde}
     %
     \reaction
     %
-    \chemname{\chemfig{
-      HC (-OH)
-      (-[3,,2,2] H_2C (-OH))
-      -[-3,,2,2] H_2C (-OH)
-    }}{glycérol}
+    \chemname{\chemfig{!\glycerolSemiDev}}{glycérol}
     +
     \chemname{
-      \hspace{10pt}
-      3\chemfig{C_{15} H_{31} -C (=[1.5]O) (-[-1.5]O^{-})}
-      \hspace{8pt}
+      \hspace{10pt}3 \chemfig{!\oleateSemiDev} \hspace{8pt}
     }{ion carboxylate (savon)}
     \schemestop
   \end{equation*}
@@ -85,28 +74,44 @@
   \end{equation*}
 
   En pratique la réaction n'est pas totale et on perd un peu de matière avec le chauffage au cours de la réaction, on a donc un \important{rendement $\eta$} (« eta »)  inférieur à \qty{100}{\percent}.
-  On calcule le rendement grâce à la relation
+  On calcule le rendement en divisant la quantité de matière obtenue sur celle attendue, ou de manière équivalente avec les masses :
   \begin{equation*}
     \eta = \dfrac{n_\text{savon obtenu}}{n_\text{savon théorique}}
+    \qq{} \text{ou} \qq{}
+    \eta = \dfrac{m_\text{savon obtenu}}{m_\text{savon théorique}}
   \end{equation*}
 \end{doc}
 
-\begin{doc}{L'huile d'olive}{doc:A6_huile_olive}
+\begin{doc}{Savon de Marseille et huile d'olive}{doc:A6_huile_olive}
+  Le savon de Marseille est fabriquée à partir d'huile d'olive historiquement.
+  
   On va considérer que l'huile d'olive est constituée à \qty{70}{\percent} en masse de trioléine, un acide gras composé de trois acides oléique.
 
   La masse molaire de la trioléine est $M = \qty{884}{\g\per\mole}$.
 \end{doc}
 
 \question{
+  Expliquer pourquoi on utilise un chauffage à reflux, au lieu de laisser les vapeurs s'échapper du ballon.
+}{}{3}
+
+\question{
   On introduit \qty{10}{\g} d'huile d'olive dans un ballon.
+  Calculer la masse de trioléine $m_o$ introduite dans le ballon.
+}{}{3}
+
+\question{
   Calculer la quantité de matière de trioléine $n_o$ introduite dans le ballon.
-}{}{4}
+}{}{3}
 
 \question{
   Calculer la quantité de matière de savon $n_\text{savon}$ que l'on s'attendrait à produire avec la réaction de saponification de la trioléine.
-}{}{4}
+}{}{3}
 
 \question{
   Expérimentalement, on obtient une quantité de matière de savon $n_\text{exp} = \qty{1,9e-2}{\mol}$.
   Calculer le rendement $\eta$ de cette réaction.
-}{}{4}
+}{}{2}
+
+\question{
+  Proposer une hypothèse qui expliquerait pourquoi le rendement n'est pas de \qty{100}{\percent}.
+}{}{2}

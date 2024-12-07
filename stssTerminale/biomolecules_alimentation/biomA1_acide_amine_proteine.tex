@@ -84,6 +84,8 @@
   On parle alors \important{d'isomérie de configuration.}
 \end{doc}
 
+\newpage
+\vspace*{-20pt}
 \question{
   Donner des exemples d'objet chiraux dans la vie quotidienne.
 }{}{2}
@@ -91,17 +93,16 @@
 
 \begin{doc}{Acides $\alpha$-aminé produit par le vivant}{doc:A1_acide_amine_vivant}
   Sur Terre, plus de 500 acides $\alpha$-aminés sont produit naturellement,
-  mais chez les eucaryote, seuls 20 acides $\alpha$-aminés sont utilisés et synthétisés.
+  mais chez les eucaryotes, seuls 20 acides $\alpha$-aminés sont utilisés et synthétisés.
   On parle d'acide $\alpha$-aminé \important{protéinogène} (« qui donne naissance aux protéines »). 
-  Les êtres humains peuvent synthétiser 11 acides aminés.
+  Les êtres humains peuvent synthétiser \important{11 acides aminés.}
   \begin{importants}
-    Les neufs acides $\alpha$-aminés qui ne peuvent pas être synthétisé dans nos corps sont les acides aminés \important{essentiels.}
-    Ils doivent être fournis par l'alimentation.
+    Les 9 acides $\alpha$-aminés qui ne peuvent pas être synthétisé dans nos corps sont les acides aminés \important{essentiels.}
   \end{importants}
 
   \centering
   \begin{tblr}{
-    columns = {c}, hlines, vlines,
+    columns = {c, m}, hlines, vlines,
     row{1} = {couleurPrim!20}, row{2} = {couleurPrim!10}
   }
     Isoleucine & Leucine & Methionine & Valine \\
@@ -139,7 +140,7 @@ Entourer les carbones asymétriques dans les quatre exemples d'acide aminés ess
   
   \begin{wrapfigure}[3]{r}{0.25\linewidth}
     \centering
-    \chemfig{C (<[8.6] H) (>:[7] H) (-[3] COOH) -[-1] NH_2}
+    \chemfig{C (<[8.6, 1.25] H) (>:[7, 1.25] H) (-[3] COOH) -[-1] NH_2}
   \end{wrapfigure}
   \phantom{b}\vspace*{-12pt}
 
@@ -147,8 +148,8 @@ Entourer les carbones asymétriques dans les quatre exemples d'acide aminés ess
     \important{Représentation de Cram :} c'est une représentation en perspective avec trois conventions
     \begin{listePoints}
       \item \chemfig{-} liaison dans le plan ;
-      \item \chemfig{>:} liaison en arrière du plan (vers la table) ;
-      \item \chemfig{>} liaison en avant du plan (vers nous).
+      \item \chemfig{>:} liaison en arrière du plan (qui s'éloigne de nous) ;
+      \item \chemfig{>} liaison en avant du plan (qui s'approche de nous).
     \end{listePoints}
   \end{importants}
 
@@ -164,7 +165,7 @@ Entourer les carbones asymétriques dans les quatre exemples d'acide aminés ess
   
   \begin{wrapfigure}[2]{r}{0.4\linewidth}
     \centering
-    \chemfig{C (<[8.6] H) (>:[7] NH_2) (-[3] \textcolor{couleurQuat}{COOH}) -[-1] \textcolor{couleurQuat}{H}}
+    \chemfig{C (<[8.6, 1.25] H) (>:[7, 1.25] NH_2) (-[3] \textcolor{couleurQuat}{COOH}) -[-1] \textcolor{couleurQuat}{H}}
     \reaction
     \chemfig{H_2N - (-[3] \textcolor{couleurQuat}{COOH}) (-[-3] \textcolor{couleurQuat}{H}) -H}
   \end{wrapfigure}
@@ -184,6 +185,7 @@ Entourer les carbones asymétriques dans les quatre exemples d'acide aminés ess
 \numeroQuestion
 Dans le vivant on trouve de la L-valine.
 Donner la représentation de Fischer de la D-valine.
+\smallskip
 
 \begin{minipage}[T]{0.48\linewidth}
   \centering
@@ -191,6 +193,7 @@ Donner la représentation de Fischer de la D-valine.
     \chemfig{NH_2- (-[3] COOH) (-[-3] (-[-3] H) (-CH_3) -[-6]H_3C) -H}
   }{L-valine}
 \end{minipage}
+\smallskip
 
 
 %%%% Liaisons peptidiques
@@ -240,7 +243,18 @@ Donner la représentation de Fischer de la D-valine.
 
 \numeroQuestion
 Donner les formules topologiques de l'alanine et de la valine.
-\vspace*{5cm}
+\vspace*{4cm}
 
 \numeroQuestion
-Donner les formules topologiques des dipeptides Ala-Val, Ala-Ala, Val-Ala et Val-Val.
+Donner les formules topologiques des dipeptides Val-Ala, Met-Ala et Val-Leu.
+\vfill
+
+\begin{doc}{Acide $\alpha$-aminés et alimentation}{doc:A1_alpha_amine_alimentation}
+  \begin{importants}
+    Les 9 acides $\alpha$-aminés qui ne peuvent pas être synthétisé dans nos corps sont les acides aminés \important{essentiels.}
+    Ils doivent être fournis par l'alimentation, en mangeant des protéines végétales ou animales.
+  \end{importants}
+  
+  On parle de \important{protéines complètes} si l'aliment contient tous les acide $\alpha$-aminé essentiels, comme le poulet, le saumon, le tempeh ou le tofu.
+  La plupart des végétaux et certains produits animaux sont des \important{protéines incomplètes,} il faut donc les combiner pour avoir tous les acides $\alpha$-aminés nécessaires aux bon fonctionnement de notre corps.
+\end{doc}

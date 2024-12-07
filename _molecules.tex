@@ -18,8 +18,8 @@
 \definesubmol\saturationH{(-[::90] H) (-[::-90] H) (-[::0] H)}
 
 %% Quelques groupes caractéristiques
-\definesubmol\carboxyle{(=[::-50] O) (-[::50] OH)}
-\definesubmol\carbonyle{(=[::50] O) -[::-50]}
+\definesubmol\carboxyle{(=[::-60] O) (-[::60] OH)}
+\definesubmol\carbonyle{(=[::60] O) -[::-60]}
 \definesubmol\ester{(=[:90] O) -[:-30] O}
 \definesubmol\ether{-[:30] O -[:-30]}
 \definesubmol\amide{(=[:90] O) -[:-30] N}
@@ -80,8 +80,19 @@
 \definesubmol\oleique{
   !\teteAcide !\cc !\cc !\cc !\cis -[::60] !\cc !\cc !\cc
 }
+\definesubmol\oleiqueSemiDev{
+  C_{17} H_{33} -C (=[1.5]O) (-[-1.5]OH)
+}
+\definesubmol\oleateSemiDev{
+  C_{17} H_{33} -C (=[1.5]O) (-[-1.5]O^{-})
+}
 \definesubmol\trioleique{
   !\carbonyle !\cc !\cc !\cc -[::60] =[::60] -[::60] !\cc !\cc -[::-60] -[::-60] -[::-60]
+}
+\definesubmol\trioleiqueSemiDev{
+  H C (!\teteAcideDev C_{17} H_{33}) 
+  (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
+  -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
 }
 \definesubmol\linolenique{
   !\teteAcide !\cc !\cc !\cc !\trans !\trans !\trans -[::60]
@@ -123,6 +134,11 @@
 %% glycerol
 \definesubmol\glycerol{
   HO -[-1] -[1] (-[3] OH) -[-1] -[1] OH
+}
+\definesubmol\glycerolSemiDev{
+  HC (-OH)
+  (-[3,,2,2] H_2C (-OH))
+  -[-3,,2,2] H_2C (-OH)
 }
 
 
@@ -266,4 +282,24 @@
   N (-[::140] -[0] (-[2] OH) -[-2]) -[::70] -[-3] -[::-80]
   N (-[::120] -[::-60] COO^{-})     -[::70] -[-6] -[::-80]
   N (-[::140] -[::-60] ^{-}OOC)     -[::70] -[ 3] -[::-80, 0.8]
+}
+
+%% Vitamines
+\definesubmol\acideAscorbique{
+  HO-[-1] -[1](-[3]OH) -[-1] *5(-(-OH) =(-OH) -(=O) -O-)
+}
+\definesubmol\cholecarciferol{
+  OH-[-1]
+  *6(---(=)-( % premier cycle
+    = -[::-60] =[::60] *6(- % second cycle
+      *5(--- (-(-[::60]) -[::-60] -[::60] -[::-60] -[::60](-[::60]) -[::-60]) --) % troisieme cycle
+    -(-[::0])----) % fin second cycle
+    ) % fin de la chaine sur le premier cycle
+  --) % fin premier cycle
+}
+\definesubmol\retinol{
+  *6(--(-)= (
+    -[1] =[-1] -[1](-[3]) =[-1] -[1] =[-1] -[1](-[3]) =[-1] -[1] OH
+  )
+  -(-[1])(-[5])--)
 }
