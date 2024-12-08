@@ -55,7 +55,22 @@
 \definesubmol\paracetamol{
   *6((-HO)-=-(-NH (-[::-60] (=[::-60]O)-[::60]))=-=)
 }
+\definesubmol\paracetamolSemiDev{
+  *6 (C (-HO) -CH =CH -C 
+    (-NH (-[-1]C (=[-3]O) -CH_3)) % amide
+  =CH -HC =[,4,2])
+}
+\definesubmol\paracetamolDev{
+  H -O -[1]C *6 (
+    -C(-H) =C(-H) -C
+      (-N (-[3]H) (-[-1]C (=[-3]O) % amide
+    (-C!\saturationH))) =C(-H) -C(-H) =
+  )
+}
 
+\definesubmol\acideAcetylsalicylique{
+  *6 (-=- (-O -[-1] (=[-3]) -[1]) = (- (=[5] O) -[1] OH) -=)
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Lipides
@@ -86,14 +101,6 @@
 \definesubmol\oleateSemiDev{
   C_{17} H_{33} -C (=[1.5]O) (-[-1.5]O^{-})
 }
-\definesubmol\trioleique{
-  !\carbonyle !\cc !\cc !\cc -[::60] =[::60] -[::60] !\cc !\cc -[::-60] -[::-60] -[::-60]
-}
-\definesubmol\trioleiqueSemiDev{
-  H C (!\teteAcideDev C_{17} H_{33}) 
-  (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
-  -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
-}
 \definesubmol\linolenique{
   !\teteAcide !\cc !\cc !\cc !\trans !\trans !\trans -[::60]
 }
@@ -103,16 +110,29 @@
 \definesubmol\trilinoleique{
   (=[::60] O) -[::-60] !\cc !\cc !\cc !\cis !\cis !\cc !\cc
 }
-\definesubmol\steraique{
+\definesubmol\steraiqueSemiDev{
   !\teteAcideDev C_{17}H_{35}
 }
-\definesubmol\caproique{
+\definesubmol\caproiqueSemiDev{
   !\teteAcideDev - CH_2 - CH_2 - CH_2 - CH_2 - CH_3
+}
+\definesubmol\trioleique{
+  !\carbonyle !\cc !\cc !\cc -[::60] =[::60] -[::60] !\cc !\cc -[::-60] -[::-60] -[::-60]
+}
+\definesubmol\trioleiqueSemiDev{
+  H C (!\teteAcideDev C_{17} H_{33}) 
+  (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
+  -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
 }
 \definesubmol\trioleine{
    (-[::150] -[::60] O-[::-60] !\trioleique)
    (-[::-90] -[::-60] O-[::60] !\trioleique)
    -[::30] O-[::60] !\trioleique
+}
+\definesubmol\trioleineSemiDev{
+  H C (!\teteAcideDev C_{17} H_{33}) 
+  (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
+  -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
 }
 \definesubmol\tripalmitine{
    (-[::150] -[::60] O-[::-60] (=[::60] O) -[::-60] -[::-60] !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % haut
@@ -215,8 +235,21 @@
   -[6]? (-[3,0.5] -[5,0.75] OH)
 }
 %% glucose topologique
-\definesubmol\glucoseTopo{
+\definesubmol\glucoseCycle{
   *6(-(-OH) -(-OH) -(-[3]OH) (-[0]-[1]OH) -O- -(-OH))
+}
+\definesubmol\glucose{
+  HO -[6] (-[-4] (-[6] HO) -[-2] -[-4] HO) -[4] (-[6] HO) -[2] (-OH) -[4] (=[6] O) -[2] H
+}
+\definesubmol\glucoseSemiDev{
+  HO -C (-H)
+    (-[3] C (-H) (-[6] HO)
+      (-[3] C (-[5]H) =[1] O)
+    ) % aldehyde et alcool
+  -[-3] C (-H) (-[6] HO)
+  -[-3] C (-H) (-[6] HO)
+  -[-3] C (-H) (-[6] HO)
+  -[-3] H
 }
 
 %% fructose Hamworth : il faut ajouter [cram width=2pt, atom sep=2.5em] au début de la figure
@@ -232,18 +265,56 @@
   % fin du cycle
   -[6]?
 }
-\definesubmol\fructoseTopo{
+\definesubmol\fructoseCycle{
   *6(-(-OH) -(-OH) -(-[3]OH) (-[0]-[1]OH) -O- -(-OH))
+}
+\definesubmol\fructose{
+  HO -[6] (-[-4] (-[6] HO) -[-2] -[-4] HO) -[4] (-[6] HO) -[2] (=O) -[4] -[2] OH
+}
+\definesubmol\fructoseSemiDev{
+  HO -C (-H)
+    (-[3] C (=O)
+      (-[3] C (-[3]H) (-[6]H) -OH)
+    ) % cétone et alcool
+  -[-3] C (-H) (-[6] HO)
+  -[-3] C (-H) (-[6] HO)
+  -[-3] C (-H) (-[6] HO)
+  -[-3] H
 }
 
 %% Alanine et Glycine dans des polypetptides
-\definesubmol\alanine{
+\definesubmol\isoleucine{
+  H_2N -[1] (-[3] (-[1]) -[5] -[3]) -[-1] !\carboxyle
+}
+\definesubmol\isoleucinePoly{
+  -CH (-[-3] CH (-[-5] CH_2 -[-3]CH_3) -[-1]CH_2) -C (=[3] O) -
+}
+\definesubmol\leucine{
+  H_2N -[1] (-[3] -[5] (-[-5]) -[3]) -[-1] !\carboxyle
+}
+\definesubmol\methionine{
+  H_2N -[1] (-[3] -[5] -[3] S -[5]) -[-1] !\carboxyle
+}
+\definesubmol\valine{
+  H_2N -[1] (-[3] (-[1]) -[5]) -[-1] !\carboxyle
+}
+\definesubmol\valinePoly{
+  -CH (-[3] CH (-[5] CH_3) -[1]CH_2) -C (=[-3] O) -
+}
+\definesubmol\alanineSemiDev{
+  CH_3- CH (-[-3] NH_2) - C (=[1.5] O) -[-1.5] OH
+}
+\definesubmol\alaninePoly{
   - CH (-[-3] CH_3) - C (=[3] O) -
 }
-\definesubmol\glycine{
+\definesubmol\glycineSemiDev{
+  NH_2- CH_2- C (=[1.5] O) -[-1.5] OH
+}
+\definesubmol\glycinePoly{
   - CH_2 - C (=[3] O) -
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Hormones
 \definesubmol\testosterone{
   O=[1] *6(-= % 1er cycle
@@ -284,11 +355,12 @@
   N (-[::140] -[::-60] ^{-}OOC)     -[::70] -[ 3] -[::-80, 0.8]
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Vitamines
-\definesubmol\acideAscorbique{
+\definesubmol\acideAscorbique{ % Vitamine C
   HO-[-1] -[1](-[3]OH) -[-1] *5(-(-OH) =(-OH) -(=O) -O-)
 }
-\definesubmol\cholecarciferol{
+\definesubmol\cholecarciferol{ % Vitamine D
   OH-[-1]
   *6(---(=)-( % premier cycle
     = -[::-60] =[::60] *6(- % second cycle
@@ -297,7 +369,7 @@
     ) % fin de la chaine sur le premier cycle
   --) % fin premier cycle
 }
-\definesubmol\retinol{
+\definesubmol\retinol{ % Vitamine A
   *6(--(-)= (
     -[1] =[-1] -[1](-[3]) =[-1] -[1] =[-1] -[1](-[3]) =[-1] -[1] OH
   )

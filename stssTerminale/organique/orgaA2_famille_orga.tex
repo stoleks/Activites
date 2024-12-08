@@ -11,14 +11,6 @@
   \item Rappeler les 8 familles organiques à connaitre et la nomenclature associée.
 \end{objectifs}
 
-\begin{contexte}
-  Il existe des millions de molécules organiques, certaines avec des propriétés similaires
-
-  \problematique{
-    Comment classer, décrire et nommer ces molécules selon leur propriétés ?
-  }
-\end{contexte}
-
 
 %%
 \vspace*{-8pt}
@@ -26,55 +18,57 @@
 
 %%
 \vspace*{-8pt}
-\begin{doc}{Fonctions organiques}{doc:A2_fonction_organique}
-  Certaines séquences d'éléments donnent des \important{propriétés} spécifiques aux molécules organiques que l’on classe en différentes familles : alcane, alcène, alcyne, alcool, aldéhyde, cétone, acide carboxylique, ester, éther, amine, amide, etc.
+\input{commun/familles_organiques}
+% \begin{doc}{Fonctions organiques}{doc:A2_fonction_organique}
+%   Certaines séquences d'éléments donnent des \important{propriétés} spécifiques aux molécules organiques que l’on classe en différentes familles : alcane, alcène, alcyne, alcool, aldéhyde, cétone, acide carboxylique, ester, éther, amine, amide, etc.
 
-  $R_1,$ $R_2$ et $R_3$ sont des chaînes carbonées appelées « radicaux alkyles ».
+%   $R_1,$ $R_2$ et $R_3$ sont des chaînes carbonées appelées « radicaux alkyles ».
   
-  \begin{tblr}{
-    width = \linewidth,
-    colspec = {|c |c |c |Q[t, wd=0.3\linewidth]|}, hlines,
-    column{2} = {couleurPrim!20},
-    row{1} = {couleurPrim!10},
-    cell{3}{1} = {r=2}{c},
-    rows = {m}, columns = {c}
-  }
-    Groupe caractéristique & Famille fonctionnelle & Formule & Exemple \\
-    %
-    Hydroxyle & Alcool
-    & \chemfig{R_1 - \textcolor{couleurQuat}{OH}} 
-    & {\chemfig{-[1] -[-1] OH} \\[1pt] éthanol} \\
-    %
-    Carbonyle & Cétone
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur R_2}
-    & {\chemfig{-[1] !\carbonyle -[1]} \\[1pt] butan-2-one} \\
+%   \begin{tblr}{
+%     width = \linewidth,
+%     colspec = {|c |c |c |Q[t, wd=0.3\linewidth]|}, hlines,
+%     column{2} = {couleurPrim!20},
+%     row{1} = {couleurPrim!10},
+%     cell{3}{1} = {r=2}{c},
+%     rows = {m}, columns = {c}
+%   }
+%     Groupe caractéristique & Famille fonctionnelle & Formule & Exemple \\
+%     %
+%     Hydroxyle & Alcool
+%     & \chemfig{R_1 - \textcolor{couleurQuat}{OH}} 
+%     & {\chemfig{-[1] -[-1] OH} \\[1pt] éthanol} \\
+%     %
+%     Carbonyle & Cétone
+%     & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur R_2}
+%     & {\chemfig{-[1] !\carbonyle -[1]} \\[1pt] butan-2-one} \\
     
-    %
-    & Aldéhyde
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{H}}
-    & {\chemfig{!\carbonyle H} \\[1pt] méthanal ou formaldéhyde } \\
-    %
-    Carboxyle & Acide carboxylique
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{OH}}
-    & {\chemfig{-[-1] -[1] !\carboxyle} \\[1pt] acide propanoïque} \\
-    %
-    Ester & Ester
-    & \chemfig{R_1 -[1] \textcolor{couleurQuat}{C} !\cetoneCouleur \textcolor{couleurQuat}{O} -[1] R_2}
-    & {\chemfig{-[1] -[-1] -[1] !\ester -[1] -[-1]} \\[1pt] butanoate d'éthyle} \\
-    %
-    Éther-oxyde & Éther
-    & \chemfig{R_1 -[1,,,,couleurQuat] \textcolor{couleurQuat}{O} -[-1,,,,couleurQuat] R_2}
-    & {\chemfig{-[-1] -[1] O -[-1] -[1]} \\[1pt] éthoxyéthane} \\
-    %
-    Amine & Amine
-    & \chemfig{R_1 - \textcolor{couleurQuat}{NH_2}}
-    & {\chemfig{-[1] -[-1] -[1] NH_2} \\[1pt] propan-1-amine} \\
-    %
-    Amide & Amide
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{N} (-[-3] R_3) - R_2}
-    & {\chemfig{-[-1] -[1] !\amide H_2} \\[1pt] propanamide}
-  \end{tblr}
-\end{doc}
+%     %
+%     & Aldéhyde
+%     & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{H}}
+%     & {\chemfig{!\carbonyle H} \\[1pt] méthanal ou formaldéhyde } \\
+%     %
+%     Carboxyle & Acide carboxylique
+%     & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{OH}}
+%     & {\chemfig{-[-1] -[1] !\carboxyle} \\[1pt] acide propanoïque} \\
+%     %
+%     Ester & Ester
+%     & \chemfig{R_1 -[1] \textcolor{couleurQuat}{C} !\cetoneCouleur \textcolor{couleurQuat}{O} -[1] R_2}
+%     & {\chemfig{-[1] -[-1] -[1] !\ester -[1] -[-1]} \\[1pt] butanoate d'éthyle} \\
+%     %
+%     Éther-oxyde & Éther
+%     & \chemfig{R_1 -[1,,,,couleurQuat] \textcolor{couleurQuat}{O} -[-1,,,,couleurQuat] R_2}
+%     & {\chemfig{-[-1] -[1] O -[-1] -[1]} \\[1pt] éthoxyéthane} \\
+%     %
+%     Amine & Amine
+%     & \chemfig{R_1 - \textcolor{couleurQuat}{NH_2}}
+%     & {\chemfig{-[1] -[-1] -[1] NH_2} \\[1pt] propan-1-amine} \\
+%     %
+%     Amide & Amide
+%     & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{N} (-[-3] R_3) - R_2}
+%     & {\chemfig{-[-1] -[1] !\amide H_2} \\[1pt] propanamide}
+%   \end{tblr}
+% \end{doc}
+
 
 %%
 \newpage
@@ -186,7 +180,7 @@
   \end{importants}
   Si le substituant est un \important{alkyle} (un hydrocarbure), son nom prend le suffixe « \important{-yl} ».
 
-  \exemples \chemfig{CH_3 -[6]} : méthyl, \chemfig{CH_2 (-[6]) -CH_3} éthyl.
+  \exemple* \chemfig{CH_3 -[6]} : méthyl, \chemfig{CH_2 (-[6]) -CH_3} éthyl.
 \end{doc}
 
 \begin{doc}{Nommer une ramification}{doc:A2_nom_ramification}

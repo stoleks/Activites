@@ -1,5 +1,5 @@
 %%%%
-\tetePremStssStru
+\tetePremStssOrga
 
 %%%% titre
 \numeroActivite{1}
@@ -59,8 +59,9 @@
 \end{doc}
 
 \question{
-  Donner la configuration électronique de l'oxygène \isotope{}{8}{O} et indiquer le numéro de sa couche externe.
-}{}{2}
+  Donner la configuration électronique de l'oxygène \isotope{}{8}{O}, de l'hydrogène \isotope{}{1}{H} et du carbone \isotope{}{6}{C}. 
+  Indiquer le numéro de leurs couches externes.
+}{}{4}
 
 
 %%%%
@@ -129,18 +130,17 @@
 \begin{doc}{Valence des éléments \chemfig{C}, \chemfig{H}, \chemfig{O}, \chemfig{N}}{doc:A1_valence_elements}
   \begin{center}
     \begin{tblr}{c c}
-      \SetCell{couleurPrim!40} \chemfig{C ([3]-) ([-3]-) ([6]-) -}
-      \chemfig{C ([4]-) ([-4]-) =} &
-      \SetCell{couleurSec!40}  \chemfig{H -} \\
+      \SetCell{couleurPrim!25} \chemfig{C ([3]-) ([-3]-) ([6]-) -} \chemfig{C ([4]-) ([-4]-) =} &
+      \SetCell{couleurQuat!25} \chemfig{- N ([3]-) -} \\
       %
-      \SetCell{couleurPrim!40} Le carbone est tétravalent &
-      \SetCell{couleurSec!40} L'hydrogène est monovalent \\
+      \SetCell{couleurPrim!25} Le carbone est tétravalent &
+      \SetCell{couleurQuat!25}  L'azote est trivalent \\
       %
-      \SetCell{couleurTer!40} \chemfig{O =} \chemfig{O ([6]-) -} &
-      \SetCell{couleurQuat!40} \chemfig{- N ([-3]-) -} \\
+      \SetCell{couleurTer!25} \chemfig{O =} \chemfig{O ([6]-) ([3,,,,draw=none]-) -} &
+      \SetCell{couleurSec!25}  \chemfig{H ([-3,,,,draw=none]-) -} \\
       %
-      \SetCell{couleurTer!40}  L'oxygène est bivalent &
-      \SetCell{couleurQuat!40}  L'azote est trivalent \\
+      \SetCell{couleurTer!25}  L'oxygène est bivalent &
+      \SetCell{couleurSec!25} L'hydrogène est monovalent \\
     \end{tblr}
   \end{center}
 \end{doc}

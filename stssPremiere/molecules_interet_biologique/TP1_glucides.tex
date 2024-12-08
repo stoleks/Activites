@@ -1,9 +1,9 @@
 %%%%
-\tetePremStssStru
+\tetePremStssBiol
 
 %%%% titre
-\numeroActivite{5}
-\titreActivite{Les glucides}
+\numeroActivite{1}
+\titreTP{Les glucides}
 
 \begin{objectifs}
   \item Étudier la structure des glucides.
@@ -23,51 +23,31 @@
 
 
 %%%%%
-\begin{doc}{Sucres rapides et sucres lents}{doc:A5_sucre_rapide_lent}
+\begin{doc}{Sucres rapides et sucres lents}{doc:TP1_sucre_rapide_lent}
   \begin{importants}
     On classe les glucides en deux catégories :
     \begin{listePoints}
       \item les \important{sucres rapides,} qui sont des molécules simples et facilement digérés ;
       \item les \important{sucres lents,} qui sont composés de plusieurs sucres rapides liés entre eux.  
     \end{listePoints}
-    L'assimilation des sucres lents par l'organisme est lente et permet un apport régulier en sucre rapide pendant toute la digestion.
+    L'assimilation des sucres lents par l'organisme est... lente et permet un apport régulier en sucre rapide pendant toute la digestion.
   \end{importants}
 
   On trouve des sucres rapides dans les fruits, le miel, la farine blanche, le riz blanc et la plupart des sodas et sucreries.
   Les sucres lents se trouvent dans les féculents (pomme de terre, maïs, blé, etc.), les légumineuses (haricot rouge, pois chiche, etc.), la farine complète ou le riz complet.
 \end{doc}
 
-\begin{doc}{Le glucose et le fructose sous forme linéaire et cyclique}{doc:A5_glucose_fructose}
+\begin{doc}{Le glucose et le fructose sous forme linéaire et cyclique}{doc:TP1_glucose_fructose}
   \begin{multicols}{2}
   \begin{center}
     %% glucose linéaire
-    \chemfig{
-      HO -C (-H)
-        (-[3] C (-H) (-[6] HO)
-          (-[3] C (-[5]H) =[1] O)
-        ) % aldehyde et alcool
-      -[-3] C (-H) (-[6] HO)
-      -[-3] C (-H) (-[6] HO)
-      -[-3] C (-H) (-[6] HO)
-      -[-3] H
-    }
-    \phantom{b}
+    \chemfig{!\glucoseSemiDev} \phantom{b}
     % glucose hamworth
     \chemfig[cram width=2pt, atom sep=2.5em]{!\glucoseHamw} \\[4pt]
     Glucose
 
     %% fructose linéaire
-    \chemfig{
-      HO -C (-H)
-        (-[3] C (=O)
-          (-[3] C (-[3]H) (-[6]H) -OH)
-        ) % cétone et alcool
-      -[-3] C (-H) (-[6] HO)
-      -[-3] C (-H) (-[6] HO)
-      -[-3] C (-H) (-[6] HO)
-      -[-3] H
-    }
-    \phantom{b}
+    \chemfig{!\fructoseSemiDev} \phantom{b}
     % fructose hamworth
     \chemfig[cram width=2pt, atom sep=2.5em]{!\fructoseHamw} \\[4pt]
     Fructose
@@ -80,13 +60,14 @@
 }{}{4}
 
 \newpage
+\vspace*{-32pt}
 \question{
   Donner la formule brute du glucose et la formule brute du fructose.
   Ces molécules sont-elles isomères ?
 }{}{2}
 
 
-\begin{doc}{Une partie de l'amidon}{doc:A5_amidon}
+\begin{doc}{Une partie de l'amidon}{doc:TP1_amidon}
   \begin{center}
     \chemfig[cram width=2pt, atom sep=2.5em]{
       ...\phantom{B}-[-1] !\amylopectineHamw
@@ -99,12 +80,16 @@
   \end{center}
 \end{doc}
 
-\begin{doc}{Le test de Fehling}{doc:A5_test_fehling}
+\question{
+  Indiquer, en justifiant, la catégorie de glucides dans laquelle se trouvent le glucose, le fructose et l'amidon.
+}{}{2}
+
+\begin{doc}{Le test de Fehling}{doc:TP1_test_fehling}
   Le test à la liqueur de Fehling permet de déterminer si une solution contient des fonctions aldéhydes.
 
   \begin{protocole}
     \item Mélanger \qty{0,5}{\ml} de liqueur de Fehling avec \qty{1}{\ml} de solution à tester dans un tube à essais.
-    \item Chauffer le tube à essais aec le mélange quelques minutes dans un bain-marie.
+    \item Chauffer le tube à essais contenant le mélange quelques minutes dans un bécher contenant $\sim$\qty{20}{\ml} d'eau pour réaliser un bain-marie.
   \end{protocole}
 
   \begin{center}
@@ -115,8 +100,8 @@
       row{1} = {couleurPrim!20}
     }
       &
-      Présence d'une fonction aldéhyde &
-      Présence d'une fonction cétone \\
+      Présence d'aldéhyde &
+      Présence de cétone \\
       %
       Observation dans le tube à essais &
       Apparition d'un précipité rouge brique &
@@ -125,9 +110,13 @@
   \end{center}
 \end{doc}
 
-\question{
-  Indiquer, en justifiant, la catégorie de glucides dans laquelle se trouvent le glucose, le fructose et l'amidon.
-}{}{3}
+\mesure
+Récupérer le bac contenant le support avec les deux tubes à essais et la pince en bois.
+Brancher le réchaud électrique \important{et prévenir votre prof pour un rappel de sécurité} (pas de gants au dessus d'une surface chaude, manipulation avec la pince du tube chauffé).
 
 \mesure
-Mettre en oeuvre un protocole expérimental permettant de distinguer des solutions de glucose et de fructose.
+Mettre en œuvre le protocole expérimental du document~\ref{doc:TP1_test_fehling} permettant de distinguer des solutions de glucose et de fructose.
+
+\question{
+  Indiquer si un des deux tubes contient du glucose et préciser l'observation qui permet de l'affirmer.
+}{}{2}
