@@ -2,12 +2,13 @@
 \teteTermStssBiom
 
 %%%% titre
+\vspace*{-40pt}
 \numeroActivite{1}
 \titreActivite{Structure des acides $\mathbf{\alpha}$-aminés}
 
 %%%% objectifs
 \begin{objectifs}
-  \item Comprendre la structure des acides aminés.
+  \item Connaître la structure des acides aminés.
   \item Comprendre la notion de molécule énantiomère et de chiralité.
   \item Comprendre les différentes représentations des acides aminés.
   \item Comprendre le principe de la liaison peptidique.
@@ -75,7 +76,8 @@
   \phantom{b}\vspace*{-18pt}
   
   \begin{importants}
-    Une \important{molécule} est dite \important{chirale} si elle n'est pas superposable à son image dans un miroir.
+    Une \important{molécule} est \important{chirale} si elle n'est pas superposable à son image dans un miroir.
+    Une molécule est chirale si elle possède au moins un carbone asymétrique.
   \end{importants}
 
   \begin{importants}
@@ -109,10 +111,10 @@
     %
     Ile & Leu & Met & Val \\
     %
-    \chemfig{H_2N -[1] (-[3] (-[1]) -[5] -[3]) -[-1] !\carboxyle} &
-    \chemfig{H_2N -[1] (-[3] -[5] (-[-5]) -[3]) -[-1] !\carboxyle} &
-    \chemfig{H_2N -[1] (-[3] -[5] -[3] S -[5]) -[-1] !\carboxyle} &
-    \chemfig{H_2N -[1] (-[3] (-[1]) -[5]) -[-1] !\carboxyle} \\
+    \chemfig{!\isoleucine} &
+    \chemfig{!\leucine}    &
+    \chemfig{!\methionine} &
+    \chemfig{!\valine} \\   
     %
   \end{tblr}
   
@@ -243,7 +245,11 @@ Donner la représentation de Fischer de la D-valine.
 
 \numeroQuestion
 Donner les formules topologiques de l'alanine et de la valine.
-\vspace*{4cm}
+\correction{
+  \centering
+  \chemfig{!\valine}  \qq{} \chemfig{!\alanine}
+}
+\pasCorrection{\vspace*{4cm}}
 
 \numeroQuestion
 Donner les formules topologiques des dipeptides Val-Ala, Met-Ala et Val-Leu.

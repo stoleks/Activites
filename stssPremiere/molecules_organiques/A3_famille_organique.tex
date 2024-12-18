@@ -30,12 +30,12 @@
 \end{doc}
 
 \question{
-  Identifier les fonctions organiques présentes dans les molécules suivantes
+  Identifier les fonctions organiques qui sont présentes dans les molécules suivantes
   
   \begin{center}
     \begin{tblr}{c c c c c}
       \chemfig{-[1] O -[-1] -[1]} &
-      \chemfig{-[1] C (=[3] O) -[-1] OH} &
+      \chemfig{CH_3 -[1] C (=[3] O) -[-1] OH} &
       \chemfig{-[1] !\ester -[1] -[-1] -[1]} &
       \chemfig{-[1] -[-1] -[1] (=[3] O) -[-1] H} &
       \chemfig{-[1] -[-1] -[1] (=[3] O) -[-1]} \\
@@ -45,3 +45,18 @@
   \end{center}
   \phantom{bla}
 }{}{7}
+
+
+\begin{doc}{Identification des familles organiques}{doc:A3_identification}
+  Pour identifier une famille organique dans une molécule, il faut chercher si elle comporte des \important{oxygènes \chemfig{O}} ou des \important{azotes \chemfig{N}}. 
+  
+  Si elle comporte un oxygène \chemfig{O} doublement lié à un carbone (\chemfig{O=}), alors il faut regarder le voisinage du carbone
+  \begin{listePoints}
+      \item s'il y a un groupe hydroxyle \chemfig{OH}, on a un \important{acide carboxylique.}
+      \item s'il y a un oxygène \chemfig{O}, on a un \important{ester.}
+      \item s'il y a un azote \chemfig{N}, on a un \important{amide.}
+      \item s'il y a un hydrogène \chemfig{H}, on a un \important{aldéhyde.}
+      \item sinon on a une \important{cétone.}
+  \end{listePoints}
+  Sinon, si elle a un groupe \chemfig{OH}, c'est un \important{alcool ;} si elle a un azote \chemfig{N}, c'est un \important{amine ;} et si elle a un oxygène \chemfig{O}, c'est un \important{éther.}
+\end{doc}

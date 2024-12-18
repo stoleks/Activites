@@ -99,7 +99,7 @@
 }
 
 %% rangée de classe ou de TP
-\NewDocumentCommand{\rangee}{m r()r() r()r()r()d() r()r()}{
+\NewDocumentCommand{\rangee}{m r()r() r()r()r()d[] r()r()}{
   \places(0)(0 - 3*#1) [#2][#3]
   \IfValueTF{#7}{
     \places(7) (0 - 3*#1) [#4][#5][#6][#7]

@@ -99,7 +99,7 @@
 
 
 %%
-\begin{doc}{Les alcènes}{doc:OA_2alcenes}
+\begin{doc}{Les alcènes}{doc:A2_alcenes}
   \begin{importants}
     Les alcènes sont des hydrocarbures avec au moins une liaison double.
     Le suffixe « -ane », devient « \important{-ène} ».
@@ -173,96 +173,5 @@
 \titreSousSection{Règles pour les groupes caractéristiques}
 
 \begin{doc}{Groupes caractéristiques}{doc:A2_nom_groupe_carac}
-  \vspace*{-4pt}
-  \begin{wrapfigure}[5]{r}{0.58\linewidth}
-    \vspace*{-30pt}
-    \centering
-    \begin{tikzpicture}[help lines/.style={thin,draw=black!50}]
-      % chaine principale et carbone fonctionnel
-      \large
-      \node[draw] at (3,3) { \chemfig{
-        H_3C-CH-CH_2 -\textcolor{couleurSec}{\textsf{\textbf{C}}} H-CH_3
-        }
-      };
-      \draw (5, 2.25) node[right] {\textbf{chaîne principale}};
-      \draw[couleurSec] (3.7, 3.7) node[right] {\textbf{carbone fonctionnel}};
-      % Ramification
-      \draw[very thick, couleurPrim] (1.51, 2.79) -- (1.51, 2.29);
-      \draw[couleurPrim] (2.5, 1.3)  node[left] {\textbf{ramification}};
-      \node[draw, couleurPrim] at (1.8, 2) { \chemfig{CH_3} };
-      % Alcool
-      \draw[very thick, violet] (4.11, 2.79) -- (4.11, 2.29);
-      \draw[violet] (3.6, 1.3)  node[right] {\textbf{groupe caractéristique}};
-      \node[draw, violet] at (4.28, 2){ \chemfig{OH_{}} };
-    \end{tikzpicture}
-  \end{wrapfigure}
-  %
-  Pour nommer les molécules contenant des groupes caractéristiques, on utilise les règles décrites dans le tableau ci-dessous, en respectant la priorité des fonctions organiques.
-  
-  \begin{importants}
-    Le \important{carbone fonctionnel} désigne le carbone contenant la fonction de la molécule.
-  \end{importants}
-  
-  Pour les cétones, alcools et amines, le numéro est celui du \important{carbone fonctionnel,} comme pour les ramifications il \important{doit être le plus petit possible.}
-  
-  ($R_1$) et ($R_2$) représentent les noms des chaînes carbonées auxquels les groupes caractéristiques sont attachées. 
-
-  \vspace*{2pt}
-  \begin{center}
-  \begin{tblr}{
-    width = \linewidth,
-    colspec = {|c |c |c |Q[wd=0.4\linewidth] |}, hlines,
-    column{2} = {couleurPrim!20},
-    row{1} = {couleurPrim!10},
-    rows = {m}, columns = {c}
-  }
-    Priorité & Famille fonctionnelle & Formule & Nom si prioritaire \\
-    %
-    1 & Acide carboxylique
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{OH}}
-    & acide ($R_1$)-oïque \\
-    %
-    2 & Ester
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{O} -[1] R_2}
-    & ($R_1$)-oate de ($R_2$)-yle \\
-    %
-    3 & Amide
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{N} H_2}
-    & ($R_1$)-amide \\
-    %
-    4 & Aldéhyde
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{H}}
-    & ($R_1$)-al \\
-    %
-    5 & Cétone
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur R_2}
-    & ($R_1$)-(numéro)-one \\
-    %
-    6 & Alcool
-    & \chemfig{R_1 - \textcolor{couleurQuat}{OH}}
-    & ($R_1$)-(numéro)-ol \\
-    %
-    7 & Amine & \chemfig{R_1 - \textcolor{couleurQuat}{NH_2}}
-    & ($R_1$)-(numéro)-amine \\
-    %
-    8 & Éther
-    & \chemfig{R_1 -[1,,,,couleurQuat] \textcolor{couleurQuat}{O} -[-1,,,,couleurQuat] R_2}
-    & ($R_1$)-oxy-($R_2$) \\
-  \end{tblr}
-  \end{center}
-
-  \vspace*{2pt}
-  \begin{importants}
-    \attention Pour ces 8 familles organiques, vous devez savoir :
-    \begin{listePoints}
-      \item les noms de chacune des familles et leur groupes fonctionnels ;
-      \item les reconnaître dans une molécule si on vous en donne une représentation.
-    \end{listePoints}
-  \end{importants}
+  \input{commun/nom_familles_organiques}
 \end{doc}
-
-% \question{
-%   Nommer la molécule du document~\ref{doc:A2_nom_groupe_carac}.
-% }{
-%   4-méthyl-pent-2-ol
-% }{1}

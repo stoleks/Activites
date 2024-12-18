@@ -21,7 +21,9 @@
   #1
 }
 
-%%%% Boite de correction et pour les titres
+%%%% Boite colorée avec 
+% #1 : le contenu
+% #2 : la couleur
 \newtcolorbox{boiteColoree}[2][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   frame hidden, sharp corners, boxrule = 0mm, % pas de contours
@@ -29,7 +31,10 @@
   #1
 }
 
-%%%% document
+%%%% Boite pour les documents des activités, avec le format suivant
+% \begin{doc}{ TITRE }{ LABEL }
+%   CONTENU
+% \end{doc}
 \newcounter{documentNum}
 \newtcolorbox{doc}[3][]{
   before title = {\refstepcounter{documentNum}},
@@ -47,13 +52,16 @@
 
 
 %%%% Boîtes pour les activités et TP pour une séquence en plan de travail
-% Boite de durée
+% Boite pour afficher la durée recommandée en bas à gauche
 \newtcbox{\dureeActivite}[1][]{
   arc = 2mm, % courbes des bords
   colback = couleurSec, colframe = white, % couleurs boite
   coltext = white,
 }
-% Boite de base pour les activités ou TP
+% Boite de base pour les activités ou TP, avec le format suivant 
+% \begin{boiteActivite}{ TITRE ACTIVITÉ }{ DURÉE }{ LABEL }{ COMPTEUR }{ FORMAT TITRE }
+%   CONTENU
+% \end{boiteActivite}
 \newtcolorbox{boiteActivite}[6][]{
   before title = {\refstepcounter{#5}},
   enhanced jigsaw, % pour un meilleur rendu
@@ -73,7 +81,11 @@
   #1
 }
 
-% Boite activité
+% Boite pour les activités en plan de travail
+% \begin{activite}{ TITRE ACTIVITÉ }[ DURÉE ]{ LABEL }
+%   CONTENU
+% \end{activite}
+% Par défaut DURÉE = 1 h
 \NewDocumentEnvironment{activite}{m O{1 h} m}{%
   \begin{boiteActivite}{#1}{#2}{#3}
     {activiteNum}{\documentaire* \hspace{-4pt} Activité}
@@ -82,7 +94,11 @@
 }
 % Compteur pour les TP
 \newcounter{TPNum}
-% Boite TP
+% Boite TP en plan de travail
+% \begin{TP}{ TITRE ACTIVITÉ }[ DURÉE ]{ LABEL }
+%   CONTENU
+% \end{TP}
+% Par défaut DURÉE = 1 h
 \NewDocumentEnvironment{TP}{m O{2 h} m}{%
   \begin{boiteActivite}{#1}{#2}{#3}
     {TPNum}{\mesure* \hspace{-4pt} TP}
@@ -633,7 +649,7 @@
   \end{center}
 }
 
-%%%% Tableau de connaissances sans exercices
+%%%% Tableau de connaissances pour les fiches de révisions
 \newenvironment{tableauConnaissances}{
   \centering
   \begin{tblr}{
@@ -647,12 +663,16 @@
   \end{tblr}
 }
 
+%%%% Tableau de mémorisation pour les fiches de mémorisation
+% Question | | | Réponse
 \newenvironment{tableauMemorisation}{
   \centering
  \begin{tblr}{
     colspec = {
-      Q[l, wd=0.3\textwidth] X[c] X[c] Q[l, wd=0.3\textwidth] 
-      Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth]
+      Q[l, wd=0.3\textwidth] % Question
+      X[c] X[c] % Auto-évaluation
+      Q[l, wd=0.3\textwidth] % Réponse
+      Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] % Répétitions
     }, rows = {m}, hlines, vlines,
     row{1,2} = {couleurPrim!20, c}
   }
@@ -673,7 +693,7 @@
 }
 
 
-%%%% Alignement dans un tableau
+%%%% Alignement vertical dans un tableau
 \newcommand{\vAligne}[1]{
   \strut \\ \vspace*{#1}
 }
@@ -709,11 +729,12 @@
   \textcolor{#1}{\textbullet}
 }
 
-% Quelques questions spéciales
+%% Commande général pour colorer un texte avec une couleur par défaut
+% L'intérêt de cette commande est d'éviter des répétion de O{couleurSec}
 \NewDocumentCommand{\questionSpeciale}{O{couleurSec} m}{
   \textcolor{#1}{#2}
 }
-%
+% Quelques questions spéciales avec couleur réglable
 \NewDocumentCommand{\mesure}{o s}{
   \IfBooleanTF{#2}{}{ \hspace{7pt} }
   \questionSpeciale[#1]{\faFlask\hspace{1pt} \faWrench\!}
@@ -729,7 +750,9 @@
   \questionSpeciale[#1]{\faFileText\hspace{1pt} \faBook}
 }
 
-% pictogramme sécurité
+%% pictogramme sécurité
+% #1 largeur
+% #2 image
 \newcommand{\picto}[2]{
   \image{#1}{images/pictogrammes/picto_#2}
 }
@@ -751,17 +774,18 @@
 \NewDocumentCommand{\important}{O{couleurSec!75!black} m}{
   \!\textcolor{#1}{\textsf{\bfseries #2}}\!\!
 }
-%
+%%%% Pour donner des exemples. 
+%\exemple est au singulier, \exemple* est au pluriel.
 \NewDocumentCommand{\exemple}{s}{
   \fleche
-  \IfValueTF{#1}{
-    \textit{Exemple :}
-  }{
+  \IfBooleanTF{#1}{
     \textit{Exemples :}
+  }{
+    \textit{Exemple :}
   }
 }
 
-%
+%%%% Citation (#1) avec la source (#2)
 \newcommand{\extrait}[2]{
   « #1 »
   
@@ -772,7 +796,7 @@
   \vspace*{-12pt}
 }
 
-%%%% image
+%%%% image avec la largeur réglée par rapport à celle de la ligne
 \newcommand{\image}[2]{
   \includegraphics[width=#1\linewidth]{#2}
 }
@@ -814,7 +838,9 @@
 \newlist{listeFleche}{itemize}{2}
 \setlist[listeFleche]{label = \textbf{\flecheLongue}}
 
-%%%% jeu de données, avec une * pour que ça soit sur deux colonnes
+%%%% jeu de données listé avec des points.
+% {donnees}* pour que ça soit sur deux colonnes
+% {donnees} pour que ça soit sur une colonne
 \NewDocumentEnvironment{donnees}{s +m}{  
   \important{Données :}
   \IfBooleanTF{#1}{
@@ -828,7 +854,7 @@
   \IfBooleanTF{#1}{\end{multicols}}{}
 }
 
-%%%% problematique
+%%%% problématique 
 \newcommand{\problematique}[1]{
   \hspace*{-12pt}
   \flecheLongue[couleurTer]
@@ -842,7 +868,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Séparation de la page en blocs
+%%%% Séparation de la page en trois blocs
 \NewDocumentCommand{\separationTroisBlocs}{+m O{0.3} +m O{0.3} +m O{0.3}}{
   \begin{minipage}[T]{#2\linewidth}
     #1
@@ -869,7 +895,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% nombre algébrique, réaction
+%% nombre algébrique et réaction chimique
 \newcommand{\algebrique}[1]{
   \overline{\mathrm{#1}}
 }
@@ -878,6 +904,7 @@
 }
 
 %% Pour simplifier l'écriture des formules brutes
+% #1 : # carbone, #2 : # hydrogène, #3 : oxygène
 \newcommand{\bruteCHO}[3]{
   \chemfig{C_{#1} H_{#2} O_{#3}}
 }
@@ -899,7 +926,7 @@
 }
 
 
-%% Unités
+%% Unités pour siunit
 \DeclareSIUnit{\dioptre}{\text{$\delta$}}
 \DeclareSIUnit{\dornic}{\text{\textdegree D}}
 \DeclareSIUnit{\ppm}{\text{ppm}}
@@ -908,7 +935,8 @@
 % \DeclareSIUnit{}{\text{}}
 
 
-%% atome ou isotope #1: Z, #2: A, #3: X
+%%%% atome ou isotope 
+%#1: Z, #2: A, #3: X
 \makeatletter
 \newcommand{\isotope}[3]{%
    \settowidth\@tempdimb{\ensuremath{\scriptstyle#1}}%

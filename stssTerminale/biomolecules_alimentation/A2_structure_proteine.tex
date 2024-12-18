@@ -2,8 +2,8 @@
 \teteTermStssBiom
 
 %%%% titre
+\vspace*{-40pt}
 \numeroActivite{2}
-\vspace*{-34pt}
 \titreActivite{Structure des protéines}
 
 %%%% objectifs
@@ -23,29 +23,48 @@
 
 %%%% docs
 \begin{doc}{Structures des protéines}{doc:A2_structure_proteine}
-  \QRCode[2]{https://www.youtube.com/watch?v=wvTv8TqWC48}
+  \qrcodeCote[2]{https://www.youtube.com/watch?v=wvTv8TqWC48}
   \phantom{b}\vspace*{-20pt}
   
   \begin{importants}
-    Un \important{polypeptide} est une chaîne d'acides $\alpha$-aminés.
-    
+    Un \important{polypeptide} est une chaîne d'acides $\alpha$-aminés.    
     Une \important{protéine} est une \important{macromolécule} composée d'un ou plusieurs \important{polypeptides repliés.}
     C'est la géométrie tridimensionnelle de la protéine qui lui donne ses propriétés particulière.
   \end{importants}
   
-  Une des plus petites protéine du corps humain est \important{l'insuline,} avec deux chaînes composées au total de 51 acides $\alpha$-aminés.
-  La plus grande protéine du corps humain est la \important{titine,} composée d'une chaîne avec plus de \num{34000} acides $\alpha$-aminés.
-
+  Une des plus petites protéine du corps humain est \important{l'insuline,} avec deux chaînes de 51 acides $\alpha$-aminés.
+  La plus grande protéine du corps humain est la \important{titine,} avec plus de \num{34000} acides $\alpha$-aminés.
   On peut décomposer la structure des protéines en quatre échelles :
   \begin{center}
-    \image{0.58}{images/proteines/structure_proteines_insuline}
+    \begin{tblr}{
+      colspec = {X[j, m] Q[c, m, wd=0.3\linewidth]},
+    }
+      \important{Structure primaire :}
+      séquence d'acides aminés qui compose la protéine, elle est codé dans de l'ADN. &
+      \image{1}{images/proteines/structure_proteine_primaire} \\
+      %
+      \important{Structure secondaire :}
+      enroulement local des chaînes peptidiques à causes des interactions électrostatiques entre les acides aminés. 
+      Deux structures particulières se retrouvent fréquemment dans les protéines, les hélices alpha et les feuillets bêtas.
+      Ces structures ont donc des représentations particulières dites en « ruban » pour faciliter leur visualisation dans la structure complexe d'une protéine. &
+      \image{1}{images/proteines/structure_proteine_secondaire} \\
+      %
+      \important{Structure tertiaire :}
+      repliement tridimensionnel de la protéine en une structure compacte avec une géométrie unique qui lui donne ses propriétés biologiques. 
+      Cette géométrie est lié au interaction électrostatique entre les acides aminés et aux molécules d'eau qui entourent la protéine. &
+      \image{1}{images/proteines/structure_proteine_tertiaire} \\
+      %
+      \important{Structure quaternaire :}
+      assemblage de plusieurs protéines pour former une nouvelle protéine plus efficace ou pour en faciliter le transport dans l'organisme ou au sein d'une cellule. &
+      \image{1}{images/proteines/structure_proteine_quaternaire} \\
+    \end{tblr}
   \end{center}
 \end{doc}
 
 \newpage
 \vspace*{-36pt}
 \begin{doc}{Production des protéines}{doc:A2_production_proteine}
-  \QRCode{https://www.youtube.com/watch?v=D1Yiu06qMq8}
+  \qrcodeCote{https://www.youtube.com/watch?v=D1Yiu06qMq8}
   Les protéines sont produites dans les cellules avec l'information génétique contenue dans \important{l'ADN.}
   
   Pour produire une protéine, l'information génétique est transmise par les \important{ARN messagers} aux \important{ribosomes.}
@@ -71,15 +90,17 @@
       \item et les \important{récepteurs d'hormones,} qui détectent les hormones et entraînent une action de la cellule (la détection d'insuline entraine l'absorption du glucose) ;
     \end{listePoints}
     \item protéines \important{motrices,} pour permettre à certaines parties du corps de bouger (l'actine et la myosine permettent au muscle de se contracter) ;
-    \item protéines \important{défensives,} pour protéger la cellule contre les agent infectieux (anticorps).
-    \item protéines \important{de stockage,} pour stocker des acides aminés et permettre la biosynthèse d'autres protéines (l'ovalbumine dans le blanc d'oeuf permet le développement des embryons de poulet) ;
+    %\item protéines \important{défensives,} pour protéger la cellule contre les agent infectieux (anticorps).
+    \item protéines \important{de stockage,} pour stocker des acides aminés et permettre la biosynthèse d'autres protéines (l'ovalbumine dans le blanc d’œuf permet le développement des embryons de poulet) ;
     \item protéines \important{enzymatiques,} pour modifier la vitesse de presque toutes les réactions chimiques qui ont lieu dans la cellule.  
   \end{listePoints}
 \end{doc}
 
 \question{
-  D'après la vidéo du document~\ref{doc:A2_structure_proteine}, quelles protéines permettent au SARS-CoV-2 de pénétrer dans nos cellules et de pirater les ribosomes de nos cellules ?
-}{}{1}
+  Donner la fonction biologique de la kératine, de la myosine et de l'hémoglobine.
+}{
+  
+}{3}
 
 % https://fr.wikipedia.org/wiki/Prot%C3%A9ine
 % https://pdb101.rcsb.org/motm/185
