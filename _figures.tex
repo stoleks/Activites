@@ -65,20 +65,41 @@
   \end{tikzpicture}
 }
 
-\newcommand{\flecheProgression}[1]{%
+\NewDocumentCommand{\flecheProgression}{m O{17}}{%
+  \strut\vspace*{8pt}
   \begin{center}
     \begin{tikzpicture}
+      \def\max{\numexpr((#1-1)*2)}
+      % Premier bout pour l'alignement
       \draw[
-        -{Triangle [width = 36pt, length = 16pt]}, 
         line width = 20pt,
         rounded corners = 10mm,
         color = couleurSec,
       ]
-      #1
+        (0, {(\max-0)*2.5}) -- (1, {(\max-0)*2.5});
+      % Partie centrale répétée
+      \draw[
+        line width = 20pt,
+        rounded corners = 10mm,
+        color = couleurSec,
+      ]
+        \foreach \x in {0,2,...,\max}  {
+          \ifnum \x < \max
+            ( 1, {(\max-\x)  *2.5}) -- (#2,  {(\max-\x)  *2.5}) --
+            (#2, {(\max-\x-1)*2.5}) -- ( 0,  {(\max-\x-1)*2.5}) --
+            ( 0, {(\max-\x-2)*2.5}) -- (1.1, {(\max-\x-2)*2.5})
+          \fi
+        };
+      % Flèche finale
+      \draw[
+        -{Triangle [width = 36pt, length = 16pt]}, 
+        line width = 20pt,
+        color = couleurSec
+      ]
+        (0.8, 0) -- (#2, 0);
     \end{tikzpicture}
   \end{center}
 }
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% plan de classe
