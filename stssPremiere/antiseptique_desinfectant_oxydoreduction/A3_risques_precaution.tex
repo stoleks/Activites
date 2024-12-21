@@ -72,39 +72,53 @@
 
 
 \newpage
-\vspace*{-36pt}
+\vspace*{-42pt}
 \begin{doc}{Principes actifs courants}{doc:A3_principes_actifs}
   Les principes actifs des antiseptiques et désinfectants agissent par \important{oxydation.}
-  
-  \begin{tableau}{l |c |l }
-    Principe actif & Couples Ox/red & Demi-équation d'oxydoréduction \\
+
+  \centering
+  \begin{tblr}{
+    colspec = {l |c | r c l}, hlines,
+    row{1} = {couleurPrim!20},
+    row{5} = {m},
+  }
+    Principe actif & Couples Ox/red & \SetCell[c=3]{c} Demi-équation d'oxydoréduction \\
     \SetCell[r = 2]{l} Eau oxygénée &
     $\chemfig{H_2O_2}\aq/\chemfig{H_2O}\liq$ &
-    $\chemfig{H_2O_2}\aq + 2\chemfig{H^+}\aq + 2\electron \reaction 2\chemfig{H_2O}\liq$ \\
+    $\chemfig{H_2O_2}\aq + 2\chemfig{H^+}\aq + 2\electron$ &
+    $\reaction$ &
+    $2\chemfig{H_2O}\liq$ \\
     &
     $\chemfig{O_2}\gaz/\chemfig{H_2O_2}\aq$ & 
-    $\chemfig{O_2}\gaz + 2\chemfig{H^+}\aq + 2\electron \reaction \chemfig{H_2O_2}\aq$ \\
+    $\chemfig{O_2}\gaz + 2\chemfig{H^+}\aq + 2\electron$ &
+    $\reaction$ &
+    $\chemfig{H_2O_2}\aq$ \\
     %
-    \SetCell[r = 2]{l} Eau de Javel &
+    %\SetCell[r = 2]{l}
+    Eau de Javel &
     $\chemfig{ClO^{-}}\aq/\chemfig{Cl^{-}}\aq$ &
-    $\chemfig{ClO^{-}}\aq + 2\chemfig{H^+}\aq + 2\electron
-    \reaction \chemfig{Cl^{-}}\aq + \chemfig{H_2O}\liq$ \\
+    $\chemfig{ClO^{-}}\aq + 2\chemfig{H^+}\aq + 2\electron$ &
+    $\reaction$ &
+    $\chemfig{Cl^{-}}\aq + \chemfig{H_2O}\liq$ \\
     %
-    &
-    $\chemfig{ClO^{-}}\aq/\chemfig{Cl_2}\gaz$ &
-    $2\chemfig{ClO^{-}}\aq + 4\chemfig{H^+}\aq + 2\electron
-    \reaction \chemfig{Cl_2}\gaz + \chemfig{H_2O}\liq$ \\
+    % &
+    % $\chemfig{ClO^{-}}\aq/\chemfig{Cl_2}\gaz$ &
+    % $2\chemfig{ClO^{-}}\aq + 4\chemfig{H^+}\aq + 2\electron$ &
+    % $\reaction \chemfig{Cl_2}\gaz + \chemfig{H_2O}\liq$ \\
     %
     Diiode &
     $\chemfig{I_2}\aq/\chemfig{I^{-}}\aq$ &
-    $\chemfig{I_2}\aq + 2\electron \reaction 2\chemfig{I^{-}}\aq$ \\
+    $\chemfig{I_2}\aq + 2\electron$ &
+    $\reaction$ &
+    $2\chemfig{I^{-}}\aq$ \\
     %
     {Permanganate \\ de potassium} &
     $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$ &
-    $\chemfig{MnO_4^{-}}\aq + 8\chemfig{H^+}\aq + 5\electron
-    \reaction \chemfig{Mn^{2+}}\aq + 4\chemfig{H_2O}\liq$ \\
+    $\chemfig{MnO_4^{-}}\aq + 8\chemfig{H^+}\aq + 5\electron$ &
+    $\reaction$ &
+    $\chemfig{Mn^{2+}}\aq + 4\chemfig{H_2O}\liq$ \\
     %
-  \end{tableau}
+  \end{tblr}
 \end{doc}
 
 
@@ -124,7 +138,7 @@
   Établir l'équation de la réaction d'oxydoréduction entre les ions hypochlorites $\chemfig{ClO^{-}}\aq$ et les ions chlorures $\chemfig{Cl^{-}}\aq$.
 }{
 
-}{3}
+}{4}
 
 \question{
   Pourquoi cette réaction ne peut avoir lieu que dans un milieu acide ?
@@ -136,7 +150,7 @@
 
 
 %%%%
-\begin{doc}{}{doc:A3_}
+\begin{doc}{Nettoyer une plaie}{doc:A3_soigner_plaie}
   Judith s'est écorchée le genou et mélange de l'eau oxygénée avec du permanganate de potassium pour soigner sa plaie.
   Les couples Ox/Red sont $\chemfig{O_2}\gaz/\chemfig{H_2O_2}\aq$ et
   $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$.
@@ -150,4 +164,4 @@
 \question{
   Établir l'équation de la réaction d'oxydoréduction entre l'eau oxygénée et le permanganate de potassium.
   Expliquer la formation de mousse.
-}{}{3}
+}{}{4}

@@ -4,11 +4,10 @@
 %%
 \nomPrenomClasse
 
-
 %%%% titre
 \numeroActivite{2}
 \titreTP{Chute d'une balle}
-
+\vspace*{-12pt}
 
 %%%% objectifs
 \begin{objectifs}
@@ -25,24 +24,16 @@
 %%%% evaluation
 \pasCorrection{
 \begin{tableauCompetences}
-  APP &
-  Représenter une situation par un schéma.
-  & & & & \\
-  COM &
-  Travailler en groupe, échanger entre élèves.
-  & & & &
+  APP & Représenter une situation par un schéma. \\
+  COM & Travailler en groupe, échanger entre élèves.
 \end{tableauCompetences}
 }
-
-%%
-%\vspace*{6pt}
-%\problematique{Quelle est l'influence d'une translation sur la description du mouvement d'un objet ?}
 
 
 %%%% documents
 \begin{doc}{Chronophotographie de la chute d'une balle}{doc:TP2_chrono}
   \begin{center}
-    \image{0.85}{images/mecanique/chronophotographie_balle.png}
+    \image{0.8}{images/mecanique/chronophotographie_balle.png}
   \end{center}
   La superposition de plusieurs images prises les unes après les autres avec un intervalle de temps régulier est une \important{chronophotographie}.
   Pour réaliser cette chronophotographie, \important{on a pris une image toutes les 40 ms}.
@@ -59,14 +50,12 @@
     Un vecteur contient quatre information : 
     
     \vspace*{-4pt}
-    \begin{multicols}{2}
-      \begin{listePoints}
-        \item une \important{direction}
-        \item un \important{sens}
-        \item une \important{norme}
-        \item une \important{origine}
-      \end{listePoints}
-    \end{multicols}
+    \begin{listePoints}[2]
+      \item une \important{direction}
+      \item un \important{sens}
+      \item une \important{norme}
+      \item une \important{origine}
+    \end{listePoints}
     \vspace*{-4pt}
   
     Un vecteur est \important{constant} si sa direction, son sens et sa norme ne varie pas pendant le mouvement.
@@ -75,8 +64,8 @@
 
 %%
 \pasCorrection{
-\newpage
-\vspace*{-40pt}
+  \newpage
+  \vspace*{-40pt}
 }
 \begin{doc}{Vecteur déplacement}{doc:TP2_deplacement}
   Soient $P_1$ la position d'un point à l'instant $t_1$ et $P_3$ la position de ce même point à l'instant $t_3$.
@@ -85,14 +74,14 @@
   
   Le vecteur $\vv{P_1 P_3}$ est caractérisé par
   \vspace*{-8pt}
-  \begin{multicols}{2}
-  \begin{listePoints}
+  %\begin{multicols}{2}
+  \begin{listePoints}[2]
     \item Une origine : le point $P_1$.
     \item une direction : celle de la droite $P_1 P_3$.
     \item Un sens : de $P_1$ vers $P_3$.
     \item Une norme : la distance $P_1 P_3$ en mètre \unit{m}.
   \end{listePoints}
-  \end{multicols}
+  %\end{multicols}
 \end{doc}
 
 \begin{doc}{Vecteur vitesse}{doc:TP2_vitesse}
@@ -132,7 +121,7 @@
   Quelle est la trajectoire de l'homme sur la trottinette ?
 }{
   L'homme a une trajectoire rectiligne.
-}{1}
+}[1]
 
 %
 \question{
@@ -140,7 +129,7 @@
 }{
   Elle est uniforme, car les points sont espacés régulièrement sur la chronophotographie, il n'y a donc pas d’accélération ou de décélération.
   Le mouvement de l'homme est rectiligne uniforme.
-}{1}
+}[1]
 
 
 %%%%
@@ -162,7 +151,7 @@ Tracer sur la photo du document~\ref{doc:TP2_chrono} le vecteur $\vv{P_2 P_3}$ e
   Indiquer si ces normes sont identiques.
 }{
   La norme du vecteur déplacement augmente.
-}{2}
+}[2]
 
 %
 \mesure
@@ -175,7 +164,7 @@ en vous aidant du document~\ref{doc:TP2_vitesse}.
   Calculer la norme en mètre par seconde de $\vv{v_2}$ et $\vv{v_6}$, en vous aidant du document~\ref{doc:TP2_vitesse}.
 }{
   On divise la norme des vecteurs déplacement par l'écart temporel entre deux photos de la chronophotographie pour trouver la norme des deux vecteurs vitesse.
-}{3}
+}[3]
 
 
 
@@ -186,32 +175,32 @@ en vous aidant du document~\ref{doc:TP2_vitesse}.
 % %
 % \question{
 %   Ouvrir la vidéo de la de chute balle dans le logiciel Tracker.
-% }{0}
+% }{}
 % 
 % %
 % \question{
 %   Repérer dans la vidéo le moment où la balle commence à tomber. 
-% }{0}
+% }{}
 % 
 % %
 % \question{
 %   Sur la vidéo, réaliser le pointage de la balle.
-% }{0}
+% }{}
 % 
 % %
 % \question{
 %   Tracer la norme de la vitesse, la vitesse selon l'axe $x$ et la vitesse selon l'axe $y$.
 %   Que remarquez vous pour la vitesse selon l'axe $x$ ?
-% }{2}
+% }{}[2]
 % 
 % %
 % \question{
 %   Que pouvez-vous en déduire sur la nature du mouvement de la balle dans le référentiel de la trottinette ?
 %   Représenter avec un schéma sa trajectoire.
-% }{2}
-% \vspace{200pt}
+% }{}[2]
+% \vfill
 % 
 % %
 % \question{
 %   Conclure sur la position de la balle au moment où elle touche le sol par rapport à la trottinette.
-% }{2}
+% }{}[2]
