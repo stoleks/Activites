@@ -47,23 +47,23 @@
       \fill[color = couleurPrim!50] (0.7808*90ex, 0.0) rectangle (0.9903*90ex, 3ex);
       \fill[color = couleurPrim!25] (0.9903*90ex, 0.0) rectangle        (90ex, 3ex);
       % Valeurs
-      \node[white] at (0.7808*45ex, 1.5ex) {\textbf{\qty{78,08}{\percent}}};
-      \node[black] at (0.8855*90ex, 1.5ex) {\textbf{\qty{20,95}{\percent}}};
-      \node[black] at        (91ex, 1.5ex) {\textbf{\qty{0,97} {\percent}}};
+      \node[white] at (0.7808*45ex, 1.5ex) {\important{\qty{78,08}{\percent}}};
+      \node[black] at (0.8855*90ex, 1.5ex) {\important{\qty{20,95}{\percent}}};
+      \node[black] at        (91ex, 1.5ex) {\important{\qty{0,97} {\percent}}};
       % Carré légende
       \fill[color = couleurPrim]    (75ex, 15ex) rectangle (78ex, 12ex);
       \fill[color = couleurPrim!50] (75ex, 11ex) rectangle (78ex, 8ex);
       \fill[color = couleurPrim!25] (75ex, 7ex)  rectangle (78ex, 4ex);
       % Légende
-      \node[black,right] at (78ex, 13.5ex) {\textbf{Diazote}};
-      \node[black,right] at (78ex, 9.5ex)  {\textbf{Dioxygène}};
-      \node[black,right] at (78ex, 5.5ex)  {\textbf{Autres gaz}};
+      \node[black,right] at (78ex, 13.5ex) {\important{Diazote}};
+      \node[black,right] at (78ex, 9.5ex)  {\important{Dioxygène}};
+      \node[black,right] at (78ex, 5.5ex)  {\important{Autres gaz}};
     \end{tikzpicture}
   \end{center}
 
   \qty{1}{\percent} signifie qu'il y a 1 molécule sur un total de 100 molécules.
   
-  \qty{1}{\ppm} signifie qu'il y a 1 molécule sur un total de \num{1000000}.
+  \qty{1}{\ppm} signifie qu'il y a 1 molécule sur un total de \num{1000000} de molécules.
 \end{doc}
 
 
@@ -82,7 +82,7 @@
 
 \question{
   Convertir les proportions molaire des 5 premiers constituants de l'air en fraction molaire pour pouvoir les comparer.
-}{}{4}
+}{}[4]
 
 
 \begin{doc}{Quelques tests pour identifier des espèces chimiques}{doc:TP2_tests_identification}
@@ -98,8 +98,7 @@
 
 \question{
   Pour chacun des 3 tests, établir l'équation de la réaction chimique mise en jeu.
-}{
-}{3}
+}{}[3]
 
 
 %%%%
@@ -111,9 +110,9 @@
     18\chemfig{CO_2}(g) + 18\chemfig{H_2O}(g)
   \end{center}
 
-  \textbf{Matériel :} un cristallisoir, une bougie, une éprouvette graduée.
+  \important{Matériel :} un cristallisoir, une bougie, une éprouvette graduée.
 
-  \textbf{Protocole :} remplir la coupelle d'eau.
+  \important{Protocole :} remplir la coupelle d'eau.
   Placer et allumer la bougie au centre de la coupelle.
   Recouvrir la bougie avec l'éprouvette.
 
@@ -122,15 +121,15 @@
 
 \begin{doc}{Volume molaire des gaz}{doc:TP2_volume_molaire}
   Le volume molaire des gaz vaut $V_m = \qty{24,1}{\litre\per\mole}$ à \qty{20}{\degreeCelsius} sous pression atmosphérique.
-  Cette valeur est la même pour tous les gaz, donc \textbf{la fraction volumique est égale à la fraction molaire pour les gaz.}
+  Cette valeur est la même pour tous les gaz, donc \important{la fraction volumique est égale à la fraction molaire pour les gaz.}
 \end{doc}
 
 \mesure Réaliser l'expérience du document~\ref{doc:TP2_combustion_bougie} et mesurer le volume d'eau déplacé.
 
 \question{
   En déduire la fraction volumique de dioxygène, puis la fraction molaire de dioxygène.
-}{}{4}
+}{}[4]
 
 \question{
   Comparer cette valeur avec celle fournie dans le document~\ref{doc:TP2_composition_air}.
-}{}{1}
+}{}[1]

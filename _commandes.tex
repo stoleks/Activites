@@ -771,7 +771,7 @@
 }
 % Pour légender une image
 \newcommand{\legende}[1]{
-  \vspace*{2pt}
+  \vspace*{4pt}
   \textcolor{couleurPrim}{\faArrowUp} \; #1
 }
 
@@ -934,16 +934,16 @@
 %% pour les masse molaire et atomique (* -> en indice)
 \NewDocumentCommand{\masseMol}{s m}{
   \IfBooleanTF{#1}{
-    M_{\chemfig{#1}}
+    \ensuremath{M_{\chemfig{#2}}}
   }{
-    M(\chemfig{#2})
+    \ensuremath{M(\chemfig{#2})}
   }
 }
 \NewDocumentCommand{\masseAtom}{s m}{
   \IfBooleanTF{#1}{
-    m_{\chemfig{#1}}
+    \ensuremath{m_{\chemfig{#2}}}
   }{
-    m(\chemfig{#1})
+    \ensuremath{m(\chemfig{#2})}
   }
 }
 
