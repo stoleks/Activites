@@ -124,6 +124,7 @@
 \newcounter{seanceNum}
 \newtcbox{\seance}[2][]{
   before title = {\refstepcounter{seanceNum}},
+  halign=center, valign=center, % pour centrer le contenu
   enhanced jigsaw, % pour un meilleur rendu
   colback = white, colframe = black, % couleur cadre
   boxrule = 0.5mm, arc = 0.5mm, % forme du cadre
@@ -135,13 +136,14 @@
   #1
 }
 % Pour afficher 3/2/1 séances dans la programmation
-\NewDocumentEnvironment{programmeSeance}{O{3}}{
+\NewDocumentEnvironment{programmeSeance}{O{3} D(){34}}{
   \begin{tcbraster}[
     raster columns = #1, 
     raster width center = (\linewidth - 3cm - 5cm*(3 - #1))
   ]
 }{
   \end{tcbraster}
+  \vspace*{#2 pt}
 }
 
 
