@@ -1,56 +1,36 @@
 %%%% début de la page
 \teteSndMouv
 
-%%
-\nomPrenomClasse
-
-
 %%%% titre
+\nomPrenomClasse
 \numeroActivite{5}
 \titreActivite{Forces d'interaction gravitationnelle}
-
 
 %%%% objectifs
 \begin{objectifs}
   \item Connaître la force d'interaction gravitationnelle
 \end{objectifs}
 
-
-%%%% evaluation
 \pasCorrection{
-\begin{tableauCompetences}
-  COM & Travailler en groupe, échanger entre élèves. & & & &
-\end{tableauCompetences}
+  \begin{tableauCompetences}
+    COM & Travailler en groupe, échanger entre élèves. \\
+  \end{tableauCompetences}
 }
 
 
 %%
 \begin{doc}{Force d'interaction gravitationnelle}{doc:A5_interaction_gravitationnelle}
   \chevron Tous les corps qui possèdent une masse s’attirent entre eux : c’est l’attraction gravitationnelle.
-
   \begin{importants}
     On modélise l'attraction gravitationnelle exercée par le corps $A$ sur le corps $B$ par une force représentée par un vecteur $\vvFAsurB$ :
     
     \vspace*{-12pt}
     \begin{wrapfigure}[6]{r}{0.4\linewidth}
-      \vspace*{-20pt}
-      \begin{tikzpicture}
-        % corps A
-        \tkzCercle{0}{0}{gray!50!white}{20}
-        \tkzLabel{-1.2}{0}{$m_A$}
-        \tkzPointLabel{0}{0}{$A$}
-        % corps B
-        \tkzCercle{4}{2}{gray!50!white}{20}
-        \tkzLabel{2.8}{2}{$m_B$}
-        \tkzPointLabel{4}{2}{$B$}
-        % force et distance
-        \tkzVecteur(4)[-1.75](2)[-0.875]{$\vvFAsurB$}[left]
-        \tkzVecteur(0.5)[4](-1)[2]{}*
-        \tkzLabel{2.5}{-0.5}{$d$}
-      \end{tikzpicture}
+      \vspace*{-10pt}
+      \input{commun/interaction_gravitationnelle}
     \end{wrapfigure}
-
     \phantom{b}
+    
     \begin{listePoints}
       \item \important{Point d'application} : centre du corps $B$
       \item \important{Direction} : la droite $AB$.
@@ -76,16 +56,16 @@
 
 
 \question{
-  Donner des exemples d'actions mécaniques qu'on peut rencontrer dans la vie quotidienne.
+  Donner des exemples d'actions mécaniques qu'on rencontre dans la vie quotidienne.
 }{
   Faire du vélo, tenir un stylo, porter son sac, tourner un guidon, etc.
-}{5}
+}[5]
 
 \question{
-  Quelle différence remarquez-vous entre ces actions de la vie quotidienne et l'interaction gravitationnelle ?
+  Est-ce que ce sont des actions de contact, ou à distance ?
 }{
   Ce sont des actions de contact, il faut toucher les objets pour agir sur eux, alors que l'interaction gravitationnelle est une action à distance.
-}{3}
+}[2]
 
 
 %%%%
@@ -100,32 +80,48 @@
   
   Le satellite est attirée par la terre : il est en chute libre permanente.
   Le satellite est opérationnel depuis 1990 et tourne autour de la Terre en \qty{96}{\min}.
-  Vu depuis le centre de la Terre, il a un mouvement circulaire uniforme à une altitude $\mathbf{h = \qty{590}{\km}}$.
+  Vu depuis le centre de la Terre, il a un mouvement circulaire uniforme à une altitude \important{$\mathbf{h = \qty{590}{\km}}$.}
   
   Ce satellite contient un télescope qui permet d’observer les étoiles et objets de l’univers depuis l’espace !
 \end{doc}
 
 \mesure 
 Sur le schéma ci-dessous, représenter la force d’interaction gravitationnelle $F_{T/H}$ exercée par la Terre $T$ sur le satellite Hubble $H$.
-La Terre est assimilée à une boule de rayon $R_T = \qty{6,37e3}{\km}$ et de masse $M_T = \qty{5,97e24}{\kg}$.
+La Terre est assimilée à une boule de rayon $R_T = \qty{6370}{\km}$ et de masse $M_T = \qty{5,97e24}{\kg}$.
+\smallskip
 
-\begin{center}
+\separationBlocs{
+  \centering
   \begin{tikzpicture}
-    % Terre et Satellite
-    \tkzCercleLigne{0}{0} {white}{couleurSec} {80}
-    \tkzCercleLigne{0}{0} {couleurPrim!30}{couleurPrim} {50}
-    \tkzPointLabel{2}{2}{$H$}
-    \tkzPointLabel{0}{0}{$T$}
-    % Distance
-    \tkzVecteur(0)[-2.8](0){$d$}[below right]*
-    \tkzVecteur(0)[-1](0)[-1.48]{}*
-    \tkzLabel{-0.3}{-1}{$R_T$}
-    \tkzVecteur(-1)[-0.6](-1.48)[-0.88]{}*
-    \tkzLabel{-1.}{-2}{$h$}
+    % Satellite
+    \tikzCercle[white] (0, 0) {80} [couleurSec]
+    \tikzCercle(2.82, 0){2} \tikzLabel(3.2, 0) {$H$}
+    % Terre
+    \tikzCercle[couleurSec!30] (0, 0) {60} [couleurSec]]
+    \tikzPointLabel(0, 0) {$T$}
+    % Distance d
+    \tikzVecteur*(0, 0) (-2.8, 0) {$d$} [below right]
+    % Rayon de la Terre
+    \tikzVecteur*(0, 0) (-0.54, -2.05) {}
+    \tikzLabel(0.3, -1) {$R_T$}
+    % Hauteur du satellite
+    \tikzVecteur*(-0.54, -2.05) (-0.18, -0.68) {}
+    \tikzLabel(-1.1, -2.2) {$h$}
   \end{tikzpicture}
-\end{center}
-
-
+  
+  \legende{Schéma du satellite Hubble $H$ autour de la Terre $T$, les distances ne sont pas à l'échelle.}
+}{
+  \centering
+  \begin{tikzpicture}
+    \tikzCercle[white] (0, 0) {80} [couleurSec]
+    \tikzCercle(2.82, 0){2} \tikzLabel(3.2, 0) {$H$}
+    \tikzCercle[couleurSec!30] (0, 0) {73.22} [couleurSec]]
+    \tikzPointLabel(0, 0) {$T$}
+  \end{tikzpicture}
+  
+  \legende{Schéma avec les distances à l'échelle.}
+}
+\smallskip
 
 \question{
   Donner la formule mathématique qui relie la valeur de la force $F_{T/H}$ et la masse du satellite $m_H$, la masse de la Terre $M_T$, la constante $G$ et la distance $d$.
@@ -133,7 +129,7 @@ La Terre est assimilée à une boule de rayon $R_T = \qty{6,37e3}{\km}$ et de ma
   \begin{equation*}
     F_{T/H} = G\times \dfrac{m_H \times M_T}{d^2}
   \end{equation*}
-}{3}
+}[3]
 
 \question{
   Exprimer $d$ en fonction de $R_T$ et $h$.
@@ -142,7 +138,7 @@ La Terre est assimilée à une boule de rayon $R_T = \qty{6,37e3}{\km}$ et de ma
   \begin{equation*}
     d = R_T + h
   \end{equation*}
-}{2}
+}[2]
 
 \question{
   Calculer la valeur de $F_{T/H}$.
@@ -154,4 +150,4 @@ La Terre est assimilée à une boule de rayon $R_T = \qty{6,37e3}{\km}$ et de ma
       \times \qty{5,97e24}{\kg}}{(\num{6,37e6} + \num{590e3})^2\unit{\km\squared}}
     = \qty{9,04e4}{\newton}
   \end{equation*}
-}{4}
+}[5]

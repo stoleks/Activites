@@ -1,11 +1,9 @@
 %%%% début de la page
 \teteSndMouv
 
-
 %%%% titre
 \numeroActivite{6}
 \titreActivite{Poids et interaction gravitationnelle}
-
 
 %%%% objectifs
 \begin{objectifs}
@@ -23,20 +21,7 @@
     \vspace*{-12pt}
     \begin{wrapfigure}[6]{r}{0.4\linewidth}
       \vspace*{-20pt}
-      \begin{tikzpicture}
-        % corps A
-        \tkzCercle{0}{0}{gray!50!white}{20}
-        \tkzLabel{-1.2}{0}{$m_A$}
-        \tkzPointLabel{0}{0}{$A$}
-        % corps B
-        \tkzCercle{4}{2}{gray!50!white}{20}
-        \tkzLabel{2.8}{2}{$m_B$}
-        \tkzPointLabel{4}{2}{$B$}
-        % force et distance
-        \tkzVecteur(4)[-1.75](2)[-0.875]{$\vvFAsurB$}[left]
-        \tkzVecteur(0.5)[4](-1)[2]{}*
-        \tkzLabel{2.5}{-0.5}{$d$}
-      \end{tikzpicture}
+      \input{commun/interaction_gravitationnelle}
     \end{wrapfigure}
 
     \phantom{b}
@@ -71,18 +56,16 @@ On cherche à calculer la force d'interaction gravitationnelle qu'exerce la Terr
   
 \begin{center}
   \begin{tikzpicture}
-    % Terre et Satellite
-    \tkzCercleLigne{0}{0} {couleurPrim!30}{couleurPrim} {50}
-    \tkzPointLabel{0}{0}{$T$}
-    % Distance
-    \tkzVecteur(0)[-1](0)[-1.48]{}*
-    \tkzLabel{-0.3}{-1}{$R_T$}
-    % Objet
-    \filldraw (-1, -1.48) circle (2pt);
-    \tkzLabel{-1.5}{-1.75}{Objet}
+    % Terre et Objet
+    \tikzCercle[couleurSec!30] (0, 0) {60} [couleurSec]
+    \tikzPointLabel(0, 0) {$T$}
+    \tikzCercle(2.12, 0) {2} \tikzLabel(3, 0) {Objet}
+    % Rayon de la Terre
+    \tikzVecteur*(0, 0) (-0.54, -2.05) {}
+    \tikzLabel(0.3, -1) {$R_T$}
   \end{tikzpicture}
   
-  Représentation de la Terre avec un objet à sa surface
+  \legende{Représentation de la Terre avec un objet à sa surface}
 \end{center}
 
 
@@ -93,7 +76,7 @@ On cherche à calculer la force d'interaction gravitationnelle qu'exerce la Terr
   \begin{equation*}  
     F_{T/objet} = G\times \dfrac{m \times M_T}{R_T^2}
   \end{equation*}
-}{3}
+}[3]
 
 \newpage
 \question{
@@ -104,7 +87,7 @@ On cherche à calculer la force d'interaction gravitationnelle qu'exerce la Terr
     P = m \times g
   \end{equation*}
   g = \qty{9.81}{\newton}
-}{3}
+}[3]
 
 \question{
   Dans l'expression de $F_{T/objet}$, on va regrouper tous les termes qui sont constant sur Terre et les noter $g$.
@@ -119,7 +102,7 @@ On cherche à calculer la force d'interaction gravitationnelle qu'exerce la Terr
   \begin{equation*}
     g = \dfrac{G \times M_T}{R_T^2}
   \end{equation*}
-}{3}
+}[3]
 
 \question{
   Calculer la valeur numérique de $g$. 
@@ -133,4 +116,4 @@ On cherche à calculer la force d'interaction gravitationnelle qu'exerce la Terr
     = \qty{9.813}{\newton\per\kg}
   \end{equation*}
   On voit donc que le poids est simplement l'interaction gravitationnelle de la Terre sur un objet à la surface de la Terre.
-}{5}
+}[5]
