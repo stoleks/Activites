@@ -103,34 +103,39 @@
 }
 
 %% Pour tracer une rangée d'élève avec 2 ou 3 colonnes
-% \rang {<numero rangee>} {<eleves>} {<eleves>} [<eleves>]
+% \rang <largeur> <hauteur> {<eleves>} {<eleves>} [<eleves>]
 \ExplSyntaxOn
 % Position de la place horizontale, largeur et hauteur des places
-\int_new:N \l_rangPositionX_int
-\int_new:N \l_largeurPlaceX_int
-\int_new:N \l_hauteurPlaceY_int
-\NewDocumentCommand{\rang}{D<>{3} D<>{2} >{\SplitList{,}} m >{\SplitList{,}} m >{\SplitList{,}} d[]}{
+\fp_new:N \l_rangPositionX_fp
+\fp_new:N \l_largeurPlaceX_fp
+\fp_new:N \l_hauteurPlaceY_fp
+\NewDocumentCommand{\rang}{
+  D<>{3} D<>{2} 
+  >{\SplitList{,}} m >{\SplitList{,}} m >{\SplitList{,}} d[]
+}{
   \begin{tikzpicture}
     % Initialisation de la position horizontale et de la taille des places
-    \int_set:Nn \l_rangPositionX_int {0}
-    \int_set:Nn \l_largeurPlaceX_int {#1}
-    \int_set:Nn \l_hauteurPlaceY_int {#2}
+    \fp_set:Nn \l_rangPositionX_fp {0}
+    \fp_set:Nn \l_largeurPlaceX_fp {#1}
+    \fp_set:Nn \l_hauteurPlaceY_fp {#2}
     % Première rangée
     \ProcessList{#3}{\rangImpl}
-    \int_add:Nn \l_rangPositionX_int {1}
+    \fp_add:Nn \l_rangPositionX_fp {1}
     % Deuxième rangée
     \ProcessList{#4}{\rangImpl}
     % Troisième rangée
     \IfValueT{#5}{
-      \int_add:Nn \l_rangPositionX_int {1}
+      \fp_add:Nn \l_rangPositionX_fp {1}
       \ProcessList{#5}{\rangImpl}
     }
   \end{tikzpicture}
   \bigskip
 }
 \NewDocumentCommand{\rangImpl}{m}{
-  \int_add:Nn \l_rangPositionX_int {\l_largeurPlaceX_int}
-  \texteCadre(\l_rangPositionX_int, 0) (\l_largeurPlaceX_int) (\l_hauteurPlaceY_int) {#1} %
+  \fp_add:Nn \l_rangPositionX_fp {\l_largeurPlaceX_fp}
+  \texteCadre(\fp_use:N \l_rangPositionX_fp, 0) % Position
+    (\fp_use:N \l_largeurPlaceX_fp) (\fp_use:N \l_hauteurPlaceY_fp) % largeur et hauteur
+    {#1} % élève
 }
 \ExplSyntaxOff
 
