@@ -9,23 +9,28 @@
 
 %%%% Point et vecteurs
 % \tikzCercle [couleur fond] (x, y) {rayon} [couleur ligne]
-\NewDocumentCommand{\tikzCercle}{O{black} d() m o}{
+\NewDocumentCommand{\tikzCercle}{O{black} r() m o}{
   \IfValueTF{#4}{
     \filldraw [color = #4, fill = #1, very thick] (#2) circle (#3 pt);
   }{
     \filldraw [#1] (#2) circle (#3 pt);
   }
 }
-% \tikzLabel (x, y) [texte] 
-\NewDocumentCommand{\tikzLabel}{d() m}{
-  \node at (#1) {#2};
+% \tikzPointLabel (x, y) [texte] (xtexte, ytexte), trace un point avec un label; * = pas de point
+\NewDocumentCommand{\tikzLabel}{s r() m d()}{
+  \IfBooleanTF{#1}{
+    \node at (#2) {#3};
+  }{
+    \IfValueTF{#4}{
+      \filldraw (#2) circle (2pt);
+      \node at (#4) {#3};
+    }{
+     \filldraw (#2) circle (2pt) node[above] {#3};
+    }
+  }
 }
-% \tikzPointLabel (x, y) [texte], trace un point en plus 
-\NewDocumentCommand{\tikzPointLabel}{d() m}{
-  \filldraw (#1) circle (2pt) node[above] {#2};
-}
-% \tikzVecteur [couleur] (x, y) (lx, ly) {legende} [Position legende];  * = <->
-\NewDocumentCommand{\tikzVecteur}{s O{black} d() d() m O{right}}{
+% \tikzVecteur [couleur] (x, y) (lx, ly) {legende} [position legende];  * = <->
+\NewDocumentCommand{\tikzVecteur}{s O{black} r() r() m O{right}}{
   \coordinate (A) at (#3);
   \coordinate (B) at (#4);
   \coordinate (AB) at ($(A)+(B)$);
@@ -36,13 +41,16 @@
   }
 }
 
-% \tkzLegende (x) (y) [longueur fleche] {légende} 
+% \tikzLegende [couleur] (x, y) (lx, ly) {légende}; * = <-
 % ajouter une * passe de la version gauche -> à la version droite <-
-\NewDocumentCommand{\tkzLegende}{O{black} r() r() O{1.25} m s}{
-  \IfBooleanTF{#6}{
-    \draw[#1, ->, very thick] (#2 + #4, #3) node[right] {#5} -- (#2, #3);
+\NewDocumentCommand{\tikzLegende}{s O{black} r() r() m}{
+  \coordinate (A) at (#3);
+  \coordinate (B) at (#4);
+  \coordinate (AB) at ($(A)+(B)$);
+  \IfBooleanTF{#1}{
+    \draw[#2, ->, very thick] (AB) node[right] {#5} -- (A);
   }{
-    \draw[#1, ->, very thick] (#2, #3) node[left] {#5} -- (#2 + #4, #3);
+    \draw[#2, ->, very thick] (A) node[left] {#5} -- (AB);
   }
 }
 

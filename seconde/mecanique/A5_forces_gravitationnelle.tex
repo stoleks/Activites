@@ -95,18 +95,18 @@ La Terre est assimilée à une boule de rayon $R_T = \qty{6370}{\km}$ et de mass
   \begin{tikzpicture}
     % Satellite
     \tikzCercle[white] (0, 0) {80} [couleurSec]
-    \tikzCercle(2.82, 0){2} \tikzLabel(3.2, 0) {$H$}
+    \tikzLabel(2.82, 0) {$H$} (3.2, 0) 
     % Terre
     \tikzCercle[couleurSec!30] (0, 0) {60} [couleurSec]]
-    \tikzPointLabel(0, 0) {$T$}
+    \tikzLabel(0, 0) {$T$}
     % Distance d
     \tikzVecteur*(0, 0) (-2.8, 0) {$d$} [below right]
     % Rayon de la Terre
     \tikzVecteur*(0, 0) (-0.54, -2.05) {}
-    \tikzLabel(0.3, -1) {$R_T$}
+    \tikzLabel*(0.3, -1) {$R_T$}
     % Hauteur du satellite
     \tikzVecteur*(-0.54, -2.05) (-0.18, -0.68) {}
-    \tikzLabel(-1.1, -2.2) {$h$}
+    \tikzLabel*(-1.1, -2.2) {$h$}
   \end{tikzpicture}
   
   \legende{Schéma du satellite Hubble $H$ autour de la Terre $T$, les distances ne sont pas à l'échelle.}
@@ -114,9 +114,9 @@ La Terre est assimilée à une boule de rayon $R_T = \qty{6370}{\km}$ et de mass
   \centering
   \begin{tikzpicture}
     \tikzCercle[white] (0, 0) {80} [couleurSec]
-    \tikzCercle(2.82, 0){2} \tikzLabel(3.2, 0) {$H$}
+    \tikzLabel(2.82, 0) {$H$} (3.2, 0)
     \tikzCercle[couleurSec!30] (0, 0) {73.22} [couleurSec]]
-    \tikzPointLabel(0, 0) {$T$}
+    \tikzLabel(0, 0) {$T$}
   \end{tikzpicture}
   
   \legende{Schéma avec les distances à l'échelle.}

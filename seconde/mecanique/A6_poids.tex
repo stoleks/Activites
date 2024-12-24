@@ -58,11 +58,11 @@ On cherche à calculer la force d'interaction gravitationnelle qu'exerce la Terr
   \begin{tikzpicture}
     % Terre et Objet
     \tikzCercle[couleurSec!30] (0, 0) {60} [couleurSec]
-    \tikzPointLabel(0, 0) {$T$}
-    \tikzCercle(2.12, 0) {2} \tikzLabel(3, 0) {Objet}
+    \tikzLabel(0, 0) {$T$}
+    \tikzLabel(2.12, 0) {Objet} (3, 0)
     % Rayon de la Terre
     \tikzVecteur*(0, 0) (-0.54, -2.05) {}
-    \tikzLabel(0.3, -1) {$R_T$}
+    \tikzLabel*(0.3, -1) {$R_T$}
   \end{tikzpicture}
   
   \legende{Représentation de la Terre avec un objet à sa surface}
