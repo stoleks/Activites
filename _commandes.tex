@@ -1,8 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% couleurs dérivées des couleurs choisie
+%% couleurs dérivées des couleurs choisie
 \newcommand{\couleurPrimSombre}{couleurPrim!60!black}
-
-%%%% rectangle coloré
+%% rectangle coloré
 \NewDocumentCommand{\rectangle}{O{couleurPrim} m m}{%
   \shorthandoff{;}
   \tikz \node (rect) [draw, fill, color=#1,
@@ -11,9 +10,8 @@
   \shorthandon{;}
 }
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% une simple boite vide
+%% une simple boite vide
 \newtcolorbox{boite}[1][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   arc = 0mm, % les lignes de la boites sont droites
@@ -22,8 +20,7 @@
 }
 
 %%%% Boite colorée avec 
-% #1 : le contenu
-% #2 : la couleur
+% \begin{boiteColoree}{couleur} contenu \end{boiteColoree}
 \newtcolorbox{boiteColoree}[2][]{
   breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
   frame hidden, sharp corners, boxrule = 0mm, % pas de contours
@@ -32,9 +29,7 @@
 }
 
 %%%% Boite pour les documents des activités, avec le format suivant
-% \begin{doc}{ TITRE }{ LABEL }
-%   CONTENU
-% \end{doc}
+% \begin{doc}{titre}{label} contenu \end{doc}
 \newcounter{documentNum}
 \newtcolorbox{doc}[3][]{
   before title = {\refstepcounter{documentNum}},
@@ -50,7 +45,6 @@
   #1
 }
 
-
 %%%% Boîtes pour les activités et TP pour une séquence en plan de travail
 % Boite pour afficher la durée recommandée en bas à gauche
 \newtcbox{\dureeActivite}[1][]{
@@ -59,8 +53,8 @@
   coltext = white,
 }
 % Boite de base pour les activités ou TP, avec le format suivant 
-% \begin{boiteActivite}{ TITRE ACTIVITÉ }{ DURÉE }{ LABEL }{ COMPTEUR }{ FORMAT TITRE }
-%   CONTENU
+% \begin{boiteActivite}{titre activité}{durée}{label}{compteur}{format titre}
+%   contenu
 % \end{boiteActivite}
 \newtcolorbox{boiteActivite}[6][]{
   before title = {\refstepcounter{#5}},
@@ -81,24 +75,18 @@
   #1
 }
 
-% Boite pour les activités en plan de travail
-% \begin{activite}{ TITRE ACTIVITÉ }[ DURÉE ]{ LABEL }
-%   CONTENU
-% \end{activite}
-% Par défaut DURÉE = 1 h
-\NewDocumentEnvironment{activite}{m O{1 h} m}{ %
+% Boite pour les activités/TP en plan de travail.
+% \begin{activite ou TP}{titre activité}[durée]{label} ; durée = 1h activité, 2h TP par défaut
+%   contenu
+% \end{activite ou TP}
+\NewDocumentEnvironment{activite}{m O{1 h} m}{%
   \begin{boiteActivite}{#1}{#2}{#3}
     {activiteNum}{\documentaire* \hspace{-4pt} Activité}
 }{
   \end{boiteActivite}
 }
 % Compteur pour les TP
-\newcounter{TPNum}
-% Boite TP en plan de travail
-% \begin{TP}{ TITRE ACTIVITÉ }[ DURÉE ]{ LABEL }
-%   CONTENU
-% \end{TP}
-% Par défaut DURÉE = 1 h
+\newcounter{TPNum} 
 \NewDocumentEnvironment{TP}{m O{2 h} m}{%
   \begin{boiteActivite}{#1}{#2}{#3}
     {TPNum}{\mesure* \hspace{-4pt} TP}
@@ -207,7 +195,6 @@
   fonttitle = \bfseries\sffamily, % police du titre
   title = {Prérequis :}
 }
-
 
 %%%% Espace pour un coup de pouce
 \newcounter{coupDePouceNum}
@@ -393,11 +380,13 @@
     \footnotesize #2
   }
 }
-\newcommand{\teteDroite}[2]{
+\NewDocumentCommand{\teteDroite}{m o}{
   \rhead{
-    % \hfill \textbf{\footnotesize #1}
-    % \newline 
-    \hfill \footnotesize #2
+    \IfValueT{#2}{
+      \hfill \textbf{\footnotesize #2}
+    }
+    \newline 
+    \hfill \footnotesize #1
   }
 }
 %% \enTete [compteur] {titre} [numéro de section] ; * = version simplifié sans pagination
@@ -415,7 +404,7 @@
     \pagestyle{fancy}
     \teteGauche{\etablissement{}}{#3} % left header
     \chead{} % central header
-    \teteDroite{\annee{}}{#2} % right header
+    \teteDroite{#2} % right header
   }
 }
 

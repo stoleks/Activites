@@ -15,13 +15,7 @@
 
 %%%% evaluation
 \begin{tableauCompetences}
-  \centering APP &
-  Rechercher et utiliser des informations dans un document.
-  & & & & \\
-  %
-  \centering VAL &
-  Comparer des valeurs mesurées avec des valeurs de références.
-  & & & &
+  VAL & Comparer des valeurs mesurées avec des valeurs de références.
 \end{tableauCompetences}
 
 
@@ -37,44 +31,39 @@
 
 %%%% document
 \begin{doc}{Chromatographie sur Couche Mince (CCM)}{doc:TP4_CCM}
-  \begin{wrapfigure}[11]{l}{0.5\linewidth}
+  \begin{wrapfigure}{l}{0.45\linewidth}
     \centering
     \vspace*{-16pt}
-    \image{0.7}{images/chimie/CCM/CCM_exp.png}
-    
-    \footnotesize{Schéma expérimental d'une CCM.}
+    \image{0.9}{images/chimie/CCM/CCM.png} \\
+    \legende{Schéma expérimental d'une CCM.}
   \end{wrapfigure}
 
-  La \important{chromatographie sur couche mince (CCM)} permet de séparer et d'identifier des espèces chimiques présentes dans un mélange.
+  La \important{chromatographie sur couche mince (CCM)} permet de séparer et d'identifier des espèces chimiques dans un mélange.
 
-  Le principe est le suivant : on dépose les espèces à identifier sur une couche mince (plaque), appelée \important{phase stationnaire}, dont on fait tremper une partie dans un \important{éluant}.
+  Le principe est le suivant : on dépose les espèces à identifier sur une plaque, appelée \important{phase stationnaire.} On fait tremper une partie de la plaque dans un liquide appelé \important{éluant}.
   
-  Par capillarité, cet éluant va monter le long de la plaque, on parle de \important{phase mobile.}
-  Les espèces déposées sur la plaque vont être entraînées par cette phase mobile.
+  Par capillarité, l'éluant va monter le long de la plaque et les espèces déposées sur la plaque vont être poussées par l'éluant pendant sa montée.
   
-  En fonction de leur affinités, les espèces chimiques monteront plus ou moins haut sur la plaque, ce qui permettra de les identifier.
-  La fiche ainsi formée est appelée \important{chromatogramme}.
+  En fonction de leurs propriétés, les espèces chimiques seront poussées plus ou moins haut sur la plaque, ce qui permettra de les identifier.
+  La fiche ainsi formée est appelée un \important{chromatogramme}.
 \end{doc}
 
 %%%%
 \begin{doc}{Réalisation d'une CCM}{doc:TP4_protocole_CCM}
   \begin{multicols}{3}
     \begin{center}
-      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_cuve.png}
-      
-      Remplir jusqu'à environ \qty{0,5}{\cm} de hauteur d'éluant la cuve à CCM.
+      \includegraphics[height=0.2\textheight]{images/chimie/CCM/CCM_protocole0001.png} \\      
+      Remplir la cuve à CCM avec environ \qty{1}{\cm} d'éluant.
     \end{center} 
     
     \begin{center}
-      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_trait.png}
-      
+      \includegraphics[height=0.2\textheight]{images/chimie/CCM/CCM_protocole0002.png} \\      
       Tracer au crayon à papier un trait à \qty{1}{\cm} du bord inférieur.
     \end{center}
   
     \begin{center}
-      \includegraphics[height=0.15\textheight]{images/chimie/CCM/CCM_etapes_depot.png}
-      Marquer des emplacements,
-      puis prélever chaque échantillon avec un cure dent et les déposer sur un des emplacements.
+      \includegraphics[height=0.2\textheight]{images/chimie/CCM/CCM_protocole0003.png} \\      
+      À l'aide d'un cure-dent, déposer chaque échantillon sur un emplacement bien délimité.
     \end{center}
   \end{multicols}
   
@@ -82,15 +71,14 @@
   
   \begin{multicols}{2}
     \begin{center}
-      \includegraphics[height=0.25\textheight]{images/chimie/CCM/CCM_etapes_ajout.png}
-      
+      \includegraphics[height=0.2\textheight]{images/chimie/CCM/CCM_protocole0004.png}
+      \includegraphics[height=0.2\textheight]{images/chimie/CCM/CCM_protocole0005.png} \\      
       Poser doucement la plaque dans la cuve en la tenant par les côtés et fermer la cuve.
-      \important{Ne jamais déplacer la cuve} et attendre que l'éluant monte.
+      \important{Il ne faut jamais déplacer la cuve} et attendre que l'éluant monte.
     \end{center}
 
     \begin{center}
-      \includegraphics[height=0.25\textheight]{images/chimie/CCM/CCM_etapes_retrait}
-      
+      \includegraphics[height=0.2\textheight]{images/chimie/CCM/CCM_protocole0006.png} \\      
       Quand le front de l'éluant s'approche du haut, sortir la plaque.
       Tracer une ligne indiquant la hauteur où l'éluant est monté.
     \end{center}
@@ -107,36 +95,39 @@ Attendre que le colorant se soit dissous dans l'eau et récupérer les M\&M's.
 Réaliser le protocole du document~\ref{doc:TP4_protocole_CCM}, avec un dépôt de colorant jaune, un dépôt de colorant bleu et deux dépôts des solutions préparées précédemment.
 
 \mesure
-Coller ici le chromatogramme \important{sec} et entourer les différentes tâches au crayon à papier.
+Schématiser le chromatogramme obtenu, en indiquant clairement les différentes tâches, la ligne de dépôt et le front de l'éluant.
 \pasCorrection{\vspace*{9.25cm}}
 
 \question{
   Pourquoi doit-on placer la ligne de dépôt au dessus du niveau de l'éluant ?
 }{
   Si on la place en dessous, le dépôt va se diluer dans l'éluant et ne montera pas sur la plaque.
-}{2}
+}[2]
 
 \question{
   Pourquoi ne doit-on pas déplacer la cuve pendant la montée de l'éluant ?
 }{
   Si on déplace la cuve, l'éluant va monter de manière irrégulière, ce qui va fausser l'analyse des résultats.
-}{2}
+}[2]
 
 
 %%%%
 \pasCorrection{\newpage}
 \begin{doc}{Lecture d'un chromatogramme}{doc:TP4_lecture_chromato}
-  \begin{multicols}{2}
+  \separationBlocs{
     \begin{listePoints}
-      \item \important{Lecture verticale :} si le dépôt d'un échantillon se sépare en plusieurs tâches, il s'agit d'un mélange.
-      \item \important{Lecture horizontale :} sur une même plaque, une même espèce chimique migre toujours à la même hauteur.
+      \item \important{Lecture verticale :} si le dépôt d'un échantillon se sépare en plusieurs tâches, il s'agit d'un mélange. 
+      Le nombre de tâches indique le nombre d'espèces chimiques qui composent le mélange.
+      \item \important{Lecture horizontale :} sur une même plaque, une même espèce chimique migre toujours à la même hauteur. 
+      Et donc si deux tâches sont à \important{la même hauteur, alors elles sont la même espèce chimique.}
     \end{listePoints}
     \vfill \strut
-
+  }{
     \centering
-    \image{0.7}{images/chimie/CCM/chromatogramme_TP.png} \\
-    \footnotesize{schéma d'un chromatogramme}
-  \end{multicols}
+    \vspace*{-20pt}
+    \image{0.8}{images/chimie/CCM/chromatogramme.png} \\
+    \legende{schéma d'un chromatogramme}
+  }
 \end{doc}
 
 %%%%
@@ -152,16 +143,19 @@ Coller ici le chromatogramme \important{sec} et entourer les différentes tâche
 }{
   Pour le bleu et le jaune, on a des corps purs (une seule tâche).
   Pour le vert on a un mélange, car le dépôt s'est séparé en deux tâches.
-}{4}
+}[5]
 
 \question{
   En utilisant le chromatogramme, donner la composition des colorants présents sur la couche externe des M\&M's.
 }{
   Le jaune et le bleu du M\&M's montent à la même hauteurs que les dépots de colorant jaune E102 et bleu E133, ce sont donc les mêmes espèces chimiques.
-}{6}
+}[5]
 
 
 \pasCorrection{\newpage}
+
+\important{\large Composition d'une huile essentielle d'orange ou de citron}
+
 %%%% Contexte
 \begin{contexte}
   Les huiles essentielles sont obtenues à partir de végétaux pressés ou par distillation fractionnée.
@@ -203,7 +197,7 @@ Coller ici le chromatogramme \important{sec} et entourer les différentes tâche
 }{
   D'après les descriptions du document~\ref{doc:TP4_molecules_odorantes},
   on s'attend à trouver du limonène dans l'huile essentielle d'orange et du citral dans l'huile essentielle de citron.
-}{2}
+}[2]
 
 \begin{doc}{Résultat d'une CCM}{doc:TP4_HEC_HEO}
   On a réalisé deux CCM pour déterminer la composition des huiles essentielles d'orange et de citron.
@@ -218,4 +212,4 @@ Coller ici le chromatogramme \important{sec} et entourer les différentes tâche
 }{
   On trouve du limonène, du géraniol et du citral dans l'HEC (tâches à la même hauteur).
   On trouve du limonène et du géraniol dans l'HEO.
-}{5}
+}[5]
