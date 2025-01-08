@@ -24,9 +24,7 @@
 
 %%%% evaluation
 \begin{tableauCompetences}
-  \centering VAL &
-  Comparer avec des valeurs de références.
-  & & & & \\
+  VAL & Comparer des spectres avec des valeurs de références. \\
 \end{tableauCompetences}
 
 
@@ -65,9 +63,10 @@
   Quelles différences remarquez-vous quand la lampe est alimentée en 6 et en \qty{12}{\volt} ?
 }{
   La lampe émet plus de lumière et est plus blanche quand elle est alimentée en \qty{12}{\volt}.
-}{3}
+}[3]
 
 
+\pasCorrection{ \newpage \vspace*{-36pt} }
 \begin{doc}{Émission d'un corps chaud}{doc:A2_corps_chaud}
   \begin{importants}
     Un corps chaud émet \texteTrouLignes[1]{un rayonnement lumineux avec un spectre continu.} 
@@ -83,11 +82,12 @@
 }{
   Comme sa couleur est bleue, la longueur d'onde associée est plus petite pour l'étoile Rigel que pour l'étoile Bételgeuse. 
   Donc sa température est plus élevée d'après la loi des corps chaud.
-}{2}
+}[2]
 
 
 %%
 \titreSection{Les spectres d’émission de raies}
+\vspace*{-16pt}
 
 \begin{doc}{Émission atomique ou moléculaire}{doc:A2_emission_atomique}
   \begin{importants}
@@ -96,24 +96,26 @@
     Cela correspond à des \important{raies fines et bien définies} dans le spectre d'émission.
   \end{importants}
   
-  \begin{wrapfigure}{r}{0.55\linewidth}
+  \begin{wrapfigure}[11]{r}{0.55\linewidth}
     \centering
     \vspace*{-22pt}
     \image{1}{images/donnees/spectre_gaz}
   \end{wrapfigure}
     
   Chaque entité chimique possède son propre \important{spectre d'émission} caractérisé par des longueurs d'onde précises, comme chaque humain possède ses propres empreintes digitales.
-  \medskip
 
   Observer un spectre d'émission permet donc \important{d'identifier} les entités présentes dans un gaz.
-  \medskip
 
   En regardant le spectre d'une source lumineuse, on peut donc déterminer les éléments chimiques qui composent la source.
+
+  \vspace*{-8pt}
+  \begin{center}
+    \image{0.55}{images/lumiere/spectroscope_lampe} \\[-4pt]
+    \legende{Photo obtenue avec un spectroscope pointé vers une lampe « néon ».}
+  \end{center}
 \end{doc}
 
 
 \question{
-  En utilisant le spectroscope et en comparant avec les spectres données dans le document~\ref{doc:A2_emission_atomique}, indiquer si les lampes éclairant la classe contiennent de l'hydrogène, du néon ou du mercure.
-}{
-  En utilisant les spectroscope, on peut observer différentes raies d'émission.
-}{5}
+  En comparant les spectres données dans le document~\ref{doc:A2_emission_atomique}, indiquer si les lampes éclairant la classe contiennent de l'hydrogène, du néon ou du mercure.
+}{}[4]
