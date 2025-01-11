@@ -49,7 +49,7 @@
     {\small Schéma des deux éléments hydrogènes liés par un partage d'électron}
     \vspace{8pt}
     
-    \image{0.2}{images/atomes/molecule_H2}
+    \image{0.2}{images/molecules/molecule_H2}
   \end{center}
 
   Pour représenter la molécule, on peut soit donner sa \important{formule brute}, soit son \important{schéma de Lewis :}
@@ -57,7 +57,7 @@
     \begin{center}
       {\small Schéma de Lewis de la molécule}
       
-      \image{0.4}{images/atomes/Lewis_H2}
+      \image{0.4}{images/molecules/Lewis_H2}
     \end{center}
 
     \begin{center}
@@ -72,15 +72,29 @@
 \question{
   Rappeler la configuration électronique de l’hydrogène \isotope{}{1}{H}, du carbone \isotope{}{6}{C}, de l’azote \isotope{}{7}{N} et de l'oxygène \isotope{}{8}{O}.
   Identifier pour chacun de ces atomes leurs électrons de valence.
-}{}{5}
+}{
+  \isotope{}{1}{H} : $1s^1$
+  
+  \isotope{}{6}{C} : $1s^2 2s^2 2p^2$
+  
+  \isotope{}{7}{N} : $1s^2 2s^2 2p^3$
+  
+  \isotope{}{8}{O} : $1s^2 2s^2 2p^4$
+}[5]
 
 \question{
   Donner le nombre d'électrons manquant à chaque élément pour que leur couche externe soit pleine et qu'ils gagnent en stabilité.
-}{}{3}
+}{
+  Il manque 1 électrons à l'hydrogène pour remplir la couche 1.
+  Il manque 4 électrons au carbone pour remplir la couche 2, 3 à l'azote, 2 à l'oxygène.
+}[3]
 
 \question{
   Quelle molécule stable peut-on former à partir d'un carbone et de 4 hydrogènes ?
-}{}{3}
+}{
+  Le carbone doit former 4 liaisons pour gagner 4 électrons, et l'hydrogène 1 liaison pour gagner 1 électron.
+  Donc on peut former du méthane \chemfig{CH_4}, \chemfig{H-C (-[3]H) (-[-3] H) -H}.
+}[3]
 
 \mesure Construire cette molécule à partir des modèle moléculaire.
 
@@ -96,24 +110,25 @@
       {\small Schéma des trois éléments se partageant des électrons}
       \vspace{8pt}
       
-      \image{0.8}{images/atomes/molecule_H2O}
+      \image{0.8}{images/molecules/molecule_H2O}
     \end{center}
   }{
     \begin{center}
       {\small Schéma de Lewis des doublets liants et des doublets non-liants (barres du haut)}
       \vspace{20pt}
       
-      \image{0.4}{images/atomes/Lewis_H2O}
+      \image{0.4}{images/molecules/Lewis_H2O}
     \end{center}
   }
 \end{doc}
 
 \question{
   Indiquer combien de doublet non-liant la molécule d'eau possède.
-}{}{2}
+}{
+  Elle possède deux doublet non liant.
+}[2]
 
-\newpage
-\vspace*{-24pt}
+\pasCorrection{ \newpage \vspace*{-36pt} }
 \begin{doc}{Liaisons multiples}{doc:A2_liaisons_multiples}
   Pour être stables, les éléments peuvent partager plusieurs paires d’électrons et ainsi créer une liaison multiple.
   Celle-ci peut être double, comme dans le cas du dioxygène ; ou triple comme dans le cas du diazote.
@@ -124,14 +139,14 @@
       {\small Schéma de Lewis}
       \vspace{36pt}
       
-      \image{0.4}{images/atomes/Lewis_O2}
+      \image{0.4}{images/molecules/Lewis_O2}
     \end{center}
   }{
     \begin{center}
       {\small Schéma des deux éléments oxygène se partageant des électrons}
       \vspace{8pt}
       
-      \image{0.8}{images/atomes/molecule_O2}
+      \image{0.8}{images/molecules/molecule_O2}
     \end{center}
   }
   \vspace{12pt}
@@ -141,14 +156,14 @@
       {\small Schéma des deux éléments azote se partageant des électrons}
       \vspace{8pt}
       
-      \image{0.8}{images/atomes/molecule_N2}
+      \image{0.8}{images/molecules/molecule_N2}
     \end{center}
   }{
     \begin{center}
       {\small Schéma de Lewis}
       \vspace{36pt}
       
-      \image{0.4}{images/atomes/Lewis_N2}
+      \image{0.4}{images/molecules/Lewis_N2}
     \end{center}
   }
 \end{doc}
@@ -156,8 +171,18 @@
 
 %%%% questions
 \question{
-  Quelle molécule peut-on former à partir d'un carbone, d'un d'oxygène et de plusieurs hydrogènes ?
-}{}{3}
+  Quelles molécules peut-on former à partir d'un carbone, d'un d'oxygène et de plusieurs hydrogènes ?
+}{
+  Le carbone va former 4 liaisons et l'oxygène 2 liaisons.
+  Avec 4 hydrogène on peut former du méthanol \chemfig{CH_4O} 
+  \begin{center}  
+    \chemfig{H-C (-[3]H) (-[-3] H) -O-H}
+  \end{center}
+  Avec 2 hydrogène on peut former du méthanal \chemfig{CH_2O}
+  \begin{center}
+    \chemfig{H-C (-[3]H) =O}
+  \end{center}
+}[3]
 
 \mesure
 Construire cette molécule à partir des modèles moléculaires.
@@ -173,11 +198,9 @@ Construire cette molécule à partir des modèles moléculaires.
   \end{importants}
 \end{doc}
 
-\begin{wrapfigure}{r}{0.1\linewidth}
-  \vspace*{-18pt}
-  \qrcode{https://mirage.ticedu.fr/?p=2324}
-\end{wrapfigure}
+\qrcodeCote[3]{https://mirage.ticedu.fr/?p=2324}
 
 \telechargement Télécharger l'application mirage.
 
-\mesure Au dos de la feuille, donner la formule brute de la molécule, son schéma de Lewis et vérifier que tous les éléments ont le bon nombre d'électrons.
+\mesure Prendre une feuille de molécule, puis la scanner avec l'application pour la visualiser en 3 dimension.
+Au dos de la feuille, donner la formule brute de la molécule, son schéma de Lewis et vérifier que tous les éléments ont le bon nombre d'électrons.

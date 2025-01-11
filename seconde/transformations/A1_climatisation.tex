@@ -46,7 +46,7 @@
     Sous certaines conditions, ce transfert thermique peut mener un des deux corps à changer d'état (liquide à gaz par exemple) : on parle de \important{transformation physique}.
   \end{importants}
   On note un tel changement d'état comme une réaction chimique avec une flèche, à gauche l'état initial et à droite l'état final.
-  \exemple $\chemfig{H_2O}(s) \reaction \chemfig{H_2O}(l)$.
+  \exemple $\chemfig{H_2O}\sol \reaction \chemfig{H_2O}\liq$.
 \end{doc}
 
 %%
@@ -57,17 +57,15 @@
   \phantom{b}\vspace*{-20pt}
   
   \begin{importants}
-    \begin{listePoints}
-      \item Lors d'une \important{transformation exothermique}, l'énergie du système diminue. 
-      Le milieu extérieur reçoit un transfert thermique positif $Q > 0$.
-      \item Lors d'une \important{transformation endothermique}, l'énergie du système augmente.
-      Le milieu extérieur reçoit un transfert thermique négatif $Q < 0$.
-    \end{listePoints}
+    \pointCyan Lors d'une \important{transformation exothermique}, l'énergie du système diminue. 
+    Le milieu extérieur reçoit un transfert thermique positif $Q > 0$.
+    \bigskip
+    
+    \pointCyan Lors d'une \important{transformation endothermique}, l'énergie du système augmente.
+    Le milieu extérieur reçoit un transfert thermique négatif $Q < 0$.
   \end{importants}
-  
-  % \begin{center}
-  %    \image{0.8}{images/thermodynamique/transformation_energie}
-  % \end{center}
+
+  \attention Pour le système, le signe du transfert thermique change !
 \end{doc}
 
 
@@ -109,17 +107,23 @@
 \question{
   Pour chaque documents (\ref{doc:A1_climatisation}, \ref{doc:A1_glacons}, \ref{doc:A1_evaporation}), indiquer quel est le corps qui change d'état, avec l'état initial et l'état final.
 }{
-  bla
-}{5}
+  Pour le document~\ref{doc:A1_climatisation}, ce sont les gouttelettes d'eau qui passent de l'état liquide à l'état gazeux.
+
+  Pour le document~\ref{doc:A1_glacons}, ce sont les glaçons d'eau qui passent de l'état solide à l'état liquide.
+
+  Pour le document~\ref{doc:A1_evaporation}, c'est les gouttes de sueur, qui passent de l'état liquide à l'état gazeux.
+}[5]
 
 \question{
   Pour chaque documents, indiquer si la transformation physique est endothermique ou exothermique, en donnant le signe du transfert thermique $Q$ reçu par le milieu extérieur.
 }{
-  bla
-}{4}
+  Dans tous les cas, les transformations sont endothermique, avec un transfert thermique négatif.
+}[4]
 
 \question{
   Pour chaque documents, écrire la notation symbolique du changement d'état.
 }{
-  bla
-}{3}
+  Climatisation et sueur : \chemfig{H_2O}\liq \reaction \chemfig{H_2O}\gaz
+
+  Glaçons : \chemfig{H_2O}\sol \reaction \chemfig{H_2O}\liq
+}[3]

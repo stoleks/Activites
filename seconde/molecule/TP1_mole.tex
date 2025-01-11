@@ -4,7 +4,7 @@
 %%%% titre
 \vspace*{-32pt}
 \numeroActivite{1}
-\titreTP{Dénombrer un grand nombre d'entités identiques}
+\titreTP{Compter un grand nombre d'entités identiques}
 
 
 %%%% Objectifs
@@ -29,25 +29,50 @@
 %%
 \begin{doc}{Des paquets pour mieux compter}{doc:TP1_compter_paquet}
   Au quotidien, de nombreux objets ne sont pas compté à l'unité, mais par \important{paquets.}
-  Par exemple, on compte les oeufs par douzaines et les feuilles de papier par ramette de 500 feuilles.
+  Par exemple, on compte les œufs par douzaines et les feuilles de papier par ramette de 500 feuilles.
   Si on devait compter les feuilles de papier d'une ramette une par une ce serait une sacré corvée !
 
   On va voir l'intérêt de faire des paquets en comptant des grain de riz.
 \end{doc}
 
-\mesure On va peser $N_A = 100$ grains de riz, on note leur masse $m_\text{100 grains}$ = \texteTrou[0.1]{\qty{4}{\g}}
+\mesure On va peser $N_A = 100$ grains de riz, on note leur masse $m_\text{100 grains}$ = \texteTrou[0.1]{\qty{4}{\g / paquet}}
 
 \question{
   Calculer la masse d'un grain de riz $m_\text{grain}$ à partir de la masse de 100 grains de riz.
-}{}{1}
+}{
+  On divise la masse du paquet par le nombre de grains dans le paquet 
+  \begin{equation*}
+    m_\text{grain} 
+    = \dfrac{\qty{4}{\g / paquet}}{\qty{100}{grain / paquet}} 
+    = \qty{0,04}{\g / grain}
+  \end{equation*}
+}[1]
 
 \question{
   À partir de la masse d'un grain de riz, calculer le nombre $N$ de grains de riz dans un sac de riz de \qty{1}{\kg}.
-}{}{2}
+}{
+  Cette fois, il faut diviser la masse du sac de riz par la masse d'un grain de riz
+  \begin{equation*}
+    N = \dfrac{\qty{1000}{\g}}{\qty{0,04}{\g / grain}}
+    = \qty{25000}{grain}
+  \end{equation*}
+  
+}[2]
 
 \question{
   Calculer le nombre $n$ de paquets de 100 grains de riz qu'il y a dans \qty{1}{\kg} de riz.
-}{}{2}
+}{
+  Il faut diviser la masse du sac de riz par la masse d'un paquet
+  \begin{equation*}
+    n = \dfrac{\qty{1000}{\g}}{\qty{4}{\g/ paquet}}
+    = \qty{250}{paquet}
+  \end{equation*}
+  On peut aussi diviser le nombre de grain de riz par la taille d'un paquet
+  \begin{equation*}
+    n = \dfrac{\qty{25000}{grain}}{\qty{100}{grain / paquet}}
+    = \qty{250}{paquet}
+  \end{equation*}
+}[2]
 
 
 %%%%
@@ -81,7 +106,7 @@
     &= (6\times \num{1,99e-23}) + 12\times\num{0,17e-23} + 6\times\num{2,66e-23})\unit{g} \\
     &= \qty{29,9e-23}{\g}
   \end{align*}
-}{2}
+}[2]
 
 \question{
   Calculer le nombre $N$ de molécule de glucose dans un sachet de sucre de \qty{1}{\kg}.
@@ -92,7 +117,7 @@
     &= \dfrac{\qty{1e3}{\g}}{\qty{29,9e-23}{\g}} \\
     &= \num{3,34e24}
   \end{align*}
-}{2}
+}[2]
 
 
 \begin{doc}{La mole}{doc:TP1_mole}
@@ -110,7 +135,7 @@
   \begin{equation*}
     n = \dfrac{N}{N_A} = \dfrac{\num{3.34e24}}{\qty{6.02e23}{\per\mole}} = \qty{5.55}{\mole} 
   \end{equation*}
-}{3}
+}[3]
 
 \mesure Remplir le tableau ci-dessous avec les grandeurs calculées ou mesurées.
 
@@ -121,10 +146,13 @@
     row{2-5} = {12mm, c, m},
   }
   Échantillon étudié & Sac de riz & Sachet de sucre \\
-  Masse d'une entité       & $m_\text{riz} =$ \texteTrou[0.25]{..} & $m_\text{glucose} =$ \texteTrou[0.25]{..} \\
-  Nombre d'entités $N$     & & \\
-  Taille d'un paquet $N_A$ & & \\
-  Nombre de paquets $n$    & & \\
+  Masse d'une entité       &
+  $m_\text{riz} =$\texteTrou*[0.25]{\qty{0.04}{\g}} &
+  $m_\text{glucose} =$\texteTrou*[0.25]{\qty{29,9e-23}{\g}} \\
+  %
+  Nombre d'entités $N$     & \num{25000} & \num{3,34e24} \\
+  Taille d'un paquet $N_A$ & \num{100} & \qty{6,02e23}{\per\mole} \\
+  Nombre de paquets $n$    & \num{250} & \qty{5,55}{\mole} \\
 \end{tblr}
 
 

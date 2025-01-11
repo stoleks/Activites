@@ -79,7 +79,7 @@
 Placer la lentille sur le banc optique, puis repérer la position des points virtuels $F$ et de $F'$ sur le banc optique par rapport à la lentille.
 
 \mesure
-Placer la lampe avec l'objet en forme de « F » sur le banc optique, puis mesurer la taille de la lettre « F » qu'on note $AB =$ \texteTrou[0.1]{\qty{15}{\cm}}
+Placer la lampe avec l'objet en forme de « F » sur le banc optique, puis mesurer la taille de la lettre « F » qu'on note $AB =$\texteTrou*[0.1]{\qty{1,5}{\cm}}
 
 \mesure 
 Placer la lampe à une distance supérieure à $f'$, mais inférieure à $2\times f'$. 
@@ -92,21 +92,36 @@ Remplir le tableau ci-dessous avec vos mesures.
 
 % \vspace*{-16pt}
 \begin{tableau}{
-  |X[c] |X[c] |X[c] | X[c] |
+  |c X[c] |X[c] |X[c] |X[c] |
 }
-  Position de l'objet &
+  & Position de l'objet &
   Taille de l'image $A'B'$ (\unit{\cm}) &
   Distance lentille objet $OA$ (\unit{\cm}) &
   Distance lentille image $OA'$ (\unit{\cm}) \\
-  $f' < OA < 2f'$ & & & \\
-  $OA = 2f'$      & & & \\
-  $OA > 2f'$      & & & \\
+  1 & $f' < OA < 2f'$ & \correction{\num{4,6}} 
+  & \correction{\num{15,0}} & \correction{\num{44,8}} \\
+  2 & $OA = 2f'$      & \correction{\num{1,5}}
+  & \correction{\num{20,0}} & \correction{\num{20,0}} \\
+  3 & $OA > 2f'$      & \correction{\num{0.5}}
+  & \correction{\num{36,0}} & \correction{\num{12,1}} \\
 \end{tableau}
 
 \question{
   Pour chaque position de l'objet, calculer le \important{grandissement $\gamma = \dfrac{A'B'}{AB}$} (« gamma ») et le rapport $g = \dfrac{OA'}{OA}$.
   Est-ce que $g$ et $\gamma$ sont égaux ?
-}{}[3]
+}{
+  Oui, dans tous les cas g et $\gamma$ sont très proches ou égaux.
+  \begin{align*}
+    \text{cas 1 :} & g = \dfrac{44,8}{15,0} = \num{2,99} ; \quad{}
+    \gamma = \dfrac{4,6}{1,5} = \num{3.06} \\
+    %
+    \text{cas 2 :} & g = \dfrac{20,0}{20,0} = \num{1,00} ; \quad{}
+    \gamma = \dfrac{1,5}{1,5} = \num{1,00} \\
+    %
+    \text{cas 3 :} & g = \dfrac{12,1}{36,0} = \num{0,34} ; \quad{}
+    \gamma = \dfrac{0,5}{1,5} = \num{0,33} \\
+  \end{align*}
+}[3]
 
 
 %%%% Modélisation de l'oeil
