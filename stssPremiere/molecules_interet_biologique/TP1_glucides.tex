@@ -41,11 +41,11 @@
   \begin{multicols}{2}
   \begin{center}
     \chemfig{!\glucoseSemiDev} \;
-    \chemfig[cram width=2pt, atom sep=2.5em]{!\glucoseHamw} \\[4pt]
+    \chemfigHaworth{!\glucoseHaw} \\[4pt]
     Glucose
 
     \chemfig{!\fructoseSemiDev} \;
-    \chemfig[cram width=2pt, atom sep=2.5em]{!\fructoseHamw} \\[4pt]
+    \chemfigHaworth{!\fructoseHaw} \\[4pt]
     Fructose
   \end{center}
   \end{multicols}
@@ -65,11 +65,11 @@
 
 \begin{doc}{Une partie de l'amidon}{doc:TP1_amidon}
   \begin{center}
-    \chemfig[cram width=2pt, atom sep=2.5em]{
-      ...\phantom{B}-[-1] !\amylopectineHamw
-      !\amylopectineHamw O -[-3]
-      !\amylopectineCentraleHamw
-      !\amylopectineHamw !\amylopectineHamw O -[1]...
+    \chemfigHaworth{
+      ...\phantom{B}-[-1] !\amylopectineHaw
+      !\amylopectineHaw O -[-3]
+      !\amylopectineCentraleHaw
+      !\amylopectineHaw !\amylopectineHaw O -[1]...
     } \\[8pt]
   
     \important{Amylopectine,} molécule composant l'amidon
@@ -89,15 +89,11 @@
   \end{protocole}
 
   \begin{center}
-
     \begin{tblr}{
       colspec = {X[l] X[l] X[l]}, hlines, vlines,
-      column{1} = {couleurPrim!10},
-      row{1} = {couleurPrim!20}
+      column{1} = {couleurPrim!10}, row{1} = {couleurPrim!20}
     }
-      &
-      Présence d'aldéhyde &
-      Présence de cétone \\
+      & Présence d'aldéhyde & Présence de cétone \\
       %
       Observation dans le tube à essais &
       Apparition d'un précipité rouge brique &

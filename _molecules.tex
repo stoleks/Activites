@@ -10,19 +10,9 @@
 \newcommand{\moleculesNormale}{
   \renewcommand*\printatom[1]{\ensuremath{\mathrm{##1}}}
 }
-
-%%%% Bouts de molécules fréquement utilisés
-%% Hydrogène saturés
-\definesubmol\paireH{(-[::90] H) (-[::-90] H)}
-\definesubmol\paireSatH{(-[::30] H) (-[::-30] H)}
-\definesubmol\saturationH{(-[::90] H) (-[::-90] H) (-[::0] H)}
-
-%% Quelques groupes caractéristiques
-\definesubmol\carboxyle{(=[::-60] O) (-[::60] OH)}
-\definesubmol\carbonyle{(=[::60] O) -[::-60]}
-\definesubmol\ester{(=[:90] O) -[:-30] O}
-\definesubmol\ether{-[:30] O -[:-30]}
-\definesubmol\amide{(=[:90] O) -[:-30] N}
+\newcommand{\chemfigHaworth}[1]{
+  \chemfig[cram width=2pt, atom sep=2.5em]{ #1 }
+}
 
 %% parties colorées
 \definesubmol\cetoneCouleur{(=[3,,,,couleurQuat] \textcolor{couleurQuat}{O}) -[-1,,,,couleurQuat]}
@@ -49,51 +39,46 @@
 \newcommand{\liq}{ \ensuremath{_\text{(l)}} }
 \newcommand{\gaz}{ \ensuremath{_\text{(g)}} }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Pour simplifier certaines molécules
+\definesubmol\cu{ -[::60] } % Carbone vers le haut
+\definesubmol\cb{ -[::-60] } % carbone vers le bas
+\definesubmol\cc{ -[::60] -[::-60] } % Liaison C-C
+\definesubmol\cis{ -[::60] =[::-60] -[::-60] } % Liaison -C=C- cis
+\definesubmol\trans{ -[::60] =[::-30] -[::-30] } % Liaison -C=C- trans
+%% Hydrogène saturés
+\definesubmol\paireH{(-[::90] H) (-[::-90] H)}
+\definesubmol\paireSatH{(-[::30] H) (-[::-30] H)}
+\definesubmol\saturationH{(-[::90] H) (-[::-90] H) (-[::0] H)}
+%% Quelques groupes caractéristiques
+\definesubmol\teteAcide{ O-[::30] (=[::60] O) -[::-60] }
+\definesubmol\teteAcideDev{ - O - C (=[::90] O) - }
+\definesubmol\OH { -[::60] OH }
+\definesubmol\carboxyle{ (=[::-60] O) (-[::60] OH) }
+\definesubmol\carbonyle{ (=[::60] O) -[::-60] }
+\definesubmol\ester{ (=[:90] O) -[:-30] O}
+\definesubmol\ether{ -[:30] O -[:-30]}
+\definesubmol\amide{ (=[:90] O) -[:-30] N}
+%% Représentation de hamworth
+\definesubmol\gluHaw{
+  <[-1.5,0.7] (-[3,0.6] OH)
+  -[,,,,line width=2.4pt] (-[-3,0.6] OH)
+  >[1.5,0.7]
+}
+\definesubmol\gluLeftHaw{
+  <[-4.5,0.7] (-[-3,0.6] OH)
+  -[6,,,,line width=2.4pt] (-[3,0.6] OH)
+  >[4.5,0.7] (-[1.5,0.7])
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Molécule courante
-\definesubmol\paracetamol{
-  *6((-HO)-=-(-NH (-[::-60] (=[::-60]O)-[::60]))=-=)
-}
-\definesubmol\paracetamolSemiDev{
-  *6 (C (-HO) -CH =CH -C 
-    (-NH (-[-1]C (=[-3]O) -CH_3)) % amide
-  =CH -HC =[,4,2])
-}
-\definesubmol\paracetamolDev{
-  H -O -[1]C *6 (
-    -C(-H) =C(-H) -C
-      (-N (-[3]H) (-[-1]C (=[-3]O) % amide
-    (-C!\saturationH))) =C(-H) -C(-H) =
-  )
-}
-
-\definesubmol\acideAcetylsalicylique{
-  *6 (-=- (-O -[-1] (=[-3]) -[1]) = (- (=[5] O) -[1] OH) -=)
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Lipides
-\definesubmol\cc{
-  -[::60] -[::-60]
-}
-\definesubmol\teteAcide{
-  O-[::30] (=[::60]O) -[::-60]
-}
-\definesubmol\teteAcideDev{
-  - O - C (=[::90] O) -
-}
-\definesubmol\cis{
-  -[::60] =[::-60] -[::-60]
-}
-\definesubmol\trans{
-  -[::60] =[::-30] -[::-30]
-}
+%% Acides gras
 \definesubmol\palmitique{
   !\carbonyle !\cc !\cc !\cc !\cc !\cc !\cc !\cc
 }
 \definesubmol\oleique{
-  !\teteAcide !\cc !\cc !\cc !\cis -[::60] !\cc !\cc !\cc
+  !\teteAcide !\cc !\cc !\cc !\cis !\cu !\cc !\cc !\cc
 }
 \definesubmol\oleiqueSemiDev{
   C_{17} H_{33} -C (=[1.5]O) (-[-1.5]OH)
@@ -102,13 +87,7 @@
   C_{17} H_{33} -C (=[1.5]O) (-[-1.5]O^{-})
 }
 \definesubmol\linolenique{
-  !\teteAcide !\cc !\cc !\cc !\trans !\trans !\trans -[::60]
-}
-\definesubmol\trilinolenique{
-  (=[::60] O) -[::-60] !\cc !\cc !\cc !\cis !\cis !\cis -[::60]
-}
-\definesubmol\trilinoleique{
-  (=[::60] O) -[::-60] !\cc !\cc !\cc !\cis !\cis !\cc !\cc
+  !\teteAcide !\cc !\cc !\cc !\trans !\trans !\trans !\cu
 }
 \definesubmol\steraiqueSemiDev{
   !\teteAcideDev C_{17}H_{35}
@@ -116,44 +95,60 @@
 \definesubmol\caproiqueSemiDev{
   !\teteAcideDev - CH_2 - CH_2 - CH_2 - CH_2 - CH_3
 }
-\definesubmol\trioleique{
-  !\carbonyle !\cc !\cc !\cc -[::60] =[::60] -[::60] !\cc !\cc -[::-60] -[::-60] -[::-60]
+
+%% Triglycérides 
+\definesubmol\trilinolenique{
+  !\carbonyle !\cc !\cc !\cc !\cis !\cis !\cis !\cu
 }
-\definesubmol\trioleiqueSemiDev{
-  H C (!\teteAcideDev C_{17} H_{33}) 
-  (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
-  -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
+\definesubmol\trilinoleique{
+  !\carbonyle !\cc !\cc !\cc !\cis !\cis !\cc !\cc
+}
+\definesubmol\trioleique{
+  !\carbonyle !\cc !\cc !\cc !\cu =[::60] !\cu !\cc !\cc !\cb !\cb !\cb
 }
 \definesubmol\trioleine{
-   (-[::150] -[::60] O-[::-60] !\trioleique)
-   (-[::-90] -[::-60] O-[::60] !\trioleique)
-   -[::30] O-[::60] !\trioleique
+   (-[::150] !\cu O-[::-60] !\trioleique)
+   (-[::-90] -[::-60] O!\cu !\trioleique)
+   -[::30] O!\cu !\trioleique
 }
 \definesubmol\trioleineSemiDev{
-  H C (!\teteAcideDev C_{17} H_{33}) 
-  (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{17} H_{33}))
+  H C                 (!\teteAcideDev C_{17} H_{33}) 
+  (-[3,1.7,2,2] H_2C  (!\teteAcideDev C_{17} H_{33}))
   -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
 }
 \definesubmol\tripalmitine{
-   (-[::150] -[::60] O-[::-60] (=[::60] O) -[::-60] -[::-60] !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % haut
-   (-[::-90] -[::60] O-[::60] (=[::-60]O) !\cc !\cc !\cc !\cc !\cc !\cc !\cc -[::60]) % centre
-   -[::30] O-[::60] !\palmitique % bas
+   (-[::150] !\cu O-[::-60] (=[::60] O) !\cb !\cb !\cc !\cc !\cc !\cc !\cc !\cc !\cu) % haut
+   (-[::-90] !\cu O!\cu (=[::-60]O) !\cc !\cc !\cc !\cc !\cc !\cc !\cc !\cu) % centre
+   -[::30] O!\cu !\palmitique % bas
 }
+\definesubmol\tricaproine{
+  H_2C                (!\caproiqueSemiDev)
+  -[-3,1.7,2,2] H C   (!\caproiqueSemiDev)
+  -[-3,1.7,2,2] H_2 C (!\caproiqueSemiDev)
+}
+
+%% Stérols
 \definesubmol\cholesterol{
   HO-[1] *6(-- % 1er cycle
     *6(=-- % 2eme cycle
       *6(- % 3eme cycle
         *5(--- 
-          (-[:90] (-[::60]) -[:30] -[:-30] -[:30] -[:-30] (-[:-90]) -[:30]) % lipide
-        - (-[:90]) -) % 4eme
-      ----) % 3eme
-    ---) % 2eme
-  - (-[:90]) ---) % 1er
+          (-[:90] (!\cu) -[:30] -[:-30] -[:30] -[:-30] (-[:-90]) -[:30]) % lipide
+          - (-[:90]) -
+        ) % 4eme
+        ----
+      ) % 3eme
+      ---
+    ) % 2eme
+    - (-[:90]) ---
+  ) % 1er
 }
 
-%% glycerol
+%% glycérol
 \definesubmol\glycerol{
-  HO -[-1] -[1] (-[3] OH) -[-1] -[1] OH
+  HO -[-1] 
+  -[1] (-[3] OH)
+  -[-1] -[1] OH
 }
 \definesubmol\glycerolSemiDev{
   HC (-OH)
@@ -165,102 +160,88 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Glucides
 %% Amidon
-\definesubmol\amylopectine{
+\definesubmol\amylopec{
   -[-1]O-[1]
   -[1] (-[3] CH_2 OH)
   -[::-60] O -[::-60]
-  (-[::-60] (-[::60]OH) -[::-60] (-[::60]OH) -[::-60])
+  (-[::-60] (!\OH) !\cb (!\OH) !\cb)
 }
-\newcommand{\amylopectineTopologique}{
+\newcommand{\amylopectine}{
   {\footnotesize
-  \chemfig[atom sep=2.2em]{
-    % partie gauche
-    ... !\amylopectine !\amylopectine
-    % cycle central
-    -[-1] O -[-3,1.2] CH_2O -[-3,1.2] % on agrandit l'espace vertical
-    -[-1] O -[::-60] (-[::-60] (-[::60]OH) -[::-60] (-[::60]OH) -[::-60]
-    % cycle à gauche
-    (-[::120,1.25] O -[::-60,1.2]
-    *6(-O- (-[,0.5]CH_2OH) -(-[6]O-[6]...) -(-OH) -(-OH)-))
-    % partie droite
-    -[::-60]) !\amylopectine !\amylopectine -[-1] ...
-  }}
+    \chemfig[atom sep=2.2em]{
+      % partie gauche
+      ... !\amylopec !\amylopec
+      % cycle central
+      -[-1] O -[-3,1.2] CH_2O -[-3,1.2] % on agrandit l'espace vertical
+      -[-1] O !\cb (!\cb (-[::60] OH) !\cb (-[::60] OH) !\cb
+      % cycle à gauche
+      (-[::120,1.25] O -[::-60,1.2]
+      *6(-O- (-[,0.5]CH_2OH) -(-[6]O-[6]...) -(-OH) -(-OH)-))
+      % partie droite
+      !\cb) !\amylopec !\amylopec -[-1] ...
+    }
+  }
 }
-\definesubmol\amylopectineHamw{
+\definesubmol\amylopectineHaw{
   % début du cycle
   O -[1,0.6]
-  % perspective
-    <[-1.5,0.7] (-[3,0.6] OH)
-    -[,,,,line width=2.4pt] (-[-3,0.6] OH)
-    >[1.5,0.7]
+  !\gluHaw
   (-[4.5,0.7] O
   -[6] (-[3,0.5] -[5,0.75] OH)
   -[-4.5,0.7])
   % fin du cycle
   -[-1,0.6]
 }
-\definesubmol\amylopectineGaucheHamw{
+\definesubmol\amylopectineGaucheHaw{
   O -[5,0.6]
   % début du cycle, perspective
-    <[-4.5,0.7] (-[-3,0.6] OH)
-    -[6,,,,line width=2.4pt] (-[3,0.6] OH)
-    >[4.5,0.7] (-[1.5,0.7]) (-[-5,0.6] O -[5] ...)
+  !\gluLeftHaw  (-[-5,0.6] O -[5] ...)
   % fin du cycle
   -[1.5,0.7] (-[3,0.4] -[5,0.6] OH)
   -O -[-1.5,0.7]
 }
-\definesubmol\amylopectineCentraleHamw{
+\definesubmol\amylopectineCentraleHaw{
   O -[-1,0.7] -[-3,0.6]
   % début du cycle
   - O -[-1.5,0.7] ( % perspective
-    <[-4.5,0.7] (-[-3,0.6] OH)
-    -[6,,,,line width=2.4pt] (-[3,0.6] OH)
-    >[4.5,0.7] (-[1.5,0.7]) (-[-5,0.6] !\amylopectineGaucheHamw)
+    !\gluLeftHaw  (-[-5,0.6] !\amylopectineGaucheHaw)
   )
   % fin du cycle
   -[-1,0.6]
 }
 
-%% glucose Hamworth : il faut ajouter [cram width=2pt, atom sep=2.5em] au début de la figure
-\definesubmol\glucoseHamw{
+%% glucose
+\definesubmol\glucoseHaw{
   % début du cycle
   HO -[3,0.6,2]?
-  % Partie en perspective
-  <[-1.5,0.7] (-[3,0.6] OH)
-  -[,,,,line width=2.4pt] (-[-3,0.6] OH)
-  >[1.5,0.7] (-[-3,0.6] OH)
-  % fin partie perspective
+  !\gluHaw
+  (-[-3,0.6] OH)
   -[4.5,0.7] O 
   % fin du cycle
   -[6]? (-[3,0.5] -[5,0.75] OH)
 }
-%% glucose topologique
 \definesubmol\glucoseCycle{
-  *6(-(-OH) -(-OH) -(-[3]OH) (-[0]-[1]OH) -O- -(-OH))
+  *6 (-(-OH) -(-OH) -(-OH) -O -(- -[3]OH) -) (-[-5]HO)
 }
 \definesubmol\glucose{
   HO -[6] (-[-4] (-[6] HO) -[-2] -[-4] HO) -[4] (-[6] HO) -[2] (-OH) -[4] (=[6] O) -[2] H
 }
+\definesubmol{\sucre}{ -[-3] C (-H) (-[6] HO) }
 \definesubmol\glucoseSemiDev{
-  HO -C (-H)
-    (-[3] C (-H) (-[6] HO)
-      (-[3] C (-[5]H) =[1] O)
-    ) % aldehyde et alcool
-  -[-3] C (-H) (-[6] HO)
-  -[-3] C (-H) (-[6] HO)
-  -[-3] C (-H) (-[6] HO)
+  HO -C (-H) (
+    -[3] C (-H) (-[6] HO)
+    (-[3] C (-[5]H) =[1] O)
+  ) % aldehyde et alcool
+  !\sucre !\sucre !\sucre
   -[-3] H
 }
 
-%% fructose Hamworth : il faut ajouter [cram width=2pt, atom sep=2.5em] au début de la figure
-\definesubmol\fructoseHamw{
+%% fructose
+\definesubmol\fructoseHaw{
   % début du cycle
   HO -[3,0.6,2]?
-  % Partie en perspective
-  <[-1.5,0.7] (-[3,0.6] OH)
-  -[,,,,line width=2.4pt] (-[-3,0.6] OH) 
-  >[1.5,0.7] (-[3,0.6] OH) (-[-3,0.5] -[-1,0.75] OH)
-  % fin partie perspective
+  !\gluHaw 
+  (-[-3,0.5] -[-1,0.75] OH)
   -[4.5,0.7] O 
   % fin du cycle
   -[6]?
@@ -272,22 +253,18 @@
   HO -[6] (-[-4] (-[6] HO) -[-2] -[-4] HO) -[4] (-[6] HO) -[2] (=O) -[4] -[2] OH
 }
 \definesubmol\fructoseSemiDev{
-  HO -C (-H)
-    (-[3] C (=O)
-      (-[3] C (-[3]H) (-[6]H) -OH)
-    ) % cétone et alcool
-  -[-3] C (-H) (-[6] HO)
-  -[-3] C (-H) (-[6] HO)
-  -[-3] C (-H) (-[6] HO)
+  HO -C (-H) (
+    -[3] C (=O)
+    (-[3] C (-[3]H) (-[6]H) -OH)
+  ) % cétone et alcool
+  !\sucre !\sucre !\sucre
   -[-3] H
 }
 
-%% Alanine et Glycine dans des polypetptides
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Acides alpha aminés
 \definesubmol\isoleucine{
   H_2N -[1] (-[3] (-[1]) -[5] -[3]) -[-1] !\carboxyle
-}
-\definesubmol\isoleucinePoly{
-  -CH (-[-3] CH (-[-5] CH_2 -[-3]CH_3) -[-1]CH_2) -C (=[3] O) -
 }
 \definesubmol\leucine{
   H_2N -[1] (-[3] -[5] (-[-5]) -[3]) -[-1] !\carboxyle
@@ -298,20 +275,26 @@
 \definesubmol\valine{
   H_2N -[1] (-[3] (-[1]) -[5]) -[-1] !\carboxyle
 }
-\definesubmol\valinePoly{
-  -CH (-[3] CH (-[5] CH_3) -[1]CH_2) -C (=[-3] O) -
-}
 \definesubmol\alanineSemiDev{
   CH_3- CH (-[-3] NH_2) - C (=[1.5] O) -[-1.5] OH
 }
-\definesubmol\alaninePoly{
-  - CH (-[-3] CH_3) - C (=[3] O) -
+\definesubmol\asparagineSemiDev{
+  HO -[1]C (=[3] O) -[-1]CH (-[-3] NH_2) -[1]CH_2 -[-1]C (-[-3] NH_2) =[1] O
 }
 \definesubmol\glycineSemiDev{
   NH_2- CH_2- C (=[1.5] O) -[-1.5] OH
 }
+\definesubmol\alaninePoly{
+  - CH (-[-3] CH_3) - C (=[3] O) -
+}
 \definesubmol\glycinePoly{
   - CH_2 - C (=[3] O) -
+}
+\definesubmol\isoleucinePoly{
+  -CH (-[-3] CH (-[-5] CH_2 -[-3]CH_3) -[-1]CH_2) -C (=[3] O) -
+}
+\definesubmol\valinePoly{
+  -CH (-[3] CH (-[5] CH_3) -[1]CH_2) -C (=[-3] O) -
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -329,7 +312,6 @@
 }
 \definesubmol\creatinine{
   O= *5(-N (-[-3,0.5]H) -(=NH) -N (-) --)
-  %O= *5(-NH -[,2]C(=NH) -N (-CH_3) -CH_2 -C)
 }
 
 \definesubmol\DOPA{
@@ -339,39 +321,109 @@
   HO -[1] *6(= (-OH) -= (--[-1] (-[-3]NH_3^+) -[1] COOH) -=-)
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Produit de contraste
 \definesubmol\ionChelate{
   N (-[::-45, 0.9,,, draw = none] Gd^{3+}) 
-      (-[::140] -[::-60] COO^{-}) -[::80] -[ 0] -[::-80]
-    N (-[::140] -[::-60] COO^{-}) -[::70] -[-3] -[::-80]
-    N (-[::120] -[::-60] COO^{-}) -[::70] -[-6] -[::-80]
-    N (-[::140] -[::-60] ^{-}OOC) -[::70] -[ 3] -[::-80, 0.8]
+      (-[::140] !\cb COO^{-}) -[::80] -[ 0] -[::-80]
+    N (-[::140] !\cb COO^{-}) -[::70] -[-3] -[::-80]
+    N (-[::120] !\cb COO^{-}) -[::70] -[-6] -[::-80]
+    N (-[::140] !\cb ^{-}OOC) -[::70] -[ 3] -[::-80, 0.8]
 }
 \definesubmol\chelateAlcool{
   N (-[::-45, 0.9,,, draw = none] Gd^{3+}) 
-    (-[::140] -[::-60] COO^{-})     -[::80] -[ 0] -[::-80]
+    (-[::140] !\cb COO^{-})         -[::80] -[ 0] -[::-80]
   N (-[::140] -[0] (-[2] OH) -[-2]) -[::70] -[-3] -[::-80]
-  N (-[::120] -[::-60] COO^{-})     -[::70] -[-6] -[::-80]
-  N (-[::140] -[::-60] ^{-}OOC)     -[::70] -[ 3] -[::-80, 0.8]
+  N (-[::120] !\cb COO^{-})         -[::70] -[-6] -[::-80]
+  N (-[::140] !\cb ^{-}OOC)         -[::70] -[ 3] -[::-80, 0.8]
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Vitamines
 \definesubmol\acideAscorbique{ % Vitamine C
-  HO-[-1] -[1](-[3]OH) -[-1] *5(-(-OH) =(-OH) -(=O) -O-)
+  HO-[-1] -[1](-[3]OH) -[-1] 
+  *5(
+    -(-OH) =(-OH) -(=O) -O-
+  )
 }
 \definesubmol\cholecarciferol{ % Vitamine D
   OH-[-1]
-  *6(---(=)-( % premier cycle
-    = -[::-60] =[::60] *6(- % second cycle
-      *5(--- (-(-[::60]) -[::-60] -[::60] -[::-60] -[::60](-[::60]) -[::-60]) --) % troisieme cycle
-    -(-[::0])----) % fin second cycle
-    ) % fin de la chaine sur le premier cycle
-  --) % fin premier cycle
+  *6( % 1er cycle
+    ---(=)- ( % ramification
+      = !\cb =[::60] *6(- % 2eme
+        *5(
+          --- (-(-[::60]) !\cb !\cc -[::60](-[::60]) !\cb) --
+        ) % 3eme
+        -(-[::0])----
+      ) % 2eme
+    ) % ramification
+    --
+  ) % fin premier cycle
 }
+\definesubmol\cret{ =[-1] -[1] }
 \definesubmol\retinol{ % Vitamine A
-  *6(--(-)= (
-    -[1] =[-1] -[1](-[3]) =[-1] -[1] =[-1] -[1](-[3]) =[-1] -[1] OH
+  *6( % cycle
+    --(-)= ( % chaine
+      -[1] !\cret (-[3]) !\cret !\cret (-[3]) !\cret OH
+    ) % chaine
+    -(-[1])(-[5])--
+  ) % cycle
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Aspirine
+\definesubmol\aspirineSemiDev{
+  O=[-1] C (-[1]OH) -[-3]C % carboxyle
+  *6( % cycle
+    =HC 
+    -[,,2,2]HC 
+    =\chembelow{C}{H}
+    -CH =C (
+      -[1] O -[-1] C (=[-3] O) -[1]CH_3 % cétone
+    )
+    -
+  ) % cyle
+}
+\definesubmol\aspirine{
+  *6 (
+    -=- (-O -[-1] (=[-3]) -[1]) = (- (=[5] O) -[1] OH) -=
   )
-  -(-[1])(-[5])--)
+}
+
+%% Paracétamol
+\definesubmol\paracetamol{
+  *6((-HO)-=-(-NH (!\cb (=[::-60]O)!\cu))=-=)
+}
+\definesubmol\paracetamolSemiDev{
+  *6 (C (-HO) -CH =CH -C 
+    (-NH (-[-1]C (=[-3]O) -CH_3)) % amide
+  =CH -HC =[,4,2])
+}
+\definesubmol\paracetamolDev{
+  H -O -[1]C *6 (
+    -C(-H) =C(-H) -C
+      (-N (-[3]H) (-[-1]C (=[-3]O) % amide
+    (-C!\saturationH))) =C(-H) -C(-H) =
+  )
+}
+
+%% Aspartame
+\definesubmol\aspartame{
+  [:150]
+  *6(-=-=-=) % phenyl
+  -[0]-[-2] (
+    -[-4] (=[6]O) -[-2]O -[-4]
+  ) % ester
+  -[0]NH -[-2,,1] (=[-4] O) % Amide
+  -[0] (
+    -[2] NH_2
+  ) % amine
+  -[-2] -[0] (=[2] O) -[-2] OH % acide carboxylique
+}
+
+%% Géraniol
+\definesubmol\geraniolSemiDev{
+  H_3C -[1]C (-[-1] CH_3) % pied
+  =[3]CH -[5]H_2C -[3,,2,2]H_2C -[1]C (-[3] CH_3) % partie centrale
+  =[-1]CH -[1]CH_2 -[-1] OH % bras droit
 }

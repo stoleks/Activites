@@ -568,17 +568,19 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % texte à trou avec option pour régler la largeur
-\NewDocumentCommand{\texteTrou}{o +m}{
+\NewDocumentCommand{\texteTrou}{s o +m}{
   \ifthenelse {\boolean{modeProf}}{ % prof
-    \important[black]{#2}
+    \IfBooleanTF{#1}
+    {#3}
+    {\important[black]{#3}}
   }{ % élève
-    \IfValueTF{#1}{ % Si la largeur est réglée, on utilise des lignes
+    \IfValueTF{#2}{ % Si la largeur est réglée, on utilise des lignes
       \espaceReponse
-      \lignePointillee[#1]
+      \lignePointillee[#2]
       \hspace*{-12pt}
     }{ % Sinon on utilise dash undergap pour la version automatique
       \espaceReponse \hspace*{0.1pt}
-      \gap{#2}
+      \gap{#3}
     }
   }
 }

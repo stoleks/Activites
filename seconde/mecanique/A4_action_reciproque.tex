@@ -39,11 +39,11 @@
       \begin{center}
         \begin{tikzpicture}
           % système 
-          \tkzCercle{0}{0}{gray!50!white}{20}
-          \tkzPointLabel{0}{0}{$A$}
+          \tikzCercle[gray!50!white] (0, 0) {20}
+          \tikzLabel(0, 0){$A$}
           % forces
-          \tkzVecteur(0)[-1.7](0)[-0.75]{$\vv{F}_1$}[left]
-          \tkzVecteur(0)[1.7] (0)[0.75] {$\vv{F}_2$}[right]
+          \tikzVecteur(0,0)(-1.7, -0.75){$\vv{F}_1$}[left]
+          \tikzVecteur(0,0)(1.7, 0.75)  {$\vv{F}_2$}[right]
         \end{tikzpicture}
       
         $\vv{F}_1 + \vv{F}_2 = \vv{0}$, les forces exercée sur le système $A$ se compensent.
