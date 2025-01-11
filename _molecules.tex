@@ -375,10 +375,7 @@
 \definesubmol\aspirineSemiDev{
   O=[-1] C (-[1]OH) -[-3]C % carboxyle
   *6( % cycle
-    =HC 
-    -[,,2,2]HC 
-    =\chembelow{C}{H}
-    -CH =C (
+    =HC -[,,2,2]HC =\chembelow{C}{H} -CH =C (
       -[1] O -[-1] C (=[-3] O) -[1]CH_3 % cétone
     )
     -
@@ -392,18 +389,27 @@
 
 %% Paracétamol
 \definesubmol\paracetamol{
-  *6((-HO)-=-(-NH (!\cb (=[::-60]O)!\cu))=-=)
+  *6(
+    (-HO)-=-(
+      -NH (!\cb (=[::-60]O)!\cu)
+    ) % amide
+    =-=
+  )
 }
 \definesubmol\paracetamolSemiDev{
-  *6 (C (-HO) -CH =CH -C 
-    (-NH (-[-1]C (=[-3]O) -CH_3)) % amide
-  =CH -HC =[,4,2])
+  *6 (
+    C (-HO) -CH =CH -C (
+      -NH (-[-1]C (=[-3]O) -CH_3)
+    ) % amide
+    =CH -HC =[,4,2]
+  )
 }
 \definesubmol\paracetamolDev{
   H -O -[1]C *6 (
-    -C(-H) =C(-H) -C
-      (-N (-[3]H) (-[-1]C (=[-3]O) % amide
-    (-C!\saturationH))) =C(-H) -C(-H) =
+    -C(-H) =C(-H) -C (
+      -N (-[3]H) (-[-1]C (=[-3]O) (-C!\saturationH)) 
+    ) % amide
+    =C(-H) -C(-H) =
   )
 }
 
@@ -422,8 +428,40 @@
 }
 
 %% Géraniol
+\definesubmol\geraniol{
+  -[-3] *6 ( % tete
+    --- 
+      (= (!\cb) (!\cu)) % pied
+    -[,,,,draw=none] -[,,,,draw=none]
+      (- !\cb OH) % alcool
+    =
+  )
+}
 \definesubmol\geraniolSemiDev{
-  H_3C -[1]C (-[-1] CH_3) % pied
-  =[3]CH -[5]H_2C -[3,,2,2]H_2C -[1]C (-[3] CH_3) % partie centrale
-  =[-1]CH -[1]CH_2 -[-1] OH % bras droit
+  CH_3 -[-3]C *6 ( % tete
+    -H_2C -[,,2,2]H_2C -CH 
+      (=C (!\cb CH_3) (!\cu CH_3)) % pied
+    -[,,1,1,draw=none] -[,,,,draw=none]CH
+      (-CH_2 !\cb OH) % alcool
+    =CH_2 
+  )
+}
+
+%% THC
+\definesubmol\THC{
+  -[-3] *6 ( % 1er
+    --- (
+      *6 ( % 2eme
+        - (-[::-90]) (-[::-30])
+        -O- (
+          *6 ( % 3eme
+            -= (!\cb !\cc !\cc)
+            -= (!\cb OH) -=
+          )
+        )
+        --
+      )
+    )
+    --=
+  )
 }
