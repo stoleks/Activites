@@ -11,20 +11,50 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+\tcbset{
+  boite cassable/.style = {
+    breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
+  },
+  %
+  couleur fond/.style = {
+    colback = #1, % fond blanc
+    colbacktitle = #1, % fond pour le titre blanc
+  },
+  %
+  titre sans separation/.style = {
+    couleur fond = white,
+    coltitle = black, % couleur du titre
+    colframe = couleurPrim!25!black, % couleur de la boite
+    boxrule = #1, arc = 0.5mm, % largeur et arrondi des traits de la boite
+    titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
+    fonttitle = \bfseries\sffamily, % titre en gras et sans serif
+  },
+  %
+  boite pleine/.style = {
+    frame hidden, sharp corners, boxrule = 0mm, % pas de contours
+    colback = #1, % fond
+  },
+  %
+  titre sans boite/.style = {
+    empty, % pas de boite automatique
+    fonttitle = \bfseries\sffamily, coltitle = black, % paramètre du titre
+    attach boxed title to top left = {yshift=-2.5mm}, % position
+    boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
+    title = #1,
+  },
+}
+
 %% une simple boite vide
 \newtcolorbox{boite}[1][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  arc = 0mm, % les lignes de la boites sont droites
-  colback = white, colframe = black, % fond blanc et traits noirs
+  boite cassable, colback = white, top = 4pt,
   #1
 }
 
 %%%% Boite colorée avec 
 % \begin{boiteColoree}{couleur} contenu \end{boiteColoree}
 \newtcolorbox{boiteColoree}[2][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
-  colback = couleurPrim!#2, % fond
+  boite cassable, boite pleine = #2,
   #1
 }
 
@@ -32,15 +62,9 @@
 % \begin{doc}{titre}{label} contenu \end{doc}
 \newcounter{documentNum}
 \newtcolorbox{doc}[3][]{
+  boite cassable,
+  titre sans separation = 0.5mm,
   before title = {\refstepcounter{documentNum}},
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  colback = white, % fond blanc
-  colframe = couleurPrim!25!black, % couleur de la boite
-  coltitle = black, % couleur du titre
-  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi des traits de la boite
-  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
-  colbacktitle = white, % fond pour le titre blanc
-  fonttitle = \bfseries\sffamily,
   title = {Document \arabic{documentNum} -- #2\strut \label{#3}},
   #1
 }
@@ -57,26 +81,24 @@
 %   contenu
 % \end{boiteActivite}
 \newtcolorbox{boiteActivite}[6][]{
+  boite cassable,
+  titre sans separation = 0.5mm,
   before title = {\refstepcounter{#5}},
-  enhanced jigsaw, % pour un meilleur rendu
-  colback = white, % fond blanc
-  colframe = couleurPrim!25!black, % couleur de la boite
-  coltitle = black, % couleur du titre
-  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi de la boite
-  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
-  colbacktitle = white, % fond pour le titre blanc
-  fonttitle = \bfseries\sffamily,
   title = {#6 \arabic{section}.\arabic{#5} -- #2\strut \label{#4}},
   enlarge bottom by = 12pt,
-  overlay= {\node at ([xshift = -36pt, yshift = -5pt] frame.south east) {
-    \dureeActivite{{\small \important[white]{#3}}}
-  }; }, % affiche la durée de l'activité
+  overlay= {
+    \node at ([xshift = -36pt, yshift = -5pt] frame.south east) {
+      \dureeActivite{
+        {\small \important[white]{#3}}
+      }
+    };
+  }, % affiche la durée de l'activité dans une petite boite
   remember as = #4,
   #1
 }
 
 % Boite pour les activités/TP en plan de travail.
-% \begin{activite ou TP}{titre activité}[durée]{label} ; durée = 1h activité, 2h TP par défaut
+% \begin{activite ou TP}{titre activité}[durée]{label} ; durée = 1h acti, 2h TP par défaut
 %   contenu
 % \end{activite ou TP}
 \NewDocumentEnvironment{activite}{m O{1 h} m}{%
@@ -98,12 +120,8 @@
 
 % Boîte pour la tâche finale
 \newtcolorbox{tacheFinale}[1][]{
-  breakable, enhanced jigsaw, % boite coupable entre pages
-  colback = white, colframe = black, % couleur cadre
-  boxrule = 0.5mm, arc = 0.5mm, % forme du cadre
-  colbacktitle = white, coltitle = black, % couleur titre
-  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
-  fonttitle = \bfseries\sffamily, % type de titre
+  boite cassable,
+  titre sans separation = 0.5mm,
   title = {Tâche finale}, % titre
   #1
 }
@@ -111,16 +129,12 @@
 % Boîte pour l'organisation des séances
 \newcounter{seanceNum}
 \newtcbox{\seance}[2][]{
+  boite cassable,
+  titre sans separation = 0.5mm,
   before title = {\refstepcounter{seanceNum}},
-  halign=center, valign=center, % pour centrer le contenu
-  enhanced jigsaw, % pour un meilleur rendu
-  colback = white, colframe = black, % couleur cadre
-  boxrule = 0.5mm, arc = 0.5mm, % forme du cadre
-  height = 0.13\textheight, 
-  colbacktitle = white, coltitle = black, % couleur titre
-  titlerule = 0mm, top = 0mm, % pas de séparation titre/boite
-  fonttitle = \bfseries\sffamily, % type de titre
   title = {Séance \arabic{seanceNum} \hfill (#2)}, % titre,
+  halign=center, valign=center, % pour centrer le contenu
+  height = 0.13\textheight, % hauteur de la boite
   #1
 }
 % Pour afficher 3/2/1 séances dans la programmation
@@ -137,79 +151,63 @@
 
 %%%% Passage important à connaître
 \newtcolorbox{importants}[1][]{
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  frame hidden, sharp corners, boxrule = 0mm, % pas de contours
-  colback = couleurPrim!10, % fond
-  borderline west={4pt}{0pt}{couleurPrim}, % barre gauche
+  boite cassable,
+  boite pleine = couleurPrim!10, % fond
+  shadow = {-4pt}{0mm}{0mm}{couleurPrim}, % barre gauche
   #1
 }
 
 %%%% Boîte pour le contexte
 \newtcolorbox{contexte}[1][]{
-  breakable, enhanced jigsaw, % boite coupable entre pages
-  boxrule = 3pt, sharp corners, % contours droits
-  colframe = couleurPrim, % couleur des contours
-  colback = couleurPrim!5, % fond
+  boite cassable, 
+  titre sans separation = 3pt,
+  couleur fond = couleurPrim!10, 
+  colframe = couleurPrim, sharp corners, %  contours
   title = {Contexte :}, % titre
-  colbacktitle = couleurPrim!5, % couleur du fond du titre
-  fonttitle = \bfseries\sffamily, coltitle = black, % paramètre du titre
-  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
-  detach title,
-  before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;},
+  detach title, before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;}, % titre "en ligne"
   #1
 }
 
 %%%% Pour les objectifs
-\newenvironment{objectifs}{%
-  \begin{listeObjectifs}} {\end{listeObjectifs}}
+\newenvironment{objectifs}{ %
+  \begin{listeObjectifs}
+} {\end{listeObjectifs}}
 %
 \tcolorboxenvironment{objectifs}{
-  empty, % pas de boite automatique
-  attach boxed title to top left = {yshift=-2.5mm}, % position
-  boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
+  titre sans boite = {Objectifs :},
   frame code = { % tracé de la boite
     \path [draw=couleurPrim, line width = 3pt]
     (frame.west) |- ([xshift=6mm] title.north east)
     to[out=0, in=180] ([xshift=20mm] title.east) -| % définit la courbe
     (frame.east) |- (frame.south) -| cycle; % trace la boite
   },
-  fonttitle = \bfseries\sffamily, coltitle = black, % paramètre du titre
-  title = {Objectifs :}
 }
 
 %% Pour les pré-requis
-\newenvironment{prerequis}{%
-  \begin{listeObjectifs}} {\end{listeObjectifs}}
+\newenvironment{prerequis}{ %
+  \begin{listeObjectifs}
+} {\end{listeObjectifs}}
 %
 \tcolorboxenvironment{prerequis}{
-  empty, % pas de boite automatique
-  attach boxed title to top left = {yshift=-2.5mm}, % position
-  boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},
+  titre sans boite = {Prérequis :},
   frame code = { % tracé de la boite
     \path [draw=couleurPrim, line width = 3pt]
     (frame.south east) |- ([xshift=-34mm, yshift=-4mm] frame.south east)
     to[out=180, in=0] ([xshift=-47mm] frame.south east) -| % définit la courbe
     (frame.west) |- (title.north) -| cycle; % trace la boite
   },
-  coltitle = black, % couleur du titre
-  fonttitle = \bfseries\sffamily, % police du titre
-  title = {Prérequis :}
 }
 
 %%%% Espace pour un coup de pouce
 \newcounter{coupDePouceNum}
 \newtcolorbox{coupDePouce}[1][]{
+  boite cassable, 
+  titre sans separation = 0.5mm,
   before title = {\refstepcounter{coupDePouceNum}},
-  breakable, enhanced jigsaw, % pour s'étendre sur plusieurs pages
-  arc = 0mm, % les lignes de la boites sont droites
-  colback = white, colframe = black, % fond blanc et traits noirs
-  fonttitle = \bfseries, coltitle = black, % couleur et police du titre
-  titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
-  colbacktitle = white, % fond pour le titre blanc
   title = {
     \textcolor{couleurPrim}{\faThumbsUp}
     Coup de pouce \arabic{coupDePouceNum} :
-    \flushright \vspace*{-26pt}\faSquareO
+    \flushright \vspace*{-24pt}\faSquareO
   },
   #1
 }
@@ -220,21 +218,15 @@
     \begin{boite}
       \vspace*{-4pt}
       \important[black]{Appréciation et remarques}
-      
-      \vspace*{#1 cm}
-      \phantom{b}
+      \vspace*{#1 cm} \phantom{b}
     \end{boite}
   }
 }
 
 %%%% Espace fiche TP
 \newtcolorbox{boiteMateriel}[2][]{
-  colback = white, colframe = black, % fond blanc et traits noirs
-  coltitle = white, % couleur du titre
-  boxrule = 0.5mm, arc = 0.5mm, % largeur et arrondi des traits de la boite
-  titlerule = 0mm, top = 2mm, % pour ne pas avoir de séparation titre/boite
-  colbacktitle = couleurPrim, % fond pour le titre blanc
-  fonttitle = \bfseries\sffamily, % type de titre
+  titre sans separation = 0.5mm,
+  coltitle = white, colbacktitle = couleurPrim, % fond pour le titre blanc
   title = {\centering \large \phantom{À} #2 \phantom{g}}, % titre
   #1
 }
@@ -368,7 +360,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Paramètre par défaut pour l'en-tête
-\newcommand{\annee}{Réglez avec \textbackslash renewcommand\{\textbackslash annee\}\{2023 -- 2024\}}
 \newcommand{\classe}{Réglez avec \textbackslash renewcommand\{\textbackslash classe\}\{Seconde\}}
 \newcommand{\etablissement}{Réglez avec \textbackslash renewcommand\{\textbackslash etablissement\}\{Lycée\}}
 
