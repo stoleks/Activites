@@ -1,6 +1,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% couleurs dérivées des couleurs choisie
-\newcommand{\couleurPrimSombre}{couleurPrim!60!black}
+\colorlet{couleurPrim}   {cyan600}
+\colorlet{couleurPrim800}{cyan800}
+\colorlet{couleurPrim300}{cyan300}
+\colorlet{couleurPrim100}{cyan100}
+\colorlet{couleurPrim50} {cyan50}
+
+\colorlet{couleurSec}    {blue600}
+\colorlet{couleurSec800} {blue800}
+\colorlet{couleurSec300} {blue300}
+\colorlet{couleurSec100} {blue100}
+\colorlet{couleurSec50}  {blue50}
+
+\colorlet{couleurTer}    {purple600}
+\colorlet{couleurTer800} {purple800}
+\colorlet{couleurTer300} {purple300}
+\colorlet{couleurTer100} {purple100}
+\colorlet{couleurTer50}  {purple50}
+
+\colorlet{couleurQuat}   {red600}
+\colorlet{couleurQuat800}{red800}
+\colorlet{couleurQuat300}{red300}
+\colorlet{couleurQuat100}{red100}
+\colorlet{couleurQuat50} {red50}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% rectangle coloré
 \NewDocumentCommand{\rectangle}{O{couleurPrim} m m}{%
   \shorthandoff{;}
@@ -25,7 +49,7 @@
   titre sans separation/.style = {
     couleur fond = white,
     coltitle = black, % couleur du titre
-    colframe = couleurPrim!25!black, % couleur de la boite
+    colframe = couleurSec800, % couleur de la boite
     boxrule = #1, arc = 0.5mm, % largeur et arrondi des traits de la boite
     titlerule = 0mm, top = 0mm, % pour ne pas avoir de séparation titre/boite
     fonttitle = \bfseries\sffamily, % titre en gras et sans serif
@@ -73,7 +97,7 @@
 % Boite pour afficher la durée recommandée en bas à gauche
 \newtcbox{\dureeActivite}[1][]{
   arc = 2mm, % courbes des bords
-  colback = couleurSec, colframe = white, % couleurs boite
+  colback = couleurTer, colframe = white, % couleurs boite
   coltext = white,
 }
 % Boite de base pour les activités ou TP, avec le format suivant 
@@ -152,7 +176,7 @@
 %%%% Passage important à connaître
 \newtcolorbox{importants}[1][]{
   boite cassable,
-  boite pleine = couleurPrim!10, % fond
+  boite pleine = couleurPrim50, % fond
   shadow = {-4pt}{0mm}{0mm}{couleurPrim}, % barre gauche
   #1
 }
@@ -161,7 +185,7 @@
 \newtcolorbox{contexte}[1][]{
   boite cassable, 
   titre sans separation = 3pt,
-  couleur fond = couleurPrim!10, 
+  couleur fond = couleurPrim50!50, 
   colframe = couleurPrim, sharp corners, %  contours
   title = {Contexte :}, % titre
   detach title, before upper={\vspace{2pt}\hspace{-8pt}\tcbtitle\;}, % titre "en ligne"
@@ -618,7 +642,7 @@
     \begin{tblr}{
       hlines,
       colspec = #1,
-      row{1} = {couleurPrim!20},
+      row{1} = {couleurPrim100},
     }
 }{
     \end{tblr}
@@ -631,7 +655,7 @@
     \begin{tblr}{
       colspec = {c X[l] c c c c},
       rows = {m}, hlines, vlines,
-      row{1} = {couleurPrim!20}
+      row{1} = {couleurPrim100}
     }
       \textbf{Comp.} & \centering \textbf{Items} &
       \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
@@ -647,7 +671,7 @@
     colspec = {Q[t, wd=0.7\textwidth] c c c},
     rows = {m}, hlines, vlines,
     column{4} = {0.2},
-    row{1} = {couleurPrim!20, c}
+    row{1} = {couleurPrim100, c}
   }
     \important{Connaissances et capacités exigibles} & \ok & \pasOk & \important{En classe} \\
 }{ 
@@ -665,7 +689,7 @@
       Q[l, wd=0.3\textwidth] % Réponse
       Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] % Répétitions
     }, rows = {m}, hlines, vlines,
-    row{1,2} = {couleurPrim!20, c}
+    row{1,2} = {couleurPrim100, c}
   }
     \SetCell[r=2]{c} \important{Questions} & 
     \SetCell[c=2]{c} \important{Auto-évaluation} & &
@@ -748,7 +772,7 @@
 % Nombre dans un cercle A REVOIR
 \newcommand*\nombreCercle[1]{
   % \tikz[baseline=(char.base)]{
-  %   \node [shape=circle, draw filled, inner sep=1.2pt, color=couleurSec!20] (char) {\textcolor{black}{#1};
+  %   \node [shape=circle, draw filled, inner sep=1.2pt, color=couleurSec50] (char) {\textcolor{black}{#1};
   % }
   \important[couleurSec]{#1}
 }
@@ -760,7 +784,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% points importants
-\NewDocumentCommand{\important}{O{couleurSec!75!black} +m}{
+\NewDocumentCommand{\important}{O{couleurSec800} +m}{
   \!\textcolor{#1}{\textsf{\bfseries #2}}\!\!
 }
 %%%% Pour donner des exemples. 

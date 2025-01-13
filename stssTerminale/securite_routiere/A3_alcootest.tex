@@ -3,13 +3,7 @@
 
 %%%% titre
 \numeroActivite{3}
-\nomPrenomClasse
 \titreActivite{Principe de fonctionnement d'un alcootest}
-
-\begin{tableauCompetences}
-  REA & Mettre en \oe{}uvre les étapes d’une démarche & & & \\
-  VAL & Confronter un modèle à des résultats expérimentaux & & & \\
-\end{tableauCompetences}
 
 
 %%%% objectifs
@@ -41,23 +35,22 @@
 
   L'anion dichromate est très toxique, cancérigène et nuit à l'environnement.
   \begin{center}
-    \image{0.1}{images/securite/picto_flambe}
-    \image{0.1}{images/securite/picto_ronge}
-    \image{0.1}{images/securite/picto_tue}
-    \image{0.1}{images/securite/picto_pollue}
-    \image{0.1}{images/securite/picto_sante}
+    \image{0.1}{images/securite/picto_comburant}
+    \image{0.1}{images/securite/picto_corrosif}
+    \image{0.1}{images/securite/picto_toxique}
+    \image{0.1}{images/securite/picto_environnement}
+    \image{0.1}{images/securite/picto_reprotoxique}
   \end{center}
 \end{doc}
 
 \begin{doc}{Réaction d'oxydo-réduction dans un alcootest}{doc:A3_reaction_chim_alcootest}
   L'alcootest exploite une réaction chimique d'oxydoréduction.
-
-  L'éthanol \chemfig{CH_3CH_2OH} contenu dans l'air expiré par une personne alcoolisée constitue le réducteur destiné à être oxydé en acide éthanoïque \chemfig{CH_3COOH} par l'ion dichromate contenu dans le tube.
+  L'éthanol \chemfig{C_2H_6O} contenu dans l'air expiré par une personne alcoolisée constitue le réducteur destiné à être oxydé en acide éthanoïque \chemfig{C_2H_4O_2} par l'ion dichromate \chemfig{Cr_2 O_7^{2-}} contenu dans le tube de test.
   \smallskip
 
   \begin{tblr}{
-    hlines, column{1} = {couleurPrim!20},
-    colspec = {|l |X[c] |X[c] |}
+    vlines, hlines, column{1} = {couleurSec100},
+    colspec = {l X[c] X[c]}
   }
     Couple Ox/Red & \chemfig{Cr_2 O_7^{2-}}/\chemfig{Cr^{3+}} & \chemfig{C_2H_4O_2}/\chemfig{C_2H_6O} \\ 
     Couleurs & orange/vert & incolore/incolore \\
@@ -68,24 +61,30 @@
   \end{tblr}
 \end{doc}
 
+
+\question{
+  Qui est l'oxydant dans le couple formé par l'ion dichromate et l'ion chromique \chemfig{Cr_2 O_7^{2-}}/\chemfig{Cr^{3+}} ?
+  Même question pour l'éthanol et l'acide éthanoïque \chemfig{C_2H_4O_2}/\chemfig{C_2H_6O}.
+}{}[3]
+
+
 \begin{doc}{Démarche pour établir l'équation d'une réaction redox}{doc:A3}
   Pour établir l'équation d'une réaction d'oxydoréduction il faut
   \begin{listePoints}
-    \item identifier les deux réactifs $Ox_1$ et $Red_2$.
+    \item Identifier les deux réactifs $Ox_1$ et $Red_2$.
     \item Écrire, l'une sous l'autre, les deux demi-équations en mettant les réactifs à gauche.
     \item Ajuster les coefficients des deux demi-équations pour obtenir le même nombre d'électrons.
-    \item \og Additionner \fg\; les deux demi-équations.
-    \item Supprimer les spectateurs éventuels.
-    \item Vérifier que les charges et les éléments sont conservés.
+    \item Additionner côté par côté les deux demi-équations.
+    \item Vérifier que les charges et les éléments sont conservés, puis supprimer les électrons.
   \end{listePoints}
 \end{doc}
 
-%%%%
+%%
 \question{
-  Établir l’équation de la réaction d’oxydoréduction sous la forme : $Ox_1 + Red_2 \reaction Red_1 + Ox_2$.
-}{}{10}
+  Établir l’équation de la réaction d’oxydoréduction entre l'éthanol et  sous la forme $Ox_1 + Red_2 \reaction Red_1 + Ox_2$.
+}{}[1]
 
 \question{
   Interpréter les changements de couleurs observés lorsque l’alcootest est positif.
 }{
-}{4}
+}[4]

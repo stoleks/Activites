@@ -24,6 +24,7 @@
 \newcommand{\hydrogene}{\chemfig{H} }
 \newcommand{\carbone}{\chemfig{C} }
 \newcommand{\oxygene}{\chemfig{O} }
+\newcommand{\dioxygene}{\chemfig{O_2} }
 \newcommand{\azote}{\chemfig{N} }
 \newcommand{\eau}{\chemfig{H_2O} }
 \newcommand{\oxonium}{\chemfig{H_3O^+} }
@@ -175,14 +176,14 @@
     *6(=-- % 2eme cycle
       *6(- % 3eme cycle
         *5(--- 
-          (-[:90] (!\cu) -[:30] -[:-30] -[:30] -[:-30] (-[:-90]) -[:30]) % lipide
-          - (-[:90]) -
+          (-[::-35] (!\cu) !\cd !\cd !\cud (!\cd) !\cu) % lipide
+          -  -
         ) % 4eme
-        ----
+        - (-[::0]) ---
       ) % 3eme
       ---
     ) % 2eme
-    - (-[:90]) ---
+    - (-[::0]) ---
   ) % 1er
 }
 \definesubmol\testosterone{
@@ -190,7 +191,7 @@
     *6(---
       *6(-
         *5(--- 
-          (-[:70] OH) % alcool
+          (-[::-100] OH) % alcool
         --
         ) % 4
       - (-[::0]) ---
@@ -250,20 +251,22 @@
 \definesubmol\amylopec{
   -[-1]O-[1]
   -[1] (-[3] CH_2 OH)
-  -[::-60] O -[::-60]
-  (-[::-60] (!\OH) !\cd (!\OH) !\cd)
+  !\cd O !\cd
+  (!\cd (!\OH) !\cd (!\OH) !\cd)
 }
 \newcommand{\amylopectine}{
   % partie gauche
   ... !\amylopec !\amylopec
   % cycle central
   -[-1] O -[-3,1.2] CH_2O -[-3,1.2] % on agrandit l'espace vertical
-  -[-1] O !\cd (!\cd (-[::60] OH) !\cd (-[::60] OH) !\cd
-  % cycle à gauche
-  (-[::120,1.25] O -[::-60,1.2]
-  *6(-O- (-[,0.5]CH_2OH) -(-[6]O-[6]...) -(-OH) -(-OH)-))
-  % partie droite
-  !\cd) !\amylopec !\amylopec -[-1] ...
+  -[-1] O !\cd (
+    !\cd (-[::60] OH) !\cd (-[::60] OH) !\cd
+    % cycle à gauche
+    (-[::120,1.25] O -[::-60,1.2]
+    *6(-O- (-[,0.5]CH_2OH) -(-[6]O-[6]...) -(-OH) -(-OH)-))
+    % partie droite
+    !\cd
+  ) !\amylopec !\amylopec -[-1] ...
 }
 \definesubmol\amylopecHaw{
   % début du cycle
@@ -456,7 +459,7 @@
     --(-)= ( % chaine
       -[1] !\cret (-[3]) !\cret !\cret (-[3]) !\cret OH
     ) % chaine
-    -(-[1])(-[5])--
+    -(-[1]) (-[5])--
   ) % cycle
 }
 
@@ -572,16 +575,16 @@
   )
 }
 \definesubmol\cocaineHaw{
-    ? 
-      <[::60,0.7] (-[::60] N -[::60])
-      -[::-60,,,,line width = 3.4pt]
-      >[::-30,0.7] ( % ether-phenyl
-        -[::60] O -[::-60] (=[::-60]O)
-        !\cu  *6(=-=-=-)
-      )
-    -[::130,0.7] ( % ester
-      -[::-50] (=[::60]O)
-      !\cd O !\cu 
+  ? 
+    <[::60,0.7] (-[::60] N -[::60])
+    -[::-60,,,,line width = 3.4pt]
+    >[::-30,0.7] ( % ether-phenyl
+      -[::60] O -[::-60] (=[::-60]O)
+      !\cu  *6(=-=-=-)
     )
-    -[::80, 0.9] (-[::-30, 0.85]) -[::60, 0.7] ?
+  -[::130,0.7] ( % ester
+    -[::-50] (=[::60]O)
+    !\cd O !\cu 
+  )
+  -[::80, 0.9] (-[::-30, 0.85]) -[::60, 0.7] ?
 }
