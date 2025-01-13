@@ -87,7 +87,7 @@
   title = {#6 \arabic{section}.\arabic{#5} -- #2\strut \label{#4}},
   enlarge bottom by = 12pt,
   overlay= {
-    \node at ([xshift = -36pt, yshift = -5pt] frame.south east) {
+    \node at ([xshift = -36pt, yshift = -6pt] frame.south east) {
       \dureeActivite{
         {\small \important[white]{#3}}
       }
@@ -976,7 +976,7 @@
 
 %% siècle
 \newcommand{\siecle}[1]{
-  \textsc{\romannumeral #1}\textsuperscript{e}~siècle
+  \textsc{\romannumeral #1}\textsuperscript{e}~siècle%
 }
 
 %% texte avec une boite autour

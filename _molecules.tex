@@ -41,9 +41,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Pour simplifier certaines molécules
-\definesubmol\cu{ -[::60] } % Carbone vers le haut
-\definesubmol\cb{ -[::-60] } % carbone vers le bas
-\definesubmol\cc{ -[::60] -[::-60] } % Liaison C-C
+\definesubmol\cu{ -[::60] } % Carbone vers le haut (carbon up)
+\definesubmol\cd{ -[::-60] } % carbone vers le bas (carbon down)
+\definesubmol\cud{ -[::60] -[::-60] } % Liaison C-C ^ (carbon up down)
+\definesubmol\cdu{ -[::-60] -[::60] } % liaison C-C v (carbon down up)
 \definesubmol\cis{ -[::60] =[::-60] -[::-60] } % Liaison -C=C- cis
 \definesubmol\trans{ -[::60] =[::-30] -[::-30] } % Liaison -C=C- trans
 %% Hydrogène saturés
@@ -75,19 +76,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Acides gras
 \definesubmol\palmitique{
-  HO -[::30] !\carbonyle !\cc !\cc !\cc !\cc !\cc !\cc !\cc
+  HO -[::30] !\carbonyle !\cud !\cud !\cud !\cud !\cud !\cud !\cud
 }
 \definesubmol\linolenique{
-  HO -[::30] !\carbonyle !\cc !\cc !\cc !\trans !\trans !\trans !\cu
+  HO -[::30] !\carbonyle !\cud !\cud !\cud !\trans !\trans !\trans !\cu
 }
 \definesubmol\oleique{
-  HO -[::30] !\carbonyle !\cc !\cc !\cc !\cis !\cu !\cc !\cc !\cc
+  HO -[::30] !\carbonyle !\cud !\cud !\cud !\cis !\cu !\cud !\cud !\cud
 }
 \definesubmol\linoleique{
-  HO -[::30] !\carbonyle !\cc !\cc !\cc !\cis !\cis !\cc !\cc
+  HO -[::30] !\carbonyle !\cud !\cud !\cud !\cis !\cis !\cud !\cud
 }
 \definesubmol\arachidonique{
-  HO -[::30] !\carbonyle !\cc !\cis !\cis !\cis !\cis !\cu !\cc !\cu
+  HO -[::30] !\carbonyle !\cud !\cis !\cis !\cis !\cis !\cu !\cud !\cu
 }
 %% Formes semi-developpées
 \definesubmol\steraiqueSemiDev{
@@ -104,16 +105,16 @@
 }
 %% Pour l'utilisation dans les lipides
 \definesubmol\tripalmitique{
-  !\cc !\cc !\cc !\cc !\cc !\cc !\cu
+  !\cdu !\cdu !\cdu !\cdu !\cdu !\cdu !\cd
 }
 \definesubmol\trilinolenique{
-  !\cc !\cc !\cc !\cis !\cis !\cis !\cu
+  !\cud !\cud !\cud !\cis !\cis !\cis !\cu
 }
 \definesubmol\trioleique{
-  !\cc !\cc !\cc !\cu =[::60] !\cu !\cc !\cc !\cb !\cb !\cb
+  !\cud !\cud !\cud !\cu =[::60] !\cu !\cud !\cud !\cd !\cd !\cd
 }
 \definesubmol\trilinoleique{
-  !\cc !\cc !\cc !\cis !\cis !\cc !\cc
+  !\cud !\cud !\cud !\cis !\cis !\cud !\cud
 }
 
 
@@ -125,18 +126,18 @@
    -[::30] O!\cu !\carbonyle !\trioleique
 }
 \definesubmol\palmitine{
-   (-[::150] !\cu O-[::-60] (=[::60] O) !\carbonyle !\cb !\cb !\tripalmitique) % haut
-   (-[::-90] !\cu O!\cu (=[::-60]O) !\carbonyle !\cc !\tripalmitique) % centre
-   -[::30] O!\cu !\carbonyle !\cc !\cc !\tripalmitique % bas
+   (-[::150] !\cu O !\cd !\carbonyle !\tripalmitique) % haut
+   (-[::-90] !\cu O !\cu (=[::-60] O) !\cu !\tripalmitique) % bas
+   -[::30] O!\cu !\carbonyle !\cud !\cud !\cud !\cud !\cud !\cud !\cu % centre
 }
 \definesubmol\phosphatidylcholine{
   -[::-30]N
     (-[::-30])(-[::-90])
-  !\cc !\cu O !\cb P
+  !\cud !\cu O !\cd P
     ( =[::-30]O )( -[::-90]O )
-  !\cu O !\cb !\cu
-    (!\cu O !\cb !\carbonyle !\trioleique)
-  !\cb !\cu O !\cb (=[::-60] O) !\cc !\cc !\cc !\cc !\cc !\cc !\cc
+  !\cu O !\cd !\cu
+    (!\cu O !\cd !\carbonyle !\trioleique)
+  !\cd !\cu O !\cd (=[::-60] O) !\cud !\cud !\cud !\cud !\cud
 }
 \definesubmol\oleineSemiDev{
   H C                 (!\teteAcideDev C_{17} H_{33}) 
@@ -147,6 +148,11 @@
   H_2C                (!\caproiqueSemiDev)
   -[-3,1.7,2,2] H C   (!\caproiqueSemiDev)
   -[-3,1.7,2,2] H_2 C (!\caproiqueSemiDev)
+}
+\definesubmol\palmitineSemiDev{
+  H C (!\teteAcideDev C_{15} H_{31}) 
+  (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{15} H_{31}))
+  -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{15} H_{31})
 }
 
 %% glycérol
@@ -185,13 +191,13 @@
       *6(-
         *5(--- 
           (-[:70] OH) % alcool
-        - (-[:90]) -
+        --
         ) % 4
-      ----
+      - (-[::0]) ---
       ) % 3
     ---
     ) % 2
-  - (-[:90]) ---
+  - (-[::0]) ---
   ) % 1
 }
 \definesubmol\cortisol{
@@ -200,14 +206,14 @@
       --- *6(
         - *5(
           --- (-[::-100] OH)
-          (-[::-35] (=[::60] O) !\cb!\cu OH)
-          - (-[::-100])
+          (-[::-35] (=[::60] O) !\cd!\cu OH)
+          -
         ) % 4
-        --- (-OH) -
+        - (-[::0]) -- (-OH) -
       ) % 3
-      -- (-[::-120])
+      --
     ) % 2
-    ----
+    - (-[::0]) ---
   ) % 1
 }
 \definesubmol\progesterone{
@@ -245,19 +251,19 @@
   -[-1]O-[1]
   -[1] (-[3] CH_2 OH)
   -[::-60] O -[::-60]
-  (-[::-60] (!\OH) !\cb (!\OH) !\cb)
+  (-[::-60] (!\OH) !\cd (!\OH) !\cd)
 }
 \newcommand{\amylopectine}{
   % partie gauche
   ... !\amylopec !\amylopec
   % cycle central
   -[-1] O -[-3,1.2] CH_2O -[-3,1.2] % on agrandit l'espace vertical
-  -[-1] O !\cb (!\cb (-[::60] OH) !\cb (-[::60] OH) !\cb
+  -[-1] O !\cd (!\cd (-[::60] OH) !\cd (-[::60] OH) !\cd
   % cycle à gauche
   (-[::120,1.25] O -[::-60,1.2]
   *6(-O- (-[,0.5]CH_2OH) -(-[6]O-[6]...) -(-OH) -(-OH)-))
   % partie droite
-  !\cb) !\amylopec !\amylopec -[-1] ...
+  !\cd) !\amylopec !\amylopec -[-1] ...
 }
 \definesubmol\amylopecHaw{
   % début du cycle
@@ -396,9 +402,9 @@
 \definesubmol\prostaglandine{
   OH-[::75] *5(
     - (
-      -=[::60]!\cb  (!\cb OH) !\cc !\cc !\cu 
+      -=[::60]!\cd  (!\cd OH) !\cud !\cud !\cu 
     )
-    - (-[::-65]!\cb !\cc !\cc !\cu  (=[::60]O) !\cb OH)
+    - (-[::-65]!\cd !\cud !\cud !\cu  (=[::60]O) !\cd OH)
     - (=O)
     --
   )
@@ -408,17 +414,17 @@
 %% Produit de contraste
 \definesubmol\ionChelate{
   N (-[::-45, 0.9,,, draw = none] Gd^{3+}) 
-      (-[::140] !\cb COO^{-}) -[::80] -[ 0] -[::-80]
-    N (-[::140] !\cb COO^{-}) -[::70] -[-3] -[::-80]
-    N (-[::120] !\cb COO^{-}) -[::70] -[-6] -[::-80]
-    N (-[::140] !\cb ^{-}OOC) -[::70] -[ 3] -[::-80, 0.8]
+      (-[::140] !\cd COO^{-}) -[::80] -[ 0] -[::-80]
+    N (-[::140] !\cd COO^{-}) -[::70] -[-3] -[::-80]
+    N (-[::120] !\cd COO^{-}) -[::70] -[-6] -[::-80]
+    N (-[::140] !\cd ^{-}OOC) -[::70] -[ 3] -[::-80, 0.8]
 }
 \definesubmol\chelateAlcool{
   N (-[::-45, 0.9,,, draw = none] Gd^{3+}) 
-    (-[::140] !\cb COO^{-})         -[::80] -[ 0] -[::-80]
+    (-[::140] !\cd COO^{-})         -[::80] -[ 0] -[::-80]
   N (-[::140] -[0] (-[2] OH) -[-2]) -[::70] -[-3] -[::-80]
-  N (-[::120] !\cb COO^{-})         -[::70] -[-6] -[::-80]
-  N (-[::140] !\cb ^{-}OOC)         -[::70] -[ 3] -[::-80, 0.8]
+  N (-[::120] !\cd COO^{-})         -[::70] -[-6] -[::-80]
+  N (-[::140] !\cd ^{-}OOC)         -[::70] -[ 3] -[::-80, 0.8]
 }
 
 
@@ -434,9 +440,9 @@
   OH-[-1]
   *6( % 1er cycle
     ---(=)- ( % ramification
-      = !\cb =[::60] *6(- % 2eme
+      = !\cd =[::60] *6(- % 2eme
         *5(
-          --- (-(-[::60]) !\cb !\cc -[::60](-[::60]) !\cb) --
+          --- (-(-[::60]) !\cd !\cud -[::60](-[::60]) !\cd) --
         ) % 3eme
         -(-[::0])----
       ) % 2eme
@@ -476,7 +482,7 @@
 \definesubmol\paracetamol{
   *6(
     (-HO)-=-(
-      -NH (!\cb (=[::-60]O)!\cu)
+      -NH (!\cd (=[::-60]O)!\cu)
     ) % amide
     =-=
   )
@@ -518,32 +524,32 @@
 \definesubmol\geraniol{
   -[-3] *6( % tete
     --- 
-      (= (!\cb) (!\cu)) % pied
+      (= (!\cd) (!\cu)) % pied
     -[,,,,draw=none] -[,,,,draw=none]
-      (- !\cb OH) % alcool
+      (- !\cd OH) % alcool
     =
   )
 }
 \definesubmol\geraniolSemiDev{
   CH_3 -[-3]C *6 ( % tete
     -H_2C -[,,2,2]H_2C -CH 
-      (=C (!\cb CH_3) (!\cu CH_3)) % pied
+      (=C (!\cd CH_3) (!\cu CH_3)) % pied
     -[,,1,1,draw=none] -[,,,,draw=none]CH
-      (-CH_2 !\cb OH) % alcool
+      (-CH_2 !\cd OH) % alcool
     =CH_2 
   )
 }
 \definesubmol\oxyphenylone{
   HO -[::30] *6(
     -=- (
-      -!\cb !\cu (=[::60]O) !\cb 
+      -!\cd !\cu (=[::60]O) !\cd 
     )
     =-=
   )
 }
 \definesubmol\vanilline{
   O=[::-30] (!\cu H)
-  !\cb  *6(
+  !\cd  *6(
     - = - (-OH)
     = (-O!\cu)
     -=
@@ -557,8 +563,8 @@
     --- *6 ( % 2eme
       - (-[::-90]) (-[::-30])
       -O- *6 ( % 3eme
-        -= (!\cb !\cc !\cc)
-        -= (!\cb OH) -=
+        -= (!\cd !\cud !\cud)
+        -= (!\cd OH) -=
       )
       --
     )
@@ -575,7 +581,7 @@
       )
     -[::130,0.7] ( % ester
       -[::-50] (=[::60]O)
-      !\cb O !\cu 
+      !\cd O !\cu 
     )
     -[::80, 0.9] (-[::-30, 0.85]) -[::60, 0.7] ?
 }

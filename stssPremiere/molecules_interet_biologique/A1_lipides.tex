@@ -6,6 +6,7 @@
 \numeroActivite{1}
 \titreActivite{Les lipides}
 
+
 \begin{objectifs}
   \item Étudier la structure des lipides.
   \item Comprendre la composition d'un triglycéride.
@@ -19,7 +20,6 @@
     Quelle est la structure des lipides ?
   }
 \end{contexte}
-
 
 
 %%%%%
@@ -47,7 +47,7 @@
     \centering
     \chemname[8pt]{
       {\small
-        \chemfig[atom sep = 1.4em]{OH-[1]!\palmitique}
+        \chemfig[atom sep = 1.4em]{!\palmitique}
       }
     }{
       Acide palmitique, un acide gras \important{saturé.}
@@ -55,7 +55,7 @@
 
     \chemname[8pt]{
       {\small
-        \chemfig[atom sep = 1.4em]{[:30]HO-!\trioleique}
+        \chemfig[atom sep = 1.4em]{HO-[1] !\carbonyle !\trioleique}
       }
     }{
       Acide oléique, un acide gras \important{insaturé.}
@@ -94,12 +94,12 @@
 \end{doc}
 
 \question{
-  Entourer et nommer les fonctions organiques qui sont présentes dans l'acide palmitique et l'acide oléique.
-}{}{2}
+  Entourer et nommer les familles organiques présentes dans l'acide palmitique et oléique.
+}{}[2]
 
 \question{
   Indiquer si l'acide stéarique et l'acide oléique sont saturés ou insaturés.
-}{}{2}
+}{}[2]
 
 
 %%%%
@@ -118,13 +118,9 @@
 
   \begin{center}
     {\small
-      \chemfig[atom sep = 1.25em]{[:-60]!\tripalmitine}
+      \chemfig[atom sep = 1.25em]{[:-60]!\palmitine}
       \qq{} ou \qq{}
-      \chemfig[atom sep = 1.75em]{
-        H C (!\teteAcideDev C_{15} H_{31}) 
-        (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{15} H_{31}))
-        -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{15} H_{31})
-      } \\[8pt]
+      \chemfig[atom sep = 1.75em]{!\palmitineSemiDev} \\[8pt]
     }
     \legende{
       Tripalmitine, triglycéride composé d'un glycérol et de trois acide palmitique
@@ -134,10 +130,10 @@
   \begin{wrapfigure}{l}{0.45\linewidth} 
     \centering
     \small{
-      \chemfig[atom sep = 1.25em]{
-        (-[::150] -[::60] O-[::-60] !\trioleique)  % haut
-        (-[::-90] -[::60] O-[::30] !\trilinoleique) % bas
-        -[::30] O-[::60] !\trilinolenique % centre
+      \chemfig[atom sep = 1.2em]{
+        (-[::150] -[::60] O-[::-60] !\carbonyle !\trioleique)  % haut
+        (-[::-90] -[::60] O-[::30] !\carbonyle !\trilinoleique) % bas
+        -[::30] O-[::60] !\carbonyle !\trilinolenique % centre
       }
     }
   \end{wrapfigure}
@@ -160,22 +156,11 @@
 \end{doc}
 
 \numeroQuestion
-Repérer et entourer les fonctions ester dans les triglycérides du document~\ref{doc:A6_triglycerides}.
+Repérer et entourer les fonctions ester dans tous les triglycérides du document~\ref{doc:A6_triglycerides}.
+
+\numeroQuestion 
+Entourer tous les glycérol estérifié dans les triglycérides du document~\ref{doc:A6_triglycerides}.
 
 \question{
   Quels aliments faut-il éviter si on souffre d'hypercholestérolémie ?
-}{}{2}
-
-
-%%%% DANS UNE ACTIVITE SUR LA POLARITE DE L'EAU
-% \begin{doc}{Micelles et membrane cellulaire}{doc:A6_micelle_membrane}
-%   La structure des molécules de lipides mène à la formation de structure particulière dans de l'eau liquide.
-%   Les queue hydrophobe étant repoussée par les molécules d'eau, elles vont s'agglomérer et former des structures ou les queues sont isolées de l'eau environnante : \important{les micelles.}
-  
-%   Des exemples de micelles sont \important{les couches bi-lipidique,} composée de deux couches de lipides avec les têtes hydrophile orientée vers l'extérieur, ce qui permet à leur queue hydrophobes de ne pas rentrer en contact avec de l'eau. 
-%   Les interactions électrostatiques entre les différentes parties de la membrane la pousse à former une sphère (comme une bulle de savon), avec un extérieur et un intérieur : c'est la base \important{d'une membrane cellulaire.}
-
-%   Les membranes cellulaire sont plus complexe qu'une simple couche bi-lipidique : elles sont aussi composées de \important{protéines}, qui permettent de renforcer la structure de la membrane cellulaire et de contrôler ce qui sort et ce qui entre de la cellule.
-
-%   TODO : FIGURE MICELLE ET MEMBRANE
-% \end{doc}
+}{}[2]
