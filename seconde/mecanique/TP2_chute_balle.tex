@@ -1,0 +1,125 @@
+%%%% début de la page
+\teteSndMouv
+
+%%
+\nomPrenomClasse
+
+%%%% titre
+\numeroActivite{2}
+\titreTP{Chute d'une balle}
+\vspace*{-12pt}
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre la notion de vecteur vitesse.
+  \item Tracer des vecteurs vitesses.
+\end{objectifs}
+
+\begin{contexte}
+  Quand on change de référentiel, la description du mouvement s'en trouve modifié.
+  Par exemple, la trajectoire d'une balle qui tombe dans un référentiel mobile et totalement différente en fonction du référentiel choisi.
+
+  \problematique{Quel est l'impact du référentiel choisi sur le mouvement ?}
+\end{contexte}
+
+
+%%%% evaluation
+\pasCorrection{
+\begin{tableauCompetences}
+  REA & réaliser un protocole en suivant toutes les étapes.
+\end{tableauCompetences}
+}
+
+
+%%%% documents
+\begin{doc}{Chronophotographie de la chute d'une balle}{doc:TP2_chrono}  
+  \qrcodeCote{https://www.fizziq.org/fizziqclassique}
+  La superposition de plusieurs images prises les unes après les autres avec un intervalle de temps régulier est une \important{chronophotographie}.
+
+  Pour étudier une chronophotographie, on va utiliser \important{FizziQ,} une application qui permet de mesurer des grandeurs avec un smartphone.
+  Une fois dans l'application Fizziq, il faut cliquer sur \important{Analyse cinématique} dans le menu \important{Mesures}. Puis choisir \important{Chronophotographie} et ensuite \important{Chute libre}. 
+
+  Une fois dans la chronophotographie, il faut 
+  \begin{protocole}
+    \item régler l'échelle des distances en utilisant la règle de référence de \qty{1}{\m} ;
+    \item appuyer sur \important{Pointage} ;
+    \item repérer la position de la balle en faisant glisser le curseur rouge dessus ;
+    \item toucher l'écran pour enregistrer la position de la balle ;
+    \item répéter l'opération pour chaque position de la balle ;
+    \item appuyer sur \important{Résultats} ;
+    \item choisir $T$(s), $y$(m) et $V_y$(m/s), pour avoir le temps, la position et la vitesse verticale.
+  \end{protocole}
+  On arrive alors dans le cahier de mesures, qui contient les mesures réalisées et permet de les tracer.
+\end{doc}
+
+\telechargement Télécharger l'application FizziQ en scannant le QR code du document~\ref{doc:TP2_chrono}.
+
+\mesure Réaliser le protocole du document~\ref{doc:TP2_chrono}, puis tracer la position $y$ en fonction du temps $T$.
+
+\question{
+  Une fois dans le graphique, appuyer sur \important{modélisation}, est-ce que le modèle linéaire $y = a\, t + b$ passe près des points et décrit bien la position en fonction du temps ?
+}{}[2]
+
+\question{
+  Appuyer de nouveau sur \important{modélisation,} est-ce que le modèle quadratique $y = a\, t^2 + b\, t + c$ décrit bien la position en fonction du temps ? 
+  Noter la valeur du coefficient $a$.
+}{}[2]
+
+
+\pasCorrection{ \newpage \vspace*{-30pt} }
+\question{
+  Tracer maintenant la vitesse $V_y$ en fonction du temps $T$.
+  Quel modèle décrit mieux la vitesse en fonction du temps ? 
+  Noter la valeur du coefficient $a$.
+}{}[2]
+
+%%
+\begin{doc}{Vecteur}{doc:TP2_vecteur}
+  \begin{importants}
+    \important{Vecteur} : objet mathématique représenté par un segment fléché \reaction et noté avec une lettre surmontée d'une flèche $\vv{v}$.    
+    Un vecteur contient quatre information : 
+    \begin{listePoints}[4]
+      \item une \important{direction}
+      \item un \important{sens}
+      \item une \important{norme}
+      \item une \important{origine}
+    \end{listePoints}
+    \vspace*{-4pt}
+  
+    Un vecteur est \important{constant} si sa direction, son sens et sa norme ne varie pas pendant le mouvement.
+  \end{importants}
+  On peut aussi représenter un vecteur avec des \important{coordonnées} dans un référentiel.
+  C'est ce qui est fait dans Fizziq : comme les vecteurs sont en 2 dimensions, ils sont représentés par 2 nombres.
+  \begin{listePoints}[2]
+    \item La position $\vv{P} = (x, y)$.
+    \item La vitesse $\vv{V} = (V_x, V_y)$.
+  \end{listePoints}
+  où $x$ représente l'axe horizontal et $y$ l'axe vertical.
+\end{doc}
+
+
+\begin{doc}{Mouvement de la chute d'une balle dans un référentiel en mouvement}{doc:TP2_chute_mouvement}
+  Pour étudier la chute d'une balle en mouvement, on va réaliser une vidéo où quelqu'un tient une balle, court, puis lâche la balle en courant.
+  
+  Une fois la vidéo réalisée, on va l'analyser avec FizziQ, en cliquant sur \important{Analyse cinématique} dans le menu \important{Mesures}, puis sur \important{Cinématique par vidéo} et ensuite sur \important{Mes vidéos}.
+  
+  Finalement, il ne reste plus qu'à \important{répéter le protocole du document~\ref{doc:TP2_chrono},} pour repérer la position de la balle au cours du temps.
+\end{doc}
+
+\mesure Par groupe de 3, réaliser le protocole du document~\ref{doc:TP2_chute_mouvement}, puis sauvegarder le temps $T$, la position verticale $y$ et la vitesse verticale $v_y$.
+
+\question{
+  Tracer le graphique de $y(T)$. La trajectoire est-elle identique à celle de la chute libre ?
+}{}[1]
+
+\question{
+  En utilisant l’outil de modélisation, quel est le meilleur modèle pour décrire la position $y$ ? Linéaire ou quadratique ? Noter la valeur du coefficient $a$.
+}{}[2]
+
+\question{
+  Même question pour la vitesse $v_y$.
+}{}[2]
+
+\question{
+  Comparer la chute libre et la chute en mouvement : est-ce que la position $y$ et la vitesse $v_y$ suivent des modèles différents ?
+}{}[3]

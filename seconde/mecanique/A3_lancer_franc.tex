@@ -1,0 +1,126 @@
+%%%% début de la page
+\teteSndMouv
+
+%%
+\nomPrenomClasse
+
+
+%%%% titre
+\numeroActivite{3}
+\titreActivite{Réussir un lancer franc}
+
+%%%% objectifs
+\begin{objectifs}
+  \item Utiliser des outils numériques pour analyser un mouvement.
+\end{objectifs}
+
+%%%%
+\begin{doc}{Lancer franc au basket}{doc:A3_lancer_franc}
+  \begin{center}
+    \image{0.75}{images/mecanique/lancer_franc}
+  \end{center}
+\end{doc}
+
+
+%%%%
+\begin{doc}{Programme python pour tracer la trajectoire}{doc:A3_code_python}
+  \vspace*{-8pt}
+  \lstset{style=codePython, language=python}
+  \begin{lstlisting}
+# Pour avoir des modules de calculs et d'affichage
+import numpy as np              # calcul
+import matplotlib.pyplot as plt # affichage
+
+# calcul de la trajectoire selon x et y
+def positionX (v0, alpha, t) : # v0 t cos(alpha)
+    return v0 * t * np.cos (alpha * np.pi / 180) 
+def positionY (v, alpha, t) :  # -g t² /2 + v0 t sin(alpha)
+    return -9.81/2*(t**2) + (v0 * t)*np.sin (alpha * np.pi / 180) 
+
+# Vitesse et angle initial, nombre de points a calculer
+v0 = float (input ("Valeur de la vitesse initiale v0 (m/s) = "))
+alpha = float (input ("Valeur de l'angle de départ (°) = "))
+points = 50
+
+# calcul des positions x et y
+x, y = [],[]              # initialisation des positions
+deltaT = 2 / (points - 1) # temps entre 2 points
+for i in range(points) :  # pour chaque position i
+  x.append (positionX (v0, alpha, i * deltaT)) # calcul de l'abscisse en mètre
+  y.append (positionY (v0, alpha, i * deltaT)) # calcul de l'ordonnée en mètre
+  
+# réglage du graphique
+plt.xlabel (r"$x$ (en m)")            # légende de l'abscisse
+plt.ylabel (r"$y$ (en m)")            # légende de l'ordonnee
+plt.title ("Trajectoire de la balle") # titre du graphique
+# tracé des points repérés et des vecteur vitesses
+plt.plot (x, y, "o", markersize = 5) # affiche des points rond ('o'), taille 4
+plt.xlim (0, 5.0)                    # limite du graphique selon x
+plt.ylim (0, 1.6)                    # limite du graphique selon y
+plt.xticks (np.arange(0, 5, 0.5))    # finesse de la grille selon x
+plt.yticks (np.arange(0, 1.6, 0.2))  # finesse de la grille selon y
+plt.grid ()                          # affichage de la grille
+plt.show ()                          # affichage du graphique\end{lstlisting}
+  \vspace*{-8pt}
+\end{doc}
+
+\newpage
+\vspace*{-40pt}
+\begin{doc}{Exemple de trajectoire tracée par le programme}{doc:A3_exemple_trajectoire}
+  \begin{center}  
+    \image{0.95}{images/mecanique/lancer_franc_trajectoire}
+  \end{center}
+\end{doc}
+
+%%
+\question{
+  Dans le programme python du document~\ref{doc:A3_code_python}, repérer les lignes de code permettant de calculer la position de la balle.
+}{}[1]
+
+
+\question{
+  Dans le programme python du document~\ref{doc:A3_code_python}, repérer les lignes de code permettant de choisir la valeur de la vitesse $v_0$ ainsi que la valeur de l’angle $\alpha$.
+}{}[1]
+
+\question{
+  D’après les documents~\ref{doc:A3_lancer_franc} et~\ref{doc:A3_code_python}, quelles sont les valeurs des coordonnées $(x ; y)$ que doit atteindre le ballon pour que le panier soit marqué ? Schématiser ce point sur le graphique du document~\ref{doc:A3_exemple_trajectoire}.
+}{
+  $(\num{4,70} ; \num{0,62})$
+}[1]
+
+\question{
+  Exécuter le fichier python pour tracer la trajectoire du ballon de Basket. Chercher des valeurs pour $v_0$ et $\alpha$ permettant de faire rentrer le ballon dans le panier.
+}{
+  $v_0 = 7,3$ et $\alpha = 45$
+}[1]
+
+
+\begin{doc}{Vecteur vitesse}{doc:A3_vitesse}
+  \begin{importants}
+    Le \important{vecteur vitesse $\vv{v_2}$} d'un système au point $P_2$ entre les instants $t_1$ et $t_3$ a pour expression
+    \begin{equation*}
+      \vv{v_2} = \frac{\vv{P_1 P_3}}{t_3 - t_1} \qq{en} \unit{\m / \s}
+    \end{equation*}
+  \end{importants}
+  
+  Le vecteur vitesse $\vv{v_2}$ est caractérisé par :
+  \begin{listePoints}[2]
+    \item Une origine : $P_2$.
+    \item une direction : parallèle au segment $P_1 P_3$ et tangent à la trajectoire.
+    \item Un sens : le sens du mouvement.
+    \item Une norme : $v_2 
+    %= \norm{\vv{v_2}}
+    = \displaystyle \norm{\frac{\vv{P_1 P_3}}{t_3 - t_1}}
+    = \displaystyle \frac{P_1 P_3}{t_3 - t_1}$.
+  \end{listePoints}
+  
+  Le \important{vecteur déplacement $\vv{P_1 P_3}$} est caractérisé par
+  \begin{listePoints}[2]
+    \item Une origine : le point $P_1$.
+    \item une direction : celle de la droite $P_1 P_3$.
+    \item Un sens : de $P_1$ vers $P_3$.
+    \item Une norme : la distance $P_1 P_3$ en mètre \unit{m}.
+  \end{listePoints}
+\end{doc}
+
+\mesure Sans se préoccuper de leurs longueurs, tracer les vecteurs vitesses $\vv{v_2}$, $\vv{v_6}$ et $\vv{v_{10}}$ sur le doc.~\ref{doc:A3_exemple_trajectoire}.

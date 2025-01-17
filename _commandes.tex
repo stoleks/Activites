@@ -642,7 +642,7 @@
     \begin{tblr}{
       hlines,
       colspec = #1,
-      row{1} = {couleurPrim100},
+      row{1} = {couleurSec100},
     }
 }{
     \end{tblr}
@@ -655,10 +655,9 @@
     \begin{tblr}{
       colspec = {c X[l] c c c c},
       rows = {m}, hlines, vlines,
-      row{1} = {couleurPrim100}
+      row{1} = {c, couleurSec100, font = \bfseries}
     }
-      \textbf{Comp.} & \centering \textbf{Items} &
-      \textbf{D} & \textbf{C} & \textbf{B} & \textbf{A} \\
+      Comp. & Items & D & C & B & A \\
 }{
     \end{tblr}
   \end{center}
@@ -666,22 +665,23 @@
 
 %%%% Tableau de connaissances pour les fiches de révisions
 \newenvironment{tableauConnaissances}{
-  \centering
+  \begin{center}
   \begin{tblr}{
     colspec = {Q[t, wd=0.7\textwidth] c c c},
     rows = {m}, hlines, vlines,
     column{4} = {0.2},
-    row{1} = {couleurPrim100, c}
+    row{1} = {couleurSec100, c}
   }
     \important{Connaissances et capacités exigibles} & \ok & \pasOk & \important{En classe} \\
 }{ 
   \end{tblr}
+  \end{center}
 }
 
 %%%% Tableau de mémorisation pour les fiches de mémorisation
 % Question | | | Réponse
 \newenvironment{tableauMemorisation}{
-  \centering
+  \begin{center}
  \begin{tblr}{
     colspec = {
       Q[l, wd=0.3\textwidth] % Question
@@ -689,7 +689,7 @@
       Q[l, wd=0.3\textwidth] % Réponse
       Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] Q[c, wd=0.045\textwidth] % Répétitions
     }, rows = {m}, hlines, vlines,
-    row{1,2} = {couleurPrim100, c}
+    row{1,2} = {couleurSec100, c}
   }
     \SetCell[r=2]{c} \important{Questions} & 
     \SetCell[c=2]{c} \important{Auto-évaluation} & &
@@ -705,6 +705,7 @@
     %
 }{ 
   \end{tblr}
+  \end{center}
 }
 
 
@@ -1019,29 +1020,18 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Couleur pour le code
-\definecolor{vertCode}  {rgb}{0.2,0.6,0}
-\definecolor{grisCode}  {rgb}{0.5,0.5,0.5}
-\definecolor{violetCode}{rgb}{0.58,0,0.82}
-\definecolor{fondCode}  {rgb}{0.95,0.95,0.92}
 %%%% Style python
 \lstdefinestyle{codePython}{
-  backgroundcolor=\color{fondCode},
-  commentstyle=\color{magenta},
-  keywordstyle=\color{vertCode},
-  numberstyle=\tiny\color{grisCode},
-  stringstyle=\color{violetCode},
-  basicstyle=\ttfamily\footnotesize,
-  breakatwhitespace=false,
-  breaklines=true,
-  captionpos=b,
-  keepspaces=true,
-  numbers=left,
-  numbersep=5pt, 
-  showspaces=false,
-  showstringspaces=false,
-  showtabs=false, 
-  tabsize=2
+  commentstyle=\color{magenta500},
+  keywordstyle=\color{green500},
+  stringstyle =\color{purple500},
+  numberstyle =\tiny\color{black!50},
+  basicstyle  =\ttfamily\footnotesize,
+  breakatwhitespace=false, breaklines=true, keepspaces=true,
+  showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,
+  captionpos=b, numbers=left, numbersep=5pt,
+  extendedchars=true,
+  literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1, 
 }
 \def\inline{\lstinline[style=codePython,language=python]}
 
