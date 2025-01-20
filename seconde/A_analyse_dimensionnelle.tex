@@ -2,7 +2,6 @@
 \teteSndMeth
 
 %%%% titre
-\numeroActivite{2}
 \vspace*{-36pt}
 \titreActivite{L'analyse dimensionnelle}
 
@@ -30,19 +29,19 @@
   Une puissance \important{négative} correspond à une division par une puissance.
   $\left(5^{-2} = \dfrac{1}{5^2}\right)$
 
-  \begin{encart}
+  \begin{importants}
     On a les mêmes règles de calculs avec les unités.
     $\left(\dfrac{1}{\unit{\s}} = \unit{\per\s}, \quad
     \unit{\per\m\cubed} = \dfrac{1}{\unit{\m\cubed}}\right)$
-  \end{encart}
+  \end{importants}
 \end{doc}
 
 \begin{doc}{Multiplication d'unité}{doc:A2_multiplication_unite}
-  \begin{encart}
+  \begin{importants}
     Quand on multiplie deux unités entre elles, la multiplication est indiquée par un point médian $\cdot$
     
     \exemple $\unit{\kilo\watt\hour} = \unit{\kilo\watt}\times\unit{\hour}$
-  \end{encart}
+  \end{importants}
 \end{doc}
 
 
@@ -52,7 +51,7 @@
     \begin{tblr}{ colspec = {c c X[1,c] c c}, width = 0.5\linewidth }
       $4^{-2}$  & \pointCyan & & \pointCyan & $\dfrac{1}{10}$ \\
       $25^{-1}$ & \pointCyan & & \pointCyan & \num{0,04} \\
-      $10^{-1}$   & \pointCyan & & \pointCyan & $\dfrac{1}{4^2}$ \\
+      $10^{-1}$ & \pointCyan & & \pointCyan & $\dfrac{1}{4^2}$ \\
                 &            & & \pointCyan & \num{0,10}
     \end{tblr}
   \end{center}
@@ -61,8 +60,11 @@
   \begin{center}
     \begin{tblr}{ colspec = {c c X[1,c] c c}, width = 0.5\linewidth }
       \unit{\m\per\second}                 & \pointCyan & & \pointCyan & $\dfrac{\unit{\kg}}{\unit{\cubic\m}}$ \\
+      %
       \unit{\kg\per\cubic\m}               & \pointCyan & & \pointCyan & \unit{\cubic\m\per\s} \\
+      %
       $\dfrac{\unit{\cubic\m}}{\unit{\s}}$ & \pointCyan & & \pointCyan & $\dfrac{\unit{m}}{\unit{s}}$ \\
+      %
       \unit{\m/\s}                         & \pointCyan & & &
     \end{tblr}
   \end{center}
@@ -72,22 +74,20 @@
 %%%%
 \titreSection{Opérations et unités}
 
-\sisetup{unit-color = couleurQuat}
-
 \begin{doc}{Calcul d'une unité}{doc:A2_produits_quotient}
-  \begin{encart}  
+  \begin{importants}  
     Si une grandeur est le produits de plusieurs grandeurs, son unité est le produit des unités de ces grandeurs.
 
     De même si une grandeur est le quotient de plusieurs grandeurs.
-  \end{encart}
+  \end{importants}
 
   \exemple Une vitesse $v = \dfrac{d (\unit{\m})}{\Delta t (\unit{s})}$ s'exprime en $\dfrac{\unit{\m}}{\unit{s}}$, c'est-à-dire en \unit{\m/\s} ou \unit{\m\per\s}.
 
-  \begin{encart}
+  \begin{importants}
     Pour additionner ou soustraire deux grandeurs, elles doivent être de même unités.
 
     Le résultat du calcul s'exprime dans les même unités que les grandeurs additionnées ou soustraites.
-  \end{encart}
+  \end{importants}
 
   \exemple La masse d'une molécule d'eau $\eau$ est la somme de la masse des atomes qui la compose 
   $m_{\eau} = 2\times m_H + m_O 
@@ -113,10 +113,10 @@
 \titreSection{Homogénéité}
 
 \begin{doc}{Relation homogène}{doc:A2_homogene}
-  \begin{encart}  
+  \begin{importants}  
     Une relation entre grandeurs ne peut être correcte que si elle est \important{homogène.}
     C'est-à-dire si les membres à droite et à gauche de l'égalité s'exprime avec les \important{même unités.}
-  \end{encart}
+  \end{importants}
   
   Toute égalité entre deux grandeurs qui ne peuvent pas s'exprimer avec les mêmes unités est donc forcément \important{fausse.}
   On dit \important{qu'elle n'est pas homogène.}

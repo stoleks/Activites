@@ -319,7 +319,6 @@
 %%%% chapitre, partie, section et sous-section
 \newcommand{\chapitre}[1]{ % Réglage du titre du chapitre
   Chapitre \arabic{section} -- #1
-  \setcounter{activiteNum}{0}
 }
 \newcommand{\titreChapitre}[1]{ % Affichage du titre du chapitre
   \titre{Chapitre \arabic{section} -- #1}
@@ -339,19 +338,18 @@
   \setcounter{sousSectionNum}{0}
   \rectangle{30pt}{4pt}
   \important[black]{\large \arabic{subsubsection} -- #1}
-  \vspace*{10pt}
+  \vspace*{4pt}
 }
 \newcommand{\titreSousSection}[1]{
   \vspace*{12pt}
   \refstepcounter{sousSectionNum}
   \important[black]{\Alph{sousSectionNum} -- #1}
-  \vspace*{8pt}
+  \vspace*{4pt}
 }
 
 %%%% fixe le numéro de l'activité
 \newcommand{\reinitialiseCompteur}{
     % fixe les compteurs LaTeX
-  \setcounter{page}{1}
   \setcounter{subsection}{0}
   \setcounter{subsubsection}{0}
   \setcounter{figure}{0}

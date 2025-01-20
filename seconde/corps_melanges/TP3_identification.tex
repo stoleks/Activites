@@ -4,7 +4,6 @@
 
 %%%% titre
 %\nomPrenomClasse
-\numeroActivite{3}
 \titreTP{Identifier des solides et des liquides}
 
 %%%% Contexte 1
@@ -31,7 +30,7 @@
   \begin{equation*}
     \rho = \dfrac{m}{V}
   \end{equation*}
-}{2}
+}[2]
 
 \begin{doc}{Propriétés physiques de quelques métaux}{doc:TP3_proprietes_metaux}
   \centering
@@ -64,9 +63,9 @@
       \draw[dashed] (0,0)--(1,1.2)--(1,2.2); % côté
       \draw[dashed] (1,1.2)--(6,1.2); % fond
       % Legendes
-      \tkzVecteur(0)[5](-0.25){$L$}[below]*
-      \tkzVecteur(-0.25)(0)[1]{$e$}[left]*
-      \tkzVecteur(5.25)[1](-0.1)[1.2]{$p$}[right]*
+      \tikzVecteur*(0, -0.25) (5,0) {$L$}[below]
+      \tikzVecteur*(-0.25,0) (0,1){$e$}[left]
+      \tikzVecteur*(5.25, -0.1) (1, 1.2){$p$}[right]
     \end{tikzpicture}
   \end{multicols}
   Si $L$, $p$ et $e$ sont mesurées en \unit{\cm},
@@ -87,7 +86,7 @@
   \end{equation*}
 
   Comme l'échantillon est brillant et gris, on en déduit qu'on a du fer.
-}{2}
+}[2]
 
 
 
@@ -234,4 +233,4 @@ Réaliser le protocole suivant :
   En utilisant les documents~\ref{doc:TP3_composition_eau} et~\ref{doc:TP3_tests_ions}, donner l'eau minérale contenue dans chaque bécher.
 }{
   
-}{3}
+}[3]
