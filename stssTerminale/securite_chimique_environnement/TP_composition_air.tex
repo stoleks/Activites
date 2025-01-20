@@ -3,7 +3,6 @@
 
 %%%% titre
 %\vspace*{-32pt}
-\numeroActivite{2}
 \titreTP{Composition de l'air}
 \vspace*{-8pt}
 
@@ -43,21 +42,21 @@
   \begin{center}
     \begin{tikzpicture}
       % Barres
-      \fill[color = couleurPrim]    (0.0 , 0.0)        rectangle (0.7808*90ex, 3ex);
-      \fill[color = couleurPrim!50] (0.7808*90ex, 0.0) rectangle (0.9903*90ex, 3ex);
-      \fill[color = couleurPrim!25] (0.9903*90ex, 0.0) rectangle        (90ex, 3ex);
+      \fill[color = couleurSec]    (0.0 , 0.0)        rectangle (0.7808*90ex, 3ex);
+      \fill[color = couleurSec300] (0.7808*90ex, 0.0) rectangle (0.9903*90ex, 3ex);
+      \fill[color = couleurSec100] (0.9903*90ex, 0.0) rectangle        (90ex, 3ex);
       % Valeurs
-      \node[white] at (0.7808*45ex, 1.5ex) {\important{\qty{78,08}{\percent}}};
-      \node[black] at (0.8855*90ex, 1.5ex) {\important{\qty{20,95}{\percent}}};
-      \node[black] at        (91ex, 1.5ex) {\important{\qty{0,97} {\percent}}};
+      \node at (0.7808*45ex, 1.5ex) {\important[white]{\qty{78,08}{\percent}}};
+      \node at (0.8855*90ex, 1.5ex) {\important[black]{\qty{20,95}{\percent}}};
+      \node at        (91ex, 1.5ex) {\important[black]{\qty{0,97} {\percent}}};
       % Carré légende
-      \fill[color = couleurPrim]    (75ex, 15ex) rectangle (78ex, 12ex);
-      \fill[color = couleurPrim!50] (75ex, 11ex) rectangle (78ex, 8ex);
-      \fill[color = couleurPrim!25] (75ex, 7ex)  rectangle (78ex, 4ex);
+      \fill[color = couleurSec]    (75ex, 15ex) rectangle (78ex, 12ex);
+      \fill[color = couleurSec300] (75ex, 11ex) rectangle (78ex, 8ex);
+      \fill[color = couleurSec100] (75ex, 7ex)  rectangle (78ex, 4ex);
       % Légende
-      \node[black,right] at (78ex, 13.5ex) {\important{Diazote}};
-      \node[black,right] at (78ex, 9.5ex)  {\important{Dioxygène}};
-      \node[black,right] at (78ex, 5.5ex)  {\important{Autres gaz}};
+      \node[right] at (78ex, 13.5ex) {\important[black]{Diazote}};
+      \node[right] at (78ex, 9.5ex)  {\important[black]{Dioxygène}};
+      \node[right] at (78ex, 5.5ex)  {\important[black]{Autres gaz}};
     \end{tikzpicture}
   \end{center}
 
@@ -112,11 +111,11 @@
 
   \important{Matériel :} un cristallisoir, une bougie, une éprouvette graduée.
 
-  \important{Protocole :} remplir la coupelle d'eau.
-  Placer et allumer la bougie au centre de la coupelle.
+  \important{Protocole :} remplir le cristallisoir d'eau.
+  Placer et allumer la bougie au centre du cristallisoir.
   Recouvrir la bougie avec l'éprouvette.
 
-  Le dioxyde de carbone se dissout dans l'eau dès sa formation et la vapeur d'eau se condense rapidement, ce qui laisse un vide dans le récipient où à lieu la combustion.
+  Le dioxyde de carbone se dissout dans l'eau dès sa formation et la vapeur d'eau se condense rapidement, ce qui laisse un vide dans le récipient où la combustion à lieue.
 \end{doc}
 
 \begin{doc}{Volume molaire des gaz}{doc:TP2_volume_molaire}
