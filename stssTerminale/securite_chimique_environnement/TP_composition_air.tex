@@ -25,34 +25,39 @@
 
 %%%%
 \begin{doc}{Composition de l'air}{doc:TP2_composition_air}
-  \begin{tableau}{|l|c|}
-    Constituant & Proportion molaire \\
-    Diazote \chemfig{N_2}             & \phantom{0}\qty{78,08}{\percent} \barrePourcentage{0.7808} \\
-    Dioxygène \chemfig{O_2}           & \phantom{0}\qty{20,95}{\percent} \barrePourcentage{0.2095} \\
-    Argon \chemfig{Ar}                & \phantom{00}\qty{0,93}{\percent} \barrePourcentage{0.0093} \\
-    Dioxyde de carbone \chemfig{CO_2} & \phantom{00}\qty{0,04}{\percent} \barrePourcentage{0.0004} \\
-    Néon \chemfig{Ne}                 & \qty{18,2}{\ppm} \barrePourcentage{0.0000182} \\
-    Hélium \chemfig{He}               & \phantom{0}\qty{5,2}{\ppm} \barrePourcentage{0.0000052} \\
-    Monoxyde d'azote \chemfig{NO}     & \phantom{0}\qty{5,0}{\ppm} \barrePourcentage{0.0000050} \\
-    Méthane \chemfig{CH_4}            & \phantom{0}\qty{1,9}{\ppm} \barrePourcentage{0.0000019} \\
-    Eau \eau                          & Variable \\ 
-  \end{tableau}
+  \begin{center}
+    \begin{tblr}{
+        colspec = {|l l| r|}, hlines, cell{10}{3} = {c},
+        row{1} = {l, couleurSec-100, font = \sffamily\bfseries},
+      }
+      Constituant & & Proportion molaire \\
+      Diazote            & \chemfig{N_2}  & \qty{78,08}{\percent} \barrePourcentage{0.7808} \\
+      Dioxygène          & \dioxygene     & \qty{20,95}{\percent} \barrePourcentage{0.2095} \\
+      Argon              & \chemfig{Ar}   & \qty{0,93}{\percent} \barrePourcentage{0.01} \\
+      Dioxyde de carbone & \chemfig{CO_2} & \qty{0,04}{\percent} \barrePourcentage{0} \\
+      Néon               & \chemfig{Ne}   & \qty{18,2}{\ppm} \barrePourcentage{0} \\
+      Hélium             & \chemfig{He}   & \qty{5,2}{\ppm}  \barrePourcentage{0} \\
+      Monoxyde d'azote   & \chemfig{NO}   & \qty{5,0}{\ppm}  \barrePourcentage{0} \\
+      Méthane            & \chemfig{CH_4} & \qty{1,9}{\ppm}  \barrePourcentage{0} \\
+      Eau                & \eau           & Variable \\ 
+    \end{tblr}
+  \end{center}
 
   \vspace*{-80pt}
   \begin{center}
     \begin{tikzpicture}
       % Barres
-      \fill[color = couleurSec]    (0.0 , 0.0)        rectangle (0.7808*90ex, 3ex);
-      \fill[color = couleurSec300] (0.7808*90ex, 0.0) rectangle (0.9903*90ex, 3ex);
-      \fill[color = couleurSec100] (0.9903*90ex, 0.0) rectangle        (90ex, 3ex);
+      \fill[color = couleurSec]     (0.0 , 0.0)        rectangle (0.7808*90ex, 3ex);
+      \fill[color = couleurSec-300] (0.7808*90ex, 0.0) rectangle (0.9903*90ex, 3ex);
+      \fill[color = couleurSec-100] (0.9903*90ex, 0.0) rectangle        (90ex, 3ex);
       % Valeurs
       \node at (0.7808*45ex, 1.5ex) {\important[white]{\qty{78,08}{\percent}}};
       \node at (0.8855*90ex, 1.5ex) {\important[black]{\qty{20,95}{\percent}}};
       \node at        (91ex, 1.5ex) {\important[black]{\qty{0,97} {\percent}}};
       % Carré légende
-      \fill[color = couleurSec]    (75ex, 15ex) rectangle (78ex, 12ex);
-      \fill[color = couleurSec300] (75ex, 11ex) rectangle (78ex, 8ex);
-      \fill[color = couleurSec100] (75ex, 7ex)  rectangle (78ex, 4ex);
+      \fill[color = couleurSec]     (75ex, 15ex) rectangle (78ex, 12ex);
+      \fill[color = couleurSec-300] (75ex, 11ex) rectangle (78ex, 8ex);
+      \fill[color = couleurSec-100] (75ex, 7ex)  rectangle (78ex, 4ex);
       % Légende
       \node[right] at (78ex, 13.5ex) {\important[black]{Diazote}};
       \node[right] at (78ex, 9.5ex)  {\important[black]{Dioxygène}};

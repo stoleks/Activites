@@ -1,12 +1,4 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% figures simples
-\newcommand{\tkzRect}[4]{
-  \fill[color=#1] (#2,#4) -- (-#2,#4) -- (-#2,#3) -- (#2,#3);
-}
-\newcommand{\tkzEllipse}[4]{
-  \fill[color=#1] (0,#3) ellipse (#2 and #4);
-}
-
 %%%% Point et vecteurs
 % \tikzCercle [couleur fond] (x, y) {rayon} [couleur ligne]
 \NewDocumentCommand{\tikzCercle}{O{black} r() m o}{
@@ -55,10 +47,10 @@
 }
 
 %% Trace une petite barre de pourcentage partiellement remplie sur la ligne
-\newcommand{\barrePourcentage}[1]{%
+\NewDocumentCommand{\barrePourcentage}{O{couleurSec} m}{%
   \begin{tikzpicture}
-    \fill[color=couleurSec]    (0.0,    0.0) rectangle (#1*8ex, 1.5ex);
-    \fill[color=couleurSec100] (#1*8ex, 0.0) rectangle (8.0ex,  1.5ex);
+    \fill[color=#1]     (0.0,    0.0) rectangle (#2*8ex, 1.5ex);
+    \fill[color=#1-100] (#2*8ex, 0.0) rectangle (8.0ex,  1.5ex);
   \end{tikzpicture}
 }
 
@@ -156,25 +148,28 @@
   \tkzEllipse{#1}{#2}{#3}{#5}
   \tkzEllipse{#1!85!black}{#2}{#4}{#5}
 }
+% \tikzTubeEssais {largeur} {hauteur} <hauteur ellipse>
+\NewDocumentCommand{\tikzTubeEssais}{d() d() D<>{0.1}}{
+  \draw[thick] (#1, #2) -- (#1, 0) arc (0:-180:#1) -- (-#1, #2);
+  \draw[thick] (0, #2) ellipse (#1 and #3);
+}
+% \tikzPhaseBasTubeEssais[couleur] {largeur} {hauteur} <hauteur ombre>
+\NewDocumentCommand{\tikzPhaseBasTubeEssais}{O{black} d() d() D<>{0.1}}{
+  \fill[color=#1] (-#2, 0) -- (#2, 0) arc (0:-180:#2); % Arc du bas
+  \fill[color=#1] (#2, #3)  -- (-#2, #3) -- (-#2, -0.01) -- (#2, -0.01); % centre
+  \fill[color=#1!85!black] (0, #3) ellipse (#2 and #4); % ellipse du haut
+}
+% \tikzPhaseBasTubeEssais[couleur] {largeur} {y bas} {y haut} <hauteur ombre>
+\NewDocumentCommand{\tikzPhaseTubeEssais}{O{black} d() d() d() D<>{0.1}}{
+  \fill[color=#1] (#2, #4) -- (-#2, #4) -- (-#2, #3) -- (#2, #3); % centre de la phase
+  \fill[color=#1]          (0, #3) ellipse (#2 and #5); % bas de la phase
+  \fill[color=#1!85!black] (0, #4) ellipse (#2 and #5); % haut de la phase
+}
 
 %%%% tube à essai de sang
 \newcommand{\tubeEssaisSolution}[1]{
   \begin{tikzpicture}
-    \tkzBasTubeEssais{#1}{0.25}{0}{0.75}{0.1} % contenu du tube
-    \tkzTubeEssais{0.25}{1.5}{0.1} % tube
-  \end{tikzpicture}
-}
-
-\newcommand{\tubeEssaisSangCentrifuge}[3]{
-  \begin{tikzpicture}
-    % phases dans le tube à essai
-    \tkzBasTubeEssais{red600!75!whit} {0.35}{0}{#1}{0.1}
-    \tkzPhaseTubeEssais{gray!10!white}      {0.35}{#1}{#2}{0.1}
-    \tkzPhaseTubeEssais{yellow600!75!white}{0.35}{#2}{#3}{0.1}
-    \tkzTubeEssais{0.35}{#3 + 1}{0.1}
-    % Légende
-    \tkzLegende(0.4)(#3 - 0.1) [1]{Plasma}*
-    \tkzLegende(0.4)(#2 - 0.08)[1]{Globules blancs}*
-    \tkzLegende(0.4)(-0.1)     [1]{Globules rouges}*
+    \tikzPhaseBasTubeEssais[#1] (0.25)(0.75) % contenu du tube
+    \tikzTubeEssais (0.25)(1.5) % tube
   \end{tikzpicture}
 }
