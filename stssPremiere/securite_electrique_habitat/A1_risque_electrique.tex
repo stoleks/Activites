@@ -79,23 +79,15 @@
 
 
 \begin{doc}{Effet physiologique observée}{doc:A1_effet_physiologique}
-  \definecolor{bleuAC1} {RGB} {191, 228, 254} 
-  \definecolor{vertAC2} {RGB} {192, 242, 191} 
-  \definecolor{jauneAC3}{RGB} {242, 242, 190} 
-  \definecolor{rougeAC4}{RGB} {255, 228, 230} 
-
   \begin{center}
     \image{0.5}{images/sante/danger_electrisation_ampere}
     \image{0.46}{images/donnees/effet_physiologique_electrisation}
     
     \begin{tblr}{
-      hlines,
-      colspec = {|l |X[l] |},
-      row{1} = {couleurPrim!20, c},
-      row{2} = {bleuAC1},
-      row{3} = {vertAC2},
-      row{4} = {jauneAC3},
-      row{5} = {rougeAC4},
+      hlines, vlines, colspec = {l X[l]},
+      row{1} = {couleurSec-100, c},
+      row{2} = {blue-150},   row{3} = {green-100},
+      row{4} = {yellow-150}, row{5} = {red-100},
     }
       Zone & Principaux effets physiologiques constatés \\
       AC-1 & Aucune réaction \\

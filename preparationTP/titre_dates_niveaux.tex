@@ -11,16 +11,13 @@
 }
 
 %% Tableau de préambule 
-% #1 : date 
-% #2 : horaire
-% #3 : salles
-% #4 : niveau
+% \preambuleFicheTP{date} {horaire} {salle} {niveau}
 \newcommand{\preambuleFicheTP}[4]{
   \begin{center}
     \begin{tblr}{
         colspec = {|l X[l] |l X[l] | l X[l] |},
         width = \linewidth, hlines,
-        column{1,3,5} = {couleurPrim!15},
+        column{1,3,5} = {couleurPrim-100},
       }
       \textbf{Date :}     & #1
       & \textbf{Heures :} & #2
@@ -34,8 +31,7 @@
 }
 
 %% Préambule seconde
-% #1 : titre du TP
-% #2 : dates
+% \ficheSecondeTP {titre} {date}
 \newcommand{\ficheSecondeTP}[2]{
   \titreFicheTP{#1}
   \preambuleFicheTP{#2}{
@@ -46,8 +42,7 @@
 }
 
 %% Préambule première ST2S
-% #1 : titre du TP
-% #2 : dates
+% \fichePremiereStssTP {titre} {date}
 \newcommand{\fichePremiereStssTP}[2]{
   \titreFicheTP{#1}
   \preambuleFicheTP{#2}{
@@ -58,8 +53,7 @@
 }
 
 %% Préambule terminale ST2S
-% #1 : titre du TP
-% #2 : dates
+% \ficheTerminaleStssTP {titre} {date}
 \newcommand{\ficheTerminaleStssTP}[2]{
   \titreFicheTP{#1}
   \preambuleFicheTP{#2}{
