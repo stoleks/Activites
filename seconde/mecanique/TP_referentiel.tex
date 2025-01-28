@@ -11,7 +11,7 @@
 \end{objectifs}
 
 \begin{contexte}
-  En fonction de où on observe un objet qui bouge, son mouvement peut changer d'apparence.
+  En fonction du point de vue avec lequel on observe un objet qui bouge, son mouvement peut changer d'apparence.
 
   \problematique{
     Comment décrire le mouvement d'un objet en fonction du référentiel choisi ?
@@ -28,7 +28,6 @@
 }
 
 %%%%
-\vspace*{6pt}
 \begin{doc}{Un peu de vocabulaire}{doc:TP1_vocabulaire}
   \begin{importants}
     \important{Système} : objet dont on étudie le mouvement.
@@ -58,12 +57,11 @@
   
   La vitesse diminue : \texteTrouLignes{le système décélère.}
   
-  Si \texteTrou[0.5]{la vitesse est constante et nulle}, on dit que le système est \important{immobile}.
+  Si la vitesse \important{est constante et nulle,} on dit que le système est \important{immobile}.
 \end{doc}
 
 
 %%%%
-
 \numeroQuestion
 Compléter les documents~\ref{doc:TP1_trajectoires} et~\ref{doc:TP1_vitesse}.
 
@@ -71,14 +69,14 @@ Compléter les documents~\ref{doc:TP1_trajectoires} et~\ref{doc:TP1_vitesse}.
 Vous présenterez ensuite les résultats de votre étude au reste de la classe à l'oral.
 
 \fleche Vous rendrez ensuite une compte-rendu détaillée en suivant les questions sur le \important{mouvement que vous n'avez pas choisi.}
-Il faudra donc être attentif à ce que disent vos camarades !
+Il faudra donc être attentif-ve à ce que disent vos camarades !
 
 
 %%%%
-\pasCorrection{\newpage}
+\pasCorrection{ \newpage \vspace*{-40pt} }
 \titreSousSection{Étude du mouvement des oies}
 
-Le compteur du bateau affiche une vitesse $v_\text{bateau} = \qty{3,6e1}{\km/\hour}$.
+Le compteur du bateau affiche une vitesse $v_\text{bateau} = \qty{36}{\km/\hour}$.
 
 \question{
   Pour la personne qui filme les oies, quelle est la vitesse des oies ?
@@ -86,61 +84,31 @@ Le compteur du bateau affiche une vitesse $v_\text{bateau} = \qty{3,6e1}{\km/\ho
   Elle est nulle, l'oie apparaît immobile.
 }
 
-\question{
-  Pour une personne se trouvant sur la berge, quelle est la vitesse des oies ?
-}{
-  Elle se déplace à la même vitesse que le bateau, donc \qty{36}{\kilo\m\per\hour}
-}
-
 \mesure Schématiser la trajectoire des oies si on les observe depuis la berge.
+\vspace*{120pt}
 
 \question{
-  Indiquer le mouvement des oies depuis le bateau et la berge.
+  Décrire le mouvement des oies depuis le bateau et depuis la berge.
 }{
   Depuis le bateau l'oie est immobile.
   Depuis la berge l'oie a une trajectoire rectiligne uniforme.
-}
+}[2]
 
-%%
+
+%%%%
 \titreSousSection{Étude du mouvement de la Lune}
 
-La Lune tourne autour de la Terre a une vitesse $v_\text{Lune} = \qty{3,7e3}{\km/\hour}$
-et la Terre tourne autour du Soleil a une vitesse $v_\text{Terre} = \qty{1,1e5}{\km/\hour}$.
+La Lune tourne autour de la Terre a une vitesse $v_\text{Lune} = \qty{3700}{\km/\hour}$.
 
-\separationBlocs{
-  \centering 
-  \image{0.8}{images/mecanique/terre_lune}
-  
-  \legende{Point de vue centré sur la Terre}
-}{
-  \centering
-  \image{0.8}{images/mecanique/terre_lune_soleil.png}
-  
-  \legende{Point de vue centré sur le Soleil}
-}
-\medskip
-
-\question{
-  Depuis le point de vue centré sur la Terre, quelle est la vitesse de la Lune ?
-}{
-  Depuis le point de vue centré sur la Terre, la Lune a \qty{3,7e3}{\km/\hour}.
-}
-
-\mesure Schématiser la trajectoire de la Lune depuis le point de vue de la Terre.
 
 \question{ 
-  Décrire le mouvement de la Lune depuis ce point de vue.
+  Décrire le mouvement de la Lune depuis le point de vue centré sur la Terre.
 }{
   La Lune a une trajectoire circulaire uniforme.
-}
+}[1]
 
-\question{
-  Peut-on décrire la vitesse de la Lune depuis le point de vue centré sur le Soleil ?
-}{
-  Non, car la Lune accélère et décélère au cours de la trajectoire.
-}
-
-\mesure Schématiser la trajectoire de la Lune depuis le point de vue du Soleil.
+\mesure Schématiser la trajectoire de la Lune depuis le point de vue centré sur la Terre et  depuis le point de vue centré sur le Soleil.
+\vspace*{120pt}
 
 
 %%%%
@@ -148,7 +116,7 @@ et la Terre tourne autour du Soleil a une vitesse $v_\text{Terre} = \qty{1,1e5}{
 
 \question{
   Convertir la vitesse $v_\text{Lune}$ en \unit{\m/\s}.
-  \textit{Rappel :} \qty{1}{\km} = \qty{e3}{\metre}, \qty{1}{\hour} = \qty{3,6e3}{\s}.
+  \textit{Rappel :} \qty{1}{\km} = \qty{e3}{\metre}, \qty{1}{\hour} = \qty{3600}{\s}.
 }{
   \begin{equation*}
     v_\text{Lune}
@@ -176,10 +144,11 @@ et la Terre tourne autour du Soleil a une vitesse $v_\text{Terre} = \qty{1,1e5}{
 }{
   Non, car elle n'a presque pas bougé sur sa trajectoire et on ne perçoit donc pas son mouvement.
 }[2]
+\nopagebreak
 
-\question{
-  Conclusion : pourquoi est-il important de définir le référentiel, qui est l’endroit où on se place pour observer un objet, et le temps passé à observer cet objet, avant d'étudier un mouvement ?
-}{
-  Car le mouvement dépend du référentiel et du temps passé à observer un objet.
-  On dit que le mouvement est \important{relatif.}
-}[2]
+\enlargethispage{8pt}
+\nopagebreak
+\begin{importants}
+  On voit que le mouvement dépend du point de vue d'observation et du temps passé à observer un objet. 
+  Il faut donc bien définir le \important{référentiel} utilisé pour étudier le mouvement.
+\end{importants}

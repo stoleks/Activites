@@ -8,8 +8,7 @@
 
 %%%% objectifs
 \begin{objectifs}
-  \item Comprendre la modélisation de de la dissolution des composés ioniques.
-  \item Comprendre le lien entre présence d'ions et conductivité électrique.
+  \item Voir la définition de potabilité, comprendre qu'une eau non-potable n'est pas forcément toxique.
 \end{objectifs}
 
 \begin{contexte}
@@ -83,8 +82,8 @@
 
   \centering
   \begin{tblr}{
-    colspec = {|l |l |}, hlines,
-    row{1} = { couleurSec100, m, c },
+    colspec = {l l}, hlines, vlines,
+    row{1} = { couleurSec-100, m, c },
   }
     Paramètres & Limite de potabilité \\
     \ionChlorure & \qty{200}{\mg\per\litre} \\
@@ -105,50 +104,19 @@
 
 
 %%
+\input{commun/eaux_minerales}
 \begin{doc}{Etiquettes d'eau minérale}{doc:A2_eau_minerale}
   \begin{multicols}{3}
     \centering
-    \important{Vichy St Yorre}
-     \begin{tableau}{l | r}
-      \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
-      \ionBicarbonate & \num{4368} \\
-      \ionChlorure    & \num{322}  \\
-      \ionSodium      & \num{1708} \\
-      \ionSulfate     & \num{174}  \\
-      \ionPotassium   & \num{110}  \\
-      \ionCalcium     & \num{90}   \\
-      \ionFluorure    & \num{1}    \\
-      \ionMagnesium   & \num{11}   \\
-    \end{tableau}
     %
-    
-    \important{Mont Roucous}
-    \begin{tableau}{l | r}
-      \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
-      \ionBicarbonate & \num{1} \\
-      \ionChlorure    & \num{2}  \\
-      \ionSodium      & \num{3,2}  \\
-      \ionSulfate     & \num{6,9}  \\
-      \ionFluorure    & < \num{0,1}  \\
-      \ionCalcium     & \num{2,7}  \\
-      \ionNitrate     & \num{1,8}  \\
-      \ionMagnesium   & \num{0,3}  \\
-    \end{tableau}
+    \vichyStYorre
     %
-    
-    \important{Cristalline}
-    \begin{tableau}{l | r}
-      \SetCell[c=2]{c} Minéralisation : \unit{\mg} pour \qty{1}{\litre} \\
-      \ionBicarbonate & \num{228} \\
-      \ionChlorure    & \num{15}    \\
-      \ionSodium      & \num{8,4}  \\
-      \ionSulfate     & \num{11}  \\
-      \ionPotassium   & \num{2,3}     \\
-      \ionCalcium     & \num{549}   \\
-      \ionNitrate     & < \num{1}   \\
-      \ionMagnesium   & \num{6,9}   \\
-    \end{tableau}
+    \montRoucous
+    %
+    \cristalline
   \end{multicols}
+  \centering
+  \legende{Composition de trois eaux minérales commerciales.}
 \end{doc}
 
 \question{
@@ -181,7 +149,7 @@
   \begin{tblr}{
     colspec = {|X[l] |X[l] |X[l] |}, hlines,
     cell{1}{1} = {r=2}{c}, cell{1}{2} = {c=2}{c},
-    row{1,2} = {couleurSec100, c}
+    row{1,2} = {couleurSec-100, c}
   }
     \important{Macropolluants} & \important{Micropolluant} & \\
     & \important{Organiques} & \important{Inorganiques} \\
@@ -189,8 +157,9 @@
     Hydrocarbures, plastifiant, pesticides, détergents, médicaments, \ldots &
     Métaux et autre éléments lourds : \chemfig{Pb}, \chemfig{Hg}, \chemfig{Cd}, \chemfig{Cu}, \chemfig{Fe}, \chemfig{Zn}, \chemfig{Co}, \ldots
   \end{tblr}
-
-  \legende{Types de polluants qu'on retrouve dans les eaux.}
+  
+  \centering
+  \legende{Types de polluants qu'on peut retrouver dans les eaux (rivière ou mer).}
 \end{doc}
 
 \question{
