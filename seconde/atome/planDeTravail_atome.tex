@@ -6,19 +6,18 @@
 
 %\begin{importants}
   % Le plan de travail est un cadre de travail collectif où tu as la liberté d'avancer, seul-e ou en groupe, à ton rythme.
-  Ce document présente les activités et travaux pratiques à réaliser pendant les 4 semaines du chapitre.
-  À chaque séance (en classe entière ou demi-groupe), tu es libre de choisir quelle activité ou TP réaliser avec ton groupe.
-  Tous les documents sont imprimés sur le bureau du professeur.
+  Ce document, \important{qui sera ramassé et évalué,} présente les activités et travaux pratiques à réaliser pendant les 4 semaines du chapitre.
+  À chaque séance (classe entière ou demi-groupe), tu es libre de choisir quelle activité ou TP réaliser avec ton groupe.
+  Tous les documents sont sur le bureau du professeur.
   % Au début de la 2ème et 3ème semaine, une courte interrogation sera réalisé sur certaines activités.
 %\end{importants}
 
 
 %%%% Activités
 \titre{Activités à réaliser}
-\vspace*{-16pt}
+\vspace*{-18pt}
 
 \begin{multicols}{2}
-  \phantom{\methode}\vspace*{-64pt}
   \begin{activite}{Ordres de grandeur}{ordre_grandeur}
     \begin{objectifs}  
       \item Revoir les puissances de 10.
@@ -26,7 +25,7 @@
     \end{objectifs}
   \end{activite}
 
-  \phantom{\sndAtom}\vspace*{-44pt}
+  \vspace*{20pt}
   \begin{TP}{Fabriquer un atome}[1 h 30]{atome}
     \begin{objectifs}
       \item Étudier la composition d'un atome.
@@ -35,27 +34,8 @@
       \item Comprendre la notion d'éléments isotopes.
     \end{objectifs}
   \end{TP}
-  
-  \begin{TP}{Le modèle de l'atome}{modele_atome}
-    \begin{objectifs}
-        \item Découvrir la méthode scientifique.
-        \item Utiliser la méthode scientifique pour étudier l'évolution du modèle de l'atome.
-    \end{objectifs}
-  \end{TP}
-  
-  \begin{activite}{Taille d'un atome}{taille_atome}
-    \begin{prerequis}
-      \item Calcul avec les puissances de 10.
-      \item Utilisation des ordres de grandeur.
-    \end{prerequis}
-    \begin{objectifs}
-      \item Comparer la taille d'un atome à des objets du quotidien pour mieux la comprendre.
-      \item Utiliser les ordres de grandeurs pour mener un raisonnement.
-    \end{objectifs}
-  \end{activite}
-\end{multicols}
 
-\begin{multicols}{2}    
+  \medskip
   \begin{activite}{Cortège électronique}[1 h 30]{cortege_electrons}
     \begin{prerequis}
       \item Connaître la structure d'un atome.
@@ -67,7 +47,27 @@
       \item Comprendre la règle de remplissage des couches électroniques.
     \end{objectifs}
   \end{activite}
+  
+  \begin{TP}{Le modèle de l'atome}{modele_atome}
+    \begin{objectifs}
+        \item Découvrir la méthode scientifique.
+        \item Utiliser la méthode scientifique pour étudier l'évolution du modèle de l'atome.
+    \end{objectifs}
+  \end{TP}
+  
+  \medskip
+  \begin{activite}{Taille d'un atome}{taille_atome}
+    \begin{prerequis}
+      \item Calcul avec les puissances de 10.
+      \item Utilisation des ordres de grandeur.
+    \end{prerequis}
+    \begin{objectifs}
+      \item Comparer la taille d'un atome à des objets du quotidien pour mieux la comprendre.
+      \item Utiliser les ordres de grandeurs pour mener un raisonnement.
+    \end{objectifs}
+  \end{activite}
 
+  \medskip
   \begin{TP}{Le Tableau périodique}{tableau_periodique}
     \begin{prerequis}
       \item Connaître la structure électronique.
@@ -81,16 +81,16 @@
 
 \vspace*{-2cm}
 \begin{tikzpicture}
-  [overlay, remember picture, line width=1.5mm, draw=couleurQuat]
-    \draw[->, rounded corners=4mm] 
-      (ordre_grandeur) 
-      to (5, 15.5) to (8, 15.2) 
-      to (taille_atome);
-    \draw[->] (atome) -- (cortege_electrons);
-    \draw[->, rounded corners=5mm] 
-      (cortege_electrons) 
-      to (11.5, -1) 
-      to (tableau_periodique);
+  [overlay, remember picture, line width=1.5mm, draw=couleurQuat-400]
+  \draw[->, rounded corners=4mm] 
+    (ordre_grandeur) 
+    to (6, 15) to (8.5, 15) 
+    to (taille_atome);
+  \draw[->] (atome) -- (cortege_electrons);
+  \draw[->, rounded corners=5mm] 
+    (cortege_electrons) 
+    to (6, -1.3) to (10, -1.3) 
+    to (tableau_periodique);
 \end{tikzpicture}
 
 \vspace*{1.5cm}
@@ -114,7 +114,7 @@ Idéalement, il faut avoir fait l'activité d'où part la flèche avant de faire
 \end{programmeSeance}
 
 \begin{programmeSeance}
-  \seance{1 h}{ Courte évaluation sur la structure d'un atome. }
+  \seance{1 h}{\strut\vAligne{-48pt} \small Courte évaluation sur la structure d'un atome. }
   \seance{2 h}{}
   \seance{1 h}{}
 \end{programmeSeance}
@@ -127,8 +127,8 @@ Idéalement, il faut avoir fait l'activité d'où part la flèche avant de faire
 
 %%%% Tâche finale
 \begin{tacheFinale}
-  \important{Par groupe de 4,} choisir un élément du tableau périodique et réaliser sa case au format $20\times\qty{20}{\cm\squared}$.
-  La case devra contenir des informations microscopique (structure électronique) et des informations macroscopique (dans quels objets on trouve l'élément, des propriétés remarquables ou amusantes, etc.)
+  \important{Par groupe de 4,} choisir un élément du tableau périodique et réaliser sa case au format A4 $\num{29,7} \times\qty{21,0}{\cm\squared}$.
+  La case devra contenir des informations microscopique (structure électronique) et des informations macroscopique (dans quels objets on trouve l'élément, sous quels formes naturelles l'élément se trouve sur Terre, des propriétés remarquables ou amusantes, etc.)
 \end{tacheFinale}
 
 
