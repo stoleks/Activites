@@ -2,9 +2,9 @@
 \teteTermStssEnvi
 
 %%%% titre
-\vspace*{-32pt}
+\vspace*{-36pt}
 \titreTP{Contrôle de la qualité d'une eau du robinet}
-\vspace*{-8pt}
+\vspace*{-12pt}
 
 
 %%%% objectifs
@@ -32,12 +32,14 @@
     \chemfig{SO_4^{2-}}\aq + \chemfig{Ba^{2+}}\aq \reaction \chemfig{BaSO_4}\sol
   \end{equation*}
   Comme on transforme des ions en solide, la solution voit d'abord sa conductivité baisser, avant de remonter quand tous les ions \chemfig{SO_4^{2-}} présents au départ ont été transformés.
-  
-  Cette variation de la conductivité permet de mesurer précisément \important{l'équivalence.}
-  À l'équivalence, on a introduit la même quantité de matière de \chemfig{Ba^{2+}} qu'il y avait d'ions \chemfig{SO_4^{2-}} initialement
-  \begin{equation*}
-    n(\chemfig{Ba^{2+}}) = n(\chemfig{SO_4^{2-}})
-  \end{equation*}
+
+  \begin{importants}
+    Cette variation de la conductivité permet de mesurer précisément \important{l'équivalence.}
+    À l'équivalence, on a introduit la même quantité de matière de \chemfig{Ba^{2+}} qu'il y avait d'ions \chemfig{SO_4^{2-}} initialement
+    \begin{equation*}
+      n(\chemfig{Ba^{2+}}) = n(\chemfig{SO_4^{2-}})
+    \end{equation*}
+  \end{importants}
 \end{doc}
 
 \begin{doc}{Protocole d'un dosage conductimétrique}{doc:TP1_protocole_dosage}
@@ -49,22 +51,29 @@
     \item tracer les deux droites de la conductivité et repérer leur point d'intersection (l'équivalence).
   \end{protocole}
 
+  \vspace*{-10pt}
+  \begin{wrapfigure}[2]{r}{0.5\linewidth}
+    \hspace*{-60pt}
+    \image{0.85}{images/chimie/montage_dosage_conductimetrie}
+  \end{wrapfigure}
+
+  \vAligne{-24pt}
   \begin{importants}  
     À l'intersection des droites, on a \important{l'équivalence,} associé au \important{volume d'équivalence $V_\text{eq}$}.
+    L'équivalence permet de calculer la concentration de l'espèce qui nous intéresse.
   \end{importants}
-
-  \begin{center}  
-    \image{0.39}{images/chimie/montage_dosage_conductimetrie}
-  \end{center}
+  \vAligne{3.2cm}
+  \phantom{b}
 \end{doc}
 
-\begin{doc}{Dosage d'une eau d'une robinet}{doc:TP1_dosage_robinet}
+\newpage
+\begin{doc}{Dosage d'une eau du robinet}{doc:TP1_dosage_robinet}
   \begin{wrapfigure}{r}{0.4\linewidth}
     \vspace*{-36pt}
     \centering
     \image{1}{images/donnees/conductivite_dosage}
   \end{wrapfigure}
-  Pour contrôler la qualité de l'eau d'une robinet, on réalise un dosage conductimétrique.
+  Pour contrôler la qualité de l'eau du robinet, on réalise un dosage conductimétrique.
 
   On prélève $V_\text{eau} = \qty{200}{\mL}$ d'eau du robinet dont on veut déterminer la concentration en ions chlorure \chemfig{Cl^{-}}.
   On dose cette eau avec une solution de nitrate d'argent (\chemfig{Ag^+}, \chemfig{NO_3^{-}}), de concentration en ions $[\chemfig{Ag^+}] = \qty{1,0e-2}{\mol\per\litre}$.

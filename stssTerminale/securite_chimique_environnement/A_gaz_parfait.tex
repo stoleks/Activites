@@ -45,13 +45,15 @@
   Il y a trois règles de conversion à connaître :
   \begin{listePoints}
     \item \qty{1}{\litre} = \qty{e-3}{\m\cubed} ;
-    \item \qty{1}{\degreeCelsius} = \qty{1}{\kelvin} + \num{273,15}
+    \item \qty{1}{\degreeCelsius} = (1 + \num{273,15}) \unit{\kelvin}
     \item \qty{1}{\bar} = \qty{e5}{\pascal}
   \end{listePoints}
 
   Sauf précision contraire, en général on travaille avec une
   \begin{itemize}
-    \item température ambiante $T_\text{amb} = \qty{20}{\degreeCelsius}$, soit \qty{293,15}{\kelvin} ;
+    \item température ambiante $T_\text{amb} = \qty{20}{\degreeCelsius} 
+      = (20 + \num{273,15}) \unit{\kelvin}
+      = \qty{293,15}{\kelvin}$ ;
     \item pression atmosphérique $P_\text{atm} = \qty{1,013e5}{\pascal} = \qty{1013}{\hecto\pascal}$.
   \end{itemize}
   
