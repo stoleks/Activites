@@ -23,7 +23,7 @@
   \begin{minipage}{\largeurCaseTableauPeriodique cm}
     \begin{center}
       {\Large \important[black]{#1} \\[2pt]} % symbole atomique
-      {\footnotesize $\chi = $\num{#2}} % électronégativité
+      {\small $\chi = \num{#2}$} % électronégativité
     \end{center}
   \end{minipage}
 }
@@ -33,43 +33,29 @@
 %% #1 : largeur ; #2 : hauteur ; #3 : élements
 \NewDocumentCommand{\tableauPeriodique}{O{2.6} O{2.7} m}{
 \begin{tikzpicture}[font=\sffamily, scale=0.75, transform shape]
-  
-%% Couleur de remplissage
-  \tikzstyle{jauneClair}  = [fill=yellow!30]
-  \tikzstyle{jaune}       = [fill=yellow!45]
-  \tikzstyle{jauneFonce}  = [fill=yellow!60]
-  \tikzstyle{rougeClair}  = [fill=red!20]
-  \tikzstyle{rouge}       = [fill=red!35]
-  \tikzstyle{rougeFonce}  = [fill=red!50]
-  \tikzstyle{orangeClair} = [fill=orange!30]
-  \tikzstyle{orange}      = [fill=orange!45]
-  \tikzstyle{orangeFonce} = [fill=orange!60]
-  \tikzstyle{vertClair}   = [fill=vertSapin!20]
-  \tikzstyle{vert}        = [fill=vertSapin!35]
-  \tikzstyle{vertFonce}   = [fill=vertSapin!50]
-  
+
 %% Type d'élément, par famille
-  \tikzstyle{Alcali} = [Element, vertFonce]
-  \tikzstyle{Alcalo} = [Element, vert]
-  \tikzstyle{Metaux} = [Element, vertClair]
-  \tikzstyle{Metoid} = [Element, orangeClair]
-  \tikzstyle{NoMeta} = [Element, orange]
-  \tikzstyle{Haloge} = [Element, orangeFonce]
-  \tikzstyle{GazRar} = [Element, rouge]
+  \tikzstyle{Alcali} = [Element, fill=green-200]
+  \tikzstyle{Alcalo} = [Element, fill=green-150]
+  \tikzstyle{Metaux} = [Element, fill=green-100]
+  \tikzstyle{Metoid} = [Element, fill=orange-100]
+  \tikzstyle{NoMeta} = [Element, fill=orange-150]
+  \tikzstyle{Haloge} = [Element, fill=orange-200]
+  \tikzstyle{GazRar} = [Element, fill=red-150]
 
 %% Type d'élément, par électronégativité
- \tikzstyle{elec1} = [Element, vertClair]
- \tikzstyle{elec2} = [Element, vert]
- \tikzstyle{elec3} = [Element, jaune]
- \tikzstyle{elec4} = [Element, orangeClair]
- \tikzstyle{elec5} = [Element, orange]
- \tikzstyle{elec6} = [Element, orangeFonce]
- \tikzstyle{elec7} = [Element, rouge]
- \tikzstyle{elec8} = [Element, rougeFonce]
+ \tikzstyle{elec1} = [Element, fill=green-50]
+ \tikzstyle{elec2} = [Element, fill=green-100]
+ \tikzstyle{elec3} = [Element, fill=yellow-100]
+ \tikzstyle{elec4} = [Element, fill=orange-100]
+ \tikzstyle{elec5} = [Element, fill=orange-150]
+ \tikzstyle{elec6} = [Element, fill=orange-200]
+ \tikzstyle{elec7} = [Element, fill=red-200]
+ \tikzstyle{elec8} = [Element, fill=red-300]
   
 %% Style des éléments
   \tikzstyle{Element} = [
-    draw=black, jaune,
+    draw=black, cyan-800!50!black,
     minimum width  = #1 cm, % Largeur de la case
     node distance  = #1 cm, % Espace entre deux case
     minimum height = #2 cm, % Hauteur de la case
