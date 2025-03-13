@@ -65,10 +65,10 @@
 
 
 \begin{doc}{La molécule H$_2$O}{doc:A1_molecule_eau} 
-  \begin{wrapfigure}[3]{l}{0.25\linewidth}
+  \begin{wrapfigure}[3]{l}{0.3\linewidth}
     \centering
     \vspace*{-22pt}
-    \image{1}{images/molecules/eau_polarite}
+    \image{0.8}{images/molecules/eau_polarite}
   \end{wrapfigure}
   \phantom{b}\vspace*{-20pt}
     
@@ -93,7 +93,7 @@
   Contrairement aux liaisons covalentes, les liaisons hydrogènes sont représentées en pointillés.
 
   \begin{importants}  
-    Pour les molécules du vivant, les liaisons hydrogène se forment quasiment toujours avec des groupes hydroxyle \chemfig{HO-C...} ou des groupe carbo \chemfig{O=C...}.
+    Pour les molécules du vivant, les liaisons hydrogène se forment quasiment toujours avec des groupes hydroxyle \chemfig{HO-C...} ou sur des groupes carbo \chemfig{O=C...}.
   \end{importants}
   C'est parce que l'électronégativité du carbone et de l'oxygène sont différentes
   ($\chi(O) - \chi(C) > 0,4$),
@@ -103,7 +103,7 @@
 \begin{doc}{Solubilité}{doc:A1_solubilité}
   \begin{listePoints}
     \item Un solvant est \important{polaire} s'il est composé de molécules polaires : l'eau est un solvant polaire.
-    \item Un solvant est \important{apolaire} s'il n'est pas composé de molécules polaires : l'huile est un solvant apolaire.
+    \item Un solvant est \important{apolaire} s'il n'est pas composé de molécules polaires : l'huile est apolaire.
   \end{listePoints}
   Les solides polaires et ioniques se dissolvent facilement dans les solvants polaires, car des liaisons hydrogènes se forment entre les éléments du solide et les molécules du solvant, ce qui le dissout.
 
@@ -111,33 +111,34 @@
 \end{doc}
 
 \begin{doc}{Glucose et oléine}{doc:A1_glucose_oleine}
-  \begin{multicols}{2}
+  \separationBlocs{
     \centering
-    %% glucose linéaire
     {\small
       \chemfig[atom sep = 1.5em]{!\glucose}
     } \\[6pt]
     \legende{Molécule de glucose}
-
+  }{
+    \vspace*{-20pt}
+    \centering
     {\small
-      \chemfig[atom sep = 2.0em]{!\trioleineSemiDev}
+      \chemfig[atom sep = 1.0em]{[:-60]!\oleine}
     } \\[6pt]
-    \legende{Molécule d'oléine}
+    \legende{Molécule de trioléine}
     %
-  \end{multicols}
+  }
 \end{doc}
 
 \question{
-  En s'aidant de l'exemple donné avec la molécule d'eau, montrer que la molécule de glucose est polaire.
-}{}{2}
+  En s'aidant du document~\ref{doc:A1_liaison_hydrogene}, montrer que la molécule de glucose est polaire.
+}{}[2]
 
 \question{
   Est-ce que la trioléine, qui compose l'huile d'olive, est polaire ?
-}{}{1}
+}{}[2]
 
 \question{
   Expliquer pourquoi le sucre se mélange avec l'eau, mais pas l'huile d'olive.
-}{}{2}
+}{}[2]
 
 
 \begin{doc}{Stockage des nutriments}{doc:A1_stockage}

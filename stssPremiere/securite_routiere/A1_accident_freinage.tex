@@ -29,38 +29,39 @@
   \end{center}
   \begin{importants}
     \begin{listePoints}
-      \item La \important{distance de réaction} est la distance que parcourt un véhicule entre le moment où la conductrice voit l'obstacle et quand elle commence à freiner.
-      \item La \important{distance de freinage} est la distance que parcourt un véhicule entre le moment où la conductrice commence à freiner et quand le véhicule est à l'arrêt.
-      \item La \important{distance d'arrêt} est simplement la somme de ces deux distances.
+      \item La \important{distance de réaction $d_R$} est la distance que parcourt un véhicule entre le moment où la conductrice voit l'obstacle et quand elle commence à freiner.
+      \item La \important{distance de freinage $d_F$} est la distance que parcourt un véhicule entre le moment où la conductrice commence à freiner et quand le véhicule est à l'arrêt.
+      \item La \important{distance d'arrêt $d_A$} est simplement la somme de ces deux distances $d_A = d_R + d_F$.
     \end{listePoints}
     
     Le \important{temps de réaction} $t_R$ d'un-e humain-e est de \qty{1,0}{\s} en moyenne.
-    On peut calculer la distance de réaction $d_R$ à partir du temps de réaction $t_R$ et de la vitesse du véhicule $v$ :
-    \begin{equation*}
-      d_R = t_R \times v
-    \end{equation*}
+    La distance de réaction $d_R$ se calcule à partir du temps de réaction $t_R$ et de la vitesse du véhicule $v$ : $d_R = t_R \times v$.
   \end{importants}
   
   \centering 
   \begin{tblr}{
-    colspec = {l c c c c c}, vlines, hlines, column{1} = {couleurSec-100}
+    colspec = {lccccc}, vlines, hlines,
+    column{1} = {couleurSec-50}, row{1} = {couleurSec-100}
   }
     Vitesse $v$ (\unit{\km\per\hour})
     & 40 & 80 & 90 & 110 & 130 \\
     %
-    Distance de réaction $d_R$ (\unit{\m})
-    & 11,1 & & 25,0 & 30,6 & \\
+    Vitesse $v$ (\unit{\m\per\s})
+    & 11,1 & 22,2 & & & \\
     %
-    Distance de freinage $d_F$ sur sol sec (\unit{\m})
+    $d_R$ (\unit{\m})
+    & 11,1 & & 25,0 & & \\
+    %
+    $d_F$ sur sol sec (\unit{\m})
     & 10,3 & & 52,0 & 78,1 & 108,5 \\
     %
-    Distance d'arrêt $d_A$ sur sol sec (\unit{\m})
-    & 21,4 & 63,4 & & 108,7 & 144,6 \\
-    %
-    Distance de freinage $d_F$ sur sol mouillé (\unit{\m})
+    $d_F$ sur sol mouillé (\unit{\m})
     & 15,0 & 59,9 & 75,9 & & 158,4 \\
     %
-    Distance d'arrêt $d_A$ sur sol mouillé (\unit{\m})
+    $d_A$ sur sol sec (\unit{\m})
+    & 21,4 & 63,4 & & 108,7 & 144,6 \\
+    %
+    $d_A$ sur sol mouillé (\unit{\m})
     & & & & 144,6 & \\
     %
   \end{tblr}
@@ -70,25 +71,25 @@
 Compléter le tableau du document~\ref{doc:A1_distances_arret}
 
 \question{
-  Dans le tableau l'état du sol n'est pas indiqué pour la distance de réaction $d_R$, pourquoi ?
-}{}{2}
+  Expliquer pourquoi l'état du sol n'est pas indiqué pour la distance de réaction $d_R$.
+}{}[2]
 
 \question{
-  Indiquer si la voiture va s'arrêter avant de percuter l'enfant.
-}{}{2}
+  Indiquer si la voiture va s'arrêter avant de percuter l'enfant, sur sol sec ou mouillé.
+}{}[2]
 
 \newpage
-\vspace*{-36pt}
+\vspace*{-30pt}
 \question{
   Est-ce que la distance de freinage est doublée quand la vitesse du véhicule est doublée ?
-}{}{2}
+}{}[2]
 
 \mesure
 À la main ou à l'aide d'un logiciel, tracer la distance de freinage en fonction de la vitesse au carré $v^2$, après avoir converti la vitesse en \unit{\m\per\s}.
 
 \question{
   Est-ce que $v^2$ et $d_F$ sont deux grandeurs proportionnelles ?
-}{}{2}
+}{}[2]
 
 
 %%%%
