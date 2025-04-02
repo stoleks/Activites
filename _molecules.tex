@@ -66,6 +66,7 @@
 \definesubmol\teteAcideDev{ - O - C (=[::90] O) - }
 \definesubmol\OH { -[::60] OH }
 \definesubmol\carboxyle{ (=[::-60] O) (-[::60] OH) }
+\definesubmol\carboxyleDev{ (=[::-50] O) (-[::50] OH) }
 \definesubmol\carbonyle{ (=[::60] O) -[::-60] }
 \definesubmol\ester{ (=[:90] O) -[:-30] O}
 \definesubmol\ether{ -[:30] O -[:-30]}
@@ -108,7 +109,7 @@
   !\teteAcideDev - CH_2 - CH_2 - CH_2 - CH_2 - CH_3
 }
 \definesubmol\oleiqueSemiDev{
-  C_{17} H_{33} -C (=[1.5]O) (-[-1.5]OH)
+  C_{17} H_{33} -C !\carboxyleDev
 }
 \definesubmol\oleateSemiDev{
   C_{17} H_{33} -C (=[1.5]O) (-[-1.5]O^{-})
@@ -375,16 +376,16 @@
   H_2N -[1] (-[3] (-[1]) -[5]) -[-1] !\carboxyle
 }
 \definesubmol\alanineSemiDev{
-  CH_3- CH (-[-3] NH_2) - C (=[1.5] O) -[-1.5] OH
+  CH_3- CH (-[-3] NH_2) - C !\carboxyleDev
 }
 \definesubmol\asparagineSemiDev{
   HO -[1]C (=[3] O) -[-1]CH (-[-3] NH_2) -[1]CH_2 -[-1]C (-[-3] NH_2) =[1] O
 }
 \definesubmol\glycineSemiDev{
-  CH_2 (-[-3] NH_2) -C (=[1.5] O) -[-1.5] OH
+  CH_2 (-[-3] NH_2) -C !\carboxyleDev
 }
 \definesubmol\cysteineSemiDev{
-   HS - CH_2 - CH (-[-3] NH_2) -C (=[1.5] O) -[-1.5]OH
+   HS - CH_2 - CH (-[-3] NH_2) -C !\carboxyleDev
 }
 \definesubmol\alaninePoly{
   - CH (-[-3] CH_3) - C (=[3] O) -
@@ -412,11 +413,9 @@
   HO -[1] *6(= (-OH) -= (--[-1] (-[-3]NH_3^+) -[1] COOH) -=-)
 }
 \definesubmol\prostaglandine{
-  OH-[::75] *5(
-    - (
-      -=[::60]!\cd  (!\cd OH) !\cud !\cud !\cu 
-    )
-    - (-[::-65]!\cd !\cud !\cud !\cu  (=[::60]O) !\cd OH)
+  HO-[::75] *5(
+    - (-=[::60]!\cd  (!\cd OH) !\cud !\cud !\cu)
+    - (-[::-65]!\cd !\cud !\cud !\cu  !\carboxyle)
     - (=O)
     --
   )

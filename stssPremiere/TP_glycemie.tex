@@ -1,0 +1,69 @@
+\tetePremStssBiom
+\titreTP{Contrôle de la glycémie}
+
+\begin{doc}{Mesurer la glycémie}{doc:mesurer_glycemie}
+  Pour contrôler la glycémie d'une personne, on peut prélever une goutte de sang et mesurer la concentration massique en glucose.
+  Le principe est le suivant : on utilise des bandelettes qui contiennent une enzyme, la glucose oxydase. 
+  Le glucose contenu dans le sang va réagir chimiquement en présence de glucose oxydase et former des ions hydrogène \chemfig{H^+} et du dioxygène \chemfig{O_2}.
+  La production d'ions hydrogène va entraîner l'apparition d'un faible courant électrique.
+  L'intensité du courant dans la bandelette va donc varier avec concentration de glucose dans le sang.
+\end{doc}
+
+\begin{doc}{Étalonnage de la bandelette}{doc:etalonnage_bandelette}
+  Pour pouvoir mesurer une concentration en glucose avec une bandelette, il faut l'étalonner en mesurant l'intensité du courant pour plusieurs solutions étalon.
+
+  Un fabriquant a mesuré les valeurs suivantes :
+  
+  \begin{tblr}{
+    colspec = {X[c]}, vlines, hlines, 
+    column{1} = {couleurSec-100}, width=\linewidth
+  }
+    $c_m(\text{glucose})$ \unit{\g\per\litre} &
+    \num{1,2} & \num{2,12} & \num{2,88} &
+    \num{4,11} & \num{4,92} & \num{6,03} &
+    \num{6,85}	& \num{7,87} & \num{9,18} & \num{10,09} \\
+    %
+    $I$ du courant \unit{\micro\ampere} &
+    \num{11,85} & \num{21,39} & \num{28,66} &
+    \num{41,1} & \num{49,28} & \num{60,3} &
+    \num{68,41} & \num{78,6} & \num{91,8} & \num{100,73} \\
+  \end{tblr}
+\end{doc}
+
+\begin{doc}{Conversion d'une concentration massique en concentration molaire}{doc:conversion_mass_mol}
+  Pour passer d'une concentration massique $c_m$ à une concentration molaire $c$, il faut utiliser la relation suivante 
+  \begin{equation*}
+    c = \dfrac{c_m}{M}
+  \end{equation*}
+  avec $M$ la masse molaire de l'espèce chimique dont on mesure la concentration.
+
+  \begin{donnees}
+    \item $\masseMol{glucose} = \qty{180,2}{\g\per\mole}$.
+  \end{donnees}
+\end{doc}
+
+\begin{doc}{Taux normaux de glycémie}{doc:taux_glycemie}
+  \begin{tableau}{
+    | X[c]| X[c]| X[c]| X[c]| X[c]|
+  }
+    & à jeun & 2h après le repas & femme enceinte à jeun & femme enceinte 2h après le repas \\
+    Taux normaux de glycémie &
+    \num{3.9} à \qty{5.5}{\milli\mole\per\litre} &
+    \num{3.9} à \qty{7.7}{\milli\mole\per\litre} &
+    \num{3.9} à \qty{5.0}{\milli\mole\per\litre} &
+    \num{3.9} à \qty{6.6}{\milli\mole\per\litre}
+  \end{tableau}
+  
+  \textit{Ces valeurs augmentent de \qty{0.6}{\milli\mole\per\litre} par décennie après 50 ans.}
+\end{doc}
+
+\numeroQuestion 
+À l'aide d'un programme python ou d'un tableur, tracer la concentration molaire du glucose en fonction de l'intensité du courant. \attention il faut convertir la concentration massique !
+
+\numeroQuestion
+Utiliser une régression linéaire pour obtenir la relation entre concentration molaire du glucose en \unit{\milli\mole\per\litre} et intensité du courant en \unit{\micro\ampere} dans la bandelette.
+
+\question{
+Des médecins ont mesuré une intensité de \qty{15.4}{\micro\ampere} pour une femme de 60 ans, deux heures après son déjeuner.
+En utilisant toutes les données fournies, indiquer si la femme a une glycémie normale.
+}{}[3]
