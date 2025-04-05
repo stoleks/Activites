@@ -1,16 +1,19 @@
 %%%%
 \teteSndMeth
-
-%%%% titre
+\vspace*{-30pt}
 \titreActivite{Ordre de grandeur}
+
+\begin{objectifs}
+  \item Revoir la notation scientifique et le système international des unités.
+  \item Découvrir les raisonnements rapides avec des ordres de grandeur.
+\end{objectifs}
 
 \begin{contexte}
   En physique on utilise des grandeurs avec des tailles très variables, c'est pour ça qu'on utilise la \important{notation scientifique.}
-  
   En physique et dans la vie de tous les jours, on peut être amené à essayer de raisonner rapidement sur des grandeurs mal connues. Pour ça on peut utiliser les \important{ordres de grandeur.}
-
-  Enfin, pour pouvoir comparer et communiquer sur des grandeurs, il faut pouvoir les mesurer avec des unités communes, c'est l'intérêt du \important{système international de mesure.}
+  Enfin, pour comparer et communiquer sur des grandeurs, il faut pouvoir les mesurer avec des unités communes, c'est l'intérêt du \important{système international de mesure.}
 \end{contexte}
+
 
 %%%%
 \vspace*{-12pt}
@@ -24,14 +27,13 @@
     \item Écrire le nombre $10^{-n}$ (avec $n = 1, 2, 3, \ldots$), revient à écrire ``$0,$'' suivi de $n - 1 = 0, 1, 2, \ldots$ zéros et d'un $1$. \textit{Exemple : $10^{-2} = 0,\!01$}
     \item $10^a \times 10^b = 10^{a + b}$
     \item $\dfrac{1}{10^n} 
-    = \dfrac{10^{-n}}{10^{-n}} \times \frac{1}{10^n} 
+    = \dfrac{10^{-n}}{10^{-n}} \times \dfrac{1}{10^n} 
     = \dfrac{10^{-n}}{10^{n - n}}
     = \dfrac{10^{-n}}{10^0}
     = 10^{-n}$
   \end{listePoints}
   \end{importants}
 \end{doc}
-\bigskip
 
 \begin{doc}{La notation scientifique}{doc:A2_notation_scientifique}
   \begin{importants}
@@ -59,9 +61,11 @@
   
 \separationBlocs{
   \qty{288}{\hour}    = \texteTrouLignes{\qty{2,88e2}{\hour}}
+  \correction{\newline}
   \qty{756864000}{\s} = \texteTrouLignes{\qty{7,56864}{\s}}
 }{
   \qty{638}{\newton}   = \texteTrouLignes{\qty{6,38}{\newton}}
+  \correction{\newline}
   \qty{0,9997}{\g/\ml} = \texteTrouLignes{\qty{9,997e-1}{\g/\ml}}
 }
 
@@ -70,10 +74,7 @@
 \titreSection{Les ordres de grandeurs}
 
 \begin{doc}{Définition d'un ordre de grandeur}{doc:A1_def_ordre_grandeur}
-  \begin{wrapfigure}[3]{r}{0.1\linewidth}
-    \vspace*{-32pt}
-    \qrcode{https://www.youtube.com/watch?v=xTV47tuv_Fg}
-  \end{wrapfigure}
+  \qrcodeCote[1]{https://www.youtube.com/watch?v=xTV47tuv_Fg}
 
   \vAligne{-36pt}
   \begin{importants}
@@ -90,10 +91,12 @@
 
 \separationBlocs{
   \qty{3,00e8}{\m\per\s} = \texteTrouLignes{\qty{e8}{\m\per\s}}
+  \correction{\newline}
   \qty{1,67e-27}{\kg}    = \texteTrouLignes{\qty{e-27}{\kg}}
 }{
-  \qty{9,11e-31}{\kg} = \texteTrouLignes{\qty{e-30}{\kg}}
-  \qty{53e-12}{\m}    = \texteTrouLignes{\qty{e-11}{\m}}
+  \qty{9,11e-31}{\kg} = \texteTrouLignes{$\num{e1} \times \qty{e-31}{\kg} = \qty{e-30}{\kg}$}
+  \correction{\newline}
+  \qty{53e-12}{\m}    = \texteTrouLignes{$\num{e2} \times \qty{e-12}{\m} = \qty{e-10}{\m}$}
 }
 
 
@@ -145,13 +148,17 @@ Compléter le tableau en associant à chaque objet sa longueur, puis l'ordre de 
 
 \begin{tblr}{
   colspec = {X[-1] X[1] X[1] X[1] X[1] X[1] X[1]},
-  vlines, hlines,
+  vlines, hlines, row{3, 4} = {48pt},
   columns = {c}, row{1} = {couleurSec-100, m}, 
   width = \linewidth,
 }
   Objet &
-  Épaisseur cheveux & Voie Lactée & Système solaire &
-  Hexagone & Fourmi & Atome \\
+  Épaisseur cheveux &
+  Voie Lactée &
+  Système solaire &
+  Hexagone &
+  Fourmi &
+  Atome \\
   % 
   Image & 
   \image{1}{images/photos/taille_cheveux} &
@@ -160,8 +167,22 @@ Compléter le tableau en associant à chaque objet sa longueur, puis l'ordre de 
   \image{1}{images/photos/taille_france} &
   \image{1}{images/photos/taille_fourmi} &
   \image{1}{images/photos/taille_atome} \\
+  % 
+
   %
-  Taille & \vAligne{24pt} \\
+  Taille & 
+  \correction{\qty{60}{\micro\m}} &
+  \correction{\qty{e20}{\m}} &
+  \correction{\qty{e10}{\m}} &
+  \correction{\qty{1000}{\km}} &
+  \correction{\qty{6}{\mm}} &
+  \correction{\qty{0,1}{\nm}} \\
   %
-  Ordre de grandeur en mètre & \vAligne{24pt} \\
+  Ordre de grandeur en mètre &
+  \correction{\qty{e-5}{\m}} &
+  \correction{\qty{e20}{\m}} &
+  \correction{\qty{e10}{\m}} &
+  \correction{\qty{e6}{\m}} &
+  \correction{\qty{e-2}{\m}} &
+  \correction{\qty{e-10}{\m}} \\
 \end{tblr}

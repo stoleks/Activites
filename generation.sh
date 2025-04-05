@@ -44,7 +44,7 @@ function generate_pdf () {
     pdflatex main.tex > log.out
 
     # copy the pdf in the set directory
-    file="$2$activityName.pdf"
+    file="$2/$activityName.pdf"
     local end=`date +%s`
     echo "Il a fallu $((end - start)) secondes pour générer $file."
     cp main.pdf $file
@@ -63,6 +63,6 @@ comment_lines "stssTerminale.tex"
 # generate pdf for a given year
 echo "Generation des .pdf dans $1"
 start=`date +%s`
-generate_pdf $1 "../_Cours/" 1 $(wc -l < $1)
+generate_pdf "$1.tex" $2 1 $(wc -l < "$1.tex")
 end=`date +%s`
-echo "Il a fallu $((end - start)) secondes ($(((end - start)/60)) minutes) pour generer tous les fichiers dans $1"
+echo "Il a fallu $((end - start)) secondes ($(((end - start)/60)) minutes) pour générer tous les fichiers dans $1"
