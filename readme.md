@@ -2,7 +2,11 @@
 
 Dossier contenant tous mes fichiers .tex pour générer mes fiches d'activités pour mes cours de physique-chimie au lycée.
 Actuellement trois niveaux existent : seconde générales et technologiques (GT), première sciences et technologies de la santé et du social (ST2S) et terminale ST2S.
-Tous les fichiers sont de moi et **sous licence libre**, à l'exception des images dans images/photos et dans images/donnees.
+
+
+## Licence 
+
+Tous les fichiers sont de moi et sont mis à disposition sous [licence creative common (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/), à l'exception des images dans images/photos et dans images/donnees. Vous pouvez donc les utiliser comme vous voulez en créditant leur origine.
 
 
 ## Organisation des fichiers
@@ -11,8 +15,7 @@ Les fichiers sont organisés par dossiers :
 
 - *accompagnement_personnel* contient des activités pour de l'accompagnement personnel niveau seconde GT.
 - *commun* contient des fichiers utilisés sur plusieurs niveaux.
-- *images* contient toutes les images utilisées dans les activités. Les versions modifiables se trouvent dans le projet [Cours](https://github.com/stoleks/Cours), dans le dossier images/
-- *python* contient des scripts python utilisé dans certaines activités.
+- *images* contient toutes les images utilisées dans les activités. Les versions modifiables se trouvent dans le projet [Cours](https://github.com/stoleks/Cours/images).
 - *preparationTP* contient des fiches avec la liste du matériel utilisé pour certains TP.
 - *seconde* contient tous les fichiers d'activités pour les secondes GT.
 - *stssPremiere* contient tous les fichiers d'activités pour les premières ST2S.
@@ -40,3 +43,8 @@ Pour les versions corrigées de chaque chapitre, j'utilise correction.sh, appel�
     sh correction.sh "seconde" "atome" "../Cours"
 
 Le script passe .tex en mode correction et inclus tous les fichiers liés au chapitre et le déplace dans "../Cours/seconde/atome/atome.pdf", pour l'exemple donnée.
+
+
+## Contact
+
+Si vous avez des questions, vous pouvez me contacter à alexandre[point]jedrecy[at]ac-creteil.fr
