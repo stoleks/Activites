@@ -15,7 +15,7 @@ Les fichiers sont organisés par dossiers :
 
 - *accompagnement_personnel* contient des activités pour de l'accompagnement personnel niveau seconde GT.
 - *commun* contient des fichiers utilisés sur plusieurs niveaux.
-- *images* contient toutes les images utilisées dans les activités. Les versions modifiables se trouvent dans le projet [Cours](https://github.com/stoleks/Cours/images).
+- *images* contient toutes les images utilisées dans les activités. Les versions modifiables se trouvent dans le projet [Cours](https://github.com/stoleks/Cours/tree/main/images).
 - *preparationTP* contient des fiches avec la liste du matériel utilisé pour certains TP.
 - *seconde* contient tous les fichiers d'activités pour les secondes GT.
 - *stssPremiere* contient tous les fichiers d'activités pour les premières ST2S.
