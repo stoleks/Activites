@@ -1,10 +1,6 @@
 %%%%
 \teteTermStssRout
-
-%%%% titre
-\numeroActivite{2}
 \titreActivite{Principe de fonctionnement d'un airbag}
-
 
 %%%% objectifs
 \begin{objectifs}
@@ -35,9 +31,9 @@
 \end{doc}
 
 \begin{doc}{Réaction chimiques servant à gonfler un airbag}{doc:A2_reaction_chim_airbag}
-  Le détonateur enclenche d'abord la décomposition extrêmement rapide (explosive) de l'azoture de sodium solide \azoture\sol en sodium solide \chemfig{Na}\sol et diazote gazeux \chemfig{N_2}\sol selon la réaction 1 d'équation :
+  Le détonateur enclenche d'abord la décomposition extrêmement rapide (explosive) de l'azoture de sodium solide \chemfig{NaN_3}\sol en sodium solide \chemfig{Na}\sol et diazote gazeux \chemfig{N_2}\sol selon la réaction 1 d'équation :
   \begin{equation}
-    2 \azoture\sol \reaction 2\chemfig{Na}\sol + 3\chemfig{N_2}\gaz
+    2 \chemfig{NaN_3}\sol \reaction 2\chemfig{Na}\sol + 3\chemfig{N_2}\gaz
   \end{equation}
   
   Le sodium, dangereux, est éliminé au fur et à mesure de sa formation selon la réaction 2 d'équation :
@@ -58,7 +54,7 @@
     hlines, vlines, row{1} = {couleurSec-100}, width = \linewidth,
     colspec = {X[c,m] X[2,c,m] X[c,m] X[c,m] X[c,m] X[c,m] X[1, c,m] X[c,m]}
   }
-    \azoture & \chemfig{Na} &
+    \chemfig{NaN_3} & \chemfig{Na} &
     \chemfig{N_2} & \chemfig{KNO_3} &
     \chemfig{K_2O} et \chemfig{Na_2O} & \chemfig{SiO_2} &
     \chemfig{K_2Na_2} \chemfig{SiO_4} & \chemfig{Na_4 SiO_4} \\
@@ -95,14 +91,14 @@
 \question{
   Sachant que les équations des réaction 1 et 2 peuvent être réduite à l'équation suivante
   \begin{equation*}
-    10 \azoture\sol + 2 \chemfig{KNO_3}\sol \reaction \chemfig{K_2 O}\sol + 5\chemfig{Na_2 O}\sol + 16\chemfig{N_2}\gaz
+    10 \chemfig{NaN_3}\sol + 2 \chemfig{KNO_3}\sol \reaction \chemfig{K_2 O}\sol + 5\chemfig{Na_2 O}\sol + 16\chemfig{N_2}\gaz
   \end{equation*}
   En déduire la quantité de matière initiale d'azoture de sodium qu'il a fallu introduire pour obtenir les \qty{70}{\litre} de gaz du coussin d'air.
 }{
 }[8]
 
 \question{
-  En déduire la masse de \azoture présente initialement dans l’airbag.
+  En déduire la masse de \chemfig{NaN_3} présente initialement dans l’airbag.
   
   \begin{donnees}[3]
     \item \masseMol{N}  = \qty{14}{\g/\mole}, 

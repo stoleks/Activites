@@ -6,7 +6,6 @@
   angle increment=30
 }
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Pour faire des parenthèses dans les molécules 
 \def\parentheseG{\llap{$\left(\strut\right.$}}
@@ -24,7 +23,7 @@
 }
 
 %% parties colorées
-\definesubmol\cetoneCouleur{(=[3,,,,couleurQuat] \textcolor{couleurQuat}{O}) -[-1,,,,couleurQuat]}
+\definesubmol\cetoneCouleur{(=[3,,,,couleurQuat] \textcolor{couleurQuat}{O} -[-1,,,,couleurQuat]}
 %% ramification
 \definesubmol\alkyleG{(-[-5] R_1)}
 \definesubmol\alkyleD{(-[-1] R_2)}
@@ -147,16 +146,16 @@
    -[::30] O!\cu !\carbonyle !\cud !\cud !\cud !\cud !\cud !\cud !\cu % centre
 }
 \definesubmol\phosphatidylcholine{
-  -[::-30]N
+  -[::-30] \charge{90:4pt=$+$}{N}
     (-[::-30])(-[::-90])
   !\cud !\cu O !\cd P
-    ( =[::-30]O )( -[::-90]O )
+    ( =[::-20]O )( -[::-100]\charge{140:2pt=$-$}{O} )
   !\cu O !\cd !\cu
     (!\cu O !\cd !\carbonyle !\trioleique)
   !\cd !\cu O !\cd (=[::-60] O) !\cud !\cud !\cud !\cud !\cud
 }
 \definesubmol\oleineSemiDev{
-  H C                 (!\teteAcideDev C_{17} H_{33}) 
+  H C                 (!\teteAcideDev C_{17} H_{33})
   (-[3,1.7,2,2] H_2C  (!\teteAcideDev C_{17} H_{33}))
   -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{17} H_{33})
 }
@@ -166,7 +165,7 @@
   -[-3,1.7,2,2] H_2 C (!\caproiqueSemiDev)
 }
 \definesubmol\palmitineSemiDev{
-  H C (!\teteAcideDev C_{15} H_{31}) 
+  H C (!\teteAcideDev C_{15} H_{31})
   (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{15} H_{31}))
   -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{15} H_{31})
 }
@@ -422,7 +421,7 @@
 }
 \definesubmol\prostaglandine{
   HO-[::75] *5(
-    - (-=[::60]!\cd  (!\cd OH) !\cud !\cud !\cu)
+    - (-=[::60]!\cd  (!\cd HO) !\cud !\cud !\cu)
     - (-[::-65]!\cd !\cud !\cud !\cu  !\carboxyle)
     - (=O)
     --
@@ -432,14 +431,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Produit de contraste
 \definesubmol\ionChelate{
-  N (-[::-45, 0.9,,, draw = none] Gd^{3+}) 
+  N (-[::-45, 0.9,,, draw = none] Gd^{3+})
       (-[::140] !\cd COO^{-}) -[::80] -[ 0] -[::-80]
     N (-[::140] !\cd COO^{-}) -[::70] -[-3] -[::-80]
     N (-[::120] !\cd COO^{-}) -[::70] -[-6] -[::-80]
     N (-[::140] !\cd ^{-}OOC) -[::70] -[ 3] -[::-80, 0.8]
 }
 \definesubmol\chelateAlcool{
-  N (-[::-45, 0.9,,, draw = none] Gd^{3+}) 
+  N (-[::-45, 0.9,,, draw = none] Gd^{3+})
     (-[::140] !\cd COO^{-})         -[::80] -[ 0] -[::-80]
   N (-[::140] -[0] (-[2] OH) -[-2]) -[::70] -[-3] -[::-80]
   N (-[::120] !\cd COO^{-})         -[::70] -[-6] -[::-80]
@@ -477,6 +476,162 @@
     ) % chaine
     -(-[1]) (-[5])--
   ) % cycle
+}
+% vitamine B1 thiamine
+\definesubmol\thiamine{
+  -[::30]  *6(
+    -N=- (
+      - !\cd N  *5(
+        - (-)
+        = (- !\cu !\cd OH)
+        -S-=
+      ) % 2nd cycle
+    )
+    = (-  NH_2)
+    -N=
+  ) % 1er cycle
+}
+% vitamine B2 riboflavine
+\definesubmol\riboflavine{
+  -[::30]  *6(
+    =- ( *6(
+        - N (
+        !\cd  !\cu (!\cu OH)
+        !\cd (!\cd OH)
+        !\cu (!\cu OH)
+        !\cd !\cu OH
+      )
+      - ( *6(
+        =N- (=O)
+        -NH- (= O)
+        -
+      ))
+      -=N-
+    ))
+    =-= (-) -
+  )
+}
+% vitamine B3 acide nicotinique
+\definesubmol\acideNicotinique{
+   *6(
+    - N = - (
+      - (
+        =[::60] O
+      )
+      !\cd OH
+    )
+    = - =
+  )
+}
+% vitamine B5 acide panthotenique
+\definesubmol\acidePanthotenique{
+  HO -[::30] !\cd (-[::-90]) (-[::-30])
+  !\cu ( !\cu OH )
+  !\cd ( =[::-60] O )
+  !\cu NH !\cd !\cu !\cd ( =[::-60] O )
+  !\cu OH
+}
+% vitamine B6 pyroxidine
+\definesubmol\pyroxidine{
+  HO -[::30] !\cd  *6(
+    =-N= (-)
+    - (-OH)
+    = (- !\cd OH)
+    -
+  )
+}
+% vitamine B8 biotine
+\definesubmol\biotine{
+  NH
+   *5(
+    - *5(--S- (- !\cd !\cu !\cd) -)
+    --NH- (= OH)
+    -
+  )
+}
+% vitamine B9 acide folique
+\definesubmol\acideFolique{
+  H_2N -[::30]  *6(
+    =N- *6(
+      -N=- (
+        - !\cu NH !\cd  *6(
+          =-= (
+            - ( =[::60] O )
+            !\cd NH !\cu (
+              !\cu ( !\cu OH )
+              =[::-60] O
+            )
+            !\cd !\cd !\cu (!\cu OH)
+            =[::-60] O
+          )
+          -=-
+        ) % 3eme cycle
+      )
+      =N-
+    ) % 2nd cycle
+    =- ( =O ) -N-
+  ) % 1er cycle
+}
+% vitamine B12 cyanocobalamine
+\definesubmol\cyanocobalamine{
+  -[::-5]  *5( % cycle haut droit du cobalt
+    (-[::150] -[::-50] (=[::-60] O) !\cu NH_2)
+    - (-[::-90]) (-[::-35])
+    - N = (
+      - (-[::60]) =[::-60]  *5( % cycle haut gauche du cobalt
+        - N = (
+          -=[::-60]  *5( % cycle bas gauche du cobalt
+            - N = (
+              - (-[::60]) =[::-60]  *5( % cobalt
+                - N (-Co !\cu C)
+                -- (- !\cd (=[::-60] O) !\cu NH_2)
+                - (-[::-90]) ( % Phosphate
+                  - !\cu !\cd (=[::-60] O)
+                  !\cu N !\cd!\cu (-[::60])
+                  !\cd O !\cu P (=[::90] O)
+                  (-[::-90] OH)
+                  -[::0] O -[::0] *5( % cycle du bas ether
+                    - (- !\cu HO)
+                    - O - (
+                      -N  *5( % Cycle du bas amidine
+                        -  *6(=- (-) = (-) -=)
+                        -- N =-
+                      )
+                    )
+                    - (-OH) -
+                  )
+                )
+                -
+              )
+            ) % Amide latéral
+            - (- !\cu!\cd (=[::-60] O) !\cu NH_2)
+            - (-[::-30])  (-[::-90]) -
+          )
+        )
+        - (- !\cd!\cu (=[::60] O) !\cd NH_2)
+        - (-[::0]) (!\cd!\cd (=[::60] O) !\cd NH_2)
+        -
+      )
+    )
+    - (- !\cd!\cu (=[::-60] O) !\cu NH_2)
+    - 
+  ) % 1er cycle
+}
+% vitamine E
+\definesubmol\vitamineE{
+  -[::30]  *6(
+    = (-) -  *6(
+      -O- (
+        - !\cu!\cd !\cu ( -[::60] )
+        !\cd!\cu !\cd!\cu ( -[::60] )
+        !\cd!\cu !\cd!\cu ( -[::60] ) !\cd
+      )
+      ( -[::0] )
+      ---
+    ) % 2nd cycle
+    =- (-) = ( -HO )
+    -
+  ) % 1er cycle
 }
 
 

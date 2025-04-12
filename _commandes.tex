@@ -287,6 +287,7 @@
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
+  \setcounter{sousSectionNum}{0}
 }
 
 
@@ -784,6 +785,13 @@
   \vspace*{-12pt}
   \begin{flushright}
     \textit{#2}
+  \end{flushright}
+  \vspace*{-12pt}
+}
+\newcommand{\sourceExtrait}[1]{
+  \vspace*{-12pt}
+  \begin{flushright}
+    \textit{#1}
   \end{flushright}
   \vspace*{-12pt}
 }
