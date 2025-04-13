@@ -1,4 +1,5 @@
 main.*
+liste_molecules.*
 !main.tex
 *.sh
 log.out
