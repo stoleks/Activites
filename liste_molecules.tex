@@ -1,0 +1,343 @@
+\documentclass[12pt]{extarticle}
+
+%%%% paramètres généraux et commandes prédéfinies
+\input{_parametres}
+
+\newtcblisting{latexBox}{%
+  colback=couleurPrim-100,colframe=couleurPrim-150, % couleur
+  listing only, % affiche seulement le code  
+  listing style = tcblatex, % code LaTeX
+}
+
+%%%% doc
+\begin{document}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Lipide}
+  \subsection{Acide gras}
+  
+  \begin{latexBox}
+\chemfig{!\palmitique}
+\chemfig{!\oleique}
+\chemfig{!\linoleique}
+\chemfig{!\arachidonique}
+\chemfig{!\linolenique}
+  \end{latexBox}
+  \chemfig{!\palmitique} \\[8pt]
+  \chemfig{!\oleique} \\[8pt]
+  \chemfig{!\linoleique}
+  \chemfig{!\arachidonique} \\[8pt]
+  \chemfig{!\linolenique} \\[8pt]
+
+  \begin{latexBox}
+\chemfig{!\steraiqueSemiDev}
+\chemfig{!\oleiqueSemiDev}
+\chemfig{!\oleateSemiDev}
+\chemfig{!\caproiqueSemiDev}
+  \end{latexBox}
+  \chemfig{!\steraiqueSemiDev} \qq{}
+  \chemfig{!\oleiqueSemiDev} \qq{}
+  \chemfig{!\oleateSemiDev} \\[8pt]
+  \chemfig{!\caproiqueSemiDev} \\[8pt]
+  
+  \subsection{Pour les chaînes dans les triglycérides}
+  \begin{latexBox}
+\chemfig{!\tripalmitique}
+\chemfig{[:-30] !\trioleique}
+\chemfig{[:-30] !\trilinoleique}
+\chemfig{[:-30] !\trilinolenique}
+  \end{latexBox}
+  \chemfig{[:30] !\tripalmitique}
+  \chemfig{[:-30] !\trioleique} \\[8pt]
+  \chemfig{[:-30] !\trilinoleique}
+  \chemfig{[:-30] !\trilinolenique} \\[8pt]
+  
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsection{Triglycérides}
+  \begin{latexBox}
+\chemfig{[:-60] !\palmitine}
+  \end{latexBox}
+  \chemfig{[:-60] !\palmitine} \\[8pt]
+  \begin{latexBox}
+\chemfig{[:-60] !\oleine}
+  \end{latexBox}
+  \chemfig{[:-60] !\oleine} \\[8pt]
+  \begin{latexBox}
+\chemfig{!\oleineSemiDev}
+\chemfig{!\palmitineSemiDev}
+\chemfig{!\caproineSemiDev}
+  \end{latexBox}
+  \chemfig{!\oleineSemiDev} \qq{}
+  \chemfig{!\palmitineSemiDev} \qq{}
+  \chemfig{!\caproineSemiDev} \\[8pt]
+
+  \subsection{Phospholipide}  
+  \begin{latexBox}
+\chemfig{!\phosphatidylcholine}
+  \end{latexBox}
+  \chemfig{!\phosphatidylcholine} \\[8pt]
+  
+  \subsection{glycérol}
+  \begin{latexBox}
+\chemfig{!\glycerol}
+\chemfig{!\glycerolSemiDev}
+  \end{latexBox}
+  \chemfig{[:30] !\glycerol} \qq{}
+  \chemfig{!\glycerolSemiDev} \\[8pt]
+  
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsection{Stérols}
+  \begin{latexBox}
+\chemfig{!\cholesterol}
+\chemfig{!\testosterone}
+  \end{latexBox}
+  \chemfig{!\cholesterol} \qq{}
+  \chemfig{!\testosterone} \\[8pt]
+  \begin{latexBox}
+\chemfig{!\cortisol}
+\chemfig{!\progesterone}
+  \end{latexBox}
+  \chemfig{!\cortisol} \qq{}
+  \chemfig{!\progesterone} \\[8pt]
+  \begin{latexBox}\chemfig{!\estradiol}\end{latexBox}
+  \chemfig{!\estradiol} \\[8pt]
+ 
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Glucides}
+  \subsection{Amidon}
+  \begin{latexBox}\chemfigHaworth{!\amylopectineHaw}\end{latexBox}
+  \chemfigHaworth{!\amylopectineHaw} \\[8pt]
+  
+  \subsection{glucose}
+  \begin{latexBox}
+\chemfigHaworth{!\glucoseHaw}
+\chemfig{!\glucoseCycle}
+\chemfig{[:-90] !\glucose}
+\chemfig{[:-90] !\glucoseSemiDev}
+  \end{latexBox}
+  \chemfigHaworth{!\glucoseHaw}
+  \chemfig{!\glucoseCycle} \\[8pt]
+  \chemfig{[:-90] !\glucose}
+  \chemfig{[:-90] !\glucoseSemiDev}
+  
+  \subsection{fructose}
+  \begin{latexBox}
+\chemfigHaworth{!\fructoseHaw}
+\chemfig{!\fructoseCycle}
+\chemfig{[:-90] !\fructose}
+\chemfig{[:-90] !\fructoseSemiDev}
+  \end{latexBox}
+  \chemfigHaworth{!\fructoseHaw}
+  \chemfig{!\fructoseCycle} \\[8pt]
+  \chemfig{[:-90] !\fructose}
+  \chemfig{[:-90] !\fructoseSemiDev}
+  
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Acides alpha aminés}
+  \subsection{Formules topologiques}
+  \begin{latexBox}
+\chemfig{!\arginine}
+\chemfig{!\histidine}
+\chemfig{!\lysine}
+  \end{latexBox}
+  \chemfig{!\arginine}
+  \chemfig{!\histidine}
+  \chemfig{!\lysine} \\[8pt]
+  
+    \begin{latexBox}
+\chemfig{!\acideAspartique}
+\chemfig{!\acideGlutamique}
+\chemfig{!\serine}
+  \end{latexBox}
+  \chemfig{!\acideAspartique}
+  \chemfig{!\acideGlutamique}
+  \chemfig{!\serine} \\[8pt]
+  
+  \begin{latexBox}
+\chemfig{!\threonine}
+\chemfig{!\asparagine}
+\chemfig{!\glutamine}
+  \end{latexBox}
+  \chemfig{!\threonine}
+  \chemfig{!\asparagine}
+  \chemfig{!\glutamine} \\[8pt]
+  
+  \begin{latexBox}
+\chemfig{!\cysteine}
+\chemfig{!\selenocysteine}
+\chemfig{!\glycine}
+  \end{latexBox}
+  \chemfig{!\cysteine}
+  \chemfig{!\selenocysteine}
+  \chemfig{!\glycine} \\[8pt]
+  
+  \begin{latexBox}
+\chemfig{!\proline}
+\chemfig{!\alanine}
+\chemfig{!\valine}
+  \end{latexBox}
+  \chemfig{!\proline}
+  \chemfig{!\alanine}
+  \chemfig{!\valine} \\[8pt]
+  
+  \begin{latexBox}
+\chemfig{!\isoleucine}
+\chemfig{!\leucine}
+\chemfig{!\methionine}
+  \end{latexBox}
+  \chemfig{!\isoleucine}
+  \chemfig{!\leucine}
+  \chemfig{!\methionine} \\[8pt]
+  
+  \begin{latexBox}
+\chemfig{!\phenylalanine}
+\chemfig{!\tyrosine}
+\chemfig{!\tryophane}
+  \end{latexBox}
+  \chemfig{!\phenylalanine}
+  \chemfig{!\tyrosine}
+  \chemfig{!\tryophane} \\[8pt]
+  
+  
+  \subsection{Formule semi-développée}
+  \begin{latexBox}
+\chemfig{!\alanineSemiDev}
+\chemfig{!\asparagineSemiDev}
+\chemfig{!\glycineSemiDev}
+\chemfig{!\cysteineSemiDev}
+  \end{latexBox}
+  \chemfig{!\alanineSemiDev} \qq{}
+  \chemfig{!\asparagineSemiDev} \qq{}
+  \chemfig{!\glycineSemiDev} \\[8pt]
+  \chemfig{!\cysteineSemiDev} \\[8pt]
+
+  \subsection{Acide alpha aminés pour les polypeptide}
+  \chemfig{!\cysteinePoly}
+  \chemfig{!\alaninePoly}
+  \chemfig{!\glycinePoly}
+  \chemfig{!\isoleucinePoly}
+  \chemfig{!\valinePoly} \\[8pt]
+  
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Hormones}
+  \begin{latexBox}
+\chemfig{!\creatinine}
+\chemfig{!\DOPA}
+\chemfig{!\DOPAH}
+\chemfig{!\prostaglandine}
+  \end{latexBox}
+  \chemfig{!\creatinine}
+  \chemfig{!\DOPA}
+  \chemfig{!\DOPAH} \\[8pt]
+  \chemfig{!\prostaglandine} \\[8pt]
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Produit de contraste}
+  \begin{latexBox}
+\chemfig{!\ionChelate}
+\chemfig{!\chelateAlcool}
+  \end{latexBox}
+  \chemfig{!\ionChelate}
+  \chemfig{!\chelateAlcool} \\[8pt]
+  
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Vitamines}
+  \begin{latexBox}
+\chemfig{!\acideAscorbique}
+\chemfig{!\cholecarciferol}
+  \end{latexBox}
+  \chemfig{!\acideAscorbique} \qq{}
+  \chemfig{!\cholecarciferol} \\[8pt]
+  \begin{latexBox}
+\chemfig{!\retinol}
+\chemfig{!\thiamine}
+  \end{latexBox}
+  \chemfig{!\retinol} \qq{}
+  \chemfig{!\thiamine} \\[8pt]
+  \begin{latexBox}
+\chemfig{!\riboflavine}
+\chemfig{!\acideNicotinique}
+  \end{latexBox}
+  \chemfig{!\riboflavine} \qq{}
+  \chemfig{!\acideNicotinique} \\[8pt]
+  \begin{latexBox}
+\chemfig{!\acidePanthotenique}
+\chemfig{!\pyroxidine}
+  \end{latexBox}
+  \chemfig{!\acidePanthotenique} \qq{}
+  \chemfig{!\pyroxidine} \\[8pt]
+  \begin{latexBox}
+\chemfig{!\biotine}
+\chemfig{!\acideFolique}
+  \end{latexBox}
+  \chemfig{!\biotine}
+  \chemfig{!\acideFolique} \\[8pt]
+  \begin{latexBox}
+\chemfig{!\vitamineE}
+  \end{latexBox}
+  \chemfig{!\vitamineE} \\[8pt]
+  \begin{latexBox}
+\chemfig[atom sep = 1.8em]{[:90] !\cyanocobalamine}
+  \end{latexBox}
+  \chemfig[atom sep = 1.8em]{[:90] !\cyanocobalamine} \\[8pt]
+  
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Médicaments et produits de synthèse}
+  \subsection{Aspirine}
+  \begin{latexBox}
+\chemfig{!\aspirineSemiDev}
+\chemfig{!\aspirine}
+\chemfig{!\acideSalicylique}
+  \end{latexBox}
+  \chemfig{!\aspirineSemiDev}
+  \chemfig{!\aspirine} \qq{}
+  \chemfig{!\acideSalicylique} \\[8pt]
+  
+  \subsection{Paracétamol}
+  \begin{latexBox}
+\chemfig{!\paracetamol}
+\chemfig{!\paracetamolSemiDev}
+\chemfig{!\paracetamolDev}
+  \end{latexBox}
+  \chemfig{!\paracetamol}
+  \chemfig{!\paracetamolSemiDev}
+  \chemfig{!\paracetamolDev} \\[8pt]
+
+  \subsection{Aspartame}
+  \begin{latexBox}
+\chemfig{!\aspartame}
+  \end{latexBox}
+  \chemfig{!\aspartame} \\[8pt]
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Molécules odorantes}
+  \begin{latexBox}
+\chemfig{!\geraniol}
+\chemfig{!\geraniolSemiDev}
+\chemfig{!\vanilline}
+\chemfig{!\ethylvanilline}
+  \end{latexBox}
+  \chemfig{!\geraniol} \quad
+  \chemfig{!\geraniolSemiDev}
+  \chemfig{!\vanilline} \qq{}
+  \chemfig{!\ethylvanilline} \\[8pt]
+  \begin{latexBox}
+\chemfig{!\oxyphenylone}
+  \end{latexBox}
+  \chemfig{!\oxyphenylone} \\[8pt]
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Drogues}
+  \begin{latexBox}
+\chemfig{!\THC}
+\chemfigHaworth{!\cocaineHaw}
+  \end{latexBox}
+  \chemfig{!\THC} \qq{}
+  \chemfigHaworth{!\cocaineHaw} \\[8pt]
+\end{document}
