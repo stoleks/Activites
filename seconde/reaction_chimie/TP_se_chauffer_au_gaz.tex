@@ -25,11 +25,11 @@
 
 %%%% docs
 \begin{doc}{La combustion du méthane}{doc:TP2_combustion}
-  Le méthane \chemfig{CH_4} réagit avec le dioxygène \chemfig{O_2} lors de sa combustion pour former deux produits.
+  Le méthane \methane réagit avec le dioxygène \dioxygene lors de sa combustion pour former deux produits.
   La combustion produit deux gaz :
   \begin{listePoints}
     \item de la vapeur d'eau \chemfig{H_2O}, identifiée avec du sulfate de cuivre anhydre ;
-    \item du dioxyde de carbone \chemfig{CO_2}, identifié avec de l'eau de chaux.
+    \item du dioxyde de carbone \dioxydeDeCarbone, identifié avec de l'eau de chaux.
   \end{listePoints}
 \end{doc}
 
@@ -38,17 +38,17 @@
 \question{
   Lister les réactifs et les produits de la réaction de combustion du méthane.
 }{
-  Les réactifs sont le méthane \chemfig{CH_4} et le dioxygène \chemfig{O_2}.
-  Les produits sont le dioxyde de carbone \chemfig{CO_2} et l'eau \eau.
+  Les réactifs sont le méthane \methane et le dioxygène \dioxygene.
+  Les produits sont le dioxyde de carbone \dioxydeDeCarbone et l'eau \eau.
 }{2}
 
 \question{
   Écrire la réaction chimique de combustion du méthane, en précisant les états physiques de chaque espèce chimique.
 }{
   \begin{center}
-      \chemfig{CH_4}(g) + \chemfig{O_2}(g)
+      \methane\gaz + \dioxygenegaz
       \reaction
-      \chemfig{CO_2}(g) + \chemfig{H_2O}(g)
+      \dioxydeDeCarbonegaz + \chemfig{H_2O}\gaz
   \end{center}
 }{2}
 
@@ -69,11 +69,11 @@
   
   Exemple de la réaction d'un acide avec du magnésium :
   \begin{equation*}
-    \underset{\text{1 atome de magnésium}}{\chemfig{Mg}(s)}
-    + \underset{\text{\important{2} ions hydrogènes}}{\important{2} \;\; \chemfig{H^+ }(aq)}
+    \underset{\text{1 atome de magnésium}}{\chemfig{Mg}\sol}
+    + \underset{\text{\important{2} ions hydrogènes}}{\important{2} \;\; \chemfig{H^+ }\aq}
     \reaction
-    \underset{\text{1 ion magnésium II}}{\chemfig{Mg^{2+}}(aq)}
-    + \underset{\text{1 molécule de dihydrogène}}{\chemfig{H_2}(g)}
+    \underset{\text{1 ion magnésium II}}{\ionMagnesium\aq}
+    + \underset{\text{1 molécule de dihydrogène}}{\chemfig{H_2}\gaz}
   \end{equation*}
   On vérifie bien qu'il y a le même nombre de charges positives, de magnésium \chemfig{Mg} et d'hydrogène \chemfig{H}, dans l'état initial et dans l'état final.
 \end{doc}
@@ -86,9 +86,9 @@
   Commencer par ajuster le nombre d'atomes d'hydrogène.
 }{
   \begin{equation*}
-    \chemfig{CH_4}(g) + 2\chemfig{O_2}(g)
+    \methane\gaz + 2\dioxygene\gaz
     \reaction
-    \chemfig{CO_2}(g) + 2\chemfig{H_2O}(g)
+    \dioxydeDeCarbone\gaz + 2\chemfig{H_2O}\gaz
   \end{equation*}
 }{2}
 
@@ -110,8 +110,8 @@
 
 \vspace*{-4pt}
 \begin{doc}{L'eau de chaux}{doc:TP2_eaux_de_chaux}
-  L'eau de chaux est une solution aqueuse saturée en ion calcium \chemfig{Ca^{2+}} et en ion hydroxyde \chemfig{HO^{-}}.
-  En réagissant avec le dioxyde de carbone \chemfig{CO_2}, l'eau de chaux forme du calcaire \chemfig{Ca CO_3} et de l'eau \chemfig{H_2O}
+  L'eau de chaux est une solution aqueuse saturée en ion calcium \ionCalcium et en ion hydroxyde \chemfig{HO^{-}}.
+  En réagissant avec le dioxyde de carbone \dioxydeDeCarbone, l'eau de chaux forme du calcaire \chemfig{Ca CO_3} et de l'eau \chemfig{H_2O}
 \end{doc}
 
 \question{
@@ -124,36 +124,36 @@
 Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coefficients stoechiométriques devant chaque élément chimique :
 \newcommand{\localEcart}{18}
 \begin{align*}
-  \ldots\chemfig{C}(s) + \ldots\chemfig{O_2}(g)
-  &\reaction \ldots\chemfig{CO_2}(g)
+  \ldots\chemfig{C}\sol + \ldots\dioxygene\gaz
+  &\reaction \ldots\dioxydeDeCarbone\gaz
   \\[\localEcart pt]
   %
-  \ldots\chemfig{Fe}(s) + \ldots\chemfig{H^{+}}(aq)
-  &\reaction \ldots\chemfig{Fe^{2+}}(aq) + \ldots\chemfig{H_2}(g)
+  \ldots\chemfig{Fe}\sol + \ldots\chemfig{H^{+}}\aq
+  &\reaction \ldots\ionFerII\aq + \ldots\chemfig{H_2}\gaz
   \\[\localEcart pt]
   %
-  \ldots\chemfig{Fe}(s) + \ldots\chemfig{O_2}(g)
-  &\reaction \ldots\chemfig{Fe_2O_3}(s)
+  \ldots\chemfig{Fe}\sol + \ldots\dioxygene\gaz
+  &\reaction \ldots\chemfig{Fe_2O_3}\sol
   \\[\localEcart pt]
   %
-  \ldots\chemfig{C_2H_6O}(l) + \ldots\chemfig{O_2}(g)
-  &\reaction \ldots\chemfig{CO_2}(g) + \ldots\chemfig{H_2O}(l)
+  \ldots\chemfig{C_2H_6O}\liq + \ldots\dioxygene\gaz
+  &\reaction \ldots\dioxydeDeCarbone\gaz + \ldots\chemfig{H_2O}\liq
   \\[\localEcart pt]
   %
-  \ldots\chemfig{Cu^{2+}}(aq) + \ldots\chemfig{HO^{-}}(aq)
-  &\reaction \ldots\chemfig{Cu{(HO)}_2}(s)
+  \ldots\chemfig{Cu^{2+}}\aq + \ldots\chemfig{HO^{-}}\aq
+  &\reaction \ldots\chemfig{Cu{(HO)}_2}\sol
   \\[\localEcart pt]
   %
-  \ldots\chemfig{Fe}(s) + \ldots\chemfig{H_2O}(l) + \ldots\chemfig{O_2}(g)
-  &\reaction \ldots\chemfig{Fe{(HO)}_2}(s)
+  \ldots\chemfig{Fe}\sol + \ldots\chemfig{H_2O}\liq + \ldots\dioxygene\gaz
+  &\reaction \ldots\chemfig{Fe{(HO)}_2}\sol
   % \\[\localEcart pt]
   % %
-  % \ldots\chemfig{Fe{(OH)}_2}(s) + \ldots\chemfig{H_2O}(l) + \ldots\chemfig{O_2}(g)
-  % &\reaction \ldots\chemfig{Fe{(OH)}_3}(s)
+  % \ldots\chemfig{Fe{(OH)}_2}\sol + \ldots\chemfig{H_2O}\liq + \ldots\dioxygene\gaz
+  % &\reaction \ldots\chemfig{Fe{(OH)}_3}\sol
   % \\[\localEcart pt]
   % %
-  % \ldots\chemfig{Fe{(OH)}_3}(s)
-  % &\reaction \ldots\chemfig{Fe_2O_3}(s) + \ldots\chemfig{H_2O}(l)
+  % \ldots\chemfig{Fe{(OH)}_3}\sol
+  % &\reaction \ldots\chemfig{Fe_2O_3}\sol + \ldots\chemfig{H_2O}\liq
   %
 \end{align*}
 \vspace*{-16pt}
@@ -201,7 +201,7 @@ Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coe
     Le chlorure de sodium est soluble dans l'eau jusqu'à une certaine limite : on ne pourra dissoudre que \qty{3,52}{\g} dans \qty{10}{\ml} d'eau à \qty{20}{\degreeCelsius}.
     \vspace*{5pt}
   
-    Lors de la dissolution du chlorure de sodium dans l'eau, il se dissocie en ses ions constitutifs : les ions sodium \chemfig{Na^+}, et les ions chlorure \chemfig{Cl^{-}}.
+    Lors de la dissolution du chlorure de sodium dans l'eau, il se dissocie en ses ions constitutifs : les ions sodium \ionSodium, et les ions chlorure \chlorure.
   \end{doc}
   
   \begin{doc}{L'hydroxyde de sodium}{doc:TP2_hydroxyde_sodium}
@@ -213,7 +213,7 @@ Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coe
     \end{importants}
     \vspace*{-4pt}
   
-    Dans l'eau, \chemfig{NaOH} se dissocie en ses ions constitutifs : les ions sodium \chemfig{Na^+}, et les ions hydroxyde \chemfig{HO^{-}}.
+    Dans l'eau, \chemfig{NaOH} se dissocie en ses ions constitutifs : les ions sodium \ionSodium, et les ions hydroxyde \chemfig{HO^{-}}.
   \end{doc}
 \end{multicols}
 
@@ -235,7 +235,7 @@ Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coe
 % \question{
 %   Écrire la réaction de dissolution du chlorure d'ammonium dans l'eau.
 % }{
-%   \chemfig{NH_4 Cl}(s) \reaction \chemfig{NH_4^+} + \chemfig{Cl^{-}}
+%   \chemfig{NH_4 Cl}\sol \reaction \ammonium + \chlorure
 % }{1}
 
 \mesure

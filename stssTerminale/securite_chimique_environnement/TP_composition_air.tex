@@ -31,15 +31,15 @@
         row{1} = {l, couleurSec-100, font = \sffamily\bfseries},
       }
       Constituant & & Proportion molaire \\
-      Diazote            & \chemfig{N_2}  & \qty{78,08}{\percent} \barrePourcentage{0.7808} \\
-      Dioxygène          & \dioxygene     & \qty{20,95}{\percent} \barrePourcentage{0.2095} \\
-      Argon              & \chemfig{Ar}   & \qty{0,93}{\percent} \barrePourcentage{0.01} \\
-      Dioxyde de carbone & \chemfig{CO_2} & \qty{0,04}{\percent} \barrePourcentage{0} \\
-      Néon               & \chemfig{Ne}   & \qty{18,2}{\ppm} \barrePourcentage{0} \\
-      Hélium             & \chemfig{He}   & \qty{5,2}{\ppm}  \barrePourcentage{0} \\
-      Monoxyde d'azote   & \chemfig{NO}   & \qty{5,0}{\ppm}  \barrePourcentage{0} \\
-      Méthane            & \chemfig{CH_4} & \qty{1,9}{\ppm}  \barrePourcentage{0} \\
-      Eau                & \eau           & Variable \\ 
+      Diazote            & \diazote          & \qty{78,08}{\percent} \barrePourcentage{0.7808} \\
+      Dioxygène          & \dioxygene        & \qty{20,95}{\percent} \barrePourcentage{0.2095} \\
+      Argon              & \chemfig{Ar}      & \qty{0,93}{\percent} \barrePourcentage{0.01} \\
+      Dioxyde de carbone & \dioxydeDeCarbone & \qty{0,04}{\percent} \barrePourcentage{0} \\
+      Néon               & \chemfig{Ne}      & \qty{18,2}{\ppm} \barrePourcentage{0} \\
+      Hélium             & \chemfig{He}      & \qty{5,2}{\ppm}  \barrePourcentage{0} \\
+      Monoxyde d'azote   & \chemfig{NO}      & \qty{5,0}{\ppm}  \barrePourcentage{0} \\
+      Méthane            & \methane          & \qty{1,9}{\ppm}  \barrePourcentage{0} \\
+      Eau                & \eau              & Variable \\ 
     \end{tblr}
   \end{center}
 
@@ -91,13 +91,13 @@
 
 \begin{doc}{Quelques tests pour identifier des espèces chimiques}{doc:TP2_tests_identification}
   \pointCyan L'eau de chaux est une solution saturée en hydroxyde de calcium \chemfig{Ca}(\chemfig{OH})$_2$.
-  En présence de dioxyde de carbone \chemfig{CO_2}, l'eau de chaux se trouble. C'est dû à la formation d'un précipité blanc de carbonate de calcium \chemfig{CaCO_3}.
+  En présence de dioxyde de carbone \dioxydeDeCarbone, l'eau de chaux se trouble. C'est dû à la formation d'un précipité blanc de carbonate de calcium \chemfig{CaCO_3}.
 
   \pointCyan Le sulfate de cuivre anhydre \chemfig{CuSO_4} est une poudre blanche.
-  En contact avec des molécules d'eau \chemfig{H_2O} la poudre bleuit. C'est dû à la formation d'un complexe pentahydrate \chemfig{CuSO_4, 5H_2O}.
+  En contact avec des molécules d'eau \eau la poudre bleuit. C'est dû à la formation d'un complexe pentahydrate \chemfig{CuSO_4, 5H_2O}.
 
-  \pointCyan La combustion d'une allumette nécessite un combustible, la cellulose de formule brute \bruteCHO{6}{10}{5} du bois de l'allumette, et un comburant, le dioxygène \chemfig{O_2}.
-  Cette réaction chimique forme du dioxyde de carbone \chemfig{CO_2} et de la vapeur d'eau \chemfig{H_2O}.
+  \pointCyan La combustion d'une allumette nécessite un combustible, la cellulose de formule brute \bruteCHO{6}{10}{5} du bois de l'allumette, et un comburant, le dioxygène \dioxygene.
+  Cette réaction chimique forme du dioxyde de carbone \dioxydeDeCarbone et de la vapeur d'eau \eau.
 \end{doc}
 
 \question{
@@ -110,8 +110,8 @@
   Le combustible d'une bougie est l'acide stéarique de formule brute \bruteCHO{18}{36}{2}
   L'équation de la réaction de combustion d'une bougie est
   \begin{center}
-    \bruteCHO{18}{36}{2}(s) + 26\chemfig{O_2}(g) \reaction
-    18\chemfig{CO_2}(g) + 18\chemfig{H_2O}(g)
+    \bruteCHO{18}{36}{2}\sol + 26\dioxygene\gaz \reaction
+    18\dioxydeDeCarbone\gaz + 18\eau\gaz
   \end{center}
 
   \important{Matériel :} un cristallisoir, une bougie, une éprouvette graduée.

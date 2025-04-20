@@ -20,32 +20,32 @@
 \end{contexte}
 
 \begin{doc}{Acide et base selon le modèle de Br\o{}nsted}{doc:A3_acide_base_bronsted}
-  D'un point de vue microscopique, on peut modéliser les transformations acido-basique à l'aide de simple échange d'ion hydrogène \chemfig{H^+}.
+  D'un point de vue microscopique, on peut modéliser les transformations acido-basique à l'aide de simple échange d'ion hydrogène \ionHydrogene.
 
   \begin{multicols}{2}
     \begin{importants}
-      Un \important{acide} est une molécule capable de \important{céder} un ion \chemfig{H^+}.
+      Un \important{acide} est une molécule capable de \important{céder} un ion \ionHydrogene.
     \end{importants}
-    \exemple l'acide carbonique peut céder un ion \chemfig{H^+} pour former l'ion hydrogénocarbonate
+    \exemple l'acide carbonique peut céder un ion \ionHydrogene pour former l'ion hydrogénocarbonate
     \begin{center}
-      \chemfig{H_2CO_3} = \chemfig{HCO^{-}_3} + \chemfig{H^+}
+      \acideCarbonique = \chemfig{HCO^{-}_3} + \ionHydrogene
     \end{center}
  
     \begin{importants}
-      Une \important{base} est une molécule capable de \important{capter} un ion \chemfig{H^+}.
+      Une \important{base} est une molécule capable de \important{capter} un ion \ionHydrogene.
     \end{importants}
-    \exemple l'ammoniac peut capter un ion \chemfig{H^+} pour former l'ion ammonium
+    \exemple l'ammoniac peut capter un ion \ionHydrogene pour former l'ion ammonium
     \begin{center}
-      \chemfig{NH_3} + \chemfig{H^+} = \chemfig{NH_4^+}
+      \ammoniac + \ionHydrogene = \ammonium
     \end{center}
   \end{multicols}
 \end{doc}
 
 \begin{doc}{Couple acido-basique}{doc:A3_couple_acido_basique}
   \begin{importants}
-    Un \important{acide \chemfig{AH}} et une \important{base \chemfig{A^{-}}} sont conjugués s'ils sont reliés par des échanges d'ions hydrogène \chemfig{H^+}.
+    Un \important{acide \chemfig{AH}} et une \important{base \chemfig{A^{-}}} sont conjugués s'ils sont reliés par des échanges d'ions hydrogène \ionHydrogene.
     \begin{center}
-      \chemfig{AH} = \chemfig{A^{-}} + \chemfig{H^+}
+      \chemfig{AH} = \chemfig{A^{-}} + \ionHydrogene
     \end{center}
     On dit alors que l'acide et la base forment un \important{couple acido-basique,} qu'on note \chemfig{AH/A^{-}} (acide/base).
   \end{importants}
@@ -64,9 +64,9 @@
     Les produits formés sont alors les \important{espèces conjugués} des deux réactifs.
   \end{importants}
 
-  \exemple L'acide carbonique \chemfig{H_2CO_3} peut réagir avec l'ammoniac \chemfig{NH_3}
+  \exemple L'acide carbonique \acideCarbonique peut réagir avec l'ammoniac \ammoniac
   \begin{center}
-    \chemfig{H_2CO_3} + \chemfig{NH_3} \reaction \chemfig{HCO_3^{-}} + \chemfig{NH_4^+}
+    \acideCarbonique + \ammoniac \reaction \bicarbonate + \ammonium
   \end{center}
 \end{doc}
 
@@ -81,17 +81,17 @@
     \end{enumeration}
   \end{importants}
 
-  \exemple On a deux couples : \oxonium/\eau et \chemfig{HCl}/\chemfig{Cl^{-}}.
+  \exemple On a deux couples : \oxonium/\eau et \chemfig{HCl}/\chlorure.
   
   On fait réagir l'acide chlorhydrique \chemfig{HCl} avec l'eau \eau. 
   On a donc les demi-réactions suivantes :
   \begin{align*}
-    \chemfig{HCl} &= \chemfig{Cl^{-}} + \chemfig{H^+} \\
-    \eau + \chemfig{H^+} &= \oxonium
+    \chemfig{HCl} &= \chlorure + \ionHydrogene \\
+    \eau + \ionHydrogene &= \oxonium
   \end{align*}
   On peut donc additionner les deux demi-réactions (côté par côté) pour obtenir la réaction entre l'eau et l'acide chlorhydrique
   \begin{equation*}
-    \chemfig{HCl} + \eau = \chemfig{Cl^{-}} + \oxonium 
+    \chemfig{HCl} + \eau = \chlorure + \oxonium 
   \end{equation*}
   
   \attention Il ne doit pas y avoir d'ions hydrogène dans la réaction finale !
@@ -100,14 +100,14 @@
 \begin{doc}{Détartrage d'une bouilloire}{doc:A3_detartrage}
   Pour enlever le calcaire accumulé dans une bouilloire, on peut y verser du vinaigre blanc.
   
-  Le calcaire est composé d'ions calcium \chemfig{Ca^{2+}} et \important{d'ions carbonate \chemfig{CO_3^{2-}}.} Le vinaigre est composé \important{d'acide éthanoïque \chemfig{CH_3COOH}.}
+  Le calcaire est composé d'ions calcium \ionCalcium et \important{d'ions carbonate \carbonate.} Le vinaigre est composé \important{d'acide éthanoïque \chemfig{CH_3COOH}.}
   
   Quand on verse du vinaigre sur du calcaire, une réaction acido-basique transforme le calcaire en dioxyde de carbone dissout dans l'eau, noté \chemfig{H_2O,CO_2}.
   \smallskip
 
   \important{Couples acido-basique :}
   \begin{listePoints}
-    \item \chemfig{H_2O,CO_2}/\chemfig{CO_3^{2-}}
+    \item \chemfig{H_2O,CO_2}/\carbonate
     \item \chemfig{CH_3COOH}/\chemfig{CH_3COO^{-}}
   \end{listePoints}
 \end{doc}

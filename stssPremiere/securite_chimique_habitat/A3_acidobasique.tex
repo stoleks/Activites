@@ -29,13 +29,13 @@
   Il est connu pour sa définition des substances acides et basiques : 
   \begin{importants}    
     \begin{listePoints}
-      \item Un acide est une molécule capable de libérer un ion \chemfig{H^+} (un proton)
-      \item Une base est une molécule qui reçoit un ion \chemfig{H^+}
+      \item Un acide est une molécule capable de libérer un ion \ionHydrogene (un proton)
+      \item Une base est une molécule qui reçoit un ion \ionHydrogene
     \end{listePoints}
   \end{importants}
   
-  L'acide, noté \chemfig{AH}, se transforme en sa base conjuguée, notée \chemfig{A^{-}}, en perdant un proton \chemfig{H^+}.
-  La base conjuguée \chemfig{A^{-}} se transforme en l'acide \chemfig{AH} quand elle capte un proton \chemfig{H^+}.
+  L'acide, noté \chemfig{AH}, se transforme en sa base conjuguée, notée \chemfig{A^{-}}, en perdant un proton \ionHydrogene.
+  La base conjuguée \chemfig{A^{-}} se transforme en l'acide \chemfig{AH} quand elle capte un proton \ionHydrogene.
 
   \begin{importants}
     On parle de couple acide/base noté ici \chemfig{AH}/\chemfig{A^{-}}.    
@@ -43,30 +43,30 @@
   \attention l'acide est toujours à gauche et la base est toujours à droite.
 
   \exemple
-  \texteTrouLignes{\chemfig{HCl}/\chemfig{Cl^{-}}, l'acide est \chemfig{HCl} et la base \chemfig{Cl^{-}} est dans ce couple.}
+  \texteTrouLignes{\chemfig{HCl}/\chlorure, l'acide est \chemfig{HCl} et la base \chlorure est dans ce couple.}
 \end{doc}
 
 \question{
-  Indiquer l'acide et la base du couple acide/base \chemfig{H_2O}/\chemfig{HO^{-}}.
-}{}{1}
+  Indiquer l'acide et la base du couple acide/base \eau/\chemfig{HO^{-}}.
+}{}[1]
 
 \begin{doc}{Réaction acido-basique}{doc:A3_acido_basique}
   \begin{importants}  
     Lors d'une réaction chimique acido-basique, l'acide d'un couple réagit avec la base d'un autre couple.
   \end{importants}
   
-  \exemple On a deux couples : \chemfig{H_3O^{+}}/\chemfig{H_2O} et \chemfig{NH_4^{+}}/\chemfig{NH_3}.
+  \exemple On a deux couples : \oxonium/\eau et \chemfig{NH_4^{+}}/\ammoniac.
 
-  Si on mélange les ions oxonium \chemfig{H_3 O^{+}}, un acide, avec l'ammoniac \chemfig{NH_3}, une base, on va avoir une réaction chimique
+  Si on mélange les ions oxonium \chemfig{H_3 O^{+}}, un acide, avec l'ammoniac \ammoniac, une base, on va avoir une réaction chimique
   \vspace*{-12pt}
   \begin{center}
-    \chemfig{H_3O^{+}} + \chemfig{NH_3} \reaction \chemfig{H_2O} + \chemfig{NH_4^{+}}
+    \oxonium + \ammoniac \reaction \eau + \chemfig{NH_4^{+}}
   \end{center}
 \end{doc}
 
 \question{
-  Établir la réaction acido-basique entre le couple \chemfig{H_3O^{+}}/\chemfig{H_2O} et le couple \chemfig{H_2O}/\chemfig{HO^{-}}.  
-}{}{2}
+  Établir la réaction acido-basique entre le couple \oxonium/\eau et le couple \eau/\chemfig{HO^{-}}.  
+}{}[2]
 
 %%
 \newpage
@@ -79,8 +79,8 @@
     \image{0.63}{images/photos/bicarbonate}
   \end{wrapfigure}
   Le bicarbonate de sodium ou bicarbonate de soude (abus de langage) est nommé hydrogénocarbonate de sodium en nomenclature moderne.
-  C’est un composé chimique dont la formule brute est \chemfig{NaHCO_3}.
-  Il se présente sous la forme de fins cristaux blancs, solubles dans l’eau, qui forme les ions sodium \chemfig{Na^+} et hydrogénocarbonate \chemfig{HCO_3^{-}} en solution.
+  C’est un composé chimique dont la formule brute est \bicarbonateDeSodium.
+  Il se présente sous la forme de fins cristaux blancs, solubles dans l’eau, qui forme les ions sodium \ionSodium et hydrogénocarbonate \bicarbonate en solution.
 \end{doc}
 
 \begin{doc}{Le vinaigre de cidre}{doc:A3_vinaigre}
@@ -108,26 +108,26 @@
   }
     & \SetCell[c=2]{c} Forme acide & & \SetCell[c=2]{c} Forme basique \\
     Couple acide/base & Formule brute & Nom & Formule brute & Nom \\
-    \chemfig{H_3O^+}/\chemfig{H_2O}         & \chemfig{H_3O^+} & ion oxonium          & \chemfig{H_2O} & eau \\
-    \chemfig{H_2O}/\chemfig{HO^{-}}         & \chemfig{H_2O} & eau                    & \chemfig{HO^{-}} & ion hydroxyde \\
-    \chemfig{HCl}/\chemfig{Cl^{-}}          & \chemfig{HCl} & acide chlorhydrique     & \chemfig{Cl^{-}} & ion chlorure \\
-    {\chemfig{CH_3COOH}/\\    
-    \chemfig{CH_3COO^{-}}}                  & \chemfig{CH_3COOH} & acide éthanoïque   & \chemfig{CH_3COO^{-}} & ion éthanoate \\
-    \chemfig{H_2CO_3}/\chemfig{HCO_3^{-}}   & \chemfig{H_2CO_3} & acide carbonique    & \chemfig{HCO_3^{-}} & ion hydrogéno-carbonate \\
-    \chemfig{HCO_3^{-}}/\chemfig{CO_3^{2-}} & \chemfig{HCO_3^{-}} & ion hydrogéno-carbonate & \chemfig{CO_3^{2-}} & ion carbonate \\
-    \chemfig{NH_4^+}/\chemfig{NH_3}         & \chemfig{NH_4^+} & ion ammonium         & \chemfig{NH_3} & ammoniac \\
+    \oxonium/\eau                 & \oxonium & ion oxonium                 & \eau & eau \\
+    \eau/\chemfig{HO^{-}}         & \eau & eau                             & \chemfig{HO^{-}} & ion hydroxyde \\
+    \chemfig{HCl}/\chlorure       & \chemfig{HCl} & acide chlorhydrique    & \chlorure & ion  \\
+    {\chemfig{CH_3COOH}/ \\
+    \chemfig{CH_3COO^{-}}}        & \chemfig{CH_3COOH} & acide éthanoïque  & \chemfig{CH_3COO^{-}} & ion éthanoate \\
+    \acideCarbonique/\bicarbonate & \acideCarbonique & acide carbonique    & \bicarbonate & ion hydrogéno-carbonate \\
+    \bicarbonate/\carbonate       & \bicarbonate & ion hydrogéno-carbonate & \carbonate & ion carbonate \\
+    \ammonium/\ammoniac           & \ammonium & ion ammonium               & \ammoniac & ammoniac \\
   \end{tblr}
 \end{doc}
 
 \question{
   En utilisant les documents~\ref{doc:A3_bicarbonate},~\ref{doc:A3_vinaigre} et~\ref{doc:A3_couple_acide_base}, donner les couples acide/base composant le bicarbonate de soude et présent dans le vinaigre de cidre.
-}{}{2}
+}{}[2]
 
 \question{
   Établir la réaction acido-basique qui a lieue quand on mélange du bicarbonate de soude et du vinaigre de cidre.
-}{}{2}
+}{}[2]
 
 \question{
   En pratique, l'acide carbonique se décompose spontanément en eau et en dioxyde de carbone.
   Modifier la réaction acido-basique en conséquence.
-}{}{1}
+}{}[1]

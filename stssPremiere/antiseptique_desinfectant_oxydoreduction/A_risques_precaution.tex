@@ -85,36 +85,36 @@
     Principe actif & Couples Ox/red & \SetCell[c=3]{c} Demi-équation d'oxydoréduction \\
     \SetCell[r = 2]{l} Eau oxygénée &
     $\chemfig{H_2O_2}\aq/\chemfig{H_2O}\liq$ &
-    $\chemfig{H_2O_2}\aq + 2\chemfig{H^+}\aq + 2\electron$ &
+    $\chemfig{H_2O_2}\aq + 2\ionHydrogene\aq + 2\electron$ &
     $\reaction$ &
     $2\chemfig{H_2O}\liq$ \\
     &
-    $\chemfig{O_2}\gaz/\chemfig{H_2O_2}\aq$ & 
-    $\chemfig{O_2}\gaz + 2\chemfig{H^+}\aq + 2\electron$ &
+    $\dioxygene\gaz/\chemfig{H_2O_2}\aq$ & 
+    $\dioxygene\gaz + 2\ionHydrogene\aq + 2\electron$ &
     $\reaction$ &
     $\chemfig{H_2O_2}\aq$ \\
     %
     %\SetCell[r = 2]{l}
     Eau de Javel &
-    $\chemfig{ClO^{-}}\aq/\chemfig{Cl^{-}}\aq$ &
-    $\chemfig{ClO^{-}}\aq + 2\chemfig{H^+}\aq + 2\electron$ &
+    $\hypochlorite\aq/\chlorure\aq$ &
+    $\hypochlorite\aq + 2\ionHydrogene\aq + 2\electron$ &
     $\reaction$ &
-    $\chemfig{Cl^{-}}\aq + \chemfig{H_2O}\liq$ \\
+    $\chlorure\aq + \chemfig{H_2O}\liq$ \\
     %
     % &
-    % $\chemfig{ClO^{-}}\aq/\chemfig{Cl_2}\gaz$ &
-    % $2\chemfig{ClO^{-}}\aq + 4\chemfig{H^+}\aq + 2\electron$ &
+    % $\hypochlorite\aq/\chemfig{Cl_2}\gaz$ &
+    % $2\hypochlorite\aq + 4\ionHydrogene\aq + 2\electron$ &
     % $\reaction \chemfig{Cl_2}\gaz + \chemfig{H_2O}\liq$ \\
     %
     Diiode &
-    $\chemfig{I_2}\aq/\chemfig{I^{-}}\aq$ &
-    $\chemfig{I_2}\aq + 2\electron$ &
+    $\diiode\aq/\chemfig{I^{-}}\aq$ &
+    $\diiode\aq + 2\electron$ &
     $\reaction$ &
     $2\chemfig{I^{-}}\aq$ \\
     %
     {Permanganate \\ de potassium} &
     $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$ &
-    $\chemfig{MnO_4^{-}}\aq + 8\chemfig{H^+}\aq + 5\electron$ &
+    $\chemfig{MnO_4^{-}}\aq + 8\ionHydrogene\aq + 5\electron$ &
     $\reaction$ &
     $\chemfig{Mn^{2+}}\aq + 4\chemfig{H_2O}\liq$ \\
     %
@@ -123,19 +123,19 @@
 
 
 \begin{doc}{Eau de Javel et produit acide : un mélange dangereux !}{doc:A3_javel_acide}
-  L'eau de Javel est une solution aqueuse basique d’hypochlorite de sodium (\chemfig{Na^{+}}, \chemfig{ClO^{-}}) et de chlorure de sodium (\chemfig{Na^{+}}, \chemfig{Cl^{-}}).
-  Un produit acide contient des ions \chemfig{H^+}.
+  L'eau de Javel est une solution aqueuse basique d’hypochlorite de sodium (\chemfig{Na^{+}}, \hypochlorite) et de chlorure de sodium (\chemfig{Na^{+}}, \chlorure).
+  Un produit acide contient des ions \ionHydrogene.
 
-  L'ion chlorure est un réducteur dans le couple $\chemfig{Cl_2}\gaz/ \chemfig{Cl^{-}}\aq$.
+  L'ion chlorure est un réducteur dans le couple $\chemfig{Cl_2}\gaz/ \chlorure\aq$.
   La demi-équation d'oxydoréduction associée est
-  $\chemfig{Cl_2}\gaz + 2\electron \reaction 2\chemfig{Cl^{-}}\aq$.
+  $\chemfig{Cl_2}\gaz + 2\electron \reaction 2\chlorure\aq$.
 
   Le dichlore $\chemfig{Cl_2}\gaz$ est un gaz toxique, car le dichlore se combine avec l'eau présente dans les muqueuses pour former des acides qui attaquent les tissus.
 \end{doc}
 
 
 \question{
-  Établir l'équation de la réaction d'oxydoréduction entre les ions hypochlorites $\chemfig{ClO^{-}}\aq$ et les ions chlorures $\chemfig{Cl^{-}}\aq$.
+  Établir l'équation de la réaction d'oxydoréduction entre les ions hypochlorites $\hypochlorite\aq$ et les ions chlorures $\chlorure\aq$.
 }{
 
 }{4}
@@ -152,7 +152,7 @@
 %%%%
 \begin{doc}{Nettoyer une plaie}{doc:A3_soigner_plaie}
   Judith s'est écorchée le genou et mélange de l'eau oxygénée avec du permanganate de potassium pour soigner sa plaie.
-  Les couples Ox/Red sont $\chemfig{O_2}\gaz/\chemfig{H_2O_2}\aq$ et
+  Les couples Ox/Red sont $\dioxygene\gaz/\chemfig{H_2O_2}\aq$ et
   $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$.
   
   Au moment de l'application, le mélange devient incolore et forme une mousse.

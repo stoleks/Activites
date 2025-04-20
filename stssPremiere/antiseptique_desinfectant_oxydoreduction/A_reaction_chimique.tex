@@ -49,7 +49,7 @@
 \begin{doc}{Combustion du charbon}{doc:A0_combustion_charbon}
   On modélise la combustion du charbon avec du dioxygène par la réaction chimique suivante :
   \begin{equation*}
-    \chemfig{C}\sol + \chemfig{O_2}\gaz \reaction \chemfig{CO_2}\gaz
+    \chemfig{C}\sol + \dioxygene\gaz \reaction \dioxydeDeCarbone\gaz
   \end{equation*}
   On vérifie bien qu'il y a le même nombre d'atome de carbone et d'oxygène des deux côté de la réaction chimique.
 \end{doc}
@@ -84,17 +84,17 @@
 \question{
   Ajuster la réaction de combustion du méthane
   \begin{equation*}
-    \chemfig{CH_4}\gaz + \chemfig{O_2}\gaz
+    \methane\gaz + \dioxygene\gaz
     \reaction
-    \chemfig{CO_2}\gaz + \chemfig{H_2O}\gaz
+    \dioxydeDeCarbone\gaz + \eau\gaz
   \end{equation*}
   à l'aide de coefficients stœchiométriques.
   Commencer par ajuster le nombre d'atomes d'hydrogène.
 }{
   \begin{equation*}
-    \chemfig{CH_4}\gaz + 2\chemfig{O_2}\gaz
+    \methane\gaz + 2\dioxygene\gaz
     \reaction
-    \chemfig{CO_2}\gaz + 2\chemfig{H_2O}\gaz
+    \dioxydeDeCarbone\gaz + 2\eau\gaz
   \end{equation*}
 }[3]
 
@@ -103,32 +103,32 @@ Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coe
 \newcommand{\localEcart}{16}
 \begin{center}
   %
-  \texteTrou{1} $\chemfig{Fe}\sol$ + \texteTrou{2} $\chemfig{H^{+}}\aq$
-  \reaction \texteTrou{1} $\chemfig{Fe^{2+}}\aq$ + \texteTrou{1} $\chemfig{H_2}\gaz$
+  \texteTrou{1} \chemfig{Fe}\sol + \texteTrou{2} \chemfig{H^{+}}\aq
+  \reaction \texteTrou{1} \ionFerII\aq + \texteTrou{1} \chemfig{H_2}\gaz
   \\[\localEcart pt]
   %
-  \texteTrou{4} $\chemfig{Fe}\sol$ + \texteTrou{3} $\chemfig{O_2}\gaz$
-  \reaction \texteTrou{2} $\chemfig{Fe_2O_3}\sol$
+  \texteTrou{4} \chemfig{Fe}\sol + \texteTrou{3} \dioxygene\gaz
+  \reaction \texteTrou{2} \chemfig{Fe_2O_3}\sol
   \\[\localEcart pt]
   %
-  \texteTrou{1} $\chemfig{C_2H_6O}\liq$ + \texteTrou{3} $\chemfig{O_2}\gaz$
-  \reaction \texteTrou{2} $\chemfig{CO_2}\gaz$ + \texteTrou{3} $\chemfig{H_2O}\liq$
+  \texteTrou{1} \chemfig{C_2H_6O}\liq + \texteTrou{3} \dioxygene\gaz
+  \reaction \texteTrou{2} \dioxydeDeCarbone\gaz + \texteTrou{3} \eau\liq
   \\[\localEcart pt]
   %
-  \texteTrou{1} $\chemfig{Cu^{2+}}\aq$ + \texteTrou{2} $\chemfig{HO^{-}}\aq$
-  \reaction \texteTrou{1} $\chemfig{Cu{(HO)}_2}\sol$
+  \texteTrou{1} \chemfig{Cu^{2+}}\aq + \texteTrou{2} \chemfig{HO^{-}}\aq
+  \reaction \texteTrou{1} \chemfig{Cu{(HO)}_2}\sol
   \\[\localEcart pt]
   %
-  \texteTrou{2} $\chemfig{Fe}\sol$ + \texteTrou{2} $\chemfig{H_2O}\liq$ + \texteTrou{1} $\chemfig{O_2}\gaz$
-  \reaction \texteTrou{2} $\chemfig{Fe{(HO)}_2}\sol$
+  \texteTrou{2} \chemfig{Fe}\sol + \texteTrou{2} \eau\liq + \texteTrou{1} \dioxygene\gaz
+  \reaction \texteTrou{2} \chemfig{Fe{(HO)}_2}\sol
   \\[\localEcart pt]
   %
-  \texteTrou{2} $\chemfig{Fe{(OH)}_3}\sol$
-  \reaction \texteTrou{1} $\chemfig{Fe_2O_3}\sol$ + \texteTrou{3} $\chemfig{H_2O}\liq$
+  \texteTrou{2} \chemfig{Fe{(OH)}_3}\sol
+  \reaction \texteTrou{1} \chemfig{Fe_2O_3}\sol + \texteTrou{3} \eau\liq
   \\[\localEcart pt]
   %
-  \texteTrou{1} $\chemfig{Fe{(OH)}_2}\sol$ + \texteTrou{2} $\chemfig{H_2O}\liq$ + \texteTrou{1} $\chemfig{O_2}\gaz$
-  \reaction \texteTrou{2} $\chemfig{Fe{(OH)}_3}\sol$
+  \texteTrou{1} \chemfig{Fe{(OH)}_2}\sol + \texteTrou{2} \eau\liq + \texteTrou{1} \dioxygene\gaz
+  \reaction \texteTrou{2} \chemfig{Fe{(OH)}_3}\sol
   \\[\localEcart pt]
   %
 \end{center}

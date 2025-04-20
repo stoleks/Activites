@@ -34,7 +34,7 @@
     hlines, vlines, row{1} = {c, m, couleurSec-100}, row{2} = {c},
   }
     Espèce chimique & Nitrate d'ammonium & diazote & dioxygène & eau \\
-    Formule brute & \chemfig{NH_4 NO_3} & \chemfig{N_2} & \dioxygene & \eau \\
+    Formule brute & \chemfig{NH_4 NO_3} & \diazote & \dioxygene & \eau \\
     Propriétés physico-chimiques & 
     Solide à \qty{20}{\degreeCelsius}. \newline (poudre). Légèrement nocif. &
     Gazeux à \qty{20}{\degreeCelsius}. Gaz incolore inerte présent dans l’air. &
@@ -110,7 +110,7 @@
   équation de la transformation chimie produite lors de l’incendie dans le hangar à \qty{300}{\degreeCelsius} :
   \begin{center}
     \important{2}\chemfig{NH_4 NO_3}\sol \reaction
-    \important{2}\chemfig{N_2}\gaz + \dioxygene\gaz + \important{4}\eau\liq
+    \important{2}\diazote\gaz + \dioxygene\gaz + \important{4}\eau\liq
   \end{center}
 
   \begin{multicols}{2}
@@ -130,17 +130,17 @@
   L'équation de la réaction est comme une recette de cuisine :
   \begin{center}
     \important{2}\chemfig{NH_4 NO_3}\sol \reaction
-    \important{2}\chemfig{N_2}\gaz + \dioxygene\gaz + \important{4}\eau\liq
+    \important{2}\diazote\gaz + \dioxygene\gaz + \important{4}\eau\liq
   \end{center}
-  Si je mélange \important{deux} \chemfig{NH_4 NO_3}, il se forme \important{deux} \chemfig{N_2},
+  Si je mélange \important{deux} \chemfig{NH_4 NO_3}, il se forme \important{deux} \diazote,
   \important{un} \dioxygene\; et \important{quatre} \eau.
   
-  Si je mélange 4 \chemfig{NH_4 NO_3}, il se forme 4 \chemfig{N_2}, 2 \dioxygene\; et 8 \eau.
+  Si je mélange 4 \chemfig{NH_4 NO_3}, il se forme 4 \diazote, 2 \dioxygene\; et 8 \eau.
   
-  Si je mélange 6 \chemfig{NH_4 NO_3}, il se forme \texteTrou{6} \chemfig{N_2}, \texteTrou{3} \dioxygene\; et \texteTrou{12} \eau.
+  Si je mélange 6 \chemfig{NH_4 NO_3}, il se forme \texteTrou{6} \diazote, \texteTrou{3} \dioxygene\; et \texteTrou{12} \eau.
   
   Si je mélange \qty{2,4}{\mole} de \chemfig{NH_4 NO_3}, il se forme
-  \texteTrou{$\qty{2,4}{\mole}$} \chemfig{N_2},
+  \texteTrou{$\qty{2,4}{\mole}$} \diazote,
   \texteTrou{$\qty{1,2}{\mole}$} \dioxygene\; et \\
   \texteTrou{$\qty{4,8}{\mole}$} \eau.
 \end{doc}
@@ -171,7 +171,7 @@ Compléter la première ligne « \important{avant l'incendie} » et la deuxième
   row{1} = {couleurPrim-100, c}, row{3,4} = {l, 36pt}
 }
   Équation de la réaction &
-  \SetCell[c=2]{c} 2 \chemfig{NH_4 NO_3}\sol \reaction 2 \chemfig{N_2}\gaz \qq{}\qq{} & &
+  \SetCell[c=2]{c} 2 \chemfig{NH_4 NO_3}\sol \reaction 2 \diazote\gaz \qq{}\qq{} & &
   \dioxygene\gaz &
   4 \eau\liq \\
   %
@@ -179,20 +179,20 @@ Compléter la première ligne « \important{avant l'incendie} » et la deuxième
   %
   \important{Avant l’incendie} &
   $n_1 =$               \correction{\num{2}} &
-  $n(\chemfig{N_2}) =$  \correction{\num{0}} &
+  $n(\diazote) =$  \correction{\num{0}} &
   $n(\dioxygene) =$  \correction{\num{0}} &
   $n(\eau) =$ \correction{\num{0}} \\
   %
   \important{Après l’incendie} &
   $n_{f,1} =$             \correction{\num{0}} &
-  $n_f(\chemfig{N_2}) =$  \correction{\num{}} &
+  $n_f(\diazote) =$  \correction{\num{}} &
   $n_f(\dioxygene) =$  \correction{\num{2}} &
   $n_f(\eau) =$ \correction{\num{2}}
 \end{tblr}
 
 \vspace*{8pt}
 \question{
-  En utilisant le document~\ref{doc:A1_calcul_mole_sol_gaz} et le tableau ci-dessus, calculer (dans les conditions normales), le volume de diazote $V(\chemfig{N_2})$,
+  En utilisant le document~\ref{doc:A1_calcul_mole_sol_gaz} et le tableau ci-dessus, calculer (dans les conditions normales), le volume de diazote $V(\diazote)$,
   de dioxygène $V(\dioxygene)$ et de vapeur d’eau $V(\eau)$ produit.
 }{
 
@@ -201,9 +201,9 @@ Compléter la première ligne « \important{avant l'incendie} » et la deuxième
 \newpage
 \question{
   Soit $n$ la quantité de matière produite totale avec 
-  $n = n_f(\chemfig{N_2}) + n_f(\dioxygene) + n_f(\eau)$
+  $n = n_f(\diazote) + n_f(\dioxygene) + n_f(\eau)$
   et $V$ le volume totale 
-  $V = V(\chemfig{N_2}) + V(\dioxygene) + V(\eau)$.
+  $V = V(\diazote) + V(\dioxygene) + V(\eau)$.
   Calculer $n$ et $V$.
 }{
 
