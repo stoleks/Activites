@@ -38,6 +38,9 @@
 \newcommand{\dioxygene}          {\chemfig{O_2}}
 \newcommand{\diazote}            {\chemfig{N_2}}
 \newcommand{\eau}                {\chemfig{H_2O}}
+\newcommand{\methane}            {\chemfig{CH_4}}
+\newcommand{\ammoniac}           {\chemfig{NH_3}}
+\newcommand{\diiode}             {\chemfig{I_2}}
 \newcommand{\acideCarbonique}    {\chemfig{H_2CO_3}}
 \newcommand{\carbonateDeCalcium} {\chemfig{CaCO_3}}
 \newcommand{\bicarbonateDeSodium}{\chemfig{NaHCO_3}}
@@ -46,17 +49,20 @@
 \newcommand{\oxonium}     {\chemfig{H_3O^+}}
 \newcommand{\hydroxyde}   {\chemfig{HO^{-}}}
 \newcommand{\ionHydrogene}{\chemfig{H^{+}}}
+\newcommand{\ammonium}    {\chemfig{NH_4^{+}}}
+\newcommand{\nitrate}     {\chemfig{NO_3^{-}}}
+\newcommand{\chlorure}    {\chemfig{Cl^{-}}}
+\newcommand{\fluorure}    {\chemfig{F^{-}}}
 \newcommand{\carbonate}   {\chemfig{CO_3^{2-}}}
 \newcommand{\bicarbonate} {\chemfig{HCO_3^{-}}}
 \newcommand{\ionFerII}    {\chemfig{Fe^{2+}}}
 \newcommand{\ionFerIII}   {\chemfig{Fe^{3+}}}
 \newcommand{\ionSodium}   {\chemfig{Na^{+}}}
+\newcommand{\ionArgent}   {\chemfig{Ag^{+}}}
+\newcommand{\hypochlorite}{\chemfig{ClO^{-}}}
 \newcommand{\ionCuivreII} {\chemfig{Cu^{2+}}}
 \newcommand{\ionCalcium}  {\chemfig{Ca^{2+}}}
 \newcommand{\ionSulfate}  {\chemfig{SO_4^{2-}}}
-\newcommand{\ionNitrate}  {\chemfig{NO_3^{-}}}
-\newcommand{\ionChlorure} {\chemfig{Cl^{-}}}
-\newcommand{\ionFluorure} {\chemfig{F^{-}}}
 \newcommand{\ionMagnesium}{\chemfig{Mg^{2+}}}
 \newcommand{\ionPotassium}{\chemfig{K^{+}}}
 
@@ -741,10 +747,10 @@
   (!\cu CH_3) !\ccd CH -[::30] CH_2 -OH % chaînes latérales
 }
 \definesubmol\vanilline{
-  HO -[::90] *6(= (-O !\cu) -= (- !\carbonyle H) -=-)
+  HO -[::90,,2] *6(= (-O !\cu) -= (- !\carbonyle H) -=-)
 }
 \definesubmol\ethylvanilline{
-  HO -[::90] *6(= (-O !\cud) -= (- !\carbonyle H) -=-)
+  HO -[::90,,2] *6(= (-O !\cud) -= (- !\carbonyle H) -=-)
 }
 \definesubmol\oxyphenylone{
   HO -[::30] *6(-=- (-!\cdu (!\ccu O) !\cd) =-=)
