@@ -3,3 +3,4 @@ liste_molecules.*
 !main.tex
 *.sh
 log.out
+*.out

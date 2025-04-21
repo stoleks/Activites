@@ -98,14 +98,21 @@
 \numeroQuestion Sans calcul, déterminer l'unité du membre de gauche de l'égalité. \\
 
 \begin{tblr}{
-    colspec = {X[2,l] | X[2,c] }, width = \linewidth,
+    colspec = {X[2,l] | X[2,c]}, rows = {24pt},
     row{1} = {couleurSec-100}, hlines
   }
   Grandeur & Unité \\
-  Longueur $L = L_1 (\unit{\m}) + L_2 (\unit{m}) + L_3 (\unit{\m})$ \vphantom{$\dfrac{1}{2}$} & \\
-  Fréquence $f = \dfrac{1}{T (\unit{\s})}$ & \\
-  Concentration massique $c = \dfrac{m (\unit{\kg})}{V (\unit{\m\cubed})}$ & \\
+  Longueur $L = L_1 (\unit{\m}) + L_2 (\unit{\m}) + L_3 (\unit{\m})$
+  & \correction{\unit{\m}} \\
+  %
+  Fréquence $f = \dfrac{1}{T (\unit{\s})}$
+  & \correction{\unit{\per\s}} \\
+  %
+  Concentration massique $c = \dfrac{m (\unit{\kg})}{V (\unit{\m\cubed})}$
+  & \correction{\unit{\kg\per\m\cubed}} \\
+  %
   Intensité du courant $I = \dfrac{R_1 (\unit{\ohm})}{R_1 (\unit{\ohm}) + R_2 (\unit{\ohm})} \times I_1 (\unit{\ampere})$
+  & \correction{\unit{\ampere}}
 \end{tblr}
 
 

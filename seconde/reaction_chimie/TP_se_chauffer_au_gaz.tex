@@ -2,7 +2,6 @@
 \teteSndChim
 
 %%%% titre
-\numeroActivite{2}
 \titreTP{Se chauffer au gaz}
 %\smallskip
 
@@ -46,9 +45,9 @@
   Écrire la réaction chimique de combustion du méthane, en précisant les états physiques de chaque espèce chimique.
 }{
   \begin{center}
-      \methane\gaz + \dioxygenegaz
+      \methane\gaz + \dioxygene\gaz
       \reaction
-      \dioxydeDeCarbonegaz + \chemfig{H_2O}\gaz
+      \dioxydeDeCarbone\gaz + \chemfig{H_2O}\gaz
   \end{center}
 }[2]
 
@@ -224,8 +223,9 @@ Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coe
     \item Prendre 2 béchers et verser dans chacun \qty{10}{\ml} d’eau distillée.
     \item Mesurer la masse d'eau distillée versée $m_\text{eau} =$ \texteTrou[0.1]{\qty{10,0}{\g}}
     \item Mesurer la température initiale de l'eau des deux béchers.
-    \item Ajouter \qty{3,0}{\g} de chlorure de sodium dans un bécher.
-    \item Ajouter une pastille de soude dans l'autre bécher.
+    \item Ajouter $m_1 = \qty{3,0}{\g}$ de chlorure de sodium dans un bécher.
+    \item Peser la masse d'une pastille de soude $m_2 = \texteTrou[0.1]{\qty{1,0}{\g}}$.
+    \item Ajouter la pastille de soude dans l'autre bécher.
     \item Mesurer la température finale de l'eau des deux béchers après une dizaine de secondes.
   \end{protocole}
 \end{doc}
@@ -252,13 +252,13 @@ Noter les mesures de températures dans le tableau suivant :
     Variation de température $\Delta T = T_f - T_i$ \\
     %
     Bécher 1 &
-    \correction{$20,0 \unit{\degreeCelsius}$} &
-    \correction{$15,8 \unit{\degreeCelsius}$} &
-    \correction{$-4,2 (\degreeCelsius)$} \\
+    \correction{\qty{20,0}{\degreeCelsius}} &
+    \correction{\qty{15,8}{\degreeCelsius}} &
+    \correction{\qty{-4,2}{\degreeCelsius)} \\
     Bécher 2 &
-    \correction{$20,0 \unit{\degreeCelsius}$} &
-    \correction{$7,4 \unit{\degreeCelsius}$} &
-    \correction{$-12,6 \unit{\degreeCelsius}$} \\
+    \correction{\qty{20,0 }{\degreeCelsius}} &
+    \correction{\qty{7,4  }{\degreeCelsius}} &
+    \correction{\qty{-12,6}{\degreeCelsius}} \\
   \end{tblr}
 \end{center}
 
@@ -276,7 +276,6 @@ Noter les mesures de températures dans le tableau suivant :
   La capacité thermique de l’eau vaut $c_\text{eau} = \qty{4,180}{\joule\per\g\per\degreeCelsius}$
 }{
   $E_1 = \qty{875}{\joule}$,
-  $E_2 = \qty{1750}{\joule}$,
   $E_2 = \qty{2625}{\joule}$
 }[3]
 
@@ -315,12 +314,31 @@ Noter les mesures de températures dans le tableau suivant :
 
 \question{
   Rappeler la température d'ébullition de l'eau.
-}{}[1]
+}{
+  L'eau bout à \qty{100}{\degreeCelsius}.
+}[1]
 
 \question{
   Calculer $\Delta T$ si on veut faire bouillir de l'eau initialement à \qty{20}{\degreeCelsius}.
-}{}[2]
+}{
+  $\Delta T = T_f - T_i 
+  = \qty{100}{\degreeCelsius} - \qty{20}{\degreeCelsius}
+  = \qty{80}{\degreeCelsius}
+}[2]
 
 \question{
   Calculer le volume de gaz nécessaire pour faire bouillir 1 litre d'eau initialement à \qty{20}{\degreeCelsius}.
-}{}[3]
+}{
+  Pour calculer le volume de gaz, on utilise la relation littérale fournie dans le document~\ref{doc:TP2_energie_combustion}, après avoir convertie le volume de gaz en mètre cube $V = \qty{1}{\litre} = \qty{e-3}{\m\cubed}
+  \begin{equation*}
+    V
+    = \dfrac{\rho_\text{eau} c_\text{eau}} {E_V} V_\text{eau} \Delta T
+    = \dfrac{
+      \qty{1000}{\g\per\litre} \times
+      \qty{4,180}{\joule\per\g\per\degreeCelsius}
+    } {\qty{3,641e4}{\joule\per\m\cubed}} 
+    \times \qty{e-3}{\m\cubed} \qty{20,0}{\degreeCelsius}
+    = \qty{2.29e-3}{\m\cubed}
+    = \qty{2,29}{\litre}
+  \end{equation*}
+}[3]

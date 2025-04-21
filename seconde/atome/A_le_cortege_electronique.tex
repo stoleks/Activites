@@ -25,10 +25,10 @@
   Quand on s'appelle hydrogène et qu'on a qu'un électron, pas besoin de ranger ses affaires.
   Mais quand on s'appelle uranium et qu'on en a 92 autour de soi, mieux vaut mettre un peu d'ordre dans ses électrons !
   
-  \begin{wrapfigure}{r}{0.45\linewidth}
+  \begin{wrapfigure}{r}{0.35\linewidth}
     \centering
     \vspace*{-24pt}
-    \image{0.9}{images/atomes/electronique0008}
+    \image{0.9}{images/atomes/schema_couches_oxygene}
     {\small Schéma des couches et sous-couches électroniques de l'oxygène \isotope{}{8}{O}}
   \end{wrapfigure}
   
@@ -63,8 +63,15 @@
   \begin{importants}  
     On appelle \important{configuration électronique} le remplissage des électrons dans chaque couches et sous-couches.
   \end{importants}
+
+  \begin{importants}
+    Pour noter la configuration électronique, on note \important{chaque sous-couche qui contient des électrons} par son nom ($1s$, $2s$, $2p$, etc.), puis on note \important{le nombre d'électrons contenu dans la sous-couche en exposant}.
   
-  \textit{Exemple :} la configuration électronique de l'atome d'oxygène \isotope{}{8}{O} est 1s$^2$ 2s$^2$ 2p$^4$.
+    \textit{Exemple :} la configuration électronique de l'atome d'oxygène \isotope{}{8}{O} est $1s^2 \; 2s^2 \; 2p^4$.
+  \end{importants}
+  
+
+  \attention La somme des exposants doit être égale au nombre d'électrons de l'atome !
 \end{doc}
 
 
@@ -80,8 +87,12 @@ Compléter le tableau ci-dessous pour résumer l'occupation des différentes cou
     row{1} = {couleurSec-100, c}, column{1} = {l, couleurSec-50}
   }
     Couche & 1 & \SetCell[c=2]{c} 2 & & \SetCell[c=2]{c} 3 & \\
-    Sous-couche \\
-    Nombre max. d'électron \\
+    Sous-couche & \correction{s} &
+    \correction{s} & \correction{p} &
+    \correction{s} & \correction{p} \\
+    Nombre max. d'électron & \correction{2} &
+    \correction{2} & \correction{6} &
+    \correction{2} & \correction{6} \\
   \end{tblr}
 \end{center}
 
@@ -90,23 +101,24 @@ L'atome de silicium \chemfig{Si} possède $Z = 14$ protons.
 Schématiser ci-dessous la répartition de ses électrons.
 
 \begin{center}
-  \image{0.4}{images/atomes/schema_couche}
+  \pasCorrection{\image{0.4}{images/atomes/schema_couche}}
+  \correction{\image{0.4}{images/atomes/schema_couche_silicium}}
 \end{center}
 
 \question{
-  Donner la configuration électronique de l'atome de silicium. \label{que:A4_configuration}
+  Donner la configuration électronique de l'atome de silicium. \label{que:configuration}
 }{
-  On remplit les sous couches dans l'ordre,  Si : $1s^2\; 2s^2 2p^6\; 3s^2 3s^2$.
+  On remplit les sous couches dans l'ordre,  Si : $1s^2\; 2s^2 2p^6\; 3s^2 3p^2$.
 }[2]
 
 \question{ 
-  Indiquer, en justifiant, le nom de la couche externe de cet atome de silicium, ainsi que la ou les couches internes. \label{que:A4_couches}
+  Indiquer, en justifiant, le nom de la couche externe de cet atome de silicium, ainsi que la ou les couches internes. \label{que:couches}
 }{
   La couche externe du silicium est la troisième couche, ses couches internes sont les couches 1 et 2.
 }[3]
 
 \question{
-  Reprendre les questions \ref{que:A4_configuration} et \ref{que:A4_couches} pour l'atome de Carbone \chemfig{C} ($Z = 6$). Quelles différences et ressemblances avec le silicium peut-on remarquer ?
+  Reprendre les questions \ref{que:configuration} et \ref{que:couches} pour l'atome de Carbone \chemfig{C} ($Z = 6$). Quelles différences et ressemblances avec le silicium peut-on remarquer ?
 }{
   C : $1s^2\; 2s^2 2p^4$.
   

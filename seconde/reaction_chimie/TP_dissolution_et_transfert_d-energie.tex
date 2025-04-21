@@ -57,13 +57,12 @@
 \begin{doc}{Dissolution à réaliser}{doc:dissolution_protocole}
   Pour réaliser la réaction de dissolution décrite dans le document~\ref{doc:chlorure_ammonium}, prendre 2 béchers et verser dans chacun \qty{50}{\ml} d’eau distillée.
   
-  Mesurer la masse d'eau distillée versée $m_\text{eau} =$
-  %\texteTrou[0.1]{\qty{50,0}{\g}}
+  Mesurer la masse d'eau distillée versée $m_\text{eau} =$ \correction{\qty{50,0}{\g}}
   
   Ajouter les masses suivantes de chlorure d'ammonium \chemfig{NH_4 Cl} :
   \begin{listePoints}
-    \item bécher 1 : $m = \qty{5,0}{\g}$
-    \item bécher 2 : $m = \qty{10,0}{\g}$
+    \item bécher 1 : $m_1 = \qty{4,0}{\g}$
+    \item bécher 2 : $m_2 = \qty{10,0}{\g}$
   \end{listePoints}
 \end{doc}
 
@@ -82,8 +81,7 @@ Mesurer la température initiale $T_i$ avant l’ajout du solide, puis la tempé
 Noter les résultats dans le tableau suivant :
 \begin{center}
   \begin{tblr}{
-    colspec = {c c c X[c]},
-    hlines, vlines,
+    colspec = {c c c X[c]}, hlines, vlines,
     row{1} = {couleurSec-100},
   }
     &
@@ -92,13 +90,13 @@ Noter les résultats dans le tableau suivant :
     Variation de température $\Delta T = T_f - T_i$ \\
     %
     Bécher 1 &
-    \correction{$20,0 \unit{\degreeCelsius}$} &
-    \correction{$15,8 \unit{\degreeCelsius}$} &
-    \correction{$-4,2 (\degreeCelsius)$} \\
+    \correction{\qty{20,0}{\degreeCelsius}} &
+    \correction{\qty{15,8}{\degreeCelsius}} &
+    \correction{\qty{-4,2}{\degreeCelsius}} \\
     Bécher 2 &
-    \correction{$20,0 \unit{\degreeCelsius}$} &
-    \correction{$7,4 \unit{\degreeCelsius}$} &
-    \correction{$-12,6 \unit{\degreeCelsius}$} \\
+    \correction{\qty{20,0}{\degreeCelsius}} &
+    \correction{\qty{7,4 }{\degreeCelsius}} &
+    \correction{\qty{-12,6}{\degreeCelsius}} \\
     % Bécher 3 & & &
     % \\ \hline
   \end{tblr}
@@ -124,9 +122,14 @@ Noter les résultats dans le tableau suivant :
   \important{Donnée :}
   La capacité thermique de l’eau vaut $c_\text{eau} = \qty{4,180}{\joule\per\g\per\degreeCelsius}$
 }{
-  $E_1 = \qty{875}{\joule}$,
-  $E_2 = \qty{1750}{\joule}$,
-  $E_2 = \qty{2625}{\joule}$
+  On calcule l'énergie à l'aide de la relation littérale donnée
+  \begin{align*}
+    E_1 &= m_\text{eau} \times c_\text{eau} \times \Delta T_1 \\
+        &= \qty{50,0}{\g} \times \qty{4,180}{\joule\per\g\per\degreeCelsius} \times (\num{-4.2} - \num{15,8})\unit{\degreeCelsius} \\
+        &= \qty{878}{\joule}.
+  \end{align*}
+
+  On calcule de la même façon $E_2$, donc $E_1 = \qty{878}{\joule}$ et $E_2 = \qty{2633}{\joule}$.
 }[3]
 
 %%
@@ -134,5 +137,13 @@ Noter les résultats dans le tableau suivant :
   Calculer l'énergie de dissolution massique $E_m = - E / m$, avec $m$ la masse de chlorure d'ammonium dissoute.
   Comparer avec la valeur de référence $E_m = \qty{276,3}{\joule\per\g}$.
 }{
-  ...
+  Dans le premier cas, on a 
+  \begin{equation*}
+    E_m = \dfrac{E_1}{m_1}
+    = \dfrac{\qty{878}{\joule}}{\qty{5,0}{\g}}
+    = \qty{219,5}{\joule\per\g}
+  \end{equation*}
+  Dans le second cas on trouve $E_m = E_2 / m_2 = \qty{263.3}{\joule\per\g}.
+
+  Dans les deux cas on trouve une valeur plus faible que celle attendue, ce qui peut s'expliquer par le contact entre le bécher et l'air extérieur, qui entraine des transferts de températures et augmente la température de l'eau.
 }[2]

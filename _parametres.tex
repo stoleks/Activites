@@ -109,3 +109,7 @@
   detect-weight, propagate-math-font = true, reset-math-version = false % pour avoir les versions grasse des typo
 }
 \AtBeginDocument{\RenewCommandCopy\qty\SI} % Pour "écraser" la commande \qty du package physics
+%% Pour rendre silencieux le warning précisant d'ajouter la commande au dessus
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
