@@ -23,14 +23,14 @@ comment_lines "stssTerminale.tex"
 for level in "${levels[@]}";
 do
   # activities
-  sh generation.sh $level $output
+  sh generation_niveau.sh $level $output
 
   # corrections
   for directory in $level/*;
   do
     if [[ -d $directory ]]; then
       chapter=`echo $directory | awk -F "[/]" '{print $2}'`
-      sh correction.sh $level $chapter $output
+      sh generation_correction.sh $level $chapter $output
     fi
   done
 done

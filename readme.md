@@ -39,16 +39,21 @@ Pour générer plusieurs .pdf rapidement, j'utilise generateur.sh, qui va géné
 Le script va automatiquement commenter les lignes nécessaires dans main.tex, puis il va appeler generation\_niveau.sh pour chaque niveau avec la bonne sortie ("../Cours" chez moi) et generation\_correction.sh pour chaque niveau et chaque chapitre.
 Pour générer les activités d'un seul niveau, j'utilise generation\_niveau.sh, appelé comme ça pour chaque niveau :
     
-    sh generation_niveau.sh "seconde" "../Cours/"
-    sh generation_niveau.sh "stssPremiere" "../Cours"
-    sh generation_niveau.sh "stssTerminale" "../Cours"
+    sh generation_niveau.sh seconde "../Cours"
+    sh generation_niveau.sh stssPremiere "../Cours"
+    sh generation_niveau.sh stssTerminale "../Cours"
 
 Le script extrait les noms des fichiers à partir des commandes \inclusActivite et les déplace dans le dossier "../Cours/", en reprenant donc l'organisation de ce répertoire.
+Pour générer les activités d'un chapitre d'un niveau, j'utilise generation\_chapitre.sh, appelé comme ça :
+    
+    sh generation_chapitre.sh seconde atome "../Cours"
+
+Il fonctionne comme generation_niveau, mais pour un chapitre. Pour être inclus dans le chapitre, il faut que le script trouve le nom du chapitre dans la ligne contenant le fichier. Ajouter "% \_mon\_chapitre" en fin de ligne permet donc d'inclure un fichier dans le chapitre, même s'il n'est pas dans le bon dossier.
 Pour les versions corrigées de chaque chapitre, j'utilise generation\_correction.sh, appelé comme ça pour un chapitre :
 
-    sh generation_correction.sh "seconde" "atome" "../Cours"
+    sh generation_correction.sh seconde atome "../Cours"
 
-Le deuxième argument et le nom du dossier qui contient le chapitre. Le script passe main.tex en mode correction, inclus tous les fichiers liés au chapitre et déplace le fichier .pdf généré dans "../Cours/seconde/atome/correction\_atome.pdf", pour l'exemple donnée.
+Le deuxième argument et le nom du dossier qui contient le chapitre. Le script passe main.tex en mode correction, inclus tous les fichiers liés au chapitre (cf. script précédent) et déplace le fichier .pdf généré dans "../Cours/seconde/atome/correction\_atome.pdf", pour l'exemple donnée.
 
 
 ## Contact
