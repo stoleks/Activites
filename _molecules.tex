@@ -19,7 +19,7 @@
   \renewcommand*\printatom[1]{\ensuremath{\mathrm{##1}}}
 }
 \newcommand{\chemfigHaworth}[1]{
-  \chemfig[cram width=3pt, atom sep=2.25em]{ #1 }
+  \chemfig[cram width=2.2pt, atom sep=2.em]{ #1 }
 }
 
 %% parties colorées
@@ -97,25 +97,31 @@
 \definesubmol\ester       { (=[:90] O) -[:-30] O}
 \definesubmol\ether       { -[:30] O -[:-30]}
 \definesubmol\amide       { (=[:90] O) -[:-30] N}
-\definesubmol\phosphate   { P (=[::-90] O) (-[::90] O^{-}) }
+\definesubmol\phosphate   { P (=[::-90] O) (-[::90] \charge{45:1.5pt=$\scriptstyle-$}{O}) -[::0] O}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Acides gras
 \definesubmol\palmitique{
-  HO -[::30] !\carbonyle !\cud !\cud !\cud !\cud !\cud !\cud !\cud
+  H !\teteAcide !\cud !\cud !\cud !\cud !\cud !\cud !\cud
 }
 \definesubmol\linolenique{
-  HO -[::30] !\carbonyle !\cud !\cud !\cud !\trans !\trans !\trans !\cu
+  H !\teteAcide !\cud !\cud !\cud !\trans !\trans !\trans !\cu
 }
 \definesubmol\oleique{
-  HO -[::30] !\carbonyle !\cud !\cud !\cud !\cis !\cu !\cud !\cud !\cud
+  H !\teteAcide !\cud !\cud !\cud !\cis !\cu !\cud !\cud !\cud
 }
 \definesubmol\linoleique{
-  HO -[::30] !\carbonyle !\cud !\cud !\cud !\cis !\cis !\cud !\cud
+  H !\teteAcide !\cud !\cud !\cud !\cis !\cis !\cud !\cud
 }
 \definesubmol\arachidonique{
-  HO -[::30] !\carbonyle !\cud !\cis !\cis !\cis !\cis !\cu !\cud !\cu
+  H !\teteAcide !\cud !\cis !\cis !\cis !\cis !\cu !\cud !\cu
+}
+\definesubmol\eicosaPentaenoique{
+  H !\teteAcide !\cu !\cu !\cis !\cis !\cis !\cis !\cis !\cu
+}
+\definesubmol\docosaHexanoique{
+  H !\teteAcide !\cu !\cis !\cis !\cu =[::60] !\cu !\cis !\cis !\cis !\cu
 }
 \definesubmol\oleiqueSemiDev{
   C_{17} H_{33} -C !\carboxyleDev
@@ -279,61 +285,60 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Glucides
-%% Pour la représentation de Haworth
+%% Pour la représentation de Haworth du glucose ou du fructose
 \definesubmol\gluHaw{
-  <[-1.5, 0.7] (-[:90, 0.6] OH)
-  -[::45,,,,line width = 3.4pt] (-[:-90, 0.6] OH)
-  >[::45, 0.7]
+  -[:90,0.01,,,draw = none]
+  %% Bas du cycle
+  <[::-140,0.9] (-[::140,0.7] OH) 
+  -[::50,1.1,,,line width=3pt] (-[::-90,0.7] OH)
+  >[::45,0.9]
+  %% haut du cycle
+  -[::90,0.9]O -[::45] (-[::-90,0.5] -[::60,0.7,,2] HO) -[::40,0.9]
+  %% pour retourner sur la droite du cycle
+  -[::180,0.9,,, draw = none] -[::-40,1,,, draw = none] -[::-45,0.9,,, draw = none]
 }
-\definesubmol\gluLeftHaw{
-  <[-4.5, 0.7] (-[:-90, 0.6] OH)
-  -[::-45,,,,line width = 3.4pt] (-[:90, 0.6] OH)
-  >[::-45, 0.7] (-[1.5,0.7])
+\definesubmol\fruHaw{
+  -[:90,0.01,,,draw = none]
+  %% Bas du cycle
+  <[::-140,0.9] (-[::140,0.7] OH) 
+  -[::50,1.1,,,line width=3pt] (-[::-90,0.7] OH)
+  >[::45,0.9]
+  %% haut du cycle
+  -[::90,0.9]O -[::45] -[::40,0.9]
+  %% pour retourner sur la droite du cycle
+  -[::180,0.9,,, draw = none] -[::-40,1,,, draw = none] -[::-45,0.9,,, draw = none]
+}
+
+%%% Amidon
+\definesubmol\amylopectineHaw{
+  %% Glucoses du haut
+  \cdots\phantom{O} -[::-20,1.4] O-[::30,0.8] !\gluHaw 
+  -[::30,0.8] O-[::30,0.8] !\gluHaw
+  -[::30,0.8] O-[::-75,1.2] 
+  %% Haut du Centre
+  O-[::60,0.7] -[::-60,0.7] -[::90] O-[::-45,0.9] (
+    %% Glucoses à droite
+    -[::30,0.8] O-[::30,0.8] !\gluHaw
+    -[::30,0.8] O-[::30,0.8] !\gluHaw -[::30,0.8] O-[::30,1.4] \phantom{O}\cdots
+  )
+  %% Bas du centre
+  <[::-90,0.9] (-[::45,0.7] OH)
+  -[::-45,1.1,,,line width=3pt] (-[::-90,0.7] OH)
+  >[::-45,0.9]
+  -[::-95] -[::180] % pour revenir à gauche du cycle
+  %% Glucose à gauche
+  -[::-20,0.8] O-[::-40,0.8]
+  <[::65,0.9] (-[::45,0.7] OH)
+  -[::-45,1.1,,,line width=3pt] (-[::-90,0.7] OH)
+  >[::-45,0.9] (-[::60,0.8] O-[::-30,1.4] \phantom{O}\cdots)
+  -[::-95,0.9] (-[::50,0.5] -[::60,0.7,,2] HO) -[::-40,1.1] O-[::-45,0.9]
 }
 %% Pour faciliter l'écriture d'un sucre en formule développée
 \definesubmol{\ose} { -[::0] C (-[::-90] H) (-[::90] OH) }
 
-%% Amidon
-\definesubmol\amylopecHaw{
-  % début du cycle
-  O -[1,0.6]
-  !\gluHaw
-  (-[4.5,0.7] O
-  -[6] (-[3,0.5] -[5,0.75] OH)
-  -[-4.5,0.7])
-  % fin du cycle
-  -[-1,0.6]
-}
-\definesubmol\amylopecGaucheHaw{
-  O -[5,0.6]
-  % début du cycle, perspective
-  !\gluLeftHaw  (-[-5,0.6] O -[5] ...)
-  % fin du cycle
-  -[1.5,0.7] (-[3,0.4] -[5,0.6] OH)
-  -O -[-1.5,0.7]
-}
-\definesubmol\amylopecCentraleHaw{
-  O -[-1,0.7] -[-3,0.6]
-  % début du cycle
-  - O -[-1.5,0.7] ( % perspective
-    !\gluLeftHaw  (-[-5,0.6] !\amylopecGaucheHaw)
-  )
-  % fin du cycle
-  -[-1,0.6]
-}
-\definesubmol\amylopectineHaw{
-  ...\phantom{B} -[::-30] !\amylopecHaw !\amylopecHaw O !\cd
-  !\amylopecCentraleHaw
-  !\amylopecHaw !\amylopecHaw O !\cu ...
-}
-
 %% glucose
 \definesubmol\glucoseHaw{
-  % début du cycle
-  HO -[::90,0.6,2]? % with space between ,,, there is a strange pgf bug here...
-  !\gluHaw (-[::-135, 0.6] OH) -[::90, 0.7] O 
-  % fin du cycle
-  -[::45]? (-[::-90, 0.5] -[::60, 0.75] OH)
+  HO -[::90,0.9,2] !\gluHaw -[::-45,0.7,,1] OH
 }
 \definesubmol\glucoseCycle{
   HO -[::30] *6 (-(-OH) -(-OH) -(-OH) -O- (- !\cd OH)-)
@@ -347,11 +352,7 @@
 
 %% fructose
 \definesubmol\fructoseHaw{
-  % début du cycle
-  HO -[::90,0.6,2]? % with space between ,,, there is a strange pgf bug here...
-  !\gluHaw (-[::-135, 0.5] -[::60, 0.75] OH) (-[::45] OH) -[::90, 0.7] O
-  % fin du cycle
-  -[::45]?
+  HO -[::90,0.9,2] !\fruHaw (-[::130,0.7,,1] OH) -[::-45,0.7] -[::60,0.7,,1] OH
 }
 \definesubmol\fructoseCycle{
   HO -[::30] *6 (-(-OH) -(-OH) -(-[::0] OH) (-[::-90] !\cu OH) -O--)
@@ -363,6 +364,75 @@
   OH -[::0]  C!\HH -[::0] C (=[::90] O) !\ose !\ose !\ose !\ose (-[::0] H)
 }
 
+%%%% Ribose
+\definesubmol{\ribose}{
+  % liaison à droite et cycle
+  -[::-30] !\cd *5([::70]- (-HO) -(-OH) --O-)
+  % imite les angles du cycle pour pouvoir ajouter une chaîne à gauche
+  -[::124,,,,draw = none] -[::-72,,,,draw = none] -[::128]
+}
+\definesubmol{\riboseHaw}{
+  % liaison à droite
+  -[::-30] !\cd
+  % cycle ouvert et fermé par ? (4 liaisons à tracer du coup)
+  ? <[::30,0.7] (!\cd HO) -[::60,,,,line width= 3pt] (!\cd OH) >[::60, 0.7] -[::90]O ?
+  % on repart à l'envers de l'oxygène pour pouvoir ajouter une chaîne à gauche
+  -[::180,,,,draw = none] -[::120]
+}
+\definesubmol{\desoxyribose}{
+  % liaison à droite et cycle
+  -[::-30] !\cd *5([::70]- (-HO) ---O-)
+  % imite les angles du cycle pour pouvoir ajouter une chaîne à gauche
+  -[::124,,,,draw = none] -[::-72,,,,draw = none] -[::128]
+}
+\definesubmol{\desoxyriboseHaw}{
+  % liaison à droite
+  -[::-30] !\cd
+  % cycle ouvert et fermé par ? (4 liaisons à tracer du coup)
+  ? <[::30,0.7] (!\cd HO) -[::60,,,,line width= 3pt] >[::60, 0.7] -[::90]O ?
+  % on repart à l'envers de l'oxygène pour pouvoir ajouter une chaîne à gauche
+  -[::180,,,,draw = none] -[::120]
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Base nucléique
+\definesubmol{\adenine}{
+  *5(- *6(-N=-N= (-[,,,1]NH_2) -) =-N=-)
+}
+\definesubmol{\guanine}{
+  *5(- *6(-N= (-[,,,1]NH_2) -[,,,1] NH -(=O)-) =-N=-)
+}
+\definesubmol{\thymine}{
+  *6(- (=O) -[,,,1] NH -(=O) -(-)=-)
+}
+\definesubmol{\uracile}{
+  *6(- (=O) -[,,,1] NH -(=O) -=-)
+}
+\definesubmol{\cytosine}{
+  *6(- (=O) -N= (-NH_2) -=-)
+}
+
+%%% Nucléoside
+\definesubmol{\adenosine}{
+  !\ribose N !\adenine
+}
+\definesubmol{\adenosineHaw}{
+  !\riboseHaw N !\adenine
+}
+
+%%%% Adenosine Tri-Phosphate et Adenosine Di-Phosphate
+\definesubmol{\ADP}{
+  \charge{45:1.5pt=$\scriptstyle -$}{O} -!\phosphate -!\phosphate !\adenosine
+}
+\definesubmol{\ATP}{
+  \charge{45:1.5pt=$\scriptstyle -$}{O} -!\phosphate -!\phosphate -!\phosphate !\adenosine
+}
+\definesubmol{\ADPHaw}{
+  \charge{45:1.5pt=$\scriptstyle -$}{O} -!\phosphate -!\phosphate !\adenosineHaw
+}
+\definesubmol{\ATPHaw}{
+  \charge{45:1.5pt=$\scriptstyle -$}{O} -!\phosphate -!\phosphate -!\phosphate !\adenosineHaw
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Acides alpha aminés, formules topologiques
@@ -645,7 +715,7 @@
                 -- (- !\cd (!\ccd O) !\cu NH_2)
                 - (-[::-90]) ( % Phosphate
                   - !\cud (!\ccd O) !\cu NH !\cdu (!\cu)
-                  !\cd O !\cu !\phosphate -[::0] O -[::0] *5( % cycle du bas ether
+                  !\cd O !\cu !\phosphate -[::0] *5( % cycle du bas ether
                     - (- !\cu HO)
                     -O- (-N  *5(- *6(=-(-)=(-)-=) --N=-)) % Cycle du bas amidine
                     -(-OH)-
@@ -771,7 +841,7 @@
 \definesubmol\cocaineHaw{
   ? 
     <[::60,0.7] (-[::60] N -[::60])
-    -[::-60,,,,line width = 3.4pt]
+    -[::-60,,,,line width = 3pt]
     >[::-30,0.7] ( % ether-phenyl
       !\cu O !\cd (!\ccd O) !\cu *6(=-=-=-)
     )
