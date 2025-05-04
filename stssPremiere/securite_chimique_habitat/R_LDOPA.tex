@@ -1,10 +1,6 @@
 %%%%
 \tetePremStssChim
-
-%%%% titre
-\numeroActivite{1}
 \titreActivite{Un précurseur de la dopamine}[Révision]
-
 
 \exercice{La DOPA}
 
@@ -28,16 +24,19 @@ Elle est un précurseur de la dopamine et constitue actuellement le médicament 
 \bigskip
 \question{
   Contre quelle maladie permet de lutter la DOPA ?    
-}{}{2}
+}{
+  La DOPA permet de lutter contre la maladie de Parkinson.
+}[2]
 
 \question{
   La formule brute de la DOPA est \chemfig{C_9 H_{11} N O_4}.
   Calculer la masse molaire moléculaire de la DOPA. 
 }{
   \begin{equation*}
-    M(\chemfig{C_9 H_{11} N O_4}) = 11M(H) + 9M(C) + 4M(O) + M(N) = \qty{197}{\g\per\mole}
+    \masseMol{C_9 H_{11} N O_4} = 11M(H) + 9M(C) + 4M(O) + M(N) 
+    = \qty{197}{\g\per\mole}
   \end{equation*}
-}{2}
+}[2]
 
 On prescrit de la DOPA a une patiente. 
 Elle doit ingérer un médicament contenant \qty{1000}{\mg} de DOPA.
@@ -45,18 +44,32 @@ Elle doit ingérer un médicament contenant \qty{1000}{\mg} de DOPA.
 \question{
   Calculer la quantité de matière de DOPA contenue dans le médicament.
 }{
-
-}{2}
+  Pour trouver la quantité de DOPA dans le médicament, on divise la masse de DOPA par la masse molaire
+  \begin{equation*}
+    n(\text{DOPA}) = \dfrac{ m(\text{DOPA}) }{ \masseMol{DOPA} }
+    =  \dfrac{ \num{1000}\dfrac{\unit{\g}}{1000} }{ \qty{197}{\g\per\mole} }
+    = \qty{5.1e-3}{\mole}
+  \end{equation*}
+}[2]
 
 \question{
   La patiente a \qty{5.5}{\litre} de sang dans le corps.
   Calculer la concentration molaire en DOPA dans le sang de la patiente après ingestion de son médicament.
-}{}{0}
+}{
+  Il faut diviser la quantité de DOPA par le volume de sang
+  \begin{equation*}
+    c(\text{DOPA}) = \dfrac{ n(\text{DOPA}) }{V_\text{sang}}
+    = \dfrac{ \qty{5.1e-3}{\mole} }{ \qty{5.5}{\litre} }
+    = \qty{9.8e-4}{\mole\per\litre}
+  \end{equation*}
+}[2]
 
 \question{
-  Le sang est une solution aqueuse, composée d'eau, de globule rouge, de plaquette et globule blanc. 
+  Le sang est une solution aqueuse, composée d'eau, de globules rouge, de plaquettes et de globules blanc.
   Indiquer quels sont les solutés et le solvant dans le sang.
-}{}{2}
+}{
+  Le solvant est l'eau, les solutés sont les globules blanc et rouge et les plaquettes.
+}[2]
 
 \newpage
 La formule chimique de la DOPA est 
@@ -72,7 +85,9 @@ Que l'on va noter \chemfig{DH^+}.
 
 \question{
   Indiquer laquelle de ces deux formes est l'acide et laquelle est la base, puis donner le couple acide base associé à la DOPA.
-}{}{2}
+}{
+  L'ion DOPAnium est l'acide, car il contient plus d'hydrogène que la DOPA. Le couple acide/base est donc \chemfig{DH^+}/\chemfig{D}.
+}[2]
 
 \question{
   Dans le sang, la DOPA réagit avec l'ion oxonium \oxonium. 
@@ -81,4 +96,8 @@ Que l'on va noter \chemfig{DH^+}.
     \item Couple de l'eau : \oxonium/\eau
     \item Couple de la DOPA : \chemfig{DH^+}/\chemfig{D}
   \end{donnees}\phantom{b}
-}{}{4}
+}{
+  \begin{equation*}
+    \chemfig{D} + \oxonium \reaction \chemfig{DH^+} + \eau
+  \end{equation*}
+}[4]

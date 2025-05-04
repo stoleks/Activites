@@ -4,23 +4,22 @@
 
 %%%% objectifs
 \begin{objectifs}
-  \item Comprendre le principe d'un alcootest
+  \item Comprendre le principe d'un éthylotest
   \item Revoir les réaction d'oxydoréduction
 \end{objectifs}
 
 
 %%%% docs
-\begin{doc}{Principe de l'alcootest}{doc:A3_alcootest}
-  L'alcootest est constitué d'un tube en verre dans lequel on fait circuler l'air préalablement expiré dans un ballon en plastique de 1 litre.
-  
+\begin{doc}{Principe de l'éthylotest}{doc:A3_alcootest}
+  L'éthylotest est constitué d'un tube en verre dans lequel on fait circuler l'air préalablement expiré dans un ballon en plastique de 1 litre.  
   L'air expiré traverse une zone constituée de grains jaune-orangé de dichromate de potassium.
-
   Si l'haleine contient de l'alcool, le solide jaune-orangé devient vert.
 
-  Un repère situé à peu près au premier tiers de la zone de détection indique la limite à ne pas dépasser.
+  Un repère situé au premier tiers de la zone de détection indique la limite légale à ne pas dépasser, qui correspond à \qty{0,25}{\milli\g\per\litre} d’air expiré ou \qty{0.5}{\g\per\litre} dans le sang, soit deux verres standard d'alcool.
 
-  \centering
-  \image{1}{images/photos/alcootest}
+  \begin{center}
+    \image{1}{images/photos/alcootest}
+  \end{center}
 \end{doc}
 
 %%
@@ -39,8 +38,32 @@
   \end{center}
 \end{doc}
 
-\begin{doc}{Réaction d'oxydo-réduction dans un alcootest}{doc:A3_reaction_chim_alcootest}
-  L'alcootest exploite une réaction chimique d'oxydoréduction.
+\begin{doc}{Rappel sur les réaction d'oxydo-réduction}{doc:A_reaction_oxydoreduction}
+  \begin{importants}  
+    Un \important{oxydant} est une espèce chimique capable d'\important{obtenir} un ou plusieurs \important{électrons.}
+
+    Un \important{réducteur} est une espèce chimique capable de \important{relâcher} un ou plusieurs \important{électrons.}
+  \end{importants}
+
+  Un oxydant et un réducteur forment un couple Oxydant/Réducteur, si l'on peut passer de l'un à l'autre par le gain ou la perte d'électrons.
+  Le couple est noté Ox/Réd. \exemple{\chemfig{Zn^{2+}}/\chemfig{Zn}}.
+  
+  \begin{importants}
+    Une réaction \important{d'oxydoréduction} a lieu quand on met en contact un oxydant et un réducteur de deux couples différents.
+  \end{importants}
+  
+  Elle met donc en jeu deux couples oxydant/réducteur.
+  Par exemple avec un couple du fer : \ionFerIII/\chemfig{Fe} ; et un couple de l'oxygène : \dioxygene/\ionOxygene
+
+  Le gaz \dioxygene va réagir avec le solide \chemfig{Fe}, pour se transformer en ion \ionFerIII et en ion \ionOxygene, qui vont se combiner pour former de l'hématite solide \chemfig{Fe_2 O_3} (la rouille).
+  
+  \begin{equation*}
+    4\chemfig{Fe}\sol + 3\dioxygene\gaz \reaction 4\ionFerIII + 6\ionOxygene \reaction 2\chemfig{Fe_2 O_3}\sol
+  \end{equation*}
+\end{doc}
+
+\begin{doc}{Réaction d'oxydo-réduction dans un éthylotest}{doc:A3_reaction_chim_alcootest}
+  L'éthylotest exploite une réaction chimique d'oxydoréduction.
   L'éthanol \chemfig{C_2H_6O} contenu dans l'air expiré par une personne alcoolisée constitue le réducteur destiné à être oxydé en acide éthanoïque \chemfig{C_2H_4O_2} par l'ion dichromate \chemfig{Cr_2 O_7^{2-}} contenu dans le tube de test.
   \smallskip
 
@@ -64,10 +87,10 @@
 }{}[3]
 
 
-\begin{doc}{Démarche pour établir l'équation d'une réaction redox}{doc:A3}
+\begin{doc}{Démarche pour établir l'équation d'une réaction d'oxydoréduction}{doc:A3}
   Pour établir l'équation d'une réaction d'oxydoréduction il faut
   \begin{listePoints}
-    \item Identifier les deux réactifs $Ox_1$ et $Red_2$.
+    \item Identifier les deux réactifs $\text{Oxydant}_1$ et $\text{Réducteur}_2$.
     \item Écrire, l'une sous l'autre, les deux demi-équations en mettant les réactifs à gauche.
     \item Ajuster les coefficients des deux demi-équations pour obtenir le même nombre d'électrons.
     \item Additionner côté par côté les deux demi-équations.
@@ -77,10 +100,10 @@
 
 %%
 \question{
-  Établir l’équation de la réaction d’oxydoréduction entre l'éthanol et  sous la forme $Ox_1 + Red_2 \reaction Red_1 + Ox_2$.
-}{}[1]
+  Établir l’équation de la réaction d’oxydoréduction entre l'éthanol et  sous la forme $\text{Oxydant}_1 + \text{Réducteur}_2 \reaction \text{Réducteur}_1 + \text{Oxydant}_2$.
+}{}[7]
 
 \question{
-  Interpréter les changements de couleurs observés lorsque l’alcootest est positif.
+  Interpréter les changements de couleurs observés lorsque l’éthylotest est positif.
 }{
 }[4]

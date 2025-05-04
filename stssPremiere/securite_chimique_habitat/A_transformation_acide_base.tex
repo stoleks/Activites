@@ -1,10 +1,8 @@
 %%%%
 \tetePremStssChim
-
-%%%% titre
-\numeroActivite{4}
 \titreActivite{Transformations acido-basique}
 
+%%%%
 \begin{objectifs}
   \item Définir un acide et une base selon le modèle de Br\o{}nsted.
   \item Savoir écrire la demi-réaction d'un couple acido-basique.
@@ -19,6 +17,7 @@
   }
 \end{contexte}
 
+%%%%
 \begin{doc}{Acide et base selon le modèle de Br\o{}nsted}{doc:A3_acide_base_bronsted}
   D'un point de vue microscopique, on peut modéliser les transformations acido-basique à l'aide de simple échange d'ion hydrogène \ionHydrogene.
 
@@ -55,7 +54,11 @@
 
 \question{
   Identifier les couples acido-basiques parmi les deux demi-réactions du document~\ref{doc:A3_acide_base_bronsted}.  
-}{}{1}
+}{
+  L'acide est l'espèce qui va perdre un \ionHydrogene.
+  Pour la première demi-réaction, c'est l'acide carbonique qui perd un ion hydrogène, donc c'est lui l'acide et le couple est \acideCarbonique/\bicarbonate.
+  Pour la deuxième demi-réaction, c'est l'ammonium qui perd un ion hydrogène, donc c'est lui l'acide et le couple est \ammonium/\ammoniac.
+}[1]
 
 \begin{doc}{Transformation acido-basique}{doc:A3_transfo_acido_basique}
   \begin{importants}
@@ -114,12 +117,27 @@
 
 \question{
   Identifier l'acide et la base qui réagissent ensemble pendant le détartrage.
-}{}{2}
+}{
+  C'est l'ion carbonate (base) et l'acide éthanoïque (acide) qui réagissent ensemble.
+}[2]
 
 \question{
   Écrire les demi-réactions associées dans le bon sens.
-}{}{2}
+}{
+  \begin{align*}
+    \carbonate + 2\ionHydrogene &\reaction \bicarbonate \\
+    \chemfig{CH_3COOH} &\reaction \chemfig{CH_3COO^{-}} + \ionHydrogene
+  \end{align*}
+}[2]
 
 \question{
   Ajuster et additionner les demi-réactions pour obtenir la réaction acido-basique.
-}{}{3}
+}{
+  Il faut multiplier par 2 la deuxième demi-réaction pour avoir 2 ions hydrogène en haut et en bas
+  \begin{align*}
+    \carbonate + 2\ionHydrogene &\reaction \bicarbonate \\
+    2\chemfig{CH_3COOH} &\reaction 2\chemfig{CH_3COO^{-}} + 2\ionHydrogene \\
+    \carbonate + 2\chemfig{CH_3COOH} + 2\ionHydrogene &\reaction \bicarbonate + 2\chemfig{CH_3COO^{-}} + 2\ionHydrogene \\
+    \carbonate + 2\chemfig{CH_3COOH} &\reaction \bicarbonate + 2\chemfig{CH_3COO^{-}}
+  \end{align*}
+}[3]
