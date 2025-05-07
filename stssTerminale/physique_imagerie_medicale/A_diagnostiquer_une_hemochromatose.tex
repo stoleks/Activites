@@ -1,0 +1,81 @@
+%%%%
+\teteTermStssImag
+\titreActivite{Diagnostiquer une hémochromatose}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Utiliser les principes de l'échographie pour mener un diagnostique médical.
+\end{objectifs}
+
+\begin{contexte}
+  L’hémochromatose est une maladie qui perturbe l’absorption du fer et nécessite la surveillance particulière du foie.
+
+  \problematique{
+    Comment diagnostiquer une hémochromatose avec une échographie ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{L'hémochromatose}{doc:A3_hemochromatose}
+  Les hémochromatoses sont un groupe de maladies héréditaires autosomiques, 
+  récessives dans l'immense majorité des cas,
+  concernant le métabolisme du fer,
+  et se caractérisant par une surcharge de fer dans l'organisme.
+  À long terme, les dépôts ferriques engendrent des lésions anatomiques et fonctionnelles irréversibles.
+  
+  Une augmentation de la taille du foie peut être un symptôme de l'hémochromatose.
+  Une échographie du foie permet de mesurer sa taille.
+\end{doc}
+
+
+\begin{doc}{Suivi échographique}{doc:A3_suivi_echo}
+  L’épaisseur d’un foie est normalement comprise entre \qty{8}{\cm} et \qty{12}{\cm}.
+  Une sonde échographique, placée sur le ventre d’un patient,
+  émet des ondes  ultrasonores de fréquence $f = \qty{6,0}{\mega\hertz}$.
+  Les signaux reçus par la sonde sont représentés sur la figure de droite ci-dessous.
+
+  \begin{center}
+    \image{0.48}{images/acoustique/principe_echo_foie}
+    \image{0.48}{images/acoustique/mesure_echo_foie}
+  \end{center}
+  
+  L’instant $t = \qty{0}{\micro\s}$ correspond à l’émission du signal
+
+  \begin{donnees}
+    \item \qty{1}{\mega\hertz} = \qty{e6}{\hertz}.
+    \item \qty{1}{\micro\s} = \qty{e-6}{\s}.
+    \item Fréquences des ondes sonores audibles : de \qty{20}{\hertz} à \qty{20000}{\hertz}.
+    \item Vitesse des ultrasons dans le corps humain $c = \qty{1540}{\m\per\s}$.
+  \end{donnees}
+\end{doc}
+
+
+%%%%
+\question{
+  Justifier que les ondes utilisées sont des ultrasons.
+}{
+}{3}
+\break
+
+\question{
+  Rappeler le principe de l'échographie en précisant les phénomène physiques mis en jeu.
+}{}{4}
+
+\question{
+  Expliquer la présence des deux signaux 1 et 2 reçus par la sonde et représentés dans le document~\ref{doc:A3_suivi_echo}.
+}{}{4}
+
+\question{
+  Montrer, à l’aide du document~\ref{doc:A3_suivi_echo}, que la durée de propagation des ultrasons
+  pour parcourir l’épaisseur $d$ du foie est $\Delta t = \qty{55}{\micro\s}$.
+}{}{4}
+
+\question{
+  Déterminer si le foie du patient a une épaisseur normale.
+}{}{5}
+
+\question{
+  Déterminer la distance entre la sonde et la paroi du foie la plus proche de la sonde.
+}{}{5}

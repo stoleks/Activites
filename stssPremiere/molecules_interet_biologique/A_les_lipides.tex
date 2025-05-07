@@ -1,0 +1,163 @@
+%%%%
+\tetePremStssBiol
+\vspace*{-36pt}
+\titreActivite{Les lipides}
+
+
+\begin{objectifs}
+  \item Étudier la structure des lipides.
+  \item Comprendre la composition d'un triglycéride.
+\end{objectifs}
+
+\begin{contexte}
+  Les lipides sont les molécules composants les matières grasses et ne sont pas solubles dans l'eau.
+  Ils entrent dans la constitution de la membranes de nos cellules et forment aussi une importante réserves d'énergie dans notre organisme.
+
+  \problematique{
+    Quelle est la structure des lipides ?
+  }
+\end{contexte}
+
+
+%%%%%
+\begin{doc}{Structure d'un lipide}{doc:A6_structure_lipide}
+  \begin{importants}
+    Les lipides constituent la matière grasse du vivant.
+    Les lipides sont des molécules \important{hydrophobes,} qui ne se mélangent pas avec l'eau.
+  \end{importants}
+  Les lipides peuvent se trouver sous formes solide (cire, graisse), ou liquide (huile).
+  
+  On va étudier deux types de lipides : les acides gras et les triglycérides.
+\end{doc}
+
+\begin{doc}{Les acides gras}{doc:A6_acide_gras}
+  \begin{importants}
+    Les \important{acides gras} sont des \important{acides carboxyliques} qui possèdent une longue chaîne carbonée sans ramification.
+    Les acides gras peuvent être 
+    \begin{listePoints}
+      \item \important{saturés} (en hydrogène) si la chaîne carbonée ne comporte que des liaisons carbone-carbone simples ;
+      \item \important{insaturés} si la chaîne carbonée comporte au moins une liaison carbone-carbone double.
+    \end{listePoints}
+  \end{importants}
+  
+  \begin{multicols}{2}
+    \centering
+    \chemname[8pt]{
+      {\small
+        \chemfig[atom sep = 1.4em]{!\palmitique}
+      }
+    }{
+      Acide palmitique, un acide gras \important{saturé.}
+    }
+
+    \chemname[8pt]{
+      {\small
+        \chemfig[atom sep = 1.4em]{HO-[1] !\carbonyle !\trioleique}
+      }
+    }{
+      Acide oléique, un acide gras \important{insaturé.}
+    }
+  \end{multicols}
+
+  Les acides gras saturés ont une formule brute de la forme \bruteCHO{n}{2n}{2}.
+
+  Dans le cadre d'une alimentation saine, il faut limiter les acides gras saturés et privilégier les lipides riches en acides gras insaturés.
+\end{doc}
+
+\begin{doc}{Quelques acides gras et leurs sources}{doc:A6_sources_acides_gras}
+  \begin{tblr}{
+    colspec = {X[l] X[l] X[l] X[l] X[l]}, hlines, vlines,
+    column{1} = {couleurSec-100},
+    row{2} = {c},
+  }
+    \important{Acide gras} &
+    Acide stéarique &
+    Acide palmitique &
+    Acide oléique &
+    Acide $\alpha$-linolénique \\
+    %
+    \important{Formule brute} &
+    \bruteCHO{18}{36}{2} &
+    \bruteCHO{16}{32}{2} &
+    \bruteCHO{18}{34}{2} &
+    \bruteCHO{18}{32}{2} \\
+    %
+    \important{Sources dans l'alimentation} &
+    Bœuf, mouton, porc, beurre &
+    Huile de palme, huile de coco &
+    Olive, amande, avocat, noisette &
+    Tournesol, colza, maïs, cacahuète
+  \end{tblr}
+\end{doc}
+
+\question{
+  Entourer et nommer les familles organiques présentes dans l'acide palmitique et oléique.
+}{}[2]
+
+\question{
+  Indiquer si l'acide stéarique et l'acide oléique sont saturés ou insaturés.
+}{}[2]
+
+
+%%%%
+\begin{doc}{Les triglycérides}{doc:A6_triglycerides}
+  \vspace*{-18pt}
+  \begin{wrapfigure}[2]{r}{0.3\linewidth}
+    \centering
+    \chemfig{CH_2 (-[3]OH) -CH (-[3]OH) -CH_2(-[3]OH)}
+  
+    Glycérol
+  \end{wrapfigure}
+  \vphantom{b}
+  \begin{importants}
+    Les \important{triglycérides} sont des \important{triester} composés d'un \important{glycérol} et de trois \important{acides gras} (pas forcément trois fois le même).
+  \end{importants}
+
+  \begin{center}
+    {\small
+      \chemfig[atom sep = 1.25em]{[:-60]!\palmitine}
+      \qq{} ou \qq{}
+      \chemfig[atom sep = 1.75em]{!\palmitineSemiDev} \\[8pt]
+    }
+    \legende{
+      Tripalmitine, triglycéride composé d'un glycérol et de trois acide palmitique
+    }
+ \end{center}
+
+  \begin{wrapfigure}{l}{0.45\linewidth} 
+    \centering
+    \small{
+      \chemfig[atom sep = 1.2em]{
+        (-[::150] -[::60] O-[::-60] !\carbonyle !\trioleique)  % haut
+        (-[::-90] -[::60] O-[::30] !\carbonyle !\trilinoleique) % bas
+        -[::30] O-[::60] !\carbonyle !\trilinolenique % centre
+      }
+    }
+  \end{wrapfigure}
+ 
+  \textcolor{couleurPrim}{\faArrowLeft} \; 
+  Triglycéride composé de trois acides gras différents.
+    
+  \begin{importants}
+    Un triglycéride est \important{insaturé} s'il comporte \important{au moins un} acide gras insaturé.
+  \end{importants}
+  
+  Les triglycérides compose la majorité des lipides.
+
+  \begin{doc}{Acide gras et cholestérol}{doc:A6_sante}
+    Les acides gras saturés ou les triglycérides saturés augmentent la présence de cholestérol dans le sang.
+
+    S'il y a trop de cholestérol dans le sang, on parle \important{d'hypercholestérolémie,} ce qui entraine la formation de plaques graisseuses sur les parois sanguines.
+    Ce rétrécissement des vaisseaux sanguins gêne la circulation sanguine dans le corps, ce qui peut mener à des accidents cardiovasculaires.
+  \end{doc}
+\end{doc}
+
+\numeroQuestion
+Repérer et entourer les fonctions ester dans tous les triglycérides du document~\ref{doc:A6_triglycerides}.
+
+\numeroQuestion 
+Entourer tous les glycérol estérifié dans les triglycérides du document~\ref{doc:A6_triglycerides}.
+
+\question{
+  Quels aliments faut-il éviter si on souffre d'hypercholestérolémie ?
+}{}[2]

@@ -1,0 +1,132 @@
+%%%%
+\tetePremStssElec
+\vspace*{-36pt}
+\titreActivite{Prévenir les risques d'électrisation}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Revoir l'intensité du courant et la tension électrique
+  \item Connaître les dangers liés à une électrisation
+\end{objectifs}
+
+\begin{contexte}
+  Anna projette de réaliser quelques travaux sur les prises électriques dans sa maison.
+  
+  \problematique{
+    Comment éviter tout risque d'électrisation ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{La prise de terre}{doc:A1_prise_terre}
+  \begin{wrapfigure}[3]{r}{0.1\linewidth}
+    \centering
+    \vspace*{-32pt}
+    \qrcode{https://www.youtube.com/watch?v=BazTgHMuA8k}
+  \end{wrapfigure}
+  La prise de terre a une importance vitale, car la prise de terre assure que le courant électrique s'évacue dans le sol lorsqu'un appareil est mal isolé.
+  Concrètement la prise de terre est un câble métallique qui finit sur un piquet enfoui dans le sol.
+  
+  \begin{wrapfigure}{l}{0.2\linewidth}
+    \centering
+    \vspace*{-14pt}
+    \image{1}{images/photos/prise_terre.jpg}
+  \end{wrapfigure}
+  Ce câble permet de dévier le courant électrique qui s'échapperait d'un appareil dans la terre, d'où le nom de prise de terre.
+
+  Des pertes de courant peuvent survenir lorsqu'un câble d'alimentation abîmé est dénudé et que les fils électriques entrent en contact avec l'armature métallique d'un l'appareil.
+  Sans prise de terre, le courant traverserait le corps de la première personne qui toucherait l'appareil !
+\end{doc}
+
+\begin{doc}{Tension et intensité}{doc:A1_tension_intensite}
+  \begin{importants}
+    Un courant électrique est caractérisé par deux grandeurs : 
+    \begin{listePoints}
+      \item la tension électrique, exprimée en volt \unit{\volt}.
+      \item l'intensité du courant, exprimée en ampère \unit{\ampere}.
+    \end{listePoints}
+  \end{importants}
+  
+  La tension détermine l'énergie libérée par le courant.
+  En pratique, plus la tension est élevée, plus le risque de brûlure est grand.
+  
+  L'intensité du courant traversant un corps est responsable de contractions musculaires et de ruptures de fibres nerveuses, appelée « sidération ».
+  Lorsque l'intensité augmente, des réactions de plus en plus intense apparaissent, allant jusqu'à la mort par arrêt cardiaque.
+\end{doc}
+
+\begin{doc}{Accident électrique}{doc:A1_accident_elec}
+  Dans les accidents électrique, on distingue l’électrisation de l’électrocution :
+  \begin{importants}  
+    \begin{listePoints}      
+      \item l’électrisation : c’est la réaction du corps due à un contact accidentel avec l’électricité ;
+      \item l’électrocution : c’est l’électrisation qui entraine la mort.
+    \end{listePoints}
+  \end{importants}
+\end{doc}
+
+\begin{doc}{Résistance du corps humain}{doc:A1_resistance_humain}
+  Lorsqu’il est soumis à une tension électrique, le corps humain conduit le courant électrique.
+  \begin{tableau}{|c |c |c |c |c |}
+    État de la peau & Peau sèche & Peau humide & Peau mouillée & Peau immergée \\
+    Résistance $R$ & \qty{5000}{\ohm} & \qty{2500}{\ohm} & \qty{1000}{\ohm} & \qty{500}{\ohm}
+  \end{tableau}
+\end{doc}
+
+
+\begin{doc}{Effet physiologique observée}{doc:A1_effet_physiologique}
+  \begin{center}
+    \image{0.5}{images/sante/danger_electrisation_ampere}
+    \image{0.46}{images/donnees/effet_physiologique_electrisation}
+    
+    \begin{tblr}{
+      hlines, vlines, colspec = {l X[l]},
+      row{1} = {couleurSec-100, c},
+      row{2} = {blue-150},   row{3} = {green-100},
+      row{4} = {yellow-150}, row{5} = {red-100},
+    }
+      Zone & Principaux effets physiologiques constatés \\
+      AC-1 & Aucune réaction \\
+      AC-2 & Sensations désagréables mais pas d’effets physiologiques dangereux \\
+      AC-3 & Tétanisation musculaire avec risque de paralysie respiratoire mais sans fibrillation ventriculaire \\
+      AC-4 & Fibrillation ventriculaire, possibilités d’arrêt respiratoire, d’arrêt cardiaque, de brûlures graves, etc.
+    \end{tblr}
+    \vspace*{2pt}
+    
+    Effets physiologiques du courant alternatif en fonction de l’intensité \\
+    du courant électrique et de la durée d’exposition
+  \end{center}
+\end{doc}
+
+
+%%%%
+\question{
+  Anna commence par descendre à la cave pour vérifier l'état de l'installation de la prise de terre.
+  À l’aide du document~\ref{doc:A1_prise_terre}, expliquer quels dangers sont écartés grâce à la prise de terre.
+}{
+
+}{2}
+      
+\question{
+  Trouver la signification des mots : tétanisation, paralysie et fibrillation ventriculaire.
+}{
+
+}{3}
+
+\question{
+  Anna touche accidentellement, avec ses mains mouillées, un fil électrique dénudé pendant \qty{100}{\milli\s}.
+  Elle est exposée à un courant électrique d’intensité égale à \qty{50}{\milli\ampere}.
+  À l’aide du document~\ref{doc:A1_effet_physiologique} prévoir quels vont être les effets physiologiques.
+}{
+
+}{3}
+
+\numeroQuestion
+En vous aidant des documents et de vos connaissances, prévoir sur une feuille quelle serait la gravité des effets si :
+\begin{itemize}
+  \item ses mains étaient sèches,
+  \item le contact était beaucoup plus long et durait \qty{1}{\s},
+  \item la tension d'alimentation était de \qty{25}{\volt} au lieu de \qty{230}{\volt}.
+\end{itemize}
+Donner alors quelques règles afin d’éviter une électrisation.

@@ -1,0 +1,174 @@
+%%%%
+\teteTermStssOrga
+\vspace*{-34pt}
+\titreActivite{Fonctions organiques et nomenclature}
+
+%%%% objectifs
+\begin{objectifs}
+  \item Rappeler les 8 familles organiques à connaitre et la nomenclature associée.
+\end{objectifs}
+
+
+%%
+\vspace*{-8pt}
+\titreSection{Les fonctions organiques}
+
+%%
+\vspace*{-8pt}
+\input{commun/familles_organiques}
+
+
+%%
+\newpage
+\vspace*{-24pt}
+\titreSection{La nomenclature}
+
+\begin{doc}{Principe de la nomenclature}{doc:A2_principe_nomenclature}
+  \begin{importants}  
+    La \important{nomenclature} est l'ensemble des règles établies pour nommer les molécules organiques.
+  \end{importants}
+   
+  La nomenclature moderne repose sur deux principes :
+  \begin{listePoints}
+    \item décrire la \important{géométrie} de la molécule nommée ;
+    \item indiquer les \important{fonction organiques} présentes dans la molécule.
+  \end{listePoints}
+\end{doc}
+
+%%
+\begin{doc}{Nommer une chaîne carbonée}{doc:A2_chaine_carbonee}
+  Toute molécule organique possède au moins une chaîne carbonée.
+  Pour nommer une chaîne carbonée, on va associer un \important{préfixe} avec un \important{suffixe.}
+  Le suffixe dépend de la fonction organique, mais le préfixe est déterminé par le nombre de carbones qui composent la chaîne.
+  \begin{importants}
+  \begin{center}
+    \begin{tblr}{
+      columns = {c}, vlines, hlines,
+      row{1} = {couleurSec-100!white},
+      column{1} = {couleurSec-50}
+    }
+      Nombre de carbone \chemfig{C} 
+      & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+      Préfixe
+      & meth- & éth- & prop- & but- & pent- & hex- & hept- & octa- \\
+    \end{tblr}
+  \end{center}  
+  \end{importants}
+\end{doc}
+
+%%
+\titreSousSection{Règles pour les alcanes, alcènes ou alcynes}
+
+\begin{doc}{Les alcanes}{doc:A2_alcanes}
+  \separationBlocs{
+    \begin{importants}
+      Une molécule d'alcane est un \important{hydrocarbure} composé de \important{liaisons simples.}
+    \end{importants}
+    Pour nommer un alcane, il faut déterminer la chaîne carbonée la plus longue qui compose la molécule. \\
+    On écrit alors le préfixe lié à la longueur de la chaîne et on ajoute le suffixe « \important{-ane} ». \\
+    Un alcane a toujours une formule brute de la forme \chemfig{ C_{n} H_{2(n + 1)} }.
+  }{
+    \vspace*{-22pt}
+    \begin{importants}
+      Un \important{hydrocarbure} est une molécule qui ne contient que des éléments carbones et hydrogènes.
+    \end{importants}
+    \begin{importants}
+      Un hydrocarbure est \important{saturé} (en hydrogène) s'il ne comporte que des \important{liaisons carbone-carbone simples.} \\
+      Si l'hydrocarbure comporte des \important{liaisons doubles} ou \important{triples,} on dit qu'il est \important{insaturé.}
+    \end{importants}
+  }
+  
+  \vspace*{4pt}
+  \exemple \chemfig{H_3C - CH_2 - CH_3} trois carbones dans la chaîne, donc prop- $+$ -ane : propane.
+\end{doc}
+
+%%%% Question
+\question{
+  Nommer les molécules suivantes :
+  \begin{equation*}  
+    \chemfig{H_3C -CH_2 -CH_2 -CH_3} \qq{}
+    \chemfig{-[1] -[-1] -[1] -[-1] -[1]} \qq{}
+    \chemfig{H -C !\paireH -C !\saturationH}
+  \end{equation*}
+}{
+  Butane, hexane et éthane.
+}{2}
+
+
+%%
+\begin{doc}{Les alcènes}{doc:A2_alcenes}
+  \begin{importants}
+    Les alcènes sont des hydrocarbures avec au moins une liaison double.
+    Le suffixe « -ane », devient « \important{-ène} ».
+    On indique le (ou les) numéro de la liaison double avant le suffixe, de sorte que \important{le numéro soit le plus petit possible.}
+  \end{importants}
+  \exemple \chemfig{H_3C- CH_2 - CH = CH -CH_3} cinq carbones dans la chaîne (pent-) et la liaison double se trouve en position 3 ou 2 (si on compte depuis la droite).
+  Donc pent $+$ 2 $+$ ène : pent-2-ène.
+\end{doc}
+
+%%
+\begin{doc}{les alcynes}{doc:A2_alcynes}
+  \begin{importants}
+    Les alcynes sont des hydrocarbures avec au moins une liaison triple.
+    Le suffixe « -ane », devient « \important{-yne} ».
+    On indique le (ou les) numéro de la liaison triple avant le suffixe, de sorte que \important{le numéro soit le plus petit possible,} comme pour les alcènes.
+  \end{importants}
+  \exemple \chemfig{-[1] ~[-1]} : trois carbones dans la chaîne (prop-) et la liaison triple se trouve en position 1.
+  Donc prop-1-yne ou propyne (le 1 est implicite).
+\end{doc}
+
+
+%%
+\titreSousSection{Règles pour les ramifications}
+\vspace*{-8pt}
+
+\begin{doc}{Ramification à la chaîne principale}{doc:A2_ramification}
+  \begin{importants}  
+    Une \important{ramification} est un substituant qui remplace un hydrogène sur la chaîne principale.
+  \end{importants}
+  Si le substituant est un \important{alkyle} (un hydrocarbure), son nom prend le suffixe « \important{-yl} ».
+
+  \exemple* \chemfig{CH_3 -[6]} : méthyl, \chemfig{CH_2 (-[6]) -CH_3} éthyl.
+\end{doc}
+
+\begin{doc}{Nommer une ramification}{doc:A2_nom_ramification}
+  \begin{importants}
+  Pour nommer une molécule contenant des ramifications, il faut :
+  \begin{listePoints}
+    \item trouver la \important{plus longue chaîne carbonée} pour déterminer son nom.
+    \item \important{Numéroter} la chaîne carbonée afin que la ramification ait le numéro le plus \important{petit possible,} comme pour les alcènes ou les alcynes.
+    \item Placer le \important{numéro} et le \important{nom} de l'alkyle avant le nom de la chaîne.
+    \item S'il y a plusieurs ramifications, leurs noms sont placés par ordre alphabétique.
+  \end{listePoints}
+  \end{importants}
+\end{doc}
+
+\question{
+  Nommer les molécules suivantes :
+  \begin{equation*}  
+    \chemfig{H_3C- CH (-[3]CH_3) - CH (-[-3]CH_2 -CH_3) -CH_3} \qq{}
+    \chemfig{H_3C- CH_2 -C (-[-3]CH_3) (-[3]CH_3) -CH_2 -CH_2 - CH_3}
+  \end{equation*}
+}{
+  Pour la molécule 1 : la chaîne principale a 4 atomes, donc -butane.
+  Deux ramifications sont en position 2 (avec un méthyl) et 3 (avec un éthyl).
+  Donc le nom de cette molécule est 3-éthyl-2-méthyl-butane.
+
+  Pour la molécule 2 : la chaîne principale a 5 atomes, donc -pentane.
+  Deux ramifications méthyl sont en position 2 et 3.
+  Donc le nom de cette molécul est 2,3-méthyl-pentane.
+}{2}
+
+%%
+\newpage
+\vspace*{-28pt}
+
+\question{
+  Donner la formule semi-développée du 4-méthyl-octane.
+}{}{2}
+
+\titreSousSection{Règles pour les groupes caractéristiques}
+
+\begin{doc}{Groupes caractéristiques}{doc:A2_nom_groupe_carac}
+  \input{commun/nom_familles_organiques}
+\end{doc}

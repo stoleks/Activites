@@ -1,0 +1,136 @@
+%%%%
+\teteTermStssEnvi
+\titreTP{Composition de l'air}
+\vspace*{-8pt}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Connaître la composition de l'air.
+  \item Connaître quelques tests d'identification de gaz présents dans l'air.
+  \item Savoir calculer une fraction molaire.
+\end{objectifs}
+
+\begin{contexte}
+  L'air qui nous entoure et qui nous permet de respirer est un mélange composé de plusieurs molécules.
+  
+  \problematique{
+    Quelle est la composition de l'air et comment la mesurer ?
+  }
+\end{contexte}
+
+
+%%%%
+\begin{doc}{Composition de l'air}{doc:TP2_composition_air}
+  \begin{center}
+    \begin{tblr}{
+        colspec = {|l l| r|}, hlines, cell{10}{3} = {c},
+        row{1} = {l, couleurSec-100, font = \sffamily\bfseries},
+      }
+      Constituant & & Proportion molaire \\
+      Diazote            & \diazote          & \qty{78,08}{\percent} \barrePourcentage{0.7808} \\
+      Dioxygène          & \dioxygene        & \qty{20,95}{\percent} \barrePourcentage{0.2095} \\
+      Argon              & \chemfig{Ar}      & \qty{0,93}{\percent} \barrePourcentage{0.01} \\
+      Dioxyde de carbone & \dioxydeDeCarbone & \qty{0,04}{\percent} \barrePourcentage{0} \\
+      Néon               & \chemfig{Ne}      & \qty{18,2}{\ppm} \barrePourcentage{0} \\
+      Hélium             & \chemfig{He}      & \qty{5,2}{\ppm}  \barrePourcentage{0} \\
+      Monoxyde d'azote   & \chemfig{NO}      & \qty{5,0}{\ppm}  \barrePourcentage{0} \\
+      Méthane            & \methane          & \qty{1,9}{\ppm}  \barrePourcentage{0} \\
+      Eau                & \eau              & Variable \\ 
+    \end{tblr}
+  \end{center}
+
+  \vspace*{-80pt}
+  \begin{center}
+    \begin{tikzpicture}
+      % Barres
+      \fill[color = couleurSec]     (0.0 , 0.0)        rectangle (0.7808*90ex, 3ex);
+      \fill[color = couleurSec-300] (0.7808*90ex, 0.0) rectangle (0.9903*90ex, 3ex);
+      \fill[color = couleurSec-100] (0.9903*90ex, 0.0) rectangle        (90ex, 3ex);
+      % Valeurs
+      \node at (0.7808*45ex, 1.5ex) {\important[white]{\qty{78,08}{\percent}}};
+      \node at (0.8855*90ex, 1.5ex) {\important[black]{\qty{20,95}{\percent}}};
+      \node at        (91ex, 1.5ex) {\important[black]{\qty{0,97} {\percent}}};
+      % Carré légende
+      \fill[color = couleurSec]     (75ex, 15ex) rectangle (78ex, 12ex);
+      \fill[color = couleurSec-300] (75ex, 11ex) rectangle (78ex, 8ex);
+      \fill[color = couleurSec-100] (75ex, 7ex)  rectangle (78ex, 4ex);
+      % Légende
+      \node[right] at (78ex, 13.5ex) {\important[black]{Diazote}};
+      \node[right] at (78ex, 9.5ex)  {\important[black]{Dioxygène}};
+      \node[right] at (78ex, 5.5ex)  {\important[black]{Autres gaz}};
+    \end{tikzpicture}
+  \end{center}
+
+  \qty{1}{\percent} signifie qu'il y a 1 molécule sur un total de 100 molécules.
+  
+  \qty{1}{\ppm} signifie qu'il y a 1 molécule sur un total de \num{1000000} de molécules.
+\end{doc}
+
+
+\begin{doc}{Fraction molaire}{doc:TP2_fraction_molaire}
+  La \important{fraction molaire} est le rapport entre la quantité de matière du constituant considéré et la quantité de matière totale dans le mélange étudié.
+
+  La fraction molaire est noté $x_i$ pour le constituant $i$. Elle varie entre 0 et 1 et se calcule avec la relation :
+  \begin{equation*}
+    x_i = \dfrac{n_i}{n_\text{tot}}
+  \end{equation*}
+
+  $n_i$ est la quantité de matière du constituant $i$.
+
+  $n_\text{tot}$ est la quantité de matière totale dans le mélange.
+\end{doc}
+
+\question{
+  Arrondir les proportion des 4 premiers éléments, puis les ramener à des fractions entières les plus simple possible (exemple : \qty{78,08}{\percent} $\simeq$ \num{80}/\num{100} = \num{4}/\num{5}).
+}{}[4]
+
+
+\begin{doc}{Quelques tests pour identifier des espèces chimiques}{doc:TP2_tests_identification}
+  \pointCyan L'eau de chaux est une solution saturée en hydroxyde de calcium \chemfig{Ca}(\chemfig{OH})$_2$.
+  En présence de dioxyde de carbone \dioxydeDeCarbone, l'eau de chaux se trouble. C'est dû à la formation d'un précipité blanc de carbonate de calcium \chemfig{CaCO_3}.
+
+  \pointCyan Le sulfate de cuivre anhydre \chemfig{CuSO_4} est une poudre blanche.
+  En contact avec des molécules d'eau \eau la poudre bleuit. C'est dû à la formation d'un complexe pentahydrate \chemfig{CuSO_4, 5H_2O}.
+
+  \pointCyan La combustion d'une allumette nécessite un combustible, la cellulose de formule brute \bruteCHO{6}{10}{5} du bois de l'allumette, et un comburant, le dioxygène \dioxygene.
+  Cette réaction chimique forme du dioxyde de carbone \dioxydeDeCarbone et de la vapeur d'eau \eau.
+\end{doc}
+
+\question{
+  Pour chacun des 3 tests, établir l'équation de la réaction chimique mise en jeu.
+}{}[3]
+
+
+%%%%
+\begin{doc}{Combustion d'une bougie}{doc:TP2_combustion_bougie}
+  Le combustible d'une bougie est l'acide stéarique de formule brute \bruteCHO{18}{36}{2}
+  L'équation de la réaction de combustion d'une bougie est
+  \begin{center}
+    \bruteCHO{18}{36}{2}\sol + 26\dioxygene\gaz \reaction
+    18\dioxydeDeCarbone\gaz + 18\eau\gaz
+  \end{center}
+
+  \important{Matériel :} un cristallisoir, une bougie, une éprouvette graduée.
+
+  \important{Protocole :} remplir le cristallisoir d'eau.
+  Placer et allumer la bougie au centre du cristallisoir.
+  Recouvrir la bougie avec l'éprouvette.
+
+  Le dioxyde de carbone se dissout dans l'eau dès sa formation et la vapeur d'eau se condense rapidement, ce qui laisse un vide dans le récipient où la combustion a lieue.
+\end{doc}
+
+\begin{doc}{Volume molaire des gaz}{doc:TP2_volume_molaire}
+  Le volume molaire des gaz vaut $V_m = \qty{24,1}{\litre\per\mole}$ à \qty{20}{\degreeCelsius} sous pression atmosphérique.
+  Cette valeur est la même pour tous les gaz, donc \important{la fraction volumique est égale à la fraction molaire pour les gaz.}
+\end{doc}
+
+\mesure Réaliser l'expérience du document~\ref{doc:TP2_combustion_bougie} et mesurer le volume d'eau déplacé.
+
+\question{
+  En déduire la fraction volumique de dioxygène, puis la fraction molaire de dioxygène.
+}{}[4]
+
+\question{
+  Comparer cette valeur avec celle fournie dans le document~\ref{doc:TP2_composition_air}.
+}{}[1]

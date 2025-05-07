@@ -1,0 +1,153 @@
+%%%%
+\teteTermStssImag
+\vspace*{-30pt}
+\titreActivite{La radioactivité}
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre le principe de la radioactivité.
+  \item Savoir qu'il y a trois types de décomposition pour la radioactivité.
+  \item Comprendre la notion d'activité et de temps de demi-vie.
+\end{objectifs}
+
+\begin{contexte}
+  Les objets qui nous entourent sont composés d'atomes, qui peuvent être radioactifs.
+  Par exemple les bananes sont naturellement radioactives.
+  
+  \problematique{
+    Qu'est-ce que la radioactivité ?
+    Comment la radioactivité évolue au cours du temps ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Constitution d'un noyau et isotope}{doc:A6_noyaux}
+  Un noyau atomique est constitué de neutrons et de protons, qui sont des nucléons.
+  Un élément chimique est noté \isotope{A}{Z}{X}
+  \begin{listePoints}
+    \item A est le nombre de nucléons (protons + neutrons) ;
+    \item Z est le numéro atomique ou le \important{nombre de charges} ;
+    \item X est le symbole de l'élément (H, O, C, etc.).
+  \end{listePoints}
+
+  \begin{wrapfigure}{r}{0.4\linewidth}
+    \vspace*{-60pt}
+    \phantom{b}
+    \image{1}{images/atomes/Carbone_12-13-14}
+  \end{wrapfigure}
+  Un même élément chimique peut avoir plusieurs noyaux différents, on parle \important{d'isotopes.}
+  
+  Par exemple le carbone a 3 isotopes
+\end{doc}
+
+\begin{doc}{Désintégration des noyaux instables}{doc:A6_noyaux_instables}
+  Le carbone 12 et le carbone 13 sont \important{stables}, tandis que le carbone 14 est \important{instable.}
+  Les noyaux instables sont dit \important{radioactifs.} 
+  Cette instabilité se traduit par une \important{désintégration inéluctable} du noyau.
+
+  \begin{wrapfigure}{r}{0.4\linewidth}
+    \centering
+    \vspace*{-20pt}
+    \image{1}{images/atomes/desintegration_carbone14}
+
+    Désintégration du carbone 14 en azote 14.
+  \end{wrapfigure}
+
+  \begin{importants}  
+    La désintégration est un phénomène aléatoire, on ne peut  donc pas prédire quand un noyau va se désintégrer.
+  \end{importants}
+  
+  Par contre on sait avec certitude que le noyau instable, appelé noyau père, va se transformer en un autre noyau, appelé noyau fils, en libérant une particule au passage.
+  
+  Le noyau fils a généralement une énergie trop élevée, il est dans un état excité, noté avec un astérisque en exposant ($X^*$).
+  Son énergie est abaissée par l'émission d'un rayonnement électromagnétique de très courte longueur d'onde, appelé rayonnement $\gamma$ (gamma).
+  On parle de \important{désexcitation gamma.}
+
+  \begin{tableau}{|c |c |}
+    Type de désintégration & Particule émise \\
+    $\alpha$ (alpha) & Noyau d'hélium \isotope{4}{2}{He} \\
+    $\beta^-$ (beta moins) & Électron \isotope{0}{-1}{e} \\
+    $\beta^+$ (beta plus) & Positron \isotope{0}{+1}{e}
+  \end{tableau}
+
+  \attention Vous devez être capable de reconnaître la particule émise au cours d'une désintégration.
+\end{doc}
+
+
+\newpage
+\vspace*{-28pt}
+\question{
+  Noter les 3 noyaux isotopes du carbone en utilisant l'écriture \isotope{A}{Z}{X}.
+}{}{1}
+
+\question{
+  Donner le sens du mot « inéluctable » utilisé dans le document~\ref{doc:A6_noyaux_instables}.
+}{}{2}
+
+\question{
+  Identifier les équations suivantes en indiquant s'il s'agit de désintégration $\alpha$, $\beta^-$, $\beta^+$ ou d'une désexcitation $\gamma$ :
+
+  \vspace*{-20pt}
+  \begin{equation*}
+    a)\; \isotope{18}{9}{F} \rightarrow \isotope{18}{8}{O} + \isotope{0}{+1}{e} 
+    \qq{} 
+    %
+    b)\; \isotope{131}{54}{Xe}^* \rightarrow \isotope{131}{54}{Xe} + \gamma 
+    \qq{} 
+    %
+    c)\; \isotope{14}{6}{C} \rightarrow \isotope{14}{7}{N} + \isotope{0}{-1}{e} 
+    \qq{} 
+    %
+    d)\; \isotope{238}{92}{U} \rightarrow \isotope{234}{90}{Th} + \isotope{4}{2}{He} 
+    \qq{}
+    %
+  \end{equation*}
+  \vspace*{-16pt}
+}{}{4}
+
+\begin{doc}{Activité d'un échantillon de matière}{doc:A6_activite}
+  L'activité représente le nombre de désintégration dans un échantillon de matière pendant une seconde.
+  Elle se note $A$ et s'exprime en \unit{\becquerel}.
+
+  \exemple Si $A = \qty{400}{\becquerel}$, alors chaque secondes 400 noyaux radioactifs se désintègrent.
+\end{doc}
+
+\begin{doc}{Évolution de la radioactivité au cours du temps}{doc:A6_evolution_radio}
+  Les noyaux radioactifs instables forment des noyaux stables, non radioactifs, en se désintégrant.
+  Au sein d'un échantillon de matière radioactive, l'activité ne fait donc que diminuer au cours du temps.
+
+  \begin{wrapfigure}{r}{0.5\linewidth} 
+    \vspace*{-24pt}
+    \image{1}{images/atomes/decroissance_radioactive}
+  \end{wrapfigure}
+  \phantom{b}\vspace*{-12pt}
+  
+  \begin{importants}
+    La \important{période radioactive $T$} ou \important{demi-vie radioactive $t_{1/2}$} est la durée nécessaire 
+    \begin{listePoints}
+      \item pour que la moitié des noyaux radioactifs dans un échantillon se désintègrent.
+      \item donc pour que l'activité soit divisée par 2.
+    \end{listePoints}
+  \end{importants}  
+  Quelques exemples de périodes radioactives \\[4pt]
+  \centering
+  \begin{tblr}{colspec = {l c c c}, vlines, hlines, row{1} = {couleurSec-100}}
+    Noyau & \isotope{14}{}{C} & \isotope{131}{}{I} & \isotope{191}{}{Po} \\
+    $T$ & \num{5730} ans & 8 jours & \qty{22}{\ms} 
+  \end{tblr}
+\end{doc}
+
+\begin{multicols}{2}
+  \begin{doc}{Variation de l'activité avec la nature de la source et sa masse}{doc:A6_variation}
+    \begin{tableau}{|l |c |c |}
+                    & Lait & Granite \\
+      $A$ pour 1 kg & 70   & 1000 \\
+      $A$ pour 2 kg & 140  & 2000 \\
+    \end{tableau}
+  \end{doc}
+  
+  \question{
+    Calculer $2^{20}$ et indiquer pourquoi on peut considérer qu'il n'y a plus de radioactivité dans un échantillon au bout de 20 périodes radioactive.
+  }{}{2}
+\end{multicols}

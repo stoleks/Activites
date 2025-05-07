@@ -1,0 +1,130 @@
+%%%%
+\tetePremStssElec
+\vspace*{-36pt}
+\titreActivite{Les risques liés au matériel}
+
+\begin{objectifs}
+  \item Relier l'intensité du courant électrique à la détérioration d'appareils électriques.
+  \item Décrire le principe d'un disjoncteur.
+\end{objectifs}
+
+
+%%%%
+\titreSection{Le rôle du disjoncteur}
+
+\begin{contexte}  
+  Myriam veut rajouter des prises électriques chez elle et donc ajouter sur son tableau électrique un nouveau disjoncteur divisionnaire.
+  Avant de démarrer les travaux, Myriam vérifie son disjoncteur différentiel.
+
+  \problematique{Comment peut-elle s'assurer de réaliser des travaux en toute sécurité ?}
+\end{contexte}
+
+\begin{doc}{Installation électrique}{doc:A2_installation_electrique}
+  \begin{center}
+    \image{1}{images/electricite/schema_electrique_maison}
+  \end{center}
+\end{doc}
+
+\begin{doc}{Le rôle d'un disjoncteur}{doc:A2_disjoncteur}
+  \begin{wrapfigure}[8]{r}{0.2\linewidth}
+    \vspace*{-24pt}
+    \centering
+    \image{1}{images/electricite/disjoncteur_differentiel}
+  \end{wrapfigure}
+  Le disjoncteur sert à protéger une installation électrique et s'installe dans le tableau électrique.
+  Un disjoncteur protège contre deux types de défauts :
+  \begin{listePoints}
+    \item protection contre les surcharges : il s'agit d'une surconsommation du récepteur branché sous le disjoncteur.
+    \item protection contre les courts circuits : c'est un défaut correspondant à un contact direct entre phase et neutre.
+  \end{listePoints}
+  Ces défaut peuvent entraîner une destruction localisée (un appareil électrique) ou à des dégâts importants (incendie d'origine électrique).
+  
+  Le disjoncteur sert à isoler électriquement la partie ou se situe le défaut.
+  Pour ça, le disjoncteur sectionne le passage du courant, comme un interrupteur.
+\end{doc}
+
+\begin{doc}{Court-circuit}{doc:A2_court_circuit}
+  \begin{wrapfigure}{r}{0.1\linewidth}
+    \vspace*{-32pt}
+    \qrcode{https://www.youtube.com/watch?v=UCTwDyTFyns}
+  \end{wrapfigure}
+  Pour s'informer sur les risques d'un court-circuit, Myriam regarde une vidéo dans laquelle un court-circuit est réalisé avec un brin de paille de fer.
+  Dans la vidéo, la résistance électrique d'un brin de paille de fer vaut \qty{0,03}{\ohm}.
+\end{doc}
+
+%
+\question{
+  Expliquer pourquoi Myriam va vérifier son disjoncteur avant de démarrer ses travaux.
+}{}{2}
+
+\question{
+  De quels défauts électrique protège un disjoncteur ? Comment le disjoncteur agit-il ?
+}{}{3}
+
+\question{
+  En appliquant la loi d'Ohm, calculer la valeur de l'intensité du courant électrique $I$ dans un brin de paille de fer, en sachant que la tension électrique vaut $U = \qty{4,5}{\volt}$. Conclure.
+}{}{3}
+
+\question{
+  Du point de vue électrique, trouver le point commun entre cette vidéo, un court-circuit électrique et une installation en surcharge.
+  Quels sont les risques dans ces deux cas ?
+}{}{3}
+
+\question{
+  Si Myriam constatait un départ d'incendie d'origine électrique, quelle(s) action(s) lui conseilleriez-vous de faire, et dans quel ordre ?
+}{}{4}
+
+
+%%%%
+\titreSection{Les caractéristique électriques des appareils électriques}
+
+\begin{contexte}
+  Durant les travaux, Myriam a dû déplacer des appareils électriques afin de les connecter sur la même prise murale, grâce à une multiprise.
+  
+  \problematique{Les appareils peuvent-ils fonctionner normalement et sans danger ?}
+\end{contexte}
+
+\begin{doc}{Caractéristique de la multiprise}{doc:A2_multiprise}
+  \begin{wrapfigure}{r}{0.2\linewidth}
+    \vspace*{-24pt}
+    \centering
+    \image{1}{images/electricite/multiprise}
+  \end{wrapfigure}
+
+  \phantom{b}\vspace*{-16pt}
+  \begin{listeTirets}
+    \item Nombre de prise : 3 prises.
+    \item Puissance maximale : \qty{3500}{\watt}.
+    \item Intensité du courant maximale : \qty{16}{\ampere}.
+    \item Tension électrique : \qty{230}{\volt}
+  \end{listeTirets}
+\end{doc}
+
+\begin{doc}{Appareils connectés à la multiprise}{doc:A2_appareils_multiprise}
+  Les appareils électriques qu'elle a reliés sur la même prise sont présentés dans ce tableau :
+  
+  \begin{tableau}{|c |c |c |c |}    
+    Appareil & Intensité nominale & Puissance nominale \\
+    Sèche-linge & \qty{13}{\ampere} & \qty{3000}{\watt} \\
+    Lave-linge  & \qty{13}{\ampere} & \qty{3000}{\watt} \\
+    Four à micro-ondes &  \qty{7}{\ampere} & \qty{1650}{\watt}
+  \end{tableau}
+\end{doc}
+
+\begin{doc}{Lampe thérapeutique}{doc:A2_lampe_therapeutique}
+  \begin{center}
+    \centering
+    \image{0.5}{images/electricite/lampe_therapeutique_IR}
+  \end{center}
+  Suite à ses travaux, Myriam commande une ampoule infrarouge thérapeutique afin de soigner ses douleurs récurrentes au dos.
+  
+  Quelques jours plus tard, elle reçoit son colis, mais ne lit pas les caractéristiques de la lampe.
+\end{doc}
+
+\question{
+  À l'aide des documents~\ref{doc:A2_multiprise} et~\ref{doc:A2_appareils_multiprise}, expliquer si Myriam peut connecter sur la même multiprise les trois appareils et les faire fonctionner simultanément sans risques ?
+}{}{3}
+
+\question{
+  En vous aidant des informations données dans le document~\ref{doc:A2_lampe_therapeutique} et en admettant que l'intensité du courant circulant dans la lampe ne dépend pas de la tension d'alimentation, expliquer la conséquence d’utiliser la lampe infrarouge en France.
+}{}{3}

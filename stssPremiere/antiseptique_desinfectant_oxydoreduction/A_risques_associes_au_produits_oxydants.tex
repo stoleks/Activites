@@ -1,0 +1,164 @@
+%%%%
+\tetePremStssRedo
+\vspace*{-36pt}
+\titreActivite{Risques associés au produits oxydants}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Comprendre les mesures de précaution à employer avec des produits oxydants.
+\end{objectifs}
+
+\begin{contexte}
+  Les produits oxydants nécessitent de respecter strictement des règles de sécurités pour éviter des accidents et pour une efficacité optimale.
+  
+  \problematique{
+    Comment utiliser un produit oxydant en toute sécurité ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Précautions d'emploi et toxicité}{doc:A3_precautions}
+  Il faut respecter plusieurs règles pour utiliser des antiseptiques et des désinfectants.
+  \begin{listePoints}
+    \item Ils sont dangereux à fortes concentration et doivent donc être dilués.
+    \item Il ne faut pas utiliser deux produits en même temps, leur action pourrait être inhibée.
+    \item Il ne faut pas mélanger les antiseptiques ou les désinfectants avec autre chose que de l'eau.
+  \end{listePoints}
+
+  \begin{tblr}{
+    colspec = {c Q[l, wd=0.26\linewidth] Q[l, wd=0.25\linewidth] Q[l, wd=0.26\linewidth]},
+    hlines, vlines, row{1} = {couleurSec-100}
+  }
+    {Produit \\ oxydant} &
+    Peroxyde d'hydrogène (eau oxygénée) &
+    Eau de Javel & Solution de diiode \\
+    %
+    {Précautions \\ et dangers} &
+    \pointCyan Nocif par ingestion ou inhalation. \newline
+    \pointCyan Peut provoquer des brûlures de la peau, des lésions oculaires graves, des irritations des voies respiratoires. \newline
+    \pointCyan Peut provoquer un incendie ou une explosion. \newline
+    \pointCyan Corrosif si concentré. &
+    \pointCyan Ne jamais ingérer. \newline
+    \pointCyan Peut provoquer des brûlures de la peau et des lésions oculaires graves. \newline
+    \pointCyan Ne pas mélanger avec des acides (dégage un gaz toxique). \newline
+    \pointCyan Très toxique pour les organismes aquatiques. &
+    \pointCyan Ne pas ingérer ou avaler. \newline
+    \pointCyan Irritation de la peau. \newline
+    \pointCyan Peut impacter le fonctionnement de la thyroïde si utilisation répétée. \\
+    %
+    Stockage &
+    Locaux ventilés, à l'abri de la lumière, des hautes températures, de tout combustible. &
+    Locaux ventilés, à l'abri de tout rayonnement solaire et des hautes températures, à l'écart des acides et des matière organiques. &
+    Locaux ventilés, à l'abri des hautes températures, à l'écart de produits susceptible de réagir avec du diiode. \\
+    Conservation &
+    15 jours après ouverture. &
+    3 mois si concentrée, 6 à 12 mois diluée. &
+    1 mois après ouverture.    
+  \end{tblr}
+\end{doc}
+
+\question{
+  Quels sont les précautions communes à ces trois produits oxydants ?
+}{}{2}
+
+\question{
+  Indiquer les propriétés d'un local qui permettrait de stocker ces trois produits oxydants.
+}{}{2}
+
+
+\newpage
+\vspace*{-42pt}
+\begin{doc}{Principes actifs courants}{doc:A3_principes_actifs}
+  Les principes actifs des antiseptiques et désinfectants agissent par \important{oxydation.}
+
+  \centering
+  \begin{tblr}{
+    colspec = {l |c | r c l}, hlines,
+    row{1} = {couleurSec-100},
+    row{5} = {m},
+  }
+    Principe actif & Couples Ox/red & \SetCell[c=3]{c} Demi-équation d'oxydoréduction \\
+    \SetCell[r = 2]{l} Eau oxygénée &
+    $\chemfig{H_2O_2}\aq/\chemfig{H_2O}\liq$ &
+    $\chemfig{H_2O_2}\aq + 2\ionHydrogene\aq + 2\electron$ &
+    $\reaction$ &
+    $2\chemfig{H_2O}\liq$ \\
+    &
+    $\dioxygene\gaz/\chemfig{H_2O_2}\aq$ & 
+    $\dioxygene\gaz + 2\ionHydrogene\aq + 2\electron$ &
+    $\reaction$ &
+    $\chemfig{H_2O_2}\aq$ \\
+    %
+    %\SetCell[r = 2]{l}
+    Eau de Javel &
+    $\hypochlorite\aq/\chlorure\aq$ &
+    $\hypochlorite\aq + 2\ionHydrogene\aq + 2\electron$ &
+    $\reaction$ &
+    $\chlorure\aq + \chemfig{H_2O}\liq$ \\
+    %
+    % &
+    % $\hypochlorite\aq/\chemfig{Cl_2}\gaz$ &
+    % $2\hypochlorite\aq + 4\ionHydrogene\aq + 2\electron$ &
+    % $\reaction \chemfig{Cl_2}\gaz + \chemfig{H_2O}\liq$ \\
+    %
+    Diiode &
+    $\diiode\aq/\chemfig{I^{-}}\aq$ &
+    $\diiode\aq + 2\electron$ &
+    $\reaction$ &
+    $2\chemfig{I^{-}}\aq$ \\
+    %
+    {Permanganate \\ de potassium} &
+    $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$ &
+    $\chemfig{MnO_4^{-}}\aq + 8\ionHydrogene\aq + 5\electron$ &
+    $\reaction$ &
+    $\chemfig{Mn^{2+}}\aq + 4\chemfig{H_2O}\liq$ \\
+    %
+  \end{tblr}
+\end{doc}
+
+
+\begin{doc}{Eau de Javel et produit acide : un mélange dangereux !}{doc:A3_javel_acide}
+  L'eau de Javel est une solution aqueuse basique d’hypochlorite de sodium (\chemfig{Na^{+}}, \hypochlorite) et de chlorure de sodium (\chemfig{Na^{+}}, \chlorure).
+  Un produit acide contient des ions \ionHydrogene.
+
+  L'ion chlorure est un réducteur dans le couple $\chemfig{Cl_2}\gaz/ \chlorure\aq$.
+  La demi-équation d'oxydoréduction associée est
+  $\chemfig{Cl_2}\gaz + 2\electron \reaction 2\chlorure\aq$.
+
+  Le dichlore $\chemfig{Cl_2}\gaz$ est un gaz toxique, car le dichlore se combine avec l'eau présente dans les muqueuses pour former des acides qui attaquent les tissus.
+\end{doc}
+
+
+\question{
+  Établir l'équation de la réaction d'oxydoréduction entre les ions hypochlorites $\hypochlorite\aq$ et les ions chlorures $\chlorure\aq$.
+}{
+
+}{4}
+
+\question{
+  Pourquoi cette réaction ne peut avoir lieu que dans un milieu acide ?
+}{}{2}
+
+\question{
+  Quel est le gaz toxique dégagé par la réaction ?
+}{}{1}
+
+
+%%%%
+\begin{doc}{Nettoyer une plaie}{doc:A3_soigner_plaie}
+  Judith s'est écorchée le genou et mélange de l'eau oxygénée avec du permanganate de potassium pour soigner sa plaie.
+  Les couples Ox/Red sont $\dioxygene\gaz/\chemfig{H_2O_2}\aq$ et
+  $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$.
+  
+  Au moment de l'application, le mélange devient incolore et forme une mousse.
+\end{doc}
+
+
+
+%%
+\question{
+  Établir l'équation de la réaction d'oxydoréduction entre l'eau oxygénée et le permanganate de potassium.
+  Expliquer la formation de mousse.
+}{}{4}

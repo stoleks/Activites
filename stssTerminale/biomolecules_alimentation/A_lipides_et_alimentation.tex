@@ -1,0 +1,144 @@
+%%%%
+\teteTermStssBiom
+\vspace*{-38pt}
+\titreActivite{Lipides et alimentation}
+
+%%%% objectifs
+\begin{objectifs}
+  \item Revoir la structure des acides gras et des triglycérides.
+  \item Comprendre l'impact du cholestérol sur l'organisme.
+\end{objectifs}
+
+\begin{contexte}
+  Les lipides que l'on trouve dans les végétaux ou dans certains poissons sont indispensables pour être en bonne santé, tandis que ceux venant des animaux sont en général néfastes.
+  
+  \problematique{
+    Comment la structure des lipides influence-t-elle sur la santé ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{Acides gras et triglycérides}{doc:A3_triglyceride_gras}
+  La majorité des lipides naturels sont des \important{triglycérides.}
+  \begin{importants}
+    Un \important{triglycéride} est un triester du glycérol avec trois acides gras.
+    
+    Les \important{acides gras} sont des acides carboxyliques possédant une longue chaîne carbonée, saturée ou insaturée.
+    
+    Un acide gras est \important{insaturé} si sa chaîne carbonée comporte une double liaison carbone-carbone \chemfig{C=C}.
+  \end{importants}
+  Un acide gras \important{saturé} a toujours une formule brute de la forme \bruteCHO{n}{2n}{2}.
+\end{doc}
+
+\begin{doc}{Acides gras et santé}{doc:A3_acides_gras_sante}
+  \begin{wrapfigure}[8]{r}{0.46\linewidth}
+    \vspace*{-30pt}
+    \begin{tblr}{
+      colspec = {l c}, hlines, vlines,
+      column{1} = {couleurSec-50},
+      row{1} = {couleurSec-100},
+    }
+      Matière grasse & Point de fumée en \unit{\degreeCelsius} \\
+      Huile de tournesol         & 107 \\
+      Huile d'olive              & 191 \\
+      Huile de noix              & 160 \\
+      Huile de colza             & 107 \\
+      Huile de sésame            & 177 \\
+      Beurre                     & 130 \\
+    \end{tblr}
+  \end{wrapfigure}
+  
+  Le \important{point de fumée} est la température à partir de laquelle les matière grasse vont commencer à émettre de la fumée.
+  Chauffer une huile ou une graisse au-delà de son point de fumée entraîne la décomposition des acides gras qu'elle contient et l'apparition de composés toxiques ou cancérigènes.
+
+  \attention Le point de fumée dépend de l'origine de la matière grasse et augmente si elle est raffinée. 
+  %, il peut donc y avoir des variations importantes pour un même type d'huile.
+
+  \begin{importants}
+    Pour rester en bonne santé, il faut \important{réduire au maximum} la consommation de matières grasses issus de viande de mammifère et \important{préférer les huiles végétales ou issues des poissons,} riches en oméga-3 et oméga-6.
+  \end{importants}
+
+  \begin{multicols}{2}
+    \centering
+    \chemname{
+      \small
+      \chemfig[atom sep = 1.25em]{!\linolenique}
+    }{
+      Acide alpha-linolénique, un oméga-3.
+    }
+    
+    \chemname{
+      \small
+      \chemfig[atom sep = 1.25em]{!\linoleique}
+    }{
+      Acide linoléique, un oméga-6.
+    }
+  \end{multicols}
+  Acide alpha-linolénique se trouve dans les noix, le colza ou le soja. 
+  L'acide linoléique se trouve dans le colza, le tournesol ou les arachides.
+
+  On parle « d'oméga-3 » ou « d'oméga-6 », car le dernier carbone de la chaîne est appelée oméga et qu'on compte à combien de carbone se trouve la première double liaison carbone-carbone.
+\end{doc}
+
+\question{
+  Parmi les matières grasse dont le point de fumée est présentée document~\ref{doc:A3_acides_gras_sante}, lesquelles conseillerait vous pour de la friture ($T > \qty{140}{\degreeCelsius}$) ?
+}{}[2]
+
+
+%%%%
+\begin{doc}{Le cholestérol}{doc:A3_cholesterol}
+  \begin{wrapfigure}[4]{r}{0.4\linewidth}
+    \vspace*{-30pt}
+    \centering
+    {\small \chemfig[atom sep = 1.7em]{!\cholesterol}}
+
+    \legende{Représentation topologique de la molécule de cholestérol}
+  \end{wrapfigure}
+  
+  Le cholestérol est un lipide de la famille des \important{stérols,} ce n'est pas un triglycéride.
+  \begin{importants}    
+    Le cholestérol est une molécule \important{amphiphile :}
+    elle possède une partie \important{hydrophobe} et une partie \important{hydrophile.}
+  \end{importants}
+
+  La formule brute du cholestérol est \bruteCHO{27}{46}{}.
+
+  Le cholestérol vient en partie de notre alimentation si on mange de la viande, mais la majeure partie est produite par le foie.
+  Le cholestérol remplit plusieurs fonctions vitales :
+  
+  \begin{listePoints}[2]
+    \item constitution des membranes cellulaires ;
+    \item ingrédient pour la bile ;
+    \item précurseur de la vitamine D ;
+    \item précurseurs de nombreuses hormones...
+  \end{listePoints}
+\end{doc}
+
+\begin{doc}{Cholestérol et lipoprotéines}{doc:A3_lipoproteines}
+  \begin{wrapfigure}[15]{r}{0.35\linewidth}
+    \vspace*{-30pt}
+    \centering
+    \image{0.88}{images/proteines/lipoproteine_eau}
+
+    \legende{Schéma d'une lipoprotéine contenant du cholestérol et des acides gras, entourée de molécules d'eau}
+  \end{wrapfigure}
+  
+  Comme tous les lipides, le cholestérol n'est pas soluble dans le sang.
+  Il est transporté par deux type de \important{lipoprotéines :}
+  \begin{listePoints}
+    \item les \important{Low Density Lipoprotein (LDL)} qui le transportent du foie vers les cellules ;
+    \item les \important{High Density Lipoprotein (HDL)} qui le transportent des artères vers le foie.
+  \end{listePoints}
+
+  Quand la quantité de cholestérol transporté est trop importante, tous le cholestérol ne sera pas consommé par les cellules et les lipoprotéines de basse densité (LDL) vont alors rester dans le sang.
+  S'il y a une trop grande concentration de LDL dans le sang, cela augmente les risques \important{d'accidents cardiovasculaires :} les LDL en surplus vont se déposer sur les parois des artères et former des \important{plaques d'athéromes,} ce qui diminue le diamètre des artères et perturbe la circulation sanguine.
+  Pour diminuer la quantité de LDL dans le sang, il faut limiter la consommation de certaines graisses saturés et de cholestérol.
+\end{doc}
+
+\question{
+  Expliquer pourquoi il faut des lipoprotéines pour transporter le cholestérol dans le sang.
+}{}[4]
+
+\numeroQuestion
+  Entourer la partie hydrophile et la partie hydrophobe du cholestérol dans les doc.~\ref{doc:A3_cholesterol} et~\ref{doc:A3_lipoproteines}.

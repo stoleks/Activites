@@ -1,0 +1,95 @@
+%%%%
+\tetePremStssRout
+\titreActivite{Voiture, vélo et énergie cinétique}
+
+
+%%%% objectifs
+\begin{objectifs}
+  \item Savoir calculer une énergie cinétique à partir de sa relation $E_c = \dfrac{1}{2} m v^2$.
+  \item Comprendre comment se transfère l'énergie pendant une collision.
+\end{objectifs}
+
+\begin{contexte}
+  Une cycliste et une automobiliste roule toutes les deux à \qty{30}{\km\per\hour} en ville, en grillant de manière répétée des feux rouges.
+  
+  \problematique{
+    Les deux véhicules représentent-ils le même danger pour les piéton-nes et les autres véhicules ?
+  }
+\end{contexte}
+
+
+%%%% docs
+\begin{doc}{L'énergie cinétique}{doc:A2_energie_cinetique}
+  \begin{importants}  
+    Quand un objet de masse $m$ se déplace avec une vitesse $v$ en \unit{\m\per\s}, cet objet possède une \important{énergie cinétique notée $E_c$}
+    \begin{equation*}
+      E_c = \dfrac{1}{2} m v^2 \qq{en joule noté \unit{\joule}} 
+    \end{equation*}
+  \end{importants}
+  \important{L'énergie se conserve toujours}, mais elle peut changer de forme.
+\end{doc}
+
+\begin{doc}{Énergie, freinage et collision}{doc:A2_energie_collision}
+  \begin{importants}
+    Quand un véhicule freine, \important{l'énergie cinétique} est convertie en \important{énergie thermique} par les frottements : la température des pneus et du sol augmente.
+  
+    Pendant une collision, l'énergie cinétique est convertie en \important{énergie de déformation.}
+  \end{importants}
+  %
+  \begin{center}
+    \image{0.9}{images/mecanique/energie_collision}
+  \end{center}
+  
+  \important{L'énergie de déformation} est responsable de la déformation
+  \begin{listePoints}
+    \item du véhicule et de l'obstacle éventuel ;
+    \item des personnes dans et en dehors du véhicule.
+  \end{listePoints}
+  Pour les personnes les « déformations » sont dramatiques : on parle de blessures, fractures, hémorragies, etc.
+
+  \attention Ici on fait une modélisation simplifiée : en réalité l'énergie de déformation est liée à des phénomènes complexes à l'échelle microscopique (destruction des cellules, ruptures des liaisons moléculaires, etc.).
+\end{doc}
+
+\begin{doc}{Quelques données}{doc:A2_voiture_velo}
+  En France 
+  \begin{itemize}
+      \item la voiture moyenne a une masse de \qty{1 250}{\kg} en 2023 ;
+      \item la masse moyenne d'une femme est de \qty{67,3}{\kg} en 2020 ;
+      \item la masse moyenne d'un homme est de \qty{81,2}{\kg} en 2020 ;
+      \item les vélos vendu ont en moyenne une masse de \qty{12,0}{\kg}.
+  \end{itemize}
+\end{doc}
+
+\question{
+  Expliquer pourquoi le freinage permet de réduire l'énergie de déformation pendant une collision.
+}{}[3]
+
+\question{
+  Convertir \qty{30}{\km\per\hour} en \unit{\m\per\s}.
+}{}[2]
+
+\question{
+  Calculer l'énergie cinétique d'une cycliste roulant à une vitesse de \qty{30}{\km\per\hour}.
+}{}[2]
+
+\question{
+  Calculer l'énergie cinétique d'un automobiliste roulant à une vitesse de \qty{30}{\km\per\hour}.
+}{}[2]
+
+\question{
+  Entre la cycliste et l'automobiliste, qui représente le plus grand danger a priori ?
+}{}[2]
+
+\begin{doc}{Égalité des énergies cinétiques}{doc:A2_egalite_cinetique}
+  En négligeant la forme d'une voiture et d'un vélo, pour que la cycliste soit aussi dangereuse que l'automobiliste, il faudrait que les deux aient la même énergie cinétiques.
+  
+  Pour ça, la cycliste devrait avoir une vitesse :
+  \begin{equation*}
+    v_\text{vélo} = \sqrt{\dfrac{m_\text{auto}}{m_\text{vélo}}} v_\text{auto}
+  \end{equation*}
+\end{doc}
+
+\question{
+  Calculer la vitesse que devrait avoir une cycliste pour avoir la même énergie cinétique qu'un automobiliste qui roule à \qty{30}{\km\per\hour}.
+  Est-ce une vitesse facilement atteignable ?
+}{}[3]
