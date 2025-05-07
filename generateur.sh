@@ -11,7 +11,7 @@ function comment_lines () {
 
 # declare output directory and levels
 output="../_Cours"
-declare -a levels=("seconde") # "stssPremiere" "stssTerminale")
+declare -a levels=($1)
 
 # comment all lines
 echo "Preparation des fichiers"
