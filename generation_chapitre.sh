@@ -12,38 +12,8 @@ function generate_pdf () {
       continue
     fi
 
-    # test if .tex file exist
-    filename=`awk "NR==$i" $1 | awk -F "[{}]" '{print $2}'`
-    if [[ ! -f "$filename.tex" ]]; then
-      echo "$filename.tex n'existe pas !"
-      continue
-    fi
-
-    # extract pdf name and activity number
-    fileCount=`awk "NR==$i" $1 | awk -F[ '{print $2}' | awk -F] '{print $1}'`
-    activity=`basename $filename`
-    if [[ $filename == *"A_"* ]]; then
-      activityName=`echo $filename | sed "s|A|&$fileCount|"`
-    elif [[ $filename == *"TP_"* ]]; then
-      activityName=`echo $filename | sed "s|TP|&$fileCount|"`
-    else
-      activityName=$filename
-    fi
-
-    # Uncomment current line and generate pdf (two call for references)
-    sed -i "$i s|^% ||" $1
-    printf "%-71s" "Génération de $activity... "
-    pdflatex -interaction=nonstopmode main.tex > log.out
-    pdflatex -interaction=nonstopmode main.tex > log.out
-
-    # copy the pdf in the set directory
-    file="$3/$activityName.pdf"
-    local end=`date +%s`
-    printf "%-13s %s\n" "Il a fallu $((end - start))" "secondes pour générer $file."
-    cp main.pdf $file
-
-    # comment current line, we need to use \\\\ instead of \\ because we use "" for the sed scope
-    sed -i "$i s|\\\\in|% \\\\in|" $1
+    # generate pdf of the current line
+    sh generation_pdf.sh $i $1 $3
     let count++
   done
   echo -n "Génération de $count activités. "
