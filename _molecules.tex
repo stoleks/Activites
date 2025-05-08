@@ -22,12 +22,6 @@
   \chemfig[cram width=2.2pt, atom sep=2.em]{ #1 }
 }
 
-%% parties colorées
-\definesubmol\cetoneCouleur{(=[3,,,,couleurQuat] \textcolor{couleurQuat}{O} -[-1,,,,couleurQuat]}
-%% ramification
-\definesubmol\alkyleG{(-[-5] R_1)}
-\definesubmol\alkyleD{(-[-1] R_2)}
-
 %%%% Éléments récurrents 
 \newcommand{\hydrogene}{\chemfig{H}\xspace}
 \newcommand{\carbone}  {\chemfig{C}\xspace}
@@ -77,7 +71,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Pour simplifier certaines molécules
-\definesubmol\blank{ -[,,,,draw = none] } % liaison invisible
+\definesubmol\blank{ -[,,,, draw = none] } % liaison invisible
+\definesubmol\vide1{ -[#1,,,, draw = none] } % liaison invisible avec angle réglable
 \definesubmol\cu   { -[::60] }  % C-C vers le haut (carbon up)
 \definesubmol\cd   { -[::-60] } % C-C vers le bas (carbon down)
 \definesubmol\cud  { -[::60] -[::-60] } % Liaison C-C-C ^ (carbon up down)
@@ -87,8 +82,8 @@
 \definesubmol\cis  { -[::60] =[::-60] -[::-60] } % Liaison -C=C- cis
 \definesubmol\trans{ -[::60] =[::-30] -[::-30] } % Liaison -C=C- trans
 %% Hydrogènes saturés
-\definesubmol\HH  {(-[::90] H) (-[::-90] H)}
-\definesubmol\HHH {(-[::90] H) (-[::-90] H) (-[::0] H)}
+\definesubmol\HH  {(-[::90] H) (-[::-90] H)} % paire H- R -H
+\definesubmol\HHH {(-[::90] H) (-[::-90] H) (-[::0] H)} % triplet H- RH -H
 %% Quelques groupes caractéristiques
 \definesubmol\teteAcide   { O-[::30] (=[::60] O) -[::-60] }
 \definesubmol\teteAcideDev{ -O-C (=[::90] O) - }
@@ -99,6 +94,13 @@
 \definesubmol\ether       { -[:30] O -[:-30]}
 \definesubmol\amide       { (=[:90] O) -[:-30] N}
 \definesubmol\phosphate   { P (=[::-90] O) (-[::90] \charge{45:1.5pt=$\scriptstyle-$}{O}) -[::0] O}
+
+%%%% Pour des molécules colorées
+\definesubmol\cuCouleur  {-[ ::60,,,, couleurQuat, line width = 1.5pt]}
+\definesubmol\cdCouleur  {-[::-60,,,, couleurQuat, line width = 1.5pt]}
+\definesubmol\ccuCouleur {=[ ::60,,,, couleurQuat, line width = 1.5pt]}
+\definesubmol\ccdCouleur {=[::-60,,,, couleurQuat, line width = 1.5pt]}
+\definesubmol\couleur1   {\textcolor{couleurQuat}{#1}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -319,7 +321,6 @@
   %% Haut du Centre
   O-[::60,0.7] -[::-60,0.7] -[::90] O-[::-45,0.9] (
     %% Glucoses à droite
-    -[::30,0.8] O-[::30,0.8] !\gluHaw
     -[::30,0.8] O-[::30,0.8] !\gluHaw -[::30,0.8] O-[::30,1.4] \phantom{O}\cdots
   )
   %% Bas du centre
@@ -370,7 +371,7 @@
   % liaison à droite et cycle
   -[::-30] !\cd *5([::70]- (-HO) -(-OH) --O-)
   % imite les angles du cycle pour pouvoir ajouter une chaîne à gauche
-  -[::124,,,,draw = none] -[::-72,,,,draw = none] -[::128]
+  !\vide{::124} !\vide{::-72} -[::128]
 }
 \definesubmol{\riboseHaw}{
   % liaison à droite
@@ -378,13 +379,13 @@
   % cycle ouvert et fermé par ? (4 liaisons à tracer du coup)
   ? <[::30,0.7] (!\cd HO) -[::60,,,,line width= 3pt] (!\cd OH) >[::60, 0.7] -[::90]O ?
   % on repart à l'envers de l'oxygène pour pouvoir ajouter une chaîne à gauche
-  -[::180,,,,draw = none] -[::120]
+  !\vide{::180} -[::120]
 }
 \definesubmol{\desoxyribose}{
   % liaison à droite et cycle
   -[::-30] !\cd *5([::70]- (-HO) ---O-)
   % imite les angles du cycle pour pouvoir ajouter une chaîne à gauche
-  -[::124,,,,draw = none] -[::-72,,,,draw = none] -[::128]
+  !\vide{::124} !\vide{::-72} -[::128]
 }
 \definesubmol{\desoxyriboseHaw}{
   % liaison à droite
@@ -392,7 +393,7 @@
   % cycle ouvert et fermé par ? (4 liaisons à tracer du coup)
   ? <[::30,0.7] (!\cd HO) -[::60,,,,line width= 3pt] >[::60, 0.7] -[::90]O ?
   % on repart à l'envers de l'oxygène pour pouvoir ajouter une chaîne à gauche
-  -[::180,,,,draw = none] -[::120]
+  !\vide{::180} -[::120]
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,53 +1,52 @@
-\begin{doc}{Fonctions organiques}{doc:A2_fonction_organique}
+\begin{doc}{Fonctions organiques}{doc:A_fonction_organique}
   Certaines séquences d'éléments donnent des \important{propriétés} spécifiques aux molécules organiques que l’on classe en différentes familles ou fonctions organiques ou encore famille fonctionnelle.
 
-  % \begin{importants}  
-    En ST2S on étudie à 8 familles : \important{alcool, aldéhyde, cétone, acide carboxylique, ester, éther, amine et amide.}
-  % \end{importants}
-  \medskip
-
-  \begin{tblr}{
-    colspec = {c c c Q[t, wd=0.26\linewidth]}, hlines, vlines,
-    column{2, 3} = {couleurSec-50}, row{1} = {couleurSec-100},
-    cell{3}{1} = {r=2}{c}, rows = {m}, columns = {c}
-  }
-    Groupe caractéristique & Famille organique & Formule & Exemple \\
-    %
-    Hydroxyle & Alcool
-    & \chemfig{R_1 - \textcolor{couleurQuat}{OH}} 
-    & {\chemfig{-[1] -[-1] OH} \\[1pt] éthanol} \\
-    %
-    Carbonyle & \vAligne{-40pt} Cétone
-    & \vAligne{-60pt} \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur R_2}
-    & {\chemfig{-[1] !\carbonyle -[1]} \\[1pt] butan-2-one} \\
-    %
-    & Aldéhyde
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{H}}
-    & {\chemfig{O=[-3] -H} \\[1pt] méthanal } \\
-    %
-    Carboxyle & Acide carboxylique
-    & \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{OH}}
-    & {\chemfig{-[-1] -[1] !\carboxyle} \\[1pt] acide propanoïque} \\
-    %
-    \vAligne{-34pt} Ester & \vAligne{-34pt} Ester
-    & \chemfig{R_1 -[1] \textcolor{couleurQuat}{C} !\cetoneCouleur \textcolor{couleurQuat}{O} -[1] R_2}
-    & {\chemfig{-[1] -[-1] -[1] !\ester -[1] -[-1]} \\[1pt] butanoate d'éthyle} \\
-    %
-    Éther-oxyde & Éther
-    & \chemfig{R_1 -[1,,,,couleurQuat] \textcolor{couleurQuat}{O} -[-1,,,,couleurQuat] R_2}
-    & {\chemfig{-[-1] -[1] O -[-1] -[1]} \\[1pt] éthoxyéthane} \\
-    %
-    Amine & Amine
-    & \chemfig{R_1 - \textcolor{couleurQuat}{NH_2}}
-    & {\chemfig{-[1] -[-1] -[1] NH_2} \\[1pt] propan-1-amine} \\
-    %
-    Amide & Amide
-    & \vAligne{-48pt} \chemfig{\textcolor{couleurQuat}{C} !\alkyleG !\cetoneCouleur \textcolor{couleurQuat}{N} (-[-3] R_3) - R_2}
-    & {\chemfig{-[-1] -[1] !\amide H_2} \\[1pt] propanamide}
-  \end{tblr}
-  \smallskip
-
+  \begin{importants}  
+    En ST2S on étudie 8 familles : \important{alcool, aldéhyde, cétone, acide carboxylique, ester, éther, amine et amide.}
+  \end{importants}
   $R_1,$ $R_2$ et $R_3$ sont des chaînes carbonées appelées \important{« radicaux alkyles ».}
+
+  \begin{center}
+    \begin{tblr}{
+      colspec = {Q[c,m] Q[c,m] Q[c,m] Q[t, wd=0.26\linewidth]}, hlines, vlines,
+      column{2, 3} = {couleurSec-50}, row{1} = {couleurSec-100},
+      cell{3}{1} = {r=2}{c}, rows = {m}, columns = {c}
+    }
+      Groupe caractéristique & Famille organique & Formule & Exemple \\
+      %
+      Hydroxyle & Alcool
+      & \chemfig{R_1 - !\couleur{OH}} 
+      & \chemfig{H_3C - OH} méthanol \\
+      %
+      Carbonyle & {Cétone \\ \phantom{B}}
+      & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\cu !\couleur C (!\cd R_2) (!\ccuCouleur !\couleur O)}
+      & \chemname[-12pt]{ \chemfig{-[1] (=[3,0.8]O) !\cd -[1]} }{ butan-2-one } \\
+      %
+      & {Aldéhyde \\ \phantom{B}}
+      & \hspace{-24pt}\chemfig{!\vide{:-30} R_1 !\cuCouleur !\couleur C (!\ccuCouleur !\couleur O) !\cdCouleur !\couleur H} 
+      & \chemname[-12pt]{ \chemfig{H-C (=[3,0.9]O) -H} }{ méthanal } \\
+      %
+      Carboxyle & Acide carboxylique
+      & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\cu !\couleur C (!\ccuCouleur !\couleur O) !\cdCouleur !\couleur{OH}}
+      & \chemname[1pt]{ \chemfig{-[-1] -[1] !\carboxyle} }{ acide propanoïque} \\
+      %
+      Ester & Ester
+      & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\cu !\couleur C (!\ccuCouleur !\couleur O) !\cdCouleur !\couleur O !\cu R_2}
+      & \chemname[1pt]{ \chemfig{-[-1] -[1] !\ester -[1] -[-1]} }{ propanoate d'éthyle} \\
+      %
+      {\phantom{B} \\ Éther-oxyde \\ \phantom{B}} & Éther
+      & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\cuCouleur !\couleur O !\cdCouleur R_2}
+      & \chemname[1pt]{ \chemfig{-[-1] -[1] O -[-1] -[1]} }{ éthoxyéthane } \\
+      %
+      {\phantom{B} \\ Amine \\ \phantom{B}} & Amine
+      & \chemfig{R_1 -[,1.5] !\couleur{NH_2}}
+      & \chemname[-12pt]{ \chemfig{H_3C -CH_2 -NH_2} }{ ethan-1-amine } \\
+      %
+      Amide & Amide
+      & \chemfig{[:-30] R_1 !\cu !\couleur C (!\ccuCouleur !\couleur O) !\cdCouleur !\couleur N (!\cu R_3) !\cd R_2}
+      & \chemname[1pt]{ \chemfig{-[-1] -[1] !\amide H_2} }{ propanamide}
+    \end{tblr}
+  \end{center}
 
   \begin{importants}
     Pour trouver les groupes caractéristiques d'une molécule, il faut repérer tous les éléments qui ne sont ni des carbones, ni des hydrogènes.
