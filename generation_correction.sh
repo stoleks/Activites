@@ -40,7 +40,7 @@ comment_lines "stssTerminale.tex"
 sed -i "s|% \\\\modeCorrection|\\\\modeCorrection|" main.tex
 
 # generate pdf for a given chapter
-printf "%-70s" "Génére la correction de $2..."
+printf "%-71s" "Génére la correction de $2..."
 start=`date +%s`
 uncomment_lines "$1.tex" $2 1 $(wc -l < "$1.tex")
 # generate pdf (two call for references)

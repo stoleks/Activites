@@ -28,7 +28,7 @@ do
   # corrections
   for directory in $level/*;
   do
-    if [[ -d $directory ]]; then
+    if [[ -d $directory ]] && ! [[ -z "$( ls -A $directory/ )" ]]; then
       chapter=`echo $directory | awk -F "[/]" '{print $2}'`
       sh generation_correction.sh $level $chapter $output
     fi
