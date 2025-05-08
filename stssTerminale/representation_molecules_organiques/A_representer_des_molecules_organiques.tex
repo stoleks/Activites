@@ -1,6 +1,5 @@
 %%%%
 \teteTermStssOrga
-\vspace*{-30pt}
 \titreActivite{Représenter des molécules organiques}
 
 %%%% objectifs
@@ -68,22 +67,22 @@
 
 
 %% questions
-\question{%
+\question{
   Indiquer la configuration électronique de l'oxygène \isotope{}{8}{O}, combien d'électrons il lui manque pour respecter la règle du duet ou de l'octet, le nombre de liaisons ainsi formées et sa valence.
-}{%
+}{
   \isotope{}{8}{O} : $1^2\; 2^6$,
   il lui manque 2 électrons pour respecter la règle de l'octet, il formera donc 2 liaisons. Il est bivalent.
-}{1}
+}[1]
 
 %
 \newpage
 \vspace*{-30pt}
-\question{%
+\question{
   Même question pour l'azote \isotope{}{7}{N} et l'hydrogène \isotope{}{1}{H} .
-}{%
+}{
   Il manque 3 électrons à l'azote pour respecter la règle de l'octet, l'azote formera donc 3 liaisons. Il est trivalent. \\
   Il manque 1 électron à l'hydrogène pour respecter la règle du duet, l'hydrogène formera donc 1 liaison. Il est monovalent.
-}{4}
+}[4]
 
 
 %%
@@ -107,7 +106,7 @@
 \vspace*{1cm}
 }{
   Liaison triple, liaison double et double, liaison simple et triple
-}{0}
+}
 
 
 %%
@@ -135,11 +134,11 @@
 L'oxybenzone est une molécule utilisée pour protéger des UVA et B issu du soleil.
 Sa formule brute est \bruteCHO{14}{12}{3} .
 
-\question{%
+\question{
   Indiquer le nombre d'élément d'hydrogène, d'oxygène et de carbone dans la molécule d'oxybenzone.
-}{%
+}{
   Il y a 12 hydrogènes, 3 oxygènes et 14 carbones.
-}{1}
+}[1]
 
 \vspace*{8pt}
 \begin{wrapfigure}[2]{r}{0.23\linewidth}
@@ -151,11 +150,11 @@ Sa formule brute est \bruteCHO{14}{12}{3} .
 La taurine est un acide aminé produit naturellement dans le corps humain.
 Sa représentation avec un modèle moléculaire est présentée ci-contre.
 
-\question{%
+\question{
   Donner la formule brute de la taurine.
-}{%
+}{
   \chemfig{C_2 H_7 O_3 N}
-}{1}
+}[1]
 
 
 %%
@@ -172,26 +171,20 @@ Sa représentation avec un modèle moléculaire est présentée ci-contre.
   \exemple*
   \vspace*{-18pt}
   \begin{center}
-    \chemname{\chemfig{H -C (-[3]O (-[5]H)) (-[-3]H) -C !\saturationH}}{éthanol}
+    \chemname{ \chemfig{H- O -C !\HH -C !\HHH} }{éthanol}
     %
     \qq{}
-    \chemname{\chemfig{Cl -C !\paireH -Si !\saturationH}}{chlorométhylsilane}
+    \chemname{ \chemfig{Cl -C !\HH -Si !\HHH} }{chlorométhylsilane}
     %
     \qq{}
-    \chemname{
-      \chemfig[atom sep = 19pt]{[:-30]
-        !\paracetamolDev
-        % H -O -[1]C *6 (
-        %   -C(-H) =C(-H) -C(-N (-[3]H) (-[-1]C (=[-3]O) (-C!\saturationH))) =C(-H) -C(-H) =
-        % )
-      }
-    }{paracétamol}
+    \chemname{ \chemfig[atom sep = 19pt]{ !\paracetamolDev } }{paracétamol}
   \end{center}
 \end{doc}
 
 Pour les molécules linéaire, on peut passer de la formule brute à la formule développée \important{en comptant les liaisons formées par chaque éléments} composant la molécule.
 
-\question{Compléter le tableau suivant :}{}{0}
+\numeroQuestion
+Compléter le tableau suivant :
 
 \vspace*{8pt}
 \begin{tblr}{
@@ -215,13 +208,13 @@ Pour les molécules linéaire, on peut passer de la formule brute à la formule 
   {\carbone :   \texteTrou{1} \\ \hydrogene : 4 \\ \oxygene : \texteTrou{1}} \\
   %
   Nombre de liaisons & 
-  {\carbone : \textbf{4 liaisons} \\ \hydrogene : \textbf{1 liaison}} &
+  {\carbone : \important{4 liaisons} \\ \hydrogene : \important{1 liaison}} &
   {\carbone : \texteTrou{4}liaisons \\ \hydrogene : \texteTrou{1} liaison} &
   {\hydrogene : \texteTrou{1} liaison  \\ \oxygene : \hspace{-2pt}\texteTrou{2} liaisons} &
   {\carbone : \texteTrou{4} liaisons \\ \hydrogene : \texteTrou{1} liaison \\ \oxygene : \hspace{-2pt}\texteTrou{2} liaisons } \\
   %
   Formule développée &
-  \chemfig[atom sep = 20pt]{H - C !\saturationH} & & & \\
+  \chemfig[atom sep = 20pt]{H - C !\HHH} & & & \\
 \end{tblr}
 
 
@@ -255,19 +248,20 @@ Pour passer de la formule développée à la formule semi-développée, il suffi
   \item indiquer les hydrogènes et leur nombres à côté de l'élément auxquels ils sont liés.
 \end{listeFleche}
 
-\question{Compléter le tableau suivant :}{}{0}
+\numeroQuestion
+Compléter le tableau suivant :
 
 \vspace*{8pt}
 \begin{tblr}{
   width = \linewidth, rows = {66pt, m},
-  colspec = {X[0.25] c c c c}, hlines, vlines,
+  colspec = {Q[c, width = 0.1\linewidth] c c c c}, hlines, vlines,
   column{1} = {couleurSec-100, c}
 }
   Écriture développée &
-  \chemfig{H -C !\paireH -C !\saturationH} &
-  \chemfig{N (-[5] H) (-[-5] H) - N !\paireSatH} &
-  \chemfig{C (-[5] H) (-[-5] H) = C (-[1] O-H) (-[-1] H)} &
-  \chemfig{H - C!\paireH -C (=[1] O) (-[-1] O-H)} \\
+  \chemfig{H -C !\HH -C !\HHH} &
+  \chemfig{N (-[::130] H) (-[::-130] H) -N (-[::50] H) -[::-50] H} &
+  \chemfig{C (-[::130] H) (-[::-130] H) =C (-[::50] O-H) (-[::-50] H)} &
+  \chemfig{H - C!\HH -C (=[::50] O) (-[::-50] O-H)} \\
   %
   Écriture semi-développée &
   \chemfig{H_3C - CH_3} & \vAligne{50pt} & & \\
@@ -299,7 +293,7 @@ Pour passer de la formule développée à la formule semi-développée, il suffi
   \end{center}
   %
   \begin{center}
-    \chemname{\chemfig{!\acideAcetylsalicylique}}{Acide acétylsalicylique}
+    \chemname{\chemfig{!\aspirine}}{Acide acétylsalicylique}
     %
     \qq{}
     \chemname{\chemfig{!\glucose}}{glucose}

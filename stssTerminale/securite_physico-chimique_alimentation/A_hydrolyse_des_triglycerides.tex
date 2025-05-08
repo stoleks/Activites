@@ -30,16 +30,16 @@
 oléique} selon l'équation suivante :
   \begin{center}
     \separationTroisBlocs{
-      \chemfig[atom sep = 14pt]{!\trioleine}
+      \chemfig[atom sep = 14pt]{!\oleine}
       + 3 \texteTrou[0.3]{\eau}
     }[0.3]{
       \reaction
     }[0.1]{
       \centering
-      \chemfig[atom sep = 14pt]{H!\oleique}
-      + \chemfig[atom sep = 14pt]{H!\oleique} 
-      + \chemfig[atom sep = 14pt]{H!\oleique}
-      + \chemfig{!\glycerol}
+      \chemfig[atom sep = 14pt]{!\oleique}
+      + \chemfig[atom sep = 14pt]{!\oleique} 
+      + \chemfig[atom sep = 14pt]{!\oleique}
+      + \chemfig{[:30] !\glycerol}
     }[0.4]
   \end{center}
   La masse molaire de l'oléine est $M_\text{oléine} = \qty{884}{\g\per\mole}$.
@@ -50,25 +50,25 @@ Dans le document~\ref{doc:A2_hydrolyse_oleine}, entourer les groupes caractéris
 
 \question{
   Donner le nom des deux molécules formées au cours de la réaction d'hydrolyse.
-}{}{2}
+}{}[2]
 
 
 \newpage
 \vspace*{-24pt}
 \question{
   Préciser si l'acide oléique est un acide gras saturé ou insaturé. Justifier.
-}{}{2}
+}{}[2]
 
 
 L'organisme hydrolyse une masse d'oléine $m_\text{oléine} = \qty{8,84}{\g}$.
 
 \question{
   La réaction est supposée totale. Calculer la quantité de matière d'eau $n_\text{eau}$ qui a été transformé au cours de la réaction.
-}{}{5}
+}{}[5]
 
 \question{
   Donner la quantité de matière d'acide oléique produite au cours de la réaction.
-}{}{1}
+}{}[1]
 
 
 
@@ -78,15 +78,11 @@ L'organisme hydrolyse une masse d'oléine $m_\text{oléine} = \qty{8,84}{\g}$.
   \begin{center}
     \separationBlocs{
       \centering
-      \chemfig[atom sep = 18pt]{[:-60] !\tripalmitine} \\[8pt]
+      \chemfig[atom sep = 18pt]{[:-60] !\palmitine} \\[8pt]
       Formule topologique de la palmitine
     }[0.6]{
-      \chemfig{
-        H C (!\teteAcideDev C_{15} H_{31}) 
-        (-[3,1.7,2,2] H_2C (!\teteAcideDev C_{15} H_{31}))
-        -[-3,1.7,2,2] H_2 C (!\teteAcideDev C_{15} H_{31})
-      } \\[4pt]
-      
+      \centering
+      \chemfig{!\palmitineSemiDev} \\[4pt] 
       Formule semi-développée de la palmitine
     }[0.3]
   \end{center}
@@ -96,8 +92,8 @@ L'organisme hydrolyse une masse d'oléine $m_\text{oléine} = \qty{8,84}{\g}$.
 %%%%
 \question{
   Indiquer si la palmitine est un triglycéride saturé ou insaturé. Justifier.
-}{}{2}
+}{}[2]
 
 \question{
   Donner la réaction d'hydrolyse de la palmitine.
-}{}{7}
+}{}[7]

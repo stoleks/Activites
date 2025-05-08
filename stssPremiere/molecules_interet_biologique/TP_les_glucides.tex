@@ -24,7 +24,7 @@
   \begin{importants}
     On classe les glucides en deux catégories :
     \begin{listePoints}
-      \item les \important{sucres rapides,} qui sont des molécules simples et facilement digérés ;
+      \item les \important{sucres rapides,} qui sont des molécules simples composées d'un groupe carbonyle et d'au moins 2 groupes hydroxyle. Les sucres rapides sont facilement digérés ;
       \item les \important{sucres lents,} qui sont composés de plusieurs sucres rapides liés entre eux.  
     \end{listePoints}
     L'assimilation des sucres lents par l'organisme est... lente et permet un apport régulier en sucre rapide pendant toute la digestion.
@@ -37,12 +37,22 @@
 \begin{doc}{Le glucose et le fructose sous forme linéaire et cyclique}{doc:TP1_glucose_fructose}
   \begin{multicols}{2}
   \begin{center}
-    \chemfig{!\glucoseSemiDev} \;
-    \chemfigHaworth{!\glucoseHaw} \\[4pt]
+    \separationBlocs{
+      \centering
+      \chemfig{[:-90]!\glucoseSemiDev}
+    }{
+      \centering
+      \chemfigHaworth{!\glucoseHaw} \\[4pt]
+    }
     Glucose
 
-    \chemfig{!\fructoseSemiDev} \;
-    \chemfigHaworth{!\fructoseHaw} \\[4pt]
+    \separationBlocs{
+      \centering
+      \chemfig{[:-90] !\fructoseSemiDev} \;
+    }{
+      \centering
+      \chemfigHaworth{!\fructoseHaw} \\[4pt]
+    }
     Fructose
   \end{center}
   \end{multicols}
@@ -50,7 +60,7 @@
 
 \question{
   À partir de la forme linéaire du glucose et du fructose, entourer et nommer les fonctions organiques présentes dans ces deux molécules.
-}{}[4]
+}{}[3]
 
 \newpage
 \vspace*{-32pt}
