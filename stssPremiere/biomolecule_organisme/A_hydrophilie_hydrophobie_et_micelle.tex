@@ -1,5 +1,6 @@
 %%%%
 \tetePremStssBiom
+\vspace*{-30pt}
 \titreActivite{Hydrophilie, hydrophobie et micelle}
 
 %%%% objectifs
@@ -35,25 +36,27 @@
   
   La plupart des lipides sont des tensioactifs.
   Les lipides sont composés d'une \important{tête hydrophile,} schématisé par un cercle, et d'une \important{queue hydrophobe,} schématisé par une vaguelette.
-
-  \medskip
-  \begin{tikzpicture}
-    \fill[white] (0,0) -- (-1.25,0);
-    \fill[color=yellow-400] (0, -0.25) -- (1, -0.25) -- (1, 0.85) -- (0, 0.85) ; % choline
-    \fill[color=orange-300] (2.1, -0.8) -- (4.6, -0.8) -- (4.6, 1) -- (2.1, 1) ; % phosphate
-    % \fill[color=red-300] (3.9, 0) -- (6.75, 0) -- (6.75, 1) -- (3.9, 1) ; % glycerol
-    \fill[color=cyan-200] (8, -0.1) -- (15.3, -0.1) -- (15.3, 0.9) -- (8, 0.9) ; % palmate
-    % oleate
-    \fill[color=cyan-200] (6.5, 1.1) -- (12, 1.1) -- (12, 2.2) -- (6.5, 2.2) ; % ^^^
-    \fill[color=cyan-200] (11, 1.1) -- (12.5, 1.1) -- (12.5, 3.5) -- (11, 3.5) ; % tournant
-    \fill[color=cyan-200] (8.2, 3.5) -- (12.5, 3.5) -- (12.5, 2.4) -- (8.2, 2.4) ; % ^^
-    \fill[color=cyan-200] (8.2, 3.2) -- (10.2, 3.2) -- (10.2, 4.7) -- (8.2, 4.7) ; % <
-  \end{tikzpicture}
-  \vspace*{-5.65cm}
+  
   \begin{center}
-    \chemfig{!\phosphatidylcholine}
-    
-    \legende{Phospholipide, composé d'un glycérol, de deux \important[cyan-600]{acides gras}, d'un groupe  \important[orange-600]{phosphate} et d'un groupe \important[yellow-600]{choline}.}
+    \begin{tikzpicture}
+      %% Choline
+      \fill[color=yellow-400] (-6.9,-1.6) circle (0.6); 
+      %% Glycérol
+      \fill[color=purple-100] (-1.2, 0) -- (-1.2, -0.75) -- (0, -0.75) -- (0, -1.9)
+        -- (-3.6, -1.9) -- (-3.6, -0.75) -- (-2.4, -0.75) -- (-2.4, 0);
+      %% Phosphate
+      \fill[color=orange-300] (-4,-1.6) circle (1.2);
+      %% Acides gras
+      \fill[color=cyan-200] (-0.7, -0.65) -- (5.1, -0.65) -- (5.1, 1.6) -- (3, 1.6)
+        -- (3, 3) -- (0.7, 3) -- (0.7, 0.6) -- (-0.7, 0.6);
+      \fill[color=cyan-200] (0.7,-0.85) -- (8, -0.85) -- (8, -2) -- (0.7, -2);
+      %% Molécule
+      \node at (0, 0) {\chemfig{!\phosphatidylcholine}};
+    \end{tikzpicture}
+  
+    \legende{
+      Phospholipide composé de deux \important[cyan-600]{acides gras} reliés à un groupe \important[orange-600]{phosphate} et un groupe \important[yellow-600]{choline} par un \important[purple-600]{glycérol}.
+    }
   \end{center}
 \end{doc}
 
@@ -62,7 +65,9 @@ Entourer les deux groupes ester du phospholipide.
 
 \question{
   Entourer le glycérol dans le phospholipide, puis donner sa formule brute.
-}{}[1]
+}{
+  La formule du glycérol est \chemfig{C_3 H_8 O_3}, c'est du propan-1,2,3-triol.
+}[1]
 
 \newpage
 \begin{doc}{Micelles}{doc:A_micelle}
@@ -71,10 +76,10 @@ Entourer les deux groupes ester du phospholipide.
     \vspace*{-36pt}
     \includegraphics[width=\linewidth]{images/proteines/liposome_micelle.png}
   \end{wrapfigure}
-  
+
   La structure des molécules de lipides mène à la formation de structure particulière dans de l'eau liquide.
   Les queues hydrophobes étant repoussées par les molécules d'eau, elles vont s'agglomérer et former des structures ou les queues sont isolées de l'eau environnante : \important{les micelles.}
-  
+
   Des exemples de micelles sont les \important{liposomes,} composés de deux \important{ couches bi-lipidiques,} composées de deux couches de lipides avec les têtes hydrophile orientée vers l'extérieur, ce qui permet à leur queue hydrophobes de ne pas rentrer en contact avec de l'eau. 
   Les interactions électrostatiques entre les différentes parties de la membrane la pousse à former une sphère (comme une bulle de savon), avec un extérieur et un intérieur : c'est la base \important{d'une membrane cellulaire.}
 \end{doc}
@@ -100,4 +105,6 @@ Entourer les deux groupes ester du phospholipide.
 \question{
   Recopier le phospholipide du document~\ref{doc:A_molecule_tensioactive}, et entourer sa partie hydrophobe et sa partie hydrophile.
 }{
+  La partie hydrophobe est composée des deux acides gras.
+  La partie hydrophile est composée du groupe choline et du groupe phosphate.
 }[5]

@@ -73,12 +73,12 @@
 %%%% Pour simplifier certaines molécules
 \definesubmol\blank{ -[,,,, draw = none] } % liaison invisible
 \definesubmol\vide1{ -[#1,,,, draw = none] } % liaison invisible avec angle réglable
-\definesubmol\cu   { -[::60] }  % C-C vers le haut (carbon up)
-\definesubmol\cd   { -[::-60] } % C-C vers le bas (carbon down)
-\definesubmol\cud  { -[::60] -[::-60] } % Liaison C-C-C ^ (carbon up down)
-\definesubmol\cdu  { -[::-60] -[::60] } % Liaison C-C-C v (carbon down up)
-\definesubmol\ccu  { =[::60] }  % Liaison C=C vers le haut
-\definesubmol\ccd  { =[::-60] } % Liaison C=C vers le haut
+\definesubmol\ch   { -[::60] }  % C-C vers le haut (carbone haut)
+\definesubmol\cb   { -[::-60] } % C-C vers le bas (carbone bas)
+\definesubmol\chb  { -[::60] -[::-60] } % Liaison C-C-C ^ (carbone haut bas)
+\definesubmol\cbh  { -[::-60] -[::60] } % Liaison C-C-C v (carbone bas haut)
+\definesubmol\cch  { =[::60] }  % Liaison C=C vers le haut
+\definesubmol\ccb  { =[::-60] } % Liaison C=C vers le bas
 \definesubmol\cis  { -[::60] =[::-60] -[::-60] } % Liaison -C=C- cis
 \definesubmol\trans{ -[::60] =[::-30] -[::-30] } % Liaison -C=C- trans
 %% Hydrogènes saturés
@@ -96,97 +96,73 @@
 \definesubmol\phosphate   { P (=[::-90] O) (-[::90] \charge{45:1.5pt=$\scriptstyle-$}{O}) -[::0] O}
 
 %%%% Pour des molécules colorées
-\definesubmol\cuCouleur {-[ ::60,,,, couleurQuat, line width = 1.5pt]}
-\definesubmol\cdCouleur {-[::-60,,,, couleurQuat, line width = 1.5pt]}
-\definesubmol\ccuCouleur{=[ ::60,,,, couleurQuat, line width = 1.5pt]}
-\definesubmol\ccdCouleur{=[::-60,,,, couleurQuat, line width = 1.5pt]}
+\definesubmol\chCouleur {-[ ::60,,,, couleurQuat, line width = 1.5pt]}
+\definesubmol\cbCouleur {-[::-60,,,, couleurQuat, line width = 1.5pt]}
+\definesubmol\cchCouleur{=[ ::60,,,, couleurQuat, line width = 1.5pt]}
+\definesubmol\ccbCouleur{=[::-60,,,, couleurQuat, line width = 1.5pt]}
 \definesubmol\couleur1  {\textcolor{couleurQuat}{#1}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Acides gras
 \definesubmol\palmitique{
-  H !\teteAcide !\cud !\cud !\cud !\cud !\cud !\cud !\cud
+  H !\teteAcide !\chb !\chb !\chb !\chb !\chb !\chb !\chb
 }
 \definesubmol\linolenique{
-  H !\teteAcide !\cud !\cud !\cud !\trans !\trans !\trans !\cu
+  H !\teteAcide !\chb !\chb !\chb !\trans !\trans !\trans !\ch
 }
 \definesubmol\oleique{
-  H !\teteAcide !\cud !\cud !\cud !\cis !\cu !\cud !\cud !\cud
+  H !\teteAcide !\chb !\chb !\chb !\cis !\ch !\chb !\chb !\chb
 }
 \definesubmol\linoleique{
-  H !\teteAcide !\cud !\cud !\cud !\cis !\cis !\cud !\cud
+  H !\teteAcide !\chb !\chb !\chb !\cis !\cis !\chb !\chb
 }
 \definesubmol\arachidonique{
-  H !\teteAcide !\cud !\cis !\cis !\cis !\cis !\cu !\cud !\cu
+  H !\teteAcide !\chb !\cis !\cis !\cis !\cis !\ch !\chb !\ch
 }
 \definesubmol\eicosaPentaenoique{
-  H !\teteAcide !\cu !\cu !\cis !\cis !\cis !\cis !\cis !\cu
+  H !\teteAcide !\ch !\ch !\cis !\cis !\cis !\cis !\cis !\ch
 }
 \definesubmol\docosaHexanoique{
-  H !\teteAcide !\cu !\cis !\cis !\cu =[::60] !\cu !\cis !\cis !\cis !\cu
+  H !\teteAcide !\ch !\cis !\cis !\ch =[::60] !\ch !\cis !\cis !\cis !\ch
 }
-\definesubmol\oleiqueSemiDev{
-  C_{17} H_{33} -C !\carboxyleDev
-}
-\definesubmol\oleateSemiDev{
-  C_{17} H_{33} -C (=[::-50] O) (-[::50] O^{-})
-}
-\definesubmol\steraiqueSemiDev{
-  C_{17}H_{35} -C !\carboxyleDev
-}
-\definesubmol\caproiqueSemiDev{
-  CH_2 - CH_2 - CH_2 - CH_2 - CH_2 - C !\carboxyleDev
-}
+\definesubmol\oleiqueSemiDev  { C_{17} H_{33} -C !\carboxyleDev }
+\definesubmol\oleateSemiDev   { C_{17} H_{33} -C (=[::-50] O) (-[::50] O^{-}) }
+\definesubmol\steraiqueSemiDev{ C_{17}H_{35} -C !\carboxyleDev }
+\definesubmol\caproiqueSemiDev{ CH_2 - CH_2 - CH_2 - CH_2 - CH_2 - C !\carboxyleDev }
 %% Pour l'utilisation dans les triglycérides
-\definesubmol\tripalmitique{
-  !\cdu !\cdu !\cdu !\cdu !\cdu !\cdu !\cd
-}
-\definesubmol\trilinolenique{
-  !\cud !\cud !\cud !\cis !\cis !\cis !\cu
-}
-\definesubmol\trioleique{
-  !\cud !\cud !\cud !\cu !\ccu !\cu !\cud !\cud !\cd !\cd !\cd
-}
-\definesubmol\trilinoleique{
-  !\cud !\cud !\cud !\cis !\cis !\cud !\cud
-}
+\definesubmol\tripalmitique { !\cbh !\cbh !\cbh !\cbh !\cbh !\cbh !\cb }
+\definesubmol\trilinolenique{ !\chb !\chb !\chb !\cis !\cis !\cis !\ch }
+\definesubmol\trioleique    { !\chb !\chb !\chb !\ch !\cch !\ch !\chb !\chb !\cb !\cb !\cb }
+\definesubmol\trilinoleique { !\chb !\chb !\chb !\cis !\cis !\chb !\chb }
 %% Formes semi-developpées
-\definesubmol\tristeraiqueSemiDev{
-  !\teteAcideDev C_{17} H_{35}
-}
-\definesubmol\tricaproiqueSemiDev{
-  !\teteAcideDev CH_2 - CH_2 - CH_2 - CH_2 - CH_3
-}
-\definesubmol\trioleiqueSemiDev{
-  !\teteAcideDev C_{17} H_{33}
-}
-\definesubmol\tripalmitiqueSemiDev{
-  !\teteAcideDev C_{15} H_{31}
-}
+\definesubmol\tristeraiqueSemiDev { !\teteAcideDev C_{17} H_{35} }
+\definesubmol\tricaproiqueSemiDev { !\teteAcideDev CH_2 - CH_2 - CH_2 - CH_2 - CH_3 }
+\definesubmol\trioleiqueSemiDev   { !\teteAcideDev C_{17} H_{33} }
+\definesubmol\tripalmitiqueSemiDev{ !\teteAcideDev C_{15} H_{31} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lipide
 \definesubmol\oleine{
-   (-[::150] !\cu O !\cd !\carbonyle !\trioleique)
-   (-[::-90] !\cd O!\cu !\carbonyle !\trioleique)
-   -[::30] O!\cu !\carbonyle !\trioleique
+   (-[::150] !\ch O !\cb !\carbonyle !\trioleique)
+   (-[::-90] !\cb O!\ch !\carbonyle !\trioleique)
+   -[::30] O!\ch !\carbonyle !\trioleique
 }
 \definesubmol\palmitine{
-   (-[::150] !\cu O !\cd !\carbonyle !\tripalmitique !\cu) % haut
-   (-[::-90] !\cu O !\cu (!\ccd O) !\cu !\tripalmitique !\cu) % bas
-   -[::30] O!\cu !\carbonyle !\cu !\tripalmitique % centre
+   (-[::150] !\ch O !\cb !\carbonyle !\tripalmitique !\ch) % haut
+   (-[::-90] !\ch O !\ch (!\ccb O) !\ch !\tripalmitique !\ch) % bas
+   -[::30] O!\ch !\carbonyle !\ch !\tripalmitique % centre
 }
 \definesubmol\phosphatidylcholine{
   % choline
   -[::-30] \charge{90:4pt=$+$}{N}
     (-[::-30])(-[::-90])
   % phosphate
-  !\cud !\cu O !\cd P
+  !\chb !\ch O !\cb P
     ( =[::-20]O )( -[::-100]\charge{140:2pt=$-$}{O} )
   % diglycéride
-  !\cu O !\cd !\cu (!\cu O !\cd !\carbonyle !\trioleique)
-  !\cd !\cu O !\cd (!\ccd O) !\cud !\cud !\cud !\cud !\cud
+  !\ch O !\cb !\ch (!\ch O !\cb !\carbonyle !\trioleique)
+  !\cb !\ch O !\cb (!\ccb O) !\chb !\chb !\chb !\chb !\chb
 }
 \definesubmol\oleineSemiDev{
   H C                 (!\trioleiqueSemiDev)
@@ -206,7 +182,7 @@
 
 %% glycérol
 \definesubmol\glycerol{
-  HO !\cdu (!\cu OH) !\cdu OH
+  HO !\cbh (!\ch OH) !\cbh OH
 }
 \definesubmol\glycerolSemiDev{
   HC (-OH)
@@ -222,7 +198,7 @@
     *6(=-- % 2eme cycle
       *6(- % 3eme cycle
         *5(--- 
-          (-[::-35] (!\cu) !\cd !\cd !\cud (!\cd) !\cu) % lipide
+          (-[::-35] (!\ch) !\cb !\cb !\chb (!\cb) !\ch) % lipide
           -  -
         ) % 4eme
         - (-[::0]) ---
@@ -250,7 +226,7 @@
       --- *6(
         - *5(
           --- (-[::-100] OH)
-          (-[::-35] (!\ccu O) !\cd!\cu OH)
+          (-[::-35] (!\cch O) !\cb!\ch OH)
           -
         ) % 4
         - (-[::0]) -- (-OH) -
@@ -317,13 +293,13 @@
 %%% Amidon
 \definesubmol\amylopectineHaw{
   %% Glucoses du haut
-  \cdots\phantom{O} -[::-20,1.4] O-[::30,0.8] !\gluHaw 
+  \cbots\phantom{O} -[::-20,1.4] O-[::30,0.8] !\gluHaw 
   -[::30,0.8] O-[::30,0.8] !\gluHaw
   -[::30,0.8] O-[::-75,1.2] 
   %% Haut du Centre
   O-[::60,0.7] -[::-60,0.7] -[::90] O-[::-45,0.9] (
     %% Glucoses à droite
-    -[::30,0.8] O-[::30,0.8] !\gluHaw -[::30,0.8] O-[::30,1.4] \phantom{O}\cdots
+    -[::30,0.8] O-[::30,0.8] !\gluHaw -[::30,0.8] O-[::30,1.4] \phantom{O}\cbots
   )
   %% Bas du centre
   <[::-90,0.9] (-[::45,0.7] OH)
@@ -334,7 +310,7 @@
   -[::-20,0.8] O-[::-40,0.8]
   <[::65,0.9] (-[::45,0.7] OH)
   -[::-45,1.1,,,line width=3pt] (-[::-90,0.7] OH)
-  >[::-45,0.9] (-[::60,0.8] O-[::-30,1.4] \phantom{O}\cdots)
+  >[::-45,0.9] (-[::60,0.8] O-[::-30,1.4] \phantom{O}\cbots)
   -[::-95,0.9] (-[::50,0.5] -[::60,0.7,,2] HO) -[::-40,1.1] O-[::-45,0.9]
 }
 %% Pour faciliter l'écriture d'un sucre en formule développée
@@ -345,10 +321,10 @@
   HO -[::90,0.9,2] !\gluHaw -[::-45,0.7,,1] OH
 }
 \definesubmol\glucoseCycle{
-  HO -[::30] *6 (-(-OH) -(-OH) -(-OH) -O- (- !\cd OH)-)
+  HO -[::30] *6 (-(-OH) -(-OH) -(-OH) -O- (- !\cb OH)-)
 }
 \definesubmol\glucose{
-  H -[::30] (!\ccu O) !\cd (!\cd OH) !\cu (!\cu OH) !\cd (!\cd OH) !\cu (!\cu OH) !\cd !\cu OH
+  H -[::30] (!\cch O) !\cb (!\cb OH) !\ch (!\ch OH) !\cb (!\cb OH) !\ch (!\ch OH) !\cb !\ch OH
 }
 \definesubmol\glucoseSemiDev{
   C (-[::120] H) (=[::-120] O) !\ose !\ose !\ose !\ose !\ose (-[::0] OH)
@@ -359,10 +335,10 @@
   HO -[::90,0.9,2] !\fruHaw (-[::130,0.7,,1] OH) -[::-45,0.7] -[::60,0.7,,1] OH
 }
 \definesubmol\fructoseCycle{
-  HO -[::30] *6 (-(-OH) -(-OH) -(-[::0] OH) (-[::-90] !\cu OH) -O--)
+  HO -[::30] *6 (-(-OH) -(-OH) -(-[::0] OH) (-[::-90] !\ch OH) -O--)
 }
 \definesubmol\fructose{
-  HO -[::30] !\cd (!\ccd O) !\cu (!\cu OH) !\cd (!\cd OH) !\cu (!\cu OH) !\cd !\cu OH
+  HO -[::30] !\cb (!\ccb O) !\ch (!\ch OH) !\cb (!\cb OH) !\ch (!\ch OH) !\cb !\ch OH
 }
 \definesubmol\fructoseSemiDev{
   OH -[::0]  C!\HH -[::0] C (=[::90] O) !\ose !\ose !\ose !\ose (-[::0] H)
@@ -371,29 +347,29 @@
 %%%% Ribose
 \definesubmol{\ribose}{
   % liaison à droite et cycle
-  -[::-30] !\cd *5([::70]- (-HO) -(-OH) --O-)
+  -[::-30] !\cb *5([::70]- (-HO) -(-OH) --O-)
   % imite les angles du cycle pour pouvoir ajouter une chaîne à gauche
   !\vide{::124} !\vide{::-72} -[::128]
 }
 \definesubmol{\riboseHaw}{
   % liaison à droite
-  -[::-30] !\cd
+  -[::-30] !\cb
   % cycle ouvert et fermé par ? (4 liaisons à tracer du coup)
-  ? <[::30,0.7] (!\cd HO) -[::60,,,,line width= 3pt] (!\cd OH) >[::60, 0.7] -[::90]O ?
+  ? <[::30,0.7] (!\cb HO) -[::60,,,,line width= 3pt] (!\cb OH) >[::60, 0.7] -[::90]O ?
   % on repart à l'envers de l'oxygène pour pouvoir ajouter une chaîne à gauche
   !\vide{::180} -[::120]
 }
 \definesubmol{\desoxyribose}{
   % liaison à droite et cycle
-  -[::-30] !\cd *5([::70]- (-HO) ---O-)
+  -[::-30] !\cb *5([::70]- (-HO) ---O-)
   % imite les angles du cycle pour pouvoir ajouter une chaîne à gauche
   !\vide{::124} !\vide{::-72} -[::128]
 }
 \definesubmol{\desoxyriboseHaw}{
   % liaison à droite
-  -[::-30] !\cd
+  -[::-30] !\cb
   % cycle ouvert et fermé par ? (4 liaisons à tracer du coup)
-  ? <[::30,0.7] (!\cd HO) -[::60,,,,line width= 3pt] >[::60, 0.7] -[::90]O ?
+  ? <[::30,0.7] (!\cb HO) -[::60,,,,line width= 3pt] >[::60, 0.7] -[::90]O ?
   % on repart à l'envers de l'oxygène pour pouvoir ajouter une chaîne à gauche
   !\vide{::180} -[::120]
 }
@@ -440,28 +416,28 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Acides alpha aminés, formules topologiques
-\definesubmol\acideAmine1{ H_2N -[::30] (#1) !\cd !\carboxyle }
-\definesubmol\arginine       { !\acideAmine{!\cu!\cud!\cu HN -[::-60,,2] (!\cd NH_2) !\ccu H_2N^{+}} }
-\definesubmol\histidine      { !\acideAmine{!\cu!\cu *5(-N=-HN-=)} }
-\definesubmol\lysine         { !\acideAmine{!\cu!\cud!\cud NH_3^{+}} }
-\definesubmol\acideAspartique{ !\acideAmine{!\cu !\cu !\carbonyle O^{-}} }
-\definesubmol\acideGlutamique{ !\acideAmine{!\cu !\cud !\carbonyle O^{-}} }
-\definesubmol\serine         { !\acideAmine{!\cu!\cu HO} }
-\definesubmol\threonine      { !\acideAmine{!\cu (!\cu HO) !\cd} }
-\definesubmol\asparagine     { !\acideAmine{!\cu!\cu (!\ccd O) !\cu H_2N} }
-\definesubmol\glutamine      { !\acideAmine{!\cu!\cud (!\ccu O) !\cd H_2N} }
-\definesubmol\cysteine       { !\acideAmine{!\cu!\cu HS} }
-\definesubmol\selenocysteine { !\acideAmine{!\cu!\cu HSe} }
+\definesubmol\acideAmine1{ H_2N -[::30] (#1) !\cb !\carboxyle }
+\definesubmol\arginine       { !\acideAmine{!\ch!\chb!\ch HN -[::-60,,2] (!\cb NH_2) !\cch H_2N^{+}} }
+\definesubmol\histidine      { !\acideAmine{!\ch!\ch *5(-N=-HN-=)} }
+\definesubmol\lysine         { !\acideAmine{!\ch!\chb!\chb NH_3^{+}} }
+\definesubmol\acideAspartique{ !\acideAmine{!\ch!\ch !\carbonyle O^{-}} }
+\definesubmol\acideGlutamique{ !\acideAmine{!\ch!\chb !\carbonyle O^{-}} }
+\definesubmol\serine         { !\acideAmine{!\ch!\ch HO} }
+\definesubmol\threonine      { !\acideAmine{!\ch (!\ch HO) !\cb} }
+\definesubmol\asparagine     { !\acideAmine{!\ch!\ch (!\ccb O) !\ch H_2N} }
+\definesubmol\glutamine      { !\acideAmine{!\ch!\chb (!\cch O) !\cb H_2N} }
+\definesubmol\cysteine       { !\acideAmine{!\ch!\ch HS} }
+\definesubmol\selenocysteine { !\acideAmine{!\ch!\ch HSe} }
 \definesubmol\glycine        { !\acideAmine{} }
-\definesubmol\proline        { !\acideAmine{!\cu *5(----HN-)} }
-\definesubmol\alanine        { !\acideAmine{!\cu} }
-\definesubmol\valine         { !\acideAmine{!\cu (!\cd) !\cu} }
-\definesubmol\isoleucine     { !\acideAmine{!\cu (!\cd) !\cud} }
-\definesubmol\leucine        { !\acideAmine{!\cu!\cu (!\cd) !\cu} }
-\definesubmol\methionine     { !\acideAmine{!\cu!\cu!\cd S !\cu} }
-\definesubmol\phenylalanine  { !\acideAmine{!\cu!\cu *6(=-=-=-)} }
-\definesubmol\tyrosine       { !\acideAmine{!\cu!\cu *6(=-=(-OH)-=-)} }
-\definesubmol\tryophane      { !\acideAmine{!\cu!\cu *5(- *6(-=-=-) =-HN-=)} }
+\definesubmol\proline        { !\acideAmine{!\ch *5(----HN-)} }
+\definesubmol\alanine        { !\acideAmine{!\ch} }
+\definesubmol\valine         { !\acideAmine{!\ch (!\cb) !\ch} }
+\definesubmol\isoleucine     { !\acideAmine{!\ch (!\cb) !\chb} }
+\definesubmol\leucine        { !\acideAmine{!\ch!\ch (!\cb) !\ch} }
+\definesubmol\methionine     { !\acideAmine{!\ch!\ch!\cb S !\ch} }
+\definesubmol\phenylalanine  { !\acideAmine{!\ch!\ch *6(=-=-=-)} }
+\definesubmol\tyrosine       { !\acideAmine{!\ch!\ch *6(=-=(-OH)-=-)} }
+\definesubmol\tryophane      { !\acideAmine{!\ch!\ch *5(- *6(-=-=-) =-HN-=)} }
 %% Acides alpha aminés, formules semi-developpée
 \definesubmol\acideAmineSD{ CH (-[::-90] NH_2) -C !\carboxyleDev }
 \definesubmol\alanineSemiDev   { CH_3 - !\acideAmineSD }
@@ -470,54 +446,60 @@
 \definesubmol\cysteineSemiDev  { HS -CH_2 - !\acideAmineSD }
 
 %% Pour faire des polypeptides en formule topologique H = haut, B = bas
-\definesubmol\acideAmineH1{ !\cu (#1) !\cd (!\ccd O) !\cu }
-\definesubmol\acideAmineB1{ !\cd (#1) !\cu (!\ccu O) !\cd }
-\definesubmol\arginineH       { !\acideAmineH{!\cu!\cud!\cu HN -[::-60,,2] (!\cd NH_2) !\ccu H_2N^{+}} }
-\definesubmol\arginineB       { !\acideAmineB{!\cd!\cdu!\cd HN -[::60,,2]  (!\cu NH_2) !\ccd H_2N^{+}} }
-\definesubmol\histidineH      { !\acideAmineH{!\cu!\cd *5(-N=-\chemabove{N}{H}-=)} }
-\definesubmol\histidineB      { !\acideAmineB{!\cd!\cu *5(-N=-HN-=)} }
-\definesubmol\lysineH         { !\acideAmineH{!\cu!\cud!\cud NH_3^{+}} }
-\definesubmol\lysineB         { !\acideAmineB{!\cd!\cdu!\cdu NH_3^{+}} }
-\definesubmol\acideAspartiqueH{ !\acideAmineH{!\cu !\cd !\carbonyle O^{-}} }
-\definesubmol\acideAspartiqueB{ !\acideAmineB{!\cd !\cu !\carbonyle O^{-}} }
-\definesubmol\acideGlutamiqueH{ !\acideAmineH{!\cu !\cud !\carbonyle O^{-}} }
-\definesubmol\acideGlutamiqueB{ !\acideAmineB{!\cd !\cdu !\carbonyle O^{-}} }
-\definesubmol\serineH         { !\acideAmineH{!\cu!\cd HO} }
-\definesubmol\serineB         { !\acideAmineB{!\cd!\cu HO} }
-\definesubmol\threonineH      { !\acideAmineH{!\cu (!\cd HO) !\cu} }
-\definesubmol\threonineB      { !\acideAmineB{!\cd (!\cu HO) !\cd} }
-\definesubmol\asparagineH     { !\acideAmineH{!\cu!\cd (!\ccd O) !\cu NH_2} }
-\definesubmol\asparagineB     { !\acideAmineB{!\cd!\cu (!\ccu O) !\cd NH_2} }
-\definesubmol\glutamineH      { !\acideAmineH{!\cu!\cud (!\ccu O) !\cd H_2N} }
-\definesubmol\glutamineB      { !\acideAmineB{!\cd!\cdu (!\ccd O) !\cu H_2N} }
-\definesubmol\cysteineH       { !\acideAmineH{!\cu!\cd HS} }
-\definesubmol\cysteineB       { !\acideAmineB{!\cd!\cu HS} }
-\definesubmol\selenocysteineH { !\acideAmineH{!\cu!\cd HSe} }
-\definesubmol\selenocysteineB { !\acideAmineB{!\cd!\cu HSe} }
-\definesubmol\prolineH        { !\acideAmineH{!\cu *5(----HN-)} }
-\definesubmol\prolineB        { !\acideAmineB{!\cd *5(----HN-)} }
-\definesubmol\alanineH        { !\acideAmineH{!\cu} }
-\definesubmol\alanineB        { !\acideAmineB{!\cd} }
-\definesubmol\valineH         { !\acideAmineH{!\cu (!\cd) !\cu} }
-\definesubmol\valineB         { !\acideAmineB{!\cd (!\cd) !\cu} }
-\definesubmol\isoleucineH     { !\acideAmineH{!\cu (!\cd) !\cdu} }
-\definesubmol\isoleucineB     { !\acideAmineB{!\cd (!\cd) !\cud} }
-\definesubmol\leucineH        { !\acideAmineH{!\cu!\cd (!\cd) !\cu} }
-\definesubmol\leucineB        { !\acideAmineB{!\cd!\cu (!\cd) !\cu} }
-\definesubmol\methionineH     { !\acideAmineH{!\cu!\cd!\cu S !\cd} }
-\definesubmol\methionineB     { !\acideAmineB{!\cd!\cu!\cd S !\cu} }
-\definesubmol\phenylalanineH  { !\acideAmineH{!\cu!\cd *6(=-=-=-)} }
-\definesubmol\phenylalanineB  { !\acideAmineB{!\cd!\cu *6(=-=-=-)} }
-\definesubmol\tyrosineH       { !\acideAmineH{!\cu!\cd *6(=-=(-OH)-=-)} }
-\definesubmol\tyrosineB       { !\acideAmineB{!\cd!\cu *6(=-=(-OH)-=-)} }
+\definesubmol\acideAmineH1{ !\ch (#1) !\cb (!\ccb O) !\ch }
+\definesubmol\acideAmineB1{ !\cb (#1) !\ch (!\cch O) !\cb }
+\definesubmol\arginineH       { !\acideAmineH{!\ch!\chb!\ch HN -[::-60,,2] (!\cb NH_2) !\cch H_2N^{+}} }
+\definesubmol\arginineB       { !\acideAmineB{!\cb!\cbh!\cb HN -[::60,,2]  (!\ch NH_2) !\ccb H_2N^{+}} }
+\definesubmol\histidineH      { !\acideAmineH{!\ch!\cb *5(-N=-\chemabove{N}{H}-=)} }
+\definesubmol\histidineB      { !\acideAmineB{!\cb!\ch *5(-N=-HN-=)} }
+\definesubmol\lysineH         { !\acideAmineH{!\ch!\chb!\chb NH_3^{+}} }
+\definesubmol\lysineB         { !\acideAmineB{!\cb!\cbh!\cbh NH_3^{+}} }
+\definesubmol\acideAspartiqueH{ !\acideAmineH{!\ch!\cb !\carbonyle O^{-}} }
+\definesubmol\acideAspartiqueB{ !\acideAmineB{!\cb!\ch !\carbonyle O^{-}} }
+\definesubmol\acideGlutamiqueH{ !\acideAmineH{!\ch!\chb !\carbonyle O^{-}} }
+\definesubmol\acideGlutamiqueB{ !\acideAmineB{!\cb!\cbh !\carbonyle O^{-}} }
+\definesubmol\serineH         { !\acideAmineH{!\ch!\cb HO} }
+\definesubmol\serineB         { !\acideAmineB{!\cb!\ch HO} }
+\definesubmol\threonineH      { !\acideAmineH{!\ch (!\cb HO) !\ch} }
+\definesubmol\threonineB      { !\acideAmineB{!\cb (!\ch HO) !\cb} }
+\definesubmol\asparagineH     { !\acideAmineH{!\ch!\cb (!\ccb O) !\ch NH_2} }
+\definesubmol\asparagineB     { !\acideAmineB{!\cb!\ch (!\cch O) !\cb NH_2} }
+\definesubmol\glutamineH      { !\acideAmineH{!\ch!\chb (!\cch O) !\cb H_2N} }
+\definesubmol\glutamineB      { !\acideAmineB{!\cb!\cbh (!\ccb O) !\ch H_2N} }
+\definesubmol\cysteineH       { !\acideAmineH{!\ch!\cb HS} }
+\definesubmol\cysteineB       { !\acideAmineB{!\cb!\ch HS} }
+\definesubmol\selenocysteineH { !\acideAmineH{!\ch!\cb HSe} }
+\definesubmol\selenocysteineB { !\acideAmineB{!\cb!\ch HSe} }
+\definesubmol\prolineH        { !\acideAmineH{!\ch *5(----HN-)} }
+\definesubmol\prolineB        { !\acideAmineB{!\cb *5(----HN-)} }
+\definesubmol\alanineH        { !\acideAmineH{!\ch} }
+\definesubmol\alanineB        { !\acideAmineB{!\cb} }
+\definesubmol\valineH         { !\acideAmineH{!\ch (!\cb) !\ch} }
+\definesubmol\valineB         { !\acideAmineB{!\cb (!\cb) !\ch} }
+\definesubmol\isoleucineH     { !\acideAmineH{!\ch (!\cb) !\cbh} }
+\definesubmol\isoleucineB     { !\acideAmineB{!\cb (!\cb) !\chb} }
+\definesubmol\leucineH        { !\acideAmineH{!\ch!\cb (!\cb) !\ch} }
+\definesubmol\leucineB        { !\acideAmineB{!\cb!\ch (!\cb) !\ch} }
+\definesubmol\methionineH     { !\acideAmineH{!\ch!\cb!\ch S !\cb} }
+\definesubmol\methionineB     { !\acideAmineB{!\cb!\ch!\cb S !\ch} }
+\definesubmol\phenylalanineH  { !\acideAmineH{!\ch!\cb *6(=-=-=-)} }
+\definesubmol\phenylalanineB  { !\acideAmineB{!\cb!\ch *6(=-=-=-)} }
+\definesubmol\tyrosineH       { !\acideAmineH{!\ch!\cb *6(=-=(-OH)-=-)} }
+\definesubmol\tyrosineB       { !\acideAmineB{!\cb!\ch *6(=-=(-OH)-=-)} }
 \definesubmol\tryophaneH      { !\acideAmineH{-[::70]-[::-40] *5(- *6(-=-=-) =-\chemabove{N}{H}-=)} }
-\definesubmol\tryophaneB      { !\acideAmineB{!\cd!\cu *5(- *6(-=-=-) =-NH-=)} }
-%% Pour faire des polypeptides en formule semi-développée 
-\definesubmol\cysteineSemiDevB  {-CH_2 -CH (-[-3] NH_2) -C (=[3] O) -}
-\definesubmol\alanineSemiDevB   {-CH (-[-3] CH_3) -C (=[3] O) -}
-\definesubmol\glycineSemiDevH   {-CH_2 -C (=[3] O) -}
-\definesubmol\isoleucineSemiDevB{-CH (-[-3] CH (-[-5] CH_2 -[-3]CH_3) -[-1]CH_2) -C (=[3]) -}
-\definesubmol\valineSemiDevH    {-CH (-[3] CH (-[5] CH_3) -[1]CH_2) -C (=[-3] O) -}
+\definesubmol\tryophaneB      { !\acideAmineB{!\cb!\ch *5(- *6(-=-=-) =-NH-=)} }
+%% Pour faire des polypeptides en formule semi-développée
+%% SD = semi-dev ; H = haut ; B = bas
+\definesubmol\acideAmineSDH1{-CH (#1) -C (=[::-90] O) -}
+\definesubmol\acideAmineSDB1{-CH (#1) -C (=[::90] O) -}
+\definesubmol\cysteineSemiDevH  { !\acideAmineSDH{-[::90]  CH_2 -[::0] HS } }
+\definesubmol\cysteineSemiDevB  { !\acideAmineSDB{-[::-90] CH_2 -[::0] HS } }
+\definesubmol\alanineSemiDevH   { !\acideAmineSDH{-[::90]  CH_3} }
+\definesubmol\alanineSemiDevB   { !\acideAmineSDB{-[::-90] CH_3} }
+\definesubmol\isoleucineSemiDevH{ !\acideAmineSDH{-[::90]  CH (!\ch H_2C -[::-60,,2,2]H_3C) !\cb CH_2 } }
+\definesubmol\isoleucineSemiDevB{ !\acideAmineSDB{-[::-90] CH (!\ch CH_2 !\cb CH_3) !\cb H_2C } }
+\definesubmol\valineSemiDevH    { !\acideAmineSDH{-[::90]  CH (!\ch H_3C) !\cb CH_2} }
+\definesubmol\valineSemiDevB    { !\acideAmineSDB{-[::-90] CH (!\cb H_3C) !\ch CH_2} }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -533,8 +515,8 @@
 }
 \definesubmol\prostaglandine{
   HO-[::75] *5(
-    - (-!\ccu !\cd (!\cd HO) !\cud !\cud !\cu)
-    - (-[::-65] !\cdu !\cdu !\cdu !\carboxyle)
+    - (-!\cch !\cb (!\cb HO) !\chb !\chb !\ch)
+    - (-[::-65] !\cbh !\cbh !\cbh !\carboxyle)
     - (=O)
     --
   )
@@ -543,7 +525,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Produit de contraste
 \definesubmol\chelate{-[::-70] -[::80] -[::80]} 
-\definesubmol\chelateCOO{-[::-120] !\cd (!\ccd O) !\cu O^{-}}
+\definesubmol\chelateCOO{-[::-120] !\cb (!\ccb O) !\ch O^{-}}
 \definesubmol\ionChelate{
   [:-10] N (-[::50, 0.9,,, draw = none] Gd^{3+})
     (!\chelateCOO) !\chelate
@@ -555,7 +537,7 @@
   [:-10] N (-[::50, 0.9,,, draw = none] Gd^{3+})
     (!\chelateCOO) !\chelate
   N (!\chelateCOO) !\chelate
-  N (-[::-120] !\cd (!\cd) !\cu O) !\chelate 
+  N (-[::-120] !\cb (!\cb) !\ch O) !\chelate 
   N (!\chelateCOO) -[::-70] -[::80] -[::80,0.75]
 }
 
@@ -572,9 +554,9 @@
   OH-[-1]
   *6( % 1er cycle
     ---(=)- ( % ramification
-      = !\cd !\ccu *6(- % 2eme
+      = !\cb !\cch *6(- % 2eme
         *5(
-          --- (-(-[::60]) !\cd !\cud -[::60](-[::60]) !\cd) --
+          --- (-(-[::60]) !\cb !\chb -[::60](-[::60]) !\cb) --
         ) % 3eme
         -(-[::0])----
       ) % 2eme
@@ -582,11 +564,11 @@
     --
   ) % 1er
 }
-\definesubmol\cret{ !\ccd !\cu }
+\definesubmol\cret{ !\ccb !\ch }
 \definesubmol\retinol{ % Vitamine A
   *6( % cycle
     --(-[::0]) (-[::-80]) = ( % chaine
-      !\cd !\cret (!\cu) !\cret !\cret (!\cu) !\cret !\cd OH
+      !\cb !\cret (!\ch) !\cret !\cret (!\ch) !\cret !\cb OH
     ) % chaine
     -(-)--
   ) % cycle
@@ -595,9 +577,9 @@
 \definesubmol\thiamine{
   -[::30]  *6(
     -N=- (
-      - !\cd N  *5(
+      - !\cb N  *5(
         - (-)
-        = (- !\cu !\cd OH)
+        = (- !\ch !\cb OH)
         -S-=
       ) % 2nd cycle
     )
@@ -610,10 +592,10 @@
   -[::30]  *6(
     =- ( *6(
         - N (
-        !\cdu (!\cu OH)
-        !\cd (!\cd OH)
-        !\cu (!\cu OH)
-        !\cd !\cu OH
+        !\cbh (!\ch OH)
+        !\cb (!\cb OH)
+        !\ch (!\ch OH)
+        !\cb !\ch OH
       )
       - ( *6(=N- (=O) -NH- (= O)-) )
       -=N-
@@ -623,29 +605,29 @@
 }
 % vitamine B3 acide nicotinique
 \definesubmol\acideNicotinique{
-   *6(-N=- (- (!\ccu O) !\cd OH) =-=)
+   *6(-N=- (- (!\cch O) !\cb OH) =-=)
 }
 % vitamine B5 acide panthotenique
 \definesubmol\acidePanthotenique{
-  HO -[::30] !\cd (-[::-90]) (-[::-30])
-  !\cu ( !\cu OH )
-  !\cd (!\ccd O )
-  !\cu \chemabove{N}{H} !\cdu !\cd (!\ccd O)
-  !\cu OH
+  HO -[::30] !\cb (-[::-90]) (-[::-30])
+  !\ch ( !\ch OH )
+  !\cb (!\ccb O )
+  !\ch \chemabove{N}{H} !\cbh !\cb (!\ccb O)
+  !\ch OH
 }
 % vitamine B6 pyroxidine
 \definesubmol\pyroxidine{
-  HO -[::30] !\cd  *6(
+  HO -[::30] !\cb  *6(
     =-N= (-)
     - (-OH)
-    = (!\cd OH)
+    = (!\cb OH)
     -
   )
 }
 % vitamine B8 biotine
 \definesubmol\biotine{
   \chembelow{N}{H} *5(
-    - *5(--S- (- !\cdu !\cd) -)
+    - *5(--S- (- !\cbh !\cb) -)
     --\chemabove{N}{H}- (= HO)
     -
   )
@@ -655,11 +637,11 @@
   H_2N -[::30]  *6(
     =N- *6(
       -N=- (
-        - !\cu \chemabove{N}{H} !\cd  *6(
+        - !\ch \chemabove{N}{H} !\cb  *6(
           =-= (
-            - (!\ccu O)
-            !\cd \chembelow{N}{H} !\cu (!\cu (!\cu HO) !\ccd O)
-            !\cd !\cdu (!\cu OH) !\ccd O
+            - (!\cch O)
+            !\cb \chembelow{N}{H} !\ch (!\ch (!\ch HO) !\ccb O)
+            !\cb !\cbh (!\ch OH) !\ccb O
           )
           -=-
         ) % 3eme cycle
@@ -672,20 +654,20 @@
 % vitamine B12 cyanocobalamine
 \definesubmol\cyanocobalamine{
   -[::-5]  *5( % cycle haut droit du cobalt
-    (-[::150] -[::-50] (!\ccd O) !\cu NH_2)
+    (-[::150] -[::-50] (!\ccb O) !\ch NH_2)
     - (-[::-90]) (-[::-35])
     - N = (
-      - (!\cu) !\ccd *5( % cycle haut gauche du cobalt
+      - (!\ch) !\ccb *5( % cycle haut gauche du cobalt
         - N = (
-          -!\ccd *5( % cycle bas gauche du cobalt
+          -!\ccb *5( % cycle bas gauche du cobalt
             - N = (
-              - (!\cu) !\ccd *5( % cobalt
-                - N (-Co !\cu CN)
-                -- (- !\cd (!\ccd O) !\cu NH_2)
+              - (!\ch) !\ccb *5( % cobalt
+                - N (-Co !\ch CN)
+                -- (- !\cb (!\ccb O) !\ch NH_2)
                 - (-[::-90]) ( % Phosphate
-                  - !\cud (!\ccd O) !\cu NH !\cdu (!\cu)
-                  !\cd O !\cu !\phosphate -[::0] *5( % cycle du bas ether
-                    - (- !\cu HO)
+                  - !\chb (!\ccb O) !\ch NH !\cbh (!\ch)
+                  !\cb O !\ch !\phosphate -[::0] *5( % cycle du bas ether
+                    - (- !\ch HO)
                     -O- (-N  *5(- *6(=-(-)=(-)-=) --N=-)) % Cycle du bas amidine
                     -(-OH)-
                   )
@@ -693,16 +675,16 @@
                 -
               )
             ) % amide latéral
-            - (- !\cud (!\ccd O) !\cu NH_2)
+            - (- !\chb (!\ccb O) !\ch NH_2)
             - (-[::-30])  (-[::-90]) -
           )
         ) % cycle 
-        - (- !\cdu (!\ccu O) !\cd NH_2)
-        - (-[::0]) (!\cd!\cd (!\ccu O) !\cd NH_2)
+        - (- !\cbh (!\cch O) !\cb NH_2)
+        - (-[::0]) (!\cb!\cb (!\cch O) !\cb NH_2)
         -
       )
     )
-    - (- !\cdu (!\ccd O) !\cu NH_2)
+    - (- !\cbh (!\ccb O) !\ch NH_2)
     - 
   ) % 1er cycle
 }
@@ -711,9 +693,9 @@
   -[::30]  *6(
     = (-) -  *6(
       -O- (
-        - !\cud !\cu (!\cu)
-        !\cdu !\cdu (!\cu)
-        !\cdu !\cdu (!\cu) !\cd
+        - !\chb !\ch (!\ch)
+        !\cbh !\cbh (!\ch)
+        !\cbh !\cbh (!\ch) !\cb
       )
       ( -[::0] )
       ---
@@ -729,13 +711,13 @@
 \definesubmol\aspirineSemiDev{
   HC *6( % cycle
     -\chembelow{C}{H} =CH -C (
-      -O !\cd C (!\ccd O) !\cu CH_3 % chaine latérale
+      -O !\cb C (!\ccb O) !\ch CH_3 % chaine latérale
     )
     =C (-C !\carboxyle) -[,,,2]HC =[,,2]
   ) % cyle
 }
 \definesubmol\aspirine{
-  *6 (-=- (-O !\cd (!\ccd O) !\cu) = (- !\carboxyle) -=)
+  *6 (-=- (-O !\cb (!\ccb O) !\ch) = (- !\carboxyle) -=)
 }
 \definesubmol\acideSalicylique{
   *6 (-=- (-OH) = (- !\carboxyle) -=)
@@ -745,7 +727,7 @@
 \definesubmol\paracetamol{
   HO -[::30] *6(
     -=- (
-      -\chemabove{N}{H} (!\cd (!\ccd O) !\cu) % amide
+      -\chemabove{N}{H} (!\cb (!\ccb O) !\ch) % amide
     )
     =-=
   )
@@ -753,7 +735,7 @@
 \definesubmol\paracetamolSemiDev{
   HO -[::30] C *6(
     -\chembelow{C}{H} =CH -C (
-      -\chemabove{N}{H} (!\cd C (!\ccd O) -CH_3) % amide
+      -\chemabove{N}{H} (!\cb C (!\ccb O) -CH_3) % amide
     )
     =\chemabove{C}{H} -HC =[,,2]
   )
@@ -761,7 +743,7 @@
 \definesubmol\paracetamolDev{
   H -[::0] O -[::30] C *6(
     -C (-H) =C (-H) -C (
-      -N (!\cu H) (!\cd C (!\ccd O) (-C !\HHH)) % amide
+      -N (!\ch H) (!\cb C (!\ccb O) (-C !\HHH)) % amide
     )
     =C (-H) -C (-H) =
   )
@@ -769,32 +751,32 @@
 
 %% Aspartame
 \definesubmol\aspartame{
-  HO -[::90] (!\ccu O) !\cd!\cd (!\cd NH_2) % chaine latérale
-  !\cu (!\ccu O) !\cd \chembelow{N}{H} !\cu % amide
+  HO -[::90] (!\cch O) !\cb!\cb (!\cb NH_2) % chaine latérale
+  !\ch (!\cch O) !\cb \chembelow{N}{H} !\ch % amide
   *6(- (=O) -O (-) !\blank *6(-=-=-) =--) % double cycle
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Molécules odorantes
 \definesubmol\geraniol{
-  -[::30] (!\cd) !\ccu *6( % pied
-    !\blank !\blank (- !\cd OH) % chaine latérale
+  -[::30] (!\cb) !\cch *6( % pied
+    !\blank !\blank (- !\cb OH) % chaine latérale
     =(-)--- %fin du cycle
   )
 }
 \definesubmol\geraniolSemiDev{
   H_3C - C (- CH_3) =[::90] CH % pied
-  !\cu H_2C -[::-60,,2,2] H_2C !\cd C % "cycle"
-  (!\cu CH_3) !\ccd CH -[::30] CH_2 -OH % chaînes latérales
+  !\ch H_2C -[::-60,,2,2] H_2C !\cb C % "cycle"
+  (!\ch CH_3) !\ccb CH -[::30] CH_2 -OH % chaînes latérales
 }
 \definesubmol\vanilline{
-  HO -[::90,,2] *6(= (-O !\cu) -= (- !\carbonyle H) -=-)
+  HO -[::90,,2] *6(= (-O !\ch) -= (- !\carbonyle H) -=-)
 }
 \definesubmol\ethylvanilline{
-  HO -[::90,,2] *6(= (-O !\cud) -= (- !\carbonyle H) -=-)
+  HO -[::90,,2] *6(= (-O !\chb) -= (- !\carbonyle H) -=-)
 }
 \definesubmol\oxyphenylone{
-  HO -[::30] *6(-=- (-!\cdu (!\ccu O) !\cd) =-=)
+  HO -[::30] *6(-=- (-!\cbh (!\cch O) !\cb) =-=)
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -802,7 +784,7 @@
 \definesubmol\THC{
   -[::30] *6( % cyle ether
     (-[::50]) -O- *6( % cycle chaine latérale et alcool
-      -= (!\cdu !\cdu !\cd) -= (-OH) -
+      -= (!\cbh !\cbh !\cb) -= (-OH) -
     )
     =- *6(-=(-)---) -- % cycle supérieur
   )
@@ -812,11 +794,11 @@
     <[::60,0.7] (-[::60] N -[::60])
     -[::-60,,,,line width = 3pt]
     >[::-30,0.7] ( % ether-phenyl
-      !\cu O !\cd (!\ccd O) !\cu *6(=-=-=-)
+      !\ch O !\cb (!\ccb O) !\ch *6(=-=-=-)
     )
     -[::130,0.7] ( % ester
-      -[::-50] (!\ccu O)
-      !\cd O !\cu 
+      -[::-50] (!\cch O)
+      !\cb O !\ch 
     )
     -[::80, 0.9] (-[::-30, 0.85]) -[::60, 0.7] 
   ?

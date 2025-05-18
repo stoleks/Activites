@@ -41,40 +41,40 @@ Pour les cétones, alcools et amines, le numéro est celui du \important{carbone
   colspec = {c c c Q[wd=0.4\linewidth]},
   column{2,4} = {couleurPrim!10},
   row{1} = {couleurPrim!20},
-  rows = {m}, columns = {c}
+  rows = {c,m}
 }
   Priorité & Famille fonctionnelle & Formule & Nom si famille prioritaire \\
   %
   1 & Acide carboxylique
-  & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\cu !\couleur C (!\ccuCouleur !\couleur O) !\cdCouleur !\couleur{OH}}
+  & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\ch !\couleur C (!\cchCouleur !\couleur O) !\cbCouleur !\couleur{OH}}
   & acide ($R_1$)-oïque \\
   %
-  2 & Ester
-  & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\cu !\couleur C (!\ccuCouleur !\couleur O) !\cdCouleur !\couleur O !\cu R_2}
+  2 & Ester 
+  & \hspace{-24pt}\chemfig{!\vide{:-30} R_1 !\ch !\couleur C (!\cchCouleur !\couleur O) !\cbCouleur !\couleur O !\ch R_2}
   & ($R_1$)-oate de ($R_2$)-yle \\
   %
-  3 & Amide
-  & \chemfig{[:-30] R_1 !\cu !\couleur C (!\ccuCouleur !\couleur O) !\cdCouleur !\couleur{NH_2}}
+  { 3 \\ \phantom{B} } & { Amide \\ \phantom{B} }
+  & \chemfig{[:-30] R_1 !\ch !\couleur C (!\cchCouleur !\couleur O) !\cbCouleur !\couleur{NH_2}}
   & ($R_1$)-amide \\
   %
   4 & Aldéhyde
-  & \hspace{-24pt}\chemfig{!\vide{:-30} R_1 !\cuCouleur !\couleur C (!\ccuCouleur !\couleur O) !\cdCouleur !\couleur H} 
+  & \hspace{-24pt}\chemfig{!\vide{:-30} R_1 !\chCouleur !\couleur C (!\cchCouleur !\couleur O) !\cbCouleur !\couleur H} 
   & ($R_1$)-al \\
   %
   5 & Cétone
-  & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\cu !\couleur C (!\cd R_2) (!\ccuCouleur !\couleur O)}
+  & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\ch !\couleur C (!\cb R_2) (!\cchCouleur !\couleur O)}
   & ($R_1$)-(numéro)-one \\
   %
   6 & Alcool
-  & \chemfig{R_1 - !\couleur{OH}} 
+  & \chemfig{R_1- !\couleur{OH}} 
   & ($R_1$)-(numéro)-ol \\
   %
   7 & Amine 
-  & \chemfig{R_1 -[1.5] !\couleur{NH_2}}
+  & \chemfig{R_1- !\couleur{NH_2}}
   & ($R_1$)-(numéro)-amine \\
   %
   8 & Éther
-  & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\cuCouleur !\couleur O !\cdCouleur R_2}
+  & \hspace{-24pt} \chemfig{!\vide{:-30} R_1 !\chCouleur !\couleur O !\cbCouleur R_2}
   & ($R_1$)-oxy-($R_2$) \\
 \end{tblr}
 \end{center}
