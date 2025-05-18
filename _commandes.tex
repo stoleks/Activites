@@ -2,11 +2,53 @@
 %% rectangle coloré
 \NewDocumentCommand{\rectangle}{O{couleurPrim} m m}{%
   \shorthandoff{;}
-  \tikz \node (rect) [draw, fill, color=#1,
-              minimum width=#2,
-              minimum height=#3] {};
+  \tikz \node (rect) [draw, fill, color=#1, minimum width=#2, minimum height=#3] {};
   \shorthandon{;}
 }
+
+%% Rectangle adapté à la taille d'un texte
+\makeatletter % @ désactivé
+\newdimen\@mHauteurBoite
+\newdimen\@mLargeurBoite
+\newdimen\@mProfondeurBoite
+\newdimen\@mTailleBoite
+\newcommand{\boiteRectangle}[2][]{
+    \settoheight{\@mHauteurBoite}{#2}    % Hauteur du texte
+    \settowidth {\@mLargeurBoite}{#2}    % Largeur du texte
+    \settodepth {\@mProfondeurBoite}{#2} % Profondeur du texte
+    \pgfmathsetlength{\@mTailleBoite}{max(\@mLargeurBoite, (\@mHauteurBoite + \@mProfondeurBoite))}
+    \tikz \node [inner sep=2.5\pgflinewidth, minimum width=\@mTailleBoite, minimum height=2\@mHauteurBoite, #1] {#2};
+}%
+\makeatother
+%%
+
+%% Trace un rectangle autour du numéro (#2) et un trait sous le titre (#3)
+\makeatletter % @ désactivé
+\newdimen\@mHauteurChiffre
+\newdimen\@mLargeurChiffre
+\newdimen\@mProfondeurChiffre
+\newdimen\@mTailleChiffre
+\newdimen\@mHauteurTexte
+\newdimen\@mLargeurTexte
+\newdimen\@mHauteurMax
+\newcommand{\boiteTitre}[3][]{
+    \settoheight{\@mHauteurChiffre}{#2}    % Hauteur du numéro
+    \settowidth {\@mLargeurChiffre}{#2}    % Largeur du numéro
+    \settodepth {\@mProfondeurChiffre}{#2} % Profondeur du numéro
+    \settoheight{\@mHauteurTexte}{#3}      % Hauteur du texte
+    \settowidth {\@mLargeurTexte}{#3}      % Largeur du texte
+    \pgfmathsetlength{\@mHauteurMax}{max(\@mHauteurTexte, \@mHauteurChiffre)}
+    \pgfmathsetlength{\@mTailleChiffre}{max(\@mLargeurChiffre, (\@mHauteurChiffre + \@mProfondeurChiffre))}
+    %% Trace le numéro
+    \tikz \node [inner sep=2.5\pgflinewidth, minimum width=\@mTailleChiffre, minimum height=2\@mHauteurMax, rounded corners = 2pt, fill = #1] {#2};
+    %% Trace le titre
+    \hspace*{-12pt}\noindent \tikz \node [minimum width = \@mLargeurTexte, minimum height = \@mHauteurMax] {#3 };
+    %% Trace la boite de fin
+    \hspace*{-12pt}\noindent \tikz \fill [y = 2\@mHauteurMax, rounded corners = 2pt, fill = #1] 
+      (0, 0) -- (1, 0) -- (1, 0.3) -- (0.2, 1) -- (0, 1);
+}%
+\makeatother
+%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -299,21 +341,31 @@
   \titre{Chapitre \arabic{section} -- #1}
 }
 \newcommand{\titrePartie}[1]{
-  \vspace*{24pt}
+  \vspace*{12pt}
   \refstepcounter{subsection}
-  \rectangle{40pt}{1pt}
-  \important[black]{\Large \Roman{subsection} -- #1}
-  \rectangle{40pt}{1pt}
-  \vspace*{10pt}
+  %% Tracé du numéro de partie
+  \setul{0.8ex}{0.2ex}
+  \setulcolor{couleurPrim}
+  \boiteTitre [couleurPrim] {
+    \important[white]{\Large \Roman{subsection} -- }
+  }{
+    \important[black]{\Large\ul{ #1 }}
+  }
+  \vspace*{1pt}
 }
 \newcounter{sousSectionNum}
 \newcommand{\titreSection}[1]{
-  \vspace*{16pt}
+  \vspace*{12pt}
   \refstepcounter{subsubsection}
   \setcounter{sousSectionNum}{0}
-  \rectangle{30pt}{4pt}
-  \important[black]{\large \arabic{subsubsection} -- #1}
-  \vspace*{4pt}
+  %% Tracé du numéro de section
+  \boiteRectangle[fill = couleurPrim, rounded corners = 2pt]{
+    \important[white]{\large \arabic{subsubsection} -- }
+  }
+  \hspace*{-20pt}
+  %% Tracé du titre de la section
+  \boiteRectangle{\important[black]{\large #1 }}
+  \vspace*{1pt}
 }
 \newcommand{\titreSousSection}[1]{
   \vspace*{12pt}
