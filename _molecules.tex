@@ -27,6 +27,7 @@
 \newcommand{\carbone}  {\chemfig{C}\xspace}
 \newcommand{\oxygene}  {\chemfig{O}\xspace}
 \newcommand{\azote}    {\chemfig{N}\xspace}
+\newcommand{\phosphore}{\chemfig{P}\xspace}
 \newcommand{\electron} {\chemfig{e^{-}}\xspace}
 %%%% Molécules récurrentes
 \newcommand{\dioxygene}          {\chemfig{O_2}\xspace}
@@ -47,6 +48,7 @@
 \newcommand{\ionHydrogene}{\chemfig{H^{+}}\xspace}
 \newcommand{\ammonium}    {\chemfig{NH_4^{+}}\xspace}
 \newcommand{\nitrate}     {\chemfig{NO_3^{-}}\xspace}
+\newcommand{\nitrite}     {\chemfig{NO_2^{-}}\xspace}
 \newcommand{\sulfate}     {\chemfig{SO_4^{2-}}\xspace}
 \newcommand{\chlorure}    {\chemfig{Cl^{-}}\xspace}
 \newcommand{\fluorure}    {\chemfig{F^{-}}\xspace}
@@ -62,6 +64,7 @@
 \newcommand{\ionCalcium}  {\chemfig{Ca^{2+}}\xspace}
 \newcommand{\ionMagnesium}{\chemfig{Mg^{2+}}\xspace}
 \newcommand{\ionPotassium}{\chemfig{K^{+}}\xspace}
+\newcommand{\ionPhosphate}{\chemfig{HPO_4^{2-}}\xspace}
 
 %%%% État physique
 \newcommand{\aq} { \ensuremath{_\text{(aq)}} }
@@ -97,11 +100,12 @@
 \definesubmol\phosphate   { P (=[::-90] O) (-[::90] \charge{45:1.5pt=$\scriptstyle-$}{O}) -[::0] O}
 
 %%%% Pour des molécules colorées
-\definesubmol\chCouleur {-[ ::60,,,, couleurQuat, line width = 1.5pt]}
-\definesubmol\cbCouleur {-[::-60,,,, couleurQuat, line width = 1.5pt]}
-\definesubmol\cchCouleur{=[ ::60,,,, couleurQuat, line width = 1.5pt]}
-\definesubmol\ccbCouleur{=[::-60,,,, couleurQuat, line width = 1.5pt]}
-\definesubmol\couleur1  {\textcolor{couleurQuat}{#1}}
+\definesubmol\cCouleur1 {-[:: #1,,,, couleurQuat-700, line width = 2.pt]}
+\definesubmol\chCouleur {-[ ::60,,,, couleurQuat-700, line width = 2.pt]}
+\definesubmol\cbCouleur {-[::-60,,,, couleurQuat-700, line width = 2.pt]}
+\definesubmol\cchCouleur{=[ ::60,,,, couleurQuat-700, line width = 2.pt]}
+\definesubmol\ccbCouleur{=[::-60,,,, couleurQuat-700, line width = 2.pt]}
+\definesubmol\couleur1  {\textcolor{couleurQuat-700}{#1}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -803,4 +807,13 @@
     )
     -[::80, 0.9] (-[::-30, 0.85]) -[::60, 0.7] 
   ?
+}
+\definesubmol\bisphenolA{
+  HO-[:30] *6(-=- (- (-[::0]) (-[::120]) !\cb *6(-=- (-OH) =-=)) =-=)
+}
+\definesubmol\bisphenolASemiDev{
+  HO-[:30] C *6(-\chembelow{C}{H} =CH -[,,,1]C (
+    -C (-[::25]CH_3) (-[::95]H_3C) !\cb C 
+      *6(-[,,,2]HC =\chembelow{C}{H} -C (-OH) =CH -[,,,1]\chemabove{C}{H}=C)
+    ) =\chemabove{C}{H} -HC =[,,2])
 }

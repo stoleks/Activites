@@ -437,7 +437,6 @@
 %% \enTete [compteur] {titre} [numéro de section] ; * = version simplifié sans pagination
 \NewDocumentCommand{\enTete}{s o m O{0}}{
   % reset des compteurs
-  \newpage
   \reinitialiseCompteur
   \setcounter{section}{#4}
   
@@ -446,6 +445,7 @@
     \phantom{b} \vspace*{-70pt}
     \titre{#3}
   }{ % affichage de l'entête version activité
+    \newpage
     \pagestyle{fancy}
     \teteGauche{\etablissement{}}{#3} % left header
     \chead{} % central header
