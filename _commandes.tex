@@ -1047,8 +1047,8 @@
 %% texte avec une boite autour
 \NewDocumentCommand{\texteEncadre}{m O{black}}{
   \textcolor{#2}{
-    \frame{
-      \vphantom{$\dfrac{1}{1}$} \textcolor{black}{\text{#1}}
+    \frame{\vphantom{$\dfrac{1}{1}$} 
+      \textcolor{black}{\text{#1}}
     }
   }
 }

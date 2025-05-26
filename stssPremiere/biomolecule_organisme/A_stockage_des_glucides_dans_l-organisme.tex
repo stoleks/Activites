@@ -1,0 +1,120 @@
+%%%%
+\tetePremStssBiom
+\titreActivite{Stockage des glucides dans l'organisme}
+
+\begin{doc}{Classification des glucides}{doc:A_classification_glucides}
+  \begin{importants}
+    Les \important{glucides} sont des molécules organiques possédants \important{1 groupe carbonyle \chemfig{C=O}} et \important{au moins 2 groupes hydroxyles \chemfig{HO}}.
+  \end{importants}
+  Dans nos organismes, les briques de bases des glucides sont trois molécules isomères de formules brutes \chemfig{C_6 H_{12} O_6} : le \important{glucose,} le \important{fructose} et le \important{galactose.}
+  Tous les autres glucides sont des \important{polymères} de ces sucres simples.
+  \begin{importants}
+    Un \important{polymère} et une macromolécule assemblée à partir d'une même unité de base répétée plusieurs fois.
+    Les molécules composant le polymère sont appelées \important{monomères} et leur nombre de répétition et appelé \important{indice de polymérisation.}
+  \end{importants}
+
+  \begin{center}
+  \begin{tikzpicture}
+    \tikzset{
+        rectArrondi/.style = {
+          rectangle, rounded corners = 8pt, inner ysep = 10pt,
+          text width = 3.75cm, align = center, fill = #1,
+        },
+        fleche/.style = {->, line width = 6pt, color = #1}
+    }
+    %%%% Base
+    \node[rectArrondi = purple-200] (glucides) {Les glucides \\ \reaction 1 carbonyle et plus de 2 hydroxyles};
+    \node[rectArrondi= blue-200, below left= 0.5cm and 0.4cm of glucides] (mono) {Glucides simples, monosaccharides, \important[black]{non hydrolysables}};
+    \node[rectArrondi= red-200, below right= 0.5cm and 0.2cm of glucides] (poly) {Glucides complexes, polysaccharides, \important[black]{hydrolysables}};
+    %%%% Oses
+    \node[rectArrondi= cyan-100, below left=  1.5cm and -1.9cm of mono] (aldose) {Aldose (aldéhyde)};
+    \node[rectArrondi= cyan-100, below right= 1.5cm and -1.9cm of mono] (cetose) {Cétose (cétone)};
+    %%
+    \node[below left=  2cm and -3cm   of aldose] (glu)  {\chemname{\chemfig{!\glucoseHaw}}{glucose}};
+    \node[below right= 2cm and -1cm   of aldose] (gala) {\chemname{\chemfig{!\galactoseHaw}}{galactose}};
+    \node[below right= 2cm and -2.2cm of cetose] (fru)  {\chemname{\chemfig{!\fructofuranoseHaw}}{fructose}};
+    %%%% Osides
+    \node[rectArrondi= orange-100, below left=  1.5cm and -1.9cm of poly] (disac)   {Disaccharides (2 oses)};
+    \node[rectArrondi= orange-100, below right= 1.5cm and -1.9cm of poly] (polysac) {Polysaccharides (n oses)};
+    %%
+    \node[below left= 5.5cm and -0.5cm of disac] (lactose) {Lactose = Glucose + Galactose};
+    \node[below left= 6.5cm and -0.5cm of disac] (maltose) {Maltose = Glucose + Glucose};
+    \node[below left= 7.5cm and -0.5cm of disac] (saccha)  {Saccharose = Glucose + Fructose};
+    %%
+    \node[below right= 2cm and -2cm of polysac, text width = 2cm] (amidon) {Amidon (plante)};
+    \node[below right= 4cm and -2cm of polysac, text width = 2cm] (glycogene) {Glycogène (animaux)};
+    
+    %%%% Flèches
+    \draw[fleche=purple-300] (glucides) -| (mono);
+    \draw[fleche=purple-300] (glucides) -| (poly);
+    %
+    \draw[fleche=blue-300] (mono) -- ($(mono) + (0,-1.5)$) -| (aldose);
+    \draw[fleche=blue-300] (mono) -- ($(mono) + (0,-1.5)$) -| (cetose);
+    %
+    \draw[fleche=red-300] (poly)  -- ($(poly) + (0,-1.5)$) -| (disac);
+    \draw[fleche=red-300] (poly)  -- ($(poly) + (0,-1.5)$) -| (polysac);
+    %
+    \draw[fleche=cyan-200] (aldose) -- ($(aldose) + (0,-1.5)$) -| (glu);
+    \draw[fleche=cyan-200] (aldose) -- ($(aldose) + (0,-1.5)$) -| (gala);
+    \draw[fleche=cyan-200] (cetose) -- ($(cetose) + (0,-1.5)$) -| (fru);
+    %
+    \draw[fleche=orange-200] ($(disac) + (0.5, -0.8)$) |- (lactose);
+    \draw[fleche=orange-200] ($(disac) + (1, -0.8)$)   |- (maltose);
+    \draw[fleche=orange-200] ($(disac) + (1.5, -0.8)$) |- (saccha);
+    %
+    \draw[fleche=orange-200] ($(polysac) + (-1,-0.8)$)   |- (amidon);
+    \draw[fleche=orange-200] ($(polysac) + (-1.5,-0.75)$) |- (glycogene);
+  \end{tikzpicture}
+  \end{center}
+
+  Le maltose est un polymère du glucose avec un indice de polymérisation de \num{2}.
+  L'amidon et le glycogène sont des polymères du glucose avec un indice de polymérisation allant de \num{600} à \num{100000}.
+\end{doc}
+
+\begin{doc}{Hydrolyse des glucides}{doc:A_hydrolyse_glucides}
+  Les glucides complexes servent de \important{réserve d'énergie} pour l'organisme. 
+  Cette énergie stockée peut être récupérée au cours d'une réaction \important{d'hydrolyse,} ou le glucide complexe va être coupé en un polymère plus petit et un monomère, ou deux monomères pour les disaccharides.
+
+  \begin{importants}
+    Pour que la réaction d'hydrolyse ait lieu, il faut que le milieu dans lequel se trouvent les glucides complexes \important{soit acide} ou qu'il contienne \important{une enzyme} adaptée pour couper le glucide.
+  \end{importants}
+
+  \exemple Réaction d'hydrolyse du saccharose en milieu acide ou en présence de saccharase :
+  \begin{equation*}
+    \chemfig{!\saccharoseHaw} \; + \; \eau \; \reaction \; \chemfig{!\glucoseHaw} + \chemfig{!\fructofuranoseHaw}
+  \end{equation*}
+\end{doc}
+
+\question{
+  Identifier les deux espèces chimiques formées pendant l'hydrolyse du saccharose.
+}{}[1]
+
+\question{
+  Donner la formule brute du saccharose.
+}{}[1]
+
+\question{
+  Réécrire la réaction d'hydrolyse du saccharose en utilisant uniquement les formules brutes des molécules.
+}{}[2]
+
+\begin{doc}{Stockage des glucides}{doc:A_stockage_glucides}
+  Quand le glucose présent dans le sang n'est pas utilisé comme carburant par un organisme, il est stocké sous forme \important{de glycogènes} (chez les animaux) ou \important{d'amidon} (chez les plantes).
+
+  Le \important{glycogène} (« \textit{origine du glucose} ») est un polymère de glucose, formé dans l'organisme au cours d'une réaction de \important{polycondensation}, c'est-à-dire une réaction de condensation en chaîne du glucose, selon l'équation suivante :
+  \begin{equation*}
+    n \left(\chemfig{C_6 H_{12} O_6}\right) \reaction
+    \chemfig{HO-[,0.8] \parentheseG C_6 H_{10} O_5 -[,1.2]\parentheseD_{\phantom{B} n}}\chemfig{H}
+    + (n-1)\eau
+  \end{equation*}
+
+  Ce glycogène constitue une réserve d'énergie facilement synthétisable et facilement accessible pour l'organisme par hydrolyse.
+
+  Une autre façon de stocker le glucose est de former des \important{acides gras,} puis des \important{triglycérides,} qui seront stockés dans les \important{tissus graisseux} chez les animaux.
+  La formation de triglycérides à partir de glucoses est réalisée dans le foie et implique plusieurs protéines, qui jouent un rôle de régulation et d'enzymes nécessaires pour synthétiser des triglycérides.
+
+  On retiendra que les organisme stockent l'énergie contenue dans le glucose sous deux formes :
+  \begin{listePoints}
+    \item le glycogène pour former des réserves rapidement. C'est la source d'énergie qui est utilisée en premier par les cellules.
+    \item les triglycérides pour former des réserves sur la durée, qui seront utilisées en cas d'absence de glycogène. À masse égale, les triglycérides libèrent 6 fois plus d'énergie que les glycogènes.
+  \end{listePoints}
+\end{doc}

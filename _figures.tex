@@ -70,7 +70,7 @@
       \draw[bluestyle]
         \foreach \x in {0,2,...,\nombreBoucle}  {
           \ifnum \x < \nombreBoucle
-            ( 1, {(\nombreBoucle - \x)  *#3}) -- (#2,  {(\nombreBoucle - \x)  *#3}) --
+            ( 1, {(\nombreBoucle - \x)  *#3})   -- (#2,  {(\nombreBoucle - \x)  *#3})   --
             (#2, {(\nombreBoucle - \x - 1)*#3}) -- ( 0,  {(\nombreBoucle - \x - 1)*#3}) --
             ( 0, {(\nombreBoucle - \x - 2)*#3}) -- (1.1, {(\nombreBoucle - \x - 2)*#3})
           \fi
@@ -85,13 +85,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% plan de classe
-%% \texteCadre [couleur cadre] (x, y) (lx) (ly) {texte}
-\NewDocumentCommand{\texteCadre}{O{black} r() r() r() m}{
+%% \texteRectangle [couleur cadre] (x, y) (lx, ly) {texte}
+\NewDocumentCommand{\texteRectangle}{O{black} r() r() m}{
   \coordinate (A) at (#2);
-  \coordinate (B) at (#3, #4);
+  \coordinate (B) at (#3);
   \filldraw [fill=white, draw=#1, ultra thick] (A) rectangle ($(A)+(B)$);
-  \coordinate (C) at (#3/2, #4/2);
-  \node at ($(A)+(C)$) [font=\sffamily] {\textbf{#5}};
+  \coordinate (C) at (0.5*#3/2); % divide by two lx and ly
+  \node at ($(A)+(C)$) [font=\sffamily] {\textbf{#4}};
 }
 
 %% Pour tracer une rangée d'élève avec 2 ou 3 colonnes
@@ -103,7 +103,7 @@
 \fp_new:N \l_hauteurPlaceY_fp
 \NewDocumentCommand{\rang}{
   D<>{3} D<>{2} 
-  >{\SplitList{,}} m >{\SplitList{,}} m >{\SplitList{,}} d[]
+  >{\SplitList{,}}r[] >{\SplitList{,}}r[] >{\SplitList{,}}d[]
 }{
   \begin{tikzpicture}
     % Initialisation de la position horizontale et de la taille des places
@@ -125,8 +125,9 @@
 }
 \NewDocumentCommand{\rangImpl}{m}{
   \fp_add:Nn \l_rangPositionX_fp {\l_largeurPlaceX_fp}
-  \texteCadre(\fp_use:N \l_rangPositionX_fp, 0) % Position
-    (\fp_use:N \l_largeurPlaceX_fp) (\fp_use:N \l_hauteurPlaceY_fp) % largeur et hauteur
+  \texteRectangle
+    (\fp_use:N \l_rangPositionX_fp, 0) % Position
+    (\fp_use:N \l_largeurPlaceX_fp, \fp_use:N \l_hauteurPlaceY_fp) % largeur et hauteur
     {#1} % élève
 }
 \ExplSyntaxOff
@@ -134,20 +135,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% tube à essais
-\newcommand{\tkzTubeEssais}[3]{
-  \draw[thick] (#1,#2) -- (#1,0) arc (0:-180:#1) -- (-#1,#2);
-  \draw[thick] (0,#2) ellipse (#1 and #3);
-}
-\newcommand{\tkzBasTubeEssais}[5]{
-  \fill[color=#1] (-#2,#3) -- (#2,#3) arc (0:-180:#2);
-  \tkzRect{#1}{#2}{#3 - 0.01}{#4}
-  \tkzEllipse{#1!85!black}{#2}{#4}{#5}
-}
-\newcommand{\tkzPhaseTubeEssais}[5]{
-  \tkzRect{#1}{#2}{#3}{#4}
-  \tkzEllipse{#1}{#2}{#3}{#5}
-  \tkzEllipse{#1!85!black}{#2}{#4}{#5}
-}
 % \tikzTubeEssais {largeur} {hauteur} <hauteur ellipse>
 \NewDocumentCommand{\tikzTubeEssais}{d() d() D<>{0.1}}{
   \draw[thick] (#1, #2) -- (#1, 0) arc (0:-180:#1) -- (-#1, #2);
@@ -161,7 +148,7 @@
 }
 % \tikzPhaseBasTubeEssais[couleur] {largeur} {y bas} {y haut} <hauteur ombre>
 \NewDocumentCommand{\tikzPhaseTubeEssais}{O{black} d() d() d() D<>{0.1}}{
-  \fill[color=#1] (#2, #4) -- (-#2, #4) -- (-#2, #3) -- (#2, #3); % centre de la phase
+  \fill[color=#1]          (#2, #4) -- (-#2, #4) -- (-#2, #3) -- (#2, #3); % centre de la phase
   \fill[color=#1]          (0, #3) ellipse (#2 and #5); % bas de la phase
   \fill[color=#1!85!black] (0, #4) ellipse (#2 and #5); % haut de la phase
 }
