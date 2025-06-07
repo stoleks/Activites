@@ -1,0 +1,85 @@
+%%%%
+\teteTermStssBiom
+\vspace*{-36pt}
+\titreActivite{Les 20 acides alpha aminés protéinogènes}
+\vspace*{-10pt}
+
+\begin{doc}{Les 20 acides $\mathbf{\alpha}$-aminés protéinogènes}{doc:A_acides_amines}
+  On classifie les acides alpha-aminés qui composent les protéines en fonction de leurs affinités avec les molécules d'eau, car ces déterminant pour la structure des protéines.
+  
+  \hspace*{-8pt}
+  \begin{tikzpicture}
+    \tikzset{
+      rectArrondi/.style = {
+        rounded corners = 8pt, inner ysep = 10pt,
+        text width = 3.75cm, align = center, fill = #1,
+      },
+    }
+    \fill[rectArrondi = purple-50] (-4.8,0.5) rectangle (5,-9.5);
+    \node[align = center] (apolaire) {\important{Apolaires}};
+    \node[below left  = 4pt and 0 of apolaire]    (met) {\chemfig{[:-30]!\methionine}};
+    \node[below right = 4pt and -2.5 of apolaire] (ala) {\chemfig{[:-30]!\leucine}};
+    \node[right = -0.5 of ala] (pro) {\chemfig{[:-30]!\isoleucine}};
+    \node[below = 0 of ala] (val)    {\chemfig{[:-30]!\alanine}};
+    \node[below = 1 of pro] (leu)    {\chemfig{[:-30]!\valine}};
+    \node[below = 0 of met] (iso)    {\chemfig{[:-30]!\proline}};
+    \node[below = 0 of val] (gly)    {\chemfig{[:-30]!\glycine}};
+
+    \fill[rectArrondi = cyan-150] (-4.8,-9.7) rectangle (1.8,-21);
+    \node[below left = 9.5 and -1.5 of apolaire] (plus) {\important{Chargés et polaires $\mathbf{+}$}};
+    \node[below left  = 0 and -3.1 of plus] {\chemfig{[:-30]!\arginine}};
+    \node[below right = 0 and -2.2 of plus] (lys) {\chemfig{[:-30]!\lysine}};
+    \node[below = 0 of lys] {\chemfig{[:-30]!\histidine}};
+
+    \fill[rectArrondi = red-100] (5.2,0.5) rectangle (13,-6.15);
+    \node[right = 5.75 of apolaire] (arom) {\important{Apolaires aromatiques}};
+    \node[below left  = 0 and -2 of arom] {\chemfig{[:-30]!\phenylalanine}};
+    \node[below right = 0 and -2 of arom] {\chemfig{[:-30]!\tryptophane}};
+    
+    \fill[rectArrondi = blue-100] (5.2,-6.35) rectangle (13,-12.3);
+    \node[below = 6.2 of arom] (moins) {\important{Chargés et polaires $\mathbf{-}$}};
+    \node[below left  = 0 and -2 of moins] {\chemfig{[:-30]!\glutamique}};
+    \node[below right = 0 and -2 of moins] {\chemfig{[:-30]!\aspartique}};
+
+    \fill[rectArrondi = green-100] (2, -12.5) rectangle (13,-22.7);
+    \node[below left = 12.3  and -1 of arom] (polaire) {\important{Polaires}};
+    \node[below left  = 4pt and 0 of polaire]   (tyr) {\chemfig{[:-30]!\tyrosine}};
+    \node[below right = 4pt and -2.5 of polaire] (cys) {\chemfig{[:-30]!\glutamine}};
+    \node[below right = 4pt and 1 of polaire]  (asp) {\chemfig{[:-30]!\asparagine}};
+    \node[below = 0 of tyr] (glu) {\chemfig{[:-30]!\cysteine}};
+    \node[below = 0 of cys] (ser) {\chemfig{[:-30]!\serine}};
+    \node[below = 0 of asp] (thr) {\chemfig{[:-30]!\threonine}};
+  \end{tikzpicture}
+\end{doc}
+
+\question{
+  Entourer tous les groupes carboxyles et amines des 20 acides $\alpha$-aminés protéinogènes.
+}{}
+    
+\question{
+  Indiquer avec une étoile la position des carbones asymétriques pour tous les acides $\alpha$-aminés. Tous les acides $\alpha$-aminés ont au moins un carbone asymétrique, sauf la glycine.
+}{}
+
+\begin{doc}{La tyrosinase}{doc:A_tyrosinase}
+  La tyrosinase est une enzyme qui permet de produire la mélanine.
+  Dans cette protéine composée de 469 acides alpha-aminés, on trouve la séquence WTHY, ou Trp-Thr-His-Tyr, ou tryptophane-thréonine- histidine-tyrosine.
+  Cette séquence est représentée ci-dessous :
+  \medskip
+  \begin{center}
+    \chemfig{... -[:-30] N !\tryptophaneH N !\threonineB N !\histidineH N !\tyrosineB O !\ch ...}
+  \end{center}
+\end{doc}
+
+\question{
+  Entourer les quatres acides alpha-aminés et les trois liaisons peptidiques dans la molécule de tyrosinase.
+}{}
+
+\question{
+  En vous aidant du document~\ref{doc:A_acides_amines}, donner le caractère hydrophile ou hydrophobe de ces quatres acides alpha-aminés.
+}{}[3]
+
+\question{
+  Justifier le caractère hydrophile ou hydrophobe de ces 4 acides alpha-aminés à partir de leurs formules topologiques.
+}{}[5]
+
+%\chemfig{[:35] H !\cb N !\prolineH N !\glycineB N !\tyrosineH N !\prolineB N !\tryptophaneH N !\tyrosineB OH}

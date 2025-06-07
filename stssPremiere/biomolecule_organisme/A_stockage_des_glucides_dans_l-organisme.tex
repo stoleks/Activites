@@ -25,7 +25,7 @@
     %%%% Base
     \node[rectArrondi = purple-200] (glucides) {Les glucides \\ \reaction 1 carbonyle et plus de 2 hydroxyles};
     \node[rectArrondi= blue-200, below left= 0.5cm and 0.4cm of glucides] (mono) {Glucides simples, monosaccharides, \important[black]{non hydrolysables}};
-    \node[rectArrondi= red-200, below right= 0.5cm and 0.2cm of glucides] (poly) {Glucides complexes, polysaccharides, \important[black]{hydrolysables}};
+    \node[rectArrondi= red-200!75, below right= 0.5cm and 0.2cm of glucides] (poly) {Glucides complexes, polysaccharides, \important[black]{hydrolysables}};
     %%%% Oses
     \node[rectArrondi= cyan-100, below left=  1.5cm and -1.9cm of mono] (aldose) {Aldose (aldéhyde)};
     \node[rectArrondi= cyan-100, below right= 1.5cm and -1.9cm of mono] (cetose) {Cétose (cétone)};
@@ -34,8 +34,8 @@
     \node[below right= 2cm and -1cm   of aldose] (gala) {\chemname{\chemfig{!\galactoseHaw}}{galactose}};
     \node[below right= 2cm and -2.2cm of cetose] (fru)  {\chemname{\chemfig{!\fructofuranoseHaw}}{fructose}};
     %%%% Osides
-    \node[rectArrondi= orange-100, below left=  1.5cm and -1.9cm of poly] (disac)   {Disaccharides (2 oses)};
-    \node[rectArrondi= orange-100, below right= 1.5cm and -1.9cm of poly] (polysac) {Polysaccharides (n oses)};
+    \node[rectArrondi= orange-100!75, below left=  1.5cm and -1.9cm of poly] (disac)   {Disaccharides (2 oses)};
+    \node[rectArrondi= orange-100!75, below right= 1.5cm and -1.9cm of poly] (polysac) {Polysaccharides (n oses)};
     %%
     \node[below left= 5.5cm and -0.5cm of disac] (lactose) {Lactose = Glucose + Galactose};
     \node[below left= 6.5cm and -0.5cm of disac] (maltose) {Maltose = Glucose + Glucose};
@@ -58,12 +58,12 @@
     \draw[fleche=cyan-200] (aldose) -- ($(aldose) + (0,-1.5)$) -| (gala);
     \draw[fleche=cyan-200] (cetose) -- ($(cetose) + (0,-1.5)$) -| (fru);
     %
-    \draw[fleche=orange-200] ($(disac) + (0.5, -0.8)$) |- (lactose);
-    \draw[fleche=orange-200] ($(disac) + (1, -0.8)$)   |- (maltose);
-    \draw[fleche=orange-200] ($(disac) + (1.5, -0.8)$) |- (saccha);
+    \draw[fleche=orange-200!75] ($(disac) + (0.5, -0.8)$) |- (lactose);
+    \draw[fleche=orange-200!75] ($(disac) + (1, -0.8)$)   |- (maltose);
+    \draw[fleche=orange-200!75] ($(disac) + (1.5, -0.8)$) |- (saccha);
     %
-    \draw[fleche=orange-200] ($(polysac) + (-1,-0.8)$)   |- (amidon);
-    \draw[fleche=orange-200] ($(polysac) + (-1.5,-0.75)$) |- (glycogene);
+    \draw[fleche=orange-200!75] ($(polysac) + (-1,-0.8)$)   |- (amidon);
+    \draw[fleche=orange-200!75] ($(polysac) + (-1.5,-0.75)$) |- (glycogene);
   \end{tikzpicture}
   \end{center}
 
@@ -81,21 +81,33 @@
 
   \exemple Réaction d'hydrolyse du saccharose en milieu acide ou en présence de saccharase :
   \begin{equation*}
-    \chemfig{!\saccharoseHaw} \; + \; \eau \; \reaction \; \chemfig{!\glucoseHaw} + \chemfig{!\fructofuranoseHaw}
+    \chemfig{!\saccharoseHaw} \; + \; \eau 
+    \; \reaction \; 
+    \chemfig{!\glucoseHaw} + \chemfig{!\fructofuranoseHaw}
   \end{equation*}
 \end{doc}
 
 \question{
   Identifier les deux espèces chimiques formées pendant l'hydrolyse du saccharose.
-}{}[1]
+}{
+  À gauche on a le glucose, à droite on a le fructose.
+}[1]
 
 \question{
   Donner la formule brute du saccharose.
-}{}[1]
+}{
+  \chemfig{C_{12} H_{22} O_{11}}.
+}[1]
 
 \question{
   Réécrire la réaction d'hydrolyse du saccharose en utilisant uniquement les formules brutes des molécules.
-}{}[2]
+}{
+  Le saccharose est coupé en deux par l'eau pour former un glucose et un fructose :
+  \begin{equation*}
+    \chemfig{C_{12} H_{22} O_{11}} + \eau \reaction
+    \chemfig{C_6 H_{12} O_6} + \chemfig{C_6 H_{12} O_6}
+  \end{equation*}
+}[2]
 
 \begin{doc}{Stockage des glucides}{doc:A_stockage_glucides}
   Quand le glucose présent dans le sang n'est pas utilisé comme carburant par un organisme, il est stocké sous forme \important{de glycogènes} (chez les animaux) ou \important{d'amidon} (chez les plantes).
