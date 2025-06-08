@@ -4,7 +4,7 @@
 
 \begin{doc}{Classification des glucides}{doc:A_classification_glucides}
   \begin{importants}
-    Les \important{glucides} sont des molécules organiques possédants \important{1 groupe carbonyle \chemfig{C=O}} et \important{au moins 2 groupes hydroxyles \chemfig{HO}}.
+    Les \important{glucides} sont des molécules organiques possédants \important{1 groupe carbonyle \chemfig{C=O}} et \important{au moins 2 groupes hydroxyles \chemfig{HO} ou \chemfig{OH}}.
   \end{importants}
   Dans nos organismes, les briques de bases des glucides sont trois molécules isomères de formules brutes \chemfig{C_6 H_{12} O_6} : le \important{glucose,} le \important{fructose} et le \important{galactose.}
   Tous les autres glucides sont des \important{polymères} de ces sucres simples.
@@ -15,34 +15,27 @@
 
   \begin{center}
   \begin{tikzpicture}
-    \tikzset{
-        rectArrondi/.style = {
-          rectangle, rounded corners = 8pt, inner ysep = 10pt,
-          text width = 3.75cm, align = center, fill = #1,
-        },
-        fleche/.style = {->, line width = 6pt, color = #1}
-    }
     %%%% Base
     \node[rectArrondi = purple-200] (glucides) {Les glucides \\ \reaction 1 carbonyle et plus de 2 hydroxyles};
-    \node[rectArrondi= blue-200, below left= 0.5cm and 0.4cm of glucides] (mono) {Glucides simples, monosaccharides, \important[black]{non hydrolysables}};
-    \node[rectArrondi= red-200!75, below right= 0.5cm and 0.2cm of glucides] (poly) {Glucides complexes, polysaccharides, \important[black]{hydrolysables}};
+    \node[rectArrondi= blue-200, below left= 0.5 and 0.4 of glucides] (mono) {Glucides simples, monosaccharides, \important[black]{non hydrolysables}};
+    \node[rectArrondi= red-200!75, below right= 0.5 and 0.2 of glucides] (poly) {Glucides complexes, polysaccharides, \important[black]{hydrolysables}};
     %%%% Oses
-    \node[rectArrondi= cyan-100, below left=  1.5cm and -1.9cm of mono] (aldose) {Aldose (aldéhyde)};
-    \node[rectArrondi= cyan-100, below right= 1.5cm and -1.9cm of mono] (cetose) {Cétose (cétone)};
+    \node[rectArrondi= cyan-100, below left=  1.5 and -1.9 of mono] (aldose) {Aldose (aldéhyde)};
+    \node[rectArrondi= cyan-100, below right= 1.5 and -1.9 of mono] (cetose) {Cétose (cétone)};
     %%
-    \node[below left=  2cm and -3cm   of aldose] (glu)  {\chemname{\chemfig{!\glucoseHaw}}{glucose}};
-    \node[below right= 2cm and -1cm   of aldose] (gala) {\chemname{\chemfig{!\galactoseHaw}}{galactose}};
-    \node[below right= 2cm and -2.2cm of cetose] (fru)  {\chemname{\chemfig{!\fructofuranoseHaw}}{fructose}};
+    \node[below left=  2 and -3   of aldose] (glu)  {\chemname{\chemfig{!\glucoseHaw}}{glucose}};
+    \node[below right= 2 and -1   of aldose] (gala) {\chemname{\chemfig{!\galactoseHaw}}{galactose}};
+    \node[below right= 2 and -2.2 of cetose] (fru)  {\chemname{\chemfig{!\fructofuranoseHaw}}{fructose}};
     %%%% Osides
-    \node[rectArrondi= orange-100!75, below left=  1.5cm and -1.9cm of poly] (disac)   {Disaccharides (2 oses)};
-    \node[rectArrondi= orange-100!75, below right= 1.5cm and -1.9cm of poly] (polysac) {Polysaccharides (n oses)};
+    \node[rectArrondi= orange-100!75, below left=  1.5 and -1.9 of poly] (disac)   {Disaccharides (2 oses)};
+    \node[rectArrondi= orange-100!75, below right= 1.5 and -1.9 of poly] (polysac) {Polysaccharides (n oses)};
     %%
-    \node[below left= 5.5cm and -0.5cm of disac] (lactose) {Lactose = Glucose + Galactose};
-    \node[below left= 6.5cm and -0.5cm of disac] (maltose) {Maltose = Glucose + Glucose};
-    \node[below left= 7.5cm and -0.5cm of disac] (saccha)  {Saccharose = Glucose + Fructose};
+    \node[below left= 5.5 and -0.5 of disac] (lactose) {Lactose = Glucose + Galactose};
+    \node[below left= 6.5 and -0.5 of disac] (maltose) {Maltose = Glucose + Glucose};
+    \node[below left= 7.5 and -0.5 of disac] (saccha)  {Saccharose = Glucose + Fructose};
     %%
-    \node[below right= 2cm and -2cm of polysac, text width = 2cm] (amidon) {Amidon (plante)};
-    \node[below right= 4cm and -2cm of polysac, text width = 2cm] (glycogene) {Glycogène (animaux)};
+    \node[below right= 2 and -2 of polysac, text width = 2cm] (amidon) {Amidon (plante)};
+    \node[below right= 4 and -2 of polysac, text width = 2cm] (glycogene) {Glycogène (animaux)};
     
     %%%% Flèches
     \draw[fleche=purple-300] (glucides) -| (mono);

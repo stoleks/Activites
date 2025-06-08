@@ -9,12 +9,6 @@
   
   \hspace*{-8pt}
   \begin{tikzpicture}
-    \tikzset{
-      rectArrondi/.style = {
-        rounded corners = 8pt, inner ysep = 10pt,
-        text width = 3.75cm, align = center, fill = #1,
-      },
-    }
     \fill[rectArrondi = purple-50] (-4.8,0.5) rectangle (5,-9.5);
     \node[align = center] (apolaire) {\important{Apolaires}};
     \node[below left  = 4pt and 0 of apolaire]    (met) {\chemfig{[:-30]!\methionine}};
@@ -62,11 +56,11 @@
 
 \begin{doc}{La tyrosinase}{doc:A_tyrosinase}
   La tyrosinase est une enzyme qui permet de produire la mélanine.
-  Dans cette protéine composée de 469 acides alpha-aminés, on trouve la séquence WTHY, ou Trp-Thr-His-Tyr, ou tryptophane-thréonine- histidine-tyrosine.
+  Dans cette protéine composée de 469 acides alpha-aminés, on trouve la séquence WTHY, ou Trp-Thr-His-Tyr, ou tryptophane-thréonine-histidine-tyrosine.
   Cette séquence est représentée ci-dessous :
   \medskip
   \begin{center}
-    \chemfig{... -[:-30] N !\tryptophaneH N !\threonineB N !\histidineH N !\tyrosineB O !\ch ...}
+    \chemfig{... -[:-30] !\NH !\tryptophaneH !\HN !\threonineB !\NH !\histidineH !\HN !\tyrosineB O !\lh ...}
   \end{center}
 \end{doc}
 
@@ -76,7 +70,7 @@
 
 \question{
   En vous aidant du document~\ref{doc:A_acides_amines}, donner le caractère hydrophile ou hydrophobe de ces quatres acides alpha-aminés.
-}{}[3]
+}{}[4]
 
 \question{
   Justifier le caractère hydrophile ou hydrophobe de ces 4 acides alpha-aminés à partir de leurs formules topologiques.

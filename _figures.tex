@@ -1,4 +1,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Style commun à plusieurs fichiers
+\tikzset{
+  rectArrondi/.style = {
+    rounded corners = 8pt, inner ysep = 10pt,
+    text width = 3.75cm, align = center, fill = #1,
+  },
+  fleche/.style = {->, line width = 6pt, color = #1}
+}
+
 %%%% Point et vecteurs
 % \tikzCercle [couleur fond] (x, y) {rayon} [couleur ligne]
 \NewDocumentCommand{\tikzCercle}{O{black} r() m o}{
