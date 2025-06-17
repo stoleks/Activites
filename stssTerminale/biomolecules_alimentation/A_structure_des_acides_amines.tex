@@ -31,7 +31,7 @@
     \centering
     \vspace*{-24pt}
     \chemname{
-      \chemfig{R - C^{\alpha}H (-[-3]NH_2) -C (=[1.5] O) -[-1.5] OH}
+      \chemfig{R- C^{\alpha} !\branche{NH_2}{H} -C !\carboxyleDev}
     }{
       Exemple d'acide $\alpha$-aminé
     }
@@ -46,7 +46,7 @@
     \centering
     \vspace*{-10pt}
     \chemname{
-      \chemfig{CH_3 - C^{*}H (-[-3] NH_2) - C (=[1.5] O) -[-1.5] OH}
+      \chemfig{H_3C -C^{*} !\branche{NH_2}{H} -C !\carboxyleDev}
     }{Molécule d'alanine}
   \end{wrapfigure}
 
@@ -66,14 +66,14 @@
 
 \begin{doc}{Chiralité et énantiomère}{doc:A1_chiral_enantiomere}
   \begin{wrapfigure}{r}{0.5\linewidth}
-    \centering
+    % \centering
+    \vspace*{-18pt}
     \image{1}{images/organique/alanine_enantiomere_persp}
     \legende{
-      Molécules d'alanine image l'une de l'autre dans un miroir, non superposables.
-      Elles sont \important{énantiomères.}
+      Molécules d'alanine et son image dans un miroir. Ces deux molécules ne sont pas superposables. Elles sont \important{énantiomères.}
     }
   \end{wrapfigure}
-  \phantom{b}\vspace*{-18pt}
+  \strut\vspace*{-18pt}
   
   \begin{importants}
     Une \important{molécule} est \important{chirale} si elle n'est pas superposable à son image dans un miroir.
@@ -107,7 +107,7 @@
     columns = {c, m}, hlines, vlines,
     row{1} = {couleurSec-100}, row{2} = {couleurSec-50}
   }
-    Isoleucine & Leucine & Methionine & Valine \\
+    Isoleucine & Leucine & Méthionine & Valine \\
     %
     Ile & Leu & Met & Val \\
     %
@@ -126,9 +126,9 @@
 Entourer les carbones asymétriques dans les quatre exemples d'acide aminés essentiels donnés dans le document~\ref{doc:A1_acide_amine_vivant}.
 
 \question{
-  La molécule glycine est le seul acide $\alpha$-aminé qui n'est pas chiral.
+  La molécule de glycine est le seul acide $\alpha$-aminé qui \important{n'est pas} chiral.
   \begin{center}
-    Glycine : \chemfig{H-C (-[3] H) (-[-3] NH_2) -C (=[1.5] O) -[-1.5] OH}
+    Glycine : \chemfig{H-C !\branche{NH_2}{H} -C !\carboxyleDev}
   \end{center}
   \vspace*{-4pt}
   Expliquer pourquoi.
@@ -138,11 +138,12 @@ Entourer les carbones asymétriques dans les quatre exemples d'acide aminés ess
 %%%%
 \begin{doc}{Représentation des acide aminés}{doc:A1_representations}
   
-  Pour modéliser en 2D des molécules 3D, on utilise la représentation de Cram en chimie et la représentation de Fischer en biologie.
-  
+  Pour représenter en 2D des molécules 3D, on utilise la représentation de Cram en chimie et la représentation de Fischer en biologie.
+
+  \setchemfig{cram width = 5pt}
   \begin{wrapfigure}[3]{r}{0.25\linewidth}
     \centering
-    \chemfig{C (<[8.6, 1.25] H) (>:[7, 1.25] H) (-[3] COOH) -[-1] NH_2}
+    \chemfig{C !\cram{H}{H} (-[::90] COOH) -[::-30] NH_2}
   \end{wrapfigure}
   \phantom{b}\vspace*{-12pt}
 
@@ -154,6 +155,7 @@ Entourer les carbones asymétriques dans les quatre exemples d'acide aminés ess
       \item \chemfig{>} liaison en avant du plan (qui s'approche de nous).
     \end{listePoints}
   \end{importants}
+  Cette représentation permet de distinguer deux formes énantiomères.
 
   \begin{importants}
     \important{Représentation de Fischer :} la molécule d'acide aminé est projetée dans le plan et représentée sous formes de croix, comme si on l'avait aplati
@@ -167,10 +169,11 @@ Entourer les carbones asymétriques dans les quatre exemples d'acide aminés ess
   
   \begin{wrapfigure}[2]{r}{0.4\linewidth}
     \centering
-    \chemfig{C (<[8.6, 1.25] H) (>:[7, 1.25] NH_2) (-[3] \textcolor{couleurQuat}{COOH}) -[-1] \textcolor{couleurQuat}{H}}
+    \chemfig{C !\cram{H_2N}{H} (-[::90] !\couleur{COOH}) -[::-30] !\couleur{R}}
     \reaction
-    \chemfig{H_2N - (-[3] \textcolor{couleurQuat}{COOH}) (-[-3] \textcolor{couleurQuat}{H}) -H}
+    \chemfig{H_2N- (-[::90] !\couleur{COOH}) (-[::-90] !\couleur{R}) -H}
   \end{wrapfigure}
+  \chemfigParDefaut
   
   Il y a deux positions possibles pour le groupe amine.
   \begin{importants}
@@ -191,9 +194,7 @@ Donner la représentation de Fischer de la D-valine.
 
 \begin{minipage}[T]{0.48\linewidth}
   \centering
-  \chemname{
-    \chemfig{NH_2- (-[3] COOH) (-[-3] (-[-3] H) (-CH_3) -[-6]H_3C) -H}
-  }{L-valine}
+  \chemname{ \chemfig{!\valineL} }{L-valine}
 \end{minipage}
 \smallskip
 
@@ -202,7 +203,7 @@ Donner la représentation de Fischer de la D-valine.
 \begin{doc}{Liaison peptidique}{doc:A1_liaison_peptidique}
   \begin{wrapfigure}[3]{r}{0.3\linewidth}
     \centering
-    \chemfig{- C (=[3] O) -N (-[-3] H) -}
+    \chemfig{- C (=[::90] O) -N (-[::-90] H) -}
 
     \legende{Liaison peptidique}
   \end{wrapfigure}
@@ -218,15 +219,15 @@ Donner la représentation de Fischer de la D-valine.
   \vspace*{-4pt}
   
   \begin{center}
-    \chemfig{R- C (=[3] O) -[-2] OH} +   
-    \chemfig{N (-[4] H) (-[-4] H) -R'}
+    \chemfig{R- C !\carboxyleDev} +   
+    \chemfig{H-N (-[::-90] H) -R'}
     \reaction
-    \chemfig{R- C (=[3] O) -N (-[-3] H) -R'} +
+    \chemfig{R- C (=[::90] O) -N (-[::-90] H) -R'} +
     \eau
   \end{center}
   \vspace*{-4pt}
 
-  Comme tous les acides aminés possèdent un \important{groupe amine} et un \important{groupe carboxyle}, cette réaction de condensation peut avoir lieu entre deux acides aminés, on parle de \important{dipeptide.}
+  Comme tous les acides aminés possèdent un \important{groupe amine} et un \important{groupe carboxyle}, cette réaction de condensation peut avoir lieue avec n'importe quelle paire d'acides aminés.
 
   \begin{importants}
     Un \important{dipeptide} est la molécule formée par deux acides aminées liés par une liaison peptidique.
@@ -239,7 +240,7 @@ Donner la représentation de Fischer de la D-valine.
 
   \begin{importants}  
     À partir des dipeptides, on peut former des tri-, quadri-, etc. peptides.
-    Quand la chaîne peptidique atteint un certain nombre d'acides aminés (plus d'une cinquantaine), on a une \important{protéine.}
+    Quand la chaîne peptidique atteint un certain nombre d'acides aminés (plus d'une cinquantaine), on parle de \important{polypeptide} et si ce polypeptide remplit une fonction biologique, c'est une \important{protéine.}
   \end{importants}
 \end{doc}
 
@@ -255,7 +256,7 @@ Donner les formules topologiques de l'alanine et de la valine.
 Donner les formules topologiques des dipeptides Val-Ala, Met-Ala et Val-Leu.
 \vfill
 
-\begin{doc}{Acide $\alpha$-aminés et alimentation}{doc:A1_alpha_amine_alimentation}
+\begin{doc}{Acide $\mathbf{\alpha}$-aminés et alimentation}{doc:A1_alpha_amine_alimentation}
   \begin{importants}
     Les 9 acides $\alpha$-aminés qui ne peuvent pas être synthétisé dans nos corps sont les acides aminés \important{essentiels.}
     Ils doivent être fournis par l'alimentation, en mangeant des protéines végétales ou animales.

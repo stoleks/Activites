@@ -1,11 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Réglage de chemfig
-\setchemfig{
-  atom sep= 24pt,
-  bond style = {line width = 1pt},
-  cram width = 2.2pt,
-  angle increment = 30
+\newcommand{\chemfigParDefaut}{
+  \setchemfig{
+    atom sep= 24pt,
+    bond style = {line width = 1pt},
+    cram width = 2.2pt,
+    angle increment = 30
+  }
 }
+\chemfigParDefaut
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Pour faire des parenthèses dans les molécules 
@@ -13,12 +16,8 @@
 \def\parentheseD{\rlap{$\left.\strut\right)$}}
 
 %% Pour avoir des molécules en gras dans un texte
-\newcommand{\moleculesGras}{
-  \renewcommand*\printatom[1]{\ensuremath{\mathbf{##1}}}
-}
-\newcommand{\moleculesNormale}{
-  \renewcommand*\printatom[1]{\ensuremath{\mathrm{##1}}}
-}
+\newcommand{\moleculesGras}{ \renewcommand*\printatom[1]{\ensuremath{\mathbf{##1}}} }
+\newcommand{\moleculesNormale}{ \renewcommand*\printatom[1]{\ensuremath{\mathrm{##1}}} }
 
 %%%% Éléments récurrents 
 \newcommand{\hydrogene}{\chemfig{H}\xspace}
@@ -85,6 +84,19 @@
 \definesubmol\ldb  { -[::-50] } % "                        " bas
 \definesubmol\lldh { =[::50] }  % double liaison développée vers le haut
 \definesubmol\lldb { =[::-50] } % "                               " bas  ""
+\definesubmol\cram2{
+  (>:[::-150] #1) 
+  (<#(4pt,4pt)[::-100,1.2] #2)
+}
+\definesubmol\branche2  {
+  (-[::-90] #1)
+  (-[::90] #2)
+}
+\definesubmol\triglyDev2{
+  H_2C                  (#1)
+  -[::-90,1.7,2,2] HC   (#2)
+  -[::0,1.7,2,2] H_2C
+}
 
 %% Hydrogènes saturés
 \definesubmol\HH {(-[::90] H) (-[::-90] H)} % paire H- R -H
@@ -92,7 +104,7 @@
 \definesubmol\NH {\chembelow{N}{H}}
 \definesubmol\HN {\chemabove{N}{H}}
 %% Quelques groupes caractéristiques
-\definesubmol\tete{ !\vide{-90,0.01} }
+\definesubmol\tete{ !\vide{-90,0.01} } % Pour passer en tête les groupes carboxyle développée
 \definesubmol\carboxyle   [ HO-[:30] (!\llh O) !\lb ]{ (!\llh O) (!\lb OH) }
 \definesubmol\carboxyleDev[ !\vide{:0,0.7} -O-C (=[::90] O) - ]{ (!\lldh O) (!\ldb OH) }
 \definesubmol\carbonyle   { (!\llh O) !\lb }
@@ -153,7 +165,7 @@
 \definesubmol\tripalmitiqueSemiDev{ !\tete !\carboxyleDev C_{15} H_{31} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Lipide
+%% Lipide topo
 \definesubmol\oleine{
    (-[::150] !\lh O !\lb !\carbonyle !\trioleique)
    (-[::-90] !\lb O!\lh !\carbonyle !\trioleique)
@@ -175,26 +187,19 @@
   !\lh O !\lb !\lh (!\lh O !\lb !\carbonyle !\trioleique)
   !\lb !\lh O !\lb (!\llb O) !\lhb !\lhb !\lhb !\lhb !\lhb
 }
+% Lipide semi-dev
 \definesubmol\oleineSemiDev{
-  HC                 (!\trioleiqueSemiDev)
-  (-[3,1.7,2,2] H_2C (!\trioleiqueSemiDev))
-  -[-3,1.7,2,2] H_2C (!\trioleiqueSemiDev)
+  !\triglyDev {!\trioleiqueSemiDev} {!\trioleiqueSemiDev} !\trioleiqueSemiDev
 }
 \definesubmol\caproineSemiDev{
-  H C                 (!\tricaproiqueSemiDev)
-  (-[3,1.7,2,2] H_2C  (!\tricaproiqueSemiDev))
-  -[-3,1.7,2,2] H_2 C (!\tricaproiqueSemiDev)
+  !\triglyDev {!\tricaproiqueSemiDev} {!\tricaproiqueSemiDev} !\tricaproiqueSemiDev
 }
 \definesubmol\palmitineSemiDev{
-  H C                 (!\tripalmitiqueSemiDev)
-  (-[3,1.7,2,2] H_2C  (!\tripalmitiqueSemiDev))
-  -[-3,1.7,2,2] H_2 C (!\tripalmitiqueSemiDev)
+  !\triglyDev {!\tripalmitiqueSemiDev} {!\tripalmitiqueSemiDev} !\tripalmitiqueSemiDev
 }
 
 %% glycérol
-\definesubmol\glycerol{
-  HO !\lbh (!\lh OH) !\lbh OH
-}
+\definesubmol\glycerol{ HO !\lbh (!\lh OH) !\lbh OH }
 \definesubmol\glycerolSemiDev{
   HC (-OH)
   (-[3,,2,2] H_2C (-OH))
@@ -204,74 +209,73 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Stérols
+\definesubmol\sterol6{
+  *6(#1 % 1er cycle
+    *6(#2 % 2ème cycle
+      *6(- % 3ème cycle
+        *5(-- #3) % 4ème cycle
+        #4) % 3
+      #5) % 2
+    #6) % 1
+}
 \definesubmol\cholesterol{
-  HO-[:30] *6(-- % 1er cycle
-    *6(=-- % 2eme cycle
-      *6(- % 3eme cycle
-        *5(---
-          (-[::-35] (!\lh) !\lb !\lb !\lhb (!\lb) !\lh) % lipide
-          -  -
-        ) % 4eme
-        - (-[::0]) ---
-      ) % 3eme
-      ---
-    ) % 2eme
-    - (-[::0]) ---
-  ) % 1er
+  HO-[:30] !\sterol {--} {=--} {
+    -(-[::-35] (!\lh) !\lb !\lb !\lhb (!\lb) !\lh) -
+  } {- (-[::0]) ---} {---} {- (-[::0]) ---}
 }
-\definesubmol\testosterone{
-  O=[:30] *6(-=
-    *6(---
-      *6(-
-        *5(--- (- OH) --) % 4
-      - (-[::0]) ---
-      ) % 3
-    ---
-    ) % 2
-  - (-[::0]) ---
-  ) % 1
-}
+% Glucocorticoïdes
 \definesubmol\cortisol{
-  O=[::30] *6(
-    -= *6(
-      --- *6(
-        - *5(
-          --- (-[::-100] OH)
-          (-[::-35] (!\llh O) !\lb!\lh OH)
-          -
-        ) % 4
-        - (-[::0]) -- (-OH) -
-      ) % 3
-      --
-    ) % 2
-    - (-[::0]) ---
-  ) % 1
+  O=[:30] !\sterol {-=} {---} {
+    -(-[::-100] OH) (-[::-35] (!\llh O) !\lb!\lh OH) -
+  }{
+    -(-[::0]) -- (-HO) -
+  } {--} {- (-[::0]) ---}
 }
-\definesubmol\progesterone{
-  O=[::30] *6(
-    -=  *6(
-      --- *6(
-        - *5(--- (=O) -)
-        - (-[::0])
-        ---
-      ) % 3
-      --
-    ) % 2
-    - (-[::0]) ---
-  ) % 1
+\definesubmol\corticosterone{
+  O=[:30] !\sterol {-=} {---} {
+    - (-(!\llh O) !\lb!\lh OH) -
+  }{
+    -(-[::0] !\llh O) -- (-HO) -
+  } {--} {- (-[::0]) ---}
 }
-
+% Minéralocorticoïdes
+\definesubmol\aldosterone{
+  O=[:30] !\sterol {-=} {---} {
+    - (-(!\llh O) !\lb!\lh OH) -
+  }{
+    -(-[::0]) -- (-HO) -
+  } {--} {- (-[::0]) ---}
+}
+% Oestrogènes
+\definesubmol\estrone{
+  HO-[:30] !\sterol {-=} {---} {-(=O)-} {- (-[::0]) ---} {--} {-=-=}
+}
+\definesubmol\estriol{
+  HO-[:30] !\sterol {-=} {---} {(-OH)-(-OH)-} {- (-[::0]) ---} {--} {-=-=}
+}
 \definesubmol\estradiol{
-    HO-[::30] *6(
-    -= *6(
-      --- *6(
-        - *5(--- (-OH) -)
-        - (-[::0]) ---
-      ) % 3
-      --
-    ) % 2
-    -=-=
-  ) % 1
+  HO-[:30] !\sterol {-=} {---} {-(-OH)-} {- (-[::0]) ---} {--} {-=-=}
+}
+% Androgènes
+\definesubmol\testosterone{
+  O=[:30] !\sterol {-=} {---} {-(-OH)-} {- (-[::0]) ---} {---} {- (-[::0]) ---}
+}
+\definesubmol\dihydrotestosterone{
+  O=[:30] !\sterol {--} {---} {-(-OH)-} {- (-[::0]) ---} {---} {- (-[::0]) ---}
+}
+\definesubmol\androstenedione{
+  O=[:30] !\sterol {-=} {---} {-(=O)-} {- (-[::0]) ---} {---} {- (-[::0]) ---}
+}
+\definesubmol\DHEA{
+  O=[:30] !\sterol {--} {=--} {-(=O)-} {- (-[::0]) ---} {---} {- (-[::0]) ---}
+}
+\definesubmol\DHEAS{
+  HO-[:30] S (=[::20] O) (=[::100] O) !\lb O !\lh 
+  !\sterol {--} {=--} {-(=O)-} {- (-[::0]) ---} {---} {- (-[::0]) ---}
+}
+% Progestatif
+\definesubmol\progesterone{
+  O=[:30] !\sterol {-=} {---} {-(- (!\lh) !\llb O)-} {- (-[::0]) ---} {--} {- (-[::0]) ---}
 }
 
 
@@ -445,12 +449,19 @@
 \definesubmol\tryptophane   { !\acideAmine{!\lh!\lh *5(- *6(-=-=-) =-HN-=)} }
 %% Acides alpha aminés, formules semi-developpée
 \definesubmol\acideAmineSD{ CH (-[::-90] NH_2) -C !\carboxyleDev }
-\definesubmol\alanineSemiDev   { H_3C - !\acideAmineSD }
+\definesubmol\alanineSemiDev   { H_3C- !\acideAmineSD }
 \definesubmol\asparagineSemiDev{ C (=[::-120] O) (-[::120] H_2N) -CH_2 -CH_2 - !\acideAmineSD }
 \definesubmol\glycineSemiDev   { H_2C (-[::-90,,2] NH_2) -C !\carboxyleDev }
 \definesubmol\cysteineSemiDev  { HS -CH_2 - !\acideAmineSD }
 \definesubmol\valineSemiDev    { HC (-[::90,,2,2] H_3C) (-[::-90,,2,2] H_3C) - !\acideAmineSD }
 \definesubmol\isoleucineSemiDev{ HC (-[::90,,2] CH_2 -[::90] H_3C) (-[::-90,,2,2] H_3C) - !\acideAmineSD }
+%% Acides alpha aminés, représentation de fischer gauche (FL) ou droite (FD)
+\definesubmol\acideAmineFL{COOH-[::0] (-[::-90] NH_2) (-[::90] H) -[::0]}
+\definesubmol\acideAmineFD{COOH-[::0] (-[::90] NH_2) (-[::-90] H) -[::0]}
+\definesubmol\alanineL {[:-90] !\acideAmineFL CH_3}
+\definesubmol\alanineD {[:-90] !\acideAmineFD CH_3}
+\definesubmol\valineL  {[:-90] !\acideAmineFL !\branche{H_3C}{H} -[::0] CH_3}
+\definesubmol\valineD  {[:-90] !\acideAmineFD !\branche{H_3C}{H} -[::0] CH_3}
 
 %% Pour faire des polypeptides en formule topologique H = haut, B = bas
 \definesubmol\acideAmineH1{ !\lh (#1) !\lb (!\llb O) !\lh }
