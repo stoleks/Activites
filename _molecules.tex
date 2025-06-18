@@ -420,7 +420,7 @@
 \definesubmol{\tetePhosphate}{ \charge{45:1.5pt=$\scriptstyle -$}{O} -!\phosphate }
 \definesubmol{\ADP}{ !\tetePhosphate -!\phosphate !\adenosine }
 \definesubmol{\ATP}{ !\tetePhosphate -!\phosphate -!\phosphate !\adenosine}
-\definesubmol{\ADPHaw}{ !\tetePhosphate !\adenosineHaw }
+\definesubmol{\ADPHaw}{ !\tetePhosphate -!\phosphate !\adenosineHaw }
 \definesubmol{\ATPHaw}{ !\tetePhosphate -!\phosphate -!\phosphate !\adenosineHaw}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -550,17 +550,17 @@
 \definesubmol\chelateCOO{-[::-120] !\lb (!\llb O) !\lh O^{-}}
 \definesubmol\ionChelate{
   [:-10] N (!\vide{::50, 0.9} Gd^{3+})
-    (!\lhelateCOO) !\lhelate
-  N (!\lhelateCOO) !\lhelate
-  N (!\lhelateCOO) !\lhelate 
-  N (!\lhelateCOO) -[::-70] -[::80] -[::80,0.75]
+    (!\chelateCOO) !\chelate
+  N (!\chelateCOO) !\chelate
+  N (!\chelateCOO) !\chelate 
+  N (!\chelateCOO) -[::-70] -[::80] -[::80,0.75]
 }
 \definesubmol\chelateAlcool{
   [:-10] N (!\vide{::50, 0.9} Gd^{3+})
-    (!\lhelateCOO) !\lhelate
-  N (!\lhelateCOO) !\lhelate
-  N (-[::-120] !\lb (!\lb) !\lh OH) !\lhelate 
-  N (!\lhelateCOO) -[::-70] -[::80] -[::80,0.75]
+    (!\chelateCOO) !\chelate
+  N (!\chelateCOO) !\chelate
+  N (-[::-120] !\lb (!\lb) !\lh OH) !\chelate 
+  N (!\chelateCOO) -[::-70] -[::80] -[::80,0.75]
 }
 
 
