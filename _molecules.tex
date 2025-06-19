@@ -523,6 +523,19 @@
 \definesubmol\valineSemiDevH    { !\acideAmineSDH{-[::90]  CH (!\ldh H_3C) !\ldb CH_3} }
 \definesubmol\valineSemiDevB    { !\acideAmineSDB{-[::-90] CH (!\ldb H_3C) !\ldh CH_3} }
 
+%%%% Heme
+\definesubmol\hemeB {
+  [:-60] !\llb
+  !\pyrrole{-N (!\ldb) --(-!\lhb (!\llh O) !\lb HO) =(-) -} % bas droite
+  !\llh !\lb
+  !\pyrrole{=N (-[::-50,0.9,,,dotted]) --(-) =(-!\lhb (!\llh O) !\lb HO) -} % bas gauche
+  !\llh !\lb 
+  !\pyrrole{-N (-[::-50,1.4]Fe^{2+}) -=(-!\llh) -(-) =} % haut gauche
+  !\lh !\llb 
+  !\pyrrole{-N (-[::-50,0.9,,,dotted]) =-(-!\llh) =(-) -} % haut droite
+  !\lh
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Hormones
@@ -666,41 +679,35 @@
   ) % 1er cycle
 }
 % vitamine B12 cyanocobalamine
+\definesubmol\pyrrole1{ *5(#1) !\vide{::-54} !\vide{::72} !\vide{::-108,0.01} }
+\definesubmol\propanamide[!\lb!\lbh (!\lh H_2N) !\llb O ]{ !\lb!\lbh (!\lh NH_2) !\llb O}
+\definesubmol\ethanamide[!\lb!\lb (!\lh H_2N) !\llb O ]{ !\lb!\lb (!\lb NH_2) !\llh O}
 \definesubmol\cyanocobalamine{
-  -[::-5]  *5( % cycle haut droit du cobalt
-    (-[::150] !\ldb (!\llb O) !\lh NH_2)
-    - (-[::-90]) (-[::-35])
-    - N = (
-      - (!\lh) !\llb *5( % cycle haut gauche du cobalt
-        - N = (
-          -!\llb *5( % cycle bas gauche du cobalt
-            - N = (
-              - (!\lh) !\llb *5( % cobalt
-                - N (-Co !\lh CN)
-                -- (- !\lb (!\llb O) !\lh NH_2)
-                - (-[::-90]) ( % Phosphate
-                  - !\lhb (!\llb O) !\lh NH !\lbh (!\lh)
-                  !\lb O !\lh !\phosphate -[::0] *5( % cycle du bas ether
-                    - (- !\lh HO)
-                    -O- (-N  *5(- *6(=-(-)=(-)-=) --N=-)) % Cycle du bas amidine
-                    -(-OH)-
-                  )
-                )
-                -
-              )
-            ) % amide latéral
-            - (- !\lhb (!\llb O) !\lh NH_2)
-            - (-[::-30])  (-[::-90]) -
-          )
-        ) % cycle 
-        - (- !\lbh (!\llh O) !\lb NH_2)
-        - (-[::0]) (!\lb!\lb (!\llh O) !\lb NH_2)
-        -
-      )
-    )
-    - (- !\lbh (!\llb O) !\lh NH_2)
-    - 
-  ) % 1er cycle
+  [:-60] !\llb
+  !\pyrrole{ % bas droite
+    -N (-[::-50,0.9,,,->]) =-(!\ldb !\ldh !\ldh (!\lb NH_2) !\llh O) -(-[::-30])(-[::-90]) -
+  }
+  !\lh (!\lh) !\llb 
+  !\pyrrole{ % bas gauche
+    -N (-[::-50,1.4]Co^{+} -[::45,,1,1] CN) 
+    --(!\ethanamide) -(
+      -[::-100] !\lhb (!\llb O) !\lh NH -[::-60,,1] !\lh (!\lb) 
+      !\lh O -[::0] !\phosphate !\ldh *5( % cycle du bas ether
+        - (-!\lh OH) -O- (-N *5(- 
+          *6(=-(-)=(-)-=)
+        --N (-[::-39,4.5,,,dotted]) =-)) % Cycle du bas amidine
+      -(-OH)-)
+    ) (-[::0]) -
+  }
+  -[::28] -[::0,0.68] !\vide{::-28,0.01} (-[::150]) % longue liaison à gauche
+  !\pyrrole{ % haut gauche
+    -N (-[::-60,0.9,,,->]) =-(!\propanamide) -(!\ethanamide)(-[::0]) -
+  }
+  !\lh (!\lh)  !\llb 
+  !\pyrrole{ % haut droite
+    -N (-[::-50,0.9,,,->]) =-(!\propanamide) -(!\ethanamide)(-[::0]) -
+  }
+  !\lh
 }
 % vitamine E
 \definesubmol\vitamineE{
