@@ -9,13 +9,36 @@
   listing style = tcblatex, % code LaTeX
 }
 
+\lstset{language=TeX,keywordstyle={\color{couleurPrim-700}}}
+
 %%%% doc
 \begin{document}
   %%%%
   \tableofcontents
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Lipide}
+  \section{Logique interne}
+  
+  \subsection{Nom des molécules}
+  
+  Pour tracer une molécule, il suffit d'appeler \lstinline| \chemfig\{!\nomDeLaMolecule} |.
+  La représentation de base pour les molécules est la formule topologique, il faut ajouter un suffixe au nom pour passer à une autre représentation \important{si elle est définie, ce qui n'est pas du tout toujours le cas.} Les suffixes sont les suivants :
+  \begin{listePoints}[2]
+    \item \lstinline{SemiDev} : formule semi-développée ;
+    \item \lstinline{Dev} : formule développée ;
+    \item \lstinline{Haw} : représentation de Haworth ;
+    \item \lstinline{Cram} : représentation de Cram.
+  \end{listePoints}
+  Pour les acides aminés, il existe quatre autres suffixes
+  \begin{listePoints}[2]
+    \item \lstinline{L} : représentation de Fischer gauche ;
+    \item \lstinline{H} : pour tracer un polypeptide, la chaîne latérale est vers le haut ;
+    \item \lstinline{D} : représentation de Fischer droite ;
+    \item \lstinline{B} : pour tracer un polypeptide, la chaîne latérale est vers le bas.
+  \end{listePoints}
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Lipides}
   \subsection{Acide gras}
   
   \begin{latexBox}
@@ -29,8 +52,8 @@
   \end{latexBox}
   \chemfig{!\palmitique} \\[8pt]
   \chemfig{!\oleique} \\[8pt]
+  \chemfig{!\linolenique} \\[8pt]
   \chemfig{!\linoleique}
-  \chemfig{!\linolenique}
   \chemfig{!\arachidonique} \\[8pt]
   \chemfig{!\eicosaPentaenoique}
   \chemfig{!\docosaHexanoique}
@@ -38,7 +61,7 @@
   \begin{latexBox}
 \chemfig{!\steraiqueSemiDev}
 \chemfig{!\oleiqueSemiDev}
-\chemfig{!\oleateSemiDev}
+\chemfig{!\oleateSemiDev} \qq{}
 \chemfig{!\caproiqueSemiDev}
   \end{latexBox}
   \chemfig{!\steraiqueSemiDev}
@@ -63,13 +86,11 @@
   \subsection{Triglycérides}
   \begin{latexBox}
 \chemfig{[:-60] !\palmitine}
+\chemfig[atom sep = 1.8em]{[:-60] !\oleine}
   \end{latexBox}
   \chemfig{[:-60] !\palmitine}
   
-  \begin{latexBox}
-\chemfig{[:-60] !\oleine}
-  \end{latexBox}
-  \chemfig{[:-60] !\oleine}
+  \chemfig[atom sep = 1.8em]{[:-60] !\oleine}
   
   \begin{latexBox}
 \chemfig{!\oleineSemiDev}
@@ -97,56 +118,11 @@
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Stérols}  
-
-  % Corticoïdes
+  
   \begin{latexBox}
-\chemfig{!\cortisol}
-\chemfig{!\corticosterone}
+\chemfig{!\cholesterol}
   \end{latexBox}
-  \chemfig{!\cortisol}
-  \chemfig{!\corticosterone}
-
-  % Minéralocorticoïdes
-  \begin{latexBox}
-\chemfig{!\aldosterone}
-  \end{latexBox}
-  \chemfig{!\aldosterone}
-
-% Oestrogènes
-  \begin{latexBox}
-\chemfig{!\estrone}
-\chemfig{!\estriol}
-  \end{latexBox}
-  \chemfig{!\estrone}
-  \chemfig{!\estriol}
-
-  \begin{latexBox}
-\chemfig{!\estradiol}
-  \end{latexBox}
-  \chemfig{!\estradiol}
-
-% Androgènes
-  \begin{latexBox}
-\chemfig{!\testosterone}
-\chemfig{!\dihydrotestosterone}
-\chemfig{!\androstenedione}
-  \end{latexBox}
-  \chemfig{!\testosterone}
-  \chemfig{!\dihydrotestosterone}
-  \chemfig{!\androstenedione}
-
-  \begin{latexBox}
-\chemfig{!\DHEA}
-\chemfig{!\DHEAS}
-  \end{latexBox}
-  \chemfig{!\DHEA}
-  \chemfig{!\DHEAS}
-
-% Progestatif
-  \begin{latexBox}
-\chemfig{!\progesterone}
-  \end{latexBox}
-  \chemfig{!\progesterone}
+  \chemfig{!\cholesterol}
  
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -190,18 +166,18 @@
 
   \subsection{Ribose et desoxyribose}
   \begin{latexBox}
-\chemfig{!\ribose}
-\chemfig{!\desoxyribose}
+\chemfig{A !\ribose B}
+\chemfig{A !\desoxyribose B}
   \end{latexBox}
-  \chemfig{!\ribose}
-  \chemfig{!\desoxyribose}
+  \chemfig{A !\ribose B}
+  \chemfig{A !\desoxyribose B}
 
   \begin{latexBox}
-\chemfig{!\riboseHaw}
-\chemfig{!\desoxyriboseHaw}
+\chemfig{A !\riboseHaw B}
+\chemfig{A !\desoxyriboseHaw B}
   \end{latexBox}
-  \chemfig{!\riboseHaw}
-  \chemfig{!\desoxyriboseHaw}
+  \chemfig{A !\riboseHaw B}
+  \chemfig{A !\desoxyriboseHaw B}
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -264,8 +240,7 @@
   \chemfig{!\tyrosine}
   \chemfig{!\tryptophane}
   
-  
-  \subsection{Formule semi-développée}
+  \subsection{Formules semi-développées}
   \begin{latexBox}
 \chemfig{!\alanineSemiDev}
 \chemfig{!\asparagineSemiDev}
@@ -276,6 +251,19 @@
   \chemfig{!\asparagineSemiDev} \qq{}
   \chemfig{!\glycineSemiDev} \\[8pt]
   \chemfig{!\cysteineSemiDev} \\[8pt]
+  
+  \subsection{Représentation de Fischer}
+  \begin{latexBox}
+\chemfig{!\alanineL}
+\chemfig{!\alanineD}
+\chemfig{!\valineL}
+\chemfig{!\valineD}
+  \end{latexBox}
+  \chemfig{!\alanineL} \quad
+  \chemfig{!\alanineD} \quad
+  \chemfig{!\valineL} \quad
+  \chemfig{!\valineD}
+  
 
   \subsection{Acide alpha aminés pour les polypeptides}
   \begin{latexBox}
@@ -284,6 +272,12 @@
 }
   \end{latexBox}
   \chemfig{[:-30] H_2N !\alanineH N !\glycineB N !\cysteineH N !\isoleucineB N !\valineH OH}
+
+  \subsection{Heme}
+  \begin{latexBox}
+\chemfig{!\hemeB}
+  \end{latexBox}
+  \chemfig{!\hemeB}
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -299,22 +293,68 @@
   \chemfig{!\DOPAH} \\[8pt]
   \chemfig{!\prostaglandine}
 
+  \subsection{Corticoïdes et minéralocorticoïdes}
+  \begin{latexBox}
+\chemfig{!\cortisol}
+\chemfig{!\corticosterone}
+\chemfig{!\aldosterone}
+  \end{latexBox}
+  \chemfig{!\cortisol}
+  \chemfig{!\corticosterone} \\[8pt]
+
+  % Minéralocorticoïdes
+  \chemfig{!\aldosterone}
+
+  \subsection{Oestrogènes}
+  \begin{latexBox}
+\chemfig{!\estrone}
+\chemfig{!\estriol}
+\chemfig{!\estradiol}
+  \end{latexBox}
+  \chemfig{!\estrone}
+  \chemfig{!\estriol} \\[8pt]
+
+  \chemfig{!\estradiol}
+
+  \subsection{Androgènes}
+  \begin{latexBox}
+\chemfig{!\testosterone}
+\chemfig{!\dihydrotestosterone}
+\chemfig{!\androstenedione}
+  \end{latexBox}
+  \chemfig{!\testosterone}
+  \chemfig{!\dihydrotestosterone}
+  \chemfig{!\androstenedione}
+
+  \begin{latexBox}
+\chemfig{!\DHEA}
+\chemfig{!\DHEAS}
+  \end{latexBox}
+  \chemfig{!\DHEA}
+  \chemfig{!\DHEAS}
+
+  \subsection{Progestatif}
+  \begin{latexBox}
+\chemfig{!\progesterone}
+  \end{latexBox}
+  \chemfig{!\progesterone}
+
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Nucléotides}
   \subsection{Bases nucléiques}
   \begin{latexBox}
-\chemfig{!\adenine} 
-\chemfig{!\guanine} 
-\chemfig{!\thymine} 
-\chemfig{!\uracile} 
-\chemfig{!\cytosine}
+\chemfig{A- !\adenine}
+\chemfig{A- !\guanine} 
+\chemfig{A- !\thymine} 
+\chemfig{A- !\uracile} 
+\chemfig{A- !\cytosine}
   \end{latexBox}
-  \chemfig{!\adenine} 
-  \chemfig{!\guanine} 
-  \chemfig{!\thymine} 
-  \chemfig{!\uracile} 
-  \chemfig{!\cytosine}
+  \chemfig{A- !\adenine} 
+  \chemfig{A- !\guanine} 
+  \chemfig{A- !\thymine} 
+  \chemfig{A- !\uracile} 
+  \chemfig{A- !\cytosine}
 
   \subsection{Ribonucléosides}
   \begin{latexBox}
@@ -387,7 +427,7 @@
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Produit de contraste}
+  \section{Produits de contraste}
   \begin{latexBox}
 \chemfig{!\ionChelate}
 \chemfig{!\chelateAlcool}
@@ -398,58 +438,67 @@
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Vitamines}
+  \subsection{Vitamines B}
   \begin{latexBox}
-\chemfig{!\acideAscorbique}
-\chemfig{!\cholecarciferol}
+\chemfig{!\thiamine}           % B1
+\chemfig{!\riboflavine}        % B2
+\chemfig{!\nicotinamide}       % B3
+\chemfig{!\acideNicotinique}   % B3
+\chemfig{!\acidePantothenique} % B5
+\chemfig{!\pyroxidine}         % B6
+\chemfig{!\biotine}            % B8
+\chemfig{!\acideFolique}       % B9
+\chemfig{!\cyanocobalamine}    % B12
+  \end{latexBox}
+  \chemfig{!\thiamine}
+  \chemfig{!\riboflavine}
+  
+  \chemfig{!\nicotinamide}
+  \chemfig{!\acideNicotinique}
+  \chemfig{!\acidePantothenique}
+  
+  \chemfig{!\pyroxidine}
+  \chemfig{!\biotine}
+  
+  \chemfig{!\acideFolique}
+  
+  \chemfig{!\cyanocobalamine}
+  
+  \subsection{Vitamine C}
+  \begin{latexBox}
+\chemfig{!\acideAscorbique} % C
   \end{latexBox}
   \chemfig{!\acideAscorbique} \qq{}
+  
+  \subsection{Vitamines A, D, E, $K_1$ et $K_2$}
+  \begin{latexBox}
+\chemfig{!\retinol}         % A
+\chemfig{!\cholecarciferol} % D
+  \end{latexBox}
+  \chemfig{!\retinol} \\[8pt]
   \chemfig{!\cholecarciferol}
   
   \begin{latexBox}
-\chemfig{!\retinol}
-\chemfig{!\thiamine}
+\chemfig{!\tocopherol}  % E
+\chemfig{!\tocotrienol} % E
   \end{latexBox}
-  \chemfig{!\retinol} \qq{}
-  \chemfig{!\thiamine}
+  \chemfig{!\tocopherol} \\[8pt]
+  \chemfig{!\tocotrienol}
   
   \begin{latexBox}
-\chemfig{!\riboflavine}
-\chemfig{!\acideNicotinique}
-\chemfig{!\biotine}
+\chemfig{!\phylloquinone} % K1
+\chemfig{!\menatetrenone} % K2
   \end{latexBox}
-  \chemfig{!\riboflavine} \qq{}
-  \chemfig{!\acideNicotinique}
-  \chemfig{!\biotine}
-  
-  \begin{latexBox}
-\chemfig{!\acidePanthotenique}
-\chemfig{!\pyroxidine}
-  \end{latexBox}
-  \chemfig{!\acidePanthotenique}
-  \chemfig{!\pyroxidine}
-  
-  \begin{latexBox}
-\chemfig{!\acideFolique}
-  \end{latexBox}
-  \chemfig{!\acideFolique}
-  
-  \begin{latexBox}
-\chemfig{!\vitamineE}
-  \end{latexBox}
-  \chemfig{!\vitamineE}
-  
-  \begin{latexBox}
-\chemfig[atom sep = 1.8em]{[:90] !\cyanocobalamine}
-  \end{latexBox}
-  \chemfig[atom sep = 1.8em]{[:90] !\cyanocobalamine} \\[8pt]
+\chemfig{!\phylloquinone} \\[8pt]
+\chemfig{!\menatetrenone}
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Médicaments et produits de synthèse}
   \subsection{Aspirine}
   \begin{latexBox}
-\chemfig{!\aspirineSemiDev}
 \chemfig{!\aspirine}
+\chemfig{!\aspirineSemiDev}
 \chemfig{!\acideSalicylique}
   \end{latexBox}
   \chemfig{!\aspirineSemiDev}
@@ -472,6 +521,14 @@
   \end{latexBox}
   \chemfig{!\aspartame}
   
+  \subsection{Divers}
+  \begin{latexBox}
+\chemfig{!\bisphenolA}
+\chemfig{!\bisphenolASemiDev}
+  \end{latexBox}
+  \chemfig{!\bisphenolA} \qq{}
+  \chemfig{!\bisphenolASemiDev}
+  
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Molécules odorantes}
   \begin{latexBox}
@@ -481,13 +538,19 @@
 \chemfig{!\ethylvanilline}
   \end{latexBox}
   \chemfig{!\geraniol} \quad
-  \chemfig{!\geraniolSemiDev}
-  \chemfig{!\vanilline} \qq{}
+  \chemfig{!\geraniolSemiDev} \quad
+  \chemfig{!\vanilline} \quad
   \chemfig{!\ethylvanilline}
   \begin{latexBox}
 \chemfig{!\oxyphenylone}
+\chemfig{!\limonene}
+\chemfig{!\limoneneSemiDev}
+\chemfig{!\acetateIsoamyle}
   \end{latexBox}
-  \chemfig{!\oxyphenylone}
+  \chemfig{!\oxyphenylone} \quad
+  \chemfig{!\limonene} \quad
+  \chemfig{!\limoneneSemiDev} \quad
+  \chemfig{!\acetateIsoamyle}
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Drogues}
@@ -498,11 +561,4 @@
   \chemfig{!\THC} \qq{}
   \chemfig{!\cocaineHaw}
   
-  \begin{latexBox}
-\chemfig{!\bisphenolA}
-\chemfig{!\bisphenolASemiDev}
-  \end{latexBox}
-  \chemfig{!\bisphenolA} \qq{}
-  \chemfig{!\bisphenolASemiDev}
 \end{document}
-

@@ -150,7 +150,7 @@
   !\tete !\carboxyle !\lh !\cis !\cis !\lh !\llh !\lh !\cis !\cis !\cis !\lh
 }
 \definesubmol\oleiqueSemiDev  { C_{17} H_{33} -C !\carboxyleDev }
-\definesubmol\oleateSemiDev   { C_{17} H_{33} -C (!\lldh O) (!\ldb \charge{60:2pt=$-$}{O}) }
+\definesubmol\oleateSemiDev   { C_{17} H_{33} -C (!\lldh O) (!\ldb O^{-}) }
 \definesubmol\steraiqueSemiDev{ C_{17} H_{35} -C !\carboxyleDev }
 \definesubmol\caproiqueSemiDev{ CH_2 - CH_2 - CH_2 - CH_2 - CH_2 - C !\carboxyleDev }
 %% Pour l'utilisation dans les triglycérides
@@ -386,10 +386,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Base nucléique
 \definesubmol\adenine { *5(- *6(-N=-N= (-[,,,1]NH_2) -) =-N=-) }
-\definesubmol\guanine { *5(- *6(-N= (-[,,,1]NH_2) -[,,,1] NH -(=O)-) =-N=-) }
-\definesubmol\thymine { *6(- (=O) -[,,,1] NH -(=O) -(-)=-) }
-\definesubmol\uracile { *6(- (=O) -[,,,1] NH -(=O) -=-) }
-\definesubmol\cytosine{ *6(- (=O) -N= (-NH_2) -=-) }
+\definesubmol\guanine { *5(- *6(-N= (-[,,,1]NH_2) -[,,,1] NH -[,,1] (=O)-) =-N=-) }
+\definesubmol\thymine { *6(- (=O) -[,,,1] NH -[,,1] (=O) -(-)=-) }
+\definesubmol\uracile { *6(- (=O) -[,,,1] NH -[,,1] (=O) -=-) }
+\definesubmol\cytosine{ *6(- (=O) -N= (-[,,,1]NH_2) -=-) }
 
 %%% Ribonucléoside
 \definesubmol\adenosine{ !\ribose N !\adenine }
@@ -579,6 +579,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Vitamines
+\definesubmol\cret{ !\llb !\lh }
+\definesubmol\retinol{ % Vitamine A
+  *6( % cycle
+    --(-[::0]) (-[::-80]) = ( % chaine
+      !\lb !\cret (!\lh) !\cret !\cret (!\lh) !\cret !\lb OH
+    ) % chaine
+    -(-)--
+  ) % cycle
+}
 \definesubmol\acideAscorbique{ % Vitamine C
   HO-[::-30] !\lh (!\lh OH) !\lb *5(-(-OH) =(-OH) -(=O) -O-)
 }
@@ -596,27 +605,13 @@
     --
   ) % 1er
 }
-\definesubmol\cret{ !\llb !\lh }
-\definesubmol\retinol{ % Vitamine A
-  *6( % cycle
-    --(-[::0]) (-[::-80]) = ( % chaine
-      !\lb !\cret (!\lh) !\cret !\cret (!\lh) !\cret !\lb OH
-    ) % chaine
-    -(-)--
-  ) % cycle
-}
 % vitamine B1 thiamine
 \definesubmol\thiamine{
   -[::30]  *6(
     -N=- (
-      - !\lb N  *5(
-        - (-)
-        = (- !\lh !\lb OH)
-        -S-=
-      ) % 2nd cycle
+      - !\lb N  *5(-(-)= (- !\lh !\lb OH) -S-=) % 2nd cycle
     )
-    = (-  NH_2)
-    -N=
+    = (-NH_2) -N=
   ) % 1er cycle
 }
 % vitamine B2 riboflavine
@@ -634,8 +629,11 @@
 \definesubmol\acideNicotinique{
    *6(-N=- (- (!\llh O) !\lb OH) =-=)
 }
+\definesubmol\nicotinamide{
+   *6(-N=- (- (!\llh O) !\lb NH_2) =-=)
+}
 % vitamine B5 acide panthotenique
-\definesubmol\acidePanthotenique{
+\definesubmol\acidePantothenique{
   HO -[::30] !\lb (-[::-90]) (-[::-30])
   !\lh ( !\lh OH )
   !\lb (!\llb O )
@@ -693,8 +691,7 @@
     --(!\ethanamide) -(
       -[::-100] !\lhb (!\llb O) !\lh NH -[::-60,,1] !\lh (!\lb) 
       !\lh O -[::0] !\phosphate !\ldh *5( % cycle du bas ether
-        - (-!\lh OH) -O- (-N *5(- 
-          *6(=-(-)=(-)-=)
+        - (-!\lh OH) -O- (-N *5(- *6(=-(-)=(-)-=)
         --N (-[::-39,4.5,,,dotted]) =-)) % Cycle du bas amidine
       -(-OH)-)
     ) (-[::0]) -
@@ -710,21 +707,41 @@
   !\lh
 }
 % vitamine E
-\definesubmol\vitamineE{
+\definesubmol\isoprene{!\llh (!\lh) !\lb}
+\definesubmol\phytyle{!\lbh (!\lh) !\lb}
+\definesubmol\tocopherol{ % alpha
   -[::30]  *6(
-    = (-) -  *6(
-      -O- (- !\lhb !\lh (!\lh)
-        !\lbh !\lbh (!\lh)
-        !\lbh !\lbh (!\lh) !\lb
-      )
-      (-[::0])
-      ---
+    = (-) -  *6(-O- (
+        -!\lh !\phytyle !\lh !\phytyle !\lh !\phytyle
+      ) (-[::0]) ---
     ) % 2nd cycle
-    =- (-) = (-HO)
-    -
+    =- (-) = (-HO) -
   ) % 1er cycle
 }
-
+\definesubmol\tocotrienol{ % alpha
+  -[::30]  *6(
+    = (-) -  *6(-O- (
+        -!\lhb !\isoprene !\lhb !\isoprene !\lhb !\isoprene
+      ) (-[::0]) ---
+    ) % 2nd cycle
+    =- (-) = (-HO) -
+  ) % 1er cycle
+}
+% vitamine K1
+\definesubmol\menatetrenone{
+  *6(-= 
+    *6(- (=O)- (-)= (
+      - !\lb !\isoprene !\lhb !\isoprene !\lhb !\isoprene !\lhb !\isoprene
+    )- (=O) -)
+  -=-=)
+}
+\definesubmol\phylloquinone{
+  *6(-= 
+    *6(- (=O)- (-)= (
+      - !\lb !\isoprene !\lh !\phytyle !\lh !\phytyle !\lh !\phytyle
+    )- (=O) -)
+  -=-=)
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Aspirine
@@ -797,6 +814,15 @@
 }
 \definesubmol\oxyphenylone{
   HO -[::30] *6(-=- (-!\lbh (!\llh O) !\lb) =-=)
+}
+\definesubmol\limonene{ 
+  -[:30] (!\llb) !\lh *6(--=(-)---)
+}
+\definesubmol\limoneneSemiDev{
+  H_3C -[:30] C (!\llb CH_3) !\lh \chemabove{C}{H} *6(-CH_2 -CH =C (-CH_3) -[,,,2]H_2C -[,,2,2]H_2C -)
+}
+\definesubmol\acetateIsoamyle{
+  -[:30] (!\lh) !\lbh !\lb O !\lh (!\llh O) !\lb
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
