@@ -115,7 +115,7 @@
 
   \begin{center}
     {\small
-      \chemfig[atom sep = 1.25em]{[:-60]!\palmitine}
+      \chemfig[atom sep = 1.25em]{!\palmitine}
       \qq{} ou \qq{}
       \chemfig[atom sep = 1.75em]{!\palmitineSemiDev} \\[8pt]
     }
@@ -128,9 +128,10 @@
     \centering
     \small{
       \chemfig[atom sep = 1.2em]{
-        (-[::150] -[::60] O-[::-60] !\carbonyle !\trioleique)  % haut
-        (-[::-90] -[::60] O-[::30] !\carbonyle !\trilinoleique) % bas
-        -[::30] O-[::60] !\carbonyle !\trilinolenique % centre
+        [:60] !\triester{!\trioleique} {!\trilinoleique} {!\trilinolenique}
+        % (-[::150] -[::60] O-[::-60] !\carbonyle !\trioleique)  % haut
+        % (-[::-90] -[::60] O-[::30] !\carbonyle !\trilinoleique) % bas
+        % -[::30] O-[::60] !\carbonyle !\trilinolenique % centre
       }
     }
   \end{wrapfigure}
@@ -160,4 +161,4 @@ Entourer tous les glycérol estérifié dans les triglycérides du document~\ref
 
 \question{
   Quels aliments faut-il éviter si on souffre d'hypercholestérolémie ?
-}{}[2]
+}{}[3]

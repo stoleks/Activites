@@ -9,52 +9,61 @@
 \end{objectifs}
 
 \begin{contexte}
-  Les triglycérides sont une source importante d'énergie pour notre organisme.
+  Comme les glucides, les triglycérides sont une source importante d'énergie pour notre organisme.
   La dégradation des acides gras constituants les triglycérides permet de produire de \important{l'adénosine triphosphate,} ou \important{ATP,} qui fournit l'énergie nécessaire aux réactions chimiques du métabolisme cellulaire.
   
   \problematique{
     Quelle réaction chimique permet de séparer les triglycéride en acide gras ?  
   }
 \end{contexte}
-\vspace*{4pt}
 
 %%%% docs
 \begin{doc}{Hydrolyse de l'oléine}{doc:A2_hydrolyse_oleine}
   \begin{importants}
-    \important{L'hydrolyse} (du grec \og hydro \fg: eau et \og lysis \fg : briser) est une réaction chimique et enzymatique dans laquelle une liaison covalente est rompue par action d'une molécule d'eau.
+    \important{L'hydrolyse} (du grec « hydro » : eau et « lysis » : briser) est une réaction chimique enzymatique dans laquelle une liaison covalente est rompue par action d'une molécule d'eau.
   \end{importants}
 
   L'oléine est un triglycéride constituant \qty{80}{\percent} de l'huile d'olive.
+
+  \begin{importants}
+        Un \important{triglycéride} est un triester du glycérol avec trois acides gras. Un triglycéride est \important{saturé} si les trois acides gras qui le compose sont saturés. Il est \important{insaturé} sinon.
+  \end{importants}
   
   Au cours de son absorption par l’organisme, \important{l’oléine} est \important{hydrolysée} à l'aide de la lipase pour former de \important{l'acide
 oléique} selon l'équation suivante :
   \begin{center}
     \separationTroisBlocs{
-      \chemfig[atom sep = 14pt]{!\oleine}
+      \centering
+      \chemfig[atom sep = 15pt]{[:-40]!\oleine}
+      
       + 3 \texteTrou[0.3]{\eau}
-    }[0.3]{
+    }[0.48]{
       \reaction
     }[0.1]{
       \centering
-      \chemfig[atom sep = 14pt]{!\oleique}
-      + \chemfig[atom sep = 14pt]{!\oleique} 
-      + \chemfig[atom sep = 14pt]{!\oleique}
-      + \chemfig{[:30] !\glycerol}
-    }[0.4]
+      \chemfig[atom sep = 16pt]{!\oleique}
+      
+      + \chemfig[atom sep = 16pt]{!\oleique} 
+      
+      + \chemfig[atom sep = 16pt]{!\oleique} \\[8pt]
+      
+      + \chemfig[atom sep = 20pt]{!\glycerol}
+    }[0.3]
   \end{center}
   La masse molaire de l'oléine est $M_\text{oléine} = \qty{884}{\g\per\mole}$.
 \end{doc}
-
-\numeroQuestion
-Dans le document~\ref{doc:A2_hydrolyse_oleine}, entourer les groupes caractéristiques de la molécule d'oléine et d'une molécule d'acide oléique.
 
 \question{
   Donner le nom des deux molécules formées au cours de la réaction d'hydrolyse.
 }{}[2]
 
+\numeroQuestion
+Dans le document~\ref{doc:A2_hydrolyse_oleine}, entourer les groupes caractéristiques de l'oléine et d'un acide oléique.
+
+
 
 \newpage
-\vspace*{-24pt}
+\vspace*{-28pt}
 \question{
   Préciser si l'acide oléique est un acide gras saturé ou insaturé. Justifier.
 }{}[2]
@@ -78,13 +87,13 @@ L'organisme hydrolyse une masse d'oléine $m_\text{oléine} = \qty{8,84}{\g}$.
   \begin{center}
     \separationBlocs{
       \centering
-      \chemfig[atom sep = 18pt]{[:-60] !\palmitine} \\[8pt]
-      Formule topologique de la palmitine
+      \chemname{\chemfig[atom sep = 18pt]{!\palmitine}}
+      { Formule topologique de la palmitine }
     }[0.6]{
       \centering
-      \chemfig{!\palmitineSemiDev} \\[4pt] 
-      Formule semi-développée de la palmitine
-    }[0.3]
+      \chemname{\chemfig{!\palmitineSemiDev}}
+      { Formule semi-développée de la palmitine }
+    }[0.38]
   \end{center}
 \end{doc}
 

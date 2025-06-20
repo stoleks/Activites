@@ -85,12 +85,15 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Triglycérides}
   \begin{latexBox}
-\chemfig{[:-60] !\palmitine}
-\chemfig[atom sep = 1.8em]{[:-60] !\oleine}
+\chemfig{!\palmitine}
+\chemfig[atom sep = 1.8em]{!\oleine}
+\chemfig[atom sep = 1.8em]{!\arachidonine}
   \end{latexBox}
-  \chemfig{[:-60] !\palmitine}
+  \chemfig{!\palmitine}
   
-  \chemfig[atom sep = 1.8em]{[:-60] !\oleine}
+  \chemfig[atom sep = 1.8em]{!\oleine}
+  
+  \chemfig[atom sep = 1.8em]{!\arachidonine}
   
   \begin{latexBox}
 \chemfig{!\oleineSemiDev}
@@ -114,6 +117,21 @@
   \end{latexBox}
   \chemfig{[:30] !\glycerol} \qq{}
   \chemfig{!\glycerolSemiDev}
+
+  \subsection{Sous-molécules utiles}
+  \begin{latexBox}
+\chemfig{[:60] !\triester{A}{B}{C}}
+\chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
+\chemfig{!\triester {!\trioleique} {!\trilinolenique} {!\tricaproique}}
+\chemfig{!\triesterSat {!\lb !\trioleique} {!\tripalmitique} !\lb !\trilaurique}
+  \end{latexBox}
+  \chemfig{[:60] !\triester{A}{B}{C}}
+  
+  \chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
+  
+  \chemfig{!\triester {!\trioleique} {!\trilinolenique} {!\tricaproique}}
+  
+  \chemfig{!\triesterSat {!\lb !\trioleique} {!\tripalmitique} !\lb !\trilaurique}
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
