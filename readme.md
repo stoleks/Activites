@@ -6,7 +6,7 @@ Actuellement trois niveaux existent : seconde générales et technologiques (GT)
 
 ## Licence 
 
-Tous les fichiers sont de moi et sont mis à disposition sous [licence creative common (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/), à l'exception des images dans images/photos et dans images/donnees. Vous pouvez donc les utiliser comme vous voulez en créditant leur origine.
+Tous les fichiers sont de moi et sont mis à disposition sous [licence creative common (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/), à l'exception des images dans images/exterieures/. Vous pouvez donc les utiliser comme vous voulez en créditant leur origine.
 
 
 ## Organisation des fichiers
@@ -15,14 +15,16 @@ Les fichiers sont organisés par dossiers :
 
 - *accompagnement_personnel* contient des activités pour de l'accompagnement personnel niveau seconde GT.
 - *commun* contient des fichiers utilisés sur plusieurs niveaux.
-- *images* contient toutes les images utilisées dans les activités. Les versions modifiables se trouvent dans le projet [Cours](https://github.com/stoleks/Cours/tree/main/images).
+- *images* contient toutes les images utilisées dans les activités. Les versions modifiables se trouvent dans le projet [cours_physique-chimie_Lycee_GT](https://forge.apps.education.fr/jedrecyalexandre/cours_physique-chimie_Lycee_GT).
 - *preparationTP* contient des fiches avec la liste du matériel utilisé pour certains TP.
 - *seconde* contient tous les fichiers d'activités pour les secondes GT.
 - *stssPremiere* contient tous les fichiers d'activités pour les premières ST2S.
 - *stssTerminale* contient tous les fichiers d'activités pour les terminales ST2S.
 
+Note : les chapitres ne sont pas numérotés, car parfois je fais voter aux élèves l'ordre des chapitres.
 
-## Organisation de tex
+
+## Organisation de LaTeX
 
 Les fichiers commençant par un \_ (comme \_commandes.tex) contiennent des commandes pour faciliter l'écriture d'activités ou pour éviter la répétition de morceau de code fastidieux (comme les molécules).
 À terme une partie des fichiers va devenir des bibliothèques tex (quand j'aurais le temps).
