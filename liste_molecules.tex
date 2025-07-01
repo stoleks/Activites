@@ -51,7 +51,7 @@
 \chemfig{!\docosaHexanoique}
   \end{latexBox}
   \chemfig{!\palmitique} \\[8pt]
-  \chemfig{!\oleique} \\[8pt]
+  \chemfig{!\oleique}
   \chemfig{!\linolenique} \\[8pt]
   \chemfig{!\linoleique}
   \chemfig{!\arachidonique} \\[8pt]
@@ -71,13 +71,14 @@
   
   \subsection{Pour les chaînes dans les triglycérides}
   \begin{latexBox}
-\chemfig{!\tripalmitique}
+\chemfig{[:-30] !\tripalmitique}
 \chemfig{[:-30] !\trioleique}
 \chemfig{[:-30] !\trilinoleique}
 \chemfig{[:-30] !\trilinolenique}
   \end{latexBox}
-  \chemfig{[:30] !\tripalmitique}
-  \chemfig{[:-30] !\trioleique} \\[8pt]
+  \chemfig{[:-30] !\tripalmitique}
+  \chemfig{[:-30] !\trioleique}
+
   \chemfig{[:-30] !\trilinoleique}
   \chemfig{[:-30] !\trilinolenique}
   
@@ -122,16 +123,14 @@
   \begin{latexBox}
 \chemfig{[:60] !\triester{A}{B}{C}}
 \chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
-\chemfig{!\triester {!\trioleique} {!\trilinolenique} {!\tricaproique}}
-\chemfig{!\triesterSat {!\lb !\trioleique} {!\tripalmitique} !\lb !\trilaurique}
+\chemfig[atom sep = 15pt]{!\triester {!\trioleique} {!\trilinolenique} {!\tricaproique}}
+\chemfig[atom sep = 15pt]{!\triesterSat {!\lb !\trioleique} {!\tripalmitique} !\lb !\trilaurique}
   \end{latexBox}
   \chemfig{[:60] !\triester{A}{B}{C}}
-  
   \chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
   
-  \chemfig{!\triester {!\trioleique} {!\trilinolenique} {!\tricaproique}}
-  
-  \chemfig{!\triesterSat {!\lb !\trioleique} {!\tripalmitique} !\lb !\trilaurique}
+  \chemfig[atom sep = 15pt]{!\triester {!\trioleique} {!\trilinolenique} {!\tricaproique}}  
+  \chemfig[atom sep = 15pt]{!\triesterSat {!\lb !\trioleique} {!\tripalmitique} !\lb !\trilaurique}
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -363,16 +362,16 @@
   \subsection{Bases nucléiques}
   \begin{latexBox}
 \chemfig{A- !\adenine}
+\chemfig{A- !\cytosine}
 \chemfig{A- !\guanine} 
 \chemfig{A- !\thymine} 
 \chemfig{A- !\uracile} 
-\chemfig{A- !\cytosine}
   \end{latexBox}
-  \chemfig{A- !\adenine} 
+  \chemfig{A- !\adenine} \hspace*{-20pt}
+  \chemfig{A- !\cytosine}
   \chemfig{A- !\guanine} 
   \chemfig{A- !\thymine} 
   \chemfig{A- !\uracile} 
-  \chemfig{A- !\cytosine}
 
   \subsection{Ribonucléosides}
   \begin{latexBox}
