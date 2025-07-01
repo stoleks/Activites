@@ -21,7 +21,7 @@
   
   \subsection{Nom des molécules}
   
-  Pour tracer une molécule, il suffit d'appeler \lstinline| \chemfig\{!\nomDeLaMolecule} |.
+  Pour tracer une molécule, il suffit d'appeler \lstinline|\chemfig\{!\nomDeLaMolecule}|.
   La représentation de base pour les molécules est la formule topologique, il faut ajouter un suffixe au nom pour passer à une autre représentation \important{si elle est définie, ce qui n'est pas du tout toujours le cas.} Les suffixes sont les suivants :
   \begin{listePoints}[2]
     \item \lstinline{SemiDev} : formule semi-développée ;
@@ -35,6 +35,27 @@
     \item \lstinline{H} : pour tracer un polypeptide, la chaîne latérale est vers le haut ;
     \item \lstinline{D} : représentation de Fischer droite ;
     \item \lstinline{B} : pour tracer un polypeptide, la chaîne latérale est vers le bas.
+  \end{listePoints}
+  
+  \subsection{Commandes internes pour faciliter l'écriture}
+  
+  Pour tracer les formules topologiques, j'utilise plusieurs commandes 
+  \begin{listePoints}
+    \item \lstinline|!\vide{}| pour tracer une liaison invisible (utile pour les cycles incomplets)
+    \item \lstinline|!\lh| Pour tracer une liaison vers le haut (liaison haut = lh) \chemfig{-[:30] !\lh}
+    \item \lstinline|!\lb| Pour tracer une liaison vers le bas (liaison bas = lb) \chemfig{-[:30] !\lb}
+    \item \lstinline|!\lhb| Pour tracer une liaison vers le haut puis vers le bas \chemfig{-[:30] !\lhb}
+    \item \lstinline|!\lbh| Pour tracer une liaison vers le bas puis vers le haut \chemfig{-[:30] !\lbh}
+    \item \lstinline|!\llh| Pour tracer une liaison double vers le haut \chemfig{-[:30] !\llh}
+    \item \lstinline|!\llb| Pour tracer une liaison doubler vers le bas \chemfig{-[:30] !\llb}
+    \item \lstinline|!\cis| Pour tracer une liaison cis \chemfig{-[:-30] !\cis !\lb}
+    \item \lstinline|!\trans| Pour tracer une liaison "trans" aplatie \chemfig{-[:-30] !\trans !\lh}
+    \item \lstinline|!\ldh| Pour tracer une liaison développée vers le haut (l'angle est plus faible) \chemfig{-[:30] !\ldh}
+    \item \lstinline|!\ldb| Pour tracer une liaison développée vers le bas \chemfig{-[:30] !\ldb}
+    \item \lstinline|!\lldh| Pour tracer une liaison double développée vers le haut \chemfig{-[:30] !\lldh}
+    \item \lstinline|!\lldb| Pour tracer une liaison double développée vers le bas \chemfig{-[:30] !\lldb}
+    \item \lstinline|!\cram{}{}| Pour tracer deux liaisons de cram autour d'un élément \chemfig[cram width = 5pt]{C !\cram{A}{B} (-[::90] COOH) -[::-30] NH_2}
+    \item \lstinline|!\branche{}{}| Pour tracer deux liaisons à \qty{90}{\degree} autour d'un élément \chemfig{- !\branche{A}{B} -}
   \end{listePoints}
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,10 +144,13 @@
   \begin{latexBox}
 \chemfig{[:60] !\triester{A}{B}{C}}
 \chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
+\chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
+  
 \chemfig[atom sep = 15pt]{!\triester {!\trioleique} {!\trilinolenique} {!\tricaproique}}
 \chemfig[atom sep = 15pt]{!\triesterSat {!\lb !\trioleique} {!\tripalmitique} !\lb !\trilaurique}
   \end{latexBox}
   \chemfig{[:60] !\triester{A}{B}{C}}
+  \chemfig{!\triesterSat{A}{B}C}
   \chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
   
   \chemfig[atom sep = 15pt]{!\triester {!\trioleique} {!\trilinolenique} {!\tricaproique}}  
@@ -169,6 +193,7 @@
 \chemfig{[:-90] !\fructoseSemiDev}
   \end{latexBox}
   \chemfig{!\fructoseHaw}
+  \chemfig{!\fructofuranoseHaw}
   \chemfig{!\fructoseCycle}
   \chemfig{[:-90] !\fructose}
   \chemfig{[:-90] !\fructoseSemiDev}
@@ -369,7 +394,7 @@
   \end{latexBox}
   \chemfig{A- !\adenine} \hspace*{-20pt}
   \chemfig{A- !\cytosine}
-  \chemfig{A- !\guanine} 
+  \chemfig{A- !\guanine} \hspace*{-20pt}
   \chemfig{A- !\thymine} 
   \chemfig{A- !\uracile} 
 
@@ -470,8 +495,8 @@
   \chemfig{!\thiamine}
   \chemfig{!\riboflavine}
   
-  \chemfig{!\nicotinamide}
-  \chemfig{!\acideNicotinique}
+  \chemfig{!\nicotinamide} \qq{}
+  \chemfig{!\acideNicotinique} \qq{}
   \chemfig{!\acidePantothenique}
   
   \chemfig{!\pyroxidine}
