@@ -64,8 +64,7 @@
   \end{listePoints}
 \end{doc}
 
-\newpage
-\vspace*{-28pt}
+\pasCorrection{\newpage\vspace*{-28pt}}
 \question{
   Indiquer les dipôles qui sont en série et les dipôles qui sont en dérivation.
 }{
@@ -76,8 +75,8 @@
 
 %%
 \begin{doc}{Loi des noeuds et intensité}{doc:loi_noeud_intensite}
-  \chevron La quantité d'électrons qui \textbf{circulent} dans le circuit électrique se conserve.
-  \textbf{Cette quantité d'électron est mesurée par l'intensité du courant notée $I$.}
+  \chevron La quantité d'électrons qui \important{circulent} dans le circuit électrique se conserve.
+  \important{Cette quantité d'électron est mesurée par l'intensité du courant notée $I$.}
   %
   \begin{importants}
     L'intensité du courant se mesure en \important{ampère} noté A, avec un ampèremètre branché en série.
@@ -100,23 +99,34 @@
 %%
 \begin{doc}{Loi des mailles et tension}{doc:loi_maille_tension}
   Ce qui met en mouvement les électrons dans un circuit, c'est la différence d'état électrique entre deux points d'un circuit.
-  \textbf{Cette différence d'état est mesurée par la tension électrique notée $U$.}
+  Cette différence est \important{mesurée par la tension électrique notée $\mathbf{U}$.}
   %
   \begin{importants}
     La tension électrique se mesure en \important{volt} noté V, avec un voltmètre branché en dérivation.
+    L'intensité du courant traversant un voltmètre est considérée nulle, car il a une très grande resistance.
   \end{importants}
   %
   \begin{importants}
     \important{Loi des mailles} : la somme des tensions des dipôles le long d'une maille est égale à 0 V.
   \end{importants}
   %
-  \chevron Pour sommer les tensions, il faut parcourir la maille dans un sens, en \textbf{ajoutant} les tensions dont les flèches vont dans le sens du parcours et en \textbf{soustrayant} les tensions dont les flèches vont dans le sens opposé du parcours.
+  \fleche Pour sommer les tensions, il faut parcourir la maille dans le sens horaire, en \important{ajoutant} les tensions dont les flèches vont dans le sens du parcours et en \important{soustrayant} les tensions dont les flèches vont dans le sens opposé au parcours.
 \end{doc}
 
 \question{
   Donner la relation imposée par la loi des mailles entre les tensions $U_D$ et $U_V$ du document~\ref{doc:circuit_exemple_del}.
   Faire de même pour les tensions $U_R$, $U_D$, $U_A$ et $U_G$.
 }{
-  $U_D - U_V = \qty{0}{\volt}$, donc $U_D = U_V$. \\
+  $U_D - U_V = \qty{0}{\volt}$, donc $U_D = U_V$.
+  
   $-U_R - U_D - U_A + U_G = \qty{0}{\volt}$, donc $U_G = U_R + U_D + U_A$
-}[3]
+}[2]
+
+\question{
+  Conclure sur l'intérêt de ce montage pour mesurer les caractéristiques de la DEL.
+}{
+  Avec ce montage, la tension du voltmètre $U_V$ est égale à la tension de la diode $U_D$, ce qui permet de mesurer sa tension.
+
+  L'intensité du courant qui traverse l'ampèremètre est égale à la somme de l'intensité traversant la diode et de l'intensité traversant le voltmètre.
+  Comme l'intensité du courant qui traverse le voltmètre est nulle, l'intensité du courant mesuré par l'ampèremètre est égale à l'intensité traversant la diode.
+}[4]

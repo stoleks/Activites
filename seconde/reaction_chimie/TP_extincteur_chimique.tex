@@ -56,11 +56,11 @@ Noter vos observations dans le tableau ci-dessous :
     row{1} = {X[c], couleurSec-100}
   }
     Masse de \bicarbonateDeSodium & Présence de \bicarbonateDeSodium solide & Gonflement du ballon (+, ++, +++, ++++) \\
-    \qty{0,5}{\g} \\
-    \qty{1,0}{\g} \\
-    \qty{1,5}{\g} \\
-    \qty{2,6}{\g} \\
-    \qty{4,0}{\g} \\
+    \qty{0,5}{\g} & \correction{non} & \correction{\textbf{+}} \\
+    \qty{1,0}{\g} & \correction{non} & \correction{\textbf{++}} \\
+    \qty{1,5}{\g} & \correction{non} & \correction{\textbf{+++}} \\
+    \qty{2,6}{\g} & \correction{oui} & \correction{\textbf{++++}} \\
+    \qty{4,0}{\g} & \correction{oui} & \correction{\textbf{++++}} \\
   \end{tblr}
 \end{center}
 
@@ -77,7 +77,8 @@ Noter vos observations dans le tableau ci-dessous :
 \question{
   En vous aidant de vos observations pour justifier, indiquer quel est le réactif limitant pour les 5 cas étudiés.
 }{
-  ...
+  Pour les 3 premiers cas, le réactif limitant est le bicarbonate de sodium \bicarbonateDeSodium, car tous le bicarbonate solide a disparu.
+  Pour les 2 deux derniers cas c'est le vinaigre, car il reste du bicarbonate solide.
 }[3]
 
 
@@ -92,25 +93,35 @@ Noter vos observations dans le tableau ci-dessous :
   \begin{listePoints}
     \item il y a un dégagement gazeux de dioxyde de carbone \dioxydeDeCarbone ;
     \item la quantité d'eau liquide dans le système augmente ;
-    \item des ions sodium \chemfig{Na^{+}} sont produits ;
+    \item des ions sodium \ionSodium sont produits ;
     \item des ions éthanoate \chemfig{C_2H_3O_2^{-}} sont produits.
   \end{listePoints}
 \end{doc}
 
 \question{
   Lister les réactifs de la réaction chimique, en précisant leur états physique.
-}{}[2]
+}{
+  Réactifs : \bicarbonateDeSodium\sol et \chemfig{C_2H_4O_2}\liq.
+}[2]
 
 \question{
   Lister les produits de la réaction chimique, en précisant leur états physique.
-}{}[2]
+}{
+  Produits : \ionSodium\aq, \dioxydeDeCarbone\gaz, \eau\liq et \chemfig{C_2H_3 O_2^{-}}\aq.
+}[2]
 
 \question{
    Écrire la réaction chimique dans l'extincteur, avec à gauche de la flèche les réactifs et à droite les produits.
-}{}[4]
+}{
+  \begin{equation*}
+    \bicarbonateDeSodium\sol + \chemfig{C_2H_4O_2}\liq
+    \reaction
+    \ionSodium\aq + \dioxydeDeCarbone\gaz + \eau\liq + \chemfig{C_2H_3 O_2^{-}}\aq
+  \end{equation*}
+}[4]
 
 %%
-% \begin{doc}{Masse d'une mole des réactifs}{doc:A_}
+% \begin{doc}{Masse d'une mole des réactifs}{doc:A_masse_molaire_reactif}
 %   La masse d'une mole est appelée la \important{masse molaire}.
 % 
 %   \begin{donnees}

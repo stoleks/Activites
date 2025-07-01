@@ -2,12 +2,13 @@
 \teteSndChim
 
 %%%% titre
+\correction{\vspace*{-24pt}}
 \titreTP{Se chauffer au gaz}
 %\smallskip
 
 %%%% Objectifs
 \begin{objectifs}
-  \item Ajuster une réaction chimique à l'aide de coefficients stoechiométriques.
+  \item Ajuster une réaction chimique à l'aide de coefficients stœchiométriques.
   \item Comprendre la notion de réaction endothermique et exothermique. 
   \item Calculer le volume de gaz nécessaire pour faire bouillir \qty{1}{\litre} d'eau.
   \item Réaliser des dissolutions en respectant les consignes de sécurités.
@@ -27,7 +28,7 @@
   Le méthane \methane réagit avec le dioxygène \dioxygene lors de sa combustion pour former deux produits.
   La combustion produit deux gaz :
   \begin{listePoints}
-    \item de la vapeur d'eau \chemfig{H_2O}, identifiée avec du sulfate de cuivre anhydre ;
+    \item de la vapeur d'eau \eau, identifiée avec du sulfate de cuivre anhydre ;
     \item du dioxyde de carbone \dioxydeDeCarbone, identifié avec de l'eau de chaux.
   \end{listePoints}
 \end{doc}
@@ -44,11 +45,11 @@
 \question{
   Écrire la réaction chimique de combustion du méthane, en précisant les états physiques de chaque espèce chimique.
 }{
-  \begin{center}
-      \methane\gaz + \dioxygene\gaz
-      \reaction
-      \dioxydeDeCarbone\gaz + \chemfig{H_2O}\gaz
-  \end{center}
+  \begin{equation*}
+    \methane\gaz + \dioxygene\gaz
+    \reaction
+    \dioxydeDeCarbone\gaz + \eau\gaz
+  \end{equation*}
 }[2]
 
 %%
@@ -63,7 +64,7 @@
   \end{importants}
   \begin{importants}
     Pour assurer cette \important{conservation}, il faut \important{ajuster} la réaction chimique avec des coefficients devant les éléments chimiques.
-    Ces coefficients sont appelés \important{coefficient stoechiométrique.}
+    Ces coefficients sont appelés \important{coefficient stœchiométrique.}
   \end{importants}
   
   Exemple de la réaction d'un acide avec du magnésium :
@@ -72,22 +73,21 @@
     + \underset{\text{\important{2} ions hydrogènes}}{\important{2} \;\; \chemfig{H^+ }\aq}
     \reaction
     \underset{\text{1 ion magnésium II}}{\ionMagnesium\aq}
-    + \underset{\text{1 molécule de dihydrogène}}{\chemfig{H_2}\gaz}
+    + \underset{\text{1 molécule de dihydrogène}}{\dihydrogene\gaz}
   \end{equation*}
   On vérifie bien qu'il y a le même nombre de charges positives, de magnésium \chemfig{Mg} et d'hydrogène \chemfig{H}, dans l'état initial et dans l'état final.
 \end{doc}
 
 
-\newpage
-\vspace*{-24pt}
+\pasCorrection{\newpage\vspace*{-24pt}}
 \question{
-  Ajuster la réaction de combustion du méthane à l'aide de coefficients stoechiométriques.
+  Ajuster la réaction de combustion du méthane à l'aide de coefficients stœchiométriques.
   Commencer par ajuster le nombre d'atomes d'hydrogène.
 }{
   \begin{equation*}
     \methane\gaz + 2\dioxygene\gaz
     \reaction
-    \dioxydeDeCarbone\gaz + 2\chemfig{H_2O}\gaz
+    \dioxydeDeCarbone\gaz + 2\eau\gaz
   \end{equation*}
 }[2]
 
@@ -101,63 +101,80 @@
 \end{doc}
 
 \question{
-  Écrire la réaction de combustion du propane ajustée avec des coefficients stoechiométriques.
+  Écrire la réaction de combustion du propane ajustée avec des coefficients stœchiométriques.
   Préciser l'état physique des réactifs et des produits.
 }{
-  ...
+  \begin{equation*}
+    \propane\gaz + 10\dioxygene\gaz
+    \reaction
+    3\dioxydeDeCarbone\gaz + 4\eau\gaz
+  \end{equation*}
 }[2]
 
 \vspace*{-4pt}
 \begin{doc}{L'eau de chaux}{doc:TP2_eaux_de_chaux}
-  L'eau de chaux est une solution aqueuse saturée en ion calcium \ionCalcium et en ion hydroxyde \chemfig{HO^{-}}.
-  En réagissant avec le dioxyde de carbone \dioxydeDeCarbone, l'eau de chaux forme du calcaire \chemfig{Ca CO_3} et de l'eau \chemfig{H_2O}
+  L'eau de chaux est une solution aqueuse saturée en ion calcium \ionCalcium et en ion hydroxyde \hydroxyde.
+  En réagissant avec le dioxyde de carbone \dioxydeDeCarbone, l'eau de chaux forme du calcaire \carbonateDeCalcium et de l'eau \eau
 \end{doc}
 
 \question{
-  Écrire la réaction de formation du calcaire dans l'eau de chaux en présence de dioxyde de carbone et l'ajuster avec des coefficients stoechiométrique.
+  Écrire la réaction de formation du calcaire dans l'eau de chaux en présence de dioxyde de carbone et l'ajuster avec des coefficients stœchiométrique.
 }{
-  ...
+  \begin{equation*}
+    \ionCalcium + \dioxydeDeCarbone + 2\hydroxyde
+    \reaction
+    \carbonateDeCalcium + \eau
+  \end{equation*}
 }[2]
 
 \numeroQuestion
-Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coefficients stoechiométriques devant chaque élément chimique :
+Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coefficients stœchiométriques devant chaque élément chimique :
 \newcommand{\localEcart}{18}
 \begin{align*}
-  \ldots\chemfig{C}\sol + \ldots\dioxygene\gaz
-  &\reaction \ldots\dioxydeDeCarbone\gaz
+  \correction{1}\pasCorrection{\ldots} \carbone\sol +
+  \correction{1}\pasCorrection{\ldots} \dioxygene\gaz
+  &\reaction \correction{1}\pasCorrection{\ldots} \dioxydeDeCarbone\gaz
   \\[\localEcart pt]
   %
-  \ldots\chemfig{Fe}\sol + \ldots\chemfig{H^{+}}\aq
-  &\reaction \ldots\ionFerII\aq + \ldots\chemfig{H_2}\gaz
+  \correction{1}\pasCorrection{\ldots} \fer\sol +
+  \correction{2}\pasCorrection{\ldots} \ionHydrogene\aq
+  &\reaction \correction{1}\pasCorrection{\ldots} \ionFerII\aq +
+  \correction{1}\pasCorrection{\ldots} \dihydrogene\gaz
   \\[\localEcart pt]
   %
-  \ldots\chemfig{Fe}\sol + \ldots\dioxygene\gaz
-  &\reaction \ldots\chemfig{Fe_2O_3}\sol
+  \correction{4}\pasCorrection{\ldots} \fer\sol +
+  \correction{3}\pasCorrection{\ldots} \dioxygene\gaz
+  &\reaction 2 \chemfig{Fe_2O_3}\sol
   \\[\localEcart pt]
   %
-  \ldots\chemfig{C_2H_6O}\liq + \ldots\dioxygene\gaz
-  &\reaction \ldots\dioxydeDeCarbone\gaz + \ldots\chemfig{H_2O}\liq
+  \correction{1}\pasCorrection{\ldots} \chemfig{C_2H_6O}\liq +
+  \correction{2}\pasCorrection{\ldots} \dioxygene\gaz
+  &\reaction \correction{2}\pasCorrection{\ldots} \dioxydeDeCarbone\gaz +
+  \correction{3}\pasCorrection{\ldots} \eau\liq
   \\[\localEcart pt]
   %
-  \ldots\chemfig{Cu^{2+}}\aq + \ldots\chemfig{HO^{-}}\aq
-  &\reaction \ldots\chemfig{Cu{(HO)}_2}\sol
+  \correction{1}\pasCorrection{\ldots} \ionCuivreII\aq +
+  \correction{2}\pasCorrection{\ldots} \hydroxyde\aq
+  &\reaction \correction{1}\pasCorrection{\ldots} \chemfig{Cu{(HO)}_2}\sol
   \\[\localEcart pt]
   %
-  \ldots\chemfig{Fe}\sol + \ldots\chemfig{H_2O}\liq + \ldots\dioxygene\gaz
-  &\reaction \ldots\chemfig{Fe{(HO)}_2}\sol
+  2 \fer\sol + \correction{2}\pasCorrection{\ldots} \eau\liq +
+  \correction{1}\pasCorrection{\ldots} \dioxygene\gaz
+  &\reaction \correction{2}\pasCorrection{\ldots} \chemfig{Fe{(HO)}_2}\sol
   % \\[\localEcart pt]
   % %
-  % \ldots\chemfig{Fe{(OH)}_2}\sol + \ldots\chemfig{H_2O}\liq + \ldots\dioxygene\gaz
-  % &\reaction \ldots\chemfig{Fe{(OH)}_3}\sol
+  % \correction{1}\pasCorrection{\ldots} \chemfig{Fe{(OH)}_2}\sol + \correction{1}\pasCorrection{\ldots} \eau\liq + \correction{1}\pasCorrection{\ldots} \dioxygene\gaz
+  % &\reaction \correction{1}\pasCorrection{\ldots} \chemfig{Fe{(OH)}_3}\sol
   % \\[\localEcart pt]
   % %
-  % \ldots\chemfig{Fe{(OH)}_3}\sol
-  % &\reaction \ldots\chemfig{Fe_2O_3}\sol + \ldots\chemfig{H_2O}\liq
+  % \correction{1}\pasCorrection{\ldots} \chemfig{Fe{(OH)}_3}\sol
+  % &\reaction \correction{1}\pasCorrection{\ldots} \chemfig{Fe_2O_3}\sol + \correction{1}\pasCorrection{\ldots} \eau\liq
   %
 \end{align*}
 \vspace*{-16pt}
 
 %%
+\correction{\newpage\vspace*{-36pt}}
 \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
   \numeroQuestion
   Pour travailler la notion d'ajustement :
@@ -221,10 +238,10 @@ Ajuster les réactions chimiques suivantes en écrivant, si nécessaire, les coe
   \begin{protocole}
       
     \item Prendre 2 béchers et verser dans chacun \qty{10}{\ml} d’eau distillée.
-    \item Mesurer la masse d'eau distillée versée $m_\text{eau} =$ \texteTrou[0.1]{\qty{10,0}{\g}}
+    \item Mesurer la masse d'eau distillée versée $m_\text{eau} =$\texteTrou[0.1]{\qty{10,0}{\g}}
     \item Mesurer la température initiale de l'eau des deux béchers.
     \item Ajouter $m_1 = \qty{3,0}{\g}$ de chlorure de sodium dans un bécher.
-    \item Peser la masse d'une pastille de soude $m_2 = \texteTrou[0.1]{\qty{1,0}{\g}}$.
+    \item Peser la masse d'une pastille de soude $m_2 =$\texteTrou[0.1]{\qty{1,0}{\g}}
     \item Ajouter la pastille de soude dans l'autre bécher.
     \item Mesurer la température finale de l'eau des deux béchers après une dizaine de secondes.
   \end{protocole}
@@ -254,7 +271,7 @@ Noter les mesures de températures dans le tableau suivant :
     Bécher 1 &
     \correction{\qty{20,0}{\degreeCelsius}} &
     \correction{\qty{15,8}{\degreeCelsius}} &
-    \correction{\qty{-4,2}{\degreeCelsius)} \\
+    \correction{\qty{-4,2}{\degreeCelsius}} \\
     Bécher 2 &
     \correction{\qty{20,0 }{\degreeCelsius}} &
     \correction{\qty{7,4  }{\degreeCelsius}} &
@@ -275,8 +292,13 @@ Noter les mesures de températures dans le tableau suivant :
   \important{Donnée :}
   La capacité thermique de l’eau vaut $c_\text{eau} = \qty{4,180}{\joule\per\g\per\degreeCelsius}$
 }{
-  $E_1 = \qty{875}{\joule}$,
-  $E_2 = \qty{2625}{\joule}$
+  \begin{align*}
+    E_1 &= 
+      \qty{10}{\g} \times
+      \qty{4,180}{\joule\per\g\per\degreeCelsius} \times
+      \qty{-4.2}{\degreeCelsius} =\qty{875}{\joule} \\
+    E_2 &= \qty{2625}{\joule}
+  \end{align*}
 }[3]
 
 %%
@@ -321,24 +343,27 @@ Noter les mesures de températures dans le tableau suivant :
 \question{
   Calculer $\Delta T$ si on veut faire bouillir de l'eau initialement à \qty{20}{\degreeCelsius}.
 }{
-  $\Delta T = T_f - T_i 
-  = \qty{100}{\degreeCelsius} - \qty{20}{\degreeCelsius}
-  = \qty{80}{\degreeCelsius}
+  \begin{equation*}
+    \Delta T
+    = T_f - T_i 
+    = \qty{100}{\degreeCelsius} - \qty{20}{\degreeCelsius}
+    = \qty{80}{\degreeCelsius}
+  \end{equation*}
 }[2]
 
 \question{
   Calculer le volume de gaz nécessaire pour faire bouillir 1 litre d'eau initialement à \qty{20}{\degreeCelsius}.
 }{
-  Pour calculer le volume de gaz, on utilise la relation littérale fournie dans le document~\ref{doc:TP2_energie_combustion}, après avoir convertie le volume de gaz en mètre cube $V = \qty{1}{\litre} = \qty{e-3}{\m\cubed}
-  \begin{equation*}
+  Pour calculer le volume de gaz, on utilise la relation littérale fournie dans le document~\ref{doc:TP2_energie_combustion}, après avoir converti le volume d'eau en mètre cube $V = \qty{1}{\litre} = \qty{e-3}{\m\cubed}$
+  \begin{align*}
     V
-    = \dfrac{\rho_\text{eau} c_\text{eau}} {E_V} V_\text{eau} \Delta T
-    = \dfrac{
+    &= \dfrac{\rho_\text{eau} c_\text{eau}} {E_V} V_\text{eau} \Delta T \\
+    &= \dfrac{
       \qty{1000}{\g\per\litre} \times
       \qty{4,180}{\joule\per\g\per\degreeCelsius}
     } {\qty{3,641e4}{\joule\per\m\cubed}} 
-    \times \qty{e-3}{\m\cubed} \qty{20,0}{\degreeCelsius}
-    = \qty{2.29e-3}{\m\cubed}
-    = \qty{2,29}{\litre}
-  \end{equation*}
+    \times \qty{e-3}{\m\cubed} \times \qty{80,0}{\degreeCelsius} \\
+    &= \qty{9.18e-3}{\m\cubed}
+    = \qty{9,18}{\litre}
+  \end{align*}
 }[3]

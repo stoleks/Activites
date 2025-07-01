@@ -1,11 +1,7 @@
 %%%%
 \teteSndSign
-\numeroActivite{1}
-
-%%%% titre
 \vspace*{-24pt}
 \titreTP{Les sons et leur propagation}
-
 
 %%%% Objectifs
 \begin{objectifs}
@@ -59,9 +55,9 @@
     \item son niveau d'intensité sonore, mesuré en décibel noté dB, est suffisant.
     \item sa fréquence se trouve dans le domaine de sensibilité de l'oreille.
   \end{listePoints}
-  \begin{equation*}
-      \ldots < f_\text{audible} < \ldots
-  \end{equation*}
+  \begin{center}
+    \texteTrou[0.1]{\qty{20}{\hertz}} $< f_\text{audible} <$ \texteTrou[0.1]{\qty{20000}{\hertz}}
+  \end{center}
 \end{doc}
 
 
@@ -89,10 +85,12 @@
 \end{doc}
 
 \question{
-  Citer des exemples de capteurs avec les grandeurs mesurées et exploitées.
+  Citer des exemples de capteurs avec la grandeur mesurée, la grandeur utilisée pour la mesure et les unités de mesure.
 }{
-  bla
-}{4}
+  Un thermomètre à liquide mesure la température à l'aide d'une variation de volume en \unit{\degreeCelsius}.
+  Un voltmètre mesure la tension électrique en \unit{\volt}.
+  Une balance mesure une masse en mesurant le poids en \unit{\kg} ou en \unit{\g}.
+}[4]
 
 \mesure
 Télécharger l'application FizziQ.
@@ -106,7 +104,16 @@ Télécharger l'application FizziQ.
 \question{
   En utilisant deux smartphone et la fonction chronomètre sonore de FizziQ, développer un protocole pour mesurer la vitesse du son dans l'air.
 }{
- bla
-}{10}
+  \begin{protocole}
+    \item On règle le chronomètre pour qu'il se lance au dessus d'un certain volume, \qty{80}{\decibel} par exemple, et qu'il s'arrête dans les même conditions pour deux smartphones.
+    \item On place les deux smartphones à l'origine d'un mètre.
+    \item On clape au dessus des smartphones, les chronomètres se lancent.
+    \item On décale un des smartphone au bout du mètre (distance de \qty{1}{\m}).
+    \item On clape au dessus du premier smartphone resté à l'origine, les chronomètres s'arrêtent avec un décalage.
+  
+    \item La différence entre les deux durées mesurées $\Delta t$ correspond au temps que le son a mis pour parcourir un mètre.
+  \end{protocole}
+  Il suffit donc de diviser cette distance par $\Delta t$ pour trouver la vitesse du son dans l'air.
+}[10]
 
 \mesure Mesurer la vitesse du son dans l'air avec votre protocole.

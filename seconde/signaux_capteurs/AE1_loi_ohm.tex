@@ -49,14 +49,14 @@
 
 %%
 \mesure 
-Réaliser le montage électrique du document~\ref{doc:circuit_loi_ohm}, avec une résistance $R = \ldots\ldots$
+Réaliser le montage électrique du document~\ref{doc:circuit_loi_ohm}, avec une résistance $R = \texteTrou[0.1]{\qty{50}{\ohm}}$
 Faire vérifier le circuit.
 
 \question{
   Combien de n\oe{}uds, mailles et dipôles comporte le circuit du document~\ref{doc:circuit_loi_ohm} ?
 }{
   4 dipôles, 2 noeuds et 2 mailles.
-}{1}
+}[1]
 
 \mesure
 Mesurer la caractéristique de la résistance :
@@ -75,9 +75,8 @@ Mesurer la caractéristique de la résistance :
 
 
 %%
-\begin{doc}{Point maths}
+\begin{doc}{Point maths}{doc:A_points_math}
  Pour tracer la représentation graphique de $U = f(I)$, il faut mettre $U$ en ordonnée et $I$ en abscisse.
-
  $U$ et $I$ sont proportionnels si la représentation graphique de $U = f(I)$ est une droite.
 
   Le coefficient directeur d'une droite $(AB)$ non parallèle à l'axe des ordonnées est égal à $\dfrac{y_B - y_A}{x_B - x_A}$.
@@ -87,25 +86,24 @@ Mesurer la caractéristique de la résistance :
   Tracer $U = f(I_R)$ à partir de vos mesures.
   Les grandeurs $U$ et $I_R$ sont-elles proportionnelles ?
 }{
-
-}{2}
+  Oui, car on a une droite qui passe par l'origine.
+}[2]
 
 \question{
   Mesurer le coefficient de proportionnalité $k$ reliant $U$ et $I_R$, tel que $U = k \times I_R$.
   En comparant $k$ et la valeur de la résistance $R$, que remarquez-vous ?
 }{
-
-}{3}
+  On remarque que $k = R$.
+}[3]
 
 
 %%
 \begin{doc}{Loi d'Ohm}{doc:loi_Ohm}
   \begin{importants}
     La loi d'Ohm relie la tension $U_R$ aux bornes d'un résistor de résistance $R$ et l'intensité du courant $I_R$ qui le traverse.
-
     Son expression est :
     \begin{equation*}
-      \ldots\ldots\ldots
+      \correction{U_R = R \times I_R}
     \end{equation*}
   \end{importants}
   %
@@ -114,6 +112,8 @@ Mesurer la caractéristique de la résistance :
       \draw (0, 0) to [R, l={$R$}, i=$I_R$, v=$U_R$] (3, 0);
     \end{circuitikz}
     
-    {\small Schéma d'une résistance avec la tension à ses bornes et l'intensité qui la traverse}
+    \legende{
+      Schéma d'une résistance avec la tension à ses bornes et l'intensité qui la traverse
+    }
   \end{center}
 \end{doc}
