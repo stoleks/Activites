@@ -12,4 +12,4 @@ jobs:
       with:
         gitlab_url: ${{ secrets.GITLAB_URL }}
         username: ${{ secrets.GITLAB_USERNAME }}
-        gitlab_pat: ${{ secrets.GITLAB_PAT }}
+        gitlab_pat: ${{ secrets.GITLAB_TOKEN }}
