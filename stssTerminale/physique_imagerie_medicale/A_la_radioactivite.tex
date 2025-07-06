@@ -24,7 +24,7 @@
 %%%% docs
 \begin{doc}{Constitution d'un noyau et isotope}{doc:A6_noyaux}
   Un noyau atomique est constitué de neutrons et de protons, qui sont des nucléons.
-  Un élément chimique est noté \isotope{A}{Z}{X}
+  Un élément chimique est noté \isotope{X}{Z}{A}
   \begin{listePoints}
     \item A est le nombre de nucléons (protons + neutrons) ;
     \item Z est le numéro atomique ou le \important{nombre de charges} ;
@@ -66,9 +66,9 @@
 
   \begin{tableau}{|c |c |}
     Type de désintégration & Particule émise \\
-    $\alpha$ (alpha) & Noyau d'hélium \isotope{4}{2}{He} \\
-    $\beta^-$ (beta moins) & Électron \isotope{0}{-1}{e} \\
-    $\beta^+$ (beta plus) & Positron \isotope{0}{+1}{e}
+    $\alpha$ (alpha) & Noyau d'hélium \isotope{He}{2}{4} \\
+    $\beta^-$ (beta moins) & Électron \isotope{e}{-1}{0} \\
+    $\beta^+$ (beta plus) & Positron \isotope{e}{+1}{0}
   \end{tableau}
 
   \attention Vous devez être capable de reconnaître la particule émise au cours d'une désintégration.
@@ -90,16 +90,16 @@
 
   \vspace*{-20pt}
   \begin{equation*}
-    a)\; \isotope{18}{9}{F} \rightarrow \isotope{18}{8}{O} + \isotope{0}{+1}{e} 
+    a)\; \isotope{F}{9}{18} \rightarrow \isotope{O}{8}{18} + \isotope{e}{+1}{0}
     \qq{} 
     %
-    b)\; \isotope{131}{54}{Xe}^* \rightarrow \isotope{131}{54}{Xe} + \gamma 
+    b)\; \isotope{Xe}{54}{131}^* \rightarrow \isotope{Xe}{54}{131} + \gamma 
     \qq{} 
     %
-    c)\; \isotope{14}{6}{C} \rightarrow \isotope{14}{7}{N} + \isotope{0}{-1}{e} 
+    c)\; \isotope{C}{6}{14} \rightarrow \isotope{N}{7}{14} + \isotope{e}{-1}{0} 
     \qq{} 
     %
-    d)\; \isotope{238}{92}{U} \rightarrow \isotope{234}{90}{Th} + \isotope{4}{2}{He} 
+    d)\; \isotope{U}{92}{238} \rightarrow \isotope{Th}{90}{234} + \isotope{4}{2}{He} 
     \qq{}
     %
   \end{equation*}
@@ -133,7 +133,7 @@
   Quelques exemples de périodes radioactives \\[4pt]
   \centering
   \begin{tblr}{colspec = {l c c c}, vlines, hlines, row{1} = {couleurSec-100}}
-    Noyau & \isotope{14}{}{C} & \isotope{131}{}{I} & \isotope{191}{}{Po} \\
+    Noyau & \isotope{C}{}{14} & \isotope{I}{}{131} & \isotope{Po}{}{191} \\
     $T$ & \num{5730} ans & 8 jours & \qty{22}{\ms} 
   \end{tblr}
 \end{doc}

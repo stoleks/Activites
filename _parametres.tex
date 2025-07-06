@@ -15,7 +15,6 @@
 \usepackage{fontawesome} % pour dessiner de jolies icônes
 %% Mise en page
 \usepackage{geometry} % définition des marges
-\usepackage{dashundergaps} % pour avoir générer des textes à compléter
 \usepackage{fancyhdr} % pour faire des en-tête
 \usepackage[most]{tcolorbox} % pour faire de jolie boîtes colorée
 \usepackage{enumitem} % pour pouvoir définir des listes personnalisées
@@ -23,7 +22,6 @@
 \usepackage{multicol} % pour avoir plusieurs colonnes côte-à-côte
 \usepackage{listings} % pour insérer du code
 \usepackage{marginnote} % pour insérer des notes sur le côté
-%% Tableau
 \usepackage{tabularray} % pour avoir de meilleurs tableaux
 %% QR code
 \usepackage{qrcode} % Note : il faut que le qrcode soit sur une ligne séparé...
@@ -79,7 +77,7 @@
   linkcolor=black, % lien type table des matière
   citecolor=black, % citation
   filecolor=black, 
-  urlcolor=couleurPrim!10!black % lien internet
+  urlcolor=couleurTer % lien internet
 }
 
 
@@ -91,15 +89,6 @@
 %%%% Réglage des en-tête
 \renewcommand{\headrulewidth}{0.4pt}
 \setlength{\headheight}{22.50113pt}
-
-
-%%%% Réglage de dashundergaps pour avoir des points et pas de numération
-\dashundergapssetup{
-  gap-numbers = false,
-  gap-format = dot,
-  gap-widen,
-  gap-extend-percent
-}
 
 
 %%%% Réglage de siunit

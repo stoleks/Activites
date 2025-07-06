@@ -7,44 +7,44 @@
 }
 
 %% Rectangle adapté à la taille d'un texte
-\makeatletter % @ désactivé
-\newdimen\@mHauteurBoite
-\newdimen\@mLargeurBoite
-\newdimen\@mProfondeurBoite
-\newdimen\@mTailleBoite
+\makeatletter % @ désactivé, permet de clarifier visuellement où se trouve les variables
+\newdimen\@hauteurBoite
+\newdimen\@largeurBoite
+\newdimen\@profondeurBoite
+\newdimen\@tailleBoite
 \newcommand{\boiteRectangle}[2][]{
-    \settoheight{\@mHauteurBoite}{#2}    % Hauteur du texte
-    \settowidth {\@mLargeurBoite}{#2}    % Largeur du texte
-    \settodepth {\@mProfondeurBoite}{#2} % Profondeur du texte
-    \pgfmathsetlength{\@mTailleBoite}{max(\@mLargeurBoite, (\@mHauteurBoite + \@mProfondeurBoite))}
-    \tikz \node [inner sep=2.5\pgflinewidth, minimum width=\@mTailleBoite, minimum height=2\@mHauteurBoite, #1] {#2};
+    \settoheight{\@hauteurBoite}{#2}    % Hauteur du texte
+    \settowidth {\@largeurBoite}{#2}    % Largeur du texte
+    \settodepth {\@profondeurBoite}{#2} % Profondeur du texte
+    \pgfmathsetlength{\@tailleBoite}{max(\@largeurBoite, (\@hauteurBoite + \@profondeurBoite))}
+    \tikz \node [inner sep=2.5\pgflinewidth, minimum width=\@tailleBoite, minimum height=2\@hauteurBoite, #1] {#2};
 }%
 \makeatother
 %%
 
 %% Trace un rectangle autour du numéro (#2) et un trait sous le titre (#3)
 \makeatletter % @ désactivé
-\newdimen\@mHauteurChiffre
-\newdimen\@mLargeurChiffre
-\newdimen\@mProfondeurChiffre
-\newdimen\@mTailleChiffre
-\newdimen\@mHauteurTexte
-\newdimen\@mLargeurTexte
-\newdimen\@mHauteurMax
+\newdimen\@hauteurChiffre
+\newdimen\@largeurChiffre
+\newdimen\@profondeurChiffre
+\newdimen\@tailleChiffre
+\newdimen\@hauteurTexte
+\newdimen\@largeurTexte
+\newdimen\@hauteurMax
 \newcommand{\boiteTitre}[3][]{
-    \settoheight{\@mHauteurChiffre}{#2}    % Hauteur du numéro
-    \settowidth {\@mLargeurChiffre}{#2}    % Largeur du numéro
-    \settodepth {\@mProfondeurChiffre}{#2} % Profondeur du numéro
-    \settoheight{\@mHauteurTexte}{#3}      % Hauteur du texte
-    \settowidth {\@mLargeurTexte}{#3}      % Largeur du texte
-    \pgfmathsetlength{\@mHauteurMax}{max(\@mHauteurTexte, \@mHauteurChiffre)}
-    \pgfmathsetlength{\@mTailleChiffre}{max(\@mLargeurChiffre, (\@mHauteurChiffre + \@mProfondeurChiffre))}
+    \settoheight{\@hauteurChiffre}{#2}    % Hauteur du numéro
+    \settowidth {\@largeurChiffre}{#2}    % Largeur du numéro
+    \settodepth {\@profondeurChiffre}{#2} % Profondeur du numéro
+    \settoheight{\@hauteurTexte}{#3}      % Hauteur du texte
+    \settowidth {\@largeurTexte}{#3}      % Largeur du texte
+    \pgfmathsetlength{\@hauteurMax}{max(\@hauteurTexte, \@hauteurChiffre)}
+    \pgfmathsetlength{\@tailleChiffre}{max(\@largeurChiffre, (\@hauteurChiffre + \@profondeurChiffre))}
     %% Trace le numéro
-    \tikz \node [inner sep=2.5\pgflinewidth, minimum width=\@mTailleChiffre, minimum height=2\@mHauteurMax, rounded corners = 2pt, fill = #1] {#2};
+    \tikz \node [inner sep=2.5\pgflinewidth, minimum width=\@tailleChiffre, minimum height=2\@hauteurMax, rounded corners = 2pt, fill = #1] {#2};
     %% Trace le titre
-    \hspace*{-12pt}\noindent \tikz \node [minimum width = \@mLargeurTexte, minimum height = \@mHauteurMax] {#3 };
+    \hspace*{-12pt}\noindent \tikz \node [minimum width = \@largeurTexte, minimum height = \@hauteurMax] {#3 };
     %% Trace la boite de fin
-    \hspace*{-12pt}\noindent \tikz \fill [y = 2\@mHauteurMax, rounded corners = 2pt, fill = #1] 
+    \hspace*{-12pt}\noindent \tikz \fill [y = 2\@hauteurMax, rounded corners = 2pt, fill = #1] 
       (0, 0) -- (1, 0) -- (1, 0.3) -- (0.2, 1) -- (0, 1);
 }%
 \makeatother
@@ -361,10 +361,10 @@
   %% Tracé du numéro de section
   \boiteRectangle[fill = couleurPrim, rounded corners = 2pt]{
     \important[white]{\large \arabic{subsubsection} -- }
-  }
-  \hspace*{-20pt}
+  }%
+  \hspace*{-20pt}%
   %% Tracé du titre de la section
-  \boiteRectangle{\important[black]{\large #1 }}
+  \boiteRectangle{\important[black]{\large #1 }}%
   \vspace*{1pt}
 }
 \newcommand{\titreSousSection}[1]{
@@ -405,7 +405,7 @@
 }
 \NewDocumentCommand{\lignePointillee}{o}{
   \IfValueTF{#1}{
-    \makebox[#1\linewidth]{\dotfill}
+    \makebox[#1]{\dotfill}
   }{
     \phantom{b}\hspace*{-12pt} \dotfill
   }
@@ -461,7 +461,6 @@
 \setboolean{modeProf}{false}
 \newcommand{\modeCorrection}{
   \setboolean{modeProf}{true}
-  \TeacherModeOn
 }
 
 %% Affiche le numéro d'une question avec choix du compteur et de l'espacement
@@ -501,19 +500,16 @@
 \NewDocumentCommand{\lignesDeReponse}{s m}{
   % Trace la fin de la ligne, ou pas
   \IfBooleanTF{#1}{ % Version *
-    \espaceReponse \dotfill\phantom{bb}
-    \ifnum #2 < 1
-      \newline
-    \fi
-  }{}
+    \espaceReponse \dotfill%
+  }{}%
   % Trace le bon nombre de lignes
-  \setcounter{ligneNum}{-1}
-  \loop
-    \stepcounter{ligneNum}
-    \ifnum \value{ligneNum} < #2
-      \\[8pt] \lignePointillee
-  \repeat
-  \vspace*{1pt}
+  \setcounter{ligneNum}{-1}%
+  \loop%
+    \stepcounter{ligneNum}%
+    \ifnum \value{ligneNum} < #2%
+      \\[8pt]\lignePointillee%
+  \repeat%
+  \vspace*{1pt}%
 }
 
 
@@ -598,52 +594,47 @@
   \setcounter{page}{1}
   \pasCorrection{
     \vspace*{-24pt}
-    Nom : \lignePointillee[0.3]
-    Prénom : \lignePointillee[0.3]
+    Nom : \lignePointillee[0.3\linewith]
+    Prénom : \lignePointillee[0.3\linewidth]
     Classe : \dotfill
   }
 }
 \newcommand{\nomPrenom}{
   \pasCorrection{
     \vspace*{-24pt}
-    Nom : \lignePointillee[0.3]
-    Prénom : \lignePointillee[0.3]
+    Nom : \lignePointillee[0.3\linewidth]
+    Prénom : \lignePointillee[0.3\linewidth]
   }
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % texte à trou avec option pour régler la largeur
-\NewDocumentCommand{\texteTrou}{s o +m}{
-  \ifthenelse {\boolean{modeProf}}{ % prof
-    \IfBooleanTF{#1}
-    {#3}
-    {\important[black]{#3}}
-  }{ % élève
-    \IfValueTF{#2}{ % Si la largeur est réglée, on utilise des lignes
-      \espaceReponse
-      \lignePointillee[#2]
-      \hspace*{-12pt}
-    }{ % Sinon on utilise dash undergap pour la version automatique
-      \espaceReponse \hspace*{0.1pt}
-      \gap{#3}
+\NewDocumentCommand{\texteTrou}{s o d() +m}{%
+  \ifthenelse {\boolean{modeProf}}{% prof
+    \IfBooleanTF{#1}{\important[black]{#4}}{#4}%
+  }{% élève, version avec plusieurs lignes
+    \IfValueTF{#3}{% Si le nombre de lignes est réglée, on insert des lignes
+      \lignesDeReponse*{#3}%
+    }{% élève, version sur une ligne
+      \IfValueTF{#2}{% Si la largeur est réglée, on utilise des lignes
+        \espaceReponse%
+        \lignePointillee[#2\linewidth]%
+        \hspace*{-12pt}%
+      }{% Sinon on calcule la largeur du texte, avec un peu d'espace supplémentaire
+        \newdimen\largeurTexte%
+        \settowidth{\largeurTexte}{a #4 a}%
+        \espaceReponse%
+        \lignePointillee[\largeurTexte]%
+        \hspace*{-12pt}%
+      }
     }
   }
 }
 
-% texte à trou avec option pour laisser plusieurs lignes
-\NewDocumentCommand{\texteTrouLignes}{O{0} +m}{
-  \ifthenelse {\boolean{modeProf}} {% prof
-    \important[black]{#2}
-  }{% élève
-    \lignesDeReponse*{#1}
-  }
-}
-
 % espace vertical pour la réponse
-\newcommand{\espaceReponse}{
-  \phantom{$\dfrac{1}{1}$} % espace vertical
-  \hspace*{-38pt} \phantom{b} % ajuste l'espace horizontal
+\newcommand{\espaceReponse}{%
+  \vphantom{\Huge{Éq}}% espace vertical
 }
 
 
@@ -858,12 +849,12 @@
   \IfNoValueTF{#1} {
     \begin{wrapfigure}{r}{0.1\linewidth}
       \vspace*{#3}
-      \qrcode[height = #4]{#2}
+      \qrcode[height = #4, color = couleurPrim]{#2}
     \end{wrapfigure}
   }{
     \begin{wrapfigure}[#1]{r}{0.1\linewidth}
       \vspace*{#3}
-      \qrcode[height = #4]{#2}
+      \qrcode[height = #4, color = couleurPrim]{#2}
     \end{wrapfigure}
   }
 }
@@ -1006,38 +997,29 @@
 
 
 %%%% atome ou isotope 
-%#1: Z, #2: A, #3: X
-\makeatletter
+%#1: X, #2: Z, #3: A
+\makeatletter% Permet de clarifier visuellement où se trouve les variables
+\newdimen\@dimAtomNum
+\newdimen\@dimMassNum
+\newdimen\@dimExposant
 \newcommand{\isotope}[3]{%
-   \settowidth\@tempdimb{\ensuremath{\scriptstyle#1}}%
-   \settowidth\@tempdimc{\ensuremath{\scriptstyle#2}}%
-   \ifnum\@tempdimb>\@tempdimc%
-       \setlength{\@tempdima}{\@tempdimb}%
-   \else%
-       \setlength{\@tempdima}{\@tempdimc}%
-   \fi%
-  \begingroup%
-  \ensuremath{
-    ^{\makebox[\@tempdima][r]{\ensuremath{\scriptstyle#1}}}
-    _{\makebox[\@tempdima][r]{\ensuremath{\scriptstyle#2}}}
-    \chemfig{#3}
+  \settowidth\@dimAtomNum{\ensuremath{\scriptstyle#2}}%
+  \settowidth\@dimMassNum{\ensuremath{\scriptstyle#3}}%
+  \pgfmathsetlength{\@dimExposant}{max(\@dimAtomNum, \@dimMassNum)}%
+  \ensuremath{%
+    _{\makebox[\@dimExposant][r]{\ensuremath{\scriptstyle#2}}}%
+    ^{\makebox[\@dimExposant][r]{\ensuremath{\scriptstyle#3}}}%
+    \chemfig{#1}%
   }%
-  \endgroup%
 }%
 \makeatother
 
 %% element chimique dans le tableau périodique
-\makeatletter
 \newcommand{\element}[2]{%
-   \settowidth\@tempdimb{\ensuremath{\footnotesize #1}}%
-  \begingroup%
-  \ensuremath{
-    _{\makebox[\@tempdimb][r]{\ensuremath{\small #1}}} 
-    \chemfig[atom style={scale=1.3}]{#2}
+  \ensuremath{%
+    _{\ensuremath{#2}} \chemfig[atom style={scale=1.3}]{#1}
   }%
-  \endgroup%
 }%
-\makeatother
 
 %% siècle
 \newcommand{\siecle}[1]{
