@@ -3,13 +3,26 @@
 %%%% paramètres généraux et commandes prédéfinies
 \input{_parametres}
 
-\newtcblisting{latexBox}{%
-  colback=couleurPrim-100,colframe=couleurPrim-150, % couleur
-  listing only, % affiche seulement le code  
-  listing style = tcblatex, % code LaTeX
+%% Issus du très bon package ProfLycée de Cedric Pierquet https://ctan.org/pkg/proflycee
+\NewTCBListing{boiteCodeTex}{ O{CouleurPrim} m }{%
+  enhanced, width=0.93\linewidth,
+  flush right, boxrule=0.75pt, colframe=#1!85!black,%
+  sharp corners, top=0mm, bottom=0mm, left=0.4em, right=5mm,%
+  before skip=\baselineskip, after skip=\baselineskip,%
+  colback=white,
+  fontupper=\footnotesize, fontlower=\footnotesize,%
+  watermark text={\faCode}, watermark opacity=0.25,watermark zoom=0.50,%
+  title={{\scriptsize\faCode} Code \LaTeX},
+  lefttitle=0.4em,
+  fonttitle=\bfseries\footnotesize\sffamily,colbacktitle=darkgray!50!#1,%
+  StyleCodeTex,
+  #2,%
+  % listing engine=minted,minted style=colorful,minted language=tex,
+  % minted options={tabsize=4,fontsize=\footnotesize,autogobble,breaklines=true},
+  % overlay={
+  %   \draw[#1!85!black] ($(frame.north west) + (-0.035\linewidth,-0.025\linewidth)$) node[scale=1.66] {\faCode} ;
+  % }
 }
-
-\lstset{language=TeX,keywordstyle={\color{couleurPrim-700}}}
 
 %%%% doc
 \begin{document}
@@ -62,7 +75,7 @@
   \section{Lipides}
   \subsection{Acide gras}
   
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\palmitique}
 \chemfig{!\oleique}
 \chemfig{!\linoleique}
@@ -70,7 +83,7 @@
 \chemfig{!\arachidonique}
 \chemfig{!\eicosaPentaenoique}
 \chemfig{!\docosaHexanoique}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\palmitique} \\[8pt]
   \chemfig{!\oleique}
   \chemfig{!\linolenique} \\[8pt]
@@ -79,24 +92,24 @@
   \chemfig{!\eicosaPentaenoique}
   \chemfig{!\docosaHexanoique}
 
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\steraiqueSemiDev}
 \chemfig{!\oleiqueSemiDev}
 \chemfig{!\oleateSemiDev} \qq{}
 \chemfig{!\caproiqueSemiDev}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\steraiqueSemiDev}
   \chemfig{!\oleiqueSemiDev}
   \chemfig{!\oleateSemiDev}
   \chemfig{!\caproiqueSemiDev}
   
   \subsection{Pour les chaînes dans les triglycérides}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{[:-30] !\tripalmitique}
 \chemfig{[:-30] !\trioleique}
 \chemfig{[:-30] !\trilinoleique}
 \chemfig{[:-30] !\trilinolenique}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{[:-30] !\tripalmitique}
   \chemfig{[:-30] !\trioleique}
 
@@ -106,49 +119,49 @@
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Triglycérides}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\palmitine}
 \chemfig[atom sep = 1.8em]{!\oleine}
 \chemfig[atom sep = 1.8em]{!\arachidonine}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\palmitine}
   
   \chemfig[atom sep = 1.8em]{!\oleine}
   
   \chemfig[atom sep = 1.8em]{!\arachidonine}
   
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\oleineSemiDev}
 \chemfig{!\palmitineSemiDev}
 \chemfig{!\caproineSemiDev}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\oleineSemiDev} \qq{}
   \chemfig{!\palmitineSemiDev} \\[8pt]
   \chemfig{!\caproineSemiDev}
 
   \subsection{Phospholipide}  
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\phosphatidylcholine}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\phosphatidylcholine}
   
   \subsection{glycérol}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\glycerol}
 \chemfig{!\glycerolSemiDev}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{[:30] !\glycerol} \qq{}
   \chemfig{!\glycerolSemiDev}
 
   \subsection{Sous-molécules utiles}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{[:60] !\triester{A}{B}{C}}
 \chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
 \chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
   
 \chemfig[atom sep = 15pt]{!\triester {!\trioleique} {!\trilinolenique} {!\tricaproique}}
 \chemfig[atom sep = 15pt]{!\triesterSat {!\lb !\trioleique} {!\tripalmitique} !\lb !\trilaurique}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{[:60] !\triester{A}{B}{C}}
   \chemfig{!\triesterSat{A}{B}C}
   \chemfig{A-[:30] !\glycero{!\lh B} !\lb C }
@@ -160,38 +173,38 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Stérols}  
   
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\cholesterol}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\cholesterol}
  
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Glucides}
   \subsection{Amidon}
-  \begin{latexBox}\chemfig{!\amylopectineHaw}\end{latexBox}
+  \begin{boiteCodeTex}{}\chemfig{!\amylopectineHaw}\end{boiteCodeTex}
   \chemfig{!\amylopectineHaw}
   
   \subsection{glucose}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\glucoseHaw}
 \chemfig{!\glucoseCycle}
 \chemfig{[:-90] !\glucose}
 \chemfig{[:-90] !\glucoseSemiDev}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\glucoseHaw}
   \chemfig{!\glucoseCycle}
   \chemfig{[:-90] !\glucose}
   \chemfig{[:-90] !\glucoseSemiDev}
   
   \subsection{fructose}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\fructoseHaw}
 \chemfig{!\fructofuranoseHaw}
 \chemfig{!\fructoseCycle}
 \chemfig{[:-90] !\fructose}
 \chemfig{[:-90] !\fructoseSemiDev}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\fructoseHaw}
   \chemfig{!\fructofuranoseHaw}
   \chemfig{!\fructoseCycle}
@@ -199,25 +212,25 @@
   \chemfig{[:-90] !\fructoseSemiDev}
 
   \subsection{Galactose et saccharose}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\galactoseHaw}
 \chemfig{!\saccharoseHaw}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\galactoseHaw}
   \chemfig{!\saccharoseHaw}
 
   \subsection{Ribose et desoxyribose}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{A !\ribose B}
 \chemfig{A !\desoxyribose B}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{A !\ribose B}
   \chemfig{A !\desoxyribose B}
 
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{A !\riboseHaw B}
 \chemfig{A !\desoxyriboseHaw B}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{A !\riboseHaw B}
   \chemfig{A !\desoxyriboseHaw B}
   
@@ -225,82 +238,82 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Acides alpha aminés}
   \subsection{Formules topologiques}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\arginine}
 \chemfig{!\histidine}
 \chemfig{!\lysine}
 \chemfig{!\aspartique}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\arginine}
   \chemfig{!\histidine}
   \chemfig{!\lysine}
   \chemfig{!\aspartique}
   
-    \begin{latexBox}
+    \begin{boiteCodeTex}{}
 \chemfig{!\glutamique}
 \chemfig{!\serine}
 \chemfig{!\threonine}
 \chemfig{!\asparagine}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\glutamique}
   \chemfig{!\serine}
   \chemfig{!\threonine}
   \chemfig{!\asparagine}
   
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\glutamine}
 \chemfig{!\cysteine}
 \chemfig{!\selenocysteine}
 \chemfig{!\glycine}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\glutamine}
   \chemfig{!\cysteine}
   \chemfig{!\selenocysteine}
   \chemfig{!\glycine}
   
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\proline}
 \chemfig{!\alanine}
 \chemfig{!\valine}
 \chemfig{!\isoleucine}
 \chemfig{!\leucine}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\proline}
   \chemfig{!\alanine}
   \chemfig{!\valine}
   \chemfig{!\isoleucine}
   \chemfig{!\leucine}
   
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\methionine}
 \chemfig{!\phenylalanine}
 \chemfig{!\tyrosine}
 \chemfig{!\tryptophane}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\methionine}
   \chemfig{!\phenylalanine}
   \chemfig{!\tyrosine}
   \chemfig{!\tryptophane}
   
   \subsection{Formules semi-développées}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\alanineSemiDev}
 \chemfig{!\asparagineSemiDev}
 \chemfig{!\glycineSemiDev}
 \chemfig{!\cysteineSemiDev}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\alanineSemiDev} \qq{}
   \chemfig{!\asparagineSemiDev} \qq{}
   \chemfig{!\glycineSemiDev} \\[8pt]
   \chemfig{!\cysteineSemiDev} \\[8pt]
   
   \subsection{Représentation de Fischer}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\alanineL}
 \chemfig{!\alanineD}
 \chemfig{!\valineL}
 \chemfig{!\valineD}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\alanineL} \quad
   \chemfig{!\alanineD} \quad
   \chemfig{!\valineL} \quad
@@ -308,39 +321,39 @@
   
 
   \subsection{Acide alpha aminés pour les polypeptides}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{
   [:-30] H_2N !\alanineH N !\glycineB N !\cysteineH N !\isoleucineB N !\valineH OH
 }
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{[:-30] H_2N !\alanineH N !\glycineB N !\cysteineH N !\isoleucineB N !\valineH OH}
 
   \subsection{Heme}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\hemeB}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\hemeB}
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Hormones}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\creatinine}
 \chemfig{!\DOPA}
 \chemfig{!\DOPAH}
 \chemfig{!\prostaglandine}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\creatinine}
   \chemfig{!\DOPA}
   \chemfig{!\DOPAH} \\[8pt]
   \chemfig{!\prostaglandine}
 
   \subsection{Corticoïdes et minéralocorticoïdes}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\cortisol}
 \chemfig{!\corticosterone}
 \chemfig{!\aldosterone}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\cortisol}
   \chemfig{!\corticosterone} \\[8pt]
 
@@ -348,50 +361,50 @@
   \chemfig{!\aldosterone}
 
   \subsection{Oestrogènes}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\estrone}
 \chemfig{!\estriol}
 \chemfig{!\estradiol}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\estrone}
   \chemfig{!\estriol} \\[8pt]
 
   \chemfig{!\estradiol}
 
   \subsection{Androgènes}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\testosterone}
 \chemfig{!\dihydrotestosterone}
 \chemfig{!\androstenedione}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\testosterone}
   \chemfig{!\dihydrotestosterone}
   \chemfig{!\androstenedione}
 
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\DHEA}
 \chemfig{!\DHEAS}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\DHEA}
   \chemfig{!\DHEAS}
 
   \subsection{Progestatif}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\progesterone}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\progesterone}
 
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Nucléotides}
   \subsection{Bases nucléiques}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{A- !\adenine}
 \chemfig{A- !\cytosine}
 \chemfig{A- !\guanine} 
 \chemfig{A- !\thymine} 
 \chemfig{A- !\uracile} 
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{A- !\adenine} \hspace*{-20pt}
   \chemfig{A- !\cytosine}
   \chemfig{A- !\guanine} \hspace*{-20pt}
@@ -399,26 +412,26 @@
   \chemfig{A- !\uracile} 
 
   \subsection{Ribonucléosides}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\adenosine}
 \chemfig{!\cytidine} 
 \chemfig{!\guanosine}
 \chemfig{!\thymidine}
 \chemfig{!\uridine}  
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\adenosine}
   \chemfig{!\cytidine} 
   \chemfig{!\guanosine} \\[8pt]
   \chemfig{!\thymidine}
   \chemfig{!\uridine}  
 
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\adenosineHaw}
 \chemfig{!\cytidineHaw} 
 \chemfig{!\guanosineHaw}
 \chemfig{!\thymidineHaw}
 \chemfig{!\uridineHaw}  
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\adenosineHaw}
   \chemfig{!\cytidineHaw} 
   \chemfig{!\guanosineHaw} \\[8pt]
@@ -426,26 +439,26 @@
   \chemfig{!\uridineHaw}  
   
   \subsection{Desoxyribonucléosides}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\desoxyAdenosine}
 \chemfig{!\desoxyCytidine} 
 \chemfig{!\desoxyGuanosine}
 \chemfig{!\desoxyThymidine}
 \chemfig{!\desoxyUridine}  
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\desoxyAdenosine}
   \chemfig{!\desoxyCytidine} 
   \chemfig{!\desoxyGuanosine} \\[8pt]
   \chemfig{!\desoxyThymidine}
   \chemfig{!\desoxyUridine}  
 
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\desoxyAdenosineHaw}
 \chemfig{!\desoxyCytidineHaw} 
 \chemfig{!\desoxyGuanosineHaw}
 \chemfig{!\desoxyThymidineHaw}
 \chemfig{!\desoxyUridineHaw}  
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\desoxyAdenosineHaw}
   \chemfig{!\desoxyCytidineHaw} 
   \chemfig{!\desoxyGuanosineHaw} \\[8pt]
@@ -453,27 +466,27 @@
   \chemfig{!\desoxyUridineHaw}  
 
   \subsection{Adénosine triphosphate et adénoside diphosphate}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\ADP}
 \chemfig{!\ATP}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\ADP}
   \chemfig{!\ATP}
 
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\ADPHaw}
 \chemfig{!\ATPHaw}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\ADPHaw}
   \chemfig{!\ATPHaw}
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Produits de contraste}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\ionChelate}
 \chemfig{!\chelateAlcool}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\ionChelate}
   \chemfig{!\chelateAlcool}
   
@@ -481,7 +494,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Vitamines}
   \subsection{Vitamines B}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\thiamine}           % B1
 \chemfig{!\riboflavine}        % B2
 \chemfig{!\nicotinamide}       % B3
@@ -491,7 +504,7 @@
 \chemfig{!\biotine}            % B8
 \chemfig{!\acideFolique}       % B9
 \chemfig{!\cyanocobalamine}    % B12
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\thiamine}
   \chemfig{!\riboflavine}
   
@@ -507,30 +520,30 @@
   \chemfig{!\cyanocobalamine}
   
   \subsection{Vitamine C}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\acideAscorbique} % C
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\acideAscorbique} \qq{}
   
   \subsection{Vitamines A, D, E, $K_1$ et $K_2$}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\retinol}         % A
 \chemfig{!\cholecarciferol} % D
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\retinol} \\[8pt]
   \chemfig{!\cholecarciferol}
   
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\tocopherol}  % E
 \chemfig{!\tocotrienol} % E
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\tocopherol} \\[8pt]
   \chemfig{!\tocotrienol}
   
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\phylloquinone} % K1
 \chemfig{!\menatetrenone} % K2
-  \end{latexBox}
+  \end{boiteCodeTex}
 \chemfig{!\phylloquinone} \\[8pt]
 \chemfig{!\menatetrenone}
   
@@ -538,57 +551,57 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Médicaments et produits de synthèse}
   \subsection{Aspirine}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\aspirine}
 \chemfig{!\aspirineSemiDev}
 \chemfig{!\acideSalicylique}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\aspirineSemiDev}
   \chemfig{!\aspirine} \qq{}
   \chemfig{!\acideSalicylique}
   
   \subsection{Paracétamol}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\paracetamol}
 \chemfig{!\paracetamolSemiDev}
 \chemfig{!\paracetamolDev}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\paracetamol}
   \chemfig{!\paracetamolSemiDev}
   \chemfig{!\paracetamolDev}
 
   \subsection{Aspartame}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\aspartame}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\aspartame}
   
   \subsection{Divers}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\bisphenolA}
 \chemfig{!\bisphenolASemiDev}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\bisphenolA} \qq{}
   \chemfig{!\bisphenolASemiDev}
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Molécules odorantes}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\geraniol}
 \chemfig{!\geraniolSemiDev}
 \chemfig{!\vanilline}
 \chemfig{!\ethylvanilline}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\geraniol} \quad
   \chemfig{!\geraniolSemiDev} \quad
   \chemfig{!\vanilline} \quad
   \chemfig{!\ethylvanilline}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\oxyphenylone}
 \chemfig{!\limonene}
 \chemfig{!\limoneneSemiDev}
 \chemfig{!\acetateIsoamyle}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\oxyphenylone} \quad
   \chemfig{!\limonene} \quad
   \chemfig{!\limoneneSemiDev} \quad
@@ -596,10 +609,10 @@
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Drogues}
-  \begin{latexBox}
+  \begin{boiteCodeTex}{}
 \chemfig{!\THC}
 \chemfig{!\cocaineHaw}
-  \end{latexBox}
+  \end{boiteCodeTex}
   \chemfig{!\THC} \qq{}
   \chemfig{!\cocaineHaw}
   

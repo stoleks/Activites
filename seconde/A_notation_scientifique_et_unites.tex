@@ -5,12 +5,14 @@
 \vspace*{-36pt}
 \titreActivite{Notation scientifique et unités}
 
+% \vspace*{-10pt}
 % \begin{objectifs}
-%   \item Revoir les puissances de 10 et la notation scientifique
+%   \item Revoir les règles de calcul associées aux puissances de 10,
+%   voir ou revoir la notation scientifique.
 % \end{objectifs}
 
 %%%%
-\vspace*{-20pt}
+\vspace*{-10pt}
 \titreSection{Rappels sur les puissance de 10}
 
 %%
@@ -20,10 +22,10 @@
   Pour lire les puissances de 10, il suffit de suivre deux règles simple
   \begin{importants}
     \pointCyan Écrire le nombre $10^a$ (avec $a = 0, 1, 2, 3, \ldots$), revient à écrire ``$1$'' suivi de $a = 0, 1, 2, 3, \ldots$ zéros. \\
-    \exemple \num{e3} = \texteTrou[0.2]{\num{1000}}
+    \exemple \num{e3} =\texteTrou[0.2]{\num{1000}}
 
     \pointCyan Écrire le nombre $10^{-a}$ (avec $a = 1, 2, 3, \ldots$), revient à écrire ``$0,$'' suivi de $a - 1 = 0, 1, 2, \ldots$ zéros et d'un $1$. \\
-    \exemple \num{e-2} = \texteTrou[0.2]{\num{0,01}}
+    \exemple \num{e-2} =\texteTrou[0.2]{\num{0,01}}
   \end{importants}
 \end{doc}
 
@@ -62,22 +64,23 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 \pasCorrection{\vspace*{-4pt}}
 \begin{listePoints}[2]
   \setlength\itemsep{-4pt}
-  \item $10^2 \times 10^1 =$ \texteTrou(0){$10^{2 + 1} = 10^3 = 1000$}
-  \item $10^4 \times 10^{-3} =$ \texteTrou(0){$10^{4 - 3} = 10^1 = 10$}
-  \item $10^{-2} \times 10^{-3} =$ \texteTrou(0){$10^{-2 - 3} = 10^{-5} = 0,00001$}
-  \item $10^{-1} \times 10^{-5} \times 10^4 =$ \texteTrou(0){$10^{-1 - 5 + 4} = 10^{-2} = 0,01$}
+  \item $\num{e2} \times \num{e1}  =$ \texteTrou(0){$10^{2 + 1} = 10^3 = 1000$}
+  \item $\num{e4} \times \num{e-3} =$ \texteTrou(0){$10^{4 - 3} = 10^1 = 10$}
+  \item $\num{e-2}\times \num{e-3} =$ \texteTrou(0){$10^{-2 -3} = 10^{-5} = 0,00001$}
+  \item $\num{e-1}\times \num{e-5}\times \num{e4}=$ \texteTrou(0){$10^{-1 -5 +4} = 10^{-2} = 0,01$}
 \end{listePoints}
 
 
 %%
 \pasCorrection{\vspace*{-18pt}}
 \begin{doc}{Moyen mnémotechnique}{doc:A1_decalage_virgule}
+  \vspace*{-8pt}
   \begin{listePoints}
-    \setlength\itemsep{-4pt}
+    \setlength\itemsep{-8pt}
     \item Si je décale la virgule de 1 rang vers la gauche, alors
-    \texteTrou(0){je réduis} de 1 unité la puissance de dix. \texteTrou(0){J'ai divisé par 10.}
+    \texteTrou[0.2]{je réduis} de 1 unité la puissance de dix. \texteTrou(0){J'ai divisé par 10.}
     \item Si je décale la virgule de 1 rang vers la droite, alors
-    \texteTrou(0){j'augmente} de 1 unité la puissance de dix. \texteTrou(0){J'ai multiplié par 10.}
+    \texteTrou[0.2]{j'augmente} de 1 unité la puissance de dix. \texteTrou(0){J'ai multiplié par 10.}
   \end{listePoints}
 \end{doc}
 

@@ -590,21 +590,18 @@
 }
 
 %%%% Espace pour indiquer nom, prénom et classe
+\newcommand{\implNomPrenom}{
+  Nom : \lignePointillee[0.3\linewidth]
+  Prénom : \lignePointillee[0.3\linewidth]
+}
 \newcommand{\nomPrenomClasse}{
   \setcounter{page}{1}
-  \pasCorrection{
-    \vspace*{-24pt}
-    Nom : \lignePointillee[0.3\linewith]
-    Prénom : \lignePointillee[0.3\linewidth]
-    Classe : \dotfill
+  \pasCorrection{ \vspace*{-24pt}
+    \implNomPrenom Classe : \dotfill
   }
 }
 \newcommand{\nomPrenom}{
-  \pasCorrection{
-    \vspace*{-24pt}
-    Nom : \lignePointillee[0.3\linewidth]
-    Prénom : \lignePointillee[0.3\linewidth]
-  }
+  \pasCorrection{ \vspace*{-24pt} \implNomPrenom }
 }
 
 
