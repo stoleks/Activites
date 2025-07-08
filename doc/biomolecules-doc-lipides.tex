@@ -1,0 +1,79 @@
+\section{Lipides}
+
+%%
+\subsection{Acide gras}
+  
+\begin{boiteCodeTex}{}
+  \chemfig{!\palmitique} \\[8pt]
+  \chemfig{!\linoleique}
+  \chemfig{!\linolenique} \\[8pt]
+  \chemfig{!\oleique}
+  \chemfig{!\arachidonique} \\[8pt]
+  \chemfig{!\eicosaPentaenoique}
+  \chemfig{!\docosaHexanoique}
+\end{boiteCodeTex}
+
+\begin{boiteCodeTex}{}
+  \chemfig{!\steraiqueSemiDev}
+  \chemfig{!\oleiqueSemiDev}
+  \chemfig{!\oleateSemiDev}
+  \chemfig{!\caproiqueSemiDev}
+\end{boiteCodeTex}
+  
+%%  
+\subsection{Triglycérides et phospholipides}
+
+\begin{boiteCodeTex}{}
+  \chemfig{!\palmitine} \\
+  \chemfig[atom sep = 14pt]{[:60]!\oleine}
+  \chemfig[atom sep = 14pt]{!\arachidonine}
+\end{boiteCodeTex}
+  
+\begin{boiteCodeTex}{}
+  \chemfig{!\oleineSemiDev}
+  \chemfig{!\palmitineSemiDev}
+  \chemfig{!\caproineSemiDev}
+\end{boiteCodeTex}
+
+\begin{boiteCodeTex}{}
+  \chemfig{!\phosphatidylcholine}
+\end{boiteCodeTex}
+
+%%
+\subsection{glycérol et stérols}
+
+\begin{boiteCodeTex}{}
+  \chemfig{!\glycerol} \qq{}
+  \chemfig{!\glycerolSemiDev}
+\end{boiteCodeTex}
+  
+\begin{boiteCodeTex}{}
+  \chemfig{!\cholesterol}
+\end{boiteCodeTex}
+
+%%
+\subsection{Sous-molécules utiles}
+  
+\subsubsection{Pour les chaînes dans les triglycérides}
+
+\begin{boiteCodeTex}{}
+  \chemfig{[:-30] !\tricaproique}
+  \chemfig{[:-30] !\trilaurique} \\
+  \chemfig{[:-30] !\tripalmitique}
+  \chemfig{[:-30] !\trioleique} \\
+  \chemfig{[:-30] !\trilinoleique}
+  \chemfig{[:-30] !\trilinolenique} \\
+  \chemfig{[:-30] !\trieicosapenta}
+  \chemfig{[:-30] !\triarachidonique}
+  \chemfig{[:-30] !\tridocosahexa}
+\end{boiteCodeTex}
+  
+\subsubsection{Pour les triglycérides}
+
+\begin{boiteCodeTex}{}
+  \chemfig[atom sep = 18pt]{A-[:30] !\glycero{!\lh B} !\lb C }
+  \chemfig[atom sep = 18pt]{[:60] !\triester{A}{B}{C}}
+  \chemfig[atom sep = 18pt]{!\triesterSat{A}{B}C} \\
+  \chemfig[atom sep = 14pt]{!\triester {!\trioleique} {!\tricaproique} {!\trilinolenique}}
+  \chemfig[atom sep = 14pt]{!\triesterSat {!\lb !\trioleique} {!\tripalmitique} !\lb !\trilaurique}
+\end{boiteCodeTex}
