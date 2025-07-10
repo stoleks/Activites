@@ -20,7 +20,7 @@
 \begin{multicols}{2}
   \setcounter{section}{0}
   \setcounter{activiteNum}{2}
-  \begin{activite}{Ordres de grandeur}{ordre_grandeur}
+  \begin{activite}{titre = Ordres de grandeur, label = ordre_grandeur}
     \begin{objectifs}  
       \item Revoir les puissances de 10.
       \item Apprendre à raisonner en ordres de grandeur.
@@ -30,7 +30,7 @@
   \vspace*{20pt}
   \setcounter{section}{5}
   \setcounter{activiteNum}{0}
-  \begin{TP}{Fabriquer un atome}[1 h 30]{atome}
+  \begin{TP}{titre = Fabriquer un atome, duree = 1 h 30, label = atome}
     \begin{objectifs}
       \item Étudier la composition d'un atome.
       \item Comprendre que le nombre de protons définit un élément chimique.
@@ -40,7 +40,7 @@
   \end{TP}
 
   \medskip
-  \begin{activite}{Cortège électronique}[1 h 30]{cortege_electrons}
+  \begin{activite}{titre = Cortège électronique, duree = 1 h 30, label = cortege_electrons}
     \begin{prerequis}
       \item Connaître la structure d'un atome.
       \item Savoir qu'un atome a autant d'électrons qu'il a de protons.
@@ -52,7 +52,7 @@
     \end{objectifs}
   \end{activite}
   
-  \begin{TP}{Le modèle de l'atome}{modele_atome}
+  \begin{TP}{titre = Le modèle de l'atome, label = modele_atome}
     \begin{objectifs}
         \item Découvrir la méthode scientifique.
         \item Utiliser la méthode scientifique pour étudier l'évolution du modèle de l'atome.
@@ -60,7 +60,7 @@
   \end{TP}
   
   \medskip
-  \begin{activite}{Taille d'un atome}{taille_atome}
+  \begin{activite}{titre = Taille d'un atome, label = taille_atome}
     \begin{prerequis}
       \item Calcul avec les puissances de 10.
       \item Utilisation des ordres de grandeur.
@@ -72,7 +72,7 @@
   \end{activite}
 
   \medskip
-  \begin{TP}{Le Tableau périodique}{tableau_periodique}
+  \begin{TP}{titre = Le Tableau périodique, label = tableau_periodique}
     \begin{prerequis}
       \item Connaître la structure électronique.
       \item Savoir remplir les couches et sous-couches électronique d'un atome.
@@ -93,7 +93,7 @@
   \draw[->] (atome) -- (cortege_electrons);
   \draw[->, rounded corners=5mm] 
     (cortege_electrons) 
-    to (6, -1.3) to (10, -1.3) 
+    to (6, -1.5) to (10, -1.5) 
     to (tableau_periodique);
 \end{tikzpicture}
 

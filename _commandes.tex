@@ -1,46 +1,46 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% rectangle coloré
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ rectangle coloré
 \NewDocumentCommand{\rectangle}{O{couleurPrim} m m}{%
   \shorthandoff{;}
   \tikz \node (rect) [draw, fill, color=#1, minimum width=#2, minimum height=#3] {};
   \shorthandon{;}
 }
 
-%% Rectangle adapté à la taille d'un texte
+%------ Rectangle adapté à la taille d'un texte
 \makeatletter % @ désactivé, permet de clarifier visuellement où se trouvent les variables
-\newdimen\@hauteurBoite
-\newdimen\@largeurBoite
-\newdimen\@profondeurBoite
-\newdimen\@tailleBoite
+\newdimen\hauteurBoite%
+\newdimen\largeurBoite%
+\newdimen\profondeurBoite%
+\newdimen\tailleBoite%
 \newcommand{\boiteRectangle}[2][]{%
-  \settoheight{\@hauteurBoite}{ #2 }    % Hauteur du texte
-  \settowidth {\@largeurBoite}{ #2 }    % Largeur du texte
-  \settodepth {\@profondeurBoite}{ #2 } % Profondeur du texte
-  \pgfmathsetlength{\@tailleBoite}{max(\@largeurBoite, (\@hauteurBoite + \@profondeurBoite))}
-  \tikz \node [inner sep=2.5\pgflinewidth, minimum width=\@tailleBoite, minimum height=2\@hauteurBoite, #1] { #2 };
+  \settoheight{\hauteurBoite}{ #2 }    % Hauteur du texte
+  \settowidth {\largeurBoite}{ #2 }    % Largeur du texte
+  \settodepth {\profondeurBoite}{ #2 } % Profondeur du texte
+  \pgfmathsetlength{\tailleBoite}{max(\largeurBoite, (\hauteurBoite + \profondeurBoite))}
+  \tikz \node [inner sep=2.5\pgflinewidth, minimum width=\tailleBoite, minimum height=2\hauteurBoite, #1] { #2 };
 }%
 \makeatother
 %%
 
-%% Trace une flèche autour du numéro (#2) et une flèche plus claire autour du texte (#3)
+%------ Trace une flèche autour du numéro (#2) et une flèche plus claire autour du texte (#3)
 \makeatletter % @ désactivé
-\newdimen\@largeurTexte
-\newdimen\@largeurChiffre
-\newdimen\@largeurTotale
+\newdimen\largeurTexte%
+\newdimen\largeurChiffre%
+\newdimen\largeurTotale%
 \newcommand{\boiteTitre}[3][]{%
-  \settowidth {\@largeurTexte}{#3} % Largeur du texte
-  \settowidth {\@largeurChiffre}{\enspace#2\enspace} % Largeur du chiffre
-  \pgfmathsetlength{\@largeurTotale}{\@largeurTexte + 2\@largeurChiffre}
+  \settowidth{\largeurTexte}{#3} % Largeur du texte
+  \settowidth{\largeurChiffre}{\enspace#2\enspace} % Largeur du chiffre
+  \pgfmathsetlength{\largeurTotale}{\largeurTexte + 2\largeurChiffre}
   \begin{tikzpicture}
     \node[fill=#1, signal, signal to=east] (num) at (0,0) {\enspace#2\enspace};
-    \node[fill=#1!80!black, signal, signal from=west, minimum width=\@largeurTotale, right=1mm of num] {\phantom{#2}};
+    \node[fill=#1!80!black, signal, signal from=west, minimum width=\largeurTotale, right=1mm of num] {\phantom{#2}};
     \node[right=2.5mm of num, #1] {#3};
   \end{tikzpicture}
 }%
 \makeatother
 %%
 
-%% Trace une flèche autour d'un numéro et affiche le texte à côté
+%------ Trace une flèche autour d'un numéro et affiche le texte à côté
 \newcommand{\flecheTitre}[3][]{
   \begin{tikzpicture}
     \node[fill=#1, signal, signal to=east] (num) at (0,0) {\enspace#2\enspace};
@@ -48,7 +48,7 @@
   \end{tikzpicture}
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 \tcbset{
   boite cassable/.style = {%
@@ -88,20 +88,20 @@
   },
 }
 
-%% une simple boite vide
+%------ une simple boite vide
 \newtcolorbox{boite}[1][]{%
   boite cassable, colback = white, top = 4pt,
   #1
 }
 
-%%%% Boite colorée avec 
+%------ Boite colorée avec 
 % \begin{boiteColoree}{couleur} contenu \end{boiteColoree}
 \newtcolorbox{boiteColoree}[2][]{%
   boite cassable, boite pleine = #2,
   #1
 }
 
-%%%% Boite pour les documents des activités, avec le format suivant
+%------ Boite pour les documents des activités, avec le format suivant
 % \begin{doc}{titre}{label} contenu \end{doc}
 \newcounter{documentNum}
 \newtcolorbox{doc}[3][]{%
@@ -111,49 +111,65 @@
   #1
 }
 
-%%%% Boîtes pour les activités et TP pour une séquence en plan de travail
-% Boit*e pour afficher la durée recommandée en bas à gauche
+%------ Boîtes pour les activités et TP pour une séquence en plan de travail
+% Boite pour afficher la durée recommandée en bas à gauche
 \newtcbox{\dureeActivite}[1][]{%
   arc = 2mm, % courbes des bords
   colback = couleurTer-700, colframe = white, % couleurs boite
   coltext = white, % couleur texte
 }
-% Boite de base pour les activités ou TP, avec le format suivant 
-% \begin{boiteActivite}{titre activité}{durée}{label}{compteur}{format titre}
-%   contenu
-% \end{boiteActivite}
-\newtcolorbox{boiteActivite}[6][]{%
-  boite cassable,%
+
+%------ Boite pour afficher une activité ou un TP
+\pgfkeys{
+  % définition de la famille de clefs
+  /boiteActi/.is family, /boiteActi,
+  % définition des clefs
+  default/.style = {
+    titre = Titre, 
+    duree = 1 h,
+    label = Aucun,
+    compteur = activiteNum,
+    format = \documentaire*\!\!Activité
+  },
+  % stockage des clefs
+  titre/.store in = \boiteActiTitre,
+  duree/.store in = \boiteActiDuree,
+  label/.store in = \boiteActiLabel,
+  compteur/.store in = \boiteActiCompteur,
+  format/.store in = \boiteActiFormat
+}
+%
+\newtcolorbox{boiteActivite}[1][]{%
+  boite cassable,
   titre sans separation = 0.5mm,%
-  titre avec compteur = {#5}{#6 \arabic{section}.\arabic{#5} -- #2\strut \label{#4}},%
+  titre avec compteur = {\boiteActiCompteur}{
+    \hspace*{-12pt}%
+    \boiteActiFormat~\arabic{section}.\arabic{\boiteActiCompteur} --
+    \boiteActiTitre \strut\label{\boiteActiLabel}
+  },%
   enlarge bottom by = 12pt,%
   overlay= {%
     \node at ([xshift = -36pt, yshift = -6pt] frame.south east) {
-      \dureeActivite{
-        {\small \important[white]{#3}}
-      }
+      \dureeActivite{{\small \important[white]{\boiteActiDuree}}}
     };
   }, % affiche la durée de l'activité dans une petite boite
-  remember as = #4,
+  remember as = \boiteActiLabel,%
   #1
 }
 
 % Boite pour les activités/TP en plan de travail.
-% \begin{activite ou TP}{titre activité}[durée]{label} ; durée = 1h acti, 2h TP par défaut
-%   contenu
-% \end{activite ou TP}
-\NewDocumentEnvironment{activite}{m O{1 h} m}{%
-  \begin{boiteActivite}{#1}{#2}{#3}
-    {activiteNum}{\documentaire* \hspace{-4pt} Activité}
-}{
+\NewDocumentEnvironment{activite}{m}{%
+  \pgfkeys{/boiteActi, default, #1}
+  \begin{boiteActivite}
+}{%
   \end{boiteActivite}
 }
 % Compteur pour les TP
 \newcounter{TPNum} 
-\NewDocumentEnvironment{TP}{m O{2 h} m}{%
-  \begin{boiteActivite}{#1}{#2}{#3}
-    {TPNum}{\mesure* \hspace{-4pt} TP}
-}{
+\NewDocumentEnvironment{TP}{m}{%
+  \pgfkeys{/boiteActi, default, #1, compteur = TPNum, format = \mesure*\!\!TP}
+  \begin{boiteActivite}
+}{%
   \end{boiteActivite}
 }
 % Pour réferencer une activité
@@ -189,7 +205,7 @@
 }
 
 
-%%%% Passages importants à connaître
+%------ Passages importants à connaître
 \newtcolorbox{importants}[1][]{%
   boite cassable,%
   boite pleine = couleurPrim-50, % fond
@@ -197,7 +213,7 @@
   #1
 }
 
-%%%% Boîte pour le contexte
+%------ Boîte pour le contexte
 \newtcolorbox{contexte}[1][]{
   boite cassable,%
   titre sans separation = 3pt,%
@@ -208,7 +224,7 @@
   #1
 }
 
-%%%% Pour les objectifs
+%------ Pour les objectifs
 \newenvironment{objectifs}{%
   \begin{listeObjectifs}
 } {\end{listeObjectifs}}
@@ -223,8 +239,8 @@
   },
 }
 
-%% Pour les pré-requis
-\newenvironment{prerequis}{ %
+%------ Pour les pré-requis
+\newenvironment{prerequis}{%
   \begin{listeObjectifs}
 } {\end{listeObjectifs}}
 %
@@ -238,7 +254,7 @@
   },
 }
 
-%%%% Espace pour un coup de pouce
+%------ Espace pour un coup de pouce
 \newcounter{coupDePouceNum}
 \newtcolorbox{coupDePouce}[1][]{%
   boite cassable,%
@@ -250,7 +266,7 @@
   #1
 }
 
-%%%% Espace pour une appréciation
+%------ Espace pour une appréciation
 \newcommand{\appreciation}[1]{%
   \pasCorrection{%
     \begin{boite}
@@ -261,7 +277,7 @@
   }
 }
 
-%%%% Espace fiche TP
+%------ Espace fiche TP
 \newtcolorbox{boiteMateriel}[2][]{
   titre sans separation = 0.5mm,
   coltitle = white, colbacktitle = couleurPrim, % fond pour le titre blanc
@@ -269,8 +285,33 @@
   #1
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% pagination et sections
+%------ Extrait avec sa source
+\newcommand{\sourceExtrait}[1]{%
+  \vspace*{-12pt}
+  \begin{flushright}
+    \textit{#1}
+  \end{flushright}
+  \vspace*{-12pt}
+}
+%
+\newtcolorbox{boiteExtrait}[1][]{
+  boite cassable, couleur fond = white, colframe = couleurSec-150,%
+  overlay= {%
+    \node at (frame.north west) {\textcolor{couleurSec}{\faQuoteLeft}};
+    \node at (frame.south east) {\textcolor{couleurSec}{\faQuoteRight}};
+  },%
+  #1
+}
+%
+\NewDocumentCommand{\extrait}{o m}{%
+  \begin{boiteExtrait}
+    #2
+  \end{boiteExtrait}
+  \IfValueTF{#1}{ \sourceExtrait{#1} }{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ pagination et sections
 \NewDocumentCommand{\titre}{O{black} m}{%
   \begin{center}
     \textcolor{#1} {\textsf{\bfseries \Large #2}}
@@ -290,7 +331,7 @@
 }
     
 
-%%%% activité ou TP
+%------ activité ou TP
 \newcounter{activiteNum}
 \newcommand{\titreActi}[2]{%
   \refstepcounter{activiteNum}
@@ -331,7 +372,7 @@
 }
 
 
-%%%% chapitre, partie, section et sous-section
+%------ chapitre, partie, section et sous-section
 \newcommand{\chapitre}[1]{ % Réglage du titre du chapitre
   Chapitre \arabic{section} -- #1
 }
@@ -353,7 +394,7 @@
   \vspace*{12pt}
   \refstepcounter{subsubsection}
   \setcounter{sousSectionNum}{0}
-  %% Tracé du numéro de section
+  %------ Tracé du numéro de section
   \flecheTitre [couleurPrim] {
     \important[white]{\large\arabic{subsubsection}}
   }{
@@ -368,7 +409,7 @@
   \vspace*{4pt}
 }
 
-%%%% fixe le numéro de l'activité
+%------ fixe le numéro de l'activité
 \newcommand{\reinitialiseCompteur}{%
   % fixe les compteurs LaTeX
   \setcounter{subsection}{0}
@@ -393,21 +434,9 @@
   \setcounter{page}{#2}
 }
 
-%%%% lignes
-\newcommand{\ligne}{%
-  \par\noindent\rule{\textwidth}{0.4pt}
-}
-\NewDocumentCommand{\lignePointillee}{o}{%
-  \IfValueTF{#1}{%
-    \makebox[#1]{\dotfill}
-  }{%
-    \phantom{b}\hspace*{-12pt} \dotfill
-  }
-}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Paramètre par défaut pour l'en-tête
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ Paramètre par défaut pour l'en-tête
 \newcommand{\classe}{%
   Réglez avec \textbackslash renewcommand\{\textbackslash classe\}\{Seconde\}
 }
@@ -415,7 +444,7 @@
   Réglez avec \textbackslash renewcommand\{\textbackslash etablissement\}\{Lycée\}
 }
 
-%%%% en-tête
+%------ en-tête
 \newcommand{\teteGauche}[2]{%
   \lhead{%
     \textbf{\footnotesize #1}
@@ -432,7 +461,7 @@
     \hfill \footnotesize #1
   }
 }
-%% \enTete [compteur] {titre} [numéro de section] ; * = version simplifié sans pagination
+%------ \enTete [compteur] {titre} [numéro de section] ; * = version simplifié sans pagination
 \NewDocumentCommand{\enTete}{s o m O{0}}{%
   % reset des compteurs
   \reinitialiseCompteur
@@ -452,46 +481,55 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% exercice
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ exercice
 % définit un booléen pour entrer ou sortir du mode correction
 \newboolean{modeProf}
 \setboolean{modeProf}{false}
 \newcommand{\modeCorrection}{%
   \setboolean{modeProf}{true}
 }
+\newcommand{\modeEleve}{%
+  \setboolean{modeEleve}{false}
+}
 
-%% Affiche le numéro d'une question avec choix du compteur et de l'espacement
+%------ Affiche le numéro d'une question avec choix du compteur et de l'espacement
 \NewDocumentCommand{\numeroQuestion}{s O{questionNum} O{16}}{%
   \refstepcounter{#2}
   \setcounter{sousQuestionNum}{0}
   \vspace*{2pt}
   \IfBooleanTF{#1}{}{ % cas non étoilé
-    \ifnum \thequestionNum > 9
-      \hspace{6 pt}
-    \else
-      \hspace{#3 pt}
-    \fi
+    \setlength\parindent{\questionIndent}
   }
   \textcolor{couleurSec}{%
     \textbf{\arabic{#2}} {\small\faMinus}
   }
+  \setlength\parindent{0pt}
 }
-%% Sous question sour la forme 1.2
+%------ Sous question sour la forme 1.2
 \NewDocumentCommand{\numeroSousQuestion}{O{16}}{%
+  \setlength\parindent{1.5\questionIndent}
   \refstepcounter{sousQuestionNum}
-  \ifnum \thesousQuestionNum > 9
-    \hspace{6 pt}
-  \else
-    \hspace{#1 pt}
-  \fi
   \textcolor{couleurSec}{%
     \textbf{\arabic{questionNum}.\arabic{sousQuestionNum}.}
+  }
+  \setlength\parindent{0pt}
+}
+
+%------ lignes pointillées et pleines
+\newcommand{\ligne}{%
+  \par\noindent\rule{\textwidth}{0.4pt}
+}
+\NewDocumentCommand{\lignePointillee}{o}{%
+  \IfValueTF{#1}{%
+    \makebox[#1]{\dotfill}
+  }{%
+    \phantom{b}\hspace*{-12pt} \dotfill
   }
 }
 
 
-%% trace des lignes pointillées pour répondre aux questions
+%------ trace des lignes pointillées pour répondre aux questions
 % \lignesDeReponse* complète la ligne actuelle par des pointillées
 % \lignesDeReponse commence à la ligne suivante
 \newcounter{ligneNum}
@@ -511,7 +549,7 @@
 }
 
 
-%% définit une commande pour afficher une question 
+%------ définit une commande pour afficher une question 
 % \qestion {question} {réponse} [nombre de lignes] ; * = pas d'alinéa
 \newcounter{questionNum}
 \newcounter{sousQuestionNum}
@@ -533,14 +571,14 @@
 
 % Affiche le contenu en mode correction
 \newcommand{\correction}[1]{%
-  \ifthenelse {\boolean{modeProf}} { % correction
+  \ifthenelse {\boolean{modeProf}}{% correction
     #1
   }{}
 }
 
 % Affiche le contenu si on est pas en mode correction
 \newcommand{\pasCorrection}[1]{%
-  \ifthenelse{\boolean{modeProf}} {}{ % pas correction
+  \ifthenelse{\boolean{modeProf}}{}{% pas correction
     #1
   }
 }
@@ -560,11 +598,11 @@
   \reponse{#2}
 }
 
-%%%% qcm
+%------ qcm
 \newlist{QCM}{itemize}{2}
 \setlist[QCM]{label = $\square$, leftmargin = 2cm}
-%% #1 : question, 
-%% #2 : réponses
+%------ #1 : question, 
+%------ #2 : réponses
 \NewDocumentEnvironment{qcm}{+m +m}{%
   \numeroQuestion #1
   \begin{QCM}
@@ -582,12 +620,12 @@
   } % Note : trace une croix à la bonne position
 }
 
-%%%% Pour afficher les compétences
+%------ Pour afficher les compétences
 \newcommand{\competence}[1]{%
   ~{\footnotesize\textit{(#1)}}
 }
 
-%%%% Espace pour indiquer nom, prénom et classe
+%------ Espace pour indiquer nom, prénom et classe
 \newcommand{\implNomPrenom}{%
   Nom : \lignePointillee[0.3\linewidth]
   Prénom : \lignePointillee[0.3\linewidth]
@@ -603,8 +641,9 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % texte à trou avec option pour régler la largeur
+\newdimen\largeurTexte%
 \NewDocumentCommand{\texteTrou}{s o d() +m}{%
   \ifthenelse {\boolean{modeProf}}{% prof
     \IfBooleanTF{#1}{\important[black]{#4}}{#4}%
@@ -617,7 +656,6 @@
         \lignePointillee[#2\linewidth]%
         \hspace*{-12pt}%
       }{% Sinon on calcule la largeur du texte, avec un peu d'espace supplémentaire
-        \newdimen\largeurTexte%
         \settowidth{\largeurTexte}{a #4 a}%
         \espaceReponse%
         \lignePointillee[\largeurTexte]%
@@ -633,8 +671,8 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Pour choisir parmi deux sujets
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ Pour choisir parmi deux sujets
 \newboolean{sujetA}
 \setboolean{sujetA}{true}
 \newcommand{\sujetB}{%
@@ -644,7 +682,7 @@
   \setboolean{sujetA}{true}
 }
 
-%%%% Pour faire plusieurs sujets en parallèle
+%------ Pour faire plusieurs sujets en parallèle
 \newcommand{\variationSujet}[2]{%
   \hspace*{-6pt}
   \ifthenelse{\boolean{sujetA}}{#1}{#2}
@@ -652,8 +690,8 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Tableau générique avec la première ligne bleue
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ Tableau générique avec la première ligne bleue
 \NewDocumentEnvironment{tableau}{m}{%
   \begin{center}
     \begin{tblr}{%
@@ -666,7 +704,7 @@
   \end{center}
 }
 
-%%%% Tableau de competence
+%------ Tableau de competence
 \newenvironment{tableauCompetences}{
   \begin{center}
     \begin{tblr}{%
@@ -680,7 +718,7 @@
   \end{center}
 }
 
-%%%% Tableau de connaissances pour les fiches de révisions
+%------ Tableau de connaissances pour les fiches de révisions
 \newenvironment{tableauConnaissances}{%
   \begin{center}
   \begin{tblr}{%
@@ -695,7 +733,7 @@
   \end{center}
 }
 
-%%%% Tableau de mémorisation pour les fiches de mémorisation
+%------ Tableau de mémorisation pour les fiches de mémorisation
 % Question | | | Réponse
 \newenvironment{tableauMemorisation}{%
  \begin{center}
@@ -726,14 +764,14 @@
 }
 
 
-%%%% Alignement vertical dans un tableau
+%------ Alignement vertical dans un tableau
 \newcommand{\vAligne}[1]{%
   \strut \\ \vspace*{#1}
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% symboles : chevron, flèche, attention, etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ symboles : chevron, flèche, attention, etc.
 \NewDocumentCommand{\chevron}{O{couleurPrim}}{%
   \textcolor{#1}{\small \faChevronRight}
 }
@@ -747,7 +785,7 @@
 }
 %
 \NewDocumentCommand{\flecheLongue}{O{couleurPrim}}{%
-  \textcolor{#1}{\faLongArrowRight}
+  \textcolor{#1}{\faLongArrowAltRight}
 }
 %
 \NewDocumentCommand{\ok}{O{couleurPrim}}{%
@@ -762,28 +800,34 @@
   \textcolor{#1}{\textbullet}
 }
 
-%% Commande générale pour colorer un texte avec une couleur par défaut
+%------ Commande générale pour colorer un texte avec une couleur par défaut
 % L'intérêt de cette commande est d'éviter des répétion de O{couleurSec}
-\NewDocumentCommand{\questionSpeciale}{O{couleurSec} m}{%
-  \textcolor{#1}{#2}
+\NewDocumentCommand{\questionSpeciale}{m O{couleurSec} m}{%
+  \IfBooleanTF{#1}{}{
+    \setlength\parindent{\questionIndent}
+  }
+  \textcolor{#2}{#3}
+  \setlength\parindent{0pt}
 }
 % Quelques questions spéciales avec couleur réglable et un espace horizontal
 \NewDocumentCommand{\mesure}{s o}{%
-  \IfBooleanTF{#1}{}{ \hspace{7pt} }
-  \questionSpeciale[#2]{\faFlask\hspace{1pt} \faWrench\!}
+  \questionSpeciale{#1}[#2]{\faFlask~\faMicroscope}
 }
 %
 \NewDocumentCommand{\telechargement}{s o}{%
-  \IfBooleanTF{#1}{}{ \hspace{7pt} }
-  \questionSpeciale[#2]{\faDownload\, \faMobile\;}
+  \questionSpeciale{#1}[#2]{\faMobile*~\faFileDownload}
 }
 %
 \NewDocumentCommand{\documentaire}{s o}{%
-  \IfBooleanTF{#1}{}{ \hspace{7pt} }
-  \questionSpeciale[#2]{\faFileText\hspace{1pt} \faBook}
+  \questionSpeciale{#1}[#2]{\faFile*~\faPen}
 }
+%
+\NewDocumentCommand{\programmation}{s o}{%
+  \questionSpeciale{#1}[#2]{\faDesktop~\faCode}
+}
+%
 
-%% pictogramme de sécurité \picto {largeur} {pictogramme}
+%------ pictogramme de sécurité \picto {largeur} {pictogramme}
 \newcommand{\picto}[2]{%
   \image{#1}{images/pictogrammes/picto_#2}
 }
@@ -800,12 +844,12 @@
   \textcolor{couleurPrim}{\faArrowUp} \; #1
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% points importants
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ points importants
 \NewDocumentCommand{\important}{O{couleurSec-800} +m}{%
   \!\textcolor{#1}{\textsf{\bfseries #2}}\!\!
 }
-%%%% Pour donner des exemples. 
+%------ Pour donner des exemples. 
 % \exemple est au singulier, \exemple* est au pluriel.
 \NewDocumentCommand{\exemple}{s}{%
   \fleche
@@ -816,30 +860,12 @@
   }
 }
 
-%%%% Citation (#1) avec la source (#2)
-\newcommand{\extrait}[2]{%
-  « #1 »
-  
-  \vspace*{-12pt}
-  \begin{flushright}
-    \textit{#2}
-  \end{flushright}
-  \vspace*{-12pt}
-}
-\newcommand{\sourceExtrait}[1]{%
-  \vspace*{-12pt}
-  \begin{flushright}
-    \textit{#1}
-  \end{flushright}
-  \vspace*{-12pt}
-}
-
-%%%% image avec la largeur réglée par rapport à celle de la ligne
+%------ image avec la largeur réglée par rapport à celle de la ligne
 \newcommand{\image}[2]{%
   \includegraphics[width=#1\linewidth]{#2}
 }
 
-%%%% qr code en insert sur la droite
+%------ qr code en insert sur la droite
 \NewDocumentCommand{\qrcodeCote}{o +m D(){-16pt} O{1.5cm}}{%
   \IfNoValueTF{#1} {%
     \begin{wrapfigure}{r}{0.1\linewidth}
@@ -855,8 +881,8 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% protocole, avec plusieurs colonnes possibles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ protocole, avec plusieurs colonnes possibles
 \NewDocumentEnvironment{protocole}{o +m}{%
   \IfValueTF{#1}{%
     \vspace*{-8pt}
@@ -869,7 +895,7 @@
   \IfValueTF{#1}{ \end{multicols} }{}
 }
 
-%%%% liste de points, avec plusieurs colonnes possibles
+%------ liste de points, avec plusieurs colonnes possibles
 \NewDocumentEnvironment{listePoints}{o +m}{%
   \IfValueTF{#1}{%
     \vspace*{-8pt}
@@ -882,7 +908,7 @@
   \IfValueTF{#1}{ \end{multicols} }{}
 }
 
-%%%% jeu de données, avec plusieurs colonnes possibles
+%------ jeu de données, avec plusieurs colonnes possibles
 \NewDocumentEnvironment{donnees}{o +m}{%
   \important{Données :}
   \IfValueTF{#1}{%
@@ -896,23 +922,23 @@
   \IfValueTF{#1}{ \end{multicols} }{}
 }
 
-%%%% liste d'objectif
+%------ liste d'objectif
 \newlist{listeObjectifs}{itemize}{2}
 \setlist[listeObjectifs]{leftmargin=6pt, label=\fleche}
 
-%%%% liste tirets
+%------ liste tirets
 \newlist{listeTirets}{itemize}{2}
 \setlist[listeTirets]{label = \textcolor{couleurPrim}{\small\faMinus}}
 
-%%%% liste avec des flèches
+%------ liste avec des flèches
 \newlist{listeFleche}{itemize}{2}
 \setlist[listeFleche]{label = \textbf{\flecheLongue}}
 
-%%%% liste avec chiffre
+%------ liste avec chiffre
 \newlist{enumeration}{enumerate}{2}
 \setlist[enumeration]{label = \textcolor{couleurSec}{\textbf{\arabic*.}} }
 
-%%%% problématique 
+%------ problématique 
 \newcommand{\problematique}[1]{%
   \hspace*{-12pt}
   \flecheLongue[couleurTer]
@@ -921,8 +947,8 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Séparation de la page en trois blocs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ Séparation de la page en trois blocs
 \NewDocumentCommand{\separationTroisBlocs}{+m O{0.3} +m O{0.3} +m O{0.3}}{%
   \begin{minipage}[T]{#2\linewidth}
     #1
@@ -936,7 +962,7 @@
     #5
   \end{minipage}
 }
-%%%% Separation en deux blocs
+%------ Separation en deux blocs
 \NewDocumentCommand{\separationBlocs}{+m O{0.48} +m O{0.48}}{%
   \begin{minipage}[T]{#2\linewidth}
     #1
@@ -948,22 +974,16 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% nombre algébrique et réaction chimique
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ nombre algébrique et réaction chimique
 \newcommand{\algebrique}[1]{%
   \ensuremath{\overline{\mathrm{#1}}}
 }
 \newcommand{\reaction}{%
-  \;\text{\faLongArrowRight}\; % flèche courte et jolie
+  \;\text{\faLongArrowAltRight}\; % flèche courte et jolie
 }
 
-%% Pour simplifier l'écriture des formules brutes
-% #1 : # carbone, #2 : # hydrogène, #3 : oxygène
-\newcommand{\bruteCHO}[3]{%
-  \chemfig{C_{#1} H_{#2} O_{#3}}
-}
-
-%% pour les masse molaire et atomique (* -> en indice)
+%------ pour les masse molaire et atomique (* -> en indice)
 \NewDocumentCommand{\masseMol}{s m}{%
   \IfBooleanTF{#1}{%
     \ensuremath{M_{\chemfig{#2}}}
@@ -980,48 +1000,35 @@
 }
 
 
-%% Unités pour siunit
-\DeclareSIUnit{\dioptre}{\text{$\delta$}}
-\DeclareSIUnit{\dornic}{\text{\textdegree D}}
-\DeclareSIUnit{\ppm}{\text{ppm}}
-\DeclareSIUnit{\COeq}{\text{kgCO$_{2}$e}}
-\DeclareSIUnit{\jour}{\text{jour}}
-\DeclareSIUnit\cal{\text{cal}}
-\DeclareSIUnit\kcal{\kilo\cal}
-% \DeclareSIUnit{}{\text{}}
-
-
-%%%% atome ou isotope 
+%------ atome ou isotope 
 %#1: X, #2: Z, #3: A
-\makeatletter% Permet de clarifier visuellement où se trouve les variables
-\newdimen\@dimAtomNum
-\newdimen\@dimMassNum
-\newdimen\@dimExposant
+\newdimen\dimAtomNum%
+\newdimen\dimMassNum%
+\newdimen\dimExposant%
 \newcommand{\isotope}[3]{%
-  \settowidth\@dimAtomNum{\ensuremath{\scriptstyle#2}}%
-  \settowidth\@dimMassNum{\ensuremath{\scriptstyle#3}}%
-  \pgfmathsetlength{\@dimExposant}{max(\@dimAtomNum, \@dimMassNum)}%
+  \settowidth{\dimAtomNum}{\ensuremath{\scriptstyle#2}}%
+  \settowidth{\dimMassNum}{\ensuremath{\scriptstyle#3}}%
+  \pgfmathsetlength{\dimExposant}{max(\dimAtomNum, \dimMassNum)}%
   \ensuremath{%
-    _{\makebox[\@dimExposant][r]{\ensuremath{\scriptstyle#2}}}%
-    ^{\makebox[\@dimExposant][r]{\ensuremath{\scriptstyle#3}}}%
+    _{\makebox[\dimExposant][r]{\ensuremath{\scriptstyle#2}}}%
+    ^{\makebox[\dimExposant][r]{\ensuremath{\scriptstyle#3}}}%
     \chemfig{#1}%
   }%
 }%
-\makeatother
 
-%% element chimique dans le tableau périodique
+%------ element chimique dans le tableau périodique
 \newcommand{\element}[2]{%
   \ensuremath{%
     _{\ensuremath{#2}} \chemfig[atom style={scale=1.3}]{#1}
   }%
 }%
 
-%% siècle
+%------ siècle
 \newcommand{\siecle}[1]{%
   \textsc{\romannumeral #1}\textsuperscript{e}~siècle%
 }
 
-%% texte avec une boite autour
+%------ texte avec une boite autour
 \NewDocumentCommand{\texteEncadre}{m O{black}}{%
   \textcolor{#2}{
     \frame{\vphantom{$\dfrac{1}{1}$} 
@@ -1030,14 +1037,14 @@
   }
 }
 
-%% case cochée
+%------ case cochée
 \newcommand{\caseCochee}{%
   $\text{\rlap{$\checkmark$}}\square$
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Style python
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ Style python
 \lstdefinestyle{codePython}{
   commentstyle=\color{magenta-500},
   keywordstyle=\color{green-500},
@@ -1051,15 +1058,3 @@
   literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1, 
 }
 \def\inline{\lstinline[style=codePython,language=python]}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% circuit tikz
-\NewDocumentCommand{\fixedvlen}{O{0.5cm} m m O{}}{% [semilength]{node}{label}[extra options]
-  % get the center of the standard arrow
-  \coordinate (#2-Vcenter) at ($(#2-Vfrom)!0.5!(#2-Vto)$);
-  % draw an arrow of a fixed size around that center and on the same line
-  \draw[-Triangle, #4] ($(#2-Vcenter)!#1!(#2-Vfrom)$) -- ($(#2-Vcenter)!#1!(#2-Vto)$);
-  % position the label as in the normal voltages
-  \node[anchor=\ctikzgetanchor{#2}{Vlab}, #4] at (#2-Vlab) {#3};
-}
