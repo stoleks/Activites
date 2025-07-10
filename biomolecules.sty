@@ -1,5 +1,16 @@
+% Author............: A. Jedrecy
+% licence...........: CC BY-SA 4.0
+% code
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{biomolecules}[2025/07/10 1.0.0 Quelques commandes pour tracer des biomolécules au lycée]
+% 1.0.0 Version de base avec la plupart des molécules utiles pour la filière ST2S.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Réglage de chemfig
+%------ Chemfig
+\RequirePackage{chemfig}
+
+%----- Réglage de chemfig
 \newcommand{\chemfigParDefaut}{
   \setchemfig{
     atom sep= 24pt,
@@ -17,16 +28,16 @@
 
 %% Pour avoir des molécules en gras dans un texte
 \newcommand{\moleculesGras}{ \renewcommand*\printatom[1]{\ensuremath{\mathbf{##1}}} }
-\newcommand{\moleculesNormale}{ \renewcommand*\printatom[1]{\ensuremath{\mathrm{##1}}} }
+\newcommand{\moleculesNormales}{ \renewcommand*\printatom[1]{\ensuremath{\mathrm{##1}}} }
 
-%%%% Éléments récurrents 
+%------ Éléments récurrents 
 \newcommand{\hydrogene}{\chemfig{H}\xspace}
 \newcommand{\carbone}  {\chemfig{C}\xspace}
 \newcommand{\oxygene}  {\chemfig{O}\xspace}
 \newcommand{\azote}    {\chemfig{N}\xspace}
 \newcommand{\phosphore}{\chemfig{P}\xspace}
 \newcommand{\electron} {\chemfig{e^{-}}\xspace}
-%%%% Molécules récurrentes
+%------ Molécules récurrentes
 \newcommand{\dioxygene}          {\chemfig{O_2}\xspace}
 \newcommand{\dihydrogene}        {\chemfig{H_2}\xspace}
 \newcommand{\diazote}            {\chemfig{N_2}\xspace}
@@ -41,7 +52,7 @@
 \newcommand{\bicarbonateDeSodium}{\chemfig{NaHCO_3}\xspace}
 \newcommand{\azotureDeSodium}    {\chemfig{NaN_3}\xspace}
 \newcommand{\chlorureDArgent}    {\chemfig{AgCl}\xspace}
-%%%% Ions récurrents
+%------ Ions récurrents
 \newcommand{\oxonium}     {\chemfig{H_3O^{+}}\xspace}
 \newcommand{\hydroxyde}   {\chemfig{HO^{-}}\xspace}
 \newcommand{\ionHydrogene}{\chemfig{H^{+}}\xspace}
@@ -65,14 +76,20 @@
 \newcommand{\ionPotassium}{\chemfig{K^{+}}\xspace}
 \newcommand{\ionPhosphate}{\chemfig{HPO_4^{2-}}\xspace}
 
-%%%% État physique
-\newcommand{\aq} { \ensuremath{_\text{(aq)}} }
-\newcommand{\sol}{ \ensuremath{_\text{(s)}} }
-\newcommand{\liq}{ \ensuremath{_\text{(l)}} }
-\newcommand{\gaz}{ \ensuremath{_\text{(g)}} }
+%------ État physique
+\newcommand{\aq} {\ensuremath{_\text{(aq)}}\xspace}
+\newcommand{\sol}{\ensuremath{_\text{(s)}}\xspace}
+\newcommand{\liq}{\ensuremath{_\text{(l)}}\xspace}
+\newcommand{\gaz}{\ensuremath{_\text{(g)}}\xspace}
+
+%------ Pour simplifier l'écriture des formules brutes
+% #1 : # carbone, #2 : # hydrogène, #3 : oxygène
+\newcommand{\bruteCHO}[3]{%
+  \chemfig{C_{#1} H_{#2} O_{#3}}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Pour simplifier certaines molécules
+%------ Pour simplifier certaines molécules
 \definesubmol\vide1{ -[#1,,,, draw = none] } % liaison invisible avec angle et longueur réglable
 \definesubmol\lh   { -[::60] }  % C-C vers le haut (liaison haut)
 \definesubmol\lb   { -[::-60] } % "              " (liaison bas)
@@ -109,9 +126,11 @@
   (-O !\lh !\carbonyle #2) --
   O (- !\carbonyle #3) )
 }
-\definesubmol\glycero1{ O !\lbh (!\lh O #1) !\lbh O }
+\definesubmol\glycero1{
+  O !\lbh (!\lh O #1) !\lbh O
+}
 
-%% Hydrogènes saturés
+%------ Hydrogènes saturés et groupement fréquents
 \definesubmol\HH {(-[::90] H) (-[::-90] H)} % paire H- R -H
 \definesubmol\HHH{!\HH (-[::0] H)} % triplet H- RH -H
 \definesubmol\NH {\chembelow{N}{H}}
@@ -129,7 +148,7 @@
 \definesubmol\amide       { (!\llh O) !\lb N}
 \definesubmol\phosphate   { P (=[::-90] O) (-[::90] \charge{45:1.5pt=$\scriptstyle-$}{O}) -[::0] O}
 
-%%%% Pour des molécules colorées
+%------ Pour des molécules colorées
 \definesubmol\lCouleur1 {-[:: #1,,,, couleurQuat-700, line width = 2.pt]}
 \definesubmol\lhCouleur {-[ ::60,,,, couleurQuat-700, line width = 2.pt]}
 \definesubmol\lbCouleur {-[::-60,,,, couleurQuat-700, line width = 2.pt]}
@@ -282,7 +301,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Glucides
+%------ Glucides
 %% Pour la représentation de Haworth du glucose ou du fructose
 \definesubmol\hexaOseHaw1{
   !\vide{:90,0.01} % Pour avoir la bonne orientation
@@ -305,7 +324,7 @@
 \definesubmol\gluHaw{ !\hexaOseHaw{!\CHHOH} }
 \definesubmol\polymere{ \cdots }
 
-%%%% Amidon
+%------ Amidon
 \definesubmol\amylopectineHaw{
   !\polymere - !\gluHaw -O-
   !\hexaOseHaw{-[::-90,0.8] !\lh O -[::-60,1.2] !\gluHaw -O- !\gluHaw -!\polymere}
@@ -365,7 +384,7 @@
   -[::-60,0.7] -[::60,0.7,,1] OH
 }
 
-%%%% Ribose
+%------ Ribose
 \definesubmol\ribose{
   % liaison à droite et cycle
   -[::-30] !\lb *5([::70]- (-HO) -(-OH) --O-)
@@ -386,14 +405,14 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Base nucléique
+%------ Base nucléique
 \definesubmol\adenine { *5(- *6(-N=-N= (-[,,,1]NH_2) -) =-N=-) }
 \definesubmol\guanine { *5(- *6(-N= (-[,,,1]NH_2) -[,,,1] NH -[,,1] (=O)-) =-N=-) }
 \definesubmol\thymine { *6(- (=O) -[,,,1] NH -[,,1] (=O) -(-)=-) }
 \definesubmol\uracile { *6(- (=O) -[,,,1] NH -[,,1] (=O) -=-) }
 \definesubmol\cytosine{ *6(- (=O) -N= (-[,,,1]NH_2) -=-) }
 
-%%% Ribonucléoside
+%------ Ribonucléoside
 \definesubmol\adenosine{ !\ribose N !\adenine }
 \definesubmol\cytidine { !\ribose N !\cytosine }
 \definesubmol\guanosine{ !\ribose N !\guanine }
@@ -405,7 +424,8 @@
 \definesubmol\guanosineHaw{ !\riboseHaw N !\guanine }
 \definesubmol\thymidineHaw{ !\riboseHaw N !\thymine }
 \definesubmol\uridineHaw  { !\riboseHaw N !\uracile }
-%% Desoxyribonucléoside
+
+%------ Desoxyribonucléoside
 \definesubmol\desoxyAdenosine{ !\desoxyribose N !\adenine }
 \definesubmol\desoxyCytidine { !\desoxyribose N !\cytosine }
 \definesubmol\desoxyGuanosine{ !\desoxyribose N !\guanine }
@@ -418,7 +438,7 @@
 \definesubmol\desoxyThymidineHaw{ !\desoxyriboseHaw N !\thymine }
 \definesubmol\desoxyUridineHaw  { !\desoxyriboseHaw N !\uracile }
 
-%%%% Adenosine Tri-Phosphate et Adenosine Di-Phosphate
+%------ Adenosine Tri-Phosphate et Adenosine Di-Phosphate
 \definesubmol\tetePhosphate{ \charge{45:1.5pt=$\scriptstyle -$}{O} -!\phosphate }
 \definesubmol\ADP{ !\tetePhosphate -!\phosphate !\adenosine }
 \definesubmol\ATP{ !\tetePhosphate -!\phosphate -!\phosphate !\adenosine}
@@ -525,7 +545,7 @@
 \definesubmol\valineSemiDevH    { !\acideAmineSDH{-[::90]  CH (!\ldh H_3C) !\ldb CH_3} }
 \definesubmol\valineSemiDevB    { !\acideAmineSDB{-[::-90] CH (!\ldb H_3C) !\ldh CH_3} }
 
-%%%% Heme
+%------ Heme
 \definesubmol\hemeB {
   [:-60] !\llb
   !\pyrrole{-N (!\ldb) --(-!\lhb (!\llh O) !\lb HO) =(-) -} % bas droite
@@ -790,7 +810,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Molécules odorantes
+%------ Molécules odorantes
 \definesubmol\geraniol{
   -[::30] (!\lb) !\llh *6( % pied
     !\vide{} !\vide{} (- !\lb OH) % chaine latérale
@@ -823,7 +843,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Drogues
+%------ Drogues
 \definesubmol\THC{
   -[::30] *6( % cyle ether
     (-[::120]) -O- *6( % cycle chaine latérale et alcool

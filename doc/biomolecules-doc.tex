@@ -1,8 +1,37 @@
 \documentclass[12pt]{extarticle}
 
 %%%% paramètres généraux et commandes prédéfinies
-\input{parametres}
-\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern} % pour étirer fontawesome
+\usepackage{geometry} % définition des marges
+\usepackage{profSciences} % mise en page et autre
+\usepackage{biomolecules} % pour dessiner des formules chimiques
+
+\input{../_couleurs}
+\input{../_abbreviations}
+\input{../_figures}
+\input{../_chapitres}
+\input{../_tableau_periodique}
+
+\palette{couleurPrim}{cyan}
+\palette{couleurSec} {blue}
+\palette{couleurTer} {purple}
+\palette{couleurQuat}{red}
+
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0cm}
+\renewcommand{\baselinestretch}{1}
+% réglage du niveau (sous-section) ou s'arrête la table des matières
+\setcounter{tocdepth}{2}
+
+\geometry{
+  a4paper, % format
+  left=1.3cm, right=1.3cm, % marge horizontale
+  top=2.2cm, bottom=2.1cm % marge verticale
+}
 
 %% Ces commandes sont adaptées du très bon paquet ProfLycée de Cedric Pierquet 
 %% https://ctan.org/pkg/proflycee
