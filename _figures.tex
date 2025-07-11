@@ -8,14 +8,32 @@
   fleche/.style = {->, line width = 6pt, color = #1}
 }
 
-%%%% Point et vecteurs
-% \tikzCercle [couleur fond] (x, y) {rayon} [couleur ligne]
-\NewDocumentCommand{\tikzCercle}{O{black} r() m o}{
-  \IfValueTF{#4}{
-    \filldraw [color = #4, fill = #1, very thick] (#2) circle (#3 pt);
-  }{
-    \filldraw [#1] (#2) circle (#3 pt);
-  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Cercles, points et vecteurs
+\pgfkeys{
+  /planete/.is family, /planete,
+  defaut/.style = {
+    rayon = 60 pt,
+    orbite = 0 pt,
+    remplissage = couleurSec-100,
+    contour = couleurSec-100,
+    centre = T,
+    satellite = {}
+  },% stockage des clefs
+  rayon/.store in = \planeteRayon,
+  orbite/.store in = \planeteOrbite,
+  centre/.store in = \planeteCentre,
+  satellite/.store in = \planeteSatellite,
+  contour/.store in = \planeteContour,
+  remplissage/.store in = \planeteRemplissage
+}
+%
+\NewDocumentCommand{\tikzSchemaPlanete}{O{}}{%
+  \pgfkeys{/planete, defaut, #1}  
+  \filldraw [color = \planeteContour, very thick, fill = white] (0,0) circle (\planeteOrbite);
+  \filldraw [\planeteRemplissage] (0,0) circle (\planeteRayon);
+  \filldraw (0, 0) circle (2pt) node[above] {\planeteCentre};
+  \filldraw (\planeteOrbite, 0) circle (2pt) node[right] {\planeteSatellite};
 }
 % \tikzPointLabel (x, y) [texte] (xtexte, ytexte), trace un point avec un label; * = pas de point
 \NewDocumentCommand{\tikzLabel}{s r() m d()}{
@@ -42,19 +60,6 @@
   }
 }
 
-% \tikzLegende [couleur] (x, y) (lx, ly) {légende}; * = <-
-% ajouter une * passe de la version gauche -> à la version droite <-
-\NewDocumentCommand{\tikzLegende}{s O{black} r() r() m}{
-  \coordinate (A) at (#3);
-  \coordinate (B) at (#4);
-  \coordinate (AB) at ($(A)+(B)$);
-  \IfBooleanTF{#1}{
-    \draw[#2, ->, very thick] (AB) node[right] {#5} -- (A);
-  }{
-    \draw[#2, ->, very thick] (A) node[left] {#5} -- (AB);
-  }
-}
-
 %% Trace une petite barre de pourcentage partiellement remplie sur la ligne
 \NewDocumentCommand{\barrePourcentage}{O{couleurSec} m}{%
   \begin{tikzpicture}
@@ -66,7 +71,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Trace une flèche de progression pour les plans de travail
-% \flecheProgression {<nombre de boucles>} [<largeur>] [<espacement vertical>]
 \pgfkeys{% définition de la famille de clefs
   /prog/.is family, /prog,
   defaut/.style = {
@@ -114,26 +118,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% plan de classe
-%% \texteRectangle [couleur cadre] (x, y) (lx, ly) {texte}
-\NewDocumentCommand{\texteRectangle}{O{black} r() r() m}{
-  \coordinate (A) at (#2);
-  \coordinate (B) at (#3);
-  \filldraw [fill=white, draw=#1, ultra thick] (A) rectangle ($(A)+(B)$);
-  \coordinate (C) at (0.5*#3/2); % divide by two lx and ly
-  \node at ($(A)+(C)$) [font=\sffamily] {\textbf{#4}};
-}
 
 %% Pour tracer une rangée d'élève avec 2 ou 3 colonnes
-% \rang <largeur> <hauteur> {<eleves>} {<eleves>} [<eleves>]
+% \rang <largeur> <hauteur> {<eleves>} {<eleves>} {<eleves>}
 \ExplSyntaxOn
-% Position de la place horizontale, largeur et hauteur des places
-\fp_new:N \l_rangPositionX_fp
-\fp_new:N \l_largeurPlaceX_fp
-\fp_new:N \l_hauteurPlaceY_fp
-\NewDocumentCommand{\rang}{
+\fp_new:N \l_rangPositionX_fp% position de la place
+\fp_new:N \l_largeurPlaceX_fp% largeur d'une place
+\fp_new:N \l_hauteurPlaceY_fp% hauteur d'une place
+\NewDocumentCommand{\rang}{%
   D<>{3} D<>{2} 
   >{\SplitList{,}}r[] >{\SplitList{,}}r[] >{\SplitList{,}}d[]
-}{
+}{%
   \begin{tikzpicture}
     % Initialisation de la position horizontale et de la taille des places
     \fp_set:Nn \l_rangPositionX_fp {0}
@@ -152,7 +147,16 @@
   \end{tikzpicture}
   \bigskip
 }
-\NewDocumentCommand{\rangImpl}{m}{
+% \texteRectangle [couleur cadre] (x, y) (lx, ly) {texte}
+\NewDocumentCommand{\texteRectangle}{O{black} r() r() m}{%
+  \coordinate (A) at (#2);
+  \coordinate (B) at (#3);
+  \filldraw [fill=white, draw=#1, ultra thick] (A) rectangle ($(A)+(B)$);
+  \coordinate (C) at (0.5*#3/2); % divide by two lx and ly
+  \node at ($(A)+(C)$) [font=\sffamily] {\textbf{#4}};
+}
+% Commande interne qui appelle \texteRectangle pour chaque élève
+\NewDocumentCommand{\rangImpl}{m}{%
   \fp_add:Nn \l_rangPositionX_fp {\l_largeurPlaceX_fp}
   \texteRectangle
     (\fp_use:N \l_rangPositionX_fp, 0) % Position
@@ -164,28 +168,47 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% tube à essais
-% \tikzTubeEssais {largeur} {hauteur} <hauteur ellipse>
-\NewDocumentCommand{\tikzTubeEssais}{d() d() D<>{0.1}}{
-  \draw[thick] (#1, #2) -- (#1, 0) arc (0:-180:#1) -- (-#1, #2);
-  \draw[thick] (0, #2) ellipse (#1 and #3);
+\pgfkeys{
+  /tube/.is family, /tube,
+  defaut/.style = {
+    largeur = 0.25cm,
+    hauteur = 1.5cm,
+    rayon = 0.1cm,
+    phase = 0.25cm,
+    couleur = red-300
+  },% stockage des clefs
+  largeur/.store in = \tubeX,
+  hauteur/.store in = \tubeY,
+  rayon/.store in = \tubeRayon,
+  phase/.store in = \tubePhase,
+  couleur/.store in = \tubeCouleur
 }
-% \tikzPhaseBasTubeEssais[couleur] {largeur} {hauteur} <hauteur ombre>
-\NewDocumentCommand{\tikzPhaseBasTubeEssais}{O{black} d() d() D<>{0.1}}{
-  \fill[color=#1] (-#2, 0) -- (#2, 0) arc (0:-180:#2); % Arc du bas
-  \fill[color=#1] (#2, #3)  -- (-#2, #3) -- (-#2, -0.01) -- (#2, -0.01); % centre
-  \fill[color=#1!85!black] (0, #3) ellipse (#2 and #4); % ellipse du haut
+%
+\NewDocumentCommand{\tikzTubeEssais}{O{}}{
+  \pgfkeys{/tube, defaut, #1}
+  \draw[thick] (\tubeX, \tubeY)-- (\tubeX, 0) arc (0:-180:\tubeX)-- (-\tubeX, \tubeY);
+  % note : le + 0 permet d'éviter que l'unité et "and" soit collé et donc non compris par pgf
+  \draw[thick] (0, \tubeY) ellipse (\tubeX+0 and \tubeRayon);
 }
-% \tikzPhaseBasTubeEssais[couleur] {largeur} {y bas} {y haut} <hauteur ombre>
-\NewDocumentCommand{\tikzPhaseTubeEssais}{O{black} d() d() d() D<>{0.1}}{
-  \fill[color=#1]          (#2, #4) -- (-#2, #4) -- (-#2, #3) -- (#2, #3); % centre de la phase
-  \fill[color=#1]          (0, #3) ellipse (#2 and #5); % bas de la phase
-  \fill[color=#1!85!black] (0, #4) ellipse (#2 and #5); % haut de la phase
+%
+\NewDocumentCommand{\tikzPhaseBasTubeEssais}{O{}}{
+  \pgfkeys{/tube, defaut, #1}
+  \fill[color=\tubeCouleur] (-\tubeX, 0)-- (\tubeX, 0) arc (0:-180:\tubeX); % bas
+  \fill[color=\tubeCouleur] (\tubeX, \tubeY)-- (-\tubeX, \tubeY)-- (-\tubeX, -0.01)-- (\tubeX, -0.01);% centre
+  \fill[color=\tubeCouleur!85!black] (0, \tubeY) ellipse (\tubeX+0 and \tubeRayon);% ellipse du haut
+}
+%
+\NewDocumentCommand{\tikzPhaseTubeEssais}{O{}}{
+  \pgfkeys{/tube, defaut, #1}
+  \fill[color=\tubeCouleur] (\tubeX, \tubePhase) -- (-\tubeX, \tubePhase) -- (-\tubeX, \tubeY) -- (\tubeX, \tubeY); % centre de la phase
+  \fill[color=\tubeCouleur] (0, \tubeY) ellipse (\tubeX+0 and \tubeRayon); % bas de la phase
+  \fill[color=\tubeCouleur!85!black] (0, \tubePhase) ellipse (\tubeX+0 and \tubeRayon);% haut de la phase
 }
 
-%%%% tube à essai de sang
+%%%% tube à essai avec une seule solution
 \newcommand{\tubeEssaisSolution}[1]{
   \begin{tikzpicture}
-    \tikzPhaseBasTubeEssais[#1] (0.25)(0.75) % contenu du tube
-    \tikzTubeEssais (0.25)(1.5) % tube
+    \tikzPhaseBasTubeEssais [couleur = #1, largeur = 0.25cm, hauteur = 0.75cm]% contenu du tube
+    \tikzTubeEssais% tube
   \end{tikzpicture}
 }

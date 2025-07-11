@@ -82,7 +82,7 @@
   Ce satellite contient un télescope qui permet d’observer les étoiles et objets de l’univers depuis l’espace !
 \end{doc}
 
-\mesure 
+\schematisation
 Sur le schéma ci-dessous, représenter la force d’interaction gravitationnelle $F_{T/H}$ exercée par la Terre $T$ sur le satellite Hubble $H$.
 La Terre est assimilée à une boule de rayon $R_T = \qty{6370}{\km}$ et de masse $M_T = \qty{5,97e24}{\kg}$.
 \smallskip
@@ -90,12 +90,7 @@ La Terre est assimilée à une boule de rayon $R_T = \qty{6370}{\km}$ et de mass
 \separationBlocs{
   \centering
   \begin{tikzpicture}
-    % Satellite
-    \tikzCercle[white] (0, 0) {80} [couleurSec]
-    \tikzLabel(2.82, 0) {$H$} (3.2, 0) 
-    % Terre
-    \tikzCercle[couleurSec!30] (0, 0) {60} [couleurSec]]
-    \tikzLabel(0, 0) {$T$}
+    \tikzSchemaPlanete[orbite = 80pt, rayon = 60pt, satellite = H, contour = couleurSec]
     % Distance d
     \tikzVecteur*(0, 0) (-2.8, 0) {$d$} [below right]
     % Rayon de la Terre
@@ -110,10 +105,7 @@ La Terre est assimilée à une boule de rayon $R_T = \qty{6370}{\km}$ et de mass
 }{
   \centering
   \begin{tikzpicture}
-    \tikzCercle[white] (0, 0) {80} [couleurSec]
-    \tikzLabel(2.82, 0) {$H$} (3.2, 0)
-    \tikzCercle[couleurSec!30] (0, 0) {73.22} [couleurSec]]
-    \tikzLabel(0, 0) {$T$}
+    \tikzSchemaPlanete [orbite = 80pt, rayon = 73.22pt, satellite = H, contour = couleurSec]
   \end{tikzpicture}
   
   \legende{Schéma avec les distances à l'échelle.}

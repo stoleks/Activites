@@ -1,10 +1,9 @@
 \begin{tikzpicture}
   % corps A
-  \tikzCercle[blue-200] (0, 0) {20}
+  \tikzSchemaPlanete [centre = $A$, rayon = 20pt, remplissage = couleurSec-200]
   \tikzLabel*(-1.2, 0) {$m_A$}
-  \tikzLabel(0,0) {$A$}
   % corps B
-  \tikzCercle[blue-200] (4, 2) {20}
+  \filldraw[couleurSec-200] (4, 2) circle (20 pt);
   \tikzLabel*(2.8, 2) {$m_B$}
   \tikzLabel(4, 2) {$B$}
   % force et distance

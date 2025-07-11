@@ -53,10 +53,7 @@ On cherche à calculer la force d'interaction gravitationnelle qu'exerce la Terr
   
 \begin{center}
   \begin{tikzpicture}
-    % Terre et Objet
-    \tikzCercle[couleurSec!30] (0, 0) {60} [couleurSec]
-    \tikzLabel(0, 0) {$T$}
-    \tikzLabel(2.12, 0) {Objet} (3, 0)
+    \tikzSchemaPlanete [rayon = 60pt, orbite = 60pt, satellite = Objet]
     % Rayon de la Terre
     \tikzVecteur*(0, 0) (-0.54, -2.05) {}
     \tikzLabel*(0.3, -1) {$R_T$}

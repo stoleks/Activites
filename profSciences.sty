@@ -98,6 +98,7 @@
 \DeclareSIUnit{\COeq}   {\text{CO$_{2}$e}}
 \DeclareSIUnit{\kgCOeq} {\kg\COeq}
 \DeclareSIUnit{\jour}   {\text{jour}}
+\DeclareSIUnit{\min}    {\text{min}}
 \DeclareSIUnit{\cal}    {\text{cal}}
 \DeclareSIUnit{\kcal}   {\kilo\cal}
 
@@ -508,11 +509,11 @@
   \vspace*{12pt}
   \refstepcounter{subsection}
   \boiteTitre [couleurPrim] {%
-    \important[white]{\Large\Roman{subsection}}%
+    \important[white]{\Large\Roman{subsection} --}%
   }{%
     \important[white]{\Large{#1}}
   }
-  \vspace*{1pt}
+  \vspace*{8pt}
 }
 %
 \newcommand{\titreSection}[1]{%
@@ -941,25 +942,28 @@
 }
 % Quelques questions spéciales avec couleur réglable et un espace horizontal
 \NewDocumentCommand{\mesure}{s o}{%
-  \questionSpeciale{#1}[#2]{\faFlask~\faMicroscope}
+  \questionSpeciale{#1}[#2]{\faFlask~\faMicroscope}%
 }
 %
 \NewDocumentCommand{\telechargement}{s o}{%
-  \questionSpeciale{#1}[#2]{\faMobile*~\faFileDownload}
+  \questionSpeciale{#1}[#2]{\faMobile*~\faFileDownload}%
 }
 %
 \NewDocumentCommand{\documentaire}{s o}{%
-  \questionSpeciale{#1}[#2]{\faFile*~\faPen}
+  \questionSpeciale{#1}[#2]{\faFile*~\faPen}%
 }
 %
 \NewDocumentCommand{\programmation}{s o}{%
-  \questionSpeciale{#1}[#2]{\faDesktop~\faCode}
+  \questionSpeciale{#1}[#2]{\faDesktop~\faCode}%
 }
 %
+\NewDocumentCommand{\schematisation}{s o}{
+  \questionSpeciale{#1}[#2]{\faPencilRuler~\faDraftingCompass}%
+}
 
 %------ pictogramme de sécurité \picto {largeur} {pictogramme}
 \newcommand{\picto}[2]{%
-  \image{#1}{images/pictogrammes/picto_#2}
+  \image{#1}{images/exterieures/pictogrammes/picto_#2}
 }
 % Nombre dans un cercle A REVOIR
 \newcommand*\nombreCercle[1]{%
@@ -1071,10 +1075,9 @@
 
 %------ problématique 
 \newcommand{\problematique}[1]{%
-  \hspace*{-12pt}
-  \flecheLongue[couleurTer]
-  \hspace*{-10pt}
-  \important[couleurTer]{#1}
+  \setlength{\parindent}{\questionIndent}
+  \flecheLongue[couleurTer] \important[couleurTer]{#1}
+  \setlength{\parindent}{0 pt}
 }
 
 

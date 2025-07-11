@@ -33,12 +33,11 @@
       \vspace*{-40pt}
       \begin{center}
         \begin{tikzpicture}
-          % système 
-          \tikzCercle[couleurSec-200] (0, 0) {20}
-          \tikzLabel(0, 0){$A$}
+          % système
+          \tikzSchemaPlanete [centre = $A$, rayon = 20pt, remplissage = couleurSec-200]
           % forces
-          \tikzVecteur(0,0)(-1.7, -0.75){$\vv{F}_1$}[left]
-          \tikzVecteur(0,0)(1.7, 0.75)  {$\vv{F}_2$}[right]
+          \tikzVecteur(0,0)(-1.7, -0.75) {$\vv{F}_1$} [left]
+          \tikzVecteur(0,0)( 1.7,  0.75) {$\vv{F}_2$} [right]
         \end{tikzpicture}
       
         $\vv{F}_1 + \vv{F}_2 = \vv{0}$, les forces exercée sur le système $A$ se compensent.
@@ -59,7 +58,10 @@
 \begin{doc}{Rappel de certaines forces}{doc:A4_exemples_forces}
   \begin{listePoints}
     \item Le poids $\vv{P}$, qui attire tous les objets vers le sol.
-    \item La réaction du support $\vv{R}$, qui empêche les objets de traverser une surface. Elle est de même valeur que le poids, mais sa direction est perpendiculaire à la surface du support. 
+    \item La réaction du support $\vv{R}$, qui empêche les objets de traverser une surface.
+    Elle est de même valeur que le poids, mais sa direction est perpendiculaire à la surface du support.
+    \item Les frottements $\vv{f}$, qui s'opposent au mouvement d'un objet qui se déplace dans un fluide.
+    Il \important{n'y a pas} de frottements sur un objet immobile.
   \end{listePoints}
 \end{doc}
 
@@ -104,6 +106,6 @@
 
 }
 
-\numeroQuestion Schématiser les forces qui s'exercent sur les systèmes A et B, avant, pendant et après le lancer du ballons. 
+\schematisation Schématiser les forces qui s'exercent sur les systèmes A et B, avant, pendant et après le lancer du ballons. 
 
 %\feuilleBlanche
