@@ -67,28 +67,48 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Trace une flèche de progression pour les plans de travail
 % \flecheProgression {<nombre de boucles>} [<largeur>] [<espacement vertical>]
-\NewDocumentCommand{\flecheProgression}{m O{17} O{2.4}}{%
+\pgfkeys{% définition de la famille de clefs
+  /prog/.is family, /prog,
+  defaut/.style = {
+    boucles = 1,
+    largeur = 17,
+    coeff = 2.4
+  },% stockage des clefs
+  boucles/.store in = \progBoucles,
+  largeur/.store in = \progLargeur,
+  coeff/.store in = \progCoeff,
+}
+%
+\newcommand{\nombreBoucle}{}
+\NewDocumentCommand{\flecheProgression}{m}{%
+  \pgfkeys{/prog, defaut, #1}
   \strut\vspace*{8pt}
-  \def\nombreBoucle{\numexpr((#1 - 1)*2)}
+  \renewcommand{\nombreBoucle}{\numexpr((\progBoucles - 1)*2)}
   \begin{center}
     \begin{tikzpicture}
       \tikzset{bluestyle/.style={line width = 20pt, rounded corners = 10mm, color = couleurSec}}
       % Premier bout pour l'alignement, les parenthèses sont nécessaires
-      \draw[bluestyle] (0, {(\nombreBoucle)*#3}) -- (1, {(\nombreBoucle)*#3}); 
+      \draw[bluestyle] (0, {
+        (\nombreBoucle)*\progCoeff}) -- (1, {(\nombreBoucle)*\progCoeff
+      }); 
       % Partie centrale répétée
       \draw[bluestyle]
         \foreach \x in {0,2,...,\nombreBoucle}  {
           \ifnum \x < \nombreBoucle
-            ( 1, {(\nombreBoucle - \x)  *#3})   -- (#2,  {(\nombreBoucle - \x)  *#3})   --
-            (#2, {(\nombreBoucle - \x - 1)*#3}) -- ( 0,  {(\nombreBoucle - \x - 1)*#3}) --
-            ( 0, {(\nombreBoucle - \x - 2)*#3}) -- (1.1, {(\nombreBoucle - \x - 2)*#3})
+            (1, {(\nombreBoucle - \x)  *\progCoeff}) --
+            (\progLargeur,  {(\nombreBoucle - \x)  *\progCoeff})  --
+            (\progLargeur, {(\nombreBoucle - \x - 1)*\progCoeff}) --
+            (0, {(\nombreBoucle - \x - 1)*\progCoeff}) --
+            (0, {(\nombreBoucle - \x - 2)*\progCoeff}) --
+            (1.1, {(\nombreBoucle - \x - 2)*\progCoeff})
           \fi
         };
       % Flèche finale
-      \draw[-{Triangle [width = 36pt, length = 16pt]}, bluestyle] (0.8, 0) -- (#2, 0);
+      \draw[-{Triangle [width = 36pt, length = 16pt]}, bluestyle] (0.8, 0) -- (\progLargeur, 0);
     \end{tikzpicture}
   \end{center}
-  %\vspace*{-{#1*118}pt} %% Trouver comment faire le calcul automatiquement...
+  %% retire l'espace ajouté par les boucles
+  \vspace*{-35\progBoucles pt}
 }
 
 

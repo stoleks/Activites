@@ -1,5 +1,5 @@
 \teteTermStssBiom
-
+\reinitialiseActiviteTP
 \vspace*{-40pt}
 \titre{Plan de Travail -- \termStssBiom}
 \vspace*{-8pt}
@@ -18,7 +18,7 @@
 \vspace*{-20pt}
 
 \begin{multicols}{2}
-  \begin{activite}{Structure des acides $\mathbf{\alpha}$-aminés}[3 h]{acides_amines}
+  \begin{activite}{titre = Structure des acides $\mathbf{\alpha}$-aminés, duree = 3 h, label = acides_amines}
     \begin{prerequis}
       \item Identifier les groupes carboxyles et amines.
     \end{prerequis}
@@ -29,8 +29,9 @@
       \item Voir la liaison peptidique.
     \end{objectifs}
   \end{activite}
+  \hfill
 
-  \begin{activite}{Structure des pro-téines}{structure_proteine}
+  \begin{activite}{titre = Structure des pro-téines, label = structure_proteine}
     \begin{prerequis}
       \item Structure des acides $\alpha$-aminé.
     \end{prerequis}
@@ -39,51 +40,53 @@
       \item Voir les actions biologiques des protéines.
     \end{objectifs}
   \end{activite}
+  \smallskip
 
   \setcounter{activiteNum}{4}
-  \begin{activite}{Additifs alimentaires et arômes}{additifs_aromes}
+  \begin{activite}{titre = Additifs et arômes, label = additifs_aromes}
     \begin{objectifs}
       \item Comprendre l'intérêt et les défauts des additifs alimentaires.
+      \item Différence arôme naturel/synthèse.
     \end{objectifs}
   \end{activite}
 
   \setcounter{activiteNum}{2}
-  \begin{activite}{Les vitamines}{vitamines}
+  \begin{activite}{titre = Les vitamines, label = vitamines}
     \begin{objectifs}
       \item Définir « hydro- » et « liposoluble ».
       \item Relier les besoins journaliers avec leur solubilité.
-      \item Analyser la structure des vitamines A, C et D pour déterminer leur solubilité.
+      \item Analyser la structure des vitamines A, C et D. Déterminer leur solubilité.
     \end{objectifs}
   \end{activite}
+  \hfill
   
-  \begin{activite}{Lipides et alimen-tation}{lipides_alimentation}
+  \begin{activite}{titre = Lipides et alimen-tation, label = lipides_alimentation}
     \begin{prerequis}
-      \item Reconnaître une molécule hydrosoluble et liposoluble.
+      \item Distinguer les molécules liposolubles et hydrosolubles.
     \end{prerequis}
     \begin{objectifs}
       \item Revoir la structure des acides gras et des triglycérides.
-      \item Comprendre l'impact du cholestérol et des lipoprotéines sur l'organisme.
+      \item Impact des lipoprotéines de basse densité sur l'organisme.
     \end{objectifs}
   \end{activite}
+  \smallskip
   
-  \begin{TP}{Saponification d'une matière grasse}[2h]{saponification}
+  \begin{TP}{titre = Saponification d'une matière grasse, duree = 2 h, label = saponification}
     \begin{prerequis}
-      \item Structure d'un triglycéride.
-      \item Hydrolyse d'un triglycéride.
+      \item Structure/hydrolyse d'un triester.
     \end{prerequis}
     \begin{objectifs}
       \item Voir la réaction de saponification.
-      \item Calculer le rendement d'une saponification.
+      \item Rendement d'une saponification.
     \end{objectifs}
   \end{TP}  
 \end{multicols}
-
 
 \vspace*{-2cm}
 \begin{tikzpicture}[
   overlay, remember picture, line width=1.5mm, draw=couleurQuat
 ]
-    \draw[->] (acides_amines) to (structure_proteine);
+  \draw[->] (acides_amines) to (structure_proteine);
 \end{tikzpicture}
 
 
@@ -94,24 +97,19 @@
 \titre{Progression des activités}
 \vspace*{12pt}
 
-\flecheProgression{3}
-\vspace*{-353pt}
+\flecheProgression{boucles = 3}
 
 \begin{programmeSeance}
-  \seance{2 h}{}
-  \seance{1 h}{}
-  \seance{2 h}{}
+  \seance \seance \seance
 \end{programmeSeance}
 
 \begin{programmeSeance}
-  \seance{1 h}{}
-  \seance{2 h}{}
-  \seance{1 h}{}
+  \seance \seance \seance
 \end{programmeSeance}
 
-\begin{programmeSeance}[2](0)
-  \seance{2 h}{ \important{Tâche finale} }
-  \seance{1 h}{ Présentation orale du poster réalisé. }
+\begin{programmeSeance}[nombre = 2, distance = 0 pt]
+  \seance[\important{Tâche finale}]
+  \seance[Présentation orale du poster réalisé.]
 \end{programmeSeance}
 
 

@@ -1,5 +1,5 @@
 \tetePremStssBiol
-
+\reinitialiseActiviteTP
 % \vspace*{-40pt}
 \titre{Plan de Travail -- \premStssBiol}
 \vspace*{-8pt}
@@ -17,7 +17,7 @@
 \vspace*{-16pt}
 
 \begin{multicols}{2}
-  \begin{TP}{Les glucides}[2 h]{glucides}
+  \begin{TP}{titre = Les glucides, duree = 2 h, label = glucides}
     \begin{prerequis}
       \item Connaître la formule topologique.
       \item Savoir identifier les fonctions alcool, aldéhyde et cétone.
@@ -30,19 +30,8 @@
   \end{TP}
   \smallskip
 
-  \begin{activite}{Les lipides}[1,5 h]{lipides}
-    \begin{prerequis}
-      \item Connaître la formule topologique et semi-développée.
-      \item Savoir identifier les fonctions acide carboxylique et ester.
-    \end{prerequis}
-    \begin{objectifs}
-      \item Étudier la structure des lipides.
-      \item Distinguer un acide gras saturé/insaturé.
-      \item Voir la structure d'un triglycéride.
-    \end{objectifs}
-  \end{activite}
-
-  \begin{activite}{Les protéines}{proteines}
+  \setcounter{activiteNum}{1}
+  \begin{activite}{titre = Les protéines, label = proteines}
     \begin{prerequis}
       \item Savoir passer de la formule topologique à la formule semi-développée.
       \item Savoir identifier les fonctions amine, acide carboxylique et amide.
@@ -53,9 +42,22 @@
       \item Étudier la structure des protéines.
     \end{objectifs}
   \end{activite}
+
+  \setcounter{activiteNum}{0}
+  \begin{activite}{titre = Les lipides, duree =  1 h 30, label = lipides}
+    \begin{prerequis}
+      \item Connaître la formule topologique et semi-développée.
+      \item Savoir identifier les fonctions acide carboxylique et ester.
+    \end{prerequis}
+    \begin{objectifs}
+      \item Étudier la structure des lipides.
+      \item Distinguer un acide gras saturé/insaturé.
+      \item Voir la structure d'un triglycéride.
+    \end{objectifs}
+  \end{activite}
   \smallskip
 
-  \begin{TP}{Les vitamines}[1,5 h]{vitamines}
+  \begin{TP}{titre = Les vitamines, duree = 1 h 30, label = vitamines}
     \begin{prerequis}
       \item Connaître la formule topologique.
       \item Savoir identifier la fonction alcool.
@@ -79,23 +81,19 @@ Les TP doivent être réalisé en salle expérimentale (en demi-groupe), il faut
 \titre{Progression des activités}
 \vspace*{12pt}
 
-\flecheProgression{3}
-\vspace*{-353 pt}
+\flecheProgression{boucles = 3}
 
 \begin{programmeSeance}
-  \seance{1 h}{}
-  \seance{2 h}{}
-  \seance{1 h}{}
+  \seance \seance \seance
 \end{programmeSeance}
 
-\begin{programmeSeance}[2]
-  \seance{2 h}{}
-  \seance{1 h}{}
+\begin{programmeSeance}[nombre = 2]
+  \seance \seance
 \end{programmeSeance}
 
-\begin{programmeSeance}[2](0)
-  \seance{2 h}{ \important{Tâche finale} }
-  \seance{1 h}{ \important{Évaluation du chapitre} }
+\begin{programmeSeance}[nombre = 2, distance = 0 pt]
+  \seance[\important{Tâche finale}]
+  \seance[\important{Évaluation du chapitre}]
 \end{programmeSeance}
 
 

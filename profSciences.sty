@@ -57,7 +57,11 @@
 }
 
 %----- Librairies tikz
-\usetikzlibrary{babel, arrows.meta, positioning, shapes.geometric, shapes.symbols}
+\usetikzlibrary{
+  babel, calc,
+  arrows.meta, positioning,
+  shapes.geometric, shapes.symbols
+}
 \tikzset{>=latex}
 
 %----- Réglages pour fontawesome avec pdfLaTeX
@@ -234,18 +238,15 @@
 }
 
 % Boite pour afficher une activité ou un TP
-\pgfkeys{
-  % définition de la famille de clefs
+\pgfkeys{% définition de la famille de clefs
   /boiteActi/.is family, /boiteActi,
-  % définition des clefs
-  default/.style = {
+  defaut/.style = {
     titre = Titre, 
     duree = 1 h,
     label = Aucun,
     compteur = activiteNum,
     format = \documentaire*\!\!Activité
-  },
-  % stockage des clefs
+  },% stockage des clefs
   titre/.store in = \boiteActiTitre,
   duree/.store in = \boiteActiDuree,
   label/.store in = \boiteActiLabel,
@@ -263,8 +264,8 @@
   },%
   enlarge bottom by = 12pt,%
   overlay= {%
-    \node at ([xshift = -36pt, yshift = -6pt] frame.south east) {
-      \dureeActivite{{\small \important[white]{\boiteActiDuree}}}
+    \node at ([xshift = -40pt, yshift = -7pt] frame.south east) {
+      \dureeActivite{{\small \important[white]{\faHourglassHalf~~\boiteActiDuree}}}
     };
   }, % affiche la durée de l'activité dans une petite boite
   remember as = \boiteActiLabel,%
@@ -274,13 +275,13 @@
 % Boite pour les activités/TP en plan de travail. Il y a peut-être moyen de ne pas avoir
 % une boite intermédiaire, mais je ne sais pas comment faire...
 \NewDocumentEnvironment{activite}{m}{%
-  \pgfkeys{/boiteActi, default, #1}
+  \pgfkeys{/boiteActi, defaut, #1}
   \begin{boiteActivite}
 }{%
   \end{boiteActivite}
 }
 \NewDocumentEnvironment{TP}{m}{%
-  \pgfkeys{/boiteActi, default, #1, compteur = TPNum, format = \mesure*\!\!TP}
+  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \mesure*\!\!TP}
   \begin{boiteActivite}
 }{%
   \end{boiteActivite}
@@ -290,28 +291,43 @@
 \newtcolorbox{tacheFinale}[1][]{%
   boite cassable,%
   titre sans separation = 0.5mm,%
-  title = {Tâche finale}, % titre
+  title = {Tâche finale},% titre
   #1
 }
 
 % Boîte pour l'organisation des séances
-\newtcbox{\seance}[2][]{%
-  boite cassable,%
-  titre sans separation = 0.5mm,%
-  titre avec compteur = {seanceNum}{Séance \arabic{seanceNum} \hfill (#2)},%
-  halign=center, valign=center, % pour centrer le contenu
-  height = 0.13\textheight, % hauteur de la boite
-  #1
+\NewDocumentCommand{\seance}{o}{%
+  \tcbox[%
+    boite cassable,%
+    titre sans separation = 0.5mm,%
+    titre avec compteur = {seanceNum}{Séance \arabic{seanceNum}},%
+    halign=center, valign=center, % pour centrer le contenu
+    height = 0.13\textheight, % hauteur de la boite
+  ]{%
+    \IfValueTF{#1}{#1}{}%
+  }%
 }
+
 % Pour afficher 3/2/1 séances dans la programmation
-\NewDocumentEnvironment{programmeSeance}{O{3} D(){34}}{%
+\pgfkeys{% définition de la famille de clefs
+  /seances/.is family, /seances,
+  defaut/.style = {
+    nombre = 3,
+    distance = 34 pt
+  },% stockage des clefs
+  nombre/.store in = \seancesNombre,
+  distance/.store in = \seancesDistance
+}
+%
+\NewDocumentEnvironment{programmeSeance}{O{nombre = 3}}{%
+  \pgfkeys{/seances, defaut, #1}
   \begin{tcbraster}[%
-    raster columns = #1,%
-    raster width center = (\linewidth - 3cm - 5cm*(3 - #1))
+    raster columns = \seancesNombre,%
+    raster width center = (\linewidth - 3cm - 5cm*(3 - \seancesNombre))
   ]
-}{
+}{%
   \end{tcbraster}
-  \vspace*{#2 pt}
+  \vspace*{\seancesDistance}
 }
 
 %------ Boîtes pour structurer un document
@@ -532,6 +548,10 @@
   \setcounter{sousSectionNum}{0}
   \setcounter{seanceNum}{0}
   \setcounter{exerciceNum}{0}
+}
+\newcommand{\reinitialiseActiviteTP}{%
+  \setcounter{activiteNum}{0}
+  \setcounter{TPNum}{0}
 }
 %
 \newcommand{\numeroActivite}[1]{%
@@ -819,7 +839,7 @@
     \begin{tblr}{%
       colspec = {c X[l] c c c c},
       rows = {m}, hlines, vlines,
-      row{1} = {c, couleurSec-100, font = \bfseries}
+      row{1} = {c, couleurSec-100, font = \bfseries\sffamily}
     }
       Comp. & Items & D & C & B & A \\
 }{%
