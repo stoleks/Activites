@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Style commun à plusieurs fichiers
+%------ Style commun à plusieurs fichiers
 \tikzset{
   rectArrondi/.style = {
     rounded corners = 8pt, inner ysep = 10pt,
@@ -9,7 +9,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Cercles, points et vecteurs
+%------ Cercles, points et vecteurs
 \pgfkeys{
   /planete/.is family, /planete,
   defaut/.style = {
@@ -35,6 +35,7 @@
   \filldraw (0, 0) circle (2pt) node[above] {\planeteCentre};
   \filldraw (\planeteOrbite, 0) circle (2pt) node[right] {\planeteSatellite};
 }
+
 % \tikzPointLabel (x, y) [texte] (xtexte, ytexte), trace un point avec un label; * = pas de point
 \NewDocumentCommand{\tikzLabel}{s r() m d()}{
   \IfBooleanTF{#1}{
@@ -60,7 +61,7 @@
   }
 }
 
-%% Trace une petite barre de pourcentage partiellement remplie sur la ligne
+% Trace une petite barre de pourcentage partiellement remplie sur la ligne
 \NewDocumentCommand{\barrePourcentage}{O{couleurSec} m}{%
   \begin{tikzpicture}
     \fill[color=#1]     (0.0,    0.0) rectangle (#2*8ex, 1.5ex);
@@ -70,7 +71,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Trace une flèche de progression pour les plans de travail
+%------ Trace une flèche de progression pour les plans de travail
 \pgfkeys{% définition de la famille de clefs
   /prog/.is family, /prog,
   defaut/.style = {
@@ -111,49 +112,48 @@
       \draw[-{Triangle [width = 36pt, length = 16pt]}, bluestyle] (0.8, 0) -- (\progLargeur, 0);
     \end{tikzpicture}
   \end{center}
-  %% retire l'espace ajouté par les boucles
+  % retire l'espace ajouté par les boucles
   \vspace*{-35\progBoucles pt}
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% plan de classe
+%------ plan de classe
 
-%% Pour tracer une rangée d'élève avec 2 ou 3 colonnes
-% \rang <largeur> <hauteur> {<eleves>} {<eleves>} {<eleves>}
+% Pour tracer une rangée d'élève à 2 ou 3 colonnes (<eleves>) (<eleves>) (<eleves>)
+\pgfkeys{
+  /rangee/.is family, /rangee,
+  defaut/.style = {
+    largeur = 3,
+    hauteur = 2
+  },% stockage des clefs
+  largeur/.store in = \rangeeX,
+  hauteur/.store in = \rangeeY
+}
+%
 \ExplSyntaxOn
 \fp_new:N \l_rangPositionX_fp% position de la place
 \fp_new:N \l_largeurPlaceX_fp% largeur d'une place
 \fp_new:N \l_hauteurPlaceY_fp% hauteur d'une place
-\NewDocumentCommand{\rang}{%
-  D<>{3} D<>{2} 
-  >{\SplitList{,}}r[] >{\SplitList{,}}r[] >{\SplitList{,}}d[]
-}{%
+\NewDocumentCommand{\rang}{ O{} >{\SplitList{,}}r() >{\SplitList{,}}r() >{\SplitList{,}}d() }{%
+  \pgfkeys{/rangee, defaut, #1}
   \begin{tikzpicture}
     % Initialisation de la position horizontale et de la taille des places
     \fp_set:Nn \l_rangPositionX_fp {0}
-    \fp_set:Nn \l_largeurPlaceX_fp {#1}
-    \fp_set:Nn \l_hauteurPlaceY_fp {#2}
+    \fp_set:Nn \l_largeurPlaceX_fp {\rangeeX}
+    \fp_set:Nn \l_hauteurPlaceY_fp {\rangeeY}
     % Première rangée
-    \ProcessList{#3}{\rangImpl}
+    \ProcessList{#2}{\rangImpl}
     \fp_add:Nn \l_rangPositionX_fp {1}
     % Deuxième rangée
-    \ProcessList{#4}{\rangImpl}
+    \ProcessList{#3}{\rangImpl}
     % Troisième rangée
-    \IfValueT{#5}{
+    \IfValueT{#4}{
       \fp_add:Nn \l_rangPositionX_fp {1}
-      \ProcessList{#5}{\rangImpl}
+      \ProcessList{#4}{\rangImpl}
     }
   \end{tikzpicture}
   \bigskip
-}
-% \texteRectangle [couleur cadre] (x, y) (lx, ly) {texte}
-\NewDocumentCommand{\texteRectangle}{O{black} r() r() m}{%
-  \coordinate (A) at (#2);
-  \coordinate (B) at (#3);
-  \filldraw [fill=white, draw=#1, ultra thick] (A) rectangle ($(A)+(B)$);
-  \coordinate (C) at (0.5*#3/2); % divide by two lx and ly
-  \node at ($(A)+(C)$) [font=\sffamily] {\textbf{#4}};
 }
 % Commande interne qui appelle \texteRectangle pour chaque élève
 \NewDocumentCommand{\rangImpl}{m}{%
@@ -165,9 +165,18 @@
 }
 \ExplSyntaxOff
 
+% \texteRectangle [couleur cadre] (x, y) (lx, ly) {texte}
+\NewDocumentCommand{\texteRectangle}{O{black} r() r() m}{
+  \coordinate (A) at (#2);
+  \coordinate (B) at (#3);
+  \filldraw [fill=white, draw=#1, ultra thick] (A) rectangle ($(A)+(B)$);
+  \coordinate (C) at (0.5*#3/2); % divide by two lx and ly
+  \node at ($(A)+(C)$) [font=\sffamily] {\textbf{#4}};
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% tube à essais
+%------ tube à essais
 \pgfkeys{
   /tube/.is family, /tube,
   defaut/.style = {
@@ -183,21 +192,24 @@
   phase/.store in = \tubePhase,
   couleur/.store in = \tubeCouleur
 }
-%
+
+% Tube à essais vide
 \NewDocumentCommand{\tikzTubeEssais}{O{}}{
   \pgfkeys{/tube, defaut, #1}
   \draw[thick] (\tubeX, \tubeY)-- (\tubeX, 0) arc (0:-180:\tubeX)-- (-\tubeX, \tubeY);
   % note : le + 0 permet d'éviter que l'unité et "and" soit collé et donc non compris par pgf
   \draw[thick] (0, \tubeY) ellipse (\tubeX+0 and \tubeRayon);
 }
-%
+
+% Liquide dans un tube à essais
 \NewDocumentCommand{\tikzPhaseBasTubeEssais}{O{}}{
   \pgfkeys{/tube, defaut, #1}
   \fill[color=\tubeCouleur] (-\tubeX, 0)-- (\tubeX, 0) arc (0:-180:\tubeX); % bas
   \fill[color=\tubeCouleur] (\tubeX, \tubeY)-- (-\tubeX, \tubeY)-- (-\tubeX, -0.01)-- (\tubeX, -0.01);% centre
   \fill[color=\tubeCouleur!85!black] (0, \tubeY) ellipse (\tubeX+0 and \tubeRayon);% ellipse du haut
 }
-%
+
+% Phase d'un liquide dans un tube à essais
 \NewDocumentCommand{\tikzPhaseTubeEssais}{O{}}{
   \pgfkeys{/tube, defaut, #1}
   \fill[color=\tubeCouleur] (\tubeX, \tubePhase) -- (-\tubeX, \tubePhase) -- (-\tubeX, \tubeY) -- (\tubeX, \tubeY); % centre de la phase
@@ -205,7 +217,7 @@
   \fill[color=\tubeCouleur!85!black] (0, \tubePhase) ellipse (\tubeX+0 and \tubeRayon);% haut de la phase
 }
 
-%%%% tube à essai avec une seule solution
+% tube à essai avec une seule solution
 \newcommand{\tubeEssaisSolution}[1]{
   \begin{tikzpicture}
     \tikzPhaseBasTubeEssais [couleur = #1, largeur = 0.25cm, hauteur = 0.75cm]% contenu du tube

@@ -108,6 +108,19 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%------------- Sous-paquets
+%------ Couleurs
+\input{couleurs.tex}
+\palette{couleurPrim}{cyan}
+\palette{couleurSec} {blue}
+\palette{couleurTer} {purple}
+\palette{couleurQuat}{red}
+
+%------ Schémas
+\input{schemas.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%------------- Compteurs internes et commandes associées
 %------ Compteurs
 \newcounter{TPNum} 
@@ -164,6 +177,27 @@
     boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},%
     title = #1,%
   },
+  %--- adapté du paquet ProfLycee de Cedric Pierquet https://ctan.org/pkg/proflycee
+  style code Tex/.style = {%
+    listing engine = listings,%
+    listing options = {%
+      breaklines = true,%
+      breakatwhitespace = true,%
+      style = tcblatex, basicstyle = \footnotesize\ttfamily,%
+      tabsize = 2,%
+      commentstyle = {\itshape\color{couleurSec-300}},
+      keywordstyle = {\color{couleurSec}},%
+      classoffset = 0,%
+      keywords = {chemfig, definesubmol},%
+      alsoletter = {-},%
+      keywordstyle = {\color{couleurSec}}%
+    }
+  },
+  %
+  cote a cote/.style = {%
+    listing side text,%
+    righthand width = #1%
+  }
 }
 
 %------ Quelques boites simples
@@ -434,6 +468,20 @@
     #2
   \end{boiteExtrait}
   \IfValueTF{#1}{ \sourceExtrait{#1} }{}
+}
+
+%------ adapaté de Cedric Pierquet https://ctan.org/pkg/proflycee
+\NewTCBListing{boiteCodeTex}{ O{couleurTer} m }{%
+  enhanced, breakable,%
+  flush right, boxrule = 1pt, colframe = #1!90,%
+  sharp corners, top = 0mm, bottom = 0mm, left = 0.4em, right = 5mm,%
+  before skip = \baselineskip, after skip = \baselineskip,%
+  colback = white,%
+  fontupper = \footnotesize, fontlower = \footnotesize,%
+  title = {{\scriptsize\faFileCode[regular]~\faCogs} Code \LaTeX},%
+  fonttitle = \bfseries\footnotesize\sffamily, colbacktitle = #1,%
+  style code Tex,%
+  #2
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
