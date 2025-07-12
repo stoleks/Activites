@@ -10,17 +10,6 @@
 \usepackage{profSciences} % mise en page et autre
 \usepackage{biomolecules} % pour dessiner des formules chimiques
 
-\input{../_couleurs}
-\input{../_abbreviations}
-\input{../_figures}
-\input{../_chapitres}
-\input{../_tableau_periodique}
-
-\palette{couleurPrim}{cyan}
-\palette{couleurSec} {blue}
-\palette{couleurTer} {purple}
-\palette{couleurQuat}{red}
-
 \setlength{\parskip}{0cm}
 \setlength{\parindent}{0cm}
 \renewcommand{\baselinestretch}{1}
@@ -31,44 +20,6 @@
   a4paper, % format
   left=1.3cm, right=1.3cm, % marge horizontale
   top=2.2cm, bottom=2.1cm % marge verticale
-}
-
-%% Ces commandes sont adaptées du très bon paquet ProfLycée de Cedric Pierquet 
-%% https://ctan.org/pkg/proflycee
-\tcbset{
-  style code Tex/.style = {%
-    listing engine = listings,%
-    listing options = {%
-      breaklines = true,%
-      breakatwhitespace = true,%
-      style = tcblatex, basicstyle = \footnotesize\ttfamily,%
-      tabsize = 2,%
-      commentstyle = {\itshape\color{couleurSec-300}},
-      keywordstyle = {\color{couleurSec}},%
-      classoffset = 0,%
-      keywords = {chemfig, definesubmol},%
-      alsoletter = {-},%
-      keywordstyle = {\color{couleurSec}}%
-    }
-  },
-  cote a cote/.style = {%
-    listing side text,%
-    righthand width = #1%
-  }
-}
-
-%% de Cedric Pierquet https://ctan.org/pkg/proflycee
-\NewTCBListing{boiteCodeTex}{ O{couleurTer} m }{%
-  enhanced, breakable,%
-  flush right, boxrule = 1pt, colframe = #1!90,%
-  sharp corners, top = 0mm, bottom = 0mm, left = 0.4em, right = 5mm,%
-  before skip = \baselineskip, after skip = \baselineskip,%
-  colback = white,%
-  fontupper = \footnotesize, fontlower = \footnotesize,%
-  title = {{\scriptsize\faCogs} Code \LaTeX},%
-  fonttitle = \bfseries\footnotesize\sffamily, colbacktitle = #1,%
-  style code Tex,%
-  #2,%
 }
 
 

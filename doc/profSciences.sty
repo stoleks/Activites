@@ -57,7 +57,11 @@
 }
 
 %----- Librairies tikz
-\usetikzlibrary{babel, arrows.meta, positioning, shapes.geometric, shapes.symbols}
+\usetikzlibrary{
+  babel, calc,
+  arrows.meta, positioning,
+  shapes.geometric, shapes.symbols
+}
 \tikzset{>=latex}
 
 %----- Réglages pour fontawesome avec pdfLaTeX
@@ -94,12 +98,26 @@
 \DeclareSIUnit{\COeq}   {\text{CO$_{2}$e}}
 \DeclareSIUnit{\kgCOeq} {\kg\COeq}
 \DeclareSIUnit{\jour}   {\text{jour}}
+\DeclareSIUnit{\min}    {\text{min}}
 \DeclareSIUnit{\cal}    {\text{cal}}
 \DeclareSIUnit{\kcal}   {\kilo\cal}
 
 %------ Paramètres généraux
 \newdimen\questionIndent
 \setlength\questionIndent{16pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%------------- Sous-paquets
+%------ Couleurs
+\input{couleurs.tex}
+\palette{couleurPrim}{cyan}
+\palette{couleurSec} {blue}
+\palette{couleurTer} {purple}
+\palette{couleurQuat}{red}
+
+%------ Schémas
+\input{schemas.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,7 +129,6 @@
 \newcounter{seanceNum}
 \newcounter{activiteNum}
 \newcounter{exerciceNum}
-\newcounter{sousSectionNum}
 \newcounter{ligneNum}
 \newcounter{questionNum}
 \newcounter{sousQuestionNum}
@@ -159,6 +176,27 @@
     boxed title style = {empty, size = small, top = 1mm, bottom = 0.5mm},%
     title = #1,%
   },
+  %--- adapté du paquet ProfLycee de Cedric Pierquet https://ctan.org/pkg/proflycee
+  style code Tex/.style = {%
+    listing engine = listings,%
+    listing options = {%
+      breaklines = true,%
+      breakatwhitespace = true,%
+      style = tcblatex, basicstyle = \footnotesize\ttfamily,%
+      tabsize = 2,%
+      commentstyle = {\itshape\color{couleurSec-300}},
+      keywordstyle = {\color{couleurSec}},%
+      classoffset = 0,%
+      keywords = {chemfig, definesubmol},%
+      alsoletter = {-},%
+      keywordstyle = {\color{couleurSec}}%
+    }
+  },
+  %
+  cote a cote/.style = {%
+    listing side text,%
+    righthand width = #1%
+  }
 }
 
 %------ Quelques boites simples
@@ -169,16 +207,27 @@
 }
 
 % \begin{boiteColoree}{couleur} contenu \end{boiteColoree}
-\newtcolorbox{boiteColoree}[2][]{%
-  boite cassable, boite pleine = #2,
-  #1
+\NewTColorBox{boiteColoree}{ O{couleurPrim-50} +O{} }{%
+  boite cassable, boite pleine = #1
+  #2
 }
 
 % Trace un rectangle
-\NewDocumentCommand{\rectangle}{O{couleurPrim} m m}{%
-  \shorthandoff{;}
-  \tikz \node (rect) [draw, fill, color=#1, minimum width=#2, minimum height=#3] {};
-  \shorthandon{;}
+\pgfkeys{% définition de la famille de clefs
+  /simpleRect/.is family, /simpleRect,
+  defaut/.style = {
+    hauteur = 1 cm, 
+    largeur = 1 cm,
+    couleur = couleurPrim
+  },% stockage des clefs
+  largeur/.store in = \rectangleX,
+  hauteur/.store in = \rectangleY,
+  couleur/.store in = \rectCouleur
+}
+%
+\NewDocumentCommand{\rectangle}{ O{} }{%
+  \pgfkeys{/simpleRect, defaut, #1}
+  \tikz \node (rect) [draw, fill, color=\rectCouleur, minimum width=\rectangleX, minimum height=\rectangleY] {};
 }
 
 % Rectangle adapté à la taille d'un texte
@@ -186,7 +235,7 @@
 \newdimen\largeurBoite%
 \newdimen\profondeurBoite%
 \newdimen\tailleBoite%
-\newcommand{\boiteRectangle}[2][]{%
+\NewDocumentCommand{\boiteRectangle}{O{} m}{%
   \settoheight{\hauteurBoite}{ #2 }    % Hauteur du texte
   \settowidth {\largeurBoite}{ #2 }    % Largeur du texte
   \settodepth {\profondeurBoite}{ #2 } % Profondeur du texte
@@ -234,18 +283,15 @@
 }
 
 % Boite pour afficher une activité ou un TP
-\pgfkeys{
-  % définition de la famille de clefs
+\pgfkeys{% définition de la famille de clefs
   /boiteActi/.is family, /boiteActi,
-  % définition des clefs
-  default/.style = {
+  defaut/.style = {
     titre = Titre, 
     duree = 1 h,
     label = Aucun,
     compteur = activiteNum,
     format = \documentaire*\!\!Activité
-  },
-  % stockage des clefs
+  },% stockage des clefs
   titre/.store in = \boiteActiTitre,
   duree/.store in = \boiteActiDuree,
   label/.store in = \boiteActiLabel,
@@ -263,8 +309,8 @@
   },%
   enlarge bottom by = 12pt,%
   overlay= {%
-    \node at ([xshift = -36pt, yshift = -6pt] frame.south east) {
-      \dureeActivite{{\small \important[white]{\boiteActiDuree}}}
+    \node at ([xshift = -40pt, yshift = -7pt] frame.south east) {
+      \dureeActivite{{\small \important[white]{\faHourglassHalf~~\boiteActiDuree}}}
     };
   }, % affiche la durée de l'activité dans une petite boite
   remember as = \boiteActiLabel,%
@@ -274,13 +320,13 @@
 % Boite pour les activités/TP en plan de travail. Il y a peut-être moyen de ne pas avoir
 % une boite intermédiaire, mais je ne sais pas comment faire...
 \NewDocumentEnvironment{activite}{m}{%
-  \pgfkeys{/boiteActi, default, #1}
+  \pgfkeys{/boiteActi, defaut, #1}
   \begin{boiteActivite}
 }{%
   \end{boiteActivite}
 }
 \NewDocumentEnvironment{TP}{m}{%
-  \pgfkeys{/boiteActi, default, #1, compteur = TPNum, format = \mesure*\!\!TP}
+  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \mesure*\!\!TP}
   \begin{boiteActivite}
 }{%
   \end{boiteActivite}
@@ -290,28 +336,43 @@
 \newtcolorbox{tacheFinale}[1][]{%
   boite cassable,%
   titre sans separation = 0.5mm,%
-  title = {Tâche finale}, % titre
+  title = {Tâche finale},% titre
   #1
 }
 
 % Boîte pour l'organisation des séances
-\newtcbox{\seance}[2][]{%
-  boite cassable,%
-  titre sans separation = 0.5mm,%
-  titre avec compteur = {seanceNum}{Séance \arabic{seanceNum} \hfill (#2)},%
-  halign=center, valign=center, % pour centrer le contenu
-  height = 0.13\textheight, % hauteur de la boite
-  #1
+\NewDocumentCommand{\seance}{o}{%
+  \tcbox[%
+    boite cassable,%
+    titre sans separation = 0.5mm,%
+    titre avec compteur = {seanceNum}{Séance \arabic{seanceNum}},%
+    halign=center, valign=center, % pour centrer le contenu
+    height = 0.13\textheight, % hauteur de la boite
+  ]{%
+    \IfValueTF{#1}{#1}{}%
+  }%
 }
+
 % Pour afficher 3/2/1 séances dans la programmation
-\NewDocumentEnvironment{programmeSeance}{O{3} D(){34}}{%
+\pgfkeys{% définition de la famille de clefs
+  /seances/.is family, /seances,
+  defaut/.style = {
+    nombre = 3,
+    distance = 34 pt
+  },% stockage des clefs
+  nombre/.store in = \seancesNombre,
+  distance/.store in = \seancesDistance
+}
+%
+\NewDocumentEnvironment{programmeSeance}{O{nombre = 3}}{%
+  \pgfkeys{/seances, defaut, #1}
   \begin{tcbraster}[%
-    raster columns = #1,%
-    raster width center = (\linewidth - 3cm - 5cm*(3 - #1))
+    raster columns = \seancesNombre,%
+    raster width center = (\linewidth - 3cm - 5cm*(3 - \seancesNombre))
   ]
-}{
+}{%
   \end{tcbraster}
-  \vspace*{#2 pt}
+  \vspace*{\seancesDistance}
 }
 
 %------ Boîtes pour structurer un document
@@ -396,11 +457,11 @@
 
 %------ Extrait avec sa source
 \newcommand{\sourceExtrait}[1]{%
-  \vspace*{-12pt}
+  \vspace*{-8pt}
   \begin{flushright}
     \textit{#1}
   \end{flushright}
-  \vspace*{-12pt}
+  \vspace*{-4pt}
 }
 %
 \newtcolorbox{boiteExtrait}[1][]{
@@ -412,11 +473,44 @@
   #1
 }
 %
-\NewDocumentCommand{\extrait}{o m}{%
+\NewDocumentCommand{\extrait}{o +m}{%
   \begin{boiteExtrait}
     #2
   \end{boiteExtrait}
   \IfValueTF{#1}{ \sourceExtrait{#1} }{}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ Style python
+\lstdefinestyle{codePython}{
+  commentstyle=\color{magenta-500},
+  keywordstyle=\color{green-500},
+  stringstyle =\color{purple-500},
+  numberstyle =\tiny\color{black!50},
+  basicstyle  =\ttfamily\footnotesize,
+  breakatwhitespace=false, breaklines=true, keepspaces=true,
+  showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,
+  captionpos=b, numbers=left, numbersep=5pt,
+  extendedchars=true,
+  literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1, 
+}
+\newcommand{\pythonEnLigne}[1]{
+  \lstinline[style = codePython, language = python]| #1 |
+}
+
+%------ Boite LaTex, adapatée de Cedric Pierquet https://ctan.org/pkg/proflycee
+\NewTCBListing{boiteCodeTex}{ O{couleurTer} m }{%
+  enhanced, breakable,%
+  flush right, boxrule = 1pt, colframe = #1!90,%
+  sharp corners, top = 0mm, bottom = 0mm, left = 0.4em, right = 5mm,%
+  before skip = \baselineskip, after skip = \baselineskip,%
+  colback = white,%
+  fontupper = \footnotesize, fontlower = \footnotesize,%
+  title = {{\scriptsize\faFileCode[regular]~\faCogs} Code \LaTeX},%
+  fonttitle = \bfseries\footnotesize\sffamily, colbacktitle = #1,%
+  style code Tex,%
+  #2
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -443,6 +537,7 @@
 %------ activité ou TP
 \newcommand{\titreActi}[2]{%
   \refstepcounter{activiteNum}
+  \addcontentsline{toc}{subsection}{#1 \arabic{activiteNum} -- #2}%
   \titre{#1 \arabic{section}.\arabic{activiteNum} -- #2}
 }
 \NewDocumentCommand{\titreTP}{s m}{%
@@ -455,6 +550,7 @@
 \NewDocumentCommand{\titreActivite}{s m O{Activité}}{%
   \IfBooleanTF{#1}{ % Version * sans le numéro du chapitre
     \refstepcounter{activiteNum}
+    \addcontentsline{toc}{subsection}{#3 \arabic{activiteNum} -- #2}%
     \titre{#3 \arabic{activiteNum} -- #2}
   }{%
     \titreActi{#3}{#2}
@@ -471,57 +567,66 @@
 }
 \newcommand{\exercice}[1]{%
   \refstepcounter{exerciceNum}
+  \addcontentsline{toc}{subsubsection}{Exercice \arabic{exerciceNum} : #1}%
   \important[black]{\large Exercice \arabic{exerciceNum} : #1}
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
-  \setcounter{sousSectionNum}{0}
+  \setcounter{subsubsection}{0}
 }
 
 
 %------ chapitre, partie, section et sous-section
 \newcommand{\chapitre}[1]{ % Réglage du titre du chapitre
-  Chapitre \arabic{section} -- #1
+  \addcontentsline{toc}{part}{Chapitre \arabic{part} -- #1}%
+  Chapitre \arabic{part} -- #1
 }
 %
 \newcommand{\titreChapitre}[1]{ % Affichage du titre du chapitre
-  \titre{Chapitre \arabic{section} -- #1}
+  \titre{Chapitre \arabic{part} -- #1}
 }
 %
-\newcommand{\titrePartie}[1]{%
+\NewDocumentCommand{\titrePartie}{ s m }{%
+  \vspace*{12pt}
+  \refstepcounter{section}
+  \IfBooleanTF{#1}{}{ % Version sans *
+    \addcontentsline{toc}{section}{\arabic{section} -- #2}%
+  }
+  \boiteTitre [couleurPrim] {%
+    \important[white]{\Large\Roman{section} --}%
+  }{%
+    \important[white]{\Large{#2}}
+  }
+  \vspace*{8pt}
+}
+%
+\NewDocumentCommand{\titreSection}{ s m }{%
   \vspace*{12pt}
   \refstepcounter{subsection}
-  \boiteTitre [couleurPrim] {%
-    \important[white]{\Large\Roman{subsection}}%
-  }{%
-    \important[white]{\Large{#1}}
+  \IfBooleanTF{#1}{}{ % Version sans *
+    \addcontentsline{toc}{subsection}{\arabic{section}.\arabic{subsection} -- #2}%
   }
-  \vspace*{1pt}
-}
-%
-\newcommand{\titreSection}[1]{%
-  \vspace*{12pt}
-  \refstepcounter{subsubsection}
-  \setcounter{sousSectionNum}{0}
+  \setcounter{subsubsection}{0}
   %--- Tracé du numéro de section
   \flecheTitre [couleurPrim] {%
-    \important[white]{\large\arabic{subsubsection}}
+    \important[white]{\large\arabic{subsection}}
   }{
-    \important[black]{\large #1}
+    \important[black]{\large #2}
   }
   \vspace*{1pt}
 }
 %
 \newcommand{\titreSousSection}[1]{%
   \vspace*{12pt}
-  \refstepcounter{sousSectionNum}
-  \important[black]{\Alph{sousSectionNum} -- #1}
+  \refstepcounter{subsubsection}
+  \important[black]{\Alph{subsubsection} -- #1}
   \vspace*{4pt}
 }
 
 %------ fixe le numéro de l'activité
 \newcommand{\reinitialiseCompteur}{%
   % fixe les compteurs LaTeX
+  \setcounter{section}{0}
   \setcounter{subsection}{0}
   \setcounter{subsubsection}{0}
   \setcounter{figure}{0}
@@ -529,9 +634,12 @@
   \setcounter{documentNum}{0}
   \setcounter{questionNum}{0}
   \setcounter{coupDePouceNum}{0}
-  \setcounter{sousSectionNum}{0}
   \setcounter{seanceNum}{0}
   \setcounter{exerciceNum}{0}
+}
+\newcommand{\reinitialiseActiviteTP}{%
+  \setcounter{activiteNum}{0}
+  \setcounter{TPNum}{0}
 }
 %
 \newcommand{\numeroActivite}[1]{%
@@ -541,7 +649,7 @@
 % fixe le numéro de partie (#1) et le numéro de la page (#2)
 \newcommand{\numeroPartieCours}[2]{%
   \newpage
-  \setcounter{subsection}{#1 - 1}
+  \setcounter{section}{#1 - 1}
   \setcounter{page}{#2}
 }
 
@@ -576,7 +684,7 @@
 \NewDocumentCommand{\enTete}{s o m O{0}}{%
   % reset des compteurs
   \reinitialiseCompteur
-  \setcounter{section}{#4}
+  \setcounter{part}{#4}
   % affichage de l'en-tête
   \IfBooleanTF{#1}{ % affichage de l'entête version fiche réussite (*)
     \pasDePagination
@@ -724,7 +832,7 @@
 \NewDocumentCommand{\implReponse}{+m m}{
   % pointille ou correction
   \ifthenelse {\boolean{modeProf}} {% prof
-    \begin{boiteColoree}{couleurPrim-50}%
+    \begin{boiteColoree}
       #1
     \end{boiteColoree}
   }{% eleve
@@ -819,7 +927,7 @@
     \begin{tblr}{%
       colspec = {c X[l] c c c c},
       rows = {m}, hlines, vlines,
-      row{1} = {c, couleurSec-100, font = \bfseries}
+      row{1} = {c, couleurSec-100, font = \bfseries\sffamily}
     }
       Comp. & Items & D & C & B & A \\
 }{%
@@ -921,25 +1029,28 @@
 }
 % Quelques questions spéciales avec couleur réglable et un espace horizontal
 \NewDocumentCommand{\mesure}{s o}{%
-  \questionSpeciale{#1}[#2]{\faFlask~\faMicroscope}
+  \questionSpeciale{#1}[#2]{\faFlask~\faMicroscope}%
 }
 %
 \NewDocumentCommand{\telechargement}{s o}{%
-  \questionSpeciale{#1}[#2]{\faMobile*~\faFileDownload}
+  \questionSpeciale{#1}[#2]{\faMobile*~\faFileDownload}%
 }
 %
 \NewDocumentCommand{\documentaire}{s o}{%
-  \questionSpeciale{#1}[#2]{\faFile*~\faPen}
+  \questionSpeciale{#1}[#2]{\faFile*~\faPen}%
 }
 %
 \NewDocumentCommand{\programmation}{s o}{%
-  \questionSpeciale{#1}[#2]{\faDesktop~\faCode}
+  \questionSpeciale{#1}[#2]{\faDesktop~\faCode}%
 }
 %
+\NewDocumentCommand{\schematisation}{s o}{
+  \questionSpeciale{#1}[#2]{\faPencilRuler~\faDraftingCompass}%
+}
 
 %------ pictogramme de sécurité \picto {largeur} {pictogramme}
 \newcommand{\picto}[2]{%
-  \image{#1}{images/pictogrammes/picto_#2}
+  \image{#1}{images/exterieures/pictogrammes/picto_#2}
 }
 % Nombre dans un cercle A REVOIR
 \newcommand*\nombreCercle[1]{%
@@ -1051,10 +1162,9 @@
 
 %------ problématique 
 \newcommand{\problematique}[1]{%
-  \hspace*{-12pt}
-  \flecheLongue[couleurTer]
-  \hspace*{-10pt}
-  \important[couleurTer]{#1}
+  \setlength{\parindent}{\questionIndent}
+  \flecheLongue[couleurTer] \important[couleurTer]{#1}
+  \setlength{\parindent}{0 pt}
 }
 
 
@@ -1151,20 +1261,3 @@
 \newcommand{\caseCochee}{%
   $\text{\rlap{$\checkmark$}}\square$
 }
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%------ Style python
-\lstdefinestyle{codePython}{
-  commentstyle=\color{magenta-500},
-  keywordstyle=\color{green-500},
-  stringstyle =\color{purple-500},
-  numberstyle =\tiny\color{black!50},
-  basicstyle  =\ttfamily\footnotesize,
-  breakatwhitespace=false, breaklines=true, keepspaces=true,
-  showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,
-  captionpos=b, numbers=left, numbersep=5pt,
-  extendedchars=true,
-  literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1, 
-}
-\def\inline{\lstinline[style=codePython,language=python]}

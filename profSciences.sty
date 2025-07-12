@@ -129,7 +129,6 @@
 \newcounter{seanceNum}
 \newcounter{activiteNum}
 \newcounter{exerciceNum}
-\newcounter{sousSectionNum}
 \newcounter{ligneNum}
 \newcounter{questionNum}
 \newcounter{sousQuestionNum}
@@ -208,16 +207,27 @@
 }
 
 % \begin{boiteColoree}{couleur} contenu \end{boiteColoree}
-\newtcolorbox{boiteColoree}[2][]{%
-  boite cassable, boite pleine = #2,
-  #1
+\NewTColorBox{boiteColoree}{ O{couleurPrim-50} +O{} }{%
+  boite cassable, boite pleine = #1
+  #2
 }
 
 % Trace un rectangle
-\NewDocumentCommand{\rectangle}{O{couleurPrim} m m}{%
-  \shorthandoff{;}
-  \tikz \node (rect) [draw, fill, color=#1, minimum width=#2, minimum height=#3] {};
-  \shorthandon{;}
+\pgfkeys{% définition de la famille de clefs
+  /simpleRect/.is family, /simpleRect,
+  defaut/.style = {
+    hauteur = 1 cm, 
+    largeur = 1 cm,
+    couleur = couleurPrim
+  },% stockage des clefs
+  largeur/.store in = \rectangleX,
+  hauteur/.store in = \rectangleY,
+  couleur/.store in = \rectCouleur
+}
+%
+\NewDocumentCommand{\rectangle}{ O{} }{%
+  \pgfkeys{/simpleRect, defaut, #1}
+  \tikz \node (rect) [draw, fill, color=\rectCouleur, minimum width=\rectangleX, minimum height=\rectangleY] {};
 }
 
 % Rectangle adapté à la taille d'un texte
@@ -225,7 +235,7 @@
 \newdimen\largeurBoite%
 \newdimen\profondeurBoite%
 \newdimen\tailleBoite%
-\newcommand{\boiteRectangle}[2][]{%
+\NewDocumentCommand{\boiteRectangle}{O{} m}{%
   \settoheight{\hauteurBoite}{ #2 }    % Hauteur du texte
   \settowidth {\largeurBoite}{ #2 }    % Largeur du texte
   \settodepth {\profondeurBoite}{ #2 } % Profondeur du texte
@@ -447,11 +457,11 @@
 
 %------ Extrait avec sa source
 \newcommand{\sourceExtrait}[1]{%
-  \vspace*{-12pt}
+  \vspace*{-8pt}
   \begin{flushright}
     \textit{#1}
   \end{flushright}
-  \vspace*{-12pt}
+  \vspace*{-4pt}
 }
 %
 \newtcolorbox{boiteExtrait}[1][]{
@@ -463,14 +473,33 @@
   #1
 }
 %
-\NewDocumentCommand{\extrait}{o m}{%
+\NewDocumentCommand{\extrait}{o +m}{%
   \begin{boiteExtrait}
     #2
   \end{boiteExtrait}
   \IfValueTF{#1}{ \sourceExtrait{#1} }{}
 }
 
-%------ adapaté de Cedric Pierquet https://ctan.org/pkg/proflycee
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ Style python
+\lstdefinestyle{codePython}{
+  commentstyle=\color{magenta-500},
+  keywordstyle=\color{green-500},
+  stringstyle =\color{purple-500},
+  numberstyle =\tiny\color{black!50},
+  basicstyle  =\ttfamily\footnotesize,
+  breakatwhitespace=false, breaklines=true, keepspaces=true,
+  showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,
+  captionpos=b, numbers=left, numbersep=5pt,
+  extendedchars=true,
+  literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1, 
+}
+\newcommand{\pythonEnLigne}[1]{
+  \lstinline[style = codePython, language = python]| #1 |
+}
+
+%------ Boite LaTex, adapatée de Cedric Pierquet https://ctan.org/pkg/proflycee
 \NewTCBListing{boiteCodeTex}{ O{couleurTer} m }{%
   enhanced, breakable,%
   flush right, boxrule = 1pt, colframe = #1!90,%
@@ -508,6 +537,7 @@
 %------ activité ou TP
 \newcommand{\titreActi}[2]{%
   \refstepcounter{activiteNum}
+  \addcontentsline{toc}{subsection}{#1 \arabic{activiteNum} -- #2}%
   \titre{#1 \arabic{section}.\arabic{activiteNum} -- #2}
 }
 \NewDocumentCommand{\titreTP}{s m}{%
@@ -520,6 +550,7 @@
 \NewDocumentCommand{\titreActivite}{s m O{Activité}}{%
   \IfBooleanTF{#1}{ % Version * sans le numéro du chapitre
     \refstepcounter{activiteNum}
+    \addcontentsline{toc}{subsection}{#3 \arabic{activiteNum} -- #2}%
     \titre{#3 \arabic{activiteNum} -- #2}
   }{%
     \titreActi{#3}{#2}
@@ -536,57 +567,66 @@
 }
 \newcommand{\exercice}[1]{%
   \refstepcounter{exerciceNum}
+  \addcontentsline{toc}{subsubsection}{Exercice \arabic{exerciceNum} : #1}%
   \important[black]{\large Exercice \arabic{exerciceNum} : #1}
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
-  \setcounter{sousSectionNum}{0}
+  \setcounter{subsubsection}{0}
 }
 
 
 %------ chapitre, partie, section et sous-section
 \newcommand{\chapitre}[1]{ % Réglage du titre du chapitre
-  Chapitre \arabic{section} -- #1
+  \addcontentsline{toc}{part}{Chapitre \arabic{part} -- #1}%
+  Chapitre \arabic{part} -- #1
 }
 %
 \newcommand{\titreChapitre}[1]{ % Affichage du titre du chapitre
-  \titre{Chapitre \arabic{section} -- #1}
+  \titre{Chapitre \arabic{part} -- #1}
 }
 %
-\newcommand{\titrePartie}[1]{%
+\NewDocumentCommand{\titrePartie}{ s m }{%
   \vspace*{12pt}
-  \refstepcounter{subsection}
+  \refstepcounter{section}
+  \IfBooleanTF{#1}{}{ % Version sans *
+    \addcontentsline{toc}{section}{\arabic{section} -- #2}%
+  }
   \boiteTitre [couleurPrim] {%
-    \important[white]{\Large\Roman{subsection} --}%
+    \important[white]{\Large\Roman{section} --}%
   }{%
-    \important[white]{\Large{#1}}
+    \important[white]{\Large{#2}}
   }
   \vspace*{8pt}
 }
 %
-\newcommand{\titreSection}[1]{%
+\NewDocumentCommand{\titreSection}{ s m }{%
   \vspace*{12pt}
-  \refstepcounter{subsubsection}
-  \setcounter{sousSectionNum}{0}
+  \refstepcounter{subsection}
+  \IfBooleanTF{#1}{}{ % Version sans *
+    \addcontentsline{toc}{subsection}{\arabic{section}.\arabic{subsection} -- #2}%
+  }
+  \setcounter{subsubsection}{0}
   %--- Tracé du numéro de section
   \flecheTitre [couleurPrim] {%
-    \important[white]{\large\arabic{subsubsection}}
+    \important[white]{\large\arabic{subsection}}
   }{
-    \important[black]{\large #1}
+    \important[black]{\large #2}
   }
   \vspace*{1pt}
 }
 %
 \newcommand{\titreSousSection}[1]{%
   \vspace*{12pt}
-  \refstepcounter{sousSectionNum}
-  \important[black]{\Alph{sousSectionNum} -- #1}
+  \refstepcounter{subsubsection}
+  \important[black]{\Alph{subsubsection} -- #1}
   \vspace*{4pt}
 }
 
 %------ fixe le numéro de l'activité
 \newcommand{\reinitialiseCompteur}{%
   % fixe les compteurs LaTeX
+  \setcounter{section}{0}
   \setcounter{subsection}{0}
   \setcounter{subsubsection}{0}
   \setcounter{figure}{0}
@@ -594,7 +634,6 @@
   \setcounter{documentNum}{0}
   \setcounter{questionNum}{0}
   \setcounter{coupDePouceNum}{0}
-  \setcounter{sousSectionNum}{0}
   \setcounter{seanceNum}{0}
   \setcounter{exerciceNum}{0}
 }
@@ -610,7 +649,7 @@
 % fixe le numéro de partie (#1) et le numéro de la page (#2)
 \newcommand{\numeroPartieCours}[2]{%
   \newpage
-  \setcounter{subsection}{#1 - 1}
+  \setcounter{section}{#1 - 1}
   \setcounter{page}{#2}
 }
 
@@ -645,7 +684,7 @@
 \NewDocumentCommand{\enTete}{s o m O{0}}{%
   % reset des compteurs
   \reinitialiseCompteur
-  \setcounter{section}{#4}
+  \setcounter{part}{#4}
   % affichage de l'en-tête
   \IfBooleanTF{#1}{ % affichage de l'entête version fiche réussite (*)
     \pasDePagination
@@ -793,7 +832,7 @@
 \NewDocumentCommand{\implReponse}{+m m}{
   % pointille ou correction
   \ifthenelse {\boolean{modeProf}} {% prof
-    \begin{boiteColoree}{couleurPrim-50}%
+    \begin{boiteColoree}
       #1
     \end{boiteColoree}
   }{% eleve
@@ -1222,20 +1261,3 @@
 \newcommand{\caseCochee}{%
   $\text{\rlap{$\checkmark$}}\square$
 }
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%------ Style python
-\lstdefinestyle{codePython}{
-  commentstyle=\color{magenta-500},
-  keywordstyle=\color{green-500},
-  stringstyle =\color{purple-500},
-  numberstyle =\tiny\color{black!50},
-  basicstyle  =\ttfamily\footnotesize,
-  breakatwhitespace=false, breaklines=true, keepspaces=true,
-  showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,
-  captionpos=b, numbers=left, numbersep=5pt,
-  extendedchars=true,
-  literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1, 
-}
-\def\inline{\lstinline[style=codePython,language=python]}
