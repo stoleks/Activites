@@ -1,0 +1,36 @@
+\titrePartie{Schémas}
+
+Une règle générale pour les commandes qui permettent de tracer des schémas, c'est que si la commande a pour préfixe tikz, elle doit être utilisée dans un environnement tikzpicture.
+
+Une commande pour tracer des rectangles colorés de tailles variables :
+\begin{boiteCodeTex}{}
+  \rectangle
+  \rectangle[largeur = 4cm, hauteur = 1.5cm]
+  \rectangle[couleur = couleurSec-300]
+  \rectangle[largeur = 8cm, hauteur = 2cm, couleur = couleurTer-400]
+\end{boiteCodeTex}
+
+Une commande pour tracer des ``planètes'' :
+\begin{boiteCodeTex}{}
+  \begin{tikzpicture}
+    \tikzSchemaPlanete
+  \end{tikzpicture}
+  \begin{tikzpicture}
+    \tikzSchemaPlanete[centre = A, satellite = B, rayon = 50 pt, orbite = 60 pt, remplissage = couleurQuat-100]
+  \end{tikzpicture}
+  \begin{tikzpicture}
+    \tikzSchemaPlanete[satellite = La lune, rayon = 15 pt, orbite = 60 pt, contour = couleurSec]
+  \end{tikzpicture}
+\end{boiteCodeTex}
+
+%%%%
+\begin{boiteCodeTex}{listing only}
+  \palette{couleurPrim}{green}
+  \palette{couleurSec}{cyan}
+  \palette{couleurTer}{yellow}
+  \palette{couleurQuat}{orange}
+\end{boiteCodeTex}
+\palette{couleurPrim}{green}
+\palette{couleurSec}{cyan}
+\palette{couleurTer}{blue}
+\palette{couleurQuat}{orange}

@@ -1,0 +1,91 @@
+\titrePartie{Mise en page}
+
+%%
+\titreSection{Titre et sections}
+
+\addtocounter{part}{-1}
+\addtocounter{section}{-1}
+Les commandes de section sont définies en parallèle des commandes classique \lstinline|\section, \subsection|, etc. :
+\begin{boiteCodeTex}{}
+  \titrePartie*{Une partie d'exemple}
+
+  \titreSection*{Une section d'exemple}
+
+  \titreSousSection{Une sous-section d'exemple}
+\end{boiteCodeTex}
+
+Il existe aussi des commandes pour afficher les titres des activités ou des TP, ou bien des exercices :
+\begin{boiteCodeTex}{}
+  \titre{Un simple titre sans numérotation}
+  \titreActivite{Une activité}
+  \titreActivite*{Une activité avec moins de numérotation}
+  \titreTP{Un TP}
+  \titreTP*{Une activité expérimentale}
+
+  \exercice{Un exercice à faire}
+\end{boiteCodeTex}
+Note : la commande \lstinline|\exercice| entraîne la remise à zéro des compteurs de document et de questions.
+
+%%
+\titreSection{Boîtes variées de mise en page}
+
+Plusieurs boites sont définies pour permettre d'avoir une mise en page consistante entre différentes activités.
+\begin{boiteCodeTex}{}
+  \begin{contexte}
+    Une boîte pour introduire une activité.
+  \end{contexte}
+
+  \begin{prerequis}
+    \item Il faut connaître leur noms,
+  \end{prerequis}
+
+  \begin{objectifs}
+    \item mais on peut vite faire un document riche,
+    \item avec les bonnes commandes.
+  \end{objectifs}
+
+  \begin{doc}{Le titre}{le_label}
+    Le contenu du document
+  \end{doc}
+
+  \begin{doc}{Un deuxième document}{le_label_ii}
+    La numérotation est automatique
+  \end{doc}
+
+  \begin{importants}
+    Pour mettre en valeur des éléments importants de l'activité ou du cours !
+  \end{importants}
+
+  \extrait[Source]{Une citation ou un extrait.}
+  \extrait{Un extrait, mais sans source associée.}
+  C'est aussi possible de n'avoir que la mise en page pour la source.
+  \sourceExtrait{Moi même}
+\end{boiteCodeTex}
+
+Les courbes des boîtes d'objectifs et de prérequis sont réglées pour ``s'emboiter'' dans un plan de travail, cf.~\ref{plan_de_travail}.
+
+En plus de ces boîtes, il y aussi des boîtes simples sans but précis
+\begin{boiteCodeTex}{}
+  \begin{boite}
+    Une boite toute simple.
+  \end{boite}
+
+  \begin{boiteColoree}
+  \end{boiteColoree}
+  
+  \begin{boiteColoree}[yellow-150]
+    Une simple boite avec des couleurs.
+  \end{boiteColoree}
+
+  \begin{boiteColoree}[magenta-200]
+    Bla bla.
+
+    Pratique sur plusieurs lignes aussi !
+  \end{boiteColoree}
+
+  \begin{importants}
+    Pour mettre en valeur un passage à retenir ou important.
+
+    Le texte peut être cassé en paragraphes.
+  \end{importants}
+\end{boiteCodeTex}

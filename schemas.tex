@@ -70,7 +70,10 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%------ Pour évaluer une expression mathémtique
+% \ExplSyntaxOn
+% \cs_new_eq:NN \fpeval \fp_eval:n
+% \ExplSyntaxOff
 %------ Trace une flèche de progression pour les plans de travail
 \pgfkeys{% définition de la famille de clefs
   /prog/.is family, /prog,
@@ -85,19 +88,20 @@
 }
 %
 \newcommand{\nombreBoucle}{}
-\NewDocumentCommand{\flecheProgression}{m}{%
-  \pgfkeys{/prog, defaut, #1}
+\newdimen\tailleBoucles
+\NewDocumentCommand{\flecheProgression}{s m}{%
+  \pgfkeys{/prog, defaut, #2}
   \strut\vspace*{8pt}
-  \renewcommand{\nombreBoucle}{\numexpr((\progBoucles - 1)*2)}
+  \edef\nombreBoucle{\fpeval{2 * (\progBoucles - 1)}}
   \begin{center}
     \begin{tikzpicture}
-      \tikzset{bluestyle/.style={line width = 20pt, rounded corners = 10mm, color = couleurSec}}
+      \tikzset{styleFleche/.style={line width = 20pt, rounded corners = 10mm, color = couleurSec}}
       % Premier bout pour l'alignement, les parenthèses sont nécessaires
-      \draw[bluestyle] (0, {
-        (\nombreBoucle)*\progCoeff}) -- (1, {(\nombreBoucle)*\progCoeff
+      \draw[styleFleche] (0, {
+        (\nombreBoucle)*\progCoeff}) -- (1.1, {(\nombreBoucle)*\progCoeff
       }); 
       % Partie centrale répétée
-      \draw[bluestyle]
+      \draw[styleFleche]
         \foreach \x in {0,2,...,\nombreBoucle}  {
           \ifnum \x < \nombreBoucle
             (1, {(\nombreBoucle - \x)  *\progCoeff}) --
@@ -109,11 +113,14 @@
           \fi
         };
       % Flèche finale
-      \draw[-{Triangle [width = 36pt, length = 16pt]}, bluestyle] (0.8, 0) -- (\progLargeur, 0);
+      \draw[-{Triangle [width = 36pt, length = 16pt]}, styleFleche] (0.8, 0) -- (\progLargeur, 0);
     \end{tikzpicture}
   \end{center}
-  % retire l'espace ajouté par les boucles
-  \vspace*{-35\progBoucles pt}
+  % retire l'espace ajouté par les boucles si demandé
+  \IfBooleanTF{#1}{
+  }{
+    \vspace*{\fpeval{-72 * (\nombreBoucle + 1)} pt}
+  }
 }
 
 

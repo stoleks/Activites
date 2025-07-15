@@ -1,0 +1,42 @@
+\titrePartie{Gestion des couleurs}
+
+\titreSection{Couleurs flexoki}
+
+J'utilise la palette flexoki pour la couleur \url{https://stephango.com/flexoki}. 
+Les huits couleurs et leurs 13 nuances sont définis en suivant la convention de flexoki : <nom de la couleur>-<teinte>.
+\begin{boiteCodeTex}{}
+  \bfseries \textcolor{blue-200}{Un}
+  \textcolor{blue-400}{texte}
+  \textcolor{blue-600}{en}
+  \textcolor{blue-800}{dégradé}.
+\end{boiteCodeTex}
+
+
+\titreSection{Palette de couleurs}
+
+Pour pouvoir changer facilement de couleurs et avoir une palette cohérente, les couleurs \lstinline|couleurPrim| (couleur primaire), \lstinline|couleurSec| (secondaire), \lstinline|couleurTer| (tertiaire) et \lstinline|couleurQuat| (quaternaire) sont définies avec la commande palette \lstinline|\palette{<alias>}{<couleur>}|.
+
+ce qui permet d'appeler ces alias comme des couleurs flexoki normale, avec la teinte 600 comme défaut
+\begin{boiteCodeTex}{}
+  \bfseries
+  \textcolor{couleurPrim}{Un}
+  \textcolor{couleurSec-700}{texte}
+  \textcolor{couleurTer}{légèrement}
+  \textcolor{couleurQuat}{coloré}.
+\end{boiteCodeTex}
+En théorie n'importe quelle couleur définie avec le format <couleur>-<50, 100, 150, 200, ..., 900, 950> peut être utilisé avec la commande palette.
+
+Pour changer de thème coloré, il suffit donc d'appeler la commande palette avec la couleur souhaité pour changer toutes les couleurs des commandes internes.
+En guise d'illustration, chaque partie de ce document a son propre thème coloré.
+
+%%%%
+\begin{boiteCodeTex}{listing only}
+  \palette{couleurPrim}{cyan}
+  \palette{couleurSec}{blue}
+  \palette{couleurTer}{purple}
+  \palette{couleurQuat}{red}
+\end{boiteCodeTex}
+\palette{couleurPrim}{cyan}
+\palette{couleurSec}{blue}
+\palette{couleurTer}{purple}
+\palette{couleurQuat}{red}

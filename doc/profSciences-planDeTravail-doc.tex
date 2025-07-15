@@ -1,0 +1,149 @@
+\titrePartie{Plan de travail}\label{plan_de_travail}
+
+\titreSection{Commandes spéciales}
+
+Plusieurs commandes sont définies pour faciliter l'écriture d'une fiche élève pour un plan de travail.
+
+La première catégorie de commande permet d'afficher des boîtes pour organiser le contenu par activités
+\begin{boiteCodeTex}{}
+  \begin{activite}{titre = Mon super titre, label = mon_activite, duree = 4h}
+    Une simple boite d'activité, avec titre et durée réglables. Le label permet de tracer des flèches entre les activités.
+  \end{activite}
+
+  \begin{activite}{}
+    Boite par défaut.
+  \end{activite}
+
+  \begin{TP}{titre = un TP, label = un_TP}
+  \end{TP}
+
+  \begin{TPNumerique}{titre = TP python, label = python}
+  \end{TPNumerique}
+
+  \phantom{b}
+\end{boiteCodeTex}
+
+L'idée de ces boîtes étant de présenter le contenu simplifié de chaque activité, en indiquant leur prérequis et objectifs.
+Il y a aussi une boîte pour la tâche finale (une simple boîte avec un titre)
+\begin{boiteCodeTex}{}
+  \begin{tacheFinale} \end{tacheFinale}
+\end{boiteCodeTex}
+
+Pour la progression, il y a trois commandes utilisables, \lstinline|\flecheProgression| qui permet d'afficher une flèche stylisée de progression ; l'environnement \lstinline|programmeSeance|, qui permet de contenir des blocs de séances et enfin \lstinline|\seance| qui permet d'afficher une boîte par séance pour le suivi des élèves.
+
+\begin{boiteCodeTex}{}
+  \flecheProgression{boucles = 2}
+  
+  \begin{programmeSeance}[nombre = 2]
+    \seance \seance
+  \end{programmeSeance}
+  \begin{programmeSeance}[nombre = 2, distance = 0pt]
+    \seance \seance[Une information utile pour les élèves.]
+  \end{programmeSeance}
+\end{boiteCodeTex}
+Les commandes sont faites pour être utilisée en tandem, car \lstinline|\flecheProgression| retire un espace vertical pour que les blocs de séances soient bien positionnés sur les flèches.
+L'ajout d'une étoile permet d'éviter ce réglage interne de longueur.
+
+\begin{boiteCodeTex}{}
+  \vspace*{-36 pt}
+  \flecheProgression*{boucles = 1}
+
+  Pas d'espace négatif ajouté !
+\end{boiteCodeTex}
+
+Note : n'importe quelle boîte basée sur \lstinline|tcolorbox| peut être utilisée dans \lstinline|programmeSeance|.
+
+\newpage
+\titreSection{Exemple complet}
+
+Voilà un exemple complet de mise en page avec toutes les commandes :
+
+\begin{boiteCodeTex}{}
+  \titre{Activités à réaliser}
+
+  \begin{importants}
+    Ce document, \important{qui sera ramassé et évalué,} présente les activités et travaux pratiques à réaliser pendant les 4 semaines du chapitre.
+    À chaque séance (classe entière ou demi-groupe), tu es libre de choisir quelle activité ou TP réaliser avec ton groupe.
+    Tous les documents sont sur le bureau du professeur.
+  \end{importants}
+
+  \setcounter{activiteNum}{0}
+  \setcounter{TPNum}{0}
+  \begin{multicols}{2}
+    \begin{activite}{titre = Ordres de grandeur, label = ordre_grandeur}
+      \begin{objectifs}  
+        \item Revoir les puissances de 10.
+        \item Apprendre à raisonner en ordres de grandeur.
+      \end{objectifs}
+    \end{activite}
+    %
+    \begin{TP}{titre = Le modèle de l'atome, label = modele_atome}
+      \begin{objectifs}
+          \item Découvrir la méthode scientifique.
+          \item Utiliser la méthode scientifique pour étudier l'évolution du modèle de l'atome.
+      \end{objectifs}
+    \end{TP}
+  \end{multicols}
+  \begin{multicols}{2}
+    %
+    \begin{activite}{titre = Cortège électronique, duree = 1 h 30, label = cortege_electrons}
+      \begin{prerequis}
+        \item Connaître la structure d'un atome.
+        \item Savoir qu'un atome a autant d'électrons qu'il a de protons.
+      \end{prerequis}
+      %
+      \begin{objectifs}
+        \item Comprendre que les électrons s'organisent en couches électroniques.
+        \item Comprendre la règle de remplissage des couches électroniques.
+      \end{objectifs}
+    \end{activite}
+    %
+    \begin{TP}{titre = Fabriquer un atome, duree = 1 h 30, label = atome}
+      \begin{objectifs}
+        \item Étudier la composition d'un atome.
+        \item Comprendre que le nombre de protons définit un élément chimique.
+        \item Savoir distinguer un ion d'un atome.
+        \item Comprendre la notion d'éléments isotopes.
+      \end{objectifs}
+    \end{TP}
+  \end{multicols}
+
+  \nomPrenomClasse*
+  \titre{Progression des activités} \smallskip
+  
+  \flecheProgression{boucles = 3}
+  
+  \setcounter{seanceNum}{0}
+  \begin{programmeSeance}
+    \seance \seance \seance
+  \end{programmeSeance}
+  
+  \begin{programmeSeance}
+    \seance[\small Courte évaluation sur la structure d'un atome.]
+    \seance \seance
+  \end{programmeSeance}
+  
+  \begin{programmeSeance}[nombre = 2, distance = 0 pt]
+    \seance[\important{Tâche finale}]
+    \seance[\important{Évaluation du chapitre}]
+  \end{programmeSeance}
+  
+  \begin{tacheFinale}
+    \important{Par groupe de 4,} choisir un élément du tableau périodique et réaliser sa case au format A4 $\num{29,7} \times \qty{21,0}{\cm\squared}$.
+    La case devra contenir des informations microscopique (structure électronique) et des informations macroscopique (dans quels objets on trouve l'élément, sous quels formes naturelles l'élément se trouve sur Terre, des propriétés remarquables ou amusantes, etc.)
+  \end{tacheFinale}
+  \titre{Évaluation de l'autonomie}
+
+  \important{Les différents degrés d'autonomie}
+  
+  \begin{enumerate}[label = \Alph*]
+    \item Je planifie librement mon apprentissage, je coopère avec mes camarades et je sollicite de l'aide pour valider les travaux réalisés.
+    \item Je travaille seul-e ou avec mes camarades à partir des documents et je sollicite régulièrement de l'aide pour avancer.
+    \item J'avance uniquement quand le professeur est là pour m'aider, je n'arrive pas à planifier mon travail ou je ne fais que recopier les réponses d'un de mes camarades.
+    \item J'utilise des stratégies pour éviter d'apprendre et je refuse d'essayer de faire les activités.
+  \end{enumerate}
+  
+  \begin{tableauCompetences}
+    AUTO & Travailler de manière autonome \\
+  \end{tableauCompetences}
+\end{boiteCodeTex}

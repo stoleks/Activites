@@ -12,8 +12,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%------------- Paquets
 %------ Pour la programmation interne
-\RequirePackage{ifthen}   % boucles et conditions
-\RequirePackage{xspace}   % espace après certaines commande
+\RequirePackage{ifthen} % boucles et conditions
+\RequirePackage{xspace} % espace après certaines commande
+\RequirePackage{xfp}    % espace après certaines commande
 
 %------ Mise en page
 \RequirePackage{fancyhdr}   % en-tête
@@ -290,7 +291,7 @@
     duree = 1 h,
     label = Aucun,
     compteur = activiteNum,
-    format = \documentaire*\!\!Activité
+    format = \documentaire*Activité
   },% stockage des clefs
   titre/.store in = \boiteActiTitre,
   duree/.store in = \boiteActiDuree,
@@ -326,8 +327,14 @@
   \end{boiteActivite}
 }
 \NewDocumentEnvironment{TP}{m}{%
-  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \mesure*\!\!TP}
+  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \mesure*TP}
   \begin{boiteActivite}
+}{%
+  \end{boiteActivite}
+}
+\NewDocumentEnvironment{TPNumerique}{m}{%
+  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \programmation*TP}
+  \begin{boiteActivite}     
 }{%
   \end{boiteActivite}
 }
@@ -538,7 +545,7 @@
 \newcommand{\titreActi}[2]{%
   \refstepcounter{activiteNum}
   \addcontentsline{toc}{subsection}{#1 \arabic{activiteNum} -- #2}%
-  \titre{#1 \arabic{part}.\arabic{activiteNum} -- #2}
+  \titre{#1 \arabic{section}.\arabic{activiteNum} -- #2}
 }
 \NewDocumentCommand{\titreTP}{s m}{%
   \IfBooleanTF{#1}{ % Version *
@@ -572,7 +579,6 @@
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
-  \setcounter{subsubsection}{0}
 }
 
 
@@ -891,18 +897,19 @@
 }
 
 %------ Espace pour indiquer nom, prénom et classe
-\newcommand{\implNomPrenom}{%
+\NewDocumentCommand{\implNomPrenom}{m}{%
+  \IfBooleanTF{#1}{}{\vspace*{-24pt}}
   Nom : \lignePointillee[0.3\linewidth]
   Prénom : \lignePointillee[0.3\linewidth]
 }
-\newcommand{\nomPrenomClasse}{%
-  \setcounter{page}{1}
-  \pasCorrection{ \vspace*{-24pt}
-    \implNomPrenom Classe : \dotfill
+\NewDocumentCommand{\nomPrenomClasse}{s}{%
+  \pasCorrection{
+    \IfBooleanTF{#1}{}{\setcounter{page}{1}}
+    \implNomPrenom{#1} Classe : \dotfill
   }
 }
-\newcommand{\nomPrenom}{%
-  \pasCorrection{ \vspace*{-24pt} \implNomPrenom }
+\NewDocumentCommand{\nomPrenom}{s}{%
+  \pasCorrection{ \implNomPrenom{#1} }
 }
 
 

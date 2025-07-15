@@ -5,7 +5,6 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\usepackage{lmodern} % pour étirer fontawesome
 \usepackage{geometry} % définition des marges
 \usepackage{profSciences} % mise en page et autre
 \usepackage{biomolecules} % pour dessiner des formules chimiques
@@ -18,7 +17,7 @@
 \geometry{
   a4paper, % format
   left=1.3cm, right=1.3cm, % marge horizontale
-  top=2.2cm, bottom=2.1cm % marge verticale
+  top=1.6cm, bottom=2cm % marge verticale
 }
 
 
@@ -32,260 +31,21 @@
 \tableofcontents
 \newpage
 
-%%%%
+%------
 \palette{couleurPrim}{red}
 \palette{couleurSec}{orange}
 \palette{couleurTer}{yellow}
 \palette{couleurQuat}{purple}
 
-%------  
-\titrePartie{Gestion des couleurs}
-
-\titreSection{Couleurs flexoki}
-
-J'utilise la palette flexoki pour la couleur \url{https://stephango.com/flexoki}. 
-Les huits couleurs et leurs 13 nuances sont définis en suivant la convention de flexoki : <nom de la couleur>-<teinte>.
-\begin{boiteCodeTex}{}
-  \bfseries \textcolor{blue-200}{Un}
-  \textcolor{blue-400}{texte}
-  \textcolor{blue-600}{en}
-  \textcolor{blue-800}{dégradé}.
-\end{boiteCodeTex}
-
-
-\titreSection{Palette de couleurs}
-
-Pour pouvoir changer facilement de couleurs et avoir une palette cohérente, les couleurs \lstinline|couleurPrim| (couleur primaire), \lstinline|couleurSec| (secondaire), \lstinline|couleurTer| (tertiaire) et \lstinline|couleurQuat| (quaternaire) sont définies avec la commande palette \lstinline|\palette{<alias>}{<couleur>}|.
-
-ce qui permet d'appeler ces alias comme des couleurs flexoki normale, avec la teinte 600 comme défaut
-\begin{boiteCodeTex}{}
-  \bfseries \textcolor{couleurPrim}{Un}
-  \textcolor{couleurSec-700}{texte}
-  \textcolor{couleurTer}{légèrement}
-  \textcolor{couleurQuat}{coloré}.
-\end{boiteCodeTex}
-
-Pour changer de thème coloré, il suffit donc d'appeler la commande palette avec la couleur souhaité pour changer toutes les couleurs des commandes internes.
-En guise d'illustration, chaque partie de ce document a son propre thème coloré.
-
-%%%%
-\begin{boiteCodeTex}{listing only}
-  \palette{couleurPrim}{cyan}
-  \palette{couleurSec}{blue}
-  \palette{couleurTer}{purple}
-  \palette{couleurQuat}{red}
-\end{boiteCodeTex}
-\palette{couleurPrim}{cyan}
-\palette{couleurSec}{blue}
-\palette{couleurTer}{purple}
-\palette{couleurQuat}{red}
-
-
-%------
-\titrePartie{Mise en page}
-
-%%
-\titreSection{Titre et sections}
-
-\addtocounter{part}{-1}
-\addtocounter{section}{-1}
-Les commandes de section sont définies en parallèle des commandes classique \lstinline|\section, \subsection|, etc. :
-\begin{boiteCodeTex}{}
-  \titrePartie*{Une partie d'exemple}
-
-  \titreSection*{Une section d'exemple}
-
-  \titreSousSection{Une sous-section d'exemple}
-\end{boiteCodeTex}
-
-Il existe aussi des commandes pour afficher les titres des activités ou des TP, ou bien des exercices :
-\begin{boiteCodeTex}{}
-  \titreActivite{Une activité}
-  \titreActivite*{Une activité avec moins de numérotation}
-  \titreTP{Un TP}
-  \titreTP*{Une activité expérimentale}
-
-  \exercice{Un exercice à faire}
-\end{boiteCodeTex}
-
-Ou juste un titre, sans numérotation associée
-\begin{boiteCodeTex}{}
-  \titre{Un simple titre}
-\end{boiteCodeTex}
-
-%%
-\titreSection{Boîtes variées de mise en page}
-
-Plusieurs boites sont définies pour permettre d'avoir une mise en page consistante entre différentes activités.
-\begin{boiteCodeTex}{}
-  \begin{contexte}
-    Une boîte pour introduire une activité.
-  \end{contexte}
-
-  \begin{prerequis}
-    \item Il faut avoir les bases,
-  \end{prerequis}
-
-  \begin{objectifs}
-    \item mais on peut vite faire un document riche,
-    \item avec les bonnes commandes.
-  \end{objectifs}
-
-  \begin{doc}{Le titre}{le_label}
-    Le contenu du document
-  \end{doc}
-
-  \begin{doc}{Un deuxième document}{le_label_ii}
-    La numérotation est automatique
-  \end{doc}
-
-  \begin{importants}
-    Pour mettre en valeur des éléments importants de l'activité ou du cours !
-  \end{importants}
-
-  \extrait[Source]{Une citation ou un extrait.}
-  \extrait{Un extrait, mais sans source associée.}
-  C'est aussi possible de n'avoir que la mise en page pour la source.
-  \sourceExtrait{Moi même}
-\end{boiteCodeTex}
-
-Les courbes des boîtes d'objectifs et de prérequis sont réglées pour ``s'emboiter'' dans un plan de travail, cf.~\ref{plan_de_travail}.
-
-En plus de ces boîtes, il y aussi des boîtes simples sans but précis
-\begin{boiteCodeTex}{}
-  \begin{boite}
-    Une boite toute simple.
-  \end{boite}
-
-  \begin{boiteColoree}
-  \end{boiteColoree}
-  
-  \begin{boiteColoree}[yellow-150]
-    Une simple boite avec des couleurs.
-  \end{boiteColoree}
-
-  \begin{boiteColoree}
-    Bla bla.
-
-    Pratique sur plusieurs lignes aussi !
-  \end{boiteColoree}
-
-  \rectangle
-  \rectangle[largeur = 4cm, hauteur = 1.5cm]
-  \rectangle[couleur = couleurSec]
-  \rectangle[largeur = 8cm, hauteur = 2cm, couleur = couleurTer]
-
-  \boiteRectangle[fill = couleurPrim, color = white]{Entoure le texte automatiquement}
-\end{boiteCodeTex}
-
-%%
-\titreSection{Plan de travail}\label{plan_de_travail}
-
-Plusieurs commandes sont définies pour faciliter l'écriture d'une fiche pour un plan de travail.
-
-
-Voilà un exemple complet de mise en page avec toutes les commandes :
-
-\begin{boiteCodeTex}{}
-  \titre{Activités à réaliser}
-
-  \setcounter{activiteNum}{0}
-  \begin{multicols}{2}
-    \begin{activite}{titre = Ordres de grandeur, label = ordre_grandeur}
-      \begin{objectifs}  
-        \item Revoir les puissances de 10.
-        \item Apprendre à raisonner en ordres de grandeur.
-      \end{objectifs}
-    \end{activite}
-    %
-    \begin{TP}{titre = Fabriquer un atome, duree = 1 h 30, label = atome}
-      \begin{objectifs}
-        \item Étudier la composition d'un atome.
-        \item Comprendre que le nombre de protons définit un élément chimique.
-        \item Savoir distinguer un ion d'un atome.
-        \item Comprendre la notion d'éléments isotopes.
-      \end{objectifs}
-    \end{TP}
-    %
-    \begin{activite}{titre = Cortège électronique, duree = 1 h 30, label = cortege_electrons}
-      \begin{prerequis}
-        \item Connaître la structure d'un atome.
-        \item Savoir qu'un atome a autant d'électrons qu'il a de protons.
-      \end{prerequis}
-      %
-      \begin{objectifs}
-        \item Comprendre que les électrons s'organisent en couches électroniques.
-        \item Comprendre la règle de remplissage des couches électroniques.
-      \end{objectifs}
-    \end{activite}
-    %
-    \begin{TP}{titre = Le modèle de l'atome, label = modele_atome}
-      \begin{objectifs}
-          \item Découvrir la méthode scientifique.
-          \item Utiliser la méthode scientifique pour étudier l'évolution du modèle de l'atome.
-      \end{objectifs}
-    \end{TP}
-  \end{multicols}
-
-  \newpage
-  \nomPrenomClasse
-  \titre{Progression des activités}
-  
-  \flecheProgression{boucles = 3}
-  
-  \begin{programmeSeance}
-    \seance \seance \seance
-  \end{programmeSeance}
-  
-  \begin{programmeSeance}
-    \seance[\small Courte évaluation sur la structure d'un atome.]
-    \seance \seance
-  \end{programmeSeance}
-  
-  \begin{programmeSeance}[nombre = 2, distance = 0 pt]
-    \seance[\important{Tâche finale}]
-    \seance[\important{Évaluation du chapitre}]
-  \end{programmeSeance}
-  
-  \begin{tacheFinale}
-    \important{Par groupe de 4,} choisir un élément du tableau périodique et réaliser sa case au format A4 $\num{29,7} \times \qty{21,0}{\cm\squared}$.
-    La case devra contenir des informations microscopique (structure électronique) et des informations macroscopique (dans quels objets on trouve l'élément, sous quels formes naturelles l'élément se trouve sur Terre, des propriétés remarquables ou amusantes, etc.)
-  \end{tacheFinale}
-\end{boiteCodeTex}
-
-
-
-%%%%
-\begin{boiteCodeTex}{listing only}
-  \palette{couleurPrim}{orange}
-  \palette{couleurSec}{red}
-  \palette{couleurTer}{magenta}
-  \palette{couleurQuat}{green}
-\end{boiteCodeTex}
-\palette{couleurPrim}{orange}
-\palette{couleurSec}{red}
-\palette{couleurTer}{magenta}
-\palette{couleurQuat}{green}
-
-%------  
-\titrePartie{Rédaction d'évaluations}
-
-
-
-%%%%
-\begin{boiteCodeTex}{listing only}
-  \palette{couleurPrim}{green}
-  \palette{couleurSec}{cyan}
-  \palette{couleurTer}{yellow}
-  \palette{couleurQuat}{orange}
-\end{boiteCodeTex}
-\palette{couleurPrim}{green}
-\palette{couleurSec}{cyan}
-\palette{couleurTer}{yellow}
-\palette{couleurQuat}{orange}
-
-%------  
-\titrePartie{Schémas}
-
+%------ 
+\input{doc/profSciences-couleurs-doc}
+\newpage
+\input{doc/profSciences-boites-doc}
+\newpage
+\input{doc/profSciences-evaluations-doc}
+\newpage
+\input{doc/profSciences-schemas-doc}
+\newpage
+\input{doc/profSciences-planDeTravail-doc}
 
 \end{document}
