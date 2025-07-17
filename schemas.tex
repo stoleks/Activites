@@ -13,11 +13,11 @@
 \pgfkeys{
   /planete/.is family, /planete,
   defaut/.style = {
-    rayon = 60 pt,
+    rayon = 20 pt,
     orbite = 0 pt,
     remplissage = couleurSec-100,
     contour = couleurSec-100,
-    centre = T,
+    centre = A,
     satellite = {}
   },% stockage des clefs
   rayon/.store in = \planeteRayon,
@@ -32,11 +32,11 @@
   \pgfkeys{/planete, defaut, #1}  
   \filldraw [color = \planeteContour, very thick, fill = white] (0,0) circle (\planeteOrbite);
   \filldraw [\planeteRemplissage] (0,0) circle (\planeteRayon);
-  \filldraw (0, 0) circle (2pt) node[above] {\planeteCentre};
-  \filldraw (\planeteOrbite, 0) circle (2pt) node[right] {\planeteSatellite};
+  \filldraw (0, 0) circle (2pt) node[above = 4pt] {\planeteCentre};
+  \filldraw (\planeteOrbite, 0) circle (2pt) node[right = 4pt] {\planeteSatellite};
 }
 
-% \tikzPointLabel (x, y) [texte] (xtexte, ytexte), trace un point avec un label; * = pas de point
+% \tikzLabel (x, y) {texte} (xtexte, ytexte), trace un point avec un label; * = pas de point
 \NewDocumentCommand{\tikzLabel}{s r() m d()}{
   \IfBooleanTF{#1}{
     \node at (#2) {#3};
@@ -71,9 +71,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%------ Pour évaluer une expression mathémtique
-% \ExplSyntaxOn
-% \cs_new_eq:NN \fpeval \fp_eval:n
-% \ExplSyntaxOff
 %------ Trace une flèche de progression pour les plans de travail
 \pgfkeys{% définition de la famille de clefs
   /prog/.is family, /prog,

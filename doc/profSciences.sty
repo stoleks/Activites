@@ -14,7 +14,7 @@
 %------ Pour la programmation interne
 \RequirePackage{ifthen} % boucles et conditions
 \RequirePackage{xspace} % espace après certaines commande
-\RequirePackage{xfp}    % espace après certaines commande
+\RequirePackage{xfp}    % évaluation d'expressions mathématiques
 
 %------ Mise en page
 \RequirePackage{fancyhdr}   % en-tête
@@ -507,18 +507,17 @@
 }
 
 %------ Boite LaTex, adapatée de Cedric Pierquet https://ctan.org/pkg/proflycee
-\NewTCBListing{boiteCodeTex}{ O{couleurTer} m }{%
+\NewTCBListing{boiteCodeTex}{ O{} }{%
   enhanced, breakable,%
-  flush right, boxrule = 1pt, colframe = #1!90,%
+  flush right, boxrule = 1pt, colframe = couleurTer!90,%
   sharp corners, top = 0mm, bottom = 0mm, left = 0.4em, right = 5mm,%
   before skip = \baselineskip, after skip = \baselineskip,%
   colback = white,%
   fontupper = \footnotesize, fontlower = \footnotesize,%
   title = {{\scriptsize\faFileCode[regular]~\faCogs} Code \LaTeX},%
-  fonttitle = \bfseries\footnotesize\sffamily, colbacktitle = #1,%
+  fonttitle = \bfseries\footnotesize\sffamily, colbacktitle = couleurTer,%
   style code Tex,%
-  #2
-}
+  #1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%------------- Pagination et sections
@@ -579,7 +578,6 @@
   % reset des numéros de questions
   \setcounter{questionNum}{0}
   \setcounter{documentNum}{0}
-  \setcounter{subsubsection}{0}
 }
 
 

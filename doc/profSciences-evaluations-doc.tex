@@ -1,4 +1,117 @@
-\titrePartie{Rédaction d'évaluations}
+\titrePartie{Rédaction de fiches avec leur corrections}
+
+\titreSection{Texte à trou et question à remplir}
+
+Plusieurs commandes permettent de générer plusieurs fichiers .pdf à partir d'un seul document .tex, en appelant la commande \lstinline|\modeCorrection| pour l'affichage de la correction ou \lstinline|\modeEleve| pour repasser en version ``fiche à remplir''. 
+C'est le mode élève à remplir qui est le statut par défaut dans un document.
+
+La première commande permet d'afficher des textes à trous, avec réglage automatique de la largeur, réglage manuel en fraction de la largeur de la page ou avec un nombre de lignes à remplir.
+\begin{boiteCodeTex}{}
+Voilà un \texteTrou*{texte à trou}. % largeur automatique, texte gras
+Suivit d'un autre \texteTrou[0.5]{texte à trou}. % largeur = la moitié de la page
+Et encore un \texteTrou(1){texte à trou} ! % complète la ligne actuelle et trace une ligne
+
+  
+Un remarque importante : le nombre de lignes prend toujours le pas sur la largeur,
+si les deux sont réglées \texteTrou[0.3](0){comme ici.}
+Indiquer (0) revient à demander à compléter la ligne actuelle.
+\end{boiteCodeTex}
+
+On notera que la commande ajoute un espacement vertical pour faciliter le remplissage pour les personnes qui écrivent gros (j'écris assez gros et cet espacement me convient).
+Et voilà la même boite, mais en mode correction :
+\begin{boiteCodeTex}{}
+\modeCorrection
+Voilà un \texteTrou*{texte à trou}. % largeur automatique, texte gras
+Suivit d'un autre \texteTrou[0.5]{texte à trou}. % largeur = la moitié de la page
+Et encore un \texteTrou(1){texte à trou} ! % complète la ligne actuelle et trace une ligne
+
+  
+Un remarque importante : le nombre de lignes prend toujours le pas sur la largeur,
+si les deux sont réglées \texteTrou[0.3](0){comme ici.}
+Indiquer (0) revient à demander à compléter la ligne actuelle.
+\modeEleve
+\end{boiteCodeTex}
+
+La seconde commande permet d'afficher des questions, avec un nombre de lignes réglables pour les réponses :
+\begin{boiteCodeTex}{}
+  \question{La question.}{La réponse.}
+  
+  \question{Une question avec de la place pour répondre}{Une autre réponse.}[2]
+
+  \modeCorrection \setcounter{questionNum}{0}
+  \question{La question.}{La réponse.}
+  \question{Une question avec de la place pour répondre}{Une autre réponse.}[2]
+  \modeEleve
+\end{boiteCodeTex}
+
+Enfin il y a une paire de commande qui permet d'afficher du contenu uniquement pour la correction (\lstinline|\correction{}|) ou uniquement pour la fiche à remplir (\lstinline|\pasCorrection{}|) :
+\begin{boiteCodeTex}{}
+  \correction{Uniquement dans le corrigé.}
+  \pasCorrection{Uniquement dans la fiche à remplir.}
+
+  \modeCorrection
+  \correction{Uniquement dans le corrigé.}
+  \pasCorrection{Uniquement dans la fiche à remplir.}
+  \modeEleve
+\end{boiteCodeTex}
+
+%%
+\titreSection{Différents types de questions}
+
+Pour rester cohérent d'une activité à une autre, j'ai plusieurs commandes pour afficher certains types de questions récurrentes.
+\begin{boiteCodeTex}{}
+  \question{Une question numérotée classique.}{}
+
+  \mesure Quand il faut réaliser une expérience.
+
+  \programmation Quand il faut programmer.
+
+  \schematisation Quand il faut schématiser.
+
+  \documentaire Quand il faut rédiger un compte-rendu.
+
+  \telechargement Quand il faut scanner un QR code pour télécharger une appli ou regarder une vidéo.
+
+  \mesure* La version étoilée permet de supprimer l'indentation.
+\end{boiteCodeTex}
+
+%%
+\titreSection{Variation entre deux sujets}
+
+Pour varier les sujets entre deux élèves, on peut appeler la commande \lstinline|\variationSujet{A}{B}|, puis les commandes \lstinline|\sujetA| ou \lstinline|\sujetB| pour passer d'un sujet à un autre.
+\begin{boiteCodeTex}{}
+  \sujetA
+  Pour le sujet \variationSujet{A}{B}, on peut avoir des variation entre certaines \variationSujet{valeurs}{grandeurs}.
+  
+  \sujetB
+  Pour le sujet \variationSujet{A,}{B,} on peut avoir des variation entre certaines \variationSujet{valeurs.}{grandeurs.}
+\end{boiteCodeTex}
+Pour tirer pleinement partie de ces commandes, c'est plus pratique de définir son sujet dans un fichier séparé et de l'inclure ensuite avec la commande \lstinline|\input|
+\begin{boiteCodeTex}{listing only}
+  \sujetA \input{mon_super_sujet}
+  \sujetB \input{mon_super_sujet}
+\end{boiteCodeTex}
+en faisant comme ça, on a en plus un fichier avec une alternance naturelle entre les deux sujets si on l'imprime, ce qui facilite la distribution.
+
+%%
+\titreSection{Compétences et appréciations}
+
+Pour afficher une grille d'évaluation des compétences, on peut utiliser l'environnement \lstinline|tableauCompetence| qui est un tableau basé sur \lstinline|tabularray| :
+\begin{boiteCodeTex}{}
+  \begin{tableauCompetences}
+    RCO & Connaître son cours \\
+    APP & Extraire une information \\
+    COM & On peut en mettre autant qu'on veut à la suite... les cases sont centrées verticalement.
+  \end{tableauCompetences}
+\end{boiteCodeTex}
+
+Et pour les appréciations il y a une simple boite à taille réglable et qui ne s'affiche qu'en mode élève :
+\begin{boiteCodeTex}{}
+  \appreciation{4 cm}
+  \modeCorrection
+  \appreciation{4 cm}
+  \modeEleve
+\end{boiteCodeTex}
 
 %%%%
 \begin{boiteCodeTex}{listing only}

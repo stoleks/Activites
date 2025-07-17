@@ -36,25 +36,28 @@ Plusieurs boites sont définies pour permettre d'avoir une mise en page consista
   \end{contexte}
 
   \begin{prerequis}
-    \item Il faut connaître leur noms,
+    \item Connaître LaTeX.
   \end{prerequis}
 
   \begin{objectifs}
-    \item mais on peut vite faire un document riche,
-    \item avec les bonnes commandes.
+    \item Savoir utiliser ce paquet.
   \end{objectifs}
 
-  \begin{doc}{Le titre}{le_label}
+  \begin{doc}{Le titre}
     Le contenu du document
   \end{doc}
 
-  \begin{doc}{Un deuxième document}{le_label_ii}
+  \begin{doc}{Un deuxième document}[\label{label_doc}]
     La numérotation est automatique
   \end{doc}
+  Le label permet de faire référence au document~\ref{label_doc}.
 
   \begin{importants}
     Pour mettre en valeur des éléments importants de l'activité ou du cours !
   \end{importants}
+
+  \begin{boiteMateriel}{Matériel élève}
+  \end{boiteMateriel}
 
   \extrait[Source]{Une citation ou un extrait.}
   \extrait{Un extrait, mais sans source associée.}
@@ -88,4 +91,46 @@ En plus de ces boîtes, il y aussi des boîtes simples sans but précis
 
     Le texte peut être cassé en paragraphes.
   \end{importants}
+
+  On peut aussi simplement \important{insister sur un passage précis.}
 \end{boiteCodeTex}
+
+%%
+\titreSection{Différents outils de mise en page}
+
+\begin{boiteCodeTex}{}
+  \separationBlocs
+    { Pour séparer une page en deux blocs. }
+    { Ils sont de tailles égales par défaut. }
+
+  \separationBlocs
+    { \lipsum[1-2] }[0.6]
+    { \lipsum[1] }[0.35]
+
+  \separationTroisBlocs{ Bloc 1 }{ Bloc 2 }{ Bloc 3 }
+\end{boiteCodeTex}
+
+\begin{boiteCodeTex}{}
+  \centering
+  \image{0.5}{images/atomes/modele_quantique}
+  
+  \legende{Les électrons sont délocalisés autour du noyau.}
+\end{boiteCodeTex}
+
+\begin{boiteCodeTex}{}
+  \qrcodeCote{https://forge.apps.education.fr/jedrecyalexandre/LaTex_physique-chimie_lycee_GT}
+
+  \lipsum[1]
+\end{boiteCodeTex}
+
+%%%%
+\begin{boiteCodeTex}{listing only}
+  \palette{couleurPrim}{blue}
+  \palette{couleurSec}{green}
+  \palette{couleurTer}{cyan}
+  \palette{couleurQuat}{magenta}
+\end{boiteCodeTex}
+\palette{couleurPrim}{blue}
+\palette{couleurSec}{green}
+\palette{couleurTer}{cyan}
+\palette{couleurQuat}{magenta}

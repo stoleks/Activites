@@ -14,7 +14,7 @@
 %------ Pour la programmation interne
 \RequirePackage{ifthen} % boucles et conditions
 \RequirePackage{xspace} % espace après certaines commande
-\RequirePackage{xfp}    % espace après certaines commande
+\RequirePackage{xfp}    % évaluation d'expressions mathématiques
 
 %------ Mise en page
 \RequirePackage{fancyhdr}   % en-tête
@@ -33,6 +33,7 @@
 \RequirePackage{hyperref} % insertion de liens
 \RequirePackage{listings} % insertion de code
 \RequirePackage{qrcode}   % tracage de qrcode (note : la commande doit être sur sa propre ligne)
+\RequirePackage{bookmark} % pour éviter un warning en sautant des parties/sections/sous-sections
 
 %------ Notations mathématiques
 \RequirePackage{amsmath} % symboles mathématiques
@@ -268,11 +269,10 @@
 }
 
 % \begin{doc}{titre}{label} contenu \end{doc}
-\newtcolorbox{doc}[3][]{%
+\NewTColorBox{doc}{m O{}}{%
   boite cassable,%
   titre sans separation = 0.5mm,%
-  titre avec compteur = {documentNum}{Document \arabic{documentNum} -- #2\strut \label{#3}},%
-  #1
+  titre avec compteur = {documentNum}{Document \arabic{documentNum} -- #1\strut #2}%
 }
 
 %------ Boîtes pour afficher les activités et TP dans un plan de travail
@@ -449,7 +449,7 @@
     \begin{boite}
       \vspace*{-4pt}
       \important[black]{Appréciation et remarques}
-      \vspace*{#1 cm} \phantom{b}
+      \vspace*{#1}\strut
     \end{boite}
   }
 }
@@ -507,18 +507,17 @@
 }
 
 %------ Boite LaTex, adapatée de Cedric Pierquet https://ctan.org/pkg/proflycee
-\NewTCBListing{boiteCodeTex}{ O{couleurTer} m }{%
+\NewTCBListing{boiteCodeTex}{ m }{%
   enhanced, breakable,%
-  flush right, boxrule = 1pt, colframe = #1!90,%
+  flush right, boxrule = 1pt, colframe = couleurTer!90,%
   sharp corners, top = 0mm, bottom = 0mm, left = 0.4em, right = 5mm,%
   before skip = \baselineskip, after skip = \baselineskip,%
   colback = white,%
   fontupper = \footnotesize, fontlower = \footnotesize,%
   title = {{\scriptsize\faFileCode[regular]~\faCogs} Code \LaTeX},%
-  fonttitle = \bfseries\footnotesize\sffamily, colbacktitle = #1,%
+  fonttitle = \bfseries\footnotesize\sffamily, colbacktitle = couleurTer,%
   style code Tex,%
-  #2
-}
+  #1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%------------- Pagination et sections
@@ -545,7 +544,7 @@
 \newcommand{\titreActi}[2]{%
   \refstepcounter{activiteNum}
   \addcontentsline{toc}{subsection}{#1 \arabic{activiteNum} -- #2}%
-  \titre{#1 \arabic{section}.\arabic{activiteNum} -- #2}
+  \titre{#1 \arabic{part}.\arabic{activiteNum} -- #2}
 }
 \NewDocumentCommand{\titreTP}{s m}{%
   \IfBooleanTF{#1}{ % Version *
@@ -716,7 +715,7 @@
   \setboolean{modeProf}{true}
 }
 \newcommand{\modeEleve}{%
-  \setboolean{modeEleve}{false}
+  \setboolean{modeProf}{false}
 }
 
 % Affiche le contenu en mode correction
@@ -1036,23 +1035,23 @@
 }
 % Quelques questions spéciales avec couleur réglable et un espace horizontal
 \NewDocumentCommand{\mesure}{s o}{%
-  \questionSpeciale{#1}[#2]{\faFlask~\faMicroscope}%
+  \questionSpeciale{#1}[#2]{\faFlask~\faMicroscope\hspace*{1pt}}%
 }
 %
 \NewDocumentCommand{\telechargement}{s o}{%
-  \questionSpeciale{#1}[#2]{\faMobile*~\faFileDownload}%
+  \questionSpeciale{#1}[#2]{\faMobile*~\faFileDownload\hspace*{7pt}}%
 }
 %
 \NewDocumentCommand{\documentaire}{s o}{%
-  \questionSpeciale{#1}[#2]{\faFile*~\faPen}%
+  \questionSpeciale{#1}[#2]{\faFile*~\faPen\hspace*{4pt}}%
 }
 %
 \NewDocumentCommand{\programmation}{s o}{%
-  \questionSpeciale{#1}[#2]{\faDesktop~\faCode}%
+  \questionSpeciale{#1}[#2]{\faDesktop\faCode}%
 }
 %
 \NewDocumentCommand{\schematisation}{s o}{
-  \questionSpeciale{#1}[#2]{\faPencilRuler~\faDraftingCompass}%
+  \questionSpeciale{#1}[#2]{\faPencilRuler~\faDraftingCompass\hspace*{1pt}}%
 }
 
 %------ pictogramme de sécurité \picto {largeur} {pictogramme}
