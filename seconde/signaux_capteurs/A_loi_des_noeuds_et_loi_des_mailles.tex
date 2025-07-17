@@ -1,11 +1,11 @@
 %%%%
 \teteSndSign
-\titreActivite{Loi des noeuds et loi des mailles}
+\titreActivite{Loi des nœuds et loi des mailles}
 
 %%%% Objectifs
 \begin{objectifs}
   \item Revoir quelques notions de bases des circuits électriques
-  \item Revoir la loi des noeuds et la loi des mailles
+  \item Revoir la loi des nœuds et la loi des mailles
 \end{objectifs}
 
 
@@ -26,7 +26,7 @@
   \end{importants}
 \end{doc}
 
-\begin{doc}{Exemple de circuit}{doc:circuit_exemple_del}
+\begin{doc}{Exemple de circuit}[\label{doc:circuit_exemple_del}]
   \begin{center}
   \begin{circuitikz}
     \ctikzset{bipoles/vsourceam/inner plus={\tiny $+$}}
@@ -51,7 +51,7 @@
 \question{
   Combien de n\oe{}uds, mailles et dipôles comporte le circuit du document~\ref{doc:circuit_exemple_del} ?
 }{
-  5 dipôles, 2 noeuds et 2 mailles.
+  5 dipôles, 2 nœuds et 2 mailles.
 }[1]
 
 
@@ -59,8 +59,8 @@
 \begin{doc}{Association en série et en dérivation}
   Il existe deux façon d'associer des dipôles entre eux :
   \begin{listePoints}
-    \item deux dipôles sont en séries s'ils sont situés dans la même maille et ne sont pas séparé par un noeud.
-    \item deux dipôles sont en dérivation si leurs bornes sont connectés au même noeud.
+    \item deux dipôles sont en séries s'ils sont situés dans la même maille et ne sont pas séparé par un nœud.
+    \item deux dipôles sont en dérivation si leurs bornes sont connectés au même nœud.
   \end{listePoints}
 \end{doc}
 
@@ -75,7 +75,7 @@
 
 
 %%
-\begin{doc}{Loi des noeuds et intensité}{doc:loi_noeud_intensite}
+\begin{doc}{Loi des nœuds et intensité}
   \chevron La quantité d'électrons qui \textbf{circulent} dans le circuit électrique se conserve.
   \textbf{Cette quantité d'électron est mesurée par l'intensité du courant notée $I$.}
   %
@@ -84,21 +84,21 @@
   \end{importants}
   %
   \begin{importants}
-    \important{Loi des noeuds} : la somme des intensités entrant dans un noeud est égale à la somme des intensité sortant du noeud.
+    \important{Loi des nœuds} : la somme des intensités entrant dans un nœud est égale à la somme des intensité sortant du nœud.
   \end{importants}
   %
   Cette loi traduit la conservation de l'intensité du courant.
 \end{doc}
 
 \question{
-  Donner la relation imposée par la loi des noeuds entre les intensités $I_1$, $I_2$ et $I_3$ dans le circuit du document~\ref{doc:circuit_exemple_del}.
+  Donner la relation imposée par la loi des nœuds entre les intensités $I_1$, $I_2$ et $I_3$ dans le circuit du document~\ref{doc:circuit_exemple_del}.
 }{
   $I_1 = I_2 + I_3$
 }[1]
 
 
 %%
-\begin{doc}{Loi des mailles et tension}{doc:loi_maille_tension}
+\begin{doc}{Loi des mailles et tension}
   Ce qui met en mouvement les électrons dans un circuit, c'est la différence d'état électrique entre deux points d'un circuit.
   \textbf{Cette différence d'état est mesurée par la tension électrique notée $U$.}
   %

@@ -19,7 +19,7 @@
 \end{contexte}
 
 %%%% docs
-\begin{doc}{Espèce chimique et corps pur}{doc:A1_espece_corps_pur}
+\begin{doc}{Espèce chimique et corps pur}
   \begin{importants}
     La matière est constituée \important{d'entités chimiques} microscopiques : atomes, molécules, ions.
     Une \important{espèce chimique} est constituée d'un ensemble d'entités chimiques
@@ -32,7 +32,7 @@ identiques.
 \end{doc}
 
 %%
-\begin{doc}{Composition de la coriandre pour 100 \unit{\g}}{doc:A1_coriandre}
+\begin{doc}{Composition de 100 \unit{\g} de coriandre}[\label{doc:coriandre}]
   \begin{wrapfigure}{r}{0.13\linewidth}
     \vspace*{-49pt}
     \image{1}{images/exterieures/coriandre.jpg}
@@ -58,7 +58,7 @@ identiques.
 
 
 %%
-\begin{doc}{La mole}{doc:A1_mole}
+\begin{doc}{La mole}
   Un échantillon de sucre en poudre est un corps pur, il ne contient que des molécules de glucose de formule brute \bruteCHO{6}{12}{6}.
 
   Le nombre d'entité de glucose contenu dans un échantillon est gigantesque, de l'ordre de \num{e23} !
@@ -83,7 +83,7 @@ identiques.
 %%
 \newpage
 \vspace*{-36pt}
-\begin{doc}{Masse molaire}{doc:A1_masse_molaire}
+\begin{doc}{Masse molaire}[\label{doc:masse_molaire}]
   \begin{importants}
     Chaque \important{atome} possède une \important{masse molaire} atomique, qui correspond à \important{la masse d'une mole d'atome.}
     La masse molaire se note $M$ et s'exprime en \unit{\g/\mole} ou \unit{\g\per\mole}.
@@ -105,7 +105,7 @@ identiques.
 
   \exemple pour la molécule de dioxyde de carbone \dioxydeDeCarbone, sa masse molaire vaut
   \begin{equation*}
-    \masseMol{CO_2} = \masseMol{C} + 2 \times \masseMol{O}
+    \masseMol{\dioxydeDeCarbone} = \masseMol{C} + 2 \times \masseMol{O}
     = \qty{12,0}{\g\per\mole} + 2\times\qty{16,0}{\g\per\mole}
     = \qty{44,0}{\g\per\mole}
   \end{equation*}
@@ -116,12 +116,12 @@ identiques.
   \end{importants}
 
   \exemples $\masseMol{Mn} = \masseMol{Mn^{2+}}$,
-  $\masseMol{H_3O^{+}} = \masseMol{H_3O}$.
+  $\masseMol{\oxonium} = \masseMol{H_3O}$.
 \end{doc}
 
 %%%%
 \question{
-  En utilisant les données du document~\ref{doc:A1_masse_molaire}, calculer la masse molaire des trois constituants de la coriandre dont la formule brute est précisée dans le document~\ref{doc:A1_coriandre}.
+  En utilisant les données du document~\ref{doc:masse_molaire}, calculer la masse molaire des trois constituants de la coriandre dont la formule brute est précisée dans le document~\ref{doc:coriandre}.
 }{
   \begin{align*}
     \masseMol{H_2O} &=
@@ -139,7 +139,7 @@ identiques.
 
 
 %%
-\begin{doc}{Quantité de matière}{doc:A1_quantite_matiere}
+\begin{doc}{Quantité de matière}
   \begin{importants}
     La \important{quantité de matière}, notée $n$, est la grandeur qui détermine le nombre d'entités chimiques dans un échantillon.
     Son \important{unité est la mole}, notée \unit{\mole}.
@@ -155,7 +155,7 @@ identiques.
 
 %%%%
 \question{
-  Calculer la quantité de matière des trois constituants de la coriandre, en utilisant la masse molaire déjà calculée et leurs masses données dans le document~\ref{doc:A1_coriandre}.
+  Calculer la quantité de matière des trois constituants de la coriandre, en utilisant la masse molaire déjà calculée et leurs masses données dans le document~\ref{doc:coriandre}.
 }{
   \begin{align*}
     n(\eau) = \dfrac{m (\eau)}{\masseMol{H_2O}} = \qty{5,12}{\mole}

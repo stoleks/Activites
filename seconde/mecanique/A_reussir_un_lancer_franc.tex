@@ -9,7 +9,7 @@
 \end{objectifs}
 
 %%%%
-\begin{doc}{Lancer franc au basket}{doc:A3_lancer_franc}
+\begin{doc}{Lancer franc au basket}[\label{doc:lancer_franc}]
   \begin{center}
     \image{0.75}{images/mecanique/lancer_franc}
   \end{center}
@@ -17,7 +17,7 @@
 
 
 %%%%
-\begin{doc}{Programme python pour tracer la trajectoire}{doc:A3_code_python}
+\begin{doc}{Programme python pour tracer la trajectoire}[\label{doc:code_python}]
   \vspace*{-8pt}
   \lstset{style=codePython, language=python}
 \begin{lstlisting}
@@ -61,7 +61,7 @@ plt.show ()                          # affichage du graphique
 
 \newpage
 \vspace*{-40pt}
-\begin{doc}{Exemple de trajectoire tracée par le programme}{doc:A3_exemple_trajectoire}
+\begin{doc}{Exemple de trajectoire tracée par le programme}[\label{doc:exemple_trajectoire}]
   \begin{center}  
     \image{0.95}{images/mecanique/lancer_franc_trajectoire}
   \end{center}
@@ -69,20 +69,20 @@ plt.show ()                          # affichage du graphique
 
 %%
 \question{
-  Dans le programme python du document~\ref{doc:A3_code_python}, repérer les lignes de code permettant de calculer la position de la balle.
+  Dans le programme python du document~\ref{doc:code_python}, repérer les lignes de code permettant de calculer la position de la balle.
 }{
   Ce sont les lignes 20 à 21, qui appellents les fonctions des lignes 6 à 9.
 }[1]
 
 
 \question{
-  Dans le programme python du document~\ref{doc:A3_code_python}, repérer les lignes de code permettant de choisir la valeur de la vitesse $v_0$ ainsi que la valeur de l’angle $\alpha$.
+  Dans le programme python du document~\ref{doc:code_python}, repérer les lignes de code permettant de choisir la valeur de la vitesse $v_0$ ainsi que la valeur de l’angle $\alpha$.
 }{
   Ce sont les lignes 12 et 13.
 }[1]
 
 \question{
-  D’après les documents~\ref{doc:A3_lancer_franc} et~\ref{doc:A3_code_python}, quelles sont les valeurs des coordonnées $(x ; y)$ que doit atteindre le ballon pour que le panier soit marqué ? Schématiser ce point sur le graphique du document~\ref{doc:A3_exemple_trajectoire}.
+  D’après les documents~\ref{doc:lancer_franc} et~\ref{doc:code_python}, quelles sont les valeurs des coordonnées $(x ; y)$ que doit atteindre le ballon pour que le panier soit marqué ? Schématiser ce point sur le graphique du document~\ref{doc:exemple_trajectoire}.
 }{
   $(\num{4,70} ; \num{0,62})$
 }[1]
@@ -94,7 +94,7 @@ plt.show ()                          # affichage du graphique
 }[1]
 
 
-\begin{doc}{Vecteur vitesse}{doc:A3_vitesse}
+\begin{doc}{Vecteur vitesse}
   \begin{importants}
     Le \important{vecteur vitesse $\vv{v_2}$} d'un système au point $P_2$ entre les instants $t_1$ et $t_3$ a pour expression
     \begin{equation*}
@@ -122,4 +122,4 @@ plt.show ()                          # affichage du graphique
   \end{listePoints}
 \end{doc}
 
-\mesure Sans se préoccuper de leurs longueurs, tracer les vecteurs vitesses $\vv{v_2}$, $\vv{v_6}$ et $\vv{v_{10}}$ sur le doc.~\ref{doc:A3_exemple_trajectoire}.
+\mesure Sans se préoccuper de leurs longueurs, tracer les vecteurs vitesses $\vv{v_2}$, $\vv{v_6}$ et $\vv{v_{10}}$ sur le doc.~\ref{doc:exemple_trajectoire}.

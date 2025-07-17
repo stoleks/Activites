@@ -19,10 +19,8 @@
 \end{contexte}
 
 %%%%
-\begin{doc}{Le modèle de Br\o{}nsted}{doc:A3_modele_bronsted}
-  \begin{wrapfigure}[3]{r}{0.1\linewidth}
-    \qrcode{https://www.youtube.com/watch?v=EztCKi3oJEI}
-  \end{wrapfigure}
+\begin{doc}{Le modèle de Br\o{}nsted}
+  \qrcodeCote[3]{https://www.youtube.com/watch?v=EztCKi3oJEI}
 
   Joannes Nicolaus Br\o{}nsted est un chimiste danois du début du 20ème siècle.
   Il est connu pour sa définition des substances acides et basiques : 
@@ -46,32 +44,36 @@
 \end{doc}
 
 \question{
-  Indiquer l'acide et la base du couple acide/base \eau/\chemfig{HO^{-}}.
+  Indiquer l'acide et la base du couple acide/base \eau/\hydroxyde.
 }{}[1]
 
-\begin{doc}{Réaction acido-basique}{doc:A3_acido_basique}
+\begin{doc}{Réaction acido-basique}
   \begin{importants}  
     Lors d'une réaction chimique acido-basique, l'acide d'un couple réagit avec la base d'un autre couple.
   \end{importants}
   
-  \exemple On a deux couples : \oxonium/\eau et \chemfig{NH_4^{+}}/\ammoniac.
+  \exemple On a deux couples : \oxonium/\eau et \ammonium/\ammoniac.
 
   Si on mélange les ions oxonium \chemfig{H_3 O^{+}}, un acide, avec l'ammoniac \ammoniac, une base, on va avoir une réaction chimique
   \vspace*{-12pt}
   \begin{center}
-    \oxonium + \ammoniac \reaction \eau + \chemfig{NH_4^{+}}
+    \oxonium + \ammoniac \reaction \eau + \ammonium
   \end{center}
 \end{doc}
 
 \question{
-  Établir la réaction acido-basique entre le couple \oxonium/\eau et le couple \eau/\chemfig{HO^{-}}.  
-}{}[2]
+  Établir la réaction acido-basique entre le couple \oxonium/\eau et le couple \eau/\hydroxyde.  
+}{
+  \begin{equation*}
+    \oxonium + \hydroxyde = \eau + \eau = 2\eau
+  \end{equation*}
+}[2]
 
 %%
 \newpage
 \vspace*{-40pt}
 
-\begin{doc}{Le bicarbonate de soude}{doc:A3_bicarbonate}
+\begin{doc}{Le bicarbonate de soude}[\label{doc:bicarbonate}]
   \begin{wrapfigure}{r}{0.2\linewidth}
     \vspace*{-38pt}
     \centering
@@ -82,7 +84,7 @@
   Il se présente sous la forme de fins cristaux blancs, solubles dans l’eau, qui forme les ions sodium \ionSodium et hydrogénocarbonate \bicarbonate en solution.
 \end{doc}
 
-\begin{doc}{Le vinaigre de cidre}{doc:A3_vinaigre}
+\begin{doc}{Le vinaigre de cidre}[\label{doc:vinaigre}]
   \begin{wrapfigure}{l}{0.2\linewidth}
     \vspace*{-22pt}
     \centering
@@ -95,7 +97,7 @@
   Le vinaigre de cidre à 8° comporte \qty{8}{\g} d’acide éthanoïque par litre de solution
 \end{doc}
 
-\begin{doc}{Couples acide/base à connaitre}{doc:A3_couple_acide_base}
+\begin{doc}{Couples acide/base à connaitre}[\label{doc:couple_acide_base}]
   \centering
   \begin{tblr}{
     hlines, vlines, colspec = {
@@ -108,7 +110,7 @@
     & \SetCell[c=2]{c} Forme acide & & \SetCell[c=2]{c} Forme basique \\
     Couple acide/base & Formule brute & Nom & Formule brute & Nom \\
     \oxonium/\eau                 & \oxonium & ion oxonium                 & \eau & eau \\
-    \eau/\chemfig{HO^{-}}         & \eau & eau                             & \chemfig{HO^{-}} & ion hydroxyde \\
+    \eau/\hydroxyde               & \eau & eau                             & \hydroxyde & ion hydroxyde \\
     \chemfig{HCl}/\chlorure       & \chemfig{HCl} & acide chlorhydrique    & \chlorure & ion  \\
     {\chemfig{CH_3COOH}/ \\
     \chemfig{CH_3COO^{-}}}        & \chemfig{CH_3COOH} & acide éthanoïque  & \chemfig{CH_3COO^{-}} & ion éthanoate \\
@@ -119,14 +121,26 @@
 \end{doc}
 
 \question{
-  En utilisant les documents~\ref{doc:A3_bicarbonate},~\ref{doc:A3_vinaigre} et~\ref{doc:A3_couple_acide_base}, donner les couples acide/base composant le bicarbonate de soude et présent dans le vinaigre de cidre.
-}{}[2]
+  En utilisant les documents~\ref{doc:bicarbonate},~\ref{doc:vinaigre} et~\ref{doc:couple_acide_base}, donner les couples acide/base présents dans le bicarbonate de soude et dans le vinaigre de cidre.
+}{
+  Bicarbonate de soude : \acideCarbonique/\bicarbonate et \bicarbonate/\carbonate
+  
+  Acide éthanoïque : \chemfig{CH_3COOH}/\chemfig{CH_3COO^{-}}
+}[2]
 
 \question{
   Établir la réaction acido-basique qui a lieue quand on mélange du bicarbonate de soude et du vinaigre de cidre.
-}{}[2]
+}{
+  \begin{equation*}
+    \chemfig{CH_3COOH} + \bicarbonate = \chemfig{CH_3COO^{-}} + \acideCarbonique
+  \end{equation*}
+}[2]
 
 \question{
   En pratique, l'acide carbonique se décompose spontanément en eau et en dioxyde de carbone.
   Modifier la réaction acido-basique en conséquence.
-}{}[1]
+}{
+  \begin{equation*}
+    \acideCarbonique = \eau + \dioxydeDeCarbone
+  \end{equation*}
+}[1]

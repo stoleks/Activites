@@ -20,7 +20,7 @@
 
 
 %%%% docs
-\begin{doc}{Distance d'arrêt, de freinage et de réaction}{doc:A1_distances_arret}
+\begin{doc}{Distance d'arrêt, de freinage et de réaction}[\label{doc:distances_arret}]
   \begin{center}
     \image{1}{images/mecanique/distance_arret}
   \end{center}
@@ -44,13 +44,13 @@
     & 40 & 80 & 90 & 110 & 130 \\
     %
     Vitesse $v$ (\unit{\m\per\s})
-    & 11,1 & 22,2 & & & \\
+    & 11,1 & 22,2 & \correction{25} & \correction{30,6} & \correction{36,1} \\
     %
     $d_R$ (\unit{\m})
-    & 11,1 & & 25,0 & & \\
+    & 11,1 & \correction{22,2} & 25,0 & \correction{30,6} & \correction{36,1} \\
     %
     $d_F$ sur sol sec (\unit{\m})
-    & 10,3 & & 52,0 & 78,1 & 108,5 \\
+    & 10,3 & \correction{41,2} & 52,0 & 78,1 & 108,5 \\
     %
     $d_F$ sur sol mouillé (\unit{\m})
     & 15,0 & 59,9 & 75,9 & & 158,4 \\
@@ -59,34 +59,42 @@
     & 21,4 & 63,4 & & 108,7 & 144,6 \\
     %
     $d_A$ sur sol mouillé (\unit{\m})
-    & & & & 144,6 & \\
+    & \correction{26,1} & \correction{82,1} & \correction{139,3} & 194,7 & \\
     %
   \end{tblr}
 \end{doc}
 
 \numeroQuestion
-Compléter le tableau du document~\ref{doc:A1_distances_arret}
+Compléter le tableau du document~\ref{doc:distances_arret}
 
 \question{
   Expliquer pourquoi l'état du sol n'est pas indiqué pour la distance de réaction $d_R$.
-}{}[2]
+}{
+  Elle ne double pas, car elle dépend uniquement de la vitesse du véhicule et du temps de réaction d'une personne, temps qui est supposé constant ici.
+}[2]
 
 \question{
   Indiquer si la voiture va s'arrêter avant de percuter l'enfant, sur sol sec ou mouillé.
-}{}[2]
+}{
+  Sur sol sec, la voiture s'arrête au bout de \qty{21,4}{\m} et ne percute pas l'enfant.
+  Sur sol mouillé en revanche, la voiture percute l'enfant, car elle s'arrête au bout de \qty{26,1}{\m}
+}[2]
 
-\newpage
-\vspace*{-30pt}
+\correction{\newpage \vspace*{-30pt}}
 \question{
   Est-ce que la distance de freinage est doublée quand la vitesse du véhicule est doublée ?
-}{}[2]
+}{
+  Non, elle est multipliée par 4 quand on passe de \num{40} à \qty{80}{\km\per\hour}.
+}[2]
 
-\mesure
+\programmation
 À la main ou à l'aide d'un logiciel, tracer la distance de freinage en fonction de la vitesse au carré $v^2$, après avoir converti la vitesse en \unit{\m\per\s}.
 
 \question{
   Est-ce que $v^2$ et $d_F$ sont deux grandeurs proportionnelles ?
-}{}[2]
+}{
+  Oui, car si on trace $d_F (v^2)$ ou $v^2(d_F)$, on trouve que les deux grandeurs sont reliées par une droite passant par l'origine graphiquement.
+}[2]
 
 
 %%%%
@@ -100,7 +108,7 @@ Compléter le tableau du document~\ref{doc:A1_distances_arret}
 \end{contexte}
 
 %%
-\begin{doc}{Les facteurs intervenant dans les accidents de la route}{doc:A1_facteurs_accident}
+\begin{doc}{Les facteurs intervenant dans les accidents de la route}
   \begin{listePoints}[2]
     \item La vitesse est la première cause d'accident mortel.
     Réduire la vitesse moyenne de \qty{10}{\percent} réduit les morts de presque \qty{40}{\percent} !
@@ -112,7 +120,7 @@ Compléter le tableau du document~\ref{doc:A1_distances_arret}
 \end{doc}
 
 
-\begin{doc}{L'évolution du nombre de morts à cause des accidents de la route}{doc:A1_mort_route}
+\begin{doc}{L'évolution du nombre de morts à cause des accidents de la route}
   \centering
   \image{0.78}{images/exterieures/donnees/evolution-nombre-de-morts-sur-les-routes}
 \end{doc}

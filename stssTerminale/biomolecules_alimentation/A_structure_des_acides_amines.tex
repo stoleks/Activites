@@ -26,7 +26,7 @@
 
 
 %%%% docs
-\begin{doc}{Les acides aminé}{doc:A1_acide_amine}
+\begin{doc}{Les acides aminé}
   \begin{wrapfigure}[3]{r}{0.3\linewidth}
     \centering
     \vspace*{-24pt}
@@ -64,7 +64,7 @@
   Justifier que le carbone en $\alpha$ de l'alanine est bien asymétrique.
 }{}[2]
 
-\begin{doc}{Chiralité et énantiomère}{doc:A1_chiral_enantiomere}
+\begin{doc}{Chiralité et énantiomère}
   \begin{wrapfigure}{r}{0.5\linewidth}
     % \centering
     \vspace*{-18pt}
@@ -93,7 +93,7 @@
 }{}[2]
 
 
-\begin{doc}{Acides $\alpha$-aminé produit par le vivant}{doc:A1_acide_amine_vivant}
+\begin{doc}{Acides $\alpha$-aminé produit par le vivant}[\label{doc:acide_amine_vivant}]
   Sur Terre, plus de 500 acides $\alpha$-aminés sont produit naturellement,
   mais chez les eucaryotes, seuls 20 acides $\alpha$-aminés sont utilisés et synthétisés.
   On parle d'acide $\alpha$-aminé \important{protéinogène} (« qui donne naissance aux protéines »). 
@@ -121,9 +121,8 @@
   \legende{Quelques acides aminés essentiels}
 \end{doc}
 
-
-\numeroQuestion
-Entourer les carbones asymétriques dans les quatre exemples d'acide aminés essentiels donnés dans le document~\ref{doc:A1_acide_amine_vivant}.
+\schematisation
+Entourer les carbones asymétriques dans les quatre exemples d'acide aminés essentiels donnés dans le document~\ref{doc:acide_amine_vivant}.
 
 \question{
   La molécule de glycine est le seul acide $\alpha$-aminé qui \important{n'est pas} chiral.
@@ -132,12 +131,15 @@ Entourer les carbones asymétriques dans les quatre exemples d'acide aminés ess
   \end{center}
   \vspace*{-4pt}
   Expliquer pourquoi.
-}{}[1]
+}{
+  Le carbone fonctionnel de la glycine avec le groupe carboxyle et le groupe amine est lié à deux hydrogènes, et n'a donc que 3 groupes différents ce qui en fait un carbone symétrique.
+  De même pour le carbone du groupe carboxyle.
+  Comme la glycine n'a que des carbones symétriques, elle n'est pas chirale.
+}[1]
 
 
 %%%%
-\begin{doc}{Représentation des acide aminés}{doc:A1_representations}
-  
+\begin{doc}{Représentation des acide aminés}
   Pour représenter en 2D des molécules 3D, on utilise la représentation de Cram en chimie et la représentation de Fischer en biologie.
 
   \setchemfig{cram width = 5pt}
@@ -187,7 +189,7 @@ Entourer les carbones asymétriques dans les quatre exemples d'acide aminés ess
   Le nom des acides aminés sont précédés de la lettre L ou D.
 \end{doc}
 
-\numeroQuestion
+\schematisation
 Dans le vivant on trouve de la L-valine.
 Donner la représentation de Fischer de la D-valine.
 \smallskip
@@ -200,7 +202,7 @@ Donner la représentation de Fischer de la D-valine.
 
 
 %%%% Liaisons peptidiques
-\begin{doc}{Liaison peptidique}{doc:A1_liaison_peptidique}
+\begin{doc}{Liaison peptidique}
   \begin{wrapfigure}[3]{r}{0.3\linewidth}
     \centering
     \chemfig{- C (=[::90] O) -N (-[::-90] H) -}
@@ -244,7 +246,7 @@ Donner la représentation de Fischer de la D-valine.
   \end{importants}
 \end{doc}
 
-\numeroQuestion
+\schematisation
 Donner les formules topologiques de l'alanine et de la valine.
 \correction{
   \centering
@@ -252,11 +254,11 @@ Donner les formules topologiques de l'alanine et de la valine.
 }
 \pasCorrection{\vspace*{4cm}}
 
-\numeroQuestion
+\schematisation
 Donner les formules topologiques des dipeptides Val-Ala, Met-Ala et Val-Leu.
 \vfill
 
-\begin{doc}{Acide $\mathbf{\alpha}$-aminés et alimentation}{doc:A1_alpha_amine_alimentation}
+\begin{doc}{Acide $\mathbf{\alpha}$-aminés et alimentation}
   \begin{importants}
     Les 9 acides $\alpha$-aminés qui ne peuvent pas être synthétisé dans nos corps sont les acides aminés \important{essentiels.}
     Ils doivent être fournis par l'alimentation, en mangeant des protéines végétales ou animales.
