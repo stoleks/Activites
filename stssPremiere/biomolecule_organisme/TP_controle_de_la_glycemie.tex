@@ -1,7 +1,7 @@
 \tetePremStssBiom
 \titreTP{Contrôle de la glycémie}
 
-\begin{doc}{Mesurer la glycémie}{doc:mesurer_glycemie}
+\begin{doc}{Mesurer la glycémie}
   Pour contrôler la glycémie d'une personne, on peut prélever une goutte de sang et mesurer la concentration massique en glucose.
   Le principe est le suivant : on utilise des bandelettes qui contiennent une enzyme, la glucose oxydase. 
   Le glucose contenu dans le sang va réagir chimiquement en présence de glucose oxydase et former des ions hydrogène \ionHydrogene et du dioxygène \dioxygene.
@@ -9,7 +9,7 @@
   L'intensité du courant dans la bandelette va donc varier avec concentration de glucose dans le sang.
 \end{doc}
 
-\begin{doc}{Étalonnage de la bandelette}{doc:etalonnage_bandelette}
+\begin{doc}{Étalonnage de la bandelette}
   Pour pouvoir mesurer une concentration en glucose avec une bandelette, il faut l'étalonner en mesurant l'intensité du courant pour plusieurs solutions étalon.
 
   Un fabriquant a mesuré les valeurs suivantes :
@@ -30,7 +30,7 @@
   \end{tblr}
 \end{doc}
 
-\begin{doc}{Conversion d'une concentration massique en concentration molaire}{doc:conversion_mass_mol}
+\begin{doc}{Conversion d'une concentration massique en concentration molaire}
   Pour passer d'une concentration massique $c_m$ à une concentration molaire $c$, il faut utiliser la relation suivante 
   \begin{equation*}
     c = \dfrac{c_m}{M}
@@ -42,9 +42,9 @@
   \end{donnees}
 \end{doc}
 
-\begin{doc}{Taux normaux de glycémie}{doc:taux_glycemie}
+\begin{doc}{Taux normaux de glycémie}
   \begin{tableau}{
-    | X[c]| X[c]| X[c]| X[c]| X[c]|
+    |X[c]| X[c]| X[c]| X[c]| X[c]|
   }
     & à jeun & 2h après le repas & femme enceinte à jeun & femme enceinte 2h après le repas \\
     Taux normaux de glycémie &
@@ -57,10 +57,10 @@
   \textit{Ces valeurs augmentent de \qty{0.6}{\milli\mole\per\litre} par décennie après 50 ans.}
 \end{doc}
 
-\numeroQuestion 
+\programmation 
 À l'aide d'un programme python ou d'un tableur, tracer la concentration molaire du glucose en fonction de l'intensité du courant. \attention il faut convertir la concentration massique !
 
-\numeroQuestion
+\programmation
 Utiliser une régression linéaire pour obtenir la relation entre concentration molaire du glucose en \unit{\milli\mole\per\litre} et intensité du courant en \unit{\micro\ampere} dans la bandelette.
 
 \question{
