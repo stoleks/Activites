@@ -228,3 +228,13 @@
     \tikzTubeEssais% tube
   \end{tikzpicture}
 }
+
+%------ Pour les circuits
+\NewDocumentCommand{\fixedvlen}{O{0.5cm} m m O{}}{% [semilength]{node}{label}[extra options]
+  % get the center of the standard arrow
+  \coordinate (#2-Vcenter) at ($(#2-Vfrom)!0.5!(#2-Vto)$);
+  % draw an arrow of a fixed size around that center and on the same line
+  \draw[-Triangle, #4] ($(#2-Vcenter)!#1!(#2-Vfrom)$) -- ($(#2-Vcenter)!#1!(#2-Vto)$);
+  % position the label as in the normal voltages
+  \node[anchor=\ctikzgetanchor{#2}{Vlab}, #4] at (#2-Vlab) {#3};
+}

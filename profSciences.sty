@@ -564,7 +564,7 @@
 }
 \NewDocumentCommand{\titreEvaluation}{o m}{%
   \IfNoValueTF{#1}{%
-    \titre{Évaluation \arabic{section} -- #2}
+    \titre{Évaluation \arabic{part} -- #2}
   }{%
     \titre{Évaluation #1 -- #2}
   }
@@ -674,16 +674,16 @@
     \textbf{\footnotesize #1}
     \newline
     \footnotesize #2
-  }
+  }%
 }
 \NewDocumentCommand{\teteDroite}{m o}{%
   \rhead{%
     \IfValueT{#2}{%
       \hfill \textbf{\footnotesize #2}
-    }
+    }%
     \newline 
     \hfill \footnotesize #1
-  }
+  }%
 }
 %------ \enTete [compteur] {titre} [numéro de section] ; * = version simplifié sans pagination
 \NewDocumentCommand{\enTete}{s o m O{0}}{%
@@ -720,12 +720,12 @@
 
 % Affiche le contenu en mode correction
 \newcommand{\correction}[1]{%
-  \ifthenelse {\boolean{modeProf}} {#1} {}
+  \ifthenelse {\boolean{modeProf}} {#1} {}%
 }
 
 % Affiche le contenu si on est pas en mode correction
 \newcommand{\pasCorrection}[1]{%
-  \ifthenelse {\boolean{modeProf}} {} {#1}
+  \ifthenelse {\boolean{modeProf}} {} {#1}%
 }
 
 %------ Texte à trou
@@ -743,13 +743,13 @@
         \lignePointillee[#2\linewidth]%
         \hspace*{-12pt}%
       }{% Sinon on calcule la largeur du texte, avec un peu d'espace supplémentaire
-        \settowidth{\largeurTexte}{a #4 a}%
+        \settowidth{\largeurTexte}{\enspace#4\enspace}%
         \espaceReponse%
         \lignePointillee[\largeurTexte]%
         \hspace*{-12pt}%
-      }
-    }
-  }
+      }% Largeur auto
+    }% Largeur manuelle
+  }% Plusieurs lignes
 }
 
 % espace vertical pour la réponse
@@ -778,25 +778,25 @@
 %%------------- Pour les exercices et les interrogations
 %------ Affiche le numéro d'une question avec choix du compteur et de l'espacement
 \NewDocumentCommand{\numeroQuestion}{s O{questionNum}}{%
-  \refstepcounter{#2}
-  \setcounter{sousQuestionNum}{0}
-  \vspace*{2pt}
+  \refstepcounter{#2}%
+  \setcounter{sousQuestionNum}{0}%
+  \vspace*{2pt}%
   \IfBooleanTF{#1}{}{% cas non étoilé, avec un espace
     \setlength\parindent{\questionIndent}
-  }
+  }%
   \textcolor{couleurSec}{%
     \textbf{\arabic{#2}} {\small\faMinus}
-  }
-  \setlength\parindent{0pt}
+  }%
+  \setlength\parindent{0pt}%
 }
 %------ Sous question sous la forme 1.2
 \NewDocumentCommand{\numeroSousQuestion}{}{%
-  \setlength\parindent{1.5\questionIndent}
-  \refstepcounter{sousQuestionNum}
+  \setlength\parindent{1.5\questionIndent}%
+  \refstepcounter{sousQuestionNum}%
   \textcolor{couleurSec}{%
     \textbf{\arabic{questionNum}.\arabic{sousQuestionNum}.}
   }
-  \setlength\parindent{0pt}
+  \setlength\parindent{0pt}%
 }
 
 %------ lignes pointillées et pleines
@@ -1027,6 +1027,7 @@
 %------ Commande générale pour colorer un texte avec une couleur par défaut
 % L'intérêt de cette commande est d'éviter des répétion de O{couleurSec}
 \NewDocumentCommand{\questionSpeciale}{m O{couleurSec} m}{%
+  \vspace*{2pt}%
   \IfBooleanTF{#1}{}{
     \setlength\parindent{\questionIndent}
   }
@@ -1058,23 +1059,26 @@
 \newcommand{\picto}[2]{%
   \image{#1}{images/exterieures/pictogrammes/picto_#2}
 }
-% Nombre dans un cercle A REVOIR
+% Nombre dans un cercle
 \newcommand*\nombreCercle[1]{%
-  % \tikz[baseline=(char.base)]{
-  %   \node [shape=circle, draw filled, inner sep=1.2pt, color=couleurSec-50] (char) {\textcolor{black}{#1};
-  % }
-  \important[couleurSec]{#1}
+  \begingroup% Apprendre à programmer en tex p.259
+    \setbox0\hbox{$\vcenter{}$}%
+    \xdef\htmath{\the\ht0}%
+  \endgroup%
+  \begin{tikzpicture}[baseline=-\htmath]%
+    \node[fill=couleurSec, circle] {\important[white]{#1}};%
+  \end{tikzpicture}%
 }
 % Pour légender une image
 \newcommand{\legende}[1]{%
-  \vspace*{4pt}
+  \vspace*{4pt}%
   \textcolor{couleurPrim}{\faArrowUp} \; #1
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------ points importants
 \NewDocumentCommand{\important}{O{couleurSec-800} +m}{%
-  \!\textcolor{#1}{\textsf{\bfseries #2}}\!\!
+  \textcolor{#1}{\textsf{\bfseries #2}}%
 }
 
 %------ Pour donner des exemples. 
@@ -1152,7 +1156,7 @@
 
 %------ liste d'objectif
 \newlist{listeObjectifs}{itemize}{2}
-\setlist[listeObjectifs]{leftmargin=6pt, label=\fleche}
+\setlist[listeObjectifs]{leftmargin=7pt, label=\fleche}
 
 %------ liste tirets
 \newlist{listeTirets}{itemize}{2}
@@ -1168,43 +1172,43 @@
 
 %------ problématique 
 \newcommand{\problematique}[1]{%
-  \setlength{\parindent}{\questionIndent}
-  \flecheLongue[couleurTer] \important[couleurTer]{#1}
-  \setlength{\parindent}{0 pt}
+  \setlength{\parindent}{\questionIndent}%
+  \flecheLongue[couleurTer] \important[couleurTer]{#1}%
+  \setlength{\parindent}{0 pt}%
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------ Séparation de la page en trois blocs
 \NewDocumentCommand{\separationTroisBlocs}{+m O{0.3} +m O{0.3} +m O{0.3}}{%
-  \begin{minipage}[T]{#2\linewidth}
+  \begin{minipage}[T]{#2\linewidth}%
     #1
-  \end{minipage}
-  ~
-  \begin{minipage}[T]{#4\linewidth}
+  \end{minipage}%
+  ~%
+  \begin{minipage}[T]{#4\linewidth}%
     #3
-  \end{minipage}
-  ~
-  \begin{minipage}[T]{#6\linewidth}
+  \end{minipage}%
+  ~%
+  \begin{minipage}[T]{#6\linewidth}%
     #5
-  \end{minipage}
+  \end{minipage}%
 }
 %------ Separation en deux blocs
 \NewDocumentCommand{\separationBlocs}{+m O{0.48} +m O{0.48}}{%
-  \begin{minipage}[T]{#2\linewidth}
+  \begin{minipage}[T]{#2\linewidth}%
     #1
-  \end{minipage}
-  \hfill
-  \begin{minipage}[T]{#4\linewidth}
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[T]{#4\linewidth}%
     #3
-  \end{minipage}
+  \end{minipage}%
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------ nombre algébrique et réaction chimique
 \newcommand{\algebrique}[1]{%
-  \ensuremath{\overline{\mathrm{#1}}}
+  \ensuremath{\overline{\mathrm{#1}}}%
 }
 \newcommand{\reaction}{%
   \;\text{\faLongArrowAltRight}\; % flèche courte et jolie
@@ -1220,10 +1224,10 @@
 }
 \NewDocumentCommand{\masseAtom}{s m}{%
   \IfBooleanTF{#1}{%
-    \ensuremath{m_{\chemfig{#2}}}
+    \ensuremath{m_{\chemfig{#2}}}%
   }{%
-    \ensuremath{m(\chemfig{#2})}
-  }
+    \ensuremath{m(\chemfig{#2})}%
+  }%
 }
 
 %------ atome ou isotope 
