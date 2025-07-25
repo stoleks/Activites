@@ -17,11 +17,11 @@
 
 
 %%%%
-\titreSousSection{Le stockage}
+\titreSection{Le stockage}
 
 %%
 \begin{doc}{Description du stockage à Beyrouth}[\label{doc:description_stockage}]
-  Le conseil supérieur de la défense indique qu'un incendie s’est déclaré dans un hangar de \qty{50000}{\cubic\metre} dans lequel étaient stockés \qty{2750e3}{\kg} de nitrate d’ammonium de formule brute \chemfig{NH_4 NO_3}.
+  Le conseil supérieur de la défense indique qu'un incendie s’est déclaré dans un hangar de \qty{50000}{\cubic\metre} dans lequel étaient stockés \qty{2750e3}{\kg} de nitrate d’ammonium de formule brute \nitrateAmmonium.
 \end{doc}
 
 %%
@@ -32,7 +32,7 @@
     hlines, vlines, row{1} = {c, m, couleurSec-100}, row{2} = {c},
   }
     Espèce chimique & Nitrate d'ammonium & diazote & dioxygène & eau \\
-    Formule brute & \chemfig{NH_4 NO_3} & \diazote & \dioxygene & \eau \\
+    Formule brute & \nitrateAmmonium & \diazote & \dioxygene & \eau \\
     Propriétés physico-chimiques & 
     Solide à \qty{20}{\degreeCelsius}. \newline (poudre). Légèrement nocif. &
     Gazeux à \qty{20}{\degreeCelsius}. Gaz incolore inerte présent dans l’air. &
@@ -51,13 +51,21 @@
 \question{
   Donner le nom et la formule brute de l’espèce chimique entreposée dans le port de Beyrouth responsable de l’explosion.
 }{
-
+  C'est le nitrate d'ammonium \nitrateAmmonium.
 }[2]
 
 \question{
   Après avoir converti la masse de cette espèce chimique en gramme, calculer sa masse molaire notée \masseMol{NH_4 NO_3}.
 }{
-
+  \begin{equation*}
+    m(\nitrateAmmonium) = \qty{2.75e9}{\g}
+  \end{equation*}
+  \begin{align*}
+    \masseMol{NH_4 NO_3}
+    &= 2\masseMol{N} + 4\masseMol{H} + 3\masseMol{O} \\
+    &= (2\times\num{14.0} + 4\times\num{1.0} + 3\times\num{16.0}) \unit{\g\per\mole} \\
+    &= \qty{80.O}{\g\per\mole}
+  \end{align*}
 }[4]
 
 
@@ -92,12 +100,17 @@
 \question{
   En déduire, à l'aide du document~\ref{doc:description_stockage} et~\ref{doc:calcul_mole_sol_gaz}, la quantité de matière $n_1$ de nitrate d’ammonium entreposée dans le hangar.
 }{
-  
+  \begin{align*}
+    n_1 
+    &= \dfrac{m(\nitrateAmmonium)}{\masseMol{NH_4 NO_3}} \\
+    &= \dfrac{\qty{2.75e9}{\g}} {\qty{80.0}{\g\per\mole}} \\
+    &= \qty{3.44e7}{\mole}
+  \end{align*}
 }[4]
 
 
 %%%%
-\titreSousSection{La réaction produite par l’incendie}
+\titreSection{La réaction produite par l’incendie}
 
 %%
 \begin{doc}{Rappels sur la réaction chimique}
@@ -107,7 +120,7 @@
   \end{importants}
   équation de la transformation chimie produite lors de l’incendie dans le hangar à \qty{300}{\degreeCelsius} :
   \begin{center}
-    \important{2}\chemfig{NH_4 NO_3}\sol \reaction
+    \important{2}\nitrateAmmonium\sol \reaction
     \important{2}\diazote\gaz + \dioxygene\gaz + \important{4}\eau\liq
   \end{center}
 
@@ -124,28 +137,29 @@
 \end{doc}
 
 %%
+\pasCorrection{\newpage}
 \begin{doc}{Faire un bilan de matière}[\label{doc:bilan_matiere}]
   L'équation de la réaction est comme une recette de cuisine :
   \begin{center}
-    \important{2}\chemfig{NH_4 NO_3}\sol \reaction
+    \important{2}\nitrateAmmonium\sol \reaction
     \important{2}\diazote\gaz + \dioxygene\gaz + \important{4}\eau\liq
   \end{center}
-  Si je mélange \important{deux} \chemfig{NH_4 NO_3}, il se forme \important{deux} \diazote,
+  Si je mélange \important{deux} \nitrateAmmonium, il se forme \important{deux} \diazote,
   \important{un} \dioxygene\; et \important{quatre} \eau.
   
-  Si je mélange 4 \chemfig{NH_4 NO_3}, il se forme 4 \diazote, 2 \dioxygene\; et 8 \eau.
+  Si je mélange 4 \nitrateAmmonium, il se forme 4 \diazote, 2 \dioxygene\; et 8 \eau.
   
-  Si je mélange 6 \chemfig{NH_4 NO_3}, il se forme \texteTrou{6} \diazote, \texteTrou{3} \dioxygene\; et \texteTrou{12} \eau.
+  Si je mélange 6 \nitrateAmmonium, il se forme \texteTrou{6} \diazote, \texteTrou{3} \dioxygene\; et \texteTrou{12} \eau.
   
-  Si je mélange \qty{2,4}{\mole} de \chemfig{NH_4 NO_3}, il se forme
+  Si je mélange \qty{2,4}{\mole} de \nitrateAmmonium, il se forme
   \texteTrou{$\qty{2,4}{\mole}$} \diazote,
   \texteTrou{$\qty{1,2}{\mole}$} \dioxygene\; et \\
   \texteTrou{$\qty{4,8}{\mole}$} \eau.
 \end{doc}
 
-\begin{donnees}
+\begin{donnees}[2]
   \item $\qty{1}{\cubic\metre} = \qty{e3}{\litre}$
-  \item $\qty{1}{\kelvin} = \qty{273}{\degreeCelsius}$
+  \item $\qty{1}{\kelvin} = 1 + \qty{273}{\degreeCelsius}$
 \end{donnees}
 
 \question{
@@ -153,10 +167,11 @@
   À partir du document~\ref{doc:bilan_matiere}, nommer les réactifs et les produits de cette réaction chimique. 
   En vous aidant du document~\ref{doc:descriptif_especes_chimiques}, indiquer si ces espèces sont dangereuses.
 }{
-  
+  Réactifs : nitrate d'ammonium (légèrement nocif) ;\par
+  Produits : diazote, dioxygène et eau (sans dangers)
 }[4]
 
-\numeroQuestion
+\documentaire
 La chaleur apportée par l’incendie a permis à la réaction de se produire.
 Compléter la première ligne « \important{avant l'incendie} » et la deuxième ligne « \important{après l'incendie} », du tableau ci-dessous, en vous aidant du document~\ref{doc:bilan_matiere}
 
@@ -169,23 +184,23 @@ Compléter la première ligne « \important{avant l'incendie} » et la deuxième
   row{1} = {couleurPrim-100, c}, row{3,4} = {l, 36pt}
 }
   Équation de la réaction &
-  \SetCell[c=2]{c} 2 \chemfig{NH_4 NO_3}\sol \reaction 2 \diazote\gaz \qq{}\qq{} & &
+  \SetCell[c=2]{c} 2 \nitrateAmmonium\sol \reaction 2 \diazote\gaz \qq{}\qq{} & &
   \dioxygene\gaz &
   4 \eau\liq \\
   %
-  État du système & \SetCell[c=4]{c} \important{Quantités de matières (\unit{\mole})} & & & \\
+  État du système & \SetCell[c=4]{c} \important{Quantités de matières (\unit{\mole})} \\
   %
   \important{Avant l’incendie} &
-  $n_1 =$               \correction{\num{2}} &
-  $n(\diazote) =$  \correction{\num{0}} &
-  $n(\dioxygene) =$  \correction{\num{0}} &
+  $n_1 =$ \correction{\num{3.44e7}} &
+  $n(\diazote) =$ \correction{\num{0}} &
+  $n(\dioxygene) =$ \correction{\num{0}} &
   $n(\eau) =$ \correction{\num{0}} \\
   %
   \important{Après l’incendie} &
-  $n_{f,1} =$             \correction{\num{0}} &
-  $n_f(\diazote) =$  \correction{\num{}} &
-  $n_f(\dioxygene) =$  \correction{\num{2}} &
-  $n_f(\eau) =$ \correction{\num{2}}
+  $n_{f,1} =$ \correction{\num{0}} &
+  $n_f(\diazote) =$ \correction{$n_1$} &
+  $n_f(\dioxygene) =$ \correction{$\dfrac{1}{2} n_1$}
+  $n_f(\eau) =$ \correction{$2 n_1$}
 \end{tblr}
 
 \vspace*{8pt}
@@ -193,10 +208,26 @@ Compléter la première ligne « \important{avant l'incendie} » et la deuxième
   En utilisant le document~\ref{doc:calcul_mole_sol_gaz} et le tableau ci-dessus, calculer (dans les conditions normales), le volume de diazote $V(\diazote)$,
   de dioxygène $V(\dioxygene)$ et de vapeur d’eau $V(\eau)$ produit.
 }{
-
+  On multiplie la quantité de matière par le volume molaire pour trouver le volume occupé par chaque gaz :
+  \begin{align*}
+    V(\diazote) 
+    &= n(\diazote) \times V_m
+     = \qty{3.44e7}{\mole} \times \qty{24.0}{\litre\per\mole}
+     = \qty{8.25e8}{\litre} \\
+    %
+    V(\dioxygene) 
+    &= n(\dioxygene) \times V_m
+     = \qty{1.71e7}{\mole} \times \qty{24.0}{\litre\per\mole}
+     = \qty{4.13e8}{\litre} \\
+    %
+    V(\eau) 
+    &= n(\eau) \times V_m
+     = \qty{6.88e7}{\mole} \times \qty{24.0}{\litre\per\mole}
+     = \qty{1.65e9}{\litre}
+  \end{align*}
 }[6]
 
-\newpage
+\pasCorrection{\newpage}
 \question{
   Soit $n$ la quantité de matière produite totale avec 
   $n = n_f(\diazote) + n_f(\dioxygene) + n_f(\eau)$
@@ -204,24 +235,37 @@ Compléter la première ligne « \important{avant l'incendie} » et la deuxième
   $V = V(\diazote) + V(\dioxygene) + V(\eau)$.
   Calculer $n$ et $V$.
 }{
+  $n = n_1 + \dfrac{1}{2}n_1 + 2n_1
+  = \dfrac{7}{2}n_1 = \qty{1.20e8}{\mole}$
 
+  $V = \qty{2.89e9}{\litre}$
 }[6]
 
 \question{
   Conclure sur la valeur de $V$ par rapport à celle du hangar
 }{
-
+  Le volume du hangar est de $\qty{50000}{\m\cubed} = \qty{5.00e7}{\litre}$, soit un volume 58 fois plus petit que le volume de gaz libéré.
 }[4]
 
-% \question{
-%   \textit{Pour les plus rapide.}
-%   La relation des gaz parfait est la suivante :
-%   \begin{equation*}
-%     PV = nRT
-%   \end{equation*}
-%   avec $R = \qty{8,31}{\pascal\cubic\metre\per\mole\per\kelvin}$. \\
-%   Sachant que la température dans le hangar était de \qty{600}{\degreeCelsius} après la réaction, calculer la pression produite par la réaction.
-%   La comparer avec la pression atmosphérique $P_\text{atm} = \qty{100}{\kilo\pascal}$ et la pression dans un pneu de vélo $P_\text{pneu} = \qty{300}{\kilo\pascal}$.
-% }{
+\question{
+  \textit{Pour les plus rapides.}
+  La relation des gaz parfait est la suivante :
+  \begin{equation*}
+    PV = nRT
+  \end{equation*}
+  avec $R = \qty{8,31}{\pascal\cubic\metre\per\mole\per\kelvin}$, $n$ la quantité totale de gaz et ici $V = \qty{5e4}{\m\cubed}$ représente le volume du hangar.
+  
+  Sachant que la température dans le hangar était de \qty{873}{\kelvin} après la réaction, calculer la pression produite par la réaction.
 
-% }[6]
+  La comparer avec la pression atmosphérique $P_\text{atm} = \qty{100}{\kilo\pascal}$ et la pression dans un pneu de vélo $P_\text{pneu} = \qty{300}{\kilo\pascal}$.
+}{
+  On calcule la pression à l'aide de la loi des gaz parfaits
+  \begin{align*}
+    P &= \dfrac{nRT}{V} \\
+    &= \dfrac{}{} \\
+    &= \qty{1.74e7}{\pascal} 
+    = \qty{1.74e4}{\kilo\pascal} \\
+    &= \qty{17400}{\kilo\pascal}
+  \end{align*}
+  Soit une pression 58 fois plus élevée que dans un pneu atteinte en quelques secondes !
+}[8]

@@ -46,9 +46,9 @@
       % Tension sinusoïdale
       \draw[trace] plot(\x, {3.25*sin((1.57*\x + 1.57) r)}); % r = radian
       % Échelle
-      \tkzVecteur(-5) (-3)[1]  {\textbf{100 V}} [right]
-      \tkzVecteur(-5)[1] (-3)  {\textbf{5 ms}} [below right]
-      \tkzVecteur(-4)[4] (3.3) {\textbf{Période} $\mathbf{T}$ \hspace{12pt}\phantom{b}} [below left]*
+      \tikzVecteur(-5,-3) (0,1)  {\textbf{100 V}} [right]
+      \tikzVecteur(-5,-3) (1,0)  {\textbf{5 ms}} [below right]
+      \tikzVecteur*(-4,3.3) (4,0) {\textbf{Période} $\mathbf{T}$ \hspace{12pt}\strut} [below left]
     \end{tikzpicture}
 
     Oscillogramme de la tension du secteur.

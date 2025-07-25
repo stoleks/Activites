@@ -122,13 +122,19 @@
 \begin{doc}{Valence des éléments \carbone, \hydrogene, \oxygene, \azote}
   \begin{center}
     \begin{tblr}{c c}
-      \SetCell{cyan-100} \chemfig{C ([3]-) ([-3]-) ([6]-) -} \chemfig{C ([4]-) ([-4]-) =} &
-      \SetCell{red-100}  \chemfig{- N ([3]-) -} \\
+      \SetCell{cyan-100} 
+      \chemfig{C ([3]-) ([-3]-) ([6]-) -} \quad
+      \chemfig{C ([4]-) ([-4]-) =}\quad
+      \chemfig{C (=[6]) =} &
+      \SetCell{red-100} 
+      \chemfig{-N ([3]-) -} \quad
+      \chemfig{-N=} \\
       %
       \SetCell{cyan-100} Le carbone est tétravalent &
       \SetCell{red-100}  L'azote est trivalent \\
       %
-      \SetCell{purple-100} \chemfig{O =} \chemfig{O ([6]-) (!\vide{3}) -} &
+      \SetCell{purple-100} \chemfig{O =} \quad
+      \chemfig{O ([6]-) (!\vide{3}) -} &
       \SetCell{blue-100}   \chemfig{H (!\vide{-3}) -} \\
       %
       \SetCell{purple-100} L'oxygène est bivalent &

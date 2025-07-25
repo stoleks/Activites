@@ -28,7 +28,7 @@
 \end{doc}
 
 \begin{doc}{Principe d'une IRM}
-  \qrcodeCote(-30pt){https://www.youtube.com/watch?v=49tgEcMA7kM}
+  \qrcodeCote{https://www.youtube.com/watch?v=49tgEcMA7kM}(-30pt)
   
   L'Imagerie par Résonance Magnétique est utilisée pour observer les tissus mous riche en molécules d'eau : cerveau, muscle, coeur, moelle épinière, etc.
 
@@ -67,10 +67,10 @@
 
 
 %%%%
-\begin{doc}{Les produits de contraste}
+\begin{doc}{Les produits de contraste pour l'IRM}
   Pour réaliser certains diagnostiques, on peut injecter des produits de contraste dans le corps du ou de la patiente.
   Ces produits améliorent la sensibilité au champ magnétique d'un tissu particulier, ce qui augmente son aimantation et permet de le visualiser avec un meilleur contraste
-  Par exemple pour visualiser les vaisseaux sanguins et donc détecter d'éventuels thromboses.
+  Par exemple pour visualiser les vaisseaux sanguins et donc détecter d'éventuelles thromboses.
 
   Les produits de contraste utilisent \important{l'ion gadolinium III} noté \chemfig{Gd^{3+}}, qui est le plus sensible au champ magnétique.
   L'ion est couplé à des molécule, les ligands, pour former des \important{chélates de gadolinium,} inoffensifs pour l'organisme.
@@ -86,16 +86,18 @@
     \\[6pt]
     \important{2}
   }
-  \begin{center}
-    \chemfig{
-      ^{-}OOC --[-2]
-      N (-[-4]-[6] COOH)  -[2]-[0]-[-2]
-      N (-[-3, 0.8,,, draw = none] Gd^{3+})
-        (-[3]-[2] COO^{-})-[2]-[0]-[-2]
-      N (-[-2]- COOH) -[2] - COO^{-}
-    } \\[6pt]
-    \important{3}
-  \end{center}
+  % TODO-IMAGE : Mettre les images d'irm avec et sans produit de contraste
+  %\vspace*{-16pt}
+  %\begin{center}
+  %  \chemfig{
+  %    ^{-}OOC -[::0] !\lb
+  %    N (!\ldb !\lb HOOC) -[::110] !\ldb !\ldb
+  %    N (!\vide{-3, 0.8} Gd^{3+}) (-[3]-[2] COO^{-})
+  %    -[::100] !\ldb !\ldb
+  %    N (-[::120] !\lb COOH) -[::0] !\lh COO^{-}
+  %  } \\[6pt]
+  %  \important{3}
+  %\end{center}
 \end{doc}
 
 
@@ -104,15 +106,14 @@
   Donner son nombre de fonction amine.
 }{}[2]
 
-\question{
-  Identifier le chélate qui est un acide carboxylique.
-}{}[1]
+% \question{
+%   Identifier le chélate qui est un acide carboxylique.
+% }{}[1]
 
 \question{
-  Identifier le chélate qui est un ion.
-  Est-ce un cation ou un anion ?
-}{}[2]
+  Expliquer l'intérêt d'un produit de contraste.
+}{}[3]
 
-\question{
-  Expliquer pourquoi on pourrait utiliser le fer à la place du gadolinium.
-}{}[1]
+% \question{
+%   Expliquer pourquoi on pourrait utiliser le fer à la place du gadolinium.
+% }{}[1]

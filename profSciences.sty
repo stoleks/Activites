@@ -305,7 +305,7 @@
   titre sans separation = 0.5mm,%
   titre avec compteur = {\boiteActiCompteur}{
     \hspace*{-12pt}%
-    \boiteActiFormat~\arabic{section}.\arabic{\boiteActiCompteur} --
+    \boiteActiFormat~\arabic{part}.\arabic{\boiteActiCompteur} --
     \boiteActiTitre \strut\label{\boiteActiLabel}
   },%
   enlarge bottom by = 12pt,%
@@ -463,8 +463,8 @@
 }
 
 %------ Extrait avec sa source
-\newcommand{\sourceExtrait}[1]{%
-  \vspace*{-8pt}
+\NewDocumentCommand{\sourceExtrait}{ +m }{%
+  \vspace*{-10pt}
   \begin{flushright}
     \textit{#1}
   \end{flushright}
@@ -472,7 +472,7 @@
 }
 %
 \newtcolorbox{boiteExtrait}[1][]{
-  boite cassable, couleur fond = white, colframe = couleurSec-100,%
+  boite cassable, couleur fond = couleurSec-50!50, colframe = couleurSec-200,%
   overlay= {%
     \node at (frame.north west) {\textcolor{couleurSec}{\faQuoteLeft}};
     \node at (frame.south east) {\textcolor{couleurSec}{\faQuoteRight}};
@@ -480,11 +480,11 @@
   #1
 }
 %
-\NewDocumentCommand{\extrait}{o +m}{%
+\NewDocumentCommand{\extrait}{ +o +m }{%
   \begin{boiteExtrait}
     #2
   \end{boiteExtrait}
-  \IfValueTF{#1}{ \sourceExtrait{#1} }{}
+  \IfValueT{#1}{\sourceExtrait{#1}}
 }
 
 

@@ -3,7 +3,7 @@
 
 \titre{Synthèse}
 
-% \titreSection{Rappels}
+\titreSection{Rappels}
 
 \pointCyan Un courant électrique est caractérisé par 
 \begin{listeTirets}
@@ -79,9 +79,9 @@ et de la tension maximale $U_\text{max}$ sur un oscillogramme
     % Tension sinusoïdale
     \draw[trace] plot(\x, {3.25*sin((1.57*(\x + 1)) r)}); % r = radian
     % Échelle
-    \tkzVecteur(-5) (-3)[1]  {\textbf{100 V}} [right]
-    \tkzVecteur(-5)[1] (-3)  {\textbf{5 ms}} [below right]
-    \tkzVecteur(-4)[4] (3.3) {\textbf{Période} $\mathbf{T}$ \hspace{12pt}\phantom{b}} [below left]*
+    \tikzVecteur(-5,-3)  (0,1) {\important{100 V}} [right]
+    \tikzVecteur(-5, -3) (1,0) {\important{5 ms}} [below right]
+    \tikzVecteur*(-4,3.3) (4,0) {\important{Période} $\mathbf{T}$ \hspace{12pt}\phantom{b}} [below left]
     \draw[ultra thick] (3.8, 3.26)  -- (4.2, 3.26)  node[right] {$\mathbf{U_\text{max}}$};
     \draw[ultra thick] (1.8, -3.26) -- (2.2, -3.26) node[right] {$\mathbf{U_\text{min}}$};
   \end{tikzpicture}
@@ -117,13 +117,14 @@ et de la tension maximale $U_\text{max}$ sur un oscillogramme
   \end{importants}
 }
 
-
+\newpage \vspace*{-44pt}
 \titreSection{Le rôle d'un disjoncteur}
 
 \pointCyan L'intensité du courant mesure la quantité d'électron qui traversent un matériau conducteur en une seconde.
 Si l'intensité est trop élevée, on parle de surintensité.
 
-\textbf{Au quotidien, deux situations provoquent une surintensité :}
+\important{Au quotidien, deux situations provoquent une surintensité :}
+\smallskip
 
 \separationBlocs{
   \pointCyan Le court-circuit (câble abîmé ou faux contact dans un appareil) \vspace{4pt}
@@ -143,7 +144,8 @@ Si l'intensité est trop élevée, on parle de surintensité.
       to [R, l={$R$}] (3, 1) -- (0, 1);
     \draw[ultra thick, red] (0.75, -1) -- (0.75, 0) -- (2.2, 0) -- (2.2, -1);
   \end{circuitikz}
-  
+
+  \strut\par
   \begin{equation*}
     I_2 > I_1
   \end{equation*}
@@ -168,7 +170,8 @@ Si l'intensité est trop élevée, on parle de surintensité.
   \end{circuitikz}
 }
 
-\textbf{En cas de surintensité :}
+\smallskip
+\important{En cas de surintensité :}
 \begin{listePoints}
   \item risque d'incendie
   \item risque d'abîmer les appareils électriques
@@ -179,7 +182,7 @@ Si l'intensité est trop élevée, on parle de surintensité.
   Il ouvre le circuit électrique quand l'intensité dépasse une certaine valeur, écrite sur son boîtier.
 \end{importants}
 
-
+\vspace*{-8pt}
 \titreSection{Mettre à la terre pour protéger contre l'électrisation}
 
 \pointCyan Le corps humain conduit le courant électrique.
@@ -194,10 +197,10 @@ Comme $I = U / R$, c'est moins dangereux d'être électrisé quand notre peau es
 \medskip
 \begin{wrapfigure}[3]{r}{0.31\linewidth}
   \centering
-  \image{1}{images/electricite/prise_murale}    
+  \image{1}{images/electromagnetisme/prise_murale}    
 \end{wrapfigure}
 
-\textbf{Pour limiter les risques d'électrisation :}
+\important{Pour limiter les risques d'électrisation :}
 \begin{listePoints}
   \item Ne pas mettre d'appareils électriques à côté d'une source d'eau.
   \item Ne pas toucher d'appareils électriques avec les mains mouillées.
@@ -205,23 +208,23 @@ Comme $I = U / R$, c'est moins dangereux d'être électrisé quand notre peau es
 \end{listePoints}
 
 \medskip
-\textbf{Comment la prise de terre protège de l'électrisation :}
+\important{Comment la prise de terre protège de l'électrisation :}
 
 \begin{importants}
   Le fil de terre permet d'évacuer le courant électrique dans le sol en cas de faux contact.
   
-  Au lieu de passer par le corps de la personne qui touche l'appareil défectueux, le courant électrique passe par la prise de terre.
+  Au lieu de passer par le corps de la personne qui touche l'appareil défectueux, le courant électrique passe par la prise de terre, la résistance du câble de Terre étant plus faible.
 \end{importants}
 
 \separationBlocs{
   \centering
-  \image{0.9}{images/electricite/electrisation}
+  \image{0.8}{images/electromagnetisme/electrisation}
   \vspace{-2pt}
 
   Sans fil de terre
 }{
   \centering
-  \image{0.9}{images/electricite/electrisation_terre}
+  \image{0.8}{images/electromagnetisme/electrisation_terre}
   \vspace{-2pt}
 
   Avec fil de terre

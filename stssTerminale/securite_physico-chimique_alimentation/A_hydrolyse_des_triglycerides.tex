@@ -52,16 +52,20 @@ oléique} selon l'équation suivante :
 
 \question{
   Donner le nom des deux molécules formées au cours de la réaction d'hydrolyse.
-}{}[2]
+}{
+  On a du glycérol, formé une fois, et de l'acide oléique, formé trois fois.
+}[2]
 
-\numeroQuestion
+\schematisation
 Dans le document~\ref{doc:hydrolyse_oleine}, entourer les groupes caractéristiques de l'oléine et d'un acide oléique.
 
 \newpage
 \vspace*{-28pt}
 \question{
   Préciser si l'acide oléique est un acide gras saturé ou insaturé. Justifier.
-}{}[2]
+}{
+  C'est un acide gras insaturé, car il possède une double liaison entre deux carbones.
+}[2]
 
 L'organisme hydrolyse une masse d'oléine $m_\text{oléine} = \qty{8,84}{\g}$.
 
@@ -93,8 +97,30 @@ L'organisme hydrolyse une masse d'oléine $m_\text{oléine} = \qty{8,84}{\g}$.
 %%%%
 \question{
   Indiquer si la palmitine est un triglycéride saturé ou insaturé. Justifier.
-}{}[2]
+}{
+  Elle est saturée, car elle ne possède pas de double liaison entre deux carbones.
+}[2]
 
 \question{
   Donner la réaction d'hydrolyse de la palmitine.
-}{}[7]
+}{
+  \begin{center}
+    \separationTroisBlocs{
+      \centering
+      \chemfig[atom sep = 15pt]{[:-40]!\palmitine}
+      
+      + 3 \eau
+    }[0.48]{
+      \reaction
+    }[0.1]{
+      \centering
+      \chemfig[atom sep = 16pt]{!\palmitique}
+      
+      + \chemfig[atom sep = 16pt]{!\palmitique} 
+      
+      + \chemfig[atom sep = 16pt]{!\palmitique} \\[8pt]
+      
+      + \chemfig[atom sep = 20pt]{!\glycerol}
+    }[0.3]
+  \end{center}
+}[7]

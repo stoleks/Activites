@@ -71,27 +71,27 @@
 
   \centering
   \begin{tblr}{
-    colspec = {l |c | r c l}, hlines,
+    colspec = {X[l] |c | r c l}, hlines, width=\linewidth,
     row{1} = {couleurSec-100},
     row{5} = {m},
   }
     Principe actif & Couples Ox/red & \SetCell[c=3]{c} Demi-équation d'oxydoréduction \\
     \SetCell[r = 2]{l} Eau oxygénée &
-    $\chemfig{H_2O_2}\aq/\chemfig{H_2O}\liq$ &
+    \chemfig{H_2O_2}\aq/\chemfig{H_2O}\liq &
     $\chemfig{H_2O_2}\aq + 2\ionHydrogene\aq + 2\electron$ &
-    $\reaction$ &
+    \reaction &
     $2\chemfig{H_2O}\liq$ \\
     &
-    $\dioxygene\gaz/\chemfig{H_2O_2}\aq$ & 
+    \dioxygene\gaz/\chemfig{H_2O_2}\aq & 
     $\dioxygene\gaz + 2\ionHydrogene\aq + 2\electron$ &
-    $\reaction$ &
+    \reaction &
     $\chemfig{H_2O_2}\aq$ \\
     %
     %\SetCell[r = 2]{l}
     Eau de Javel &
-    $\hypochlorite\aq/\chlorure\aq$ &
+    \hypochlorite\aq/\chlorure\aq &
     $\hypochlorite\aq + 2\ionHydrogene\aq + 2\electron$ &
-    $\reaction$ &
+    \reaction &
     $\chlorure\aq + \chemfig{H_2O}\liq$ \\
     %
     % &
@@ -100,15 +100,15 @@
     % $\reaction \chemfig{Cl_2}\gaz + \chemfig{H_2O}\liq$ \\
     %
     Diiode &
-    $\diiode\aq/\chemfig{I^{-}}\aq$ &
+    \diiode\aq/\chemfig{I^{-}}\aq &
     $\diiode\aq + 2\electron$ &
-    $\reaction$ &
+    \reaction &
     $2\chemfig{I^{-}}\aq$ \\
     %
-    {Permanganate \\ de potassium} &
-    $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$ &
+    Permanganate de potassium &
+    \chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq &
     $\chemfig{MnO_4^{-}}\aq + 8\ionHydrogene\aq + 5\electron$ &
-    $\reaction$ &
+    \reaction &
     $\chemfig{Mn^{2+}}\aq + 4\chemfig{H_2O}\liq$ \\
     %
   \end{tblr}

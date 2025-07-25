@@ -47,11 +47,12 @@
 \newcommand{\propane}            {\chemfig{C_3H_8}\xspace}
 \newcommand{\ammoniac}           {\chemfig{NH_3}\xspace}
 \newcommand{\diiode}             {\chemfig{I_2}\xspace}
-\newcommand{\acideCarbonique}    {\chemfig{H_2CO_3}\xspace}
-\newcommand{\carbonateDeCalcium} {\chemfig{CaCO_3}\xspace}
-\newcommand{\bicarbonateDeSodium}{\chemfig{NaHCO_3}\xspace}
-\newcommand{\azotureDeSodium}    {\chemfig{NaN_3}\xspace}
-\newcommand{\chlorureDArgent}    {\chemfig{AgCl}\xspace}
+\newcommand{\acideCarbonique}    {\chemfig{H_2 CO_3}\xspace}
+\newcommand{\carbonateDeCalcium} {\chemfig{Ca CO_3}\xspace}
+\newcommand{\bicarbonateDeSodium}{\chemfig{Na HCO_3}\xspace}
+\newcommand{\azotureDeSodium}    {\chemfig{Na N_3}\xspace}
+\newcommand{\chlorureDArgent}    {\chemfig{Ag Cl}\xspace}
+\newcommand{\nitrateAmmonium}    {\chemfig{NH_4 NO_3}\xspace}
 %------ Ions récurrents
 \newcommand{\oxonium}     {\chemfig{H_3O^{+}}\xspace}
 \newcommand{\hydroxyde}   {\chemfig{HO^{-}}\xspace}
@@ -150,10 +151,11 @@
 
 %------ Pour des molécules colorées
 \definesubmol\lCouleur1 {-[ ::#1,,,, couleurQuat-700, line width = 2.pt]}
+\definesubmol\llCouleur1 {-[ ::#1,,,, couleurQuat-700, line width = 1.5pt]}
 \definesubmol\lhCouleur {-[ ::60,,,, couleurQuat-700, line width = 2.pt]}
 \definesubmol\lbCouleur {-[::-60,,,, couleurQuat-700, line width = 2.pt]}
-\definesubmol\llhCouleur{=[ ::60,,,, couleurQuat-700, line width = 2.pt]}
-\definesubmol\llbCouleur{=[::-60,,,, couleurQuat-700, line width = 2.pt]}
+\definesubmol\llhCouleur{=[ ::60,,,, couleurQuat-700, line width = 1.5pt]}
+\definesubmol\llbCouleur{=[::-60,,,, couleurQuat-700, line width = 1.5pt]}
 \definesubmol\couleur1  {\textcolor{couleurQuat-700}{#1}}
 
 
@@ -223,8 +225,13 @@
 \definesubmol\glycerol{[:30] H !\glycero{H} H }
 \definesubmol\glycerolSemiDev{
   HC (-OH)
-  (-[3,,2,2] H_2C (-OH))
-  -[-3,,2,2] H_2C (-OH)
+  (-[::90,,2,2] H_2C (-OH))
+  -[::-90,,2,2] H_2C (-OH)
+}
+\definesubmol\glycerolSemiDevHorizontal{
+  H_2C (-[::90,,2,2] HO) 
+  -[::0,1.2] !\CH (-[::90] \chemabove{O}{H})
+  -[::0,1.2] CH_2 (-[::90] OH)
 }
 
 
@@ -611,10 +618,10 @@
   ) % cycle
 }
 \definesubmol\acideAscorbique{ % Vitamine C
-  HO-[::-30] !\lh (!\lh OH) !\lb *5(-(-OH) =(-OH) -(=O) -O-)
+  HO-[::-30] !\lh (!\lh OH) !\lb *5(-(-HO) =(-OH) -(=O) -O-)
 }
 \definesubmol\cholecarciferol{ % Vitamine D
-  OH-[::-30]
+  HO-[::-30]
   *6( % 1er cycle
     ---(=)- ( % ramification
       = !\lb !\llh *6(- % 2eme
