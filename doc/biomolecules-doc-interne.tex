@@ -86,3 +86,28 @@ ou pour réutiliser des morceaux de molécules complexes
       {-(-[::0] E)---} {---} {-(-[::0] F)---} 
   } % Pour tracer des stérols
 \end{boiteCodeTex}
+
+%%
+\subsection{Coloriage de fonctions organiques et de parties de molécules}
+
+\begin{boiteCodeTex}{}
+\begin{tikzpicture}
+  \node (base) at (0,0) {};
+  \chemPolygone [rotation = -11] (36pt, 26pt)
+  \node at (base) {\chemfig{!\adenosine}};
+\end{tikzpicture}
+%
+\begin{tikzpicture}
+  \node (base) at (0,0) {};
+  \chemPolygone [rotation = 180, bords = 5] (9pt, 14pt)
+  \chemPolygone [rotation = -11, couleur = couleurTer-200] (45pt, 26pt)
+  \chemPentagoneHaw (-48pt,-30pt)
+  \node at (base) {\chemfig{!\adenosineHaw}};
+\end{tikzpicture}
+%
+\begin{tikzpicture}
+  \node (base) at (0,0) {};
+  \chemHexagoneHaw (-27pt,0pt)
+  \node at (base) {\chemfig{!\glucoseHaw}};
+\end{tikzpicture}
+\end{boiteCodeTex}

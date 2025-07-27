@@ -58,13 +58,15 @@
   Après réflexion, les ultrasons sont reçues par la sonde.
   La fréquence de l'onde sonore réfléchie varie en fonction de la fréquence de l'onde émise et de la vitesse de déplacement des globules rouges.
 
-  Mesurer le décalage en fréquence $\Delta f$ entre la fréquence de l'onde émise et la fréquence d'émission, permet donc de déterminer la vitesse et le sens d'écoulement du sang dans les vaisseaux.
+  Mesurer le décalage en fréquence $\Delta f$ entre la fréquence de l'onde émise et celle de l'onde réfléchie, permet donc de déterminer la vitesse et le sens d'écoulement du sang dans les vaisseaux.
   \vspace*{13pt}
 
   \begin{importants}
-    Le décalage se calcule avec la relation suivante :
+    Le décalage en fréquence est relié à la vitesse d'écoulement par la relation suivante :
     \begin{equation*}
-      \Delta f = f_R - f_E = \dfrac{2vf_E \cos(\theta)}{c}
+      \Delta f = \dfrac{2vf_E \cos(\theta)}{c}
+      \qq{} \Longleftrightarrow \qq{}
+      v = \dfrac{c \Delta f}{2 f_E \cos(\theta)}
     \end{equation*}
   \end{importants}
   
@@ -74,6 +76,7 @@
     \item $c$ est la célérité du son dans le corps en \unit{\m\per\s} ;
     \item $v$ est la vitesse des globules rouges en \unit{\m\per\s} ;
     \item $\theta$ est l'angle entre l'axe de la sonde et l'axe du vaisseau sanguin.
+    % En général on se place dans une configuration ou $\cos(\theta) = 1$.
   \end{listePoints}
 \end{doc}
 

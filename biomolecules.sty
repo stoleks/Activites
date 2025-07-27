@@ -14,6 +14,7 @@
 \newcommand{\chemfigParDefaut}{
   \setchemfig{
     atom sep= 24pt,
+    double bond sep = 3pt,
     bond style = {line width = 1pt},
     cram width = 2.2pt,
     angle increment = 30
@@ -157,6 +158,60 @@
 \definesubmol\llhCouleur{=[ ::60,,,, couleurQuat-700, line width = 1.5pt]}
 \definesubmol\llbCouleur{=[::-60,,,, couleurQuat-700, line width = 1.5pt]}
 \definesubmol\couleur1  {\textcolor{couleurQuat-700}{#1}}
+
+%------ Pour surligner certaines fonctions organiques
+\pgfkeys{
+  /chemPoly/.is family, /chemPoly,
+  defaut/.style = {
+    bords = 6,
+    rotation = 90,
+    arrondi = 4pt,
+    atom sep = 24pt,
+    couleur = cyan-200,
+  },% stockage des clefs
+  atom sep/.store in = \chemAtomSep,
+  couleur/.store in = \chemCouleur,
+  rotation/.store in = \chemRotation,
+  arrondi/.store in = \chemArrondi,
+  bords/.store in = \chemBords,
+}
+%
+\NewDocumentCommand{\chemCarboxyle}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = red-200 ,#1}
+  \coordinate (A) at (#2);
+  % Entoure =O
+  \fill[\chemCouleur, rounded corners = \chemArrondi, rotate = 30]
+    ($(A) + (0, 0)$) rectangle 
+    ($(A) + 1.5*\chemAtomSep*(1.1pt,-2/3pt)$);
+  % Entoure -OH
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    ($(A) + (0,0)$) rectangle 
+    ($(A) + \chemAtomSep*(1.25pt, -1.75pt)$);
+}
+%
+\NewDocumentCommand{\chemAmine}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = blue-150 ,#1}
+  \coordinate (A) at (#2);
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    ($(A) + (0,0)$) rectangle 
+    ($(A) + \chemAtomSep*(1.4pt, -1.1pt)$);
+}
+%
+\NewDocumentCommand{\chemAmide}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = purple-200 ,#1}
+  \coordinate (A) at (#2);
+  % Entoure la partie aminée
+  \fill[\chemCouleur, rounded corners = \chemArrondi, rotate = 30]
+    ($(A) + (0, 0)$) rectangle 
+    ($(A) + 1.5*\chemAtomSep*(1.1pt,-2/3pt)$);
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    ($(A) + 1.5*\chemAtomSep*(0.6pt, -0.05pt)$) rectangle
+    ($(A) + 1.5*\chemAtomSep*(1.3pt, 0.8pt)$);
+  % Entoure la partie carbonylée
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    ($(A) + (0,0)$) rectangle 
+    ($(A) + \chemAtomSep*(1.1pt, -1.6pt)$);
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -881,4 +936,14 @@
     -C (-[::25] CH_3) (-[::95] H_3C) !\lb C 
       *6(-[,,,2]HC =\CH -C (-OH) =CH -[,,,1]\HC =C)
   ) =\HC -HC =[,,2])
+}
+
+%------ Eumélanine
+\definesubmol\iminoique{*5(-!\NH - (-!\carboxyle) =-)}
+\definesubmol\eumelanine{
+  O *6(=(-OH) - (!\iminoique) =- (
+    - *6(- (!\iminoique) =- (
+      - *6(= (!\iminoique) -=(-...) -(=O) -(=O) -)
+    ) =(-HO) -(-HO) =)
+  ) =O)
 }

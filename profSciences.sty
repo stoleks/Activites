@@ -106,7 +106,9 @@
 
 %------ Paramètres généraux
 \newdimen\questionIndent
-\setlength\questionIndent{16pt}
+\setlength\questionIndent{16 pt}
+\newdimen\problematiqueIndent
+\setlength\problematiqueIndent{0 pt}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1172,7 +1174,7 @@
 
 %------ problématique 
 \newcommand{\problematique}[1]{%
-  \setlength{\parindent}{\questionIndent}%
+  \setlength{\parindent}{\problematiqueIndent}%
   \flecheLongue[couleurTer] \important[couleurTer]{#1}%
   \setlength{\parindent}{0 pt}%
 }
