@@ -194,7 +194,7 @@
   \coordinate (A) at (#2);
   \fill[\chemCouleur, rounded corners = \chemArrondi]
     ($(A) + (0,0)$) rectangle 
-    ($(A) + \chemAtomSep*(1.4pt, -1.1pt)$);
+    ($(A) + \chemAtomSep*(1.3pt, -1pt)$);
 }
 %
 \NewDocumentCommand{\chemAmide}{O{} r()}{
@@ -211,6 +211,41 @@
   \fill[\chemCouleur, rounded corners = \chemArrondi]
     ($(A) + (0,0)$) rectangle 
     ($(A) + \chemAtomSep*(1.1pt, -1.6pt)$);
+}
+%
+\NewDocumentCommand{\chemPolygone}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, #1}
+  \node [
+    regular polygon, fill = \chemCouleur,
+    regular polygon sides = \chemBords, 
+    inner sep = \fpeval{\chemAtomSep * \chemBords * 0.103} pt,
+    rotate = \chemRotation,
+  ] at (#2) {};
+}
+%
+\NewDocumentCommand{\chemPentagoneHaw}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = orange-150, #1}
+  \coordinate (A) at (#2);
+  \fill [fill = \chemCouleur] 
+    ($(A) + (0pt, 0pt)$) --
+    ($(A) + 1.4*\chemAtomSep*(0.833pt, 0.5pt)$) --
+    ($(A) + 1.4*\chemAtomSep*(1.667pt, 0pt)$) --
+    ($(A) + 1.4*\chemAtomSep*(1.25pt, -0.667pt)$) --
+    ($(A) + 1.4*\chemAtomSep*(0.375pt, -0.667pt)$) --
+    cycle;
+}
+%
+\NewDocumentCommand{\chemHexagoneHaw}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = green-200, #1}
+  \coordinate (A) at (#2);
+  \fill [fill = \chemCouleur] 
+    ($(A) + \chemAtomSep*(0pt, 0pt)$) --
+    ($(A) + \chemAtomSep*(0.5833pt, -0.6875pt)$) --
+    ($(A) + \chemAtomSep*(1.679pt, -0.6875pt)$) --
+    ($(A) + \chemAtomSep*(2.275pt, -0.021pt)$) --
+    ($(A) + \chemAtomSep*(1.617pt, 0.6pt)$) --
+    ($(A) + \chemAtomSep*(0.6417pt, 0.6pt)$) --
+    cycle;
 }
 
 

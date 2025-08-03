@@ -7,61 +7,8 @@
 % \modeCorrection % correction (décommenté)
 \renewcommand{\etablissement}{Lycée Jean Moulin} % pour l'en-tête
 
-% 60, 50, 45, 40, 30: 0.866, 0.766, 0.707, 0.643, 0.5
-\NewDocumentCommand{\chemPolygone}{O{} r()}{
-  \pgfkeys{/chemPoly, defaut, #1}
-  \node [
-    regular polygon, fill = \chemCouleur,
-    regular polygon sides = \chemBords, 
-    inner sep = \fpeval{\chemAtomSep * \chemBords * 0.103} pt,
-    rotate = \chemRotation,
-  ] at (#2) {};
-}
-%
-\NewDocumentCommand{\chemPentagoneHaw}{O{} r()}{
-  \pgfkeys{/chemPoly, defaut, couleur = orange-150, #1}
-  \coordinate (A) at (#2);
-  \fill [fill = \chemCouleur] 
-    ($(A) + (0pt, 0pt)$) --
-    ($(A) + 1.4*(20pt, 12pt)$) --
-    ($(A) + 1.4*(40pt, 0pt)$) --
-    ($(A) + 1.4*(30pt, -16pt)$) --
-    ($(A) + 1.4*(9pt, -16pt)$) --
-    cycle;
-}
-%
-\NewDocumentCommand{\chemHexagoneHaw}{O{} r()}{
-  \pgfkeys{/chemPoly, defaut, couleur = green-200, #1}
-  \coordinate (A) at (#2);
-  \fill [fill = \chemCouleur] 
-    ($(A) + (0pt, -0.2pt)$) --
-    ($(A) + (14pt, -16.5pt)$) --
-    ($(A) + (40.3pt, -16.5pt)$) --
-    ($(A) + (54.6pt, -0.5pt)$) --
-    ($(A) + (38.8pt, 14.4pt)$) --
-    ($(A) + (15.4pt, 14.4pt)$) --
-    cycle;
-}
-
 %------ doc
 \begin{document}
-  \begin{tikzpicture}
-    \node (base) at (0,0) {};
-    \chemCarboxyle (-140pt, 14pt)
-    \chemAmine (-92pt, 18pt)
-    \chemAmide (78pt, 10pt)
-    \node at (base) {
-      \chemfig{!\alanine} $+$
-      \chemfig{[:30]H_2N !\cysteineB OH} \reaction
-      \chemfig{[:-30] H_2N !\alanineH !\HN !\cysteineB OH}
-    };
-  \end{tikzpicture}
-  
-  \begin{tikzpicture}
-    \node (base) at (0,0) {};
-    \chemAmide (-32pt,4pt);
-    \node at (base) {\chemfig{[:-30] H_2N !\alanineH !\HN !\cysteineB OH}};
-  \end{tikzpicture}
   %------ Commun
   % \includepdf[pages=26]{commun/papier_millimetre.pdf}
   % \input{commun/protocole_dissolution}

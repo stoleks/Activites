@@ -93,6 +93,24 @@ ou pour réutiliser des morceaux de molécules complexes
 \begin{boiteCodeTex}{}
 \begin{tikzpicture}
   \node (base) at (0,0) {};
+  \chemCarboxyle (-140pt, 14pt)
+  \chemAmine (-90pt, 17pt)
+  \chemAmide (78pt, 10pt)
+  \node at (base) {
+    \chemfig{!\alanine} $+$
+    \chemfig{[:30]H_2N !\cysteineB OH} \reaction
+    \chemfig{[:-30] H_2N !\alanineH !\HN !\cysteineB OH}
+  };
+\end{tikzpicture}
+%
+\begin{tikzpicture}
+  \node (base) at (0,0) {};
+  \chemAmide (-32pt,4pt);
+  \node at (base) {\chemfig{[:-30] H_2N !\alanineH !\HN !\cysteineB OH}};
+\end{tikzpicture}
+%
+\begin{tikzpicture}
+  \node (base) at (0,0) {};
   \chemPolygone [rotation = -11] (36pt, 26pt)
   \node at (base) {\chemfig{!\adenosine}};
 \end{tikzpicture}
@@ -109,5 +127,11 @@ ou pour réutiliser des morceaux de molécules complexes
   \node (base) at (0,0) {};
   \chemHexagoneHaw (-27pt,0pt)
   \node at (base) {\chemfig{!\glucoseHaw}};
+\end{tikzpicture}
+%
+\begin{tikzpicture}
+  \node (base) at (0,0) {};
+  \chemHexagoneHaw[atom sep = 28pt] (-32pt,0pt)
+  \node at (base) {\chemfig[atom sep = 28pt]{!\glucoseHaw}};
 \end{tikzpicture}
 \end{boiteCodeTex}
