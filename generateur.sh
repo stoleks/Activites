@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # comment all lines for a given range in a .tex file
-function comment_lines () {
+comment_lines () {
   lines=$(wc -l < $1)
   for i in $(seq 1 $lines);
   do
@@ -10,7 +10,7 @@ function comment_lines () {
 }
 
 # declare output directory and levels
-output="../_Cours"
+output=$2
 declare -a levels=($1)
 
 # comment all lines
@@ -23,14 +23,14 @@ comment_lines "stssTerminale.tex"
 for level in "${levels[@]}";
 do
   # activities
-  sh generation_niveau.sh $level $output
+  bash generation_niveau.sh $level $output
 
   # corrections
   for directory in $level/*;
   do
     if [[ -d $directory ]] && ! [[ -z "$( ls -A $directory/ )" ]]; then
       chapter=`echo $directory | awk -F "[/]" '{print $2}'`
-      sh generation_correction.sh $level $chapter $output
+      bash generation_correction.sh $level $chapter $output
     fi
   done
 done

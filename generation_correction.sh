@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # comment all lines for a given range in a .tex file
-function comment_lines () {
+comment_lines () {
   lines=$(wc -l < $1)
   for i in $(seq 1 $lines);
   do
@@ -10,7 +10,7 @@ function comment_lines () {
 }
 
 # generate all pdf for a given range in a .tex file
-function uncomment_lines () {
+uncomment_lines () {
   for i in $(seq $3 $4);
   do
     # skip lines that don't include a file

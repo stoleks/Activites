@@ -36,22 +36,22 @@ Personnellement j'utilise overleaf ou TexMaker au quotidien quand j'écris de no
 
 Pour générer plusieurs .pdf rapidement, j'utilise generateur.sh, qui va générer toutes les activités et toutes les corrections pour chaque niveau et pour chaque chapitre. Le script s'appelle simplement :
   
-    sh generateur.sh "niveaux1 niveaux2 niveaux3 etc."
+    bash generateur.sh "niveaux1 niveaux2 niveaux3 etc." "../Cours"
 
-Le script va automatiquement commenter les lignes nécessaires dans main.tex, puis il va appeler generation\_niveau.sh pour chaque niveau avec la bonne sortie ("../Cours" chez moi) et generation\_correction.sh pour chaque niveau et chaque chapitre.
+Le script va automatiquement commenter les lignes nécessaires dans main.tex, puis il va appeler generation\_niveau.sh pour chaque niveau avec la sortie demandée ("../Cours" ici) et generation\_correction.sh pour chaque niveau et chaque chapitre.
 Pour générer les activités d'un seul niveau, il suffit de donner un seul niveau à generateur.sh :
     
-    sh generateur.sh seconde
+    bash generateur.sh "seconde" "../Cours"
 
-Le script extrait les noms des fichiers à partir des commandes \inclusActivite et les déplace dans le dossier "../Cours/", en reprenant donc l'organisation de ce répertoire.
+Le script extrait les noms des fichiers à partir des commandes \inclusActivite et les déplace dans le dossier "../Cours/", en reprenant l'organisation des dossiers et les noms de fichiers dans ce répertoire, avec la numérotation demandée dans la commande \inclusActivite. (activites/seconde/atome/A\_structure.tex génère cours/seconde/atome/A1\_structure.pdf par exemple)
 Pour générer les activités d'un chapitre d'un niveau, j'utilise generation\_chapitre.sh, appelé comme ça :
     
-    sh generation_chapitre.sh seconde atome "../Cours"
+    bash generation_chapitre.sh seconde atome "../Cours"
 
 Il fonctionne comme generation\_niveau, mais pour un chapitre. Pour être inclus dans le chapitre, il faut que le script trouve le nom du chapitre dans la ligne contenant le fichier. Ajouter "% \_mon\_chapitre" en fin de ligne permet donc d'inclure un fichier dans le chapitre, même s'il n'est pas dans le bon dossier.
 Pour les versions corrigées de chaque chapitre, j'utilise generation\_correction.sh, appelé comme ça pour un chapitre :
 
-    sh generation_correction.sh seconde atome "../Cours"
+    bash generation_correction.sh seconde atome "../Cours"
 
 Le deuxième argument et le nom du dossier qui contient le chapitre. Le script passe main.tex en mode correction, inclus tous les fichiers liés au chapitre (cf. script précédent) et déplace le fichier .pdf généré dans "../Cours/seconde/atome/correction\_atome.pdf", pour l'exemple donnée.
 

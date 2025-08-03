@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # generate all pdf for a given range in a .tex file
-function generate_pdf () {
+generate_pdf () {
   activityCount=0
   for i in $(seq $4 $5);
   do
@@ -13,7 +13,7 @@ function generate_pdf () {
     fi
 
     # generate pdf of the current line
-    sh generation_pdf.sh $i $1 $3
+    bash generation_pdf.sh $i $1 $3
     let count++
   done
   echo -n "Génération de $count activités. "

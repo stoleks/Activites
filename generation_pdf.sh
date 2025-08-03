@@ -22,8 +22,8 @@ fi
 # Uncomment current line and generate pdf (two call for references)
 sed -i "$1 s|^% ||" $2
 printf "%-71s" "Génération de $activity... "
-pdflatex -quiet -draftmode -interaction=nonstopmode main.tex
-pdflatex -quiet -interaction=nonstopmode main.tex > log.out 
+pdflatex -draftmode -interaction=nonstopmode main.tex > temp.out
+pdflatex -interaction=nonstopmode main.tex > log.out 
 # comment current line, we need to use \\\\ instead of \\ because we use "" for the sed scope
 sed -i "$1 s|\\\\in|% \\\\in|" $2
 
