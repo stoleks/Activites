@@ -13,10 +13,14 @@ generate_pdf () {
     fi
 
     # generate pdf of the current line
-    bash generation_pdf.sh $i $1 $2
-    let count++
+    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+      bash generation_pdf.sh $i $1 $2
+    else
+      sh generation_pdf.sh $i $1 $2
+    fi
+    let activityCount++
   done
-  echo -n "Génération de $count activités. "
+  echo -n "Génération de $activityCount activités. "
 }
 
 # generate pdf for a given level

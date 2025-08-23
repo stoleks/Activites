@@ -1,11 +1,13 @@
 #!/bin/bash
 
 # generate all pdf for a given range in a .tex file
+# 1: level ; 2: chapter ; 3: output ; 4-5: line range
 generate_pdf () {
   activityCount=0
+  echo $1 $2 $3 $4 $5
   for i in $(seq $4 $5);
   do
-    # skip lines that don't include a file
+    # skip lines that don't include a file and are not in the chapter
     local start=`date +%s`
     line=`awk "NR==$i" $1`
     if [[ $line != *"inclusActivite"* && $line != *"plan_de_travail"* || $line == *"%%"* || $line != *"$2"* ]]; then
@@ -13,15 +15,22 @@ generate_pdf () {
     fi
 
     # generate pdf of the current line
-    bash generation_pdf.sh $i $1 $3
-    let count++
+    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+      bash generation_pdf.sh $i $1 $3
+    else
+      sh generation_pdf.sh $i $1 $3
+    fi
+    let activityCount++
   done
-  echo -n "Génération de $count activités. "
+  echo -n "Génération de $activityCount activités. "
 }
 
-# generate pdf for a given level
-echo "Generation des .pdf dans $1"
+# generate pdf for a given chapter
+echo "Generation des .pdf du chapitre $2 dans $1"
 start=`date +%s`
+if [[ -e $3 ]]; then
+  mkdir -p $3/$1/$2
+fi
 generate_pdf "$1.tex" $2 $3 1 $(wc -l < "$1.tex")
 end=`date +%s`
 echo "Il a fallu $((end - start)) secondes ($(((end - start)/60)) minutes) pour générer tous les fichiers dans $1/$2"

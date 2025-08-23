@@ -4,8 +4,14 @@
 start=`date +%s`
 filename=`awk "NR==$1" $2 | awk -F "[{}]" '{print $2}'`
 if [[ ! -f "$filename.tex" ]]; then
-  echo "$filename.tex n'existe pas !"
-  continue
+  echo "Le fichier $filename.tex n'existe pas, pas de pdf généré."
+  exit
+fi
+
+# test if output directory exist
+if [[ ! -d $3 ]]; then
+  echo "Le répertoire $3 n'existe pas, pas de pdf généré."
+  exit
 fi
 
 # extract pdf name and activity number

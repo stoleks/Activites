@@ -44,7 +44,7 @@ printf "%-71s" "Génére la correction de $2..."
 start=`date +%s`
 uncomment_lines "$1.tex" $2 1 $(wc -l < "$1.tex")
 # generate pdf (two call for references)
-pdflatex -interaction=nonstopmode main.tex > log_$2.out
+pdflatex -draftmode -interaction=nonstopmode main.tex > log_$2.out
 pdflatex -interaction=nonstopmode main.tex > log_$2.out
 file="$3/$1/$2/correction_$2.pdf"
 cp main.pdf $file
