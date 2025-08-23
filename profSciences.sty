@@ -585,19 +585,19 @@
 
 %------ chapitre, partie, section et sous-section
 \newcommand{\chapitre}[1]{ % Réglage du titre du chapitre
-  \addcontentsline{toc}{part}{Chapitre \arabic{part} -- #1}%
   Chapitre \arabic{part} -- #1
 }
 %
 \newcommand{\titreChapitre}[1]{ % Affichage du titre du chapitre
-  \titre{Chapitre \arabic{part} -- #1}
+  \addcontentsline{toc}{part}{Chapitre \arabic{part} -- #1}%
+  \titre{\chapitre{#1}}
 }
 %
 \NewDocumentCommand{\titrePartie}{ s m }{%
   \vspace*{12pt}
   \refstepcounter{section}
   \IfBooleanTF{#1}{}{ % Version sans *
-    \addcontentsline{toc}{section}{\arabic{section} -- #2}%
+    \addcontentsline{toc}{section}{\arabic{part}.\arabic{section} -- #2}%
   }
   \boiteTitre [couleurPrim] {%
     \important[white]{\Large\Roman{section} --}%
@@ -611,7 +611,7 @@
   \vspace*{12pt}
   \refstepcounter{subsection}
   \IfBooleanTF{#1}{}{ % Version sans *
-    \addcontentsline{toc}{subsection}{\arabic{section}.\arabic{subsection} -- #2}%
+    \addcontentsline{toc}{subsection}{\arabic{part}.\arabic{section}.\arabic{subsection} -- #2}%
   }
   \setcounter{subsubsection}{0}
   %--- Tracé du numéro de section
