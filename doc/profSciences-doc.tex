@@ -8,6 +8,7 @@
 \usepackage{geometry} % définition des marges
 \usepackage{profSciences} % mise en page et autre
 \usepackage{biomolecules} % pour dessiner des formules chimiques
+\usepackage{lmodern}
 \usepackage{lipsum}
 
 \setlength{\parskip}{0cm}
@@ -38,15 +39,22 @@
 \palette{couleurTer}{yellow}
 \palette{couleurQuat}{purple}
 
-%------ 
-\input{doc/profSciences-couleurs-doc}
+%------
+\renewcommand{\etablissement}{Documentation}
+\enTete[CTAN]{ProfSciences}[1]
+\begin{boiteCodeTex}{}
+  \renewcommand{\etablissement}{Documentation}
+  \enTete[CTAN]{ProfSciences}[1]
+\end{boiteCodeTex}
+
+\input{profSciences-couleurs-doc}
 \newpage
-\input{doc/profSciences-boites-doc}
+\input{profSciences-boites-doc}
 \newpage
-\input{doc/profSciences-evaluations-doc}
+\input{profSciences-evaluations-doc}
 \newpage
-\input{doc/profSciences-schemas-doc}
+\input{profSciences-schemas-doc}
 \newpage
-\input{doc/profSciences-planDeTravail-doc}
+\input{profSciences-planDeTravail-doc}
 
 \end{document}
