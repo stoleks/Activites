@@ -1,4 +1,4 @@
-\teteSndMeth
+\tetePremStssMeth
 \vspace*{-36pt}
 \titreActivite{Notation scientifique et unités}
 
@@ -9,23 +9,22 @@
 % \end{objectifs}
 
 %%%%
-\vspace*{-10pt}
+\vspace*{-20pt}
 \titreSection{Rappels sur les puissance de 10}
 
 %%
 \begin{doc}{Les puissances de 10}
   Les puissances indiquent qu'on va répéter une multiplication ($2^3 = 2 \times 2 \times 2 = 8$).
   
-  Pour lire les puissances de 10, il suffit de suivre deux règles simple
+  Pour lire les puissances de 10, il suffit de suivre deux règles simples :
   \begin{importants}
-    \pointCyan Écrire le nombre $10^a$ (avec $a = 0, 1, 2, 3, \ldots$), revient à écrire ``$1$'' suivi de $a = 0, 1, 2, 3, \ldots$ zéros. \\
+    \pointCyan Écrire le nombre $10^n$ (avec $n = 0, 1, 2, 3, \ldots$), revient à écrire ``$1$'' suivi de $n$ zéros. \\
     \exemple \num{e3} =\texteTrou[0.2]{\num{1000}}
 
-    \pointCyan Écrire le nombre $10^{-a}$ (avec $a = 1, 2, 3, \ldots$), revient à écrire ``$0,$'' suivi de $a - 1 = 0, 1, 2, \ldots$ zéros et d'un $1$. \\
+    \pointCyan Écrire $10^{-n}$ (avec $n = 1, 2, \ldots$), revient à écrire ``$0,$'' suivi de $n - 1$ zéros et d'un $1$. \\
     \exemple \num{e-2} =\texteTrou[0.2]{\num{0,01}}
   \end{importants}
 \end{doc}
-
 
 \numeroQuestion Écrire les nombres correspondant aux puissances de 10 suivantes : \\
 $\num{e2}  =$ \texteTrou[0.1]{\num{100}} \qq{}
@@ -33,26 +32,13 @@ $\num{e5}  =$ \texteTrou[0.1]{\num{100000}} \qq{}
 $\num{e-3} =$ \texteTrou[0.1]{\num{0,001}} \qq{}
 $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 
-\numeroQuestion Écrire les nombres suivants comme le produit d'un nombre compris entre 0 et 9 et d'une puissance de 10 \exemple \num{600} = \num{6,00e2} :
-\pasCorrection{\vspace*{-4pt}}
-\begin{listePoints}[2]
-  \setlength\itemsep{-4pt}
-  \item \num{100000}  = \texteTrou(0){\num{1e5}}
-  \item \num{1}       = \texteTrou(0){\num{1e0}}
-  \item \num{9000000} = \texteTrou(0){\num{9e6}}
-  \item \num{0,1}     = \texteTrou(0){\num{1e-1}}
-  \item \num{0,0006}  = \texteTrou(0){\num{1e-4}}
-  \item \num{0,00705} = \texteTrou(0){\num{7,05e-3}}
-\end{listePoints}
-
-
 %%
-\pasCorrection{\vspace*{-18pt}}
+%\pasCorrection{\vspace*{-18pt}}
 \begin{doc}{Règles de calculs}
   Il y a deux règles de calculs à connaître pour les puissances de 10
   \begin{importants}
     \pointCyan $10^a \times 10^b = 10^{a + b}$ \\   
-    \pointCyan $10^{-a} = \dfrac{1}{10^a}$
+    \pointCyan $10^{-n} = \dfrac{1}{10^n}$
   \end{importants}
 \end{doc}
 
@@ -83,9 +69,21 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 
 
 %%%%
-\newpage
-\vspace*{-36pt}
+%\newpage
+\vspace*{-12pt}
 \titreSection{Notation scientifique}
+
+\numeroQuestion Écrire les nombres suivants comme le produit d'un nombre compris entre 0 et 9 et d'une puissance de 10 (\exemple \num{600} = \num{6,00e2}) :
+\pasCorrection{\vspace*{-4pt}}
+\begin{listePoints}[2]
+  \setlength\itemsep{-4pt}
+  \item \num{100000}  = \texteTrou(0){\num{1e5}}
+  \item \num{1}       = \texteTrou(0){\num{1e0}}
+  \item \num{9000000} = \texteTrou(0){\num{9e6}}
+  \item \num{0,1}     = \texteTrou(0){\num{1e-1}}
+  \item \num{0,0006}  = \texteTrou(0){\num{1e-4}}
+  \item \num{0,00705} = \texteTrou(0){\num{7,05e-3}}
+\end{listePoints}
 
 \begin{doc}{La notation scientifique}
   \input{commun/notation_scientifique}
@@ -106,6 +104,8 @@ $\num{e-1} =$ \texteTrou[0.1]{\num{0,1}}
 \vspace*{-16pt}
 
 \attention Il faut \important{toujours} préciser \important{l'unité} d'une grandeur quand on réalise un calcul !
+L'unité indique comment la grandeur a été mesurée.
+Sans unités le résultat \important{n'a pas de sens.}
 Les grandeurs sans unités sont rares en physique-chimie.
 
 
@@ -119,7 +119,7 @@ Les grandeurs sans unités sont rares en physique-chimie.
   Pour pouvoir communiquer facilement d'un pays à un autre, le \important{système international (SI)} a été développé par la Conférence Générale des Poids et Mesures (CGPM).
   Le système international est composé de \important{sept unités de bases.}
 
-  En physique on est amené à décrire des \important{échelles} très variées, par exemple quand on mesure la taille d'un cheveu ($\sim \qty{e-6}{\metre}$) ou la taille d'une planète ($\sim \qty{e7}{\metre})$.
+  En physique on est amené à décrire des \important{échelles} très variées, par exemple quand on mesure la taille d'une molécule ($\sim \qty{e-9}{\metre}$), d'une cellule ($\sim \qty{e-6}{\metre})$ ou d'un humain ($\sim \qty{1}{\metre}$).
   
   \begin{importants}
     Pour simplifier la manipulation des grandeurs éloignées de l'unité, chaque \important{puissance de \num{1000}} est associée à un \important{préfixe} dans le système international.

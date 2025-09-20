@@ -36,23 +36,23 @@
 
 \begin{doc}{La notation scientifique}
   \begin{importants}
-  La \important{notation scientifique} d'une quantité se présente de la façon suivante :
-  % Textes
-  \begin{center}
-    \texteEncadre{chiffre différent de zéro}
-    \qq{}
-    \texteEncadre{autres chiffres} 
-    \qq{}
-    \texteEncadre{puissance de dix}
-    \texteEncadre{\important{unité}}
-  \end{center}
-  % Virgule et multiplication
-  \vspace*{-30pt} \hspace*{4pt}
-  \begin{tikzpicture}  
-    \draw [white] (0,0) circle;
-    \draw [couleurSec, thick] (5.5,-0.25) circle [radius=0.3] node {$,$};
-    \draw [couleurSec, thick] (9.65,0) circle [radius=0.3] node {$\times$};
-  \end{tikzpicture}
+    La \important{notation scientifique} d'une quantité se présente de la façon suivante :
+    % Textes
+    \begin{center}
+      \texteEncadre{chiffre différent de zéro}
+      \qq{}
+      \texteEncadre{autres chiffres} 
+      \qq{}
+      \texteEncadre{puissance de dix}
+      \texteEncadre{\important{unité}}
+    \end{center}
+    % Virgule et multiplication
+    \vspace*{-30pt} \hspace*{4pt}
+    \begin{tikzpicture}  
+      \draw [white] (0,0) circle;
+      \draw [couleurSec, thick] (5.5,-0.25) circle [radius=0.3] node {$,$};
+      \draw [couleurSec, thick] (9.65,0) circle [radius=0.3] node {$\times$};
+    \end{tikzpicture}
   \end{importants}
 \end{doc}
 
@@ -81,7 +81,7 @@
     L'ordre de grandeur d'une quantité est la puissance de 10 la plus proche de cette quantité.
   \end{importants}
   %
-  \exemple L'ordre de grandeur de \qty{60}{\s} est \qty{e2}{\s} (60 est plus proche de 100 que de 10). 
+  \exemple L'ordre de grandeur de \qty{60}{\s} est \qty{e2}{\s} (60 est plus proche de 100 que de 10).
 \end{doc}
 
 
@@ -91,10 +91,12 @@
 
 \separationBlocs{
   \qty{3,00e8}{\m\per\s} = \texteTrou(0){\qty{e8}{\m\per\s}}
+  \newline
   \correction{\newline}
   \qty{1,67e-27}{\kg}    = \texteTrou(0){\qty{e-27}{\kg}}
 }{
   \qty{9,11e-31}{\kg} = \texteTrou(0){$\num{e1} \times \qty{e-31}{\kg} = \qty{e-30}{\kg}$}
+  \newline
   \correction{\newline}
   \qty{53e-12}{\m}    = \texteTrou(0){$\num{e2} \times \qty{e-12}{\m} = \qty{e-10}{\m}$}
 }

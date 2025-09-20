@@ -2,7 +2,7 @@
 % #1 : Titre du TP
 \newcommand{\titreFicheTP}[1]{
   \newpage
-  \begin{boiteColoree}{couleurPrim}
+  \begin{boiteColoree}[couleurPrim]
     \centering
     \important[white]{\Large Fiche de préparation de TP}
   
@@ -19,46 +19,33 @@
         width = \linewidth, hlines,
         column{1,3,5} = {couleurPrim-100},
       }
-      \textbf{Date :}     & #1
-      & \textbf{Heures :} & #2
-      & \textbf{Salle :}  & #3 \\
+      \textbf{Dates :}  & \SetCell[c=3]{l} #1 & & &
+      \textbf{Salles :} & #2 \\
       %
-      \textbf{Prof :}      & Alexandre Jedrecy 
-      & \textbf{Matière :} & Physique-Chimie
-      & \textbf{Niveau :}  & #4 \\
+      \textbf{Prof :}    & Alexandre Jedrecy &
+      \textbf{Matière :} & Physique-Chimie &
+      \textbf{Niveau :}  & #3 \\
     \end{tblr}
   \end{center}
 }
 
 %% Préambule seconde
 % \ficheSecondeTP {titre} {date}
-\newcommand{\ficheSecondeTP}[2]{
+\newcommand{\ficheSecondeTP}[1]{
   \titreFicheTP{#1}
-  \preambuleFicheTP{#2}{
-    10h40 et 15h50
-  }{
-    A108 (10h40), A103
-  }{Seconde}
+  \preambuleFicheTP{Lundi 15h50, mardi 13h40, vendredi 8h30 \& 13h40} {A108, A104 (ven.)} {Seconde}
 }
 
 %% Préambule première ST2S
 % \fichePremiereStssTP {titre} {date}
 \newcommand{\fichePremiereStssTP}[2]{
   \titreFicheTP{#1}
-  \preambuleFicheTP{#2}{
-    13h40 et 15h50
-  }{
-    A108 (jeudi), A103
-  }{Première ST2S}
+  \preambuleFicheTP{Lundi 9h30 \& 13h40} {A103, A108 (13h40)} {Première ST2S}
 }
 
 %% Préambule terminale ST2S
 % \ficheTerminaleStssTP {titre} {date}
 \newcommand{\ficheTerminaleStssTP}[2]{
   \titreFicheTP{#1}
-  \preambuleFicheTP{#2}{
-    10h40 et 15h50
-  }{
-    A104 (10h40), A108
-  }{Terminale ST2S}
+  \preambuleFicheTP{Mardi 15h50, mercredi 10h40} {A104 (mar.), A103} {Terminale ST2S}
 }

@@ -41,7 +41,7 @@
   \end{importants}
 \end{doc}
 
-
+\vspace*{-24pt}
 \begin{multicols}{2}
   \numeroQuestion Relier les valeurs égales entre elles.
   \begin{center}
@@ -106,7 +106,7 @@
 
 
 %%%%
-\titreSection{Homogénéité}
+\titreSection{Homogénéité d'une relation}
 
 \begin{doc}{Relation homogène}
   \begin{importants}  
@@ -117,46 +117,25 @@
   Toute égalité entre deux grandeurs qui ne peuvent pas s'exprimer avec les mêmes unités est donc forcément \important{fausse.}
   On dit \important{qu'elle n'est pas homogène.}
   Vérifier l'homogénéité d'une équation c'est faire de \important{l'analyse dimensionnelle.}
+
+  \begin{importants}
+    L'homogénéité permet de \important{retrouver} la relation entre trois grandeurs en regardant l'unité de la grandeur que l'on cherche à calculer.
+
+    \begin{wrapfigure}{r}{0.25\linewidth}
+      \vspace*{-20pt}
+      \begin{equation*}
+        M \left(\dfrac{\unit{\g}} {\unit{ \mole}}\right) = \dfrac{m (\unit{\g})} {n (\unit{\mole})}
+      \end{equation*}
+    \end{wrapfigure}
+
+    \exemple Pour calculer la masse molaire (en \unit{\g\per\mole}), à partir d'une masse (\unit{\g}) et d'une quantité de matière (\unit{\mole}), il faut diviser la masse par la quantité de matière pour avoir une égalité homogène.
+  \end{importants}
 \end{doc}
 
-\numeroQuestion
-Calculer les unités des grandeurs des deux côtés de l'égalité des relations suivantes.
-Barrer les relations qui \textbf{ne sont pas homogènes.}
-\begin{alignat*}{2}
-  v &= \dfrac{f}{d} 
-  &\hspace{5cm}
-  F &= G\times\dfrac{m_1 \times m_2}{d^2} \\
-  %
-  m &= m_1 \times m_2
-  &\hspace{5cm}
-  v &= f \times d \\
-  %
-  m &= c_m \times V
-  &\hspace{5cm}
-  V_0 &= \dfrac{c_{m,1}}{c_{m,0}} V_1
-\end{alignat*}
+\question{
+  Donner l'égalité qui permet de calculer une distance $d (\unit{\m})$ à partir d'un temps $t (\unit{\s})$ et d'une vitesse $v (\unit{\m\per\s})$.
+}{}[2]
 
-\textbf{Données :} unités des différentes grandeurs 
-
-\begin{center}
-  \begin{tblr}{ row{1} = {couleurSec-100}, colspec = {c|c}, hlines }
-    Grandeur & Unité \\
-    $f$ & \unit{\per\s} (ou \unit{\hertz}) \\
-    $d$ & \unit{\m} \\
-    $m$ & \unit{\kg} \\
-  \end{tblr}
-  ~
-  \begin{tblr}{ row{1} = {couleurSec-100}, colspec = {c|c}, hlines }
-    Grandeur & Unité \\
-    $F$ & \unit{\kg\m\per\s\squared} (ou \unit{\newton}) \\
-    $G$ & \unit{\m\cubed \per\kg \per\s\squared} \\
-    $V$ & \unit{\litre} \\
-  \end{tblr}
-  ~
-  \begin{tblr}{ row{1} = {couleurSec-100}, colspec = {c|c}, hlines }
-    Grandeur & Unité \\
-    $c_m$ & \unit{\kg\per\litre} \\
-    $t$ & \unit{\s} \\
-    $v$ & \unit{\m\per\s}
-  \end{tblr}
-\end{center}
+\question{
+  Donner l'égalité permettant de calculer une concentration molaire $c (\unit{\mole\per\l})$ à partir d'une concentration massique $c_m (\unit{\g\per\l})$ et d'une masse molaire $M (\unit{\g\per\mole})$.
+}{}[2]
