@@ -1,5 +1,4 @@
 %% Titre de la fiche de TP
-% #1 : Titre du TP
 \newcommand{\titreFicheTP}[1]{
   \newpage
   \begin{boiteColoree}[couleurPrim]
@@ -11,21 +10,22 @@
 }
 
 %% Tableau de préambule 
-% \preambuleFicheTP{date} {horaire} {salle} {niveau}
-\newcommand{\preambuleFicheTP}[4]{
+% \preambuleFicheTP{classe}{horaire dans l'emploi du temps}
+\NewDocumentCommand{\preambuleFicheTP}{m +m}{
   \begin{center}
     \begin{tblr}{
-        colspec = {|l X[l] |l X[l] | l X[l] |},
-        width = \linewidth, hlines,
-        column{1,3,5} = {couleurPrim-100},
+        colspec = {l X[c] l X[c] l X[c]},
+        width = \linewidth, column{1,3,5} = {couleurPrim-100},
       }
-      \textbf{Dates :}  & \SetCell[c=3]{l} #1 & & &
-      \textbf{Salles :} & #2 \\
-      %
-      \textbf{Prof :}    & Alexandre Jedrecy &
-      \textbf{Matière :} & Physique-Chimie &
-      \textbf{Niveau :}  & #3 \\
+      \important{Prof :}    & Alexandre Jedrecy &
+      \important{Matière :} & Physique-Chimie &
+      \important{Niveau :}  & #1 \\
     \end{tblr}
+
+    \begin{tikzpicture}
+      \emploiDuTemps
+      #2
+    \end{tikzpicture}
   \end{center}
 }
 
@@ -33,19 +33,51 @@
 % \ficheSecondeTP {titre} {date}
 \newcommand{\ficheSecondeTP}[1]{
   \titreFicheTP{#1}
-  \preambuleFicheTP{Lundi 15h50, mardi 13h40, vendredi 8h30 \& 13h40} {A108, A104 (ven.)} {Seconde}
+  \preambuleFicheTP{Seconde}{
+    \evenement[creneau = 8, titre = TP 2GT2-1, lieu = A108]
+    \evenement[creneau = 6, titre = TP 2GT4-2, jour = 2, lieu = A108];
+    \evenement[creneau = 1, titre = TP 2GT4-1, jour = 5];
+    \evenement[creneau = 6, titre = TP 2GT2-2, jour = 5];
+  }
+}
+\newcommand{\effectifSeconde}{
+  \begin{multicols}{2}
+    \important{Effectif :} 15
+  
+    \flecheLongue \important{7 groupes} de 2 élèves
+  \end{multicols}
 }
 
 %% Préambule première ST2S
 % \fichePremiereStssTP {titre} {date}
-\newcommand{\fichePremiereStssTP}[2]{
+\newcommand{\fichePremiereStssTP}[1]{
   \titreFicheTP{#1}
-  \preambuleFicheTP{Lundi 9h30 \& 13h40} {A103, A108 (13h40)} {Première ST2S}
+  \preambuleFicheTP{Première ST2S}{
+    \evenement[creneau = 2, titre = TP 1ST2S1-1, lieu = A103, couleur = purple-200]
+    \evenement[creneau = 6, titre = TP 1ST2S1-2, lieu = A108, couleur = purple-200]
+  }
+}
+\newcommand{\effectifPremiereStss}{
+  \begin{multicols}{2}
+    \important{Effectif :} 12
+    
+    \flecheLongue \important{6 groupes} de 2 élèves
+  \end{multicols}
 }
 
 %% Préambule terminale ST2S
 % \ficheTerminaleStssTP {titre} {date}
-\newcommand{\ficheTerminaleStssTP}[2]{
+\newcommand{\ficheTerminaleStssTP}[1]{
   \titreFicheTP{#1}
-  \preambuleFicheTP{Mardi 15h50, mercredi 10h40} {A104 (mar.), A103} {Terminale ST2S}
+  \preambuleFicheTP{Terminale ST2S}{
+    \evenement[creneau = 8, titre = TP TST2S-1, jour = 2, couleur = red-200]
+    \evenement[creneau = 3, titre = TP TST2S-2, jour = 3, lieu = A103, couleur = red-200]
+  }
+}
+\newcommand{\effectifTerminaleStss}{
+  \begin{multicols}{2}
+    \important{Effectif :} 12
+    
+    \flecheLongue \important{6 groupes} de 2 élèves
+  \end{multicols}
 }

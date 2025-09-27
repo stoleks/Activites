@@ -229,6 +229,7 @@
   \end{tikzpicture}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------ Pour les circuits
 \NewDocumentCommand{\fixedvlen}{O{0.5cm} m m O{}}{% [semilength]{node}{label}[extra options]
   % get the center of the standard arrow
@@ -237,4 +238,84 @@
   \draw[-Triangle, #4] ($(#2-Vcenter)!#1!(#2-Vfrom)$) -- ($(#2-Vcenter)!#1!(#2-Vto)$);
   % position the label as in the normal voltages
   \node[anchor=\ctikzgetanchor{#2}{Vlab}, #4] at (#2-Vlab) {#3};
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------ Pour tracer un mini-emploi du temps
+% Clés pour tracer un emploi du temps
+\pgfkeys{
+  /emploi du temps/.is family, /emploi du temps,
+  defaut/.style = {
+    largeur = \linewidth,
+    hauteur = 0.5*\linewidth,
+    hauteur jours = 1 cm,
+    largeur heures = 2 cm,
+    titre = Physique-chimie,
+    lieu = A104,
+    jour = 1,
+    nombre jours = 5,
+    creneau = 2,
+    nombre creneaux = 9,
+    duree = 2,
+    couleur = green-200
+  },% stockage des clefs
+  hauteur/.store in = \edtHauteur,
+  largeur/.store in = \edtLargeur,
+  hauteur jours/.store in = \edtHauteurJours,
+  largeur heures/.store in = \edtLargeurHeures,
+  titre/.store in = \edtTitre,
+  lieu/.store in = \edtLieu,
+  jour/.store in = \edtJour,
+  nombre jours/.store in = \edtNombreJours,
+  creneau/.store in = \edtCreneau,
+  nombre creneaux/.store in = \edtNombreCreneaux,
+  duree/.store in = \edtDuree,
+  couleur/.store in = \edtCouleur
+}
+\newdimen\edtHauteurCreneau
+\newdimen\edtLargeurJour
+\newdimen\edtX
+\newdimen\edtY
+\newcommand{\jours}{
+  \important{Lundi}, \important{Mardi}, \important{Mercredi}, \important{Jeudi}, \important{Vendredi}
+}
+\newcommand{\heures}{
+  8h30, 9h30, 10h40, 11h40, 12h40, 13h40, 14h40, 15h50, 16h50, 17h50
+}
+
+\NewDocumentCommand{\emploiDuTemps}{O{}}{
+  % Paramètre par défaut
+  \pgfkeys{/emploi du temps, defaut, #1}
+  \draw [draw=black, rounded corners = 8pt] (0,0) rectangle (\edtLargeur, -\edtHauteur);
+  % Calcul de la taille d'un creneau et de la largeur d'un jour
+  \pgfmathsetlength{\edtHauteurCreneau}{0.96*(\edtHauteur - \edtHauteurJours) / \edtNombreCreneaux}
+  \pgfmathsetlength{\edtLargeurJour}{(0.96*\edtLargeur - \edtLargeurHeures) / \edtNombreJours}
+  % Trace les lignes pour les créneaux horaires
+  \pgfmathsetlength{\edtX}{\edtLargeurHeures * 0.5}
+  \foreach \h [count=\i] in \heures {
+    \pgfmathsetlength{\edtY}{-\i*\edtHauteurCreneau}
+    \node at (\edtX, \edtY) {\h};
+    \draw [dashed] (\edtLargeurHeures, \edtY) -- (0.96*\edtLargeur, \edtY);
+  };
+  % Trace les jours
+  \pgfmathsetlength{\edtY}{0}
+  \foreach \j [count=\i] in \jours {
+    \pgfmathsetlength{\edtX}{\edtLargeurHeures + (\i - 1)*\edtLargeurJour}
+    \draw [draw = none] 
+      (\edtX , \edtY) rectangle (\edtX + \edtLargeurJour, \edtY - \edtHauteurJours) 
+      node[pos=.5, text centered] {\j};
+  };
+}
+
+\NewDocumentCommand{\evenement}{O{}}{
+  \pgfkeys{/emploi du temps, defaut, #1}
+  % calcule la position du créneau
+  \pgfmathsetlength{\edtX}{\edtLargeurHeures + (\edtJour - 1)*\edtLargeurJour}
+  \pgfmathsetlength{\edtY}{-\edtCreneau*\edtHauteurCreneau}
+  % dessine le créneau
+  \filldraw [fill = \edtCouleur, draw = \edtCouleur!75!black, line width = 2pt, rounded corners = 6pt]
+    (\edtX, \edtY) rectangle (\edtX + \edtLargeurJour, \edtY - \edtDuree*\edtHauteurCreneau)
+    node[pos=.5, text width = \edtLargeurJour, align = center] {
+      \important{\edtTitre} \linebreak \edtLieu
+    };
 }

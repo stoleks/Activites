@@ -29,16 +29,16 @@
   En pesant le ballon avant et après le dégonflage, on peut calculer la masse d'air expulsée.
 \end{doc}
 
-\numeroQuestion 
+\schematiser
 Schématiser les 3 étapes de l'expérience réalisée.
-\pasCorrection{\vspace*{7cm}}
+\pasCorrection{\vspace*{9cm}}
 \correction{
   Schéma du ballon sur la balance avec $m_1$,
   schéma du ballon vidé dans une éprouvette graduée avec l'air qui prend la place de l'eau,
   schéma du ballon sur la balance avec $m_2$.
 }
 
-\numeroQuestion
+\documentaire
 Remplir le tableau ci-dessous 
 \begin{tableau}{|c |c |c |c |}
   Grandeur & Masse du ballon plein $m_1 $ & Masse du ballon dégonflé $m_2$ & Volume d'air expulsé $V$ \\
@@ -46,15 +46,22 @@ Remplir le tableau ci-dessous
 \end{tableau}
 
 \question{
+  Calculer la masse de l'air expulsé du ballon.
+}{
+  La masse d'air expulsée est $m = m_2 - m_1 = \qty{1,8}{\g}$.
+}[1]
+
+\question{
   Calculer la masse volumique mesurée $\rho_\text{mes}(\text{air})$.
 }{
-  La masse d'air expulsée est $m = m_2 - m_1 = \qty{1,8}{\g}$, soit une masse volumique
+  Soit une masse volumique
   \begin{equation*}
     \rho = \dfrac{m}{V} = \frac{1,8}{1,5} \unit{\g\per\litre} = \qty{1,2}{\g\per\litre}
   \end{equation*}
 }[3]
 
 %%
+\pasCorrection{\newpage}
 \begin{doc}{Masse volumique d'un mélange}
   Pour un mélange de gaz, la masse volumique du mélange est simplement la somme des masses volumique de chaque gaz pondérée par la fraction volumique de chaque gaz du mélange.
 
@@ -64,24 +71,22 @@ Remplir le tableau ci-dessous
   \end{equation*}
 \end{doc}
 
-\pasCorrection{\newpage}
-\question{
-  Rappeler les fractions volumique des gaz composant l'air (\dioxygene, \diazote, \dioxydeDeCarbone, \chemfig{Ar}).
-}{
-  $p_v(\dioxygene)  = \qty{21}{\percent}$, 
-  $p_v(\diazote)  = \qty{78}{\percent}$, 
-  $p_v(\dioxydeDeCarbone) = \qty{0,04}{\percent}$, 
-  $p_v(\chemfig{Ar})   = \qty{0,9 }{\percent}$, 
-}[2]
+\begin{doc}{Fraction volumique des gaz composant l'air}
+  \begin{donnees}[2]
+    \item $p_v(\dioxygene) \simeq \qty{20}{\percent} = \num{0,20}$
+    \item $p_v(\diazote) \simeq \qty{80}{\percent}$
+    \item $p_v(\dioxydeDeCarbone) = \qty{0,04}{\percent}$
+    \item $p_v(\chemfig{Ar}) = \qty{0,9}{\percent}$
+  \end{donnees}
+\end{doc}
 
 \begin{doc}{Masse volumique des gaz composant l'air}
-  \textbf{Données :}
-  \begin{listeTirets}
-    \item Masse volumique du \dioxydeDeCarbone gazeux : $\rho(\dioxydeDeCarbone) = \qty{1,87}{\g/\litre}$.
-    \item Masse volumique du \dioxygene  gazeux : $\rho(\dioxygene)  = \qty{1,35}{\g/\litre}$.
-    \item Masse volumique du \diazote  gazeux : $\rho(\diazote)  = \qty{1,18}{\g/\litre}$.
-    \item Masse volumique de \chemfig{Ar}   gazeux : $\rho(\chemfig{Ar})   = \qty{1,78}{\g/\litre}$.
-  \end{listeTirets}
+  \begin{donnees}
+    \item Masse volumique du \dioxydeDeCarbone : $\rho(\dioxydeDeCarbone) = \qty{1,87}{\g/\litre}$
+    \item Masse volumique du \dioxygene : $\rho(\dioxygene) = \qty{1,35}{\g/\litre}$
+    \item Masse volumique du \diazote : $\rho(\diazote) = \qty{1,18}{\g/\litre}$
+    \item Masse volumique de \chemfig{Ar} : $\rho(\chemfig{Ar}) = \qty{1,78}{\g/\litre}$
+  \end{donnees}
 \end{doc}
 
 
