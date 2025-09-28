@@ -23,7 +23,7 @@
     \end{tblr}
 
     \begin{tikzpicture}
-      \emploiDuTemps
+      \emploiDuTemps[hauteur jours = 0.8cm]
       #2
     \end{tikzpicture}
   \end{center}
@@ -34,10 +34,10 @@
 \newcommand{\ficheSecondeTP}[1]{
   \titreFicheTP{#1}
   \preambuleFicheTP{Seconde}{
-    \evenement[creneau = 8, titre = TP 2GT2-1, lieu = A108]
-    \evenement[creneau = 6, titre = TP 2GT4-2, jour = 2, lieu = A108];
-    \evenement[creneau = 1, titre = TP 2GT4-1, jour = 5];
-    \evenement[creneau = 6, titre = TP 2GT2-2, jour = 5];
+    \evenement[creneau = 8, titre = 2GT2-1, lieu = A108]
+    \evenement[creneau = 6, titre = 2GT4-2, jour = 2, lieu = A108];
+    \evenement[creneau = 1, titre = 2GT4-1, jour = 5];
+    \evenement[creneau = 6, titre = 2GT2-2, jour = 5];
   }
 }
 \newcommand{\effectifSeconde}{
@@ -46,6 +46,7 @@
   
     \flecheLongue \important{7 groupes} de 2 élèves
   \end{multicols}
+  \vspace*{-12pt}
 }
 
 %% Préambule première ST2S
@@ -53,8 +54,8 @@
 \newcommand{\fichePremiereStssTP}[1]{
   \titreFicheTP{#1}
   \preambuleFicheTP{Première ST2S}{
-    \evenement[creneau = 2, titre = TP 1ST2S1-1, lieu = A103, couleur = purple-200]
-    \evenement[creneau = 6, titre = TP 1ST2S1-2, lieu = A108, couleur = purple-200]
+    \evenement[creneau = 2, titre = 1ST2S1-1, lieu = A103, couleur = purple-200]
+    \evenement[creneau = 6, titre = 1ST2S1-2, lieu = A108, couleur = purple-200]
   }
 }
 \newcommand{\effectifPremiereStss}{
@@ -63,6 +64,7 @@
     
     \flecheLongue \important{6 groupes} de 2 élèves
   \end{multicols}
+  \vspace*{-12pt}
 }
 
 %% Préambule terminale ST2S
@@ -70,8 +72,8 @@
 \newcommand{\ficheTerminaleStssTP}[1]{
   \titreFicheTP{#1}
   \preambuleFicheTP{Terminale ST2S}{
-    \evenement[creneau = 8, titre = TP TST2S-1, jour = 2, couleur = red-200]
-    \evenement[creneau = 3, titre = TP TST2S-2, jour = 3, lieu = A103, couleur = red-200]
+    \evenement[creneau = 8, titre = TST2S1-1, jour = 2, couleur = red-200]
+    \evenement[creneau = 3, titre = TST2S1-2, jour = 3, lieu = A103, couleur = red-200]
   }
 }
 \newcommand{\effectifTerminaleStss}{
@@ -80,4 +82,5 @@
     
     \flecheLongue \important{6 groupes} de 2 élèves
   \end{multicols}
+  \vspace*{-12pt}
 }

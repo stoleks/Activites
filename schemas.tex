@@ -250,25 +250,30 @@
     hauteur = 0.5*\linewidth,
     hauteur jours = 1 cm,
     largeur heures = 2 cm,
-    titre = Physique-chimie,
-    lieu = A104,
-    jour = 1,
     nombre jours = 5,
-    creneau = 2,
-    nombre creneaux = 9,
-    duree = 2,
-    couleur = green-200
+    nombre creneaux = 9
   },% stockage des clefs
   hauteur/.store in = \edtHauteur,
   largeur/.store in = \edtLargeur,
   hauteur jours/.store in = \edtHauteurJours,
   largeur heures/.store in = \edtLargeurHeures,
+  nombre jours/.store in = \edtNombreJours,
+  nombre creneaux/.store in = \edtNombreCreneaux
+}
+\pgfkeys{
+  /evenement edt/.is family, /evenement edt,
+  defaut/.style = {
+    titre = Physique-chimie,
+    lieu = A104,
+    jour = 1,
+    creneau = 2,
+    duree = 2,
+    couleur = green-200
+  },% stockage des clefs
   titre/.store in = \edtTitre,
   lieu/.store in = \edtLieu,
   jour/.store in = \edtJour,
-  nombre jours/.store in = \edtNombreJours,
   creneau/.store in = \edtCreneau,
-  nombre creneaux/.store in = \edtNombreCreneaux,
   duree/.store in = \edtDuree,
   couleur/.store in = \edtCouleur
 }
@@ -288,13 +293,13 @@
   \pgfkeys{/emploi du temps, defaut, #1}
   \draw [draw=black, rounded corners = 8pt] (0,0) rectangle (\edtLargeur, -\edtHauteur);
   % Calcul de la taille d'un creneau et de la largeur d'un jour
-  \pgfmathsetlength{\edtHauteurCreneau}{0.96*(\edtHauteur - \edtHauteurJours) / \edtNombreCreneaux}
+  \pgfmathsetlength{\edtHauteurCreneau}{(0.96*\edtHauteur - \edtHauteurJours) / \edtNombreCreneaux}
   \pgfmathsetlength{\edtLargeurJour}{(0.96*\edtLargeur - \edtLargeurHeures) / \edtNombreJours}
   % Trace les lignes pour les créneaux horaires
   \pgfmathsetlength{\edtX}{\edtLargeurHeures * 0.5}
   \foreach \h [count=\i] in \heures {
-    \pgfmathsetlength{\edtY}{-\i*\edtHauteurCreneau}
-    \node at (\edtX, \edtY) {\h};
+    \pgfmathsetlength{\edtY}{-(\i - 1)*\edtHauteurCreneau - \edtHauteurJours}
+    \node at (\edtX, \edtY) {\footnotesize \h};
     \draw [dashed] (\edtLargeurHeures, \edtY) -- (0.96*\edtLargeur, \edtY);
   };
   % Trace les jours
@@ -308,14 +313,14 @@
 }
 
 \NewDocumentCommand{\evenement}{O{}}{
-  \pgfkeys{/emploi du temps, defaut, #1}
+  \pgfkeys{/evenement edt, defaut, #1}
   % calcule la position du créneau
   \pgfmathsetlength{\edtX}{\edtLargeurHeures + (\edtJour - 1)*\edtLargeurJour}
-  \pgfmathsetlength{\edtY}{-\edtCreneau*\edtHauteurCreneau}
+  \pgfmathsetlength{\edtY}{-(\edtCreneau-1)*\edtHauteurCreneau - \edtHauteurJours}
   % dessine le créneau
-  \filldraw [fill = \edtCouleur, draw = \edtCouleur!75!black, line width = 2pt, rounded corners = 6pt]
+  \filldraw [fill = \edtCouleur, draw = \edtCouleur!75!black, line width = 2pt, rounded corners = 4pt]
     (\edtX, \edtY) rectangle (\edtX + \edtLargeurJour, \edtY - \edtDuree*\edtHauteurCreneau)
-    node[pos=.5, text width = \edtLargeurJour, align = center] {
+    node[pos=.5, text width = \edtLargeurJour, align = center, font = \footnotesize] {
       \important{\edtTitre} \linebreak \edtLieu
     };
 }
