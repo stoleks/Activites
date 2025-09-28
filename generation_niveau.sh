@@ -8,7 +8,7 @@ generate_pdf () {
     # skip lines that don't include a file
     local start=`date +%s`
     line=`awk "NR==$i" $1`
-    if [[ $line != *"inclusActivite"* && $line != *"plan_de_travail"* || $line == *"%%"* ]]; then
+    if [[ $line != *"inclusActivite"* && $line != *"plan_de_travail"* && $line != *"fichesTP"* || $line == *"%%"* ]]; then
       continue
     fi
 

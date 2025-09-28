@@ -16,9 +16,12 @@ echo "Le répertoire de sortie utilisé est $2. Préparation des fichiers."
 declare -a levels=($1)
 
 # comment all lines
-comment_lines "seconde.tex"
-comment_lines "stssPremiere.tex"
-comment_lines "stssTerminale.tex"
+if [[ "$3" = "clean" || "$4" = "clean" ]]; then
+  comment_lines "fichesTP.tex"
+  comment_lines "seconde.tex"
+  comment_lines "stssPremiere.tex"
+  comment_lines "stssTerminale.tex"
+fi
 
 # generate pdf for all levels
 for level in "${levels[@]}";
@@ -38,7 +41,10 @@ do
     sh generation_niveau.sh $level $output
   fi
 
-  # corrections
+  # corrections if asked
+  if [[ "$3" != "correction" || "$4" != "correction" ]]; then
+    continue
+  fi
   for directory in $level/*;
   do
     if [[ -d $directory ]] && ! [[ -z "$( ls -A $directory/ )" ]]; then
