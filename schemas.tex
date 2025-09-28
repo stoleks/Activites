@@ -251,15 +251,20 @@
     hauteur jours = 1 cm,
     largeur heures = 2 cm,
     nombre jours = 5,
-    nombre creneaux = 9
+    nombre creneaux = 9,
+    arrondi = 4pt,
+    bordure = 2pt
   },% stockage des clefs
   hauteur/.store in = \edtHauteur,
   largeur/.store in = \edtLargeur,
   hauteur jours/.store in = \edtHauteurJours,
   largeur heures/.store in = \edtLargeurHeures,
   nombre jours/.store in = \edtNombreJours,
-  nombre creneaux/.store in = \edtNombreCreneaux
+  nombre creneaux/.store in = \edtNombreCreneaux,
+  arrondi/.store in = \edtArrondi,
+  bordure/.store in = \edtBordure
 }
+% Le premier jeu de clés regroupe les paramètre globaux, celui-là regroupe ceux pour un événement
 \pgfkeys{
   /evenement edt/.is family, /evenement edt,
   defaut/.style = {
@@ -318,7 +323,12 @@
   \pgfmathsetlength{\edtX}{\edtLargeurHeures + (\edtJour - 1)*\edtLargeurJour}
   \pgfmathsetlength{\edtY}{-(\edtCreneau-1)*\edtHauteurCreneau - \edtHauteurJours}
   % dessine le créneau
-  \filldraw [fill = \edtCouleur, draw = \edtCouleur!75!black, line width = 2pt, rounded corners = 4pt]
+  \filldraw [
+    fill = \edtCouleur,
+    draw = \edtCouleur!75!black,
+    line width = \edtBordure,
+    rounded corners = \edtArrondi
+  ]
     (\edtX, \edtY) rectangle (\edtX + \edtLargeurJour, \edtY - \edtDuree*\edtHauteurCreneau)
     node[pos=.5, text width = \edtLargeurJour, align = center, font = \footnotesize] {
       \important{\edtTitre} \linebreak \edtLieu
