@@ -1,9 +1,7 @@
 %%%% début de la page
 \teteSndCorp
 
-
-%%%% titre
-\nomPrenomClasse
+%\nomPrenomClasse
 \titreTP{Identifier des solides et des liquides}
 
 %%%% Contexte 1
@@ -37,7 +35,7 @@
   \begin{tableau}{|c |c |c |}
     Métal
     & Aspect à $T = \qty{20}{\degreeCelsius}$ 
-    & Masse volumique (\unit{\g/\cubic\cm}) \\
+    & Masse volumique (\unit{\g/\cubic\cm}) à $T = \qty{10}{\degreeCelsius}$ \\
     %
     Aluminium & Solide gris brillant   & \num{2,700} \\
     Cuivre    & Solide orange brillant & \num{8,960} \\
@@ -46,69 +44,87 @@
   \end{tableau}
 \end{doc}
 
-\begin{doc}{Volume d'un parallélépipède rectangle}
-  \begin{multicols}{2}
-    % Pour calculer le volume d'un parallélépipède rectangle de longueur $L$, de profondeur $p$ et d’épaisseur $e$, on utilise la relation suivante :
-    % \begin{equation*}
-    %   V = L \times p \times e
-    % \end{equation*}
-
-    % \centering
-    % \begin{tikzpicture}
-    %   % Parallelepipede
-    %   \draw (0,0)--(5,0)--(5,1)--(0,1)--(0,0); % face
-    %   \draw (0,1)--(1,2.2)--(6,2.2)--(5,1); % haut
-    %   \draw (5,0)--(6,1.2)--(6,2.2); % côté
-    %   % Perspective
-    %   \draw[dashed] (0,0)--(1,1.2)--(1,2.2); % côté
-    %   \draw[dashed] (1,1.2)--(6,1.2); % fond
-    %   % Legendes
-    %   \tikzVecteur*(0, -0.25) (5,0)     {$L$} [below]
-    %   \tikzVecteur*(-0.25,0) (0,1)      {$e$} [left]
-    %   \tikzVecteur*(5.25, -0.1) (1, 1.2){$p$} [right]
-    % \end{tikzpicture}
-    % Si $L$, $p$ et $e$ sont mesurées en \unit{\cm},
-    % le résultat s’exprimera en \unit{\cubic\cm}.
+% \begin{doc}{Volume d'un parallélépipède rectangle}
+%   \begin{multicols}{2}
+%     Pour calculer le volume d'un parallélépipède rectangle de longueur $L$, de profondeur $p$ et d’épaisseur $e$, on utilise la relation suivante :
+%     \begin{equation*}
+%       V = L \times p \times e
+%     \end{equation*}
+% 
+%     \centering
+%     \begin{tikzpicture}
+%       % Parallelepipede
+%       \draw (0,0)--(5,0)--(5,1)--(0,1)--(0,0); % face
+%       \draw (0,1)--(1,2.2)--(6,2.2)--(5,1); % haut
+%       \draw (5,0)--(6,1.2)--(6,2.2); % côté
+%       % Perspective
+%       \draw[dashed] (0,0)--(1,1.2)--(1,2.2); % côté
+%       \draw[dashed] (1,1.2)--(6,1.2); % fond
+%       % Legendes
+%       \tikzVecteur*(0, -0.25) (5,0)     {$L$} [below]
+%       \tikzVecteur*(-0.25,0) (0,1)      {$e$} [left]
+%       \tikzVecteur*(5.25, -0.1) (1, 1.2){$p$} [right]
+%     \end{tikzpicture}
+%     Si $L$, $p$ et $e$ sont mesurées en \unit{\cm},
+%     le résultat s’exprimera en \unit{\cubic\cm}.
+%   \end{multicols}
+% \end{doc}
   
-    Pour calculer le volume d'un cylindre de hauteur $h$ et de rayon $r$, on utilise la relation suivante :
-    \begin{equation*}
-      V = \pi \times r^2 \times h
-    \end{equation*}
-    Si $h$ et $r$ sont mesurées en \unit{\cm},
-    le résultat s’exprimera en \unit{\cubic\cm}.
-  
+\begin{doc}{Volume d'un cylindre}
+  % cylindre
+  \begin{wrapfigure}{r}{0.3\linewidth} 
     \centering
+    \vspace*{-24pt}
     \begin{tikzpicture}
-      \draw (0,0) ellipse (1.25 and 0.5);
-      \draw (-1.25,0) -- (-1.25,-2);
-      \draw (-1.25,-2) arc (180:360:1.25 and 0.5);
-      \draw [dashed] (-1.25,-2) arc (180:360:1.25 and -0.5);
-      \draw (1.25,-2) -- (1.25,0);
-      \tikzVecteur* (1.5, 0) (0, -2) {$h$} [right]
-      \tikzVecteur* (-1.25, 0) (1.25, 0) {$r$} [right]
+      \draw (0,0) ellipse (1 and 0.4);
+      \draw (-1, 0) -- (-1, -1.5);
+      \draw (-1,-1.5) arc (180:360:1 and 0.4);
+      \draw [dashed] (-1, -1.5) arc (180:360:1 and -0.4);
+      \draw (1, -1.5) -- (1, 0);
+      \tikzVecteur* (1.5, 0) (0, -1.5) {$h$} [right]
+      \tikzVecteur* (-1, 0) (1, 0) {$r$} [right]
       \tikzLabel (0, 0) {}
     \end{tikzpicture}
-  \end{multicols}
+  \end{wrapfigure}
+
+  Pour calculer le volume d'un cylindre de hauteur $h$ et de rayon $r$, on utilise la relation suivante :
+  \begin{equation*}
+    V = \pi \times r^2 \times h
+  \end{equation*}
+  Si $h$ et $r$ sont mesurées en \unit{\cm}, le résultat s’exprimera en \unit{\cubic\cm}.
 \end{doc}
 
-\begin{doc}{Mesure de la masse volumique d'un cylindre}
-  Pour mesurer la masse volumique d'un cylindre on a :
+\begin{doc}{Protocole de mesure de la masse volumique d'un cylindre}
   \begin{protocole}
     \item mesurer la masse $m$ du cylindre sur une balance ;
-    \item mettre \qty{10}{\ml} l'eau dans une éprouvette graduée ;
-    \item mettre le cylindre dans l'éprouvette graduée ;
-    \item mesurer le volume eau + cylindre ;
-    \item calculer le volume $V$ du cylindre, puis la masse volumique.
+    \item mettre $\simeq \qty{20}{\ml}$ d'eau dans une éprouvette graduée ;
+    \item mettre le cylindre dans l'éprouvette graduée, mesurer le volume eau $+$ cylindre ;
+    \item le volume ajouté est le volume du cylindre ;
+    \item calculer la masse volumique $\rho = m / V$ du cylindre.
   \end{protocole}
 \end{doc}
 
-\mesure Mesurer la masse volumique d'un échantillon à l'aide du matériel disponible.
-\begin{equation*}
-  \rho = \text{\texteTrou{\qty{8.960}{\g/\cm\cubed}}}
-\end{equation*}
+\mesure Mesurer la masse volumique de chaque échantillon à l'aide du matériel disponible. Le volume de tous les cylindre est identique.
+
+{\centering
+  \begin{tblr}{
+      colspec = { c X X X X }, hlines, vlines
+    }
+    $m$ (\unit{\g}) &
+    \correction{\num{26,1}} &
+    \correction{\num{8,0}} &
+    \correction{\num{20,2}} &
+    \correction{\num{21.5}} \\
+    %
+    $\rho$ (\unit{\g/\cm\cubed})
+  \end{tblr}
+}
+% \begin{equation*}
+%   \rho = \text{\texteTrou{\qty{8.960}{\g/\cm\cubed}}}
+% \end{equation*}
 
 \question{
-  En utilisant les données du document~\ref{doc:proprietes_metaux}, déterminer la nature de l'échantillon.
+  En utilisant les données du document~\ref{doc:proprietes_metaux}, déterminer la nature des échantillons.
 }{
   On a mesuré un volume $V = 10,0 \times 2,0 \times \qty{0.2}{\centi\m\cubed} = \qty{4,0}{\centi\m\cubed}$ et une masse $m = \qty{34,0}{\g}$.
   L'échantillon a donc une masse volumique 
@@ -124,7 +140,7 @@
 
 
 %%%% Contexte 2
-\stepcounter{page}
+\pasCorrection{\newpage \vspace*{-36pt}}
 \setcounter{documentNum}{3}
 \begin{importants}
   Les eaux minérales sont des mélanges homogène contenant plusieurs ions de nature et de masses différentes.
