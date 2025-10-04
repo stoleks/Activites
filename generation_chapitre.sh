@@ -4,7 +4,6 @@
 # 1: level ; 2: chapter ; 3: output ; 4-5: line range
 generate_pdf () {
   activityCount=0
-  echo $1 $2 $3 $4 $5
   for i in $(seq $4 $5);
   do
     # skip lines that don't include a file and are not in the chapter
