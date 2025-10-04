@@ -41,6 +41,20 @@
     \evenement[creneau = 6, titre = 2GT2-2, jour = 5];
   }
 }
+\newcommand{\ficheSecondeII}[1]{
+  \titreFicheTP{#1}
+  \preambuleFicheTP{Seconde}{
+    \evenement[creneau = 8, titre = 2GT2-1, lieu = A108]
+    \evenement[creneau = 6, titre = 2GT2-2, jour = 5];
+  }
+}
+\newcommand{\ficheSecondeIV}[1]{
+  \titreFicheTP{#1}
+  \preambuleFicheTP{Seconde}{
+    \evenement[creneau = 6, titre = 2GT4-2, jour = 2, lieu = A108];
+    \evenement[creneau = 1, titre = 2GT4-1, jour = 5];
+  }
+}
 \newcommand{\effectifSeconde}{
   \begin{multicols}{2}
     \important{Effectif :} 15
@@ -49,6 +63,7 @@
   \end{multicols}
   \vspace*{-12pt}
 }
+
 
 %% Préambule première ST2S
 % \fichePremiereStssTP {titre} {date}

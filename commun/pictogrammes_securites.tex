@@ -1,17 +1,15 @@
-\begin{doc}{Les pictogrammes de sécurités}
-  Les pictogrammes de sécurités sont à connaître par c\oe{}ur ! \\[4pt]
-
+\begin{doc}{Les pictogrammes de sécurités (à connaitre par c\oe{}ur !)}
   %% Tableau avec les pictogrammes
-  \NewDocumentCommand{\pictoTableau}{m O{65}}{
-    \hspace{2pt}
-    \image{0.7}{images/exterieures/securite/picto_#1} \vAligne{-#2pt}
+  \NewDocumentCommand{\pictoTableau}{m}{
+    \includegraphics[width=0.85\linewidth, valign=c]{images/exterieures/securite/picto_#1}
   }
+  %\vspace*{-18pt}
   \begin{tblr}{
-    colspec = {Q[h, m, wd = 0.15\linewidth] Q[m, wd = 0.8\linewidth]},
+    colspec = {Q[c, wd = 0.12\linewidth] Q[m, wd = 0.8\linewidth]},
     hlines, vlines,
     row{1} = {couleurPrim!20, c}
   }
-    \textbf{Pictogramme} & \textbf{Signification} \\
+    \textbf{Picto.} & \textbf{Signification} \\
     %
     \pictoTableau{corrosif} &
     {\texteTrou{Corrosif.} \\
@@ -24,7 +22,7 @@
     J'irrite la peau, les yeux et/ou les voies respiratoires.
     Je peux provoquer des allergies, de la somnolence ou des vertiges.} \\
     %
-    \pictoTableau{toxique}[55] &
+    \pictoTableau{toxique} &
     {\texteTrou{Toxique.} \\
     J’empoisonne rapidement, même à faible dose. \\} \\
     %
