@@ -15,7 +15,7 @@
   \setchemfig{
     atom sep= 24pt,
     double bond sep = 3pt,
-    bond style = {line width = 1pt},
+    bond style = {line width = 1.1pt},
     cram width = 2.2pt,
     angle increment = 30
   }
@@ -902,6 +902,11 @@
 %% Aspartame
 \definesubmol\aspartame{
   HO -[::90,,2] (!\llh O) !\lb!\lb (!\lb NH_2) % chaine latérale
+  !\lh (!\llh O) !\lb \!\NH !\lh % amide
+  *6(- (=O) -O (-) !\vide{} *6(-=-=-) =--) % double cycle
+}
+\definesubmol\aspartameCompact{
+  HO -[::-30,] (!\llh O) !\lb!\lh (!\lb NH_2) % chaine latérale
   !\lh (!\llh O) !\lb \!\NH !\lh % amide
   *6(- (=O) -O (-) !\vide{} *6(-=-=-) =--) % double cycle
 }

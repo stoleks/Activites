@@ -1,72 +1,84 @@
 \pasDePagination
+\centering
+\boldmath
+% \begin{tblr}{
+%   columns = {c, wd = 0.17\linewidth},
+%   rows = {m, ht = 0.08\paperheight},
+%   column{1} = {20mm},
+%   hlines, vlines,
+% }
+%   Hydroxyle & 
+%   \chemfig{H-C !\HH -OH} &
+%   \chemfig{H-C !\HH -C !\HH -OH} &
+%   \chemfig{H_3C -CH_2 -CH_2 (-[::90] OH)} &
+%   \chemfig{-[:30] !\lbh !\lb OH} \\
+%   %
+%   Carboxyle & 
+%   \chemfig{H -C !\carboxyleDev} & 
+%   \chemfig{H_3 C-C !\carboxyleDev} &
+%   \chemfig{-[:30] !\lb !\carboxyle} &
+%   \chemfig{-[:30] !\lbh !\carboxyle} \\
+%   %
+%   Carbonyle &
+%   \chemfig{H- C !\carbonyleDev H} &
+%   \chemfig{H_2 C-CH-C !\carbonyleDev H} &
+%   \chemfig{-[:30] !\lb !\carbonyle H} &
+%   \chemfig{-[:30] !\lbh !\carbonyle H} \\
+%   %
+%   Carbonyle & & &
+%   \chemfig{H_3C-C (=[::90]O) -CH_3} &
+%   \chemfig{-[:-30] !\lh !\carbonyle} \\
+  %
+  % Ester     & &
+  % \chemfig{!\vide{:-30} H-[:30] C !\ester -CH_3} &
+  % \chemfig{H_3C -C!\ester -CH_3} &
+  % \chemfig{H_3C -CH_2 -C!\ester -CH_3} \\
+  % %
+  % Ether     & &
+  % \chemfig{!\vide{} H_2 C-O-CH_2} &
+  % \chemfig{-[:-30] !\ether} &
+  % \chemfig{-[:-30] !\ether !\lh} \\
+  % %
+  % Amine     &
+  % \chemfig{!\vide{} H-C!\HH -NH_2} &
+  % \chemfig{!\vide{} H-C!\HH -C!\HH -NH_2} &
+  % \chemfig{-[:30] !\lbh NH_2} &
+  % \chemfig{-[:30] !\lbh !\lb NH_2} \\
+  % %
+  % Amide     &
+  % \chemfig{!\vide{:-30} H-[:30] C !\amide H_2} &
+  % \chemfig{!\vide{:-30} H_3C-[:30] C !\amide H_2} &
+  % \chemfig{-[:-30] !\lh !\amide H_2} &
+  % \chemfig{-[:30] !\lbh !\amide H_2} \\
+% \end{tblr}
+
 \begin{tblr}{
-  colspec = {X[c] Q[c, 0.2\linewidth] Q[c, 0.2\linewidth] Q[c, 0.2\linewidth] Q[c, 0.2\linewidth]},
+  columns = {c, wd = 0.2\linewidth},
+  hlines, vlines,
 }
-  Hydroxyle & 
-  \chemfig{!\vide{} H-C !\HH -OH} &
-  \chemfig{H-C !\HH -C !\HH -OH} &
-  \chemfig{H_3C -CH_2 -CH_2 -OH} &
-  \chemfig{-[:30] !\lbh !\lb OH} \\
-  Carboxyle & 
-  \chemfig{!\vide{:-30} H-[:30] C !\carboxyle} & 
-  \chemfig{H_3 C-C !\carboxyleDev} &
-  \chemfig{-[:30] !\lb !\carboxyle} &
-  \chemfig{-[:30] !\lbh !\carboxyle} \\
-  %
-  Carbonyle &
-  \chemfig{!\vide{:-30} H-[:30] C !\carbonyle H} &
-  \chemfig{H_2 C-CH-C !\carbonyleDev H} &
-  \chemfig{-[:30] !\lb !\carbonyle H} &
-  \chemfig{-[:30] !\lbh !\carbonyle H} \\
-  %
-  Carbonyle & & &
-  \chemfig{H_3C-C (=[::90]O) -CH_3} &
-  \chemfig{-[:-30] !\lh !\carbonyle} \\
-  %
-  Ester     & &
-  \chemfig{!\vide{:-30} H-[:30] C !\ester -CH_3} &
-  \chemfig{H_3C -C!\ester -CH_3} &
-  \chemfig{H_3C -CH_2 -C!\ester -CH_3} \\
-  %
-  Ether     & &
-  \chemfig{!\vide{} H_2 C-O-CH_2} &
-  \chemfig{-[:-30] !\ether} &
-  \chemfig{-[:-30] !\ether !\lh} \\
-  %
-  Amine     &
-  \chemfig{!\vide{} H-C!\HH -NH_2} &
-  \chemfig{!\vide{} H-C!\HH -C!\HH -NH_2} &
-  \chemfig{-[:30] !\lbh NH_2} &
-  \chemfig{-[:30] !\lbh !\lb NH_2} \\
-  %
-  Amide     &
-  \chemfig{!\vide{:-30} H-[:30] C !\amide H_2} &
-  \chemfig{!\vide{:-30} H_3C-[:30] C !\amide H_2} &
-  \chemfig{-[:-30] !\lh !\amide H_2} &
-  \chemfig{-[:30] !\lbh !\amide H_2} \\
+  \chemfig[bond join=true]{!\glucoseHaw} &
+  \chemfig[bond join=true]{!\fructofuranoseHaw}
 \end{tblr}
 
-\chemfig{!\glucoseHaw}
-\chemfig{!\fructofuranoseHaw}
+\setchemfig{bond style={line width=1.5pt}, bond join=true}
+\begin{tblr}{
+  columns = {c, wd = 0.17\linewidth},
+  hlines, vlines,
+}  
+  \chemfig{!\threonine} &
+  \chemfig{!\alanine} &
+  \chemfig{!\valine} &
+  \chemfig{!\proline}
+\end{tblr}
+\medskip
 
-\chemfig{!\threonine}
-\chemfig{!\alanine}
-\chemfig{!\valine}
-\chemfig{!\proline}
-
-\chemfig[chemfig style={line width=4pt}]{!\tete!\carboxyle !\trioleique}
-
-\chemfig[chemfig style={line width=4pt}]{!\arachidonique}
+\chemfig{!\tete!\carboxyle !\trioleique}
 \vspace*{24pt}
 
-\chemfig[chemfig style={line width=4pt}]{!\eicosaPentaenoique}
-\vspace*{24pt}
+\chemfig{!\arachidonique} \quad
+\chemfig{!\eicosaPentaenoique}
 
-\chemfig[chemfig style={line width=4pt}]{!\paracetamol}
-\chemfig[chemfig style={line width=4pt}]{
-  HO -[::-30,] (!\llh O) !\lb!\lh (!\lb NH_2) % chaine latérale
-  !\lh (!\llh O) !\lb \!\NH !\lh % amide
-  *6(- (=O) -O (-) !\vide{} *6(-=-=-) =--) % double cycle
-}
+% \chemfig[chemfig style={line width=4pt}]{!\paracetamol}
+% \chemfig[chemfig style={line width=4pt}]{!\aspartameCompact}
 
 % 2x28 + 2x11 = 78
