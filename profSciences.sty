@@ -771,8 +771,10 @@
 }
 
 % Pour faire plusieurs sujets en parallèle
-\newcommand{\variationSujet}[2]{%
-  \ifthenelse{\boolean{sujetA}}{#1}{#2}%
+\NewDocumentCommand{\variationSujet}{+m +m}{%
+  \ifthenelse {\boolean{sujetA}}
+    {#1}
+    {#2}%
 }
 
 
