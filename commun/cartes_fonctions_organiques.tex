@@ -6,38 +6,44 @@
   \chemfig{!\vide{} H-C !\HH -OH} &
   \chemfig{H-C !\HH -C !\HH -OH} &
   \chemfig{H_3C -CH_2 -CH_2 -OH} &
-  \chemfig{-[:30] !\cbh !\cb OH} \\
+  \chemfig{-[:30] !\lbh !\lb OH} \\
   Carboxyle & 
   \chemfig{!\vide{:-30} H-[:30] C !\carboxyle} & 
-  \chemfig{H_2 C-CH-C !\carboxyleDev} &
-  \chemfig{-[:30] !\cb !\carboxyle} &
-  \chemfig{-[:30] !\cbh !\carboxyle} \\
+  \chemfig{H_3 C-C !\carboxyleDev} &
+  \chemfig{-[:30] !\lb !\carboxyle} &
+  \chemfig{-[:30] !\lbh !\carboxyle} \\
+  %
   Carbonyle &
   \chemfig{!\vide{:-30} H-[:30] C !\carbonyle H} &
   \chemfig{H_2 C-CH-C !\carbonyleDev H} &
-  \chemfig{-[:30] !\cb !\carbonyle H} &
-  \chemfig{-[:30] !\cbh !\carbonyle H} \\
+  \chemfig{-[:30] !\lb !\carbonyle H} &
+  \chemfig{-[:30] !\lbh !\carbonyle H} \\
+  %
   Carbonyle & & &
   \chemfig{H_3C-C (=[::90]O) -CH_3} &
-  \chemfig{-[:-30] !\ch !\carbonyle} \\
+  \chemfig{-[:-30] !\lh !\carbonyle} \\
+  %
   Ester     & &
   \chemfig{!\vide{:-30} H-[:30] C !\ester -CH_3} &
   \chemfig{H_3C -C!\ester -CH_3} &
   \chemfig{H_3C -CH_2 -C!\ester -CH_3} \\
+  %
   Ether     & &
   \chemfig{!\vide{} H_2 C-O-CH_2} &
   \chemfig{-[:-30] !\ether} &
-  \chemfig{-[:-30] !\ether !\ch} \\
+  \chemfig{-[:-30] !\ether !\lh} \\
+  %
   Amine     &
   \chemfig{!\vide{} H-C!\HH -NH_2} &
   \chemfig{!\vide{} H-C!\HH -C!\HH -NH_2} &
-  \chemfig{-[:30] !\cbh NH_2} &
-  \chemfig{-[:30] !\cbh !\cb NH_2} \\
+  \chemfig{-[:30] !\lbh NH_2} &
+  \chemfig{-[:30] !\lbh !\lb NH_2} \\
+  %
   Amide     &
   \chemfig{!\vide{:-30} H-[:30] C !\amide H_2} &
-  \chemfig{!\vide{:-30} H-[:30] C !\amide H -CH_3} &
-  \chemfig{-[:-30] !\ch !\amide !\ch} &
-  \chemfig{-[:-30] !\ch !\amide !\chb} \\
+  \chemfig{!\vide{:-30} H_3C-[:30] C !\amide H_2} &
+  \chemfig{-[:-30] !\lh !\amide H_2} &
+  \chemfig{-[:30] !\lbh !\amide H_2} \\
 \end{tblr}
 
 \chemfig{!\glucoseHaw}
@@ -46,13 +52,21 @@
 \chemfig{!\threonine}
 \chemfig{!\alanine}
 \chemfig{!\valine}
+\chemfig{!\proline}
 
-\chemfig{!\tete!\carboxyle !\trioleique}
-\chemfig{!\arachidonique}
-\chemfig{!\eicosaPentaenoique}
+\chemfig[chemfig style={line width=4pt}]{!\tete!\carboxyle !\trioleique}
 
-\chemfig{!\vide{:90}\chembelow{N}{H}!\adenine}
-\chemfig{!\paracetamol}
-\chemfig{!\aspartame}
+\chemfig[chemfig style={line width=4pt}]{!\arachidonique}
+\vspace*{24pt}
 
-2x28 + 2x11 = 78
+\chemfig[chemfig style={line width=4pt}]{!\eicosaPentaenoique}
+\vspace*{24pt}
+
+\chemfig[chemfig style={line width=4pt}]{!\paracetamol}
+\chemfig[chemfig style={line width=4pt}]{
+  HO -[::-30,] (!\llh O) !\lb!\lh (!\lb NH_2) % chaine latérale
+  !\lh (!\llh O) !\lb \!\NH !\lh % amide
+  *6(- (=O) -O (-) !\vide{} *6(-=-=-) =--) % double cycle
+}
+
+% 2x28 + 2x11 = 78
