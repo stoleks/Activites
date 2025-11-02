@@ -42,7 +42,7 @@ do
   fi
 
   # corrections if asked
-  if [[ "$3" != "correction" || "$4" != "correction" ]]; then
+  if [[ "$3" != "correction" && "$4" != "correction" ]]; then
     continue
   fi
   for directory in $level/*;
