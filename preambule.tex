@@ -1,0 +1,42 @@
+\documentclass[12pt]{extarticle}
+
+%------ Pour avoir les accents et autre caractère français
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%------ Paquets utilisés
+%\usepackage{ghsystem} % pictogramme de sécurité
+\usepackage{subcaption} % pour les légendes des figures
+\usepackage[european, straightvoltages, RPvoltages]{circuitikz} % pour dessiner des circuits électrique
+\usepackage{pdfpages} % pour inclure des fichiers pdf
+\usepackage{geometry} % définition des marges
+\usepackage[export]{adjustbox} % alignement vertical des images
+
+%------% Paquets persos
+\usepackage{biomolecules} % pour dessiner des formules chimiques
+\usepackage{profSciences} % mise en page et autre
+
+%------ Commandes prédéfinies
+\input{_abbreviations}
+\input{_chapitres}
+\input{_tableau_periodique}
+
+%------ Réglages de la taille des indentations et des sauts de paragraphes
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0cm}
+\renewcommand{\baselinestretch}{1}
+% réglage du niveau (sous-section) ou s'arrête la table des matières
+\setcounter{tocdepth}{2}
+
+%------ Réglage de la géométrie des pages
+\geometry{
+  a4paper, % format
+  left=1.3cm, right=1.3cm, % marge horizontale
+  top=2.2cm, bottom=2.1cm % marge verticale
+}
+
+%------ Réglage des en-tête
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{22.50113pt}
