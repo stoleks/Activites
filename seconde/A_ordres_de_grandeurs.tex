@@ -2,6 +2,7 @@
 \vspace*{-30pt}
 \titreActivite{Ordre de grandeur}
 
+\vspace*{-12pt}
 \begin{objectifs}
   \item Revoir la notation scientifique et le système international des unités.
   \item Découvrir les raisonnements rapides avec des ordres de grandeur.
@@ -35,41 +36,21 @@
 \end{doc}
 
 \begin{doc}{La notation scientifique}
-  \begin{importants}
-    La \important{notation scientifique} d'une quantité se présente de la façon suivante :
-    % Textes
-    \begin{center}
-      \texteEncadre{chiffre différent de zéro}
-      \qq{}
-      \texteEncadre{autres chiffres} 
-      \qq{}
-      \texteEncadre{puissance de dix}
-      \texteEncadre{\important{unité}}
-    \end{center}
-    % Virgule et multiplication
-    \vspace*{-30pt} \hspace*{4pt}
-    \begin{tikzpicture}  
-      \draw [white] (0,0) circle;
-      \draw [couleurSec, thick] (5.5,-0.25) circle [radius=0.3] node {$,$};
-      \draw [couleurSec, thick] (9.65,0) circle [radius=0.3] node {$\times$};
-    \end{tikzpicture}
-  \end{importants}
+  \input{commun/notation_scientifique}
 \end{doc}
 
 \numeroQuestion Écrire les quantités suivantes en notation scientifique :
-  
-\separationBlocs{
-  \qty{288}{\hour}    = \texteTrou(0){\qty{2,88e2}{\hour}}
-  \correction{\newline}
-  \qty{756864000}{\s} = \texteTrou(0){\qty{7,56864}{\s}}
-}{
-  \qty{638}{\newton}   = \texteTrou(0){\qty{6,38}{\newton}}
-  \correction{\newline}
-  \qty{0,9997}{\g/\ml} = \texteTrou(0){\qty{9,997e-1}{\g/\ml}}
-}
+ 
+\begin{listePoints}[2]
+  \item \qty{288}{\hour}     = \texteTrou(0){\qty{2,88e2}{\hour}}
+  \item \qty{756864000}{\s}  = \texteTrou(0){\qty{7,56864}{\s}}
+  \item \qty{638}{\newton}   = \texteTrou(0){\qty{6,38}{\newton}}
+  \item \qty{0,9997}{\g/\ml} = \texteTrou(0){\qty{9,997e-1}{\g/\ml}}
+\end{listePoints}
 
 
 %%
+\vspace*{-12pt}
 \titreSection{Les ordres de grandeurs}
 
 \begin{doc}{Définition d'un ordre de grandeur}
@@ -89,17 +70,12 @@
 \vspace*{-28pt}
 \numeroQuestion Donner l'ordre de grandeur des quantités suivantes :
 
-\separationBlocs{
-  \qty{3,00e8}{\m\per\s} = \texteTrou(0){\qty{e8}{\m\per\s}}
-  \newline
-  \correction{\newline}
-  \qty{1,67e-27}{\kg}    = \texteTrou(0){\qty{e-27}{\kg}}
-}{
-  \qty{9,11e-31}{\kg} = \texteTrou(0){$\num{e1} \times \qty{e-31}{\kg} = \qty{e-30}{\kg}$}
-  \newline
-  \correction{\newline}
-  \qty{53e-12}{\m}    = \texteTrou(0){$\num{e2} \times \qty{e-12}{\m} = \qty{e-10}{\m}$}
-}
+\begin{listePoints}[2]
+  \item \qty{3,00e8}{\m\per\s} = \texteTrou(0){\qty{e8}{\m\per\s}}
+  \item \qty{1,67e-27}{\kg}    = \texteTrou(0){\qty{e-27}{\kg}}
+  \item \qty{9,11e-31}{\kg} = \texteTrou(0){$\num{e1} \times \qty{e-31}{\kg} = \qty{e-30}{\kg}$}
+  \item \qty{53e-12}{\m}    = \texteTrou(0){$\num{e2} \times \qty{e-12}{\m} = \qty{e-10}{\m}$}
+\end{listePoints}
 
 
 %%%%

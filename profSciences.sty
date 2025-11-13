@@ -77,6 +77,7 @@
 \DeclareFontShape{U}{FontAwesomeThree}{m}{n}{<-> FontAwesome--fontawesomethree}{}
 \DeclareRobustCommand\FAthree{\fontencoding{U}\fontfamily{FontAwesomeThree}\fontseries{m}\fontshape{n}\selectfont}
 
+%----- Si on a besoin de notations mathématiques
 \if@utilisePhysique
   %----- Notations de physique-chimie
   \RequirePackage{esvect}  % flèches de vecteurs esthétiques
@@ -197,9 +198,10 @@
     listing options = {%
       breaklines = true,%
       breakatwhitespace = true,%
-      style = tcblatex, basicstyle = \footnotesize\ttfamily,%
+      style = tcblatex,%
+      basicstyle = \footnotesize\ttfamily,%
       tabsize = 2,%
-      commentstyle = {\itshape\color{couleurSec-300}},
+      commentstyle = {\itshape\color{couleurSec-300}},%
       keywordstyle = {\color{couleurSec}},%
       classoffset = 0,%
       keywords = {chemfig, definesubmol},%
@@ -346,7 +348,7 @@
   \end{boiteActivite}
 }
 \NewDocumentEnvironment{TPNumerique}{m}{%
-  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \programmation*TP}
+  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \programmer*TP}
   \begin{boiteActivite}     
 }{%
   \end{boiteActivite}
@@ -503,20 +505,29 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------ Style python
-\lstdefinestyle{codePython}{
-  commentstyle=\color{magenta-500},
-  keywordstyle=\color{green-500},
-  stringstyle =\color{purple-500},
-  numberstyle =\tiny\color{black!50},
-  basicstyle  =\ttfamily\footnotesize,
-  breakatwhitespace=false, breaklines=true, keepspaces=true,
-  showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,
-  captionpos=b, numbers=left, numbersep=5pt,
-  extendedchars=true,
-  literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1, 
+\lstdefinestyle{codePython}{%
+  commentstyle = \color{magenta-500},%
+  keywordstyle = \color{green-500},%
+  stringstyle  = \color{purple-500},%
+  numberstyle  = \tiny\color{black!50},%
+  basicstyle   = \ttfamily\footnotesize,%
+  breakatwhitespace=false, breaklines=true, keepspaces=true,%
+  showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,%
+  captionpos=b, numbers=left, numbersep=5pt,%
+  extendedchars=true,%
+  literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1,%
 }
-\newcommand{\pythonEnLigne}[1]{
-  \lstinline[style = codePython, language = python]| #1 |
+\lstdefinestyle{codeLatex}{
+  basicstyle = \footnotesize\ttfamily,%
+  commentstyle = {\itshape\color{couleurSec-300}},%
+  keywordstyle = {\color{couleurSec}},%
+  keywords = {chemfig, definesubmol},%
+  classoffset = 0, alsoletter = {-},%
+  keywordstyle = {\color{couleurSec}},%
+  breakatwhitespace=false, breaklines=true, keepspaces=true,%
+  showspaces=false, showstringspaces=false, showtabs=false, tabsize=2,%
+  captionpos=b,%
+  extendedchars=true,%
 }
 
 %------ Boite LaTex, adapatée de Cedric Pierquet https://ctan.org/pkg/proflycee
@@ -535,140 +546,140 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%------------- Pagination et sections
 \NewDocumentCommand{\titre}{O{black} m}{%
-  \begin{center}
-    \textcolor{#1} {\textsf{\bfseries \Large #2}}
-  \end{center}
+  \begin{center}%
+    \textcolor{#1} {\textsf{\bfseries \Large #2}}%
+  \end{center}%
 }
 \newcommand{\pasDePagination}{%
-  \thispagestyle{empty} 
+  \thispagestyle{empty}%
 }
 \newcommand{\feuilleBlanche}{%
-  \newpage
-  \phantom{b}
-  \pasDePagination
+  \newpage%
+  \phantom{b}%
+  \pasDePagination%
 }
 \NewDocumentCommand{\inclusActivite}{O{1} m}{%
-  \numeroActivite{#1}
-  \input{#2}
+  \numeroActivite{#1}%
+  \input{#2}%
 }
     
 
 %------ activité ou TP
 \newcommand{\titreActi}[2]{%
-  \refstepcounter{activiteNum}
+  \refstepcounter{activiteNum}%
   \addcontentsline{toc}{subsection}{#1 \arabic{activiteNum} -- #2}%
-  \titre{#1 \arabic{part}.\arabic{activiteNum} -- #2}
+  \titre{#1 \arabic{part}.\arabic{activiteNum} -- #2}%
 }
 \NewDocumentCommand{\titreTP}{s m}{%
-  \IfBooleanTF{#1}{ % Version *
-    \titreActi{Activité expérimentale}{#2}
+  \IfBooleanTF{#1}{% Version *
+    \titreActi{Activité expérimentale}{#2}%
   }{%
-    \titreActi{TP}{#2}
-  }
+    \titreActi{TP}{#2}%
+  }%
 }
 \NewDocumentCommand{\titreActivite}{s m O{Activité}}{%
-  \IfBooleanTF{#1}{ % Version * sans le numéro du chapitre
-    \refstepcounter{activiteNum}
+  \IfBooleanTF{#1}{% Version * sans le numéro du chapitre
+    \refstepcounter{activiteNum}%
     \addcontentsline{toc}{subsection}{#3 \arabic{activiteNum} -- #2}%
-    \titre{#3 \arabic{activiteNum} -- #2}
+    \titre{#3 \arabic{activiteNum} -- #2}%
   }{%
-    \titreActi{#3}{#2}
-  }
+    \titreActi{#3}{#2}%
+  }%
 }
 \NewDocumentCommand{\titreEvaluation}{o m}{%
   \IfNoValueTF{#1}{%
-    \titre{Évaluation \arabic{part} -- #2}
+    \titre{Évaluation \arabic{part} -- #2}%
   }{%
-    \titre{Évaluation #1 -- #2}
-  }
+    \titre{Évaluation #1 -- #2}%
+  }%
   % reinitialisation du numéro de page et d'exercices
-  \reinitialiseCompteur
+  \reinitialiseCompteur%
 }
 \newcommand{\exercice}[1]{%
-  \refstepcounter{exerciceNum}
+  \refstepcounter{exerciceNum}%
   \addcontentsline{toc}{subsubsection}{Exercice \arabic{exerciceNum} : #1}%
-  \important[black]{\large Exercice \arabic{exerciceNum} : #1}
+  \important[black]{\large Exercice \arabic{exerciceNum} : #1}%
   % reset des numéros de questions
-  \setcounter{questionNum}{0}
-  \setcounter{documentNum}{0}
+  \setcounter{questionNum}{0}%
+  \setcounter{documentNum}{0}%
 }
 
 
 %------ chapitre, partie, section et sous-section
 \newcommand{\chapitre}[1]{ % Réglage du titre du chapitre
-  Chapitre \arabic{part} -- #1
+  Chapitre \arabic{part} -- #1%
 }
 %
 \newcommand{\titreChapitre}[1]{ % Affichage du titre du chapitre
   \addcontentsline{toc}{part}{Chapitre \arabic{part} -- #1}%
-  \titre{\chapitre{#1}}
+  \titre{\chapitre{#1}}%
 }
 %
 \NewDocumentCommand{\titrePartie}{ s m }{%
-  \vspace*{12pt}
-  \refstepcounter{section}
-  \IfBooleanTF{#1}{}{ % Version sans *
+  \vspace*{12pt}%
+  \refstepcounter{section}%
+  \IfBooleanTF{#1}{}{% Version sans *
     \addcontentsline{toc}{section}{\arabic{part}.\arabic{section} -- #2}%
-  }
+  }%
   \boiteTitre [couleurPrim] {%
     \important[white]{\Large\Roman{section} --}%
   }{%
-    \important[white]{\Large{#2}}
-  }
-  \vspace*{8pt}
+    \important[white]{\Large{#2}}%
+  }%
+  \vspace*{8pt}%
 }
 %
 \NewDocumentCommand{\titreSection}{ s m }{%
-  \vspace*{12pt}
-  \refstepcounter{subsection}
-  \IfBooleanTF{#1}{}{ % Version sans *
+  \vspace*{12pt}%
+  \refstepcounter{subsection}%
+  \IfBooleanTF{#1}{}{% Version sans *
     \addcontentsline{toc}{subsection}{\arabic{part}.\arabic{section}.\arabic{subsection} -- #2}%
-  }
-  \setcounter{subsubsection}{0}
+  }%
+  \setcounter{subsubsection}{0}%
   %--- Tracé du numéro de section
   \flecheTitre [couleurPrim] {%
-    \important[white]{\large\arabic{subsection}}
-  }{
-    \important[black]{\large #2}
-  }
-  \vspace*{1pt}
+    \important[white]{\large\arabic{subsection}}%
+  }{%
+    \important[black]{\large #2}%
+  }%
+  \vspace*{1pt}%
 }
 %
 \newcommand{\titreSousSection}[1]{%
-  \vspace*{12pt}
-  \refstepcounter{subsubsection}
-  \important[black]{\Alph{subsubsection} -- #1}
-  \vspace*{4pt}
+  \vspace*{12pt}%
+  \refstepcounter{subsubsection}%
+  \important[black]{\Alph{subsubsection} -- #1}%
+  \vspace*{4pt}%
 }
 
 %------ fixe le numéro de l'activité
 \newcommand{\reinitialiseCompteur}{%
   % fixe les compteurs LaTeX
-  \setcounter{section}{0}
-  \setcounter{subsection}{0}
-  \setcounter{subsubsection}{0}
-  \setcounter{figure}{0}
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \setcounter{subsubsection}{0}%
+  \setcounter{figure}{0}%
   % fixe les compteurs internes
-  \setcounter{documentNum}{0}
-  \setcounter{questionNum}{0}
-  \setcounter{coupDePouceNum}{0}
-  \setcounter{seanceNum}{0}
-  \setcounter{exerciceNum}{0}
+  \setcounter{documentNum}{0}%
+  \setcounter{questionNum}{0}%
+  \setcounter{coupDePouceNum}{0}%
+  \setcounter{seanceNum}{0}%
+  \setcounter{exerciceNum}{0}%
 }
 \newcommand{\reinitialiseActiviteTP}{%
-  \setcounter{activiteNum}{0}
-  \setcounter{TPNum}{0}
+  \setcounter{activiteNum}{0}%
+  \setcounter{TPNum}{0}%
 }
 %
 \newcommand{\numeroActivite}[1]{%
-  \reinitialiseCompteur
-  \setcounter{activiteNum}{#1 - 1}
+  \reinitialiseCompteur%
+  \setcounter{activiteNum}{#1 - 1}%
 }
 % fixe le numéro de partie (#1) et le numéro de la page (#2)
 \newcommand{\numeroPartieCours}[2]{%
-  \newpage
-  \setcounter{section}{#1 - 1}
-  \setcounter{page}{#2}
+  \newpage%
+  \setcounter{section}{#1 - 1}%
+  \setcounter{page}{#2}%
 }
 
 
@@ -775,16 +786,16 @@
 \newboolean{sujetA}
 \setboolean{sujetA}{true}
 \newcommand{\sujetB}{%
-  \setboolean{sujetA}{false}
+  \setboolean{sujetA}{false}%
 }
 \newcommand{\sujetA}{%
-  \setboolean{sujetA}{true}
+  \setboolean{sujetA}{true}%
 }
 
 % Pour faire plusieurs sujets en parallèle
 \NewDocumentCommand{\variationSujet}{+m +m}{%
-  \ifthenelse {\boolean{sujetA}}
-    {#1}
+  \ifthenelse {\boolean{sujetA}}%
+    {#1}%
     {#2}%
 }
 
@@ -799,16 +810,16 @@
   \IfBooleanTF{#1}{}{% cas non étoilé, avec un espace
     \setlength\parindent{\questionIndent}
   }%
-  \textcolor{couleurSec}{%
+  \textcolor{couleurSec}{
     \textbf{\arabic{#2}} {\small\faMinus}
-  }%
+  }
   \setlength\parindent{0pt}%
 }
 %------ Sous question sous la forme 1.2
 \NewDocumentCommand{\numeroSousQuestion}{}{%
   \setlength\parindent{1.5\questionIndent}%
   \refstepcounter{sousQuestionNum}%
-  \textcolor{couleurSec}{%
+  \textcolor{couleurSec}{
     \textbf{\arabic{questionNum}.\arabic{sousQuestionNum}.}
   }
   \setlength\parindent{0pt}%
@@ -816,15 +827,15 @@
 
 %------ lignes pointillées et pleines
 \newcommand{\ligne}{%
-  \par\noindent\rule{\textwidth}{0.4pt}
+  \par\noindent\rule{\textwidth}{0.4pt}%
 }
 %
 \NewDocumentCommand{\lignePointillee}{o}{%
   \IfValueTF{#1}{%
-    \makebox[#1]{\dotfill}
+    \makebox[#1]{\dotfill}%
   }{%
-    \phantom{b}\hspace*{-12pt} \dotfill
-  }
+    \phantom{b}\hspace*{-12pt} \dotfill%
+  }%
 }
 
 
@@ -852,11 +863,11 @@
 \NewDocumentCommand{\implReponse}{+m m}{
   % pointille ou correction
   \ifthenelse {\boolean{modeProf}} {% prof
-    \begin{boiteColoree}
+    \begin{boiteColoree}%
       #1
-    \end{boiteColoree}
+    \end{boiteColoree}%
   }{% eleve
-    \lignesDeReponse{#2}
+    \lignesDeReponse{#2}%
   }
 }
 % \qestion {question} {réponse} [nombre de lignes] ; * = pas d'indentation
@@ -867,19 +878,19 @@
     \numeroQuestion \!#2
   }
   %
-  \implReponse{#3}{#4}
+  \implReponse{#3}{#4}%
 }
 
 % sous questions
 \NewDocumentCommand{\sousQuestion}{+m +m O{0}}{%
   \numeroSousQuestion #1
   %
-  \implReponse{#2}{#3}
+  \implReponse{#2}{#3}%
 }
 
 % Point associé à une question
 \newcommand{\points}[1]{%
-  \marginnote{#1}
+  \marginnote{#1}%
 }
 
 
@@ -1012,31 +1023,31 @@
 %%------------- Symboles et décorations
 %------ symboles : chevron, flèche, attention, etc.
 \NewDocumentCommand{\chevron}{O{couleurPrim}}{%
-  \textcolor{#1}{\small \faChevronRight}%
+  \textcolor{#1}{\small \faChevronRight}
 }
 %
 \NewDocumentCommand{\fleche}{O{couleurPrim}}{%
-  \textcolor{#1}{\faCaretRight}%
+  \textcolor{#1}{\faCaretRight}
 }
 %
 \NewDocumentCommand{\attention}{O{couleurPrim}}{%
-  \textcolor{#1}{\faExclamationTriangle}%
+  \textcolor{#1}{\faExclamationTriangle}
 }
 %
 \NewDocumentCommand{\flecheLongue}{O{couleurPrim}}{%
-  \textcolor{#1}{\faLongArrowAltRight}%
+  \textcolor{#1}{\faLongArrowAltRight}
 }
 %
 \NewDocumentCommand{\ok}{O{couleurPrim}}{%
-  \textcolor{#1}{\faCheckCircle}%
+  \textcolor{#1}{\faCheckCircle}
 }
 %
 \NewDocumentCommand{\pasOk}{O{couleurPrim}}{%
-  \textcolor{#1}{\faTimesCircle}%
+  \textcolor{#1}{\faTimesCircle}
 }
 %
 \NewDocumentCommand{\pointCyan}{O{couleurPrim}}{%
-  \textcolor{#1}{\scriptsize\faCircle}%
+  \textcolor{#1}{{\tiny\faCircle}}
 }
 
 %------ Commande générale pour colorer un texte avec une couleur par défaut
@@ -1157,16 +1168,16 @@
 
 %------ jeu de données, avec plusieurs colonnes possibles
 \NewDocumentEnvironment{donnees}{o +m}{%
-  \important{Données :}
+  \important{Données :}%
   \IfValueTF{#1}{%
-    \vspace*{-8pt}
-    \begin{multicols}{#1}
+    \vspace*{-8pt}%
+    \begin{multicols}{#1}%
   }{}
-  \begin{listeTirets}
+  \begin{listeTirets}%
     #2
 }{%
-  \end{listeTirets}
-  \IfValueTF{#1}{ \end{multicols} }{}
+  \end{listeTirets}%
+  \IfValueTF{#1}{\end{multicols}}{}%
 }
 
 %------ liste d'objectif
@@ -1183,7 +1194,7 @@
 
 %------ liste avec chiffre
 \newlist{enumeration}{enumerate}{2}
-\setlist[enumeration]{label = \textcolor{couleurSec}{\textbf{\arabic*.}} }
+\setlist[enumeration]{label = \textcolor{couleurSec}{\textbf{\arabic*.}}}
 
 %------ problématique 
 \newcommand{\problematique}[1]{%
@@ -1226,7 +1237,7 @@
   \ensuremath{\overline{\mathrm{#1}}}%
 }
 \newcommand{\reaction}{%
-  \;\text{\faLongArrowAltRight}\; % flèche courte et jolie
+  \;\text{\faLongArrowAltRight}\;% flèche courte et jolie
 }
 
 %------ pour les masse molaire et atomique (* -> en indice)
@@ -1264,7 +1275,7 @@
 %------ element chimique dans le tableau périodique
 \newcommand{\element}[2]{%
   \ensuremath{%
-    _{\ensuremath{#2}} \chemfig[atom style={scale=1.3}]{#1}
+    _{\ensuremath{#2}} \chemfig[atom style={scale=1.3}]{#1}%
   }%
 }%
 
@@ -1275,14 +1286,15 @@
 
 %------ texte avec une boite autour
 \NewDocumentCommand{\texteEncadre}{m O{black}}{%
-  \textcolor{#2}{
-    \frame{\vphantom{$\dfrac{1}{1}$} 
-      \textcolor{black}{\text{#1}}
-    }
-  }
+  \textcolor{#2}{%
+    \frame{
+      \vphantom{$\dfrac{1}{1}$}\;
+      \textcolor{black}{\text{#1}}\,
+    }%
+  }%
 }
 
 %------ case cochée
 \newcommand{\caseCochee}{%
-  $\text{\rlap{$\checkmark$}}\square$
+  $\text{\rlap{$\checkmark$}}\square$%
 }

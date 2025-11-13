@@ -273,7 +273,7 @@
     jour = 1,
     creneau = 2,
     duree = 2,
-    couleur = green-200
+    couleur = couleurPrim-200
   },% stockage des clefs
   titre/.store in = \edtTitre,
   lieu/.store in = \edtLieu,
@@ -286,10 +286,10 @@
 \newdimen\edtLargeurJour
 \newdimen\edtX
 \newdimen\edtY
-\newcommand{\jours}{
+\newcommand{\edtJours}{
   \important{Lundi}, \important{Mardi}, \important{Mercredi}, \important{Jeudi}, \important{Vendredi}
 }
-\newcommand{\heures}{
+\newcommand{\edtHeures}{
   8h30, 9h30, 10h40, 11h40, 12h40, 13h40, 14h40, 15h50, 16h50, 17h50
 }
 
@@ -302,14 +302,14 @@
   \pgfmathsetlength{\edtLargeurJour}{(0.96*\edtLargeur - \edtLargeurHeures) / \edtNombreJours}
   % Trace les lignes pour les créneaux horaires
   \pgfmathsetlength{\edtX}{\edtLargeurHeures * 0.5}
-  \foreach \h [count=\i] in \heures {
+  \foreach \h [count=\i] in \edtHeures {
     \pgfmathsetlength{\edtY}{-(\i - 1)*\edtHauteurCreneau - \edtHauteurJours}
     \node at (\edtX, \edtY) {\footnotesize \h};
     \draw [dashed] (\edtLargeurHeures, \edtY) -- (0.96*\edtLargeur, \edtY);
   };
   % Trace les jours
   \pgfmathsetlength{\edtY}{0}
-  \foreach \j [count=\i] in \jours {
+  \foreach \j [count=\i] in \edtJours {
     \pgfmathsetlength{\edtX}{\edtLargeurHeures + (\i - 1)*\edtLargeurJour}
     \draw [draw = none] 
       (\edtX , \edtY) rectangle (\edtX + \edtLargeurJour, \edtY - \edtHauteurJours) 
