@@ -8,6 +8,13 @@
 \ProvidesPackage{profSciences}[2025/07/10 1.0.0 Quelques commandes utiles pour mettre en page des cours de sciences au lycée]
 % 1.0.0 Version de base 
 
+%%------------- Options
+\newif\if@utiliseSchemas \@utiliseSchemasfalse%
+\newif\if@utilisePhysique \@utilisePhysiquefalse%
+\DeclareOption{schemas}{\@utiliseSchemastrue}%
+\DeclareOption{physique}{\@utilisePhysiquetrue}%
+\ProcessOptions\relax
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%------------- Paquets
@@ -38,13 +45,6 @@
 %------ Notations mathématiques
 \RequirePackage{amsmath} % symboles mathématiques
 \RequirePackage{amssymb} % symboles en gras
-\RequirePackage{wasysym} % notation d'intégrales et autres
-\RequirePackage{accents} % notation algébrique
-
-%----- Notations de physique-chimie
-\RequirePackage{esvect}  % flèches de vecteurs esthétiques
-\RequirePackage{siunitx} % grandeurs avec des unités
-\RequirePackage{physics} % dérivées, etc.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,32 +77,41 @@
 \DeclareFontShape{U}{FontAwesomeThree}{m}{n}{<-> FontAwesome--fontawesomethree}{}
 \DeclareRobustCommand\FAthree{\fontencoding{U}\fontfamily{FontAwesomeThree}\fontseries{m}\fontshape{n}\selectfont}
 
-%----- Réglages de siunit
-\sisetup{
-  locale = FR,% français
-	group-minimum-digits = 4,% groupage des chiffres par milliers
-  inter-unit-product = \ensuremath{ { } \cdot { } },% point médian entre les unités,
-  mode=match, detect-weight, propagate-math-font=true,% 
-  reset-math-version=false, reset-text-family=false,%
-  reset-text-series=false, reset-text-shape=false,%
-  text-family-to-math=true, text-series-to-math=true% pour garder les paramètres environnants
-}
-\AtBeginDocument{\RenewCommandCopy\qty\SI}% Pour "écraser" la commande \qty du package physics
-%----- pour éviter des avertissements inutiles
-\ExplSyntaxOn
-\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
-\ExplSyntaxOff
+\if@utilisePhysique
+  %----- Notations de physique-chimie
+  \RequirePackage{esvect}  % flèches de vecteurs esthétiques
+  \RequirePackage{siunitx} % grandeurs avec des unités
+  \RequirePackage{physics} % dérivées, etc.
+  \RequirePackage{wasysym} % notation d'intégrales et autres
+  \RequirePackage{accents} % notation algébrique
 
-%------ Unités spéciales pour siunit
-\DeclareSIUnit{\dioptre}{\text{$\delta$}}
-\DeclareSIUnit{\dornic} {\text{\textdegree D}}
-\DeclareSIUnit{\ppm}    {\text{ppm}}
-\DeclareSIUnit{\COeq}   {\text{CO$_{2}$e}}
-\DeclareSIUnit{\kgCOeq} {\kg\COeq}
-\DeclareSIUnit{\jour}   {\text{jour}}
-\DeclareSIUnit{\min}    {\text{min}}
-\DeclareSIUnit{\cal}    {\text{cal}}
-\DeclareSIUnit{\kcal}   {\kilo\cal}
+  %----- Réglages de siunit
+  \sisetup{
+    locale = FR,% français
+  	group-minimum-digits = 4,% groupage des chiffres par milliers
+    inter-unit-product = \ensuremath{ { } \cdot { } },% point médian entre les unités,
+    mode=match, detect-weight, propagate-math-font=true,% 
+    reset-math-version=false, reset-text-family=false,%
+    reset-text-series=false, reset-text-shape=false,%
+    text-family-to-math=true, text-series-to-math=true% pour garder les paramètres environnants
+  }
+  \AtBeginDocument{\RenewCommandCopy\qty\SI}% Pour "écraser" la commande \qty du package physics
+  %----- pour éviter des avertissements inutiles
+  \ExplSyntaxOn
+  \msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+  \ExplSyntaxOff
+  
+  %------ Unités spéciales pour siunit
+  \DeclareSIUnit{\dioptre}{\text{$\delta$}}
+  \DeclareSIUnit{\dornic} {\text{\textdegree D}}
+  \DeclareSIUnit{\ppm}    {\text{ppm}}
+  \DeclareSIUnit{\COeq}   {\text{CO$_{2}$e}}
+  \DeclareSIUnit{\kgCOeq} {\kg\COeq}
+  \DeclareSIUnit{\jour}   {\text{jour}}
+  \DeclareSIUnit{\min}    {\text{min}}
+  \DeclareSIUnit{\cal}    {\text{cal}}
+  \DeclareSIUnit{\kcal}   {\kilo\cal}
+\fi
 
 %------ Paramètres généraux
 \newdimen\questionIndent
@@ -121,7 +130,9 @@
 \palette{couleurQuat}{red}
 
 %------ Schémas
-\input{schemas.tex}
+\if@utiliseSchemas
+  \input{schemas.tex}%
+\fi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1001,31 +1012,31 @@
 %%------------- Symboles et décorations
 %------ symboles : chevron, flèche, attention, etc.
 \NewDocumentCommand{\chevron}{O{couleurPrim}}{%
-  \textcolor{#1}{\small \faChevronRight}
+  \textcolor{#1}{\small \faChevronRight}%
 }
 %
 \NewDocumentCommand{\fleche}{O{couleurPrim}}{%
-  \textcolor{#1}{\faCaretRight}
+  \textcolor{#1}{\faCaretRight}%
 }
 %
 \NewDocumentCommand{\attention}{O{couleurPrim}}{%
-  \textcolor{#1}{\faExclamationTriangle}
+  \textcolor{#1}{\faExclamationTriangle}%
 }
 %
 \NewDocumentCommand{\flecheLongue}{O{couleurPrim}}{%
-  \textcolor{#1}{\faLongArrowAltRight}
+  \textcolor{#1}{\faLongArrowAltRight}%
 }
 %
 \NewDocumentCommand{\ok}{O{couleurPrim}}{%
-  \textcolor{#1}{\faCheckCircle}
+  \textcolor{#1}{\faCheckCircle}%
 }
 %
 \NewDocumentCommand{\pasOk}{O{couleurPrim}}{%
-  \textcolor{#1}{\faTimesCircle}
+  \textcolor{#1}{\faTimesCircle}%
 }
 %
 \NewDocumentCommand{\pointCyan}{O{couleurPrim}}{%
-  \textcolor{#1}{\textbullet}
+  \textcolor{#1}{\scriptsize\faCircle}%
 }
 
 %------ Commande générale pour colorer un texte avec une couleur par défaut
