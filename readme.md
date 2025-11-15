@@ -36,19 +36,23 @@ Personnellement j'utilise overleaf ou TexMaker au quotidien quand j'écris de no
 
 Pour générer plusieurs .pdf rapidement, j'utilise generateur.sh, qui va générer toutes les activités et toutes les corrections pour chaque niveau et pour chaque chapitre. Le script s'appelle simplement :
   
-    sh/bash generateur.sh "niveaux1 niveaux2 niveaux3 etc." "../Cours"
+    sh/bash generateur.sh -n "niveaux1 niveaux2 niveaux3 etc." -o "../Cours" -rc
 
-Le script va automatiquement commenter les lignes nécessaires dans main.tex, puis il va appeler generation\_niveau.sh pour chaque niveau avec la sortie demandée ("../Cours" ici) et generation\_correction.sh pour chaque niveau et chaque chapitre.
+où chaque niveau doit être accompagné d'un fichier .tex qui inclut les activités à générer avec \input ou \inclusActivite.
+Le script va automatiquement commenter les lignes nécessaires dans main.tex et les fichiers de niveaux si -r est spécifié, puis il va appeler generation\_niveau.sh pour chaque niveau avec la sortie demandée ("../Cours" ici) et generation\_correction.sh pour chaque niveau et chaque chapitre si -c est spécifié.
+
 Pour générer les activités d'un seul niveau, il suffit de donner un seul niveau à generateur.sh :
     
-    sh/bash generateur.sh "seconde" "../Cours"
+    sh/bash generateur.sh -n "seconde" -o "../Cours"
 
-Le script extrait les noms des fichiers à partir des commandes \inclusActivite et les déplace dans le dossier "../Cours/", en reprenant l'organisation des dossiers et les noms de fichiers dans ce répertoire, avec la numérotation demandée dans la commande \inclusActivite. (activites/seconde/atome/A\_structure.tex génère cours/seconde/atome/A1\_structure.pdf par exemple)
+Le script extrait les noms des fichiers à partir des commandes \inclusActivite et les déplace dans le dossier "../Cours/", en reprenant l'organisation des dossiers et les noms de fichiers dans ce répertoire, avec la numérotation demandée dans la commande \inclusActivite. (\inclusActivite[1]{seconde/atome/A\_structure.tex} génère cours/seconde/atome/A1\_structure.pdf par exemple)
+
 Pour générer les activités d'un chapitre d'un niveau, j'utilise generation\_chapitre.sh, appelé comme ça :
     
     sh/bash generation_chapitre.sh seconde atome "../Cours"
 
-Il fonctionne comme generation\_niveau, mais pour un chapitre. Pour être inclus dans le chapitre, il faut que le script trouve le nom du chapitre dans la ligne contenant le fichier. Ajouter "% \_mon\_chapitre" en fin de ligne permet donc d'inclure un fichier dans le chapitre, même s'il n'est pas dans le bon dossier.
+Pour être inclus dans un chapitre, il faut que le script trouve le nom du chapitre dans la ligne contenant le fichier. Ajouter "% \_mon\_chapitre" en fin de ligne permet donc d'inclure un fichier dans le chapitre, même s'il n'est pas dans le bon dossier.
+
 Pour les versions corrigées de chaque chapitre, j'utilise generation\_correction.sh, appelé comme suit pour un chapitre :
 
     sh/bash generation_correction.sh seconde atome "../Cours"

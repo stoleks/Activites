@@ -55,7 +55,6 @@ if [[ $clean = true ]]; then
   comment_lines "stssTerminale.tex"
   comment_lines "AP/AP.tex"
 fi
-exit
 
 # generate pdf for all levels
 for level in "${levels[@]}";
