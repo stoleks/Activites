@@ -8,7 +8,7 @@
 \end{objectifs}
 
 \begin{contexte}
-  Pour mesurer la température corporelle d'une personne rapidement et sans contact, on utilise un thermomètre sans contact.
+  Pour mesurer la température corporelle d'une personne rapidement et sans contact physique, on utilise un thermomètre infrarouge.
   
   \problematique{
     Quels principes physique sont utilisés par un thermomètre sans contact pour mesurer une température ?
@@ -43,12 +43,11 @@
     \image{0.8}{images/thermodynamique/capteur_IR}
   \end{center}
 
-  On ne peut mesurer que la température de la surface d'un corps avec un thermomètre IR.
+  On ne peut mesurer que la température de la \important{surface} d'un corps avec un thermomètre IR.
 \end{doc}
 
 \begin{doc}{Thermomètres médicaux sans contact}
   Les thermomètres médicaux sont conçus pour mesurer les températures du corps humain.
-
   L'intensité du rayonnement infrarouge est convertie en tension électrique, puis l'appareil calcule et affiche la température.
 
   \important{Caractéristiques techniques d'un thermomètre médical IR :}
@@ -65,7 +64,9 @@
 \question{
   Un thermomètre affiche une température de \qty{36,8}{\degreeCelsius}. 
   Calculer la plage de température possible du corps à l'aide de la précision de la mesure, c'est-à-dire la plus petite et la plus grande température possible.
-}{}[2]
+}{
+  Comme le thermomètre à une précision de $\pm \qty{0,2}{\degreeCelsius}$, les valeurs possibles sont comprises entre \qty{36,6}{\degreeCelsius} et \qty{40,0}{\degreeCelsius}.
+}[2]
 
 \question{
   À l'aide de la loi de Wien
@@ -73,11 +74,18 @@
     \lambda = \dfrac{\qty{2.9e-3}{\kelvin\m}}{T (\unit{\kelvin})}
   \end{equation*}
   calculer la longueur d'onde d'intensité maximale émise par un corps à une température de \qty{32}{\degreeCelsius}.
-}{}[3]
+}{
+  On convertit la température en kelvin : $T = (32 + 273)\unit{\kelvin} = \qty{305}{\kelvin}$, et on utilise la loi de Wien 
+  \begin{equation*}
+    \lambda = \dfrac{\qty{2.9e-3}{\kelvin\m}}{\qty{305}{\kelvin}} = \qty{9.5e-6}{\m}
+  \end{equation*}
+}[3]
 
 \question{
   Le capteur IR est-il adapté pour mesurer de telle température ?
-}{}[3]
+}{
+  Oui, car $\qty{9.5e-6}{\m} = \qty{9.5}{\micro\m}$ et cette valeur est comprise entre 8 et \qty{14}{\micro\m}.
+}[3]
 
 \question{
   On mesure la tension électrique fournie par le capteur pour différentes température :
@@ -86,15 +94,19 @@
     \begin{tblr}{
       cells = {c}, hlines, vlines, column{1} = {l, couleurSec-100}
     }
-      Température $T$ en \unit{\degreeCelsius} & 32,0 & 34,5 & 37,0 & 39,5 & 42,0 \\
-      Tension $U$ en \unit{\milli\volt}        & 512  & 1120 & 1635 & 2055 & 2430 \\
+      Température $T$ en \unit{\degreeCelsius} & 31,1 & 32,0 & 34,5 & 37,0 & 39,5 & 42,0 & 42.7\\
+      Tension $U$ en \unit{\milli\volt}        & 420  & 512  & 1120 & 1635 & 2055 & 2430 & 2650\\
     \end{tblr}
   \end{center}
   
   En utilisant une méthode graphique ou numérique, déterminer la température d'un corps correspondant à une tension de \qty{1728}{\milli\volt}.
-}{}[4]
+}{
+  On trouve une loi linéaire $T = U \times \qty{0.0052}{\degreeCelsius\per\milli\volt} + \qty{28.96}{\degreeCelsius}$, ce qui permet de calculer la température pour la tension demandée $T = \qty{0.0052}{\degreeCelsius\per\milli\volt} \times \qty{1728}{\milli\volt} + \qty{28.96}{\degreeCelsius} = \qty{37.9}{\degreeCelsius}$
+}[4]
 
 \question{
   Quel type de lentille doit-on utiliser dans le thermomètre pour concentrer la lumière ?
   Quelle est le nom de la distance entre la lentille et le capteur ?
-}{}[3]
+}{
+  On doit utiliser une lentille convergente, la distance entre la lentille et le capteur est la distance focale.
+}[3]

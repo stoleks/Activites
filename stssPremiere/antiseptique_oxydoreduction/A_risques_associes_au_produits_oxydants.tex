@@ -59,93 +59,116 @@
 
 \question{
   Quels sont les précautions communes à ces trois produits oxydants ?
-}{}[2]
+}{
+  Ce sont des produits corrosifs et nocifs, donc il ne faut pas les ingérer et les mettre (à forte concentration) sur la peau.
+}[2]
 
 \question{
   Indiquer les propriétés d'un local qui permettrait de stocker ces trois produits oxydants.
-}{}[2]
+}{
+  Il faut un local ventilé, à l'abri des hautes températures et des rayonnements solaires.
+}[2]
 
 \newpage\vspace*{-42pt}
-\begin{doc}{Principes actifs courants}
+\begin{doc}{Quelques espèces oxydantes}
+  \vspace*{-4pt}
   Les principes actifs des antiseptiques et désinfectants agissent par \important{oxydation.}
+  \vspace*{4pt}
 
   \centering
   \begin{tblr}{
-    colspec = {X[l] |c | r c l}, hlines, width=\linewidth,
+    colspec = {X[l] |c |r c l}, hlines, width=\linewidth,
+    %column{4} = {8pt},
     row{1} = {couleurSec-100},
     row{5} = {m},
   }
-    Principe actif & Couples Ox/red & \SetCell[c=3]{c} Demi-équation d'oxydoréduction \\
+    Principe actif &
+    Couples Ox/red &
+    \SetCell[c=3]{c} Demi-équation d'oxydoréduction \\
+    %
     \SetCell[r = 2]{l} Eau oxygénée &
-    \chemfig{H_2O_2}\aq/\chemfig{H_2O}\liq &
-    $\chemfig{H_2O_2}\aq + 2\ionHydrogene\aq + 2\electron$ &
+    \eauOxygenee/\eau &
+    $\eauOxygenee + 2\ionHydrogene + 2\electron$ &
     \reaction &
-    $2\chemfig{H_2O}\liq$ \\
+    $2\eau$ \\
     &
-    \dioxygene\gaz/\chemfig{H_2O_2}\aq & 
-    $\dioxygene\gaz + 2\ionHydrogene\aq + 2\electron$ &
+    \dioxygene/\eauOxygenee & 
+    $\dioxygene + 2\ionHydrogene + 2\electron$ &
     \reaction &
-    $\chemfig{H_2O_2}\aq$ \\
+    $\eauOxygenee$ \\
     %
-    %\SetCell[r = 2]{l}
     Eau de Javel &
-    \hypochlorite\aq/\chlorure\aq &
-    $\hypochlorite\aq + 2\ionHydrogene\aq + 2\electron$ &
+    \hypochlorite/\chlorure &
+    $\hypochlorite + 2\ionHydrogene + 2\electron$ &
     \reaction &
-    $\chlorure\aq + \chemfig{H_2O}\liq$ \\
+    $\chlorure + \eau$ \\
     %
-    % &
-    % $\hypochlorite\aq/\chemfig{Cl_2}\gaz$ &
-    % $2\hypochlorite\aq + 4\ionHydrogene\aq + 2\electron$ &
-    % $\reaction \chemfig{Cl_2}\gaz + \chemfig{H_2O}\liq$ \\
+    Dichlore &
+    $\dichlore/\chlorure$ &
+    $\dichlore + 2\electron$ &
+    \reaction &
+    $2\chlorure$ \\
     %
     Diiode &
-    \diiode\aq/\chemfig{I^{-}}\aq &
-    $\diiode\aq + 2\electron$ &
+    \diiode/\iodure &
+    $\diiode + 2\electron$ &
     \reaction &
-    $2\chemfig{I^{-}}\aq$ \\
+    $2\iodure$ \\
     %
     Permanganate de potassium &
-    \chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq &
-    $\chemfig{MnO_4^{-}}\aq + 8\ionHydrogene\aq + 5\electron$ &
+    \permanganate/\ionManganeseII &
+    $\permanganate + 8\ionHydrogene + 5\electron$ &
     \reaction &
-    $\chemfig{Mn^{2+}}\aq + 4\chemfig{H_2O}\liq$ \\
+    $\ionManganeseII + 4\eau$ \\
     %
   \end{tblr}
 \end{doc}
 
 
 \begin{doc}{Eau de Javel et produit acide : un mélange dangereux !}
-  L'eau de Javel est une solution aqueuse basique d’hypochlorite de sodium (\chemfig{Na^{+}}, \hypochlorite) et de chlorure de sodium (\chemfig{Na^{+}}, \chlorure).
+  L'eau de Javel est une solution aqueuse basique d’hypochlorite de sodium (\ionSodium, \hypochlorite) et de chlorure de sodium (\ionSodium, \chlorure).
   Un produit acide contient des ions \ionHydrogene.
 
-  L'ion chlorure est un réducteur dans le couple $\chemfig{Cl_2}\gaz/ \chlorure\aq$.
-  La demi-équation d'oxydoréduction associée est
-  $\chemfig{Cl_2}\gaz + 2\electron \reaction 2\chlorure\aq$.
-
-  Le dichlore $\chemfig{Cl_2}\gaz$ est un gaz toxique, car le dichlore se combine avec l'eau présente dans les muqueuses pour former des acides qui attaquent les tissus.
+  Le dichlore $\dichlore$ est un gaz toxique, car le dichlore se combine avec l'eau présente dans les muqueuses pour former des acides qui attaquent les tissus.
 \end{doc}
 
 \question{
-  Établir l'équation de la réaction d'oxydoréduction entre les ions hypochlorites $\hypochlorite\aq$ et les ions chlorures $\chlorure\aq$.
+  Établir l'équation de la réaction d'oxydoréduction entre les ions hypochlorites $\hypochlorite$ et les ions chlorures $\chlorure$ (couple \dichlore/\chlorure).
 }{
-
-}[4]
+  Ici l'hypochlorite est un oxydant et le chlorure un réducteur.
+  \begin{enumeration}
+    \item On identifie les couples associées aux espèces chimiques qui réagissent : \hypochlorite/\chlorure et \dichlore/\chlorure.
+    \item On écrit les demi-équations d'oxydoréduction avec les réactifs à gauche
+    \begin{align*}
+      \hypochlorite + 2\ionHydrogene + 2\electron &\reaction \chlorure + 2\eau \\
+      2\chlorure &\reaction \dichlore + 2\electron
+    \end{align*}
+    \item Le nombre d'électrons est le même pour les deux demi-équations, donc il suffit de les additionner côté par côté en enlevant les électrons
+    \begin{align*}
+      \hypochlorite + 2\ionHydrogene + 2\chlorure &\reaction \chlorure + 2\eau + \dichlore \\
+      \hypochlorite + 2\ionHydrogene + \chlorure &\reaction 2\eau + \dichlore
+    \end{align*}
+  \end{enumeration}
+}[5]
 
 \question{
   Pourquoi cette réaction ne peut avoir lieu que dans un milieu acide ?
-}{}[2]
+}{
+  Les ions hydrogènes \ionHydrogene se trouvent en milieu acide. En milieu neutre ou basique, leur concentration est trop faible.
+}[2]
 
 \question{
   Quel est le gaz toxique dégagé par la réaction ?
-}{}[1]
+}{
+  C'est le dichlore \dichlore, qui attaque les muqueuses.
+}[1]
 
 
 %%%%
 \begin{doc}{Nettoyer une plaie}
   Judith s'est écorchée le genou et mélange de l'eau oxygénée avec du permanganate de potassium pour soigner sa plaie.
-  Les couples Ox/Red sont $\dioxygene\gaz/\chemfig{H_2O_2}\aq$ et
-  $\chemfig{MnO_4^{-}}\aq/\chemfig{Mn^{2+}}\aq$.
+  Les couples Oxydant/Réducteur sont $\dioxygene/\eauOxygenee$ et
+  $\permanganate/\ionManganeseII$.
   
   Au moment de l'application, le mélange devient incolore et forme une mousse.
 \end{doc}
@@ -154,4 +177,31 @@
 \question{
   Établir l'équation de la réaction d'oxydoréduction entre l'eau oxygénée et le permanganate de potassium.
   Expliquer la formation de mousse.
-}{}[3]
+}{
+  Ici le permanganate de potassium est un oxydant et l'eau oxygénée est un réducteur.
+  \begin{enumeration}
+    \item On identifie les couples associées aux espèces chimiques qui réagissent : \permanganate/\ionManganeseII et \dioxygene/\eauOxygenee.
+    \item On écrit les demi-équations d'oxydoréduction avec les réactifs à gauche
+    \begin{align*}
+      \permanganate + 8\ionHydrogene + 5\electron &\reaction \ionManganeseII + 4\eau \\
+      \eauOxygenee &\reaction \dioxygene + 2\ionHydrogene + 2\electron
+    \end{align*}
+    \item On multiplie les demi-équations par 2 et par 5 respectivement pour obtenir le même nombre d'électrons 
+    \begin{align*}
+      2\permanganate + 16\ionHydrogene + 10\electron &\reaction 2\ionManganeseII + 8\eau \\
+      5\eauOxygenee &\reaction 5\dioxygene + 10\ionHydrogene + 10\electron
+    \end{align*}
+    \item Finalement, on additionne les demi-équations en enlevant les électrons
+    \begin{equation*}
+      2\permanganate + 16\ionHydrogene + 5\eauOxygenee
+      \reaction
+      2\ionManganeseII + 8\eau + 5\dioxygene + 10\ionHydrogene
+    \end{equation*}
+    et on simplifie les ions hydrogènes
+    \begin{equation*}
+      2\permanganate + 6\ionHydrogene + 5\eauOxygenee
+      \reaction
+      2\ionManganeseII + 8\eau + 5\dioxygene
+    \end{equation*}
+  \end{enumeration}
+}[4]

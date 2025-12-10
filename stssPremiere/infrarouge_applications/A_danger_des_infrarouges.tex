@@ -40,7 +40,7 @@
 
   Les \important{infrarouge-A (IR-A)} endommagent surtout la rétine, les yeux étant transparent pour ces longueurs d'ondes.
   Le cristallin peut être endommagé par des rayonnements \important{IR-A et IR-B} intenses.
-  La cornée peut être endommagée par des rayonnements \important{IR-B et IR-C} intenses et prolongés.
+  La cornée peut être endommagée par des rayonnements \important{IR-B et IR-C} très intenses et prolongés.
   
   Pour la rétine le risque est ici principalement lié à l'utilisation de laser infrarouge, qui sont invisibles et intenses.  
 \end{doc}
@@ -48,7 +48,7 @@
 
 \begin{doc}{Les métiers à risques IR}
   Certains métiers sont exposés à des rayonnements infrarouges intenses pendant de longues durée : personnes travaillant dans les fonderies, souffleur ou souffleuse de verre, sapeur-pompier, soudeurs et soudeuse, etc.
-  Mais aussi les chercheuses et chercheurs travaillant avec des lasers infrarouge très puissant.
+  Mais aussi les chercheuses et chercheurs travaillant avec des lasers infrarouge très puissants.
 
   Pour se protéger des rayonnements, il faut porter des lunettes spéciales munies de filtres IR.
 \end{doc}
@@ -58,13 +58,26 @@
 \question{
   À l'aide de la loi de Wien, calculer la longueur d'onde d'intensité maximale émise par un corps à une température de \qty{37}{\degreeCelsius}.
   Cette longueur d'onde correspond-elle au domaine proche IR-A, moyen IR-B ou lointain IR-C ?
-}{}[4]
+}{
+  On calcule la longueur d'onde maximale avec la loi de Wien
+  \begin{equation*}
+    \lambda = \dfrac{\qty{2.9e-3}{\kelvin\m}}{(37 + 273)\unit{kelvin}} 
+    = \qty{9.4e-6}{\m}
+    = \qty{9.4}{\micro\m}
+    = \qty{9400}{\nm}
+  \end{equation*}
+  On est donc dans le domaine des lointain IR-C.
+}[4]
 
-\newpage
+\pasCorrection{\newpage}
 \question{
   Les rayonnements infrarouges émis par votre corps représentent-ils un danger pour les personnes qui vous entourent ?
-}{}[4]
+}{
+  Non, car on se trouve dans le domaine des IR-C.
+}[4]
 
 \question{
   Donner une solution pour protéger des risques liés aux IR les ouvrier-es qui travaillent dans les fonderies.
-}{}[4]
+}{
+  Il faut porter des lunettes de protection qui filtrent les infrarouges.
+}[4]

@@ -13,7 +13,7 @@
   La radioactivité est utilisée tous les jours en médecine pour diagnostiquer ou pour soigner des maladies.
   
   \problematique{
-    Quelles sont les doses radioactives utilisées pour diagnostiquer ou guérir des maladies ?
+    Quelles sont les doses radioactives utilisées pour diagnostiquer ou soigner ?
   }
 \end{contexte}
 
@@ -21,7 +21,7 @@
 %%%% docs
 \begin{doc}{Dose absorbée et dose équivalente}
   \begin{importants}
-    La \important{dose absorbée $D$} se mesure en Gray noté \unit{\gray}
+    La \important{dose absorbée $\mathbf{D}$} se mesure en Gray noté \unit{\gray}
     \begin{equation*}
       D =
       \dfrac{\text{Énergie reçue pendant la désintégration (\unit{J})}}
@@ -32,7 +32,7 @@
   La dose absorbée mesure l'irradiation brute reçue, mais certaines particules sont plus dangereuses que d'autres à cause de leur masse.
   C'est pour ça qu'on introduit la dose équivalente $H$.
   \begin{importants}
-    La \important{dose équivalente $H$} se mesure en sievert noté \unit{\sievert}
+    La \important{dose équivalente $\mathbf{H}$} se mesure en sievert noté \unit{\sievert}
     \begin{equation*}
       H = w_R \times D
     \end{equation*}
@@ -43,10 +43,10 @@
 
 \begin{doc}{Échelle de dose reçue}
   \centering
-  \image{0.95}{images/exterieures/donnees/doses_radioactivite}    
+  \image{1}{images/exterieures/donnees/doses_radioactivite}    
 \end{doc}
 
-\newpage\vspace*{-28pt}
+\pasCorrection{\newpage\vspace*{-32pt}}
 \begin{doc}{Réglementation française}
   En France, une dose efficace annuelle $H$ est préconisé pour le grand public, en plus de la radioactivité naturelle et médicale.
   \begin{tableau}{|c |c |}
@@ -66,7 +66,7 @@
      Radioélément & Cible & Dose & Demi-vie & Application \\
      %
      Technétium : $\gamma$ &
-     Peu Spécifique & 1 à 10 mSv &
+     Peu spécifique & 1 à 10 mSv &
      6 h & \SetCell[r=2]{l} Scintigraphie \\
      %
      Gallium : $\gamma$ &
@@ -75,10 +75,10 @@
      %
      Fluor : $\beta^+$ et $\gamma$ &
      Détection des cellules cancéreuses. Neurologie. & 7 mSv &
-     110 min & PET par détection des rayon $\gamma$ de haute énergie \\
+     110 min & Tomographie par Émission de Positrons (TEP) par détection des rayons $\gamma$ de hautes énergies \\
      %
      Samarium $\beta^-$ &
-     Os, poumon, prostate, sein & \SetCell[r=2]{c} 2 Sv/séance &
+     Os, poumons, prostate, sein & \SetCell[r=2]{c} 2 Sv/séance &
      1,9 jours & \SetCell[r=2]{l} Radiothérapie métabolique \\
      %
      Yttrium $\beta^-$ & Foie & & 2,7 jours &
@@ -86,12 +86,12 @@
 \end{doc}
 
 \question{
-  On considère qu'une source radioactive est inoffensive passé 20 demi-vie.
+  On considère qu'une source radioactive est inoffensive passé 20 demi-vies.
   Calculer 20 fois la demi-vie pour chaque radioélément utilisé.
 }{}[3]
 
 \question{
-  Pourquoi utilise-t-on des éléments avec de courtes demi-vie en médecine ?
+  Pourquoi utilise-t-on des éléments avec de courtes demi-vies en médecine ?
 }{}[3]
 
 \question{
@@ -104,4 +104,4 @@
 
 \question{
   Chercher comment le personnel médical se protège des radiations.
-}{}[3]
+}{}[2]
