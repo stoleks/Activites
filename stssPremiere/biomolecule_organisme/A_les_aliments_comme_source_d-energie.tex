@@ -76,11 +76,11 @@
     \item A 18 ans, la ration alimentaire recommandée est de \qty{2300}{\kcal} par jour.
   \end{donnees}
   \vspace*{-12pt}
-  Pour calculer la valeur énergétique d'un aliment, on additionne l'énergie fournie par les glucides, les protéines et les lipides
+  Pour calculer la valeur énergétique d'un aliment pour \qty{1}{\g}, on additionne l'énergie fournie par les glucides, les protéines et les lipides et on divise par \qty{100}{\g}
   \begin{equation*}
     E_\text{aliment} 
-    = (m_\text{glucide} + m_\text{protéine}) \times \qty{17}{\kilo\joule\per\g}
-    +  m_\text{lipide} \times \qty{38}{\kilo\joule\per\g}
+    = \dfrac {(m_\text{glucide} + m_\text{protéine}) \times \qty{17}{\kilo\joule\per\g}
+    +  m_\text{lipide} \times \qty{38}{\kilo\joule\per\g}} {\qty{100}{\g}}
   \end{equation*}
 \end{doc}
 
@@ -90,9 +90,9 @@
   \begin{multicols}{2}
     \begin{itemize}
       % \item \qty{50}{\g} de laitue ;
-      \item \qty{100}{\g} de quinoa cuit ;
-      \item \qty{150}{\g} de steak de soja ;
-      \item \qty{40}{\g} de clémentine ;
+      \item \qty{200}{\g} de quinoa cuit ;
+      \item \qty{110}{\g} de steak de soja ;
+      \item \qty{40}{\g} de mandarine ;
       \item \qty{25}{\g} de pain complet.
       % \item[\vspace{\fill}]
     \end{itemize}
@@ -102,24 +102,51 @@
     colspec = {l X[c] X[c] X[c]}, hlines, vlines,
     column{1} = {couleurSec-50}, row{1} = {couleurSec-100}, 
   }
-    Composition en \unit{\g} pour \qty{100}{\g} d'aliment & \important{Glucide} & \important{Lipides} & \important{Protéines} \\
+    Composition en \unit{\g} pour \qty{100}{\g} d'aliment & \important{Glucides} & \important{Protéines} & \important{Lipides} \\
     %
-    % Laitue        & \num{1.4} & \num{0.2} & \num{1.3} \\
-    Quinoa cuit   & \num{21}  & \num{1.9} & \num{4.4} \\
-    Steak de soja & \num{0}   & \num{9.0} & \num{20}  \\
-    Clémentine    & \num{12}  & \num{0.19}  & \num{0.8} \\
-    Pain complet  & \num{44}  & \num{1.5} & \num{9.0} \\
+    % Laitue        & \num{1.4} & \num{1.3} & \num{0.2} \\
+    Quinoa cuit   & \num{21} & \num{4.4} & \num{1.9}  \\
+    Steak de soja & \num{0}  & \num{20}  & \num{9.0}  \\
+    Mandarine     & \num{12} & \num{0.8} & \num{0.19} \\
+    Pain complet  & \num{44} & \num{9.0} & \num{1.5}  \\
   \end{tblr}
 \end{doc}
 
 \question{
-  Calculer la valeur énergétique $E$ de chaque aliment pour \qty{100}{\g}
-}{}[4]
+  Calculer la valeur énergétique $E$ de chaque aliment pour \qty{1}{\g}
+}{
+  Pour le quinoa, le calcul est le suivant :
+  \begin{equation*}
+    E_{quinoa}
+    = \dfrac{(\qty{21}{\g} + \qty{4.4}{\g}) \times \qty{17}{\kilo\joule\per\g} + \qty{1.9}{\g} \times \qty{38}{\kilo\joule\per\g}}{\qty{100}{\g}}
+    = \qty{0.504}{\kilo\joule\per\g}
+  \end{equation*}
+  On calcule de la même façon la valeur énergétique des autres aliments pour \qty{1}{\g} :
+  \begin{align*}
+    & E_{steak}     = \qty{0.682}{\kilo\joule\per\g} \\
+    & E_{mandarine} = \qty{0.225}{\kilo\joule\per\g} \\
+    & E_{pain}      = \qty{0.958}{\kilo\joule\per\g} \\
+  \end{align*}
+}[4]
 
 \question{
   Calculer la valeur énergétique totale du repas fourni à la cantine.
-}{}[2]
+}{
+  Il faut multiplier la valeur énergétique d'un aliment par la masse d'aliment du repas et additionner toutes les valeurs obtenues
+  \begin{align*}
+    E_{totale} 
+    &= \qty{200}{\g} \times E_{quinoa} + \qty{150}{\g} \times E_{steak} + \qty{40}{\g} \times E_{mandarine} + \qty{25}{\g} \times E_{pain} \\
+    &= \qty{200}{\g} \times \qty{0.504}{\kilo\joule\per\g} + \qty{110}{\g} \times \qty{0.682}{\kilo\joule\per\g} + \qty{40}{\g} \times \qty{225}{\kilo\joule\per\g} + \qty{25}{\g} \times \qty{958}{\kilo\joule\per\g} \\
+    &= \qty{2087}{\kilo\joule}
+  \end{align*}
+}[2]
 
 \question{
-  Vérifier si ce repas fourni $\qty{35}{\percent}$ de la ration alimentaire journalière pour un-e ado. 
-}{}[1]
+  Calculer la fraction énergétique que représente ce repas par rapport à la ration alimentaire journalière pour un-e ado.
+}{
+  Pour une ado, la ration journalière est $E_{journalière} = \qty{2300}{\kcal} = 4.18 \times \qty{2300}{\kilo\joule} = \qty{9614}{\kilo\joule}.$
+  Donc ici on a une proportion qui vaut
+  \begin{equation*}
+    \dfrac {\qty{2087}{\kilo\joule}} {\qty{9614}{\kilo\joule}} = 0.21 = \qty{21}{\percent}
+  \end{equation*}
+}[1]
