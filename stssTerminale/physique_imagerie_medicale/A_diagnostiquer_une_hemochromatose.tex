@@ -53,26 +53,54 @@
 %%%%
 \question{
   Justifier que les ondes utilisées sont des ultrasons.
-}{}[3]
-\break
+}{
+  Les ondes sonores utilisées ont une fréquence de $\qty{6,0}{\mega\hertz} = \qty{6e6}{\hertz} > \qty{20000}{\hertz}$, ce sont donc des ultrasons.
+}[3]
+\pasCorrection{\break}
 
 \question{
   Rappeler le principe de l'échographie en précisant les phénomène physiques mis en jeu.
-}{}[4]
+}{
+  On émet une onde sonore, qui va traverser le corps humain.
+  En le traversant, elle va se réfléchir sur les organes internes ou les os. 
+  En mesurant les signaux réfléchis, comme on connait la vitesse du son dans le corps humain,
+  on peut calculer des distances ou produire des images.
+}[4]
 
 \question{
   Expliquer la présence des deux signaux 1 et 2 reçus par la sonde et représentés dans le document~\ref{doc:suivi_echo}.
-}{}[4]
+}{
+  On a un signal qui est la réfléxion de l'onde sonore quand elle pénètre dans le foie,
+  et on a un signal qui est la réfléxion de l'onde sonore quand elle sort du foie.
+}[4]
 
 \question{
   Montrer, à l’aide du document~\ref{doc:suivi_echo}, que la durée de propagation des ultrasons
   pour parcourir l’épaisseur $d$ du foie est $\Delta t = \qty{55}{\micro\s}$.
-}{}[4]
+}{
+  La durée entre la réception de ces deux signaux vaut $190 - \qty{80}{\micro\s} = \qty{110}{\micro\s}$.
+  Cette durée correspond au temps mis par l'onde ultrasonore pour faire un aller-retour dans le foie,
+  il faut donc diviser par 2 et on retrouve bien $\Delta t = \qty{55}{\micro\s}$.
+}[4]
 
 \question{
   Déterminer si le foie du patient a une épaisseur normale.
-}{}[5]
+}{
+  L'épaisseur du foie vaut, en faisant attention à convertir les microsecondes en secondes,
+  \begin{align*}
+    d &= c \times \Delta t \\
+    &= \qty{1540}{\m\per\s} \times \qty{55e-6}{\s} \\
+    &= \qty{0.085}{\m} \\
+    &= \qty{8,5}{\cm}
+  \end{align*}
+  Le foie a donc une épaisseur normale comprise entre 8 et \qty{12}{\cm}.
+}[5]
 
 \question{
   Déterminer la distance entre la sonde et la paroi du foie la plus proche de la sonde.
-}{}[5]
+}{
+  L'onde ultrasonore a mis \qty{40}{\micro\s} pour aller de la sonde à la première paroi du foie, soit une distance $D$ qui vaut
+  \begin{equation*}
+    D = \qty{1540}{\m\per\s} \times \qty{40}{\micro\s} = \qty{6,1}{\cm}
+  \end{equation*}
+}[5]

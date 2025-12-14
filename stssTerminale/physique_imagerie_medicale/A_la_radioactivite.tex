@@ -29,14 +29,13 @@
     \item X est le symbole de l'élément (H, O, C, etc.).
   \end{listePoints}
 
-  \begin{wrapfigure}{r}{0.4\linewidth}
-    \vspace*{-60pt}
+  \begin{wrapfigure}[2]{r}{0.4\linewidth}
+    \vspace*{-90pt}
     \phantom{b}
     \image{1}{images/atomes/Carbone_12-13-14}
   \end{wrapfigure}
-  Un même élément chimique peut avoir plusieurs noyaux différents, on parle \important{d'isotopes.}
-  
-  Par exemple le carbone a 3 isotopes
+  Un même élément chimique peut avoir plusieurs noyaux différents, avec le même nombre de protons, mais un nombre de neutrons différents. On parle \important{d'isotopes.}
+  Par exemple, le carbone (Z = 6) a 3 isotopes, le carbone 12 avec 12 nucléons, le carbone 13 a 13 nucléons et le carbone 14 a 14 nucléons.
 \end{doc}
 
 \begin{doc}{Désintégration des noyaux instables}[\label{doc:noyaux_instables}]
@@ -74,18 +73,17 @@
 \end{doc}
 
 
-\newpage
-\vspace*{-28pt}
+\newpage\vspace*{-28pt}
 \question{
-  Noter les 3 noyaux isotopes du carbone en utilisant l'écriture \isotope{A}{Z}{X}.
-}{}[1]
+  Noter les 3 noyaux isotopes du carbone en utilisant l'écriture \isotope{X}{Z}{A}.
+}{
+  Carbone 12 : \isotope{C}{6}{12},
+  carbone 13 : \isotope{C}{6}{13},
+  carbone 14 : \isotope{C}{6}{14}
+}[1]
 
 \question{
-  Donner le sens du mot « inéluctable » utilisé dans le document~\ref{doc:noyaux_instables}.
-}{}[2]
-
-\question{
-  Identifier les équations suivantes en indiquant s'il s'agit de désintégration $\alpha$, $\beta^-$, $\beta^+$ ou d'une désexcitation $\gamma$ :
+  Identifier les équations de désintégrations suivantes en indiquant s'il s'agit de désintégration $\alpha$, $\beta^-$, $\beta^+$ ou d'une désexcitation $\gamma$ :
 
   \vspace*{-20pt}
   \begin{equation*}
@@ -103,7 +101,14 @@
     %
   \end{equation*}
   \vspace*{-16pt}
-}{}[4]
+}{
+  \begin{enumerate}[label=$\alph*)$]
+    \item la particule émise est un positron, donc c'est une désintégration $\beta^+$.
+    \item la particule émise est un photon, donc c'est une désintégration $\gamma$.
+    \item c'est un électron qui est émis, c'est donc une désintégration $\beta^-$.
+    \item c'est un noyau d'hélium qui est émis, c'est donc une désintégration $\alpha$.
+  \end{enumerate}
+}[5]
 
 \begin{doc}{Activité d'un échantillon de matière}
   L'activité représente le nombre de désintégration dans un échantillon de matière pendant une seconde.
@@ -138,7 +143,8 @@
 \end{doc}
 
 \begin{multicols}{2}
-  \begin{doc}{Variation de l'activité avec la nature de la source et sa masse}
+  \begin{doc}{Variation de l'activité}
+    \vspace*{-4pt}
     \begin{tableau}{|l |c |c |}
                     & Lait & Granite \\
       $A$ pour 1 kg & 70   & 1000 \\
@@ -146,7 +152,17 @@
     \end{tableau}
   \end{doc}
   
-  \question{
-    Calculer $2^{20}$ et indiquer pourquoi on peut considérer qu'il n'y a plus de radioactivité dans un échantillon au bout de 20 périodes radioactive.
-  }{}[2]
+  \numeroQuestion
+  Calculer $2^{20}$ et indiquer pourquoi on peut considérer qu'il n'y a plus de radioactivité dans un échantillon au bout de 20 périodes radioactive.
+  
+  \pasCorrection{\lignesDeReponse*{0}}
 \end{multicols}
+  
+\pasCorrection{\vspace*{-12pt}\lignesDeReponse*{2}}
+\correction{
+  \begin{boiteColoree}
+    $2^{20} = \num{1048576}$.
+    Donc, au bout de 20 périodes radioactives l'activité a été divisée par 1 million,
+    ce qui va donner une activité très faible qu'on peut négliger.
+  \end{boiteColoree}
+}

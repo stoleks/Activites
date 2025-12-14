@@ -77,13 +77,21 @@
   en fonction de la célérité des ultrasons $c$
   et du temps de détection des ultrasons réfléchis $\Delta t_A$.
 }{
+  $\Delta t_A$ correspond au temps mis par l'onde pour faire un aller-retour, il faut donc le diviser par 2 pour calculer la distance
+  \begin{align*}
+    d_A &= c \times \dfrac{\Delta t_A}{2} \\
+  \end{align*}
 }[3]
 
 \question{
-  Exprimer de même pour la distance $d_B$ entre la sonde et la seconde oreille,
+  Exprimer de même la distance $d_B$ entre la sonde et la seconde oreille,
   en fonction de la célérité des ultrasons $c$
   et du temps de détection des ultrasons réfléchis $\Delta t_B$.
 }{
+  C'est le même calcul, mais avec $\Delta t_B$ pour le temps
+  \begin{align*}
+    d_B &= c \times \dfrac{\Delta t_B}{2} \\
+  \end{align*}
 }[3]
 
 \question{
@@ -91,11 +99,23 @@
   En déduire le diamètre bipariétal.
 
   \important{Données :} $\Delta t_A = \qty{120}{\micro\s}$, $\Delta t_B = \qty{185}{\micro\s}$, $\qty{1}{\micro\s} = \qty{e-6}{\s}$.
-}{}[5]
+}{
+  Le diamètre bipariétal vaut 
+  \begin{align*}
+    BIP &= d_B - d_A \\
+    &= c \times \dfrac{\Delta t_B}{2} - c\times \dfrac{\Delta t_A}{2} \\
+    &= c \times \left(\dfrac{\Delta t_B - \Delta t_A}{2}\right) \\
+    &= \qty{1540}{\m\per\s} \times \left(\dfrac{(185 - 120)\times\qty{e-6}{\micro\s}}{2}\right) \\
+    &= \qty{5.0e-2}{\m} \\
+    &= \qty{50}{\milli\m}
+  \end{align*}
+}[5]
 
 \question{
   La patiente est examinée lors de la 21ème semaine d’aménorrhée.
   Les valeurs normales du diamètre bipariétal se situent alors entre
   \qty{46}{\milli\m} et \qty{57}{\milli\m}.
   Indiquer si l’examen permet de suspecter un retard de croissance du fœtus.
-}{}[5]
+}{
+  Le diamètre bipariétal est compris entre les deux valeurs normales, $\qty{46}{\milli\m} < \qty{50}{\milli\m} < \qty{57}{\milli\m}$, donc on ne peut pas suspecter un retard de croissance pour le fœtus.
+}[5]
