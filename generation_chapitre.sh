@@ -25,7 +25,7 @@ generate_pdf () {
 }
 
 # generate pdf for a given chapter
-echo "Generation des .pdf du chapitre $2 dans $1"
+echo "Generation des .pdf du chapitre $2 dans $3/$1/$2"
 start=`date +%s`
 if [[ -e $3 ]]; then
   mkdir -p $3/$1/$2
@@ -33,4 +33,4 @@ fi
 pdflatex -ini -jobname="preambule" "&pdflatex preambule.tex\dump" > preambule.log
 generate_pdf "$1.tex" $2 $3 1 $(wc -l < "$1.tex")
 end=`date +%s`
-echo "Il a fallu $((end - start)) secondes ($(((end - start)/60)) minutes) pour générer tous les fichiers dans $1/$2"
+echo "Il a fallu $((end - start)) secondes ($(((end - start)/60)) minutes) pour générer tous les fichiers dans $3/$1/$2"
