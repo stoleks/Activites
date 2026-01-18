@@ -45,7 +45,7 @@ Pour générer les activités d'un seul niveau, il suffit de donner un seul nive
     
     sh/bash generateur.sh -n "seconde" -o "../Cours"
 
-Le script extrait les noms des fichiers à partir des commandes \inclusActivite et les déplace dans le dossier "../Cours/", en reprenant l'organisation des dossiers et les noms de fichiers dans ce répertoire, avec la numérotation demandée dans la commande \inclusActivite. (\inclusActivite[1]{seconde/atome/A\_structure.tex} génère cours/seconde/atome/A1\_structure.pdf par exemple)
+Le script extrait les noms des fichiers à partir des commandes \inclusActivite et les déplace dans le dossier "../Cours/", en reprenant l'organisation des dossiers et les noms de fichiers dans ce répertoire, avec la numérotation demandée dans la commande \inclusActivite. (\inclusActivite[1]{seconde/atome/A\_structure.tex} génère cours/seconde/atome/A1\_structure.pdf par exemple). Le fichier commandes.txt contient deux exemples de commandes que j'utilise pour générer mes fichiers localement.
 
 Pour générer les activités d'un chapitre d'un niveau, j'utilise generation\_chapitre.sh, appelé comme ça :
     

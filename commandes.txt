@@ -1,0 +1,2 @@
+sh generateur.sh -n fichesTP -o "../activites_pdf_images" -r
+sh generateur.sh -n "secondes stssPremiere stssTerminales" -o "../activites_pdf_images" -rc

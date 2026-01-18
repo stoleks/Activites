@@ -24,7 +24,7 @@ generate_pdf () {
 }
 
 # generate pdf for a given level
-echo "Generation des .pdf dans $1"
+echo "Generation des .pdf dans $2/$1"
 start=`date +%s`
 pdflatex -ini -jobname="preambule" "&pdflatex preambule.tex\dump" > preambule.log
 generate_pdf "$1.tex" $2 1 $(wc -l < "$1.tex")
