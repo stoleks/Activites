@@ -743,12 +743,12 @@
 }
 
 % Affiche le contenu en mode correction
-\newcommand{\correction}[1]{%
+\NewDocumentCommand{\correction}{+m}{%
   \ifthenelse {\boolean{modeProf}} {#1} {}%
 }
 
 % Affiche le contenu si on est pas en mode correction
-\newcommand{\pasCorrection}[1]{%
+\NewDocumentCommand{\pasCorrection}{+m}{%
   \ifthenelse {\boolean{modeProf}} {} {#1}%
 }
 

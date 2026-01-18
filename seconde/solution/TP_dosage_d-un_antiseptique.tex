@@ -103,14 +103,31 @@
   \end{equation*}
 \end{doc}
 
+% \correction{
+%   Note : à partir d'une solution de concentration $c = \qty{0.2}{\mole\per\l}$, soit 
+%   \begin{equation*}
+%     c_m = \qty{118}{\g\per\mole}\times \qty{0.2}{\mole\per\l} = \qty{23.6}{\g\per\mole}
+%   \end{equation*}
+%   on peut diluer 25 fois pour arriver à une solution de concentration $c_m \approx \qty{0.95}{\g\per\l}$, et ensuite diluer par 5 à chaque fois.
+%   Ou alors diluer par 125 pour avoir une solution moins dangereuse avec $c_m = \qty{0.19}{\g\per\l} $.
+% }
+
 %
 \question{
   On souhaite réaliser une échelle de teinte composée de 4 solutions étalon pour mesurer la concentration de permanganate de potassium dans le Dakin.
+  \vspace*{-8pt}
 
   \begin{center}
-    \begin{tblr}{c | X[1,c] | X[1,c] | X[1,c] | X[1,c]}
-      Solution étalon & 1 & 2 & 3 & 4 \\ \hline
-      Concentration (\unit{\g/\litre}) & \correction{\num{0,05}} & \correction{\num{0,025}} & \correction{\num{0,0125}} & \correction{\num{0,0063}} 
+    \begin{tblr}{c | X[c] | X[c] | X[c] | X[c] | X[c] }
+      Solution étalon & 1 & 2 & 3 & 4 % & 5
+      \\ \hline
+      %
+      Concentration (\unit{\g/\litre}) & 
+      % \num{0,95} & \correction{\num{0.19}}
+      \num{0,19} &
+      \correction{\num{0,038}} &
+      \correction{\num{0,0076}} &
+      \correction{\num{0.00152}}
     \end{tblr}
   \end{center}
   
@@ -118,20 +135,20 @@
 }{
   On divise par deux la concentration pour passer de la solution 1 à la solution 2, de la 2 à la 3 et de la solution 3 à la solution 4.
   Donc le facteur de dilution est $F = 2$.
-}[1]
+}[2]
 
 %
 \question{
   Justifier l’intervalle des concentrations proposées pour l’échelle de teinte, à partir de la valeur attendue de la concentration en permanganate de potassium.
 }{
   La valeur attendue de la concentration ($c = \qty{0,01}{\g/\litre}$) se trouve bien dans l'intervalle proposé.
-}[1]
+}[2]
 
 %
 \question{
-  Sachant que le volume de la fiole jaugée est $V_1 = \qty{50}{\ml}$, donner le volume de la solution mère $V_0$ à prélever pour avoir un facteur de dilution $F = 2$.
+  Sachant que le volume de la fiole jaugée est $V_1 = \qty{50}{\ml}$, donner le volume de la solution mère $V_0$ à prélever pour avoir un facteur de dilution $F = 5$.
 }{
-  On doit avoir un volume deux fois plus faible, soit $V_0 = \qty{25}{\ml}$.
+  On doit avoir un volume cinq fois plus faible, soit $V_0 = \qty{10}{\ml}$.
 }[2]
 
 %
@@ -144,11 +161,12 @@ Verser quelques millilitres de chaque solutions dans des tubes à essais.
 Utiliser l'échelle de teinte pour encadrer la valeur de la concentration en permanganate de potassium dans le Dakin.
 Est-elle cohérente avec celle du constructeur ?
 \pasCorrection{\lignesDeReponse{2}}
-\correction{Oui, on trouve une concentration $\qty{0,0125}{\g/\litre} < c < \qty{0,0063}{\g/\litre}$.}
+
+\correction{Oui, on trouve une concentration $\qty{0,038}{\g/\litre} < c < \qty{0,0076}{\g/\litre}$.}
 
 %
 \question{
   Proposer une autre échelle de teinte pour améliorer la précision de la mesure (donner une liste de concentration).
 }{
-  On pourrait utiliser une échelle de teinte avec les concentrations suivantes : 0.015, 0.012, 0.0094, 0.0075, 0.006 \unit{\g/\litre} ($F = 1.25$).
+  On pourrait utiliser une échelle de teinte avec les concentrations suivantes : \numlist{0.038; 0.019; 0.0095; 0.00475} \unit{\g/\litre} ($F = 1.25$).
 }[1]

@@ -75,9 +75,9 @@
 \pgfkeys{% définition de la famille de clefs
   /prog/.is family, /prog,
   defaut/.style = {
-    boucles = 1,
-    largeur = 17,
-    coeff = 2.4
+    boucles = 1,  % nombre de boucles
+    largeur = 17, % largeur de la flèche
+    coeff = 2.4   % espacement entre les flèches
   },% stockage des clefs
   boucles/.store in = \progBoucles,
   largeur/.store in = \progLargeur,
@@ -114,9 +114,8 @@
     \end{tikzpicture}
   \end{center}
   % retire l'espace ajouté par les boucles si demandé
-  \IfBooleanTF{#1}{
-  }{
-    \vspace*{\fpeval{-72 * (\nombreBoucle + 1)} pt}
+  \IfBooleanTF{#1}{}{
+    \vspace*{\fpeval{-70 * (\nombreBoucle + 1)} pt}
   }
 }
 
