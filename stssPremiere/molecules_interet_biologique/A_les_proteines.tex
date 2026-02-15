@@ -24,21 +24,17 @@
     \vspace*{-13pt}
     \begin{tikzpicture}
       %%%% Alanine
-      \fill[red-150,rounded corners = 8pt] % Carboxyle
-        (0.5,0)-- (0.5,0.8)-- (1.1,1.45)-- (1.8,1.45)--
-        (2.1, 0)-- (2.1,-0.7)-- (1.2,-0.7)-- cycle;
+      \chemCarboxyleDev [arrondi = 8pt] (1.5, 0);
       \chemAmine (-18pt, -1pt);
       %%%% Glycine
-      \fill[red-150,rounded corners = 8pt] % Carboxyle
-        (0,-2.8)-- (0,-2)-- (0.6,-1.35)-- (1.3,-1.35)--
-        (1.6, -2.5)-- (1.6,-3.5)-- (0.6,-3.5)-- cycle;
+      \chemCarboxyleDev [arrondi = 8pt] (0.9, -2.8);
       \chemAmine (-26pt, -79pt);
       %%%% Molécules
       \node at (0,0)    {\chemname {\chemfig{!\alanineSemiDev}} {Molécule d'alanine}};
       \node at (0,-2.8) {\chemname {\chemfig{!\glycineSemiDev}} {Molécule de glycine}};
     \end{tikzpicture}
   \end{wrapfigure}
-  \phantom{b}
+  \strut
   
   \begin{importants}
     Les \important{acides $\alpha$-aminés (alpha-aminés)} sont des molécules composées d'une fonction \important{acide carboxylique} et d'une fonction \important{amine,} d'où leur nom.
@@ -47,6 +43,8 @@
   
   Sur Terre, les organismes vivants synthétisent et utilisent 20 acides aminés.
   Parmi ces 20 acides aminés, 9 ne sont pas synthétisés par le corps humain, on dit que ce sont des \important{acides aminés essentiels,} qui doivent être apportés par une alimentation équilibrée.
+
+  \strut
 \end{doc}
 
 \begin{doc}{Quelques acides $\alpha$-aminés essentiels}[\label{doc:aa_essentiels}]
@@ -63,7 +61,6 @@
 
 \numeroQuestion Entourer les groupes fonctionnels de la leucine et de la méthionine.
 
-
 \begin{doc}{Séquence de 3 acides $\alpha$-aminés dans l'insuline humaine}[\label{doc:insuline_aa}]
   \begin{center}
     \chemfig{H_2N !\glycineSemiDevH !\HN !\isoleucineSemiDevB !\NH !\valineSemiDevH OH}
@@ -78,10 +75,8 @@
   \vspace*{-14pt}
   \begin{center}
   \begin{tikzpicture}
-    \fill[rectArrondi = orange-150] (2.15,0.5) rectangle (3.1,-1.1);
-    \fill[rectArrondi = orange-150] (2.2,0.5) rectangle (3.95,-0.4);
-    \fill[rectArrondi = orange-150] (3,-0.4) rectangle (3.95,1.3);
-    \node[orange-700, align = center] at (3,-1.4) {\textbf{Liaison peptidique}};
+    \chemAmideDevBH (3, 0)
+    \node[purple-800, align = center] at (3, -1.5) {\textbf{Liaison peptidique}};
     \node at (0,0) {
       \chemfig{R_1-!\acideAmineSD} + \chemfig{R_2-!\acideAmineSD}
       \reaction
@@ -92,7 +87,7 @@
   \vspace*{-18pt}
 
   Comme tous les acides aminés possèdent un \important{groupe amine} et un \important{groupe carboxyle}, cette réaction peut se répéter pour former une chaîne d'acides aminés appelée \important{polypeptide}.
-
+ 
   \begin{importants}
     Une \important{protéine} est un polypeptide qui s'est replié sur lui même.
     Ce repliement lui donne une structure tridimensionnelle unique, qui lui confère une \important{fonction biologique} particulière.

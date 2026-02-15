@@ -181,41 +181,73 @@
   bords/.store in = \chemBords,
 }
 %
-\NewDocumentCommand{\chemCarboxyle}{O{} r()}{
-  \pgfkeys{/chemPoly, defaut, couleur = red-200 ,#1}
-  \coordinate (A) at (#2);
-  % Entoure =O
-  \fill[\chemCouleur, rounded corners = \chemArrondi, rotate = 30]
-    ($(A) + (0, 0)$) rectangle 
-    ($(A) + 1.5*\chemAtomSep*(1.1pt,-2/3pt)$);
-  % Entoure -OH
-  \fill[\chemCouleur, rounded corners = \chemArrondi]
-    ($(A) + (0,0)$) rectangle 
-    ($(A) + \chemAtomSep*(1.25pt, -1.75pt)$);
-}
-%
 \NewDocumentCommand{\chemAmine}{O{} r()}{
-  \pgfkeys{/chemPoly, defaut, couleur = blue-150 ,#1}
+  \pgfkeys{/chemPoly, defaut, couleur = blue-200 ,#1}
   \coordinate (A) at (#2);
   \fill[\chemCouleur, rounded corners = \chemArrondi]
-    ($(A) + (0,0)$) rectangle 
-    ($(A) + \chemAtomSep*(1.3pt, -1pt)$);
+    (A) rectangle ($(A) + \chemAtomSep*(1.3pt, -1pt)$);
 }
 %
 \NewDocumentCommand{\chemAmide}{O{} r()}{
   \pgfkeys{/chemPoly, defaut, couleur = purple-200 ,#1}
   \coordinate (A) at (#2);
-  % Entoure la partie aminée
   \fill[\chemCouleur, rounded corners = \chemArrondi, rotate = 30]
-    ($(A) + (0, 0)$) rectangle 
-    ($(A) + 1.5*\chemAtomSep*(1.1pt,-2/3pt)$);
+    (A) rectangle ($(A) + 1.5*\chemAtomSep*(1.1pt,-2/3pt)$);
+  % Entoure la partie aminée
   \fill[\chemCouleur, rounded corners = \chemArrondi]
     ($(A) + 1.5*\chemAtomSep*(0.6pt, -0.05pt)$) rectangle
     ($(A) + 1.5*\chemAtomSep*(1.3pt, 0.8pt)$);
   % Entoure la partie carbonylée
   \fill[\chemCouleur, rounded corners = \chemArrondi]
-    ($(A) + (0,0)$) rectangle 
-    ($(A) + \chemAtomSep*(1.1pt, -1.6pt)$);
+    (A) rectangle ($(A) + \chemAtomSep*(1.1pt, -1.6pt)$);
+}
+%
+\NewDocumentCommand{\chemAmideDevBH}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = purple-200 ,#1}
+  \coordinate (A) at ($(#2) - 1.5*\chemAtomSep*(0pt, 1/3pt)$);
+  % Partie carbonyle
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    ($(A) + 1.5*\chemAtomSep*(0, 2/3pt)$) rectangle
+    ($(A) - 1.5*\chemAtomSep*(4/5pt, 2/3pt)$);
+  % Partie amine
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    ($(A) - 1.5*\chemAtomSep*(0.1pt, 0)$) rectangle
+    ($(A) + 1.5*\chemAtomSep*(2/3pt, 4/3pt)$);
+}
+%
+\NewDocumentCommand{\chemAmideDevHB}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = purple-200 ,#1}
+  \coordinate (A) at ($(#2) - 1.5*\chemAtomSep*(0pt, 1/3pt)$);
+  % Partie carbonyle
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    ($(A) + 1.5*\chemAtomSep*(-0.1pt, 2/3pt)$) rectangle
+    ($(A) - 1.5*\chemAtomSep*(-2/3pt, 2/3pt)$);
+  % Partie amine
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    (A) rectangle ($(A) + 1.5*\chemAtomSep*(-3/4pt, 4/3pt)$);
+}
+%
+\NewDocumentCommand{\chemCarboxyle}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = red-100 ,#1}
+  \coordinate (A) at (#2);
+  % Entoure =O
+  \fill[\chemCouleur, rounded corners = \chemArrondi, rotate = 30]
+    (A) rectangle ($(A) + 1.5*\chemAtomSep*(1.1pt,-2/3pt)$);
+  % Entoure -OH
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    (A) rectangle ($(A) + \chemAtomSep*(1.25pt, -1.75pt)$);
+}
+%
+\NewDocumentCommand{\chemCarboxyleDev}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = red-100 ,#1}
+  \coordinate (A) at ($(#2) + 1.5*\chemAtomSep*(0pt, 1/3pt)$);
+  % Entoure le carboxyle
+  \fill[\chemCouleur, rounded corners = \chemArrondi, rotate = 50]
+    ($(A) - 1.5*\chemAtomSep*(0.7pt,0)$) rectangle
+    ($(A) + 1.5*\chemAtomSep*(0.65pt, 0.75pt)$);
+  \fill[\chemCouleur, rounded corners = \chemArrondi, rotate = -40]
+    ($(A) - 1.5*\chemAtomSep*(2/3pt,0)$) rectangle
+    ($(A) + 1.5*\chemAtomSep*(0.7pt, -0.75pt)$);
 }
 %
 \NewDocumentCommand{\chemPolygone}{O{} r()}{
@@ -232,7 +264,7 @@
   \pgfkeys{/chemPoly, defaut, couleur = orange-150, #1}
   \coordinate (A) at (#2);
   \fill [fill = \chemCouleur] 
-    ($(A) + (0pt, 0pt)$) --
+    (A) --
     ($(A) + 1.4*\chemAtomSep*(0.833pt, 0.5pt)$) --
     ($(A) + 1.4*\chemAtomSep*(1.667pt, 0pt)$) --
     ($(A) + 1.4*\chemAtomSep*(1.25pt, -0.667pt)$) --
@@ -244,7 +276,7 @@
   \pgfkeys{/chemPoly, defaut, couleur = green-200, #1}
   \coordinate (A) at (#2);
   \fill [fill = \chemCouleur] 
-    ($(A) + \chemAtomSep*(0pt, 0pt)$) --
+    (A) --
     ($(A) + \chemAtomSep*(0.5833pt, -0.6875pt)$) --
     ($(A) + \chemAtomSep*(1.679pt, -0.6875pt)$) --
     ($(A) + \chemAtomSep*(2.275pt, -0.021pt)$) --
