@@ -29,7 +29,7 @@
 }
 %
 \NewDocumentCommand{\tikzSchemaPlanete}{O{}}{%
-  \pgfkeys{/planete, defaut, #1}  
+  \pgfkeys{/planete, defaut, #1}
   \filldraw [color = \planeteContour, very thick, fill = white] (0,0) circle (\planeteOrbite);
   \filldraw [\planeteRemplissage] (0,0) circle (\planeteRayon);
   \filldraw (0, 0) circle (2pt) node[above = 4pt] {\planeteCentre};
@@ -122,7 +122,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------ plan de classe
-
 % Pour tracer une rangée d'élève à 2 ou 3 colonnes (<eleves>) (<eleves>) (<eleves>)
 \pgfkeys{
   /rangee/.is family, /rangee,

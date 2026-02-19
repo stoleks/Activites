@@ -135,6 +135,16 @@
   \input{schemas.tex}%
 \fi
 
+%%------------- Pour comparer deux grandeurs numériques
+\ExplSyntaxOn
+\NewDocumentCommand{\compare}{m +m +m}{
+  \fp_compare:nTF {#1}{#2}{#3}
+}
+\NewDocumentCommand{\compareT}{m +m}{
+  \fp_compare:nT {#1}{#2}
+}
+\ExplSyntaxOff
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%------------- Compteurs internes et commandes associées
@@ -517,6 +527,7 @@
   extendedchars=true,%
   literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\'a}}1 {°}{{\textdegree}}1 {²}{{$^2$}}1,%
 }
+%------ Style LaTeX
 \lstdefinestyle{codeLatex}{
   basicstyle = \footnotesize\ttfamily,%
   commentstyle = {\itshape\color{couleurSec-300}},%

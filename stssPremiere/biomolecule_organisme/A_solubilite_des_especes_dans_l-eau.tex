@@ -22,26 +22,33 @@
 \begin{doc}{Liaison polaire}
   \begin{wrapfigure}[6]{r}{0.56\linewidth}
     \centering
-    \vspace*{-20pt}
-    \tableauPeriodique[1.9][1.9]{
-      \node[name=H,               elec4] {\elementElectroneg{H} {2,20}}; % 1 -IA
-      \node[name=Li, below of=H,  elec1] {\elementElectroneg{Li}{0,98}};
-      \node[name=Na, below of=Li, elec1] {\elementElectroneg{Na}{0,93}};
-      \node[name=Be, right of=Li, elec3] {\elementElectroneg{Be}{1,57}}; % 2 -IIA
-      \node[name=Mg, below of=Be, elec2] {\elementElectroneg{Mg}{1,31}};
-      \node[name=B,  right of=Be, elec4] {\elementElectroneg{B} {2,04}}; % 13 -IIIA
-      \node[name=Al, below of=B,  elec3] {\elementElectroneg{Al}{1,61}};
-      \node[name=C,  right of=B,  elec5] {\elementElectroneg{C} {2,50}}; % 14 -IVA
-      \node[name=Si, below of=C,  elec4] {\elementElectroneg{Si}{1,90}};
-      \node[name=N,  right of=C,  elec6] {\elementElectroneg{N} {3,04}}; % 15 - VA
-      \node[name=P,  below of=N,  elec4] {\elementElectroneg{P} {2,19}};
-      \node[name=O,  right of=N,  elec7] {\elementElectroneg{O} {3,44}}; % 16 -VIA
-      \node[name=S,  below of=O,  elec5] {\elementElectroneg{S} {2,58}};
-      \node[name=F,  right of=O,  elec8] {\elementElectroneg{F} {3,98}}; %17 -VIIA
-      \node[name=Cl, below of=F,  elec7] {\elementElectroneg{Cl}{3,16}};
-    }
+    \vspace*{-28pt}
+    \begin{tableauPeriodique}[largeur case = 1.8cm, hauteur case = 2cm, echelle = 0.78]
+      \elementH [electronegativite = 2.20]
+      %
+      \elementLi[electronegativite = 0.98](below = of H)
+      \elementNa[electronegativite = 0.93](below = of Li)
+      %
+      \elementBe[electronegativite = 1.57](right = of Li)
+      \elementMg[electronegativite = 1.31](right = of Na)
+      %
+      \elementB [electronegativite = 2.04](right = of Be)
+      \elementAl[electronegativite = 1.61](right = of Mg)
+      %
+      \elementC [electronegativite = 2.50](right = of B)
+      \elementSi[electronegativite = 1.90](right = of Al)
+      %
+      \elementN [electronegativite = 3.04](right = of C)
+      \elementP [electronegativite = 2.19](right = of Si)
+      %
+      \elementO [electronegativite = 3.44](right = of N)
+      \elementS [electronegativite = 2.58](right = of P)
+      %
+      \elementF [electronegativite = 3.98](right = of O)
+      \elementCl[electronegativite = 3.16](right = of S)
+    \end{tableauPeriodique}
 
-    \vspace*{-8pt}
+    \vspace*{-12pt}
     \legende{Électronégativité de quelques éléments chimiques}
   \end{wrapfigure}
   \phantom{b}\vspace*{-20pt}

@@ -1,95 +1,119 @@
-\newcommand{\largeurCaseTableauPeriodique}{1.5}
-
-%%%% Pour afficher un élément dans le tableau périodique
-\NewDocumentCommand{\elementTexteCharge}{m m m o}
-{
-  \begin{minipage}{\largeurCaseTableauPeriodique cm}
-    \begin{center}
-      \IfValueTF{#4}{ \vAligne{-20pt} }{ \vAligne{-34pt} } % position du nom
-      {\small #3} \\[2pt] % nom de l'élément
-      {\ensuremath\footnotesize \textbf{#1}} \\[6pt] % nombre atomique
-      \chemfig[atom style={scale = 1.8}]{#2} % symbole atomique
-      % \element{#1}{#2} % element symbol and atomic number
-      \IfValueT{#4}{
-        \\ {\small \qty{#4}{\g/\mole}}
-      }
-    \end{center}
-  \end{minipage}
+%%%% Clés utilisées dans le tableau périodique
+\pgfkeys{% définition de la famille de clefs
+  /periodique/.is family, /periodique,
+  defaut/.style = {
+    couleur = green-50,
+    nom =,
+    electronegativite = 0,
+    masse = 0,
+    charge = 0,
+    echelle = 1
+  },
+  nom/.store in = \periodiqueNom,
+  couleur/.store in = \periodiqueCouleur,
+  symbole/.store in = \periodiqueSymbole,
+  hauteur case/.store in = \periodiqueHauteur,
+  largeur case/.store in = \periodiqueLargeur,
+  electronegativite/.store in = \periodiqueElectroneg,
+  masse/.store in = \periodiqueMasse,
+  charge/.store in = \periodiqueCharge,
+  echelle/.store in = \periodiqueEchelle
 }
-
-%%%% Pour afficher un élément dans le tableau périodique
-\NewDocumentCommand{\elementElectroneg}{m m}
-{
-  \begin{minipage}{\largeurCaseTableauPeriodique cm}
-    \begin{center}
-      {\Large \important[black]{#1} \\[2pt]} % symbole atomique
-      {\small $\chi = \num{#2}$} % électronégativité
-    \end{center}
-  \end{minipage}
-}
-
 
 %%%% Pour afficher un tableau périodique
-%% #1 : largeur ; #2 : hauteur ; #3 : élements
-\NewDocumentCommand{\tableauPeriodique}{O{2.6} O{2.7} m}{
-\begin{tikzpicture}[font=\sffamily, scale=0.75, transform shape]
-
-%% Type d'élément, par famille
-  \tikzstyle{Alcali} = [Element, fill=green-200]
-  \tikzstyle{Alcalo} = [Element, fill=green-150]
-  \tikzstyle{Metaux} = [Element, fill=green-100]
-  \tikzstyle{Metoid} = [Element, fill=orange-100]
-  \tikzstyle{NoMeta} = [Element, fill=orange-150]
-  \tikzstyle{Haloge} = [Element, fill=orange-200]
-  \tikzstyle{GazRar} = [Element, fill=red-150]
-
-%% Type d'élément, par électronégativité
- \tikzstyle{elec1} = [Element, fill=green-50]
- \tikzstyle{elec2} = [Element, fill=green-100!80]
- \tikzstyle{elec3} = [Element, fill=yellow-100]
- \tikzstyle{elec4} = [Element, fill=orange-100]
- \tikzstyle{elec5} = [Element, fill=orange-150]
- \tikzstyle{elec6} = [Element, fill=orange-200]
- \tikzstyle{elec7} = [Element, fill=red-200]
- \tikzstyle{elec8} = [Element, fill=red-300]
-  
-%% Style des éléments
-  \tikzstyle{Element} = [
-    draw=black, cyan-800!50!black,
-    minimum width  = #1 cm, % Largeur de la case
-    node distance  = #1 cm, % Espace entre deux case
-    minimum height = #2 cm, % Hauteur de la case
-  ]
-
-%% Période, groupe et titre
-  \tikzstyle{Period} = [font={\sffamily\LARGE}, node distance=2cm]
-  \tikzstyle{Groupe} = [font={\sffamily\LARGE}, minimum width=2.5cm, node distance=2cm]
-  \tikzstyle{Titre}  = [font={\sffamily\Huge\bfseries}]
-
-%% Place des éléments
-  #3
-\end{tikzpicture}
+\NewDocumentEnvironment{tableauPeriodique}{O{} +m}{%
+  \pgfkeys{/periodique, defaut, #1}
+  %
+  \begin{tikzpicture}[scale = \periodiqueEchelle, transform shape]
+    #2
+}{%
+  \end{tikzpicture}
 }
 
+%%%% Pour afficher une case du tableau périodique
+\NewDocumentCommand{\tkzElement}{O{} D(){}}{%
+  \pgfkeys{/periodique, defaut, #1}
+  %
+  \couleurElectronegativite{}
+  \node [
+    node distance  = \periodiqueHauteur and \periodiqueLargeur,
+    on grid,
+    minimum width  = \periodiqueLargeur,
+    minimum height = \periodiqueHauteur,
+    name = \periodiqueSymbole,
+    fill = \pgfkeysvalueof{/periodique/couleur},
+    draw = cyan-800!50!black,
+    align = center,
+    #2
+  ] {
+    % nom de l'élément
+    \IfValueT{\periodiqueNom}{
+      {\scriptsize \periodiqueNom}%
+      \compare {\periodiqueCharge > 0}{ \\[-1pt] }{ \\[2pt] }%
+    }
+    % nombre atomique
+    \compareT {\periodiqueCharge > 0}{\important[black]{\periodiqueCharge}\\[2pt]}%
+    % symbole atomique
+    {\Large \important[black]{\periodiqueSymbole}}%
+    % masse atomique
+    \compareT {\periodiqueMasse > 0}{\\[-2pt]%
+      {\footnotesize \num{\periodiqueMasse}}%
+    }%
+    % électronégativité
+    \compareT {\periodiqueElectroneg > 0}{%
+      \compare{\periodiqueMasse > 0}{\\}{\\[-2pt]}%
+      {\footnotesize $\chi = \num{\periodiqueElectroneg}$}%
+    }%
+  };
+}
+
+%%%% Réglage des couleurs automatiques si l'électronégativité est réglé
+\newcommand{\couleurElectronegativite}{%
+  \compare {\periodiqueElectroneg > 3.5}{%T
+    \pgfkeyssetvalue{/periodique/couleur}{red-400}
+  }{%F
+    \compare {\periodiqueElectroneg > 3.0}{% T
+      \pgfkeyssetvalue{/periodique/couleur}{red-300}
+    }{% F
+      \compare {\periodiqueElectroneg > 2.5}{% T
+        \pgfkeyssetvalue{/periodique/couleur}{red-200!95!black}
+      }{% F
+        \compare {\periodiqueElectroneg > 2.0}{% T
+          \pgfkeyssetvalue{/periodique/couleur}{orange-200}
+        }{% F
+          \compare {\periodiqueElectroneg > 1.5}{% T
+            \pgfkeyssetvalue{/periodique/couleur}{yellow-150}
+          }{% F
+            \compare {\periodiqueElectroneg > 1.0}{% T
+              \pgfkeyssetvalue{/periodique/couleur}{green-100}
+            }{% F
+              \pgfkeyssetvalue{/periodique/couleur}{\periodiqueCouleur}
+            }% pas d'électronégativité défaut
+          }% 0.5 < chi < 1.0
+        }% 1.0 < chi < 1.5
+      }% 1.5 < chi < 2.0
+    }% 2.0 < chi < 2.5
+  }% 2.5 < chi < 3.0
+}% 3.0 < chi < 3.5
 
 %%%% Pour faciliter l'utilisation du tableau périodique
-\newcommand{\elementH} {\elementTexteCharge{1} {H} {Hydrogène}[1,00]}
-\newcommand{\elementHe}{\elementTexteCharge{2} {He}{Hélium}   [4,00]}
-\newcommand{\elementLi}{\elementTexteCharge{3} {Li}{Lithium}  [6,94]}
-\newcommand{\elementBe}{\elementTexteCharge{4} {Be}{Béryllium}[9,01]}
-\newcommand{\elementB} {\elementTexteCharge{5} {B} {Bore}     [10,8]}
-\newcommand{\elementC} {\elementTexteCharge{6} {C} {Carbone}  [12,0]}
-\newcommand{\elementN} {\elementTexteCharge{7} {N} {Azote}    [14,0]}
-\newcommand{\elementO} {\elementTexteCharge{8} {O} {Oxygène}  [16,0]}
-\newcommand{\elementF} {\elementTexteCharge{9} {F} {Fluor}    [19,0]}
-\newcommand{\elementNe}{\elementTexteCharge{10}{Ne}{Néon}     [20,2]}
-\newcommand{\elementNa}{\elementTexteCharge{11}{Na}{Sodium}   [23,0]}
-\newcommand{\elementMg}{\elementTexteCharge{12}{Mg}{Magnésium}[24,3]}
-\newcommand{\elementAl}{\elementTexteCharge{13}{Al}{Aluminium}[27,0]}
-\newcommand{\elementSi}{\elementTexteCharge{14}{Si}{Silicium} [28,1]}
-\newcommand{\elementP} {\elementTexteCharge{15}{P} {Phosphore}[31,0]}
-\newcommand{\elementS} {\elementTexteCharge{16}{S} {Soufre}   [32,1]}
-\newcommand{\elementCl}{\elementTexteCharge{17}{Cl}{Chlore}   [35,5]}
-\newcommand{\elementAr}{\elementTexteCharge{18}{Ar}{Argon}    [39,9]}
-\newcommand{\elementK} {\elementTexteCharge{19}{K} {Potassium}[39,1]}
-\newcommand{\elementCa}{\elementTexteCharge{20}{Ca}{Calcium}  [40,0]}
+\NewDocumentCommand{\elementH}  {O{} D(){}} {\tkzElement[symbole = H,  charge = 1,  nom = Hydrogène, #1](#2)} % masse = 1.00, 
+\NewDocumentCommand{\elementHe} {O{} D(){}} {\tkzElement[symbole = He, charge = 2,  nom = Hélium, #1](#2)}    % masse = 4.00, 
+\NewDocumentCommand{\elementLi} {O{} D(){}} {\tkzElement[symbole = Li, charge = 3,  nom = Lithium, #1](#2)}   % masse = 6.94, 
+\NewDocumentCommand{\elementBe} {O{} D(){}} {\tkzElement[symbole = Be, charge = 4,  nom = Béryllium, #1](#2)} % masse = 9.01, 
+\NewDocumentCommand{\elementB}  {O{} D(){}} {\tkzElement[symbole = B,  charge = 5,  nom = Bore, #1](#2)}      % masse = 10.8, 
+\NewDocumentCommand{\elementC}  {O{} D(){}} {\tkzElement[symbole = C,  charge = 6,  nom = Carbone, #1](#2)}   % masse = 12.0, 
+\NewDocumentCommand{\elementN}  {O{} D(){}} {\tkzElement[symbole = N,  charge = 7,  nom = Azote, #1](#2)}     % masse = 14.0, 
+\NewDocumentCommand{\elementO}  {O{} D(){}} {\tkzElement[symbole = O,  charge = 8,  nom = Oxygène, #1](#2)}   % masse = 16.0, 
+\NewDocumentCommand{\elementF}  {O{} D(){}} {\tkzElement[symbole = F,  charge = 9,  nom = Fluor, #1](#2)}     % masse = 19.0, 
+\NewDocumentCommand{\elementNe} {O{} D(){}} {\tkzElement[symbole = Ne, charge = 10, nom = Néon, #1](#2)}      % masse = 20.2, 
+\NewDocumentCommand{\elementNa} {O{} D(){}} {\tkzElement[symbole = Na, charge = 11, nom = Sodium, #1](#2)}    % masse = 23.0, 
+\NewDocumentCommand{\elementMg} {O{} D(){}} {\tkzElement[symbole = Mg, charge = 12, nom = Magnésium, #1](#2)} % masse = 24.3, 
+\NewDocumentCommand{\elementAl} {O{} D(){}} {\tkzElement[symbole = Al, charge = 13, nom = Aluminium, #1](#2)} % masse = 27.0, 
+\NewDocumentCommand{\elementSi} {O{} D(){}} {\tkzElement[symbole = Si, charge = 14, nom = Silicium, #1](#2)}  % masse = 28.1, 
+\NewDocumentCommand{\elementP}  {O{} D(){}} {\tkzElement[symbole = P,  charge = 15, nom = Phosphore, #1](#2)} % masse = 31.0, 
+\NewDocumentCommand{\elementS}  {O{} D(){}} {\tkzElement[symbole = S,  charge = 16, nom = Soufre, #1](#2)}    % masse = 32.1, 
+\NewDocumentCommand{\elementCl} {O{} D(){}} {\tkzElement[symbole = Cl, charge = 17, nom = Chlore, #1](#2)}    % masse = 35.5, 
+\NewDocumentCommand{\elementAr} {O{} D(){}} {\tkzElement[symbole = Ar, charge = 18, nom = Argon, #1](#2)}     % masse = 39.9, 
+\NewDocumentCommand{\elementK}  {O{} D(){}} {\tkzElement[symbole = K,  charge = 19, nom = Potassium, #1](#2)} % masse = 39.1, 
+\NewDocumentCommand{\elementCa} {O{} D(){}} {\tkzElement[symbole = Ca, charge = 20, nom = Calcium, #1](#2)}   % masse = 40.0, 
