@@ -250,6 +250,18 @@
     ($(A) + 1.5*\chemAtomSep*(0.7pt, -0.75pt)$);
 }
 %
+\NewDocumentCommand{\chemCarboxyleSemiDev}{O{} r()}{
+  \pgfkeys{/chemPoly, defaut, couleur = red-100 ,#1}
+  \coordinate (A) at ($(#2) + 1.5*\chemAtomSep*(0pt, 1/3pt)$);
+  % Entoure le carboxyle
+  \fill[\chemCouleur, rounded corners = \chemArrondi]
+    ($(A) - 1.5*\chemAtomSep*(0.7pt,0)$) rectangle
+    ($(A) + 1.5*\chemAtomSep*(0.8pt, 0.75pt)$);
+  \fill[\chemCouleur, rounded corners = \chemArrondi, rotate = -90]
+    ($(A) - 1.5*\chemAtomSep*(2/3pt,0)$) rectangle
+    ($(A) + 1.5*\chemAtomSep*(0.6pt, -0.75pt)$);
+}
+%
 \NewDocumentCommand{\chemPolygone}{O{} r()}{
   \pgfkeys{/chemPoly, defaut, #1}
   \node [
@@ -612,12 +624,12 @@
 \definesubmol\valineSemiDev    { HC (-[::90,,2,2] H_3C) (-[::-90,,2,2] H_3C) - !\acideAmineSD }
 \definesubmol\isoleucineSemiDev{ HC (-[::90,,2] CH_2 -[::90] H_3C) (-[::-90,,2,2] H_3C) - !\acideAmineSD }
 %% Acides alpha aminés, représentation de fischer gauche (FL) ou droite (FD)
-\definesubmol\acideAmineFL{COOH-[::0] (-[::-90] NH_2) (-[::90] H) -[::0]}
-\definesubmol\acideAmineFD{COOH-[::0] (-[::90] NH_2) (-[::-90] H) -[::0]}
-\definesubmol\alanineL {[:-90] !\acideAmineFL CH_3}
-\definesubmol\alanineD {[:-90] !\acideAmineFD CH_3}
-\definesubmol\valineL  {[:-90] !\acideAmineFL !\branche{H_3C}{H} -[::0] CH_3}
-\definesubmol\valineD  {[:-90] !\acideAmineFD !\branche{H_3C}{H} -[::0] CH_3}
+\definesubmol\acideAmineFL{[:-90] COOH-[::0] !\branche{H_2N}{H} -[::0]}
+\definesubmol\acideAmineFD{[:-90] COOH-[::0] !\branche{H}{NH_2} -[::0]}
+\definesubmol\alanineL {!\acideAmineFL CH_3}
+\definesubmol\alanineD {!\acideAmineFD CH_3}
+\definesubmol\valineL  {!\acideAmineFL !\branche{H_3C}{H} -[::0] CH_3}
+\definesubmol\valineD  {!\acideAmineFD !\branche{H_3C}{H} -[::0] CH_3}
 
 %% Pour faire des polypeptides en formule topologique H = haut, B = bas
 \definesubmol\acideAmineH1{ !\lh (#1) !\lb (!\llb O) !\lh }
