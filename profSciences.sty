@@ -316,7 +316,7 @@
     duree = 1 h,
     label = Aucun,
     compteur = activiteNum,
-    format = \documentaire*Activité
+    format = \textcolor{couleurSec}{\faPen}~Acti.
   },% stockage des clefs
   titre/.store in = \boiteActiTitre,
   duree/.store in = \boiteActiDuree,
@@ -328,10 +328,11 @@
 \newtcolorbox{boiteActivite}[1][]{%
   boite cassable,
   titre sans separation = 0.5mm,%
-  titre avec compteur = {\boiteActiCompteur}{
-    \hspace*{-12pt}%
-    \boiteActiFormat~\arabic{part}.\arabic{\boiteActiCompteur} --
-    \boiteActiTitre \strut\label{\boiteActiLabel}
+  titre avec compteur = {\boiteActiCompteur}{%
+    \boiteActiFormat~\arabic{part}.\arabic{\boiteActiCompteur} -
+    \boiteActiTitre
+    \strut\hfill\faSquare[regular]
+    \label{\boiteActiLabel}
   },%
   enlarge bottom by = 12pt,%
   overlay= {%
@@ -352,13 +353,13 @@
   \end{boiteActivite}
 }
 \NewDocumentEnvironment{TP}{m}{%
-  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \mesure*TP}
+  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \textcolor{couleurSec}{\faMicroscope}~TP}
   \begin{boiteActivite}
 }{%
   \end{boiteActivite}
 }
 \NewDocumentEnvironment{TPNumerique}{m}{%
-  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \programmer*TP}
+  \pgfkeys{/boiteActi, defaut, #1, compteur = TPNum, format = \textcolor{couleurSec}{\faCode}~TP}
   \begin{boiteActivite}     
 }{%
   \end{boiteActivite}
@@ -1074,15 +1075,18 @@
 }
 % Quelques questions spéciales avec couleur réglable et un espace horizontal
 \NewDocumentCommand{\mesure}{s o}{%
-  \questionSpeciale{#1}[#2]{\faFlask~\faMicroscope\hspace*{1pt}}%
+  \questionSpeciale{#1}[#2]{\faFlask~\faMicroscope}%
+  \IfBooleanTF{#1}{}{\hspace*{1pt}}%
 }
 %
 \NewDocumentCommand{\telechargement}{s o}{%
-  \questionSpeciale{#1}[#2]{\faMobile*~\faFileDownload\hspace*{7pt}}%
+  \questionSpeciale{#1}[#2]{\faMobile*~\faFileDownload}%
+  \IfBooleanTF{#1}{\xspace}{\hspace*{7pt}}%
 }
 %
 \NewDocumentCommand{\documentaire}{s o}{%
-  \questionSpeciale{#1}[#2]{\faFile*~\faPen\hspace*{4pt}}%
+  \questionSpeciale{#1}[#2]{\faFile*~\faPen}%
+  \IfBooleanTF{#1}{}{\hspace*{4pt}}%
 }
 %
 \NewDocumentCommand{\programmer}{s o}{%
@@ -1090,7 +1094,8 @@
 }
 %
 \NewDocumentCommand{\schematiser}{s o}{
-  \questionSpeciale{#1}[#2]{\faPencilRuler~\faDraftingCompass\hspace*{1pt}}%
+  \questionSpeciale{#1}[#2]{\faPencilRuler~\faDraftingCompass}%
+  \IfBooleanTF{#1}{}{\hspace*{1pt}}%
 }
 
 %------ pictogramme de sécurité \picto {largeur} {pictogramme}

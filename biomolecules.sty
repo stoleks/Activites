@@ -156,7 +156,7 @@
 \definesubmol\phosphate   { P (=[::-90] O) (-[::90] \charge{45:1.5pt=$\scriptstyle-$}{O}) -[::0] O}
 
 %------ Pour des molécules colorées
-\definesubmol\lCouleur1 {-[ ::#1,,,, couleurQuat-700, line width = 2.pt]}
+\definesubmol\lCouleur1  {-[ ::#1,,,, couleurQuat-700, line width = 2.pt]}
 \definesubmol\llCouleur1 {-[ ::#1,,,, couleurQuat-700, line width = 1.5pt]}
 \definesubmol\lhCouleur {-[ ::60,,,, couleurQuat-700, line width = 2.pt]}
 \definesubmol\lbCouleur {-[::-60,,,, couleurQuat-700, line width = 2.pt]}
@@ -678,18 +678,21 @@
 \definesubmol\tryptophaneB   { !\acideAmineB{-[::-70]-[::45] *5(- *6(-=-=-) =-NH-=)} }
 %% Pour faire des polypeptides en formule semi-développée
 %% SD = semi-dev ; H = haut ; B = bas
-\definesubmol\acideAmineSDH1{-CH (#1) -C (=[::-90] O)-}
-\definesubmol\acideAmineSDB1{-CH (#1) -C (=[::90] O)-}
-\definesubmol\cysteineSemiDevH  { !\acideAmineSDH{-[::90]  CH_2 -[::0] HS } }
-\definesubmol\cysteineSemiDevB  { !\acideAmineSDB{-[::-90] CH_2 -[::0] HS } }
+\definesubmol\acideAmineSDH1{-CH (-[::90] #1) -C (=[::-90] O)-}
+\definesubmol\acideAmineSDB1{-CH (-[::-90] #1) -C (=[::90] O)-}
+\definesubmol\cysteineSemiDevH  { !\acideAmineSDH{CH_2 -[::0] HS } }
+\definesubmol\cysteineSemiDevB  { !\acideAmineSDB{CH_2 -[::0] HS } }
 \definesubmol\glycineSemiDevH   { -CH_2 -C (=[::-90] O)- }
 \definesubmol\glycineSemiDevB   { -CH_2 -C (=[::90] O)- }
-\definesubmol\alanineSemiDevH   { !\acideAmineSDH{-[::90]  CH_3} }
-\definesubmol\alanineSemiDevB   { !\acideAmineSDB{-[::-90] CH_3} }
-\definesubmol\isoleucineSemiDevH{ !\acideAmineSDH{-[::90]  CH (!\ldh H_2C -[::-50,,2,2]H_3C) !\ldb CH_3 } }
-\definesubmol\isoleucineSemiDevB{ !\acideAmineSDB{-[::-90] CH (!\ldh CH_2 !\ldb CH_3) !\ldb H_3C } }
-\definesubmol\valineSemiDevH    { !\acideAmineSDH{-[::90]  CH (!\ldh H_3C) !\ldb CH_3} }
-\definesubmol\valineSemiDevB    { !\acideAmineSDB{-[::-90] CH (!\ldb H_3C) !\ldh CH_3} }
+\definesubmol\alanineSemiDevH   { !\acideAmineSDH{CH_3} }
+\definesubmol\alanineSemiDevB   { !\acideAmineSDB{CH_3} }
+\definesubmol\isoleucineSemiDevH{ !\acideAmineSDH{CH (!\ldh H_2C -[::-50,,2,2]H_3C) !\ldb CH_3 } }
+\definesubmol\isoleucineSemiDevB{ !\acideAmineSDB{CH (!\ldh CH_2 !\ldb CH_3) !\ldb H_3C } }
+\definesubmol\valineSemiDevH    { !\acideAmineSDH{CH (!\ldh H_3C) !\ldb CH_3} }
+\definesubmol\valineSemiDevB    { !\acideAmineSDB{CH (!\ldb H_3C) !\ldh CH_3} }
+%% Pour faire des acides aminés en formule développées
+\definesubmol\acideAmineDH1{-C (-[::-90] H) (-[::90] #1) -C (=[::-90] O)-}
+\definesubmol\acideAmineDB1{-C (-[::90] H) (-[::-90] #1) -C (=[::90] O)-}
 
 %------ Heme
 \definesubmol\hemeB {
