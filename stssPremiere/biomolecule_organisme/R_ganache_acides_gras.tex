@@ -1,0 +1,146 @@
+\vspace*{-42pt}
+\titre{Consolidation}
+
+%%%%
+\exercice{Une ganache à base de pâte à tartiner}\label{exo:ganache_pate_tartiner}
+
+\medskip
+
+\begin{doc}{Les oméga 3 et 6}[\label{doc:omega_3_6}]
+  \extrait[futurasciences.com]{
+  Les oméga-3 et oméga-6 constituent une famille d'acides gras essentielle au bon fonctionnement du corps humain.
+  Dans le cadre d'une alimentation équilibrée, l'agence française de sécurité sanitaire des aliments (Afssa)
+  recommande un apport, en masse, au maximum cinq fois plus élevé d'oméga-6 que d'oméga-3.
+  Un ratio plus élevé pourrait favoriser l'obésité.
+  Les régimes occidentaux favorisent une surconsommation d'oméga-6 au détriment des oméga-3.
+  Ainsi, en France, le ratio moyen est de 18 et aux États-Unis il peut monter jusqu'à 40.
+  }
+\end{doc}
+
+\begin{doc}{Accumulation de graisse dans le corps humain}[\label{doc:accumulation_graisse}]
+  \extrait[wikipedia.fr]{
+  Le surpoids et l'obésité sont dus à une accumulation excessive de graisse dans le corps.
+  Cette accumulation de graisse peut résulter d'un excès d'acides gras provenant de la digestion
+  des triglycérides.
+  L'huile de palme, en particulier, est riche en triglycérides. Le tableau suivant rassemble
+  quelques acides gras constitutifs des triglycérides de l'huile de palme.
+
+  \begin{tableau}{|c |c |c |}
+    Noms des acides gras & Famille d'acide gras & Masse pour \qty{100}{\g} \\
+    Acide oléique           &oméga-9 & \qty{36,6}{\g} \\
+    Acide linoléique        &oméga-6 & \qty{9,3}{\g}  \\
+    Acide alpha-linolénique &oméga-3 & \qty{0,2}{\g}
+  \end{tableau}
+  }
+\end{doc}
+
+
+%%
+L'oléine est un triglycéride.
+Par hydrolyse, on obtient entre autres un acide gras : l'acide oléique.
+L'équation de la réaction d'hydrolyse est présentée ci-dessous.
+\begin{center}  
+  \chemname{\chemfig{!\oleineSemiDev}}{Oléine}
+  + 3 \chemname{\eau}{A}
+  \reaction \chemname{\chemfig{!\glycerolSemiDev}}{B}
+  + 3 \chemname{\chemfig{!\oleiqueSemiDev}}{Acide oléique}
+\end{center}
+  
+\question{
+  Donner la définition d'un acide gras et d'un triglycéride.
+}{
+  Un acide gras est une molécule avec un groupe carboxyle \chemfig{COOH} lié à une longue chaîne carbonée.\points{1}
+
+  Un triglycéride est une molécule de glycérol estérifiée avec trois acide gras.\points{1}
+}[3]
+
+\pasCorrection{\pagebreak\vspace*{-36pt}}
+\question{
+  Nommer les molécules désignées par A et B dans l'équation de la réaction d'hydrolyse de l'oléine et donner leur formule brute.
+}{
+  A : molécule d'eau \chemfig{H_2O}. \points{0,5}
+  
+  B : molécule de glycérol \bruteCHO{3}{8}{3} \points{0,5}
+
+  \begin{center}
+    Glycérol : \chemfig{CH_2 (-[3] OH) - CH (-[3] OH) -CH_2 (-[3] OH)} \points{1}
+  \end{center}
+}[2]
+
+
+%%
+\medskip
+L'acide oléique a pour formule topologique :
+\begin{center}
+  \chemfig{!\oleique}
+\end{center}
+
+\question{
+  Entourer et nommer le groupe caractéristique présent dans cette molécule.
+}{
+  C'est un groupe carboxyle. \points{1}
+}[1]
+
+\question{
+  Justifier que l'acide oléique est un acide gras insaturé.
+}{
+  Il y a une double liaison carbone-carbone dans la chaîne carbonée de l'acide gras, donc il est insaturé en hydrogène. \points{1}
+}[3]
+
+
+%%
+\medskip
+On hydrolyse \qty{100}{\g} d'huile de palme contenant \qty{38,2}{\percent} en masse d'oléine.
+
+\important{Données :}
+M$_\text{oléine}$ = \qty{885,4}{\g\per\mole} ; 
+M$_\text{acide oléique}$ = \qty{282,5}{\g\per\mole}.
+
+\question{
+  Déterminer la quantité de matière $n_\text{oléine}$ d'oléine présente dans \qty{100}{\g} d'huile de palme.
+}{
+  On a une masse d'oléine $m_\text{oléine} = \qty{38,2}{\percent} \times \qty{100}{\g} = \qty{38,2}{\g}$, \points{1}
+  donc la quantité de matière vaut
+  \begin{equation*}
+    n_\text{oléine} = \dfrac{m_\text{oléine}}{M_\text{oléine}}
+    = \dfrac{\qty{38,2}{\g}}{\qty{885,4}{\g\per\mole}}
+    = \qty{4,31e-2}{\mole} \points{1,5}
+  \end{equation*}
+}[3]
+
+\question{
+  À partir de l'équation de la réaction d'hydrolyse supposée totale
+  (1 mole d'oléine $\reaction$ 3 moles d'acide oléique),
+  calculer la masse d'acide oléique dans l'huile de palme.
+  Comparer avec celle mentionnée dans le tableau du document~\ref{doc:accumulation_graisse}.
+  \important{Rappel :} $m = n \times M$.
+}{
+  Comme la réaction est totale, toute l'oléine s'est transformée en acide oléique, donc $n_\text{oléique} = 3\times n_\text{oléine}$. \points{1}
+
+  Et 
+  \begin{equation*}
+    m_\text{oléique} = n_\text{oléique} \times M_\text{oléique}
+    = 3\times \qty{4,31e-2}{\mole} \times \qty{282,5}{\g\per\mole}
+    = \qty{36,6}{\g} \points{1,5}
+  \end{equation*}
+
+  On trouve la même valeur que dans le tableau du document~\ref{doc:accumulation_graisse}, les deux résultats sont cohérents. \points{1}
+}[4]
+
+
+%%
+\medskip
+Dans le cadre d'une alimentation équilibrée, il est conseillé de consommer quotidiennement
+\qty{500}{\mg} d'oméga-3.
+
+\question{
+  Calculer la masse d'huile de palme qu'il faudrait manger pour respecter cet apport.
+}{
+  On a \qty{200}{\mg} d'oméga-3 pour \qty{100}{\g} d'huile de palme, soit $\dfrac{\qty{100}{\g}}{\qty{200}{\mg}} = \dfrac{\qty{1}{\g}}{\qty{2}{\mg}}$.
+
+  En regardant les unités, on en déduit qu'il faut multiplier l'apport recommandé par cette fraction pour obtenir la masse d'huile de palme à consommer
+  \begin{equation*}
+    \qty{500}{\mg} \times \dfrac{\qty{1}{\g}}{\qty{2}{\mg}} 
+    = \qty{250}{\g} \points{2}
+  \end{equation*}
+}[4]

@@ -697,46 +697,45 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------ Paramètre par défaut pour l'en-tête
-\newcommand{\classe}{%
-  Réglez avec \textbackslash renewcommand\{\textbackslash classe\}\{Seconde\}
-}
-\newcommand{\etablissement}{%
-  Réglez avec \textbackslash renewcommand\{\textbackslash etablissement\}\{Lycée\}
+\newcommand{\enTeteEtablissement}{%
+  Réglez avec \textbackslash renewcommand\{\textbackslash enTeteEtablissement\}\{Lycée\}
 }
 
-%------ en-tête
-\newcommand{\teteGauche}[2]{%
-  \lhead{%
-    \textbf{\footnotesize #1}
-    \newline
-    \footnotesize #2
-  }%
+%------ \enTete[]
+\pgfkeys{% définition de la famille de clefs
+  /enTeteActivite/.is family, /enTeteActivite,
+  defaut/.style = {
+    etablissement = \enTeteEtablissement,
+    classe = Seconde,
+    chapitre = 0
+  },% stockage des clefs
+  etablissement/.store in = \enTeteActiviteEtablissement,
+  classe/.store in = \enTeteActiviteClasse,
+  titre/.store in = \enTeteActiviteTitre,
+  chapitre/.store in = \enTeteActiviteChapitre
 }
-\NewDocumentCommand{\teteDroite}{m o}{%
-  \rhead{%
-    \IfValueT{#2}{%
-      \hfill \textbf{\footnotesize #2}
-    }%
-    \newline 
-    \hfill \footnotesize #1
-  }%
-}
-%------ \enTete [compteur] {titre} [numéro de section] ; * = version simplifié sans pagination
-\NewDocumentCommand{\enTete}{s o m O{0}}{%
-  % reset des compteurs
+\NewDocumentCommand{\enTete}{s O{}}{%
+  \newpage
+  \pgfkeys{/enTeteActivite, defaut, #2}
+  %% reset des compteurs
   \reinitialiseCompteur
-  \setcounter{part}{#4}
-  % affichage de l'en-tête
+  \setcounter{part}{\enTeteActiviteChapitre}
+  %% affichage de l'en-tête
   \IfBooleanTF{#1}{ % affichage de l'entête version fiche réussite (*)
     \pasDePagination
     \phantom{b} \vspace*{-70pt}
-    \titre{#3}
+    \titre{\enTeteActiviteTitre}
   }{ % affichage de l'entête version activité
-    \newpage
     \pagestyle{fancy}
-    \teteGauche{\etablissement{}}{#3} % partie gauche
-    \chead{}                          % partie centrale
-    \teteDroite{#2}                   % partie droite
+    \fancyhead[L]{ % gauche
+      \footnotesize
+      \textbf{\enTeteActiviteEtablissement}\newline
+      \enTeteActiviteTitre
+    }
+    \fancyhead[R]{ % droite
+      \footnotesize\textsc
+      \enTeteActiviteClasse
+    }
   }
 }
 
@@ -984,12 +983,12 @@
 \newenvironment{tableauConnaissances}{%
   \begin{center}
   \begin{tblr}{%
-    colspec = {Q[t, wd=0.7\textwidth] c c c},
+    colspec = {Q[t, wd=0.85\textwidth] c c},
     rows = {m}, hlines, vlines,
-    column{4} = {0.2},
+    % column{4} = {0.2},
     row{1} = {couleurSec-100, c}
   }
-    \important{Connaissances et capacités exigibles} & \ok & \pasOk & \important{En classe} \\
+    \important{Connaissances et capacités exigibles} & \ok & \pasOk \\ %& \important{En classe} \\
 }{%
   \end{tblr}
   \end{center}
