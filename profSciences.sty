@@ -41,6 +41,7 @@
 \RequirePackage{listings} % insertion de code
 \RequirePackage{qrcode}   % tracage de qrcode (note : la commande doit être sur sa propre ligne)
 \RequirePackage{bookmark} % pour éviter un warning en sautant des parties/sections/sous-sections
+\usepackage{lastpage}     % pour avoir accès au numéro de la dernière page
 
 %------ Notations mathématiques
 \RequirePackage{amsmath} % symboles mathématiques
@@ -739,6 +740,83 @@
   }
 }
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%------------- Page de garde d'une épreuve en suivant le modèle du bac
+\newcommand{\calculetteDictionnairePasOk}{
+  L'usage de la calculatrice et du dictionnaire n'est pas autorisé.
+}
+\newcommand{\calculettePasOk}{
+  L'usage de la calculatrice n'est pas autorisé.
+}
+\newcommand{\calculetteOk}{
+  L'usage de la calculatrice est autorisé.
+}
+%
+\pgfkeys{% définition de la famille de clefs
+  /pageGardeExam/.is family, /pageGardeExam,
+  defaut/.style = {
+    epreuve = BACCALAURÉAT,
+    titre = ÉPREUVE DE PHYSIQUE-CHIMIE \\ POUR LA SANTÉ,
+    series = Série ST2S,
+    duree = 2 h,
+    consigne = \calculetteOk,
+  },% stockage des clefs
+  epreuve/.store in = \pageGardeExamEpreuve,
+  titre/.store in = \pageGardeExamTitre,
+  duree/.store in = \pageGardeExamDuree,
+  series/.store in = \pageGardeExamSerie,
+  consigne/.store in = \pageGardeConsigne
+}
+%
+\NewDocumentCommand{\pageGardeEpreuve}{O{} +m}{%
+  %% Remise à zéro des compteurs utilisés pour une épreuve
+  \newpage
+  \setcounter{page}{1}
+  \setcounter{exerciceNum}{0}
+  %% Affiche le décompte des pages en 1/n
+  \pagestyle{fancy}
+  \fancyhf{} \renewcommand{\headrule}{} % supprime l'en-tête et le bas de page
+  \fancyfoot[R]{Page \thepage/\pageref{LastPage}} % affiche le numéro des pages
+
+  %% Affichage de l'épreuve
+  \pgfkeys{/pageGardeExam, defaut, #1}
+  \titre{\LARGE \pageGardeExamEpreuve}
+  \vspace{20pt}
+
+  %% Affichage de la session et de la série
+  \titre{\large Session \the\year}
+  \titre{\pageGardeExamSerie}
+  \bigskip
+
+  %% Épreuve et durée
+  \begin{boite}
+    \titre{\pageGardeExamTitre}
+  \end{boite}
+  \bigskip
+  \begin{center}
+    \Large Durée de l'épreuve : \textbf{\pageGardeExamDuree}
+  \end{center}
+
+  %% Consignes
+  \vspace{20pt}
+  {\large%
+    Ce sujet comporte \pageref{LastPage} pages numérotées de 1 à \pageref{LastPage}. \\
+    Dès que ce sujet vous est remis, assurez-vous qu'il est complet.
+  
+    #2
+  }
+  \vfill
+  {\large\itshape%
+    \begin{center}
+      Les exercices sont indépendants.
+      
+      \pageGardeConsigne
+    \end{center}
+
+    La clarté des raisonnements et la qualité de la rédaction interviendront pour une part importante dans l'appréciation des copies.
+  }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%------------- Correction et variation d'un sujet
