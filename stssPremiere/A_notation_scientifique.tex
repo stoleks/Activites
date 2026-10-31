@@ -2,109 +2,11 @@
 \vspace*{-36pt}
 \titreActivite{Notation scientifique et unités}
 
-% \vspace*{-10pt}
-% \begin{objectifs}
-%   \item Revoir les règles de calcul associées aux puissances de 10,
-%   voir ou revoir la notation scientifique.
-% \end{objectifs}
-
-%%%%
-\vspace*{-20pt}
-\titreSection{Rappels sur les puissance de 10}
-
-%%
-\begin{doc}{Les puissances de 10}
-  Les puissances indiquent qu'on va répéter une multiplication ($2^3 = 2 \times 2 \times 2 = 8$).
-  
-  Pour lire les puissances de 10, il suffit de suivre deux règles simples :
-  \begin{importants}
-    \pointCyan Écrire le nombre $10^n$ (avec $n = 0, 1, 2, 3, \ldots$), revient à écrire ``$1$'' suivi de $n$ zéros. \\
-    \exemple \num{e3} =\texteTrou[0.2]{\num{1000}}
-
-    \pointCyan Écrire $10^{-n}$ (avec $n = 1, 2, \ldots$), revient à écrire ``$0,$'' suivi de $n - 1$ zéros et d'un $1$. \\
-    \exemple \num{e-2} =\texteTrou[0.2]{\num{0,01}}
-  \end{importants}
-\end{doc}
-
-\numeroQuestion Écrire les nombres correspondant aux puissances de 10 suivantes : \\
-$\num{e2}  =$ \texteTrou[0.15]{\num{100}} \qq{}
-$\num{e5}  =$ \texteTrou[0.15]{\num{100000}} \qq{}
-$\num{e-3} =$ \texteTrou[0.15]{\num{0,001}} \qq{}
-$\num{e-1} =$ \texteTrou[0.15]{\num{0,1}}
-
-%%
-%\pasCorrection{\vspace*{-18pt}}
-\begin{doc}{Règles de calculs}
-  Il y a deux règles de calculs à connaître pour les puissances de 10
-  \begin{importants}
-    \pointCyan $10^a \times 10^b = 10^{a + b}$ \\   
-    \pointCyan $10^{-n} = \dfrac{1}{10^n}$
-  \end{importants}
-\end{doc}
-
-
-\numeroQuestion Réaliser les calculs suivants :
-\pasCorrection{\vspace*{-4pt}}
-\begin{listePoints}[2]
-  \setlength\itemsep{-4pt}
-  \item $\num{e2} \times \num{e1}  =$ \texteTrou(0){$10^{2 + 1} = 10^3 = 1000$}
-  \item $\num{e4} \times \num{e-3} =$ \texteTrou(0){$10^{4 - 3} = 10^1 = 10$}
-  \item $\num{e-2}\times \num{e-3} =$ \texteTrou(0){$10^{-2 -3} = 10^{-5} = 0,00001$}
-  \item $\num{e-1}\times \num{e-5}\times \num{e4}=$ \texteTrou(0){$10^{-1 -5 +4} = 10^{-2} = 0,01$}
-\end{listePoints}
-
-
-%%
-\pasCorrection{\vspace*{-18pt}}
-\begin{doc}{Moyen mnémotechnique}
-  \vspace*{-8pt}
-  \begin{listePoints}
-    \setlength\itemsep{-8pt}
-    \item Si je décale la virgule de 1 rang vers la gauche, alors
-    \texteTrou[0.2]{je réduis} de 1 unité la puissance de dix. \texteTrou(0){J'ai divisé par 10.}
-    \item Si je décale la virgule de 1 rang vers la droite, alors
-    \texteTrou[0.2]{j'augmente} de 1 unité la puissance de dix. \texteTrou(0){J'ai multiplié par 10.}
-  \end{listePoints}
-\end{doc}
-
-
-%%%%
-%\newpage
-\vspace*{-12pt}
-\titreSection{Notation scientifique}
-
-\numeroQuestion Écrire les nombres suivants comme le produit d'un nombre compris entre 0 et 9 et d'une puissance de 10 (\exemple \num{600} = \num{6,00e2}) :
-\pasCorrection{\vspace*{-4pt}}
-\begin{listePoints}[2]
-  \setlength\itemsep{-4pt}
-  \item \num{100000}  = \texteTrou(0){\num{1e5}}
-  \item \num{9000000} = \texteTrou(0){\num{9e6}}
-  \item \num{0,0006}  = \texteTrou(0){\num{1e-4}}
-  \item \num{0,00705} = \texteTrou(0){\num{7,05e-3}}
-\end{listePoints}
-
-\begin{doc}{La notation scientifique}
-  \input{commun/notation_scientifique}
-\end{doc}
-
-\numeroQuestion Écrire les quantités suivantes en notation scientifique :
-\vspace*{-8pt}
-\begin{listePoints}[2]
-  \item \qty{288}{\hour}      = \texteTrou(0){\qty{2,88e2}{\hour}\\}
-  \item \qty{1}{\m}           = \texteTrou(0){\qty{1e0}{\m}\\}
-  \item \qty{756 864 000}{\s} = \texteTrou(0){\qty{7,56 864 000}{8\s}\\}
-  \item \qty{638}{\newton}    = \texteTrou(0){\qty{6,38e2}{\newton}}
-  \item \qty{0,01}{\percent}  = \texteTrou(0){\qty{1,0e-2}{\percent}\\}
-  \item \qty{8960}{\g/\l}     = \texteTrou(0){\qty{8,96e3}{\g/\l}\\}
-  \item \qty{0,436}{\s}       = \texteTrou(0){\qty{4,36e-1}{\s}\\}
-  \item \qty{0,336}{\s}       = \texteTrou(0){\qty{3,36e-1}{\s}}
-\end{listePoints}
-\vspace*{-16pt}
-
-\attention Il faut \important{toujours} préciser \important{l'unité} d'une grandeur quand on réalise un calcul !
-L'unité indique comment la grandeur a été mesurée.
-Sans unités le résultat \important{n'a pas de sens.}
-Les grandeurs sans unités sont rares en physique-chimie.
+\vspace*{-10pt}
+\begin{objectifs}
+  \item Revoir les règles de calcul associées aux puissances de 10,
+  voir ou revoir la notation scientifique.
+\end{objectifs}
 
 
 %%%%
@@ -114,7 +16,7 @@ Les grandeurs sans unités sont rares en physique-chimie.
 \begin{doc}{Le système international}
   Pour comparer des grandeurs entre elles, il faut les exprimer avec les \important{mêmes unités de mesures.} % exemple centime et euros
   
-  Pour pouvoir communiquer facilement d'un pays à un autre, le \important{système international (SI)} a été développé par la Conférence Générale des Poids et Mesures (CGPM).
+  Pour pouvoir communiquer facilement d'un pays à un autre, le \important{système international (SI)} a été développé par la Conférence Générale des Poids et Mesures (CGPM) pendant la révolution française.
   Le système international est composé de \important{sept unités de bases.}
 
   En physique on est amené à décrire des \important{échelles} très variées, par exemple quand on mesure la taille d'une molécule ($\sim \qty{e-9}{\metre}$), d'une cellule ($\sim \qty{e-6}{\metre})$ ou d'un humain ($\sim \qty{1}{\metre}$).
@@ -128,7 +30,6 @@ Les grandeurs sans unités sont rares en physique-chimie.
       hlines, vlines, row{1} = {couleurSec-100}, colspec = {c c c l}
     }
       Puissance  & Préfixe & Symbole & Nombre décimal \\
-      \num{e12}  & tera    & T       & \num{1 000 000 000 000} \\
       \num{e9}   & giga    & G       & \num{1 000 000 000} \\
       \num{e6}   & mega    & M       & \num{1 000 000} \\
       \num{e3}   & kilo    & k       & \num{1 000} \\
@@ -136,7 +37,94 @@ Les grandeurs sans unités sont rares en physique-chimie.
       \num{e-3}  & milli   & m       & \num{0,001} \\
       \num{e-6}  & micro   & $\mu$   & \num{0,000 001} \\
       \num{e-9}  & nano    & n       & \num{0,000 000 001} \\
-      \num{e-12} & femto   & f       & \num{0,000 000 000 001}
     \end{tblr}
   \end{center}
+
+  C'est pour ça qu'on va avoir besoin de manipuler des puissances de dix et des unités de mesure.
 \end{doc}
+
+
+%%%%
+\titreSection{Rappels sur les puissance de 10}
+
+%%
+\begin{doc}{Les puissances de 10}
+  Les puissances indiquent qu'on va répéter une multiplication ($2^3 = 2 \times 2 \times 2 = 8$), par convention n'importe quel nombre puissance 0 est égal à 1 ($2^0 = 10^0 = 2798^0 = 1797431^0 = 3^0 = 1$). 
+
+  Si la puissance est négative, on va répéter une division ($2^{-3} = 1 / 2^3 = 1 / (2\times 2\times 2) = 1/8$).
+
+  Dans le cas des puissances de 10, on a donc plusieurs multiplications ou divisions successives par 10, ce qui permet de passer des unités, aux dizaines,  centaines, milliers, etc.
+
+  \begin{importants}
+    Concrètement, \important{chaque multiplication par 10 rajoute un zéro à un nombre et chaque division par 10 enlève un zéro.}
+    Pour la division, si on descend en dessous de l'unité ``enlever'' des zéro consiste à rajouter des zéro après la virgule.
+
+    \exemple*{} $10^{-2} = 0,01$ ; $10^{-4}= 0,0001$ ; $10^4 = \num{10000}$.
+  \end{importants}
+\end{doc}
+
+\numeroQuestion Écrire les nombres correspondant aux puissances de 10 suivantes : \\
+$\num{e2}  =$ \texteTrou[0.15]{\num{100}} \qq{}
+$\num{e5}  =$ \texteTrou[0.15]{\num{100000}} \qq{}
+$\num{e-3} =$ \texteTrou[0.15]{\num{0,001}} \qq{}
+$\num{e-1} =$ \texteTrou[0.15]{\num{0,1}}
+
+%%
+%\pasCorrection{\vspace*{-18pt}}
+\begin{doc}{Règles de calculs}
+  Il y a deux règles de calculs à connaître pour les calculs de puissances
+  \begin{importants}
+    \pointCyan $10^a \times 10^b = 10^{a + b}$ 
+    \qq{} \exemple $10^4 \times 10^5 = 10^{4 + 5} = 10^{9}$ \\
+    \pointCyan $10^{-a} = \dfrac{1}{10^a}$
+    \qq{} \exemple $\dfrac{10^2}{10^1} = 10^2 \times 10^{-1} = 10^{2 - 1} = 10^1$
+  \end{importants}
+\end{doc}
+
+
+\numeroQuestion Réaliser les calculs suivants en donnant le résultat sous la forme d'une puissance de dix :
+\pasCorrection{\vspace*{-4pt}}
+\begin{listePoints}[2]
+  \setlength\itemsep{-4pt}
+  \item $\num{e2} \times \num{e1}  =$ \texteTrou(0){$10^{2 + 1} = 10^3 = 1000$}
+  \item $\num{e4} \times \num{e-3} =$ \texteTrou(0){$10^{4 - 3} = 10^1 = 10$}
+  \item $\num{e-2}\times \num{e-3} =$ \texteTrou(0){$10^{-2 -3} = 10^{-5} = 0,00001$}
+  \item $\num{e-1}\times \num{e-5}\times \num{e4}=$ \texteTrou(0){$10^{-1 -5 +4} = 10^{-2} = 0,01$}
+\end{listePoints}
+
+
+%%%%
+%\newpage
+\vspace*{-12pt}
+\titreSection{Notation scientifique}
+
+\begin{doc}{La notation scientifique}
+  \input{commun/notation_scientifique}
+  
+  Concrètement, il va falloir compter combien de zéro on doit enlever ou ajouter pour que le nombre soit compris entre 0 et 10, si on en enlève la puissance de 10 est positive, sinon elle est négative.
+\end{doc}
+
+\numeroQuestion Écrire les nombres suivants comme le produit d'un nombre compris entre 0 et 10 et d'une puissance de 10 (\exemple \num{600} = \num{6,00e2}) :
+\pasCorrection{\vspace*{-4pt}}
+\begin{listePoints}[2]
+  \setlength\itemsep{-4pt}
+  \item \num{100000}  = \texteTrou(0){\num{1e5}}
+  \item \num{9000000} = \texteTrou(0){\num{9e6}}
+  \item \num{0,0006}  = \texteTrou(0){\num{1e-4}}
+  \item \num{0,00705} = \texteTrou(0){\num{7,05e-3}}
+\end{listePoints}
+
+\numeroQuestion Écrire les quantités suivantes en notation scientifique :
+\begin{listePoints}[2]
+  \item \qty{288}{\hour}      = \texteTrou(0){\qty{2,88e2}{\hour}\\}
+  \item \qty{1}{\m}           = \texteTrou(0){\qty{1e0}{\m}\\}
+  \item \qty{756 864 000}{\s} = \texteTrou(0){\qty{7,56 864 000}{8\s}\\}
+  \item \qty{0,01}{\percent}  = \texteTrou(0){\qty{1,0e-2}{\percent}\\}
+  \item \qty{8960}{\g/\l}     = \texteTrou(0){\qty{8,96e3}{\g/\l}\\}
+  \item \qty{0,436}{\s}       = \texteTrou(0){\qty{4,36e-1}{\s}\\}
+\end{listePoints}
+
+\attention Il faut \important{toujours} préciser \important{l'unité} d'une grandeur quand on réalise un calcul !
+L'unité indique comment la grandeur a été mesurée.
+Sans unités le résultat \important{n'a pas de sens.}
+Seuls les rapports entre grandeurs sont sans unités, et on les utilise rarement en physique-chimie en ST2S.
