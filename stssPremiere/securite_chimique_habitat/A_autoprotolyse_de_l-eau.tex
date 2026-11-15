@@ -49,10 +49,10 @@
   \end{importants}
   
   Ce produit s’appelle le \important{produit ionique de l’eau,} noté Ke, sans unité.  
-  \begin{center}
-    Ke = $\left[ \oxonium \right] \times \left[ \hydroxyde \right]$
-  \end{center}
-  Lorsque la température est de \qty{25}{\degreeCelsius}, Ke = \num{e-14}.
+  \begin{equation*}
+    Ke = \left[ \oxonium \right] \times \left[ \hydroxyde \right]
+  \end{equation*}
+  Lorsque la température est de \qty{25}{\degreeCelsius}, $Ke = \qty{e-14}{\mole\squared\per\litre\squared}$.
   Les concentrations molaires sont données en \unit{\mole/\litre}. 
   À \qty{25}{\degreeCelsius}, l'eau pure est parfaitement neutre, avec un pH $= 7$.
 
@@ -62,33 +62,49 @@
   \end{equation*}
 \end{doc}
 
-\newpage
+\pasCorrection{\newpage}
 \question{
   Calculer les concentrations molaires [\oxonium] et [\hydroxyde] pour de l'eau pure à \qty{25}{\degreeCelsius}.
 }{
-
+  Pour de l'eau pure, le pH vaut $7$, donc
+  \begin{equation*}
+    \left[\oxonium\right] = \qty{e-7}{\mole\per\litre}
+  \end{equation*}
+  et comme $Ke = \left[ \oxonium \right] \times \left[ \hydroxyde \right] = \num{e-14}$, on a donc que
+  \begin{align*}
+    \left[\hydroxyde\right]
+    = \dfrac{Ke}{\left[\oxonium\right]}
+    = \dfrac{\num{e-14}}{\num{e-7}} \unit{\mole\per\litre}
+    = \qty{e-7}{\mole\per\litre}
+  \end{align*}
 }[3]
 
 \question{
   En comparant les concentration en ions oxonium et en ions hydroxydes dans l'eau pure, expliquer pourquoi on dit que l'eau est neutre d'un point de vue acido-basique.
 }{
-  
+  Les deux concentrations sont égales, on a donc autant d'entités acides que d'entités basiques, l'eau pure est donc neutre.
 }[2]
 
 \question{
   Calculer les concentrations molaires [\oxonium] et [\hydroxyde] pour des solutions avec un pH = 2, 6, 8, 12.
 }{
+  Pour pH = 2, $[\oxonium] = \qty{e-2}{\mole\per\litre}$, $[\hydroxyde] = \qty{e-12}{\mole\per\litre}$.
+
+  Pour pH = 6, $[\oxonium] = \qty{e-6}{\mole\per\litre}$, $[\hydroxyde] = \qty{e-8}{\mole\per\litre}$.
   
+  Pour pH = 6, $[\oxonium] = \qty{e-8}{\mole\per\litre}$, $[\hydroxyde] = \qty{e-6}{\mole\per\litre}$.
+  
+  Pour pH = 12, $[\oxonium] = \qty{e-12}{\mole\per\litre}$, $[\hydroxyde] = \qty{e-2}{\mole\per\litre}$.
 }[10]
 
 \question{
   Comment varie [\hydroxyde] lorsque [\oxonium] augmente ?
 }{
-  La concentration en ions hydroxyde diminue dans celle en ion oxonium augmente.
+  La concentration en ions hydroxyde diminue quand celle en ions oxonium augmente.
 }[3]
 
 \question{
   Répondre à la problématique de la séance.
 }{
-  Les ions oxonium et hydroxyde sont en équilibres dans une solution aqueuse, à cause de la réaction d'autoprotolyse de l'eau.
+  Les ions oxonium et hydroxyde sont en équilibres dans une solution aqueuse, à cause de la réaction d'autoprotolyse de l'eau qui impose que le produit ionique de l'eau soit constant.
 }[3]

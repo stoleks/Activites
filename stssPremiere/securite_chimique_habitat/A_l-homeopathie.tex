@@ -66,7 +66,7 @@
 
 
 %%
-\newpage\vspace*{-36pt}
+\pasCorrection{\newpage\vspace*{-36pt}}
 \begin{doc}{La dilution}
   \begin{wrapfigure}[5]{r}{0.5\linewidth}
     \vspace*{-34pt}
@@ -134,7 +134,8 @@
 \question{
   Calculer le facteur de dilution d'une solution homéopathique à 1 CH, puis à 10 CH.
 }{
-  A 1 CH on dilue 100 fois, donc $F_{1 CH} = 100$, à 10 CH on dilue 100 fois dix fois de suite, donc $F_{10 CH} = 100^{10} = 10^{2\times 10} = 10^{20}$.
+  A 1 CH on dilue 100 fois, donc $F_\text{1 CH} = 100$, à 10 CH on dilue 100 fois dix fois de suite,
+  donc $F_\text{10 CH} = 100^{10} = 10^{2\times 10} = 10^{20}$.
 }[2]
 
 \question{
@@ -142,16 +143,13 @@
   \important{Rappel :} $\qty{1}{\mole} = \num{6,02e23}$ molécules.
 }{
   \begin{equation*}
-    c_{10 CH} = \dfrac{c}{F_{10 CH}}
+    c_\text{10 CH} = \dfrac{c}{F_\text{10 CH}}
     = \dfrac{\qty{4.0e-4}{\mole\per\ml}}{10^{20}}
     = \qty{4.0e-24}{\mole\per\ml}
   \end{equation*}
 
-  Pour \qty{10}{\ml} on a donc
-  $n = c_{10CH} \times \qty{10}{\ml} = \qty{4.0e-23}{\mole}$
+  Pour \qty{10}{\ml} on a donc $n = c_\text{10CH} \times \qty{10}{\ml} = \qty{4.0e-23}{\mole}$,
+  ce qui correspond à $N = \num{4.0e-23} \times \num{6.02e23} = \num{24,1}$ molécules. 
 
-  Ce qui correspond à 
-  $N = \num{4.0e-23} \times \num{6.02e23} = \num{24,1}$ molécules. 
-
-  Sachant qu'il y a plusieurs millions de cellules dans le corps humains, 24 molécules ne permet pas d'avoir un réel effet sur la santé.
+  Sachant qu'il y a plusieurs millions de cellules dans le corps humains, 24 molécules actives ne permet certainement pas d'avoir un effet réel sur la santé.
 }[2]
