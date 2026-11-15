@@ -144,17 +144,17 @@
 \question{
   Nommer les molécules suivantes :
   \begin{equation*}  
-    \chemfig{H_3C- CH (-[3]CH_3) - CH (-[-3]CH_2 -CH_3) -CH_3} \qq{}
-    \chemfig{H_3C- CH_2 -C (-[-3]CH_3) (-[3]CH_3) -CH_2 -CH_2 - CH_3}
+    \chemfig{H_3C- CH (-[::90]CH_3) - CH (-[::-90]CH_2 -CH_3) -CH_3} \qq{}
+    \chemfig{H_3C- CH_2 -C (-[::-90]CH_3) (-[::90]CH_3) -CH_2 -CH_2 - CH_3}
   \end{equation*}
 }{
   Pour la molécule 1 : la chaîne principale a 4 atomes, donc -butane.
   Deux ramifications sont en position 2 (avec un méthyl) et 3 (avec un éthyl).
   Donc le nom de cette molécule est 3-éthyl-2-méthyl-butane.
 
-  Pour la molécule 2 : la chaîne principale a 5 atomes, donc -pentane.
-  Deux ramifications méthyl sont en position 2 et 3.
-  Donc le nom de cette molécul est 2,3-méthyl-pentane.
+  Pour la molécule 2 : la chaîne principale a 6 atomes, donc -hexane.
+  Deux ramifications méthyl sont en position 2 et 2.
+  Donc le nom de cette molécul est 2,2-méthyl-hexane.
 }[2]
 
 %%
@@ -162,9 +162,17 @@
 
 \question{
   Donner la formule semi-développée du 4-méthyl-octane.
-}{}[2]
+}{
+  Octane, donc on a 8 carbone, avec une ramification méthyl à la quatrième position en partant de la gauche
+  \vspace*{-8pt}
+  \begin{equation*}
+    \chemfig[atom sep = 20pt]{H_3C -CH_2 -CH_2 -CH (-[::90] CH_3) -CH_2 -CH_2 -CH_2 -CH_3}
+  \end{equation*}
+}[2]
 
+\vspace*{-8pt}
 \titreSousSection{Règles pour les groupes caractéristiques}
+\vspace*{-8pt}
 
 \begin{doc}{Groupes caractéristiques}
   \input{commun/nom_familles_organiques}

@@ -46,6 +46,10 @@ if [[ $output = "" ]]; then
 fi
 echo "Le répertoire de sortie utilisé est $output. Préparation des fichiers."
 
+# change head of the file to use a "precompiled" preambule.tex file
+sed -i "s|% %\&preambule|%\&preambule|" main.tex
+sed -i "s|\\\\input{preambule}|% \\\\input{preambule}|" main.tex
+
 # comment all lines
 if [[ $clean = true ]]; then
   sed -i "s|^\\\\modeCorrection|% \\\\modeCorrection|" main.tex
@@ -90,3 +94,7 @@ do
     fi
   done
 done
+
+# remove modification in main.tex
+sed -i "s|% \\\\input{preambule}|\\\\input{preambule}|" main.tex
+sed -i "s|%\&preambule|% %\&preambule|" main.tex

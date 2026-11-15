@@ -19,6 +19,7 @@
 
 
 %%
+\vspace*{-12pt}
 \titreSection{La valence}
 
 \begin{doc}{Éléments composant un corps humain}
@@ -71,7 +72,7 @@
 }[1]
 
 %
-\newpage\vspace*{-30pt}
+\pasCorrection{\newpage\vspace*{-30pt}}
 \question{
   Même question pour l'azote \isotope{N}{7}{} et l'hydrogène \isotope{H}{1}{}.
 }{
@@ -97,7 +98,7 @@
   \chemfig{O =C =O} \qq{}
   \chemfig{H -C ~N}
 \end{equation*}
-\vspace*{1cm}
+\pasCorrection{\vspace*{1cm}}
 }{
   Liaison triple, liaison double et double, liaison simple et triple
 }
@@ -152,8 +153,7 @@ Sa représentation avec un modèle moléculaire est présentée ci-contre.
 
 
 %%
-\newpage
-\vspace*{-40pt}
+\pasCorrection{\newpage \vspace*{-40pt}}
 \titreSousSection{La formule développée}
 
 \vspace*{-8pt}
@@ -198,17 +198,20 @@ Compléter le tableau suivant :
   Nombre d'éléments &
   {Carbone : 1 \\ Hydrogène : 4} &
   {\carbone :   \texteTrou{3} \\ \hydrogene : 8} &
-  {\hydrogene : \texteTrou{2} \\ \oxygene :   \texteTrou{2}} &
-  {\carbone :   \texteTrou{1} \\ \hydrogene : 4 \\ \oxygene : \texteTrou{1}} \\
+  {\oxygene :   \texteTrou{2} \\ \hydrogene : \texteTrou{2}} &
+  {\carbone :   \texteTrou{1}\\ \oxygene : \texteTrou{1} \\ \hydrogene : 4} \\
   %
   Nombre de liaisons & 
-  {\carbone : \important{4 liaisons} \\ \hydrogene : \important{1 liaison}} &
-  {\carbone : \texteTrou{4}liaisons \\ \hydrogene : \texteTrou{1} liaison} &
-  {\hydrogene : \texteTrou{1} liaison  \\ \oxygene : \hspace{-2pt}\texteTrou{2} liaisons} &
-  {\carbone : \texteTrou{4} liaisons \\ \hydrogene : \texteTrou{1} liaison \\ \oxygene : \hspace{-2pt}\texteTrou{2} liaisons } \\
+  {\carbone :   \important{4 liaisons} \\ \hydrogene : \important{1 liaison}} &
+  {\carbone :   \texteTrou{4 liaisons} \\ \hydrogene : \texteTrou{1 liaison}} &
+  {\hydrogene : \texteTrou{1 liaison}  \\ \oxygene :   \texteTrou{2 liaisons}} &
+  {\carbone :   \texteTrou{4 liaisons} \\ \hydrogene : \texteTrou{1 liaison} \\ \oxygene : 2 liaisons} \\
   %
   Formule développée &
-  \chemfig[atom sep = 20pt]{H - C !\HHH} & & & \\
+  \chemfig[atom sep = 20pt]{H - C !\HHH} &
+  \correction{\chemfig[atom sep = 20pt]{H -C !\HH -C !\HH -C !\HHH}} &
+  \correction{\chemfig[atom sep = 20pt]{H-O-O-H}} & 
+  \correction{\chemfig[atom sep = 20pt]{H-C !\HH -O-H}} \\
 \end{tblr}
 
 
@@ -217,7 +220,7 @@ Compléter le tableau suivant :
 
 \begin{doc}{Formule semi-développée}
   \begin{importants}
-    Comme la formule développée, elle représente tous les éléments chimiques, mais elle ne détaille pas les liaisons des éléments \important{hydrogènes.}
+    Comme la formule développée, sauf que les liaisons avec les éléments \important{hydrogènes ne sont pas tracées.} À la place, on indique le nombre d'hydrogènes liés à côté.
   \end{importants}
 
   \exemple*
@@ -233,13 +236,12 @@ Compléter le tableau suivant :
   \end{center}
 \end{doc}
 
-\newpage
-\vspace*{-20pt}
+\pasCorrection{\newpage\vspace*{-20pt}}
 Pour passer de la formule développée à la formule semi-développée, il suffit de 
 \begin{listeFleche}
   \item surligner tous les hydrogènes et leur liaison ;
   \item recopier \important{à l'identique} tous ce qui n'est pas surligné ;
-  \item indiquer les hydrogènes et leur nombres à côté de l'élément auxquels ils sont liés.
+  \item indiquer les hydrogènes avec leur nombre en indice à côté de l'élément auxquels ils sont liés.
 \end{listeFleche}
 
 \numeroQuestion
@@ -258,7 +260,10 @@ Compléter le tableau suivant :
   \chemfig{H - C!\HH -C (=[::50] O) (-[::-50] O-H)} \\
   %
   Écriture semi-développée &
-  \chemfig{H_3C - CH_3} & \vAligne{50pt} & & \\
+  \chemfig{H_3C - CH_3} & \pasCorrection{\vAligne{50pt}}
+  \correction{\chemfig{H_2N -NH_2}} &
+  \correction{\chemfig{H_2C=CH-OH}} &
+  \correction{\chemfig{H_3C -C (=[::50] O) -[::-50]OH}} \\
   %
 \end{tblr}
 
