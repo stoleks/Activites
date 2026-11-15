@@ -58,9 +58,9 @@
     \end{equation*}
   \end{importants}
   \begin{listePoints}
-    \item $c$ : concentration molaire en \unit{\mole/\litre}
-    \item $n_\solute$ : quantité de matière du soluté en \unit{\mole}
-    \item $V_\solution$ : volume de la solution en \unit{\litre}
+    \item $c$ : concentration molaire exprimé en mole par litre, noté \unit{\mole/\litre}
+    \item $n_\solute$ : quantité de matière du soluté exprimé en mole, noté \unit{\mole}
+    \item $V_\solution$ : volume de la solution exprimé en litre, noté \unit{\litre}
   \end{listePoints}
 \end{doc}
 
@@ -69,7 +69,7 @@
 \newpage\vspace*{-36pt}
 \begin{doc}{La dilution}
   \begin{wrapfigure}[5]{r}{0.5\linewidth}
-    \vspace*{-30pt}
+    \vspace*{-34pt}
     \centering
     \begin{multicols}{4}
     \image{1}{images/chimie/protocoles/dissoDilu0007} \\[-0pt]
@@ -82,6 +82,7 @@
     \image{1}{images/chimie/protocoles/dissoDilu0011} \\[-0pt]
     \footnotesize{$S_1$}
     \end{multicols}
+    Protocole simplifié : prélèvement de la solution et ajout de solvant jusqu'au trait de jauge
   \end{wrapfigure}
   \vAligne{-40pt}
   
@@ -90,13 +91,15 @@
   \end{importants}
   La solution de départ est appelée \important{solution mère}, notée $S_0$.
   La solution obtenue après dilution est appelée \important{solution fille}, notée $S_1$.
+
+  \strut
 \end{doc}
 
 \begin{doc}{Facteur de dilution}
   La quantité de matière de soluté dans le volume de solution mère prélevée $V_0$ est la même que dans le volume de solution fille préparée $V_1$. Donc $n_1 = n_0$ et comme $n = c \times V$, on a
   \begin{align*}
     c_1 \times V_1 &= c_0 \times V_0 \\
-    c_1 &= \underbrace{\dfrac{V_0}{V_1}}_{1/F} \times c_0
+    V_1 &= \underbrace{\dfrac{c_0}{c_1}}_{F} \times V_0
   \end{align*}
 
   \begin{importants}  
@@ -121,18 +124,34 @@
 \question{
   Calculer la concentration molaire $c = n / V$ dans la solution mère.
 }{
-
+  \begin{equation*}
+    c = \dfrac{n}{V} 
+    = \dfrac{\qty{0,02}{\mole}}{\qty{50.0}{\ml}}
+    = \qty{4.0e-4}{\mole\per\ml}
+  \end{equation*}
 }[2]
 
 \question{
   Calculer le facteur de dilution d'une solution homéopathique à 1 CH, puis à 10 CH.
 }{
-
+  A 1 CH on dilue 100 fois, donc $F_{1 CH} = 100$, à 10 CH on dilue 100 fois dix fois de suite, donc $F_{10 CH} = 100^{10} = 10^{2\times 10} = 10^{20}$.
 }[2]
 
 \question{
   Calculer la concentration de la solution 10 CH, puis calculer le nombre de molécules de quinine dans \qty{10}{\ml} de solution 10 CH.
   \important{Rappel :} $\qty{1}{\mole} = \num{6,02e23}$ molécules.
 }{
+  \begin{equation*}
+    c_{10 CH} = \dfrac{c}{F_{10 CH}}
+    = \dfrac{\qty{4.0e-4}{\mole\per\ml}}{10^{20}}
+    = \qty{4.0e-24}{\mole\per\ml}
+  \end{equation*}
 
-}[3]
+  Pour \qty{10}{\ml} on a donc
+  $n = c_{10CH} \times \qty{10}{\ml} = \qty{4.0e-23}{\mole}$
+
+  Ce qui correspond à 
+  $N = \num{4.0e-23} \times \num{6.02e23} = \num{24,1}$ molécules. 
+
+  Sachant qu'il y a plusieurs millions de cellules dans le corps humains, 24 molécules ne permet pas d'avoir un réel effet sur la santé.
+}[2]
