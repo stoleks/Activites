@@ -16,11 +16,11 @@
   \begin{center}
     \begin{tblr}{
         colspec = {l X[c] l X[c] l X[c]},
-        width = \linewidth, column{1,3,5} = {couleurPrim-100},
+        width = \linewidth, column{1,3,5} = {couleurPrim},
       }
-      \important{Prof :}    & Alexandre Jedrecy &
-      \important{Matière :} & Physique-Chimie &
-      \important{Niveau :}  & #1 \\
+      \important[white]{Prof :}    & Alexandre Jedrecy &
+      \important[white]{Matière :} & Physique-Chimie &
+      \important[white]{Niveau :}  & #1 \\
     \end{tblr}
 
     \begin{tikzpicture}
@@ -70,8 +70,8 @@
 \newcommand{\fichePremiereStssTP}[1]{
   \titreFicheTP{#1}
   \preambuleFicheTP{Première ST2S}{
-    \evenement[creneau = 2, titre = 1ST2S1-1, lieu = A103, couleur = purple-200]
-    \evenement[creneau = 6, titre = 1ST2S1-2, lieu = A108, couleur = purple-200]
+    \evenement[creneau = 1, titre = 1ST2S1-1, jour = 4, lieu = A104, couleur = purple-200]
+    \evenement[creneau = 3, titre = 1ST2S1-2, jour = 4, lieu = A104, couleur = purple-200]
   }
 }
 \newcommand{\effectifPremiereStss}{
@@ -88,8 +88,8 @@
 \newcommand{\ficheTerminaleStssTP}[1]{
   \titreFicheTP{#1}
   \preambuleFicheTP{Terminale ST2S}{
-    \evenement[creneau = 8, titre = TST2S1-1, jour = 2, couleur = red-200]
-    \evenement[creneau = 3, titre = TST2S1-2, jour = 3, lieu = A103, couleur = red-200]
+    \evenement[creneau = 5, titre = TST2S1-1, jour = 4, couleur = red-200]
+    \evenement[creneau = 7, titre = TST2S1-2, jour = 4, lieu = A103, couleur = red-200]
   }
 }
 \newcommand{\effectifTerminaleStss}{
